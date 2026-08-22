@@ -58,8 +58,15 @@
 }
 
 @keyframes fadeInDropdown {
-  from { opacity: 0; transform: translateY(-6px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .three-dots-item {
@@ -271,9 +278,11 @@
 .mobile-toggle.active span:nth-child(1) {
   transform: translateY(7px) rotate(45deg);
 }
+
 .mobile-toggle.active span:nth-child(2) {
   opacity: 0;
 }
+
 .mobile-toggle.active span:nth-child(3) {
   transform: translateY(-7px) rotate(-45deg);
 }
@@ -305,9 +314,12 @@
 }
 
 @media (max-width: 991px) {
-  .nav-links, .nav-actions .btn-primary {
+
+  .nav-links,
+  .nav-actions .btn-primary {
     display: none;
   }
+
   .mobile-toggle {
     display: flex;
   }
@@ -402,9 +414,11 @@
     grid-template-columns: 1fr;
     gap: 40px;
   }
+
   .hero-headline {
     font-size: 44px;
   }
+
   .hero-visual {
     order: -1;
   }
@@ -800,10 +814,104 @@
 
 @media (max-width: 809px) {
   .hero-logo-card {
-    padding: 12px 18px;
-    border-radius: 14px;
-    max-width: 150px;
+    padding: 18px 24px;
+    border-radius: 18px;
+    max-width: 180px;
     margin: 0 auto;
+  }
+
+  .hero-logo-card img {
+    max-width: 120px;
+  }
+
+  .section-pill-header,
+  .partners-header-wrap {
+    padding: 8px 16px;
+    margin-bottom: 20px;
+    max-width: 100%;
+  }
+
+  .section-pill-title,
+  .partner-pill-title {
+    font-size: 20px;
+    letter-spacing: 0.02em;
+  }
+
+  .pill-badge-black,
+  .partner-mini-badge {
+    padding: 5px 12px;
+    gap: 6px;
+  }
+
+  .partner-mini-badge img {
+    height: 14px;
+  }
+
+  .pill-badge-black svg {
+    transform: scale(0.85);
+  }
+
+  .rate-us-header-wrap {
+    padding: 6px 14px;
+    margin-bottom: 12px;
+    max-width: 100%;
+  }
+
+  .rate-us-pill-title {
+    font-size: 16px;
+  }
+
+  .rate-us-mini-badge {
+    padding: 4px 10px;
+    gap: 6px;
+  }
+
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    margin-top: 18px;
+  }
+
+  .service-card {
+    gap: 6px;
+    padding: 12px;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    background: #ffffff;
+    box-shadow: 0 2px 8px rgba(15, 23, 42, 0.04);
+  }
+
+  .service-card-banner {
+    height: 110px;
+    padding: 6px;
+    border-radius: 8px;
+  }
+
+  .service-card-meta {
+    margin-top: -2px;
+  }
+
+  .service-arrow-icon {
+    width: 14px;
+    height: 14px;
+  }
+
+  .service-title {
+    font-size: 14.5px;
+    line-height: 1.25;
+  }
+
+  .service-desc {
+    font-size: 12px;
+    line-height: 1.45;
+    color: #64748b;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-logo-card {
+    padding: 14px 18px;
+    max-width: 150px;
   }
 
   .hero-logo-card img {
@@ -812,207 +920,64 @@
 
   .section-pill-header,
   .partners-header-wrap {
-    padding: 6px 12px;
-    margin-bottom: 14px;
-    max-width: 100%;
-    border-radius: 12px;
-  }
-
-  .section-pill-title,
-  .partner-pill-title {
-    font-size: 15px;
-    letter-spacing: 0.02em;
-  }
-
-  .pill-badge-black,
-  .partner-mini-badge {
-    padding: 4px 10px;
-    gap: 5px;
-    border-radius: 100px;
-  }
-
-  .partner-mini-badge img {
-    height: 12px;
-  }
-
-  .pill-badge-black svg {
-    width: 14px;
-    height: 14px;
-    transform: none;
-  }
-
-  .rate-us-header-wrap {
-    padding: 5px 12px;
-    margin-bottom: 10px;
-    max-width: 100%;
-    border-radius: 12px;
-  }
-
-  .rate-us-pill-title {
-    font-size: 14px;
-  }
-
-  .rate-us-mini-badge {
-    padding: 3px 8px;
-    gap: 4px;
-    border-radius: 100px;
-  }
-
-  .services-grid {
-    grid-template-columns: repeat(2, 1fr) !important;
-    gap: 10px;
-    margin-top: 14px;
-  }
-
-  .service-card {
-    gap: 6px;
-    padding: 10px;
-    border: 1px solid #e2e8f0;
-    border-radius: 12px;
-    background: #ffffff;
-    box-shadow: 0 2px 8px rgba(15, 23, 42, 0.04);
-  }
-
-  .service-card-banner {
-    height: 78px;
-    padding: 4px;
-    border-radius: 8px;
-  }
-
-  .service-card-banner img {
-    max-height: 100%;
-    max-width: 100%;
-    object-fit: contain;
-  }
-
-  .service-card-meta {
-    margin-top: -2px;
-  }
-
-  .service-arrow-wrap {
-    width: 22px;
-    height: 22px;
-  }
-
-  .service-arrow-icon {
-    width: 12px;
-    height: 12px;
-  }
-
-  .service-title {
-    font-size: 12.5px;
-    font-weight: 700;
-    line-height: 1.25;
-    margin-bottom: 2px;
-  }
-
-  .service-desc {
-    font-size: 10.5px;
-    line-height: 1.35;
-    color: #64748b;
-    display: -webkit-box;
-    -webkit-line-clamp: 2;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-  }
-
-  .service-cta-text {
-    font-size: 10.5px;
-    font-weight: 600;
-  }
-}
-
-@media (max-width: 480px) {
-  .hero-logo-card {
-    padding: 10px 14px;
-    max-width: 130px;
-  }
-
-  .hero-logo-card img {
-    max-width: 85px;
-  }
-
-  .section-pill-header,
-  .partners-header-wrap {
-    padding: 5px 10px;
-    margin-bottom: 12px;
+    padding: 6px 10px;
+    margin-bottom: 16px;
     border-width: 1px;
   }
 
   .section-pill-title,
   .partner-pill-title {
-    font-size: 13px;
+    font-size: 14px;
     letter-spacing: 0.01em;
   }
 
   .pill-badge-black,
   .partner-mini-badge {
-    padding: 3px 7px;
-    gap: 4px;
+    padding: 4px 8px;
+    gap: 5px;
   }
 
   .partner-mini-badge img {
-    height: 10px;
+    height: 12px;
   }
 
   .pill-badge-black svg,
   .partner-mini-badge svg {
-    width: 11px;
-    height: 11px;
+    width: 12px;
+    height: 12px;
   }
 
   .rate-us-header-wrap {
-    padding: 4px 8px;
+    padding: 5px 10px;
   }
 
   .rate-us-pill-title {
-    font-size: 12px;
+    font-size: 13px;
   }
 
   .services-grid {
-    grid-template-columns: repeat(2, 1fr) !important;
-    gap: 8px;
-    margin-top: 10px;
+    grid-template-columns: 1fr;
+    gap: 10px;
   }
 
   .service-card {
-    padding: 8px;
-    gap: 4px;
+    padding: 11px;
+    gap: 6px;
     border-radius: 10px;
   }
 
   .service-card-banner {
-    height: 66px;
-    padding: 3px;
-    border-radius: 6px;
+    height: 100px;
+    padding: 5px;
   }
 
   .service-title {
-    font-size: 11.5px;
-    line-height: 1.2;
+    font-size: 14px;
   }
 
   .service-desc {
-    font-size: 9.5px;
-    line-height: 1.3;
-    -webkit-line-clamp: 2;
-    -webkit-box-orient: vertical;
-    display: -webkit-box;
-    overflow: hidden;
-  }
-
-  .service-arrow-wrap {
-    width: 18px;
-    height: 18px;
-  }
-
-  .service-arrow-icon {
-    width: 10px;
-    height: 10px;
-  }
-
-  .service-cta-text {
-    font-size: 9.5px;
+    font-size: 11.5px;
+    line-height: 1.4;
   }
 }
 
@@ -1332,13 +1297,16 @@
     padding: 18px;
     gap: 14px;
   }
+
   .product-preview {
     height: 165px;
     padding: 12px;
   }
+
   .product-title {
     font-size: 18.5px;
   }
+
   .product-desc {
     font-size: 13.5px;
   }
@@ -1466,6 +1434,7 @@
     gap: 14px;
     padding: 16px;
   }
+
   .why-cta-bar .btn-primary {
     width: 100%;
     justify-content: center;
@@ -1642,27 +1611,33 @@
   .ratings-v2-banner {
     padding: 24px 20px;
   }
+
   .ratings-v2-headline {
     font-size: 18px;
   }
+
   .ratings-v2-desc {
     font-size: 13.5px;
     margin-bottom: 18px;
   }
+
   .ratings-v2-bottom-bar {
     flex-direction: column;
     align-items: stretch;
     gap: 16px;
   }
+
   .ratings-v2-btn {
     justify-content: center;
     width: 100%;
   }
+
   .ratings-v2-metrics-row {
     width: 100%;
     flex-direction: column;
     gap: 10px;
   }
+
   .ratings-v2-metric-chip {
     width: 100%;
     justify-content: space-between;
@@ -1957,13 +1932,13 @@
   transform: scale(1.05);
 }
 
-.social-contact-item > svg {
+.social-contact-item>svg {
   color: #38bdf8;
   transition: transform 0.25s ease;
   flex-shrink: 0;
 }
 
-.social-contact-item:hover > svg {
+.social-contact-item:hover>svg {
   transform: translateX(4px);
   color: #ffffff;
 }
@@ -2136,10 +2111,12 @@
     padding: 48px 24px 32px 24px;
     border-radius: 0;
   }
+
   .footer-top {
     grid-template-columns: 1fr;
     gap: 36px;
   }
+
   .footer-bottom {
     flex-direction: column;
     gap: 16px;
@@ -2242,6 +2219,7 @@
   .leaders-grid {
     grid-template-columns: 1fr;
   }
+
   .executive-photo-wrap {
     height: 340px;
   }
@@ -2848,12 +2826,15 @@ select:focus {
     grid-template-columns: 1fr;
     gap: 36px;
   }
+
   .service-features-grid {
     grid-template-columns: repeat(2, 1fr);
   }
+
   .process-steps-grid {
     grid-template-columns: repeat(2, 1fr);
   }
+
   .service-cta-card {
     flex-direction: column;
     padding: 32px 24px;
@@ -2867,10 +2848,12 @@ select:focus {
     grid-template-columns: 1fr;
     gap: 14px;
   }
+
   .process-steps-grid {
     grid-template-columns: 1fr;
     gap: 12px;
   }
+
   .service-hero-chips {
     grid-template-columns: 1fr;
   }
@@ -2956,8 +2939,15 @@ select:focus {
 }
 
 @keyframes certV2BorderFlow {
-  0%, 100% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
+
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
 }
 
 .cert-v2-card-inner {
@@ -3084,9 +3074,20 @@ select:focus {
 }
 
 @keyframes certV2Pulse {
-  0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
-  70% { transform: scale(1); box-shadow: 0 0 0 8px rgba(16, 185, 129, 0); }
-  100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+  0% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7);
+  }
+
+  70% {
+    transform: scale(1);
+    box-shadow: 0 0 0 8px rgba(16, 185, 129, 0);
+  }
+
+  100% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(16, 185, 129, 0);
+  }
 }
 
 .cert-v2-risk-pill {
@@ -3240,10 +3241,12 @@ select:focus {
     gap: 24px;
     padding: 24px 28px;
   }
+
   .cert-v2-img-frame {
     width: 120px;
     height: 120px;
   }
+
   .cert-v2-title {
     font-size: 20px;
   }
@@ -3254,9 +3257,11 @@ select:focus {
   .cert-v2-section {
     padding: 16px 0 24px 0;
   }
+
   .cert-v2-card {
     border-radius: 18px;
   }
+
   .cert-v2-card-inner {
     grid-template-columns: 1fr;
     gap: 18px;
@@ -3264,56 +3269,69 @@ select:focus {
     text-align: center;
     border-radius: 16px;
   }
+
   .cert-v2-visual {
     flex-direction: row;
     justify-content: center;
     gap: 12px;
   }
+
   .cert-v2-img-frame {
     width: 72px;
     height: 72px;
   }
+
   .cert-v2-badge-img {
     padding: 6px;
     border-radius: 12px;
   }
+
   .cert-v2-ring {
     inset: -4px;
     border-radius: 16px;
   }
+
   .cert-v2-msme-tag {
     font-size: 10px;
     padding: 3px 10px;
   }
+
   .cert-v2-status-row {
     justify-content: center;
   }
+
   .cert-v2-title {
     font-size: 18px;
     line-height: 1.3;
   }
+
   .cert-v2-desc {
     font-size: 12.5px;
     line-height: 1.55;
   }
+
   .cert-v2-chips {
     grid-template-columns: 1fr;
     gap: 6px;
     text-align: left;
   }
+
   .cert-v2-chip {
     padding: 7px 12px;
     font-size: 11.5px;
     border-radius: 8px;
   }
+
   .cert-v2-chip-check {
     width: 18px;
     height: 18px;
     font-size: 9px;
   }
+
   .cert-v2-actions {
     justify-content: center;
   }
+
   .cert-v2-btn-primary,
   .cert-v2-btn-outline {
     flex: 1;
@@ -3495,10 +3513,12 @@ select:focus {
     grid-template-columns: 1fr;
     gap: 32px;
   }
+
   .cert-pillars-grid {
     grid-template-columns: 1fr;
     gap: 16px;
   }
+
   .cert-trust-card {
     padding: 32px 24px;
   }
@@ -3661,11 +3681,35 @@ select:focus {
   flex-shrink: 0;
 }
 
-.course-track-icon.icon-fullstack { background: #eff6ff; color: #0055fe; border: 1px solid #bfdbfe; }
-.course-track-icon.icon-python { background: #fefce8; color: #ca8a04; border: 1px solid #fef08a; }
-.course-track-icon.icon-java { background: #fff1f2; color: #e11d48; border: 1px solid #fecdd3; }
-.course-track-icon.icon-web { background: #f0fdf4; color: #16a34a; border: 1px solid #bbf7d0; }
-.course-track-icon.icon-soon { background: #f1f5f9; color: #64748b; border: 1px solid #cbd5e1; }
+.course-track-icon.icon-fullstack {
+  background: #eff6ff;
+  color: #0055fe;
+  border: 1px solid #bfdbfe;
+}
+
+.course-track-icon.icon-python {
+  background: #fefce8;
+  color: #ca8a04;
+  border: 1px solid #fef08a;
+}
+
+.course-track-icon.icon-java {
+  background: #fff1f2;
+  color: #e11d48;
+  border: 1px solid #fecdd3;
+}
+
+.course-track-icon.icon-web {
+  background: #f0fdf4;
+  color: #16a34a;
+  border: 1px solid #bbf7d0;
+}
+
+.course-track-icon.icon-soon {
+  background: #f1f5f9;
+  color: #64748b;
+  border: 1px solid #cbd5e1;
+}
 
 .course-track-tag {
   font-size: 11px;
@@ -3761,9 +3805,11 @@ select:focus {
   .cert-dual-grid {
     grid-template-columns: 1fr;
   }
+
   .course-tracks-grid {
     grid-template-columns: 1fr;
   }
+
   .cert-fee-banner {
     flex-direction: column;
     align-items: flex-start;
@@ -3790,8 +3836,13 @@ select:focus {
 }
 
 @keyframes fadeInModal {
-  from { opacity: 0; }
-  to { opacity: 1; }
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
 }
 
 .course-modal-card {
@@ -3812,8 +3863,15 @@ select:focus {
 }
 
 @keyframes popInModal {
-  from { transform: scale(0.92) translateY(10px); opacity: 0; }
-  to { transform: scale(1) translateY(0); opacity: 1; }
+  from {
+    transform: scale(0.92) translateY(10px);
+    opacity: 0;
+  }
+
+  to {
+    transform: scale(1) translateY(0);
+    opacity: 1;
+  }
 }
 
 .course-modal-close {
@@ -3908,374 +3966,3 @@ select:focus {
 .course-modal-btn-link:hover {
   color: #38bdf8;
 }
-
-/* ==========================================================================
-   MOBILE UI OPTIMIZATION (Compacted Heights, 2-Row Services & Crisp Proportions)
-   Scoped strictly to max-width: 809px and max-width: 480px to protect Desktop UI
-   ========================================================================== */
-@media (max-width: 809px) {
-  /* Section Spacing & Heights */
-  .section {
-    padding-top: 36px !important;
-    padding-bottom: 36px !important;
-  }
-
-  .hero-section {
-    padding-top: 20px !important;
-    padding-bottom: 32px !important;
-  }
-
-  .service-hero-section {
-    padding-top: 20px !important;
-    padding-bottom: 28px !important;
-  }
-
-  .team-hero {
-    padding-top: 24px !important;
-    padding-bottom: 32px !important;
-  }
-
-  /* Headings & Typography - Compact Line Height & Font Size */
-  .hero-headline {
-    font-size: 26px !important;
-    line-height: 1.15 !important;
-    letter-spacing: -0.02em !important;
-    margin-bottom: 10px !important;
-  }
-
-  .hero-serif-title {
-    font-size: 26px !important;
-    line-height: 1.15 !important;
-    margin-bottom: 12px !important;
-  }
-
-  .hero-description {
-    font-size: 13.5px !important;
-    line-height: 1.45 !important;
-    margin-bottom: 16px !important;
-  }
-
-  .section-title {
-    font-size: 22px !important;
-    line-height: 1.18 !important;
-    margin-bottom: 10px !important;
-  }
-
-  .section-title.title-lg {
-    font-size: 24px !important;
-    line-height: 1.18 !important;
-  }
-
-  .section-tag {
-    font-size: 11px !important;
-    margin-bottom: 6px !important;
-  }
-
-  .section-desc {
-    font-size: 13px !important;
-    line-height: 1.45 !important;
-  }
-
-  /* Compact Action Buttons & Icons */
-  .hero-actions {
-    gap: 8px !important;
-    margin-top: 8px !important;
-  }
-
-  .btn-primary,
-  .btn-secondary,
-  .hero-pill-btn {
-    padding: 8px 14px !important;
-    font-size: 12.5px !important;
-    gap: 6px !important;
-    border-radius: 8px !important;
-    min-height: 38px !important;
-  }
-
-  .btn-icon {
-    width: 13px !important;
-    height: 13px !important;
-  }
-
-  /* Compact Service Graphic Banners & Cards */
-  .service-hero-split {
-    gap: 20px !important;
-  }
-
-  .service-hero-graphic-card {
-    padding: 12px !important;
-    border-radius: 14px !important;
-    gap: 10px !important;
-  }
-
-  .service-hero-badge-top {
-    font-size: 10.5px !important;
-    padding: 3px 8px !important;
-    gap: 5px !important;
-  }
-
-  .service-hero-badge-top svg {
-    width: 11px !important;
-    height: 11px !important;
-  }
-
-  .service-hero-img-wrap {
-    height: 120px !important;
-    padding: 6px !important;
-    border-radius: 10px !important;
-  }
-
-  .service-hero-chips {
-    grid-template-columns: repeat(2, 1fr) !important;
-    gap: 6px !important;
-  }
-
-  .service-hero-chip {
-    padding: 5px 8px !important;
-    font-size: 10.5px !important;
-    gap: 5px !important;
-    border-radius: 8px !important;
-  }
-
-  .service-chip-icon {
-    width: 18px !important;
-    height: 18px !important;
-    font-size: 11px !important;
-  }
-
-  /* Services Grid - Strictly 2 Columns Across All Mobile Screen Sizes */
-  .services-grid {
-    grid-template-columns: repeat(2, 1fr) !important;
-    gap: 10px !important;
-    margin-top: 14px !important;
-  }
-
-  .service-card {
-    padding: 8px !important;
-    gap: 6px !important;
-    border-radius: 10px !important;
-    min-height: auto !important;
-  }
-
-  .service-card-banner {
-    height: 72px !important;
-    padding: 4px !important;
-    border-radius: 7px !important;
-  }
-
-  .service-title {
-    font-size: 12px !important;
-    font-weight: 700 !important;
-    line-height: 1.22 !important;
-    margin-bottom: 2px !important;
-  }
-
-  .service-desc {
-    font-size: 10px !important;
-    line-height: 1.32 !important;
-    -webkit-line-clamp: 2 !important;
-    -webkit-box-orient: vertical !important;
-    display: -webkit-box !important;
-    overflow: hidden !important;
-    margin-bottom: 2px !important;
-  }
-
-  .service-cta-text {
-    font-size: 10px !important;
-    font-weight: 600 !important;
-  }
-
-  .service-arrow-wrap {
-    width: 18px !important;
-    height: 18px !important;
-  }
-
-  .service-arrow-icon {
-    width: 10px !important;
-    height: 10px !important;
-  }
-
-  /* Compact Service Detail Features & Process Grids */
-  .service-features-grid,
-  .process-steps-grid {
-    grid-template-columns: repeat(2, 1fr) !important;
-    gap: 8px !important;
-  }
-
-  .service-feature-card,
-  .process-step-card {
-    padding: 10px !important;
-    border-radius: 10px !important;
-    gap: 6px !important;
-  }
-
-  .service-feature-icon {
-    width: 28px !important;
-    height: 28px !important;
-    border-radius: 7px !important;
-  }
-
-  .service-feature-icon svg {
-    width: 14px !important;
-    height: 14px !important;
-  }
-
-  .service-feature-title,
-  .process-step-title {
-    font-size: 12.5px !important;
-    line-height: 1.25 !important;
-  }
-
-  .service-feature-desc,
-  .process-step-desc {
-    font-size: 10.5px !important;
-    line-height: 1.35 !important;
-  }
-
-  .process-step-num {
-    width: 24px !important;
-    height: 24px !important;
-    font-size: 11px !important;
-    border-radius: 6px !important;
-  }
-
-  /* Compact Partners Cards & Banners */
-  .partners-grid {
-    gap: 12px !important;
-    margin-top: 14px !important;
-  }
-
-  .partner-card-v2 {
-    padding: 12px !important;
-    border-radius: 12px !important;
-    gap: 8px !important;
-  }
-
-  .partner-banner-wrap {
-    height: 100px !important;
-    border-radius: 8px !important;
-    padding: 6px !important;
-  }
-
-  .partner-title {
-    font-size: 14.5px !important;
-  }
-
-  .partner-desc {
-    font-size: 11px !important;
-    line-height: 1.35 !important;
-  }
-
-  /* Compact Certifications */
-  .cert-v2-card {
-    padding: 12px !important;
-    border-radius: 12px !important;
-  }
-
-  .cert-v2-banner {
-    height: 115px !important;
-    border-radius: 8px !important;
-  }
-
-  .cert-v2-title {
-    font-size: 15px !important;
-  }
-
-  .cert-v2-desc {
-    font-size: 11.5px !important;
-    line-height: 1.35 !important;
-  }
-
-  .cert-v2-btn-primary,
-  .cert-v2-btn-outline {
-    padding: 8px 14px !important;
-    font-size: 12px !important;
-  }
-
-  /* Compact Leaders / Team Grid */
-  .leaders-grid {
-    grid-template-columns: repeat(2, 1fr) !important;
-    gap: 10px !important;
-    margin-top: 16px !important;
-  }
-
-  .executive-card {
-    border-radius: 12px !important;
-  }
-
-  .executive-photo-wrap {
-    height: 140px !important;
-  }
-
-  .executive-info {
-    padding: 10px 8px !important;
-    gap: 3px !important;
-  }
-
-  .executive-role {
-    font-size: 10.5px !important;
-  }
-
-  .executive-name {
-    font-size: 13.5px !important;
-  }
-
-  /* Compact Rate Us & Stats */
-  .rate-us-grid {
-    gap: 10px !important;
-  }
-
-  .rate-card {
-    padding: 12px !important;
-    border-radius: 10px !important;
-  }
-
-  .rate-score {
-    font-size: 24px !important;
-  }
-}
-
-@media (max-width: 480px) {
-  .hero-headline,
-  .hero-serif-title {
-    font-size: 23px !important;
-  }
-
-  .section-title {
-    font-size: 19px !important;
-  }
-
-  .section-title.title-lg {
-    font-size: 21px !important;
-  }
-
-  .services-grid {
-    grid-template-columns: repeat(2, 1fr) !important;
-    gap: 8px !important;
-  }
-
-  .service-card {
-    padding: 7px !important;
-  }
-
-  .service-card-banner {
-    height: 60px !important;
-  }
-
-  .service-title {
-    font-size: 11px !important;
-  }
-
-  .service-desc {
-    font-size: 9px !important;
-  }
-
-  .service-hero-img-wrap {
-    height: 105px !important;
-  }
-
-  .executive-photo-wrap {
-    height: 125px !important;
-  }
-}
-
