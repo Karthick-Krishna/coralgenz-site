@@ -143,4 +143,24 @@ document.addEventListener('click', (e) => {
 
 window.toggleThreeDotsMenu = toggleThreeDotsMenu;
 
+/* Certification Card Dropdown Toggle */
+function toggleCertDropdown(e) {
+  if (e) e.preventDefault();
+  const content = document.getElementById('certDropdownContent');
+  const toggleBtn = document.querySelector('.cert-v2-dropdown-toggle');
+  if (content && toggleBtn) {
+    const isOpen = content.classList.contains('open');
+    if (isOpen) {
+      content.classList.remove('open');
+      toggleBtn.classList.remove('active');
+    } else {
+      content.classList.add('open');
+      toggleBtn.classList.add('active');
+    }
+  }
+}
+window.toggleCertDropdown = toggleCertDropdown;
+
+
+
 
