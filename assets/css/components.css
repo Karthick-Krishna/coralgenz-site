@@ -747,18 +747,18 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 16px 36px;
+  padding: 10px 28px;
   border-radius: var(--radius-full);
   border: 1.5px solid #0f172a;
   background: #ffffff;
-  max-width: 900px;
-  margin: 0 auto 36px auto;
+  max-width: 800px;
+  margin: 0 auto 24px auto;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
 }
 
 .partner-pill-title {
   font-family: var(--font-satoshi);
-  font-size: 48px;
+  font-size: 32px;
   font-weight: 500;
   letter-spacing: 0.05em;
   text-transform: uppercase;
@@ -768,8 +768,8 @@
 .partner-mini-badge {
   display: flex;
   align-items: center;
-  gap: 12px;
-  padding: 10px 22px;
+  gap: 10px;
+  padding: 6px 16px;
   background: #000000;
   border-radius: var(--radius-full);
   color: #ffffff;
@@ -782,7 +782,7 @@
 }
 
 .partner-mini-badge img {
-  height: 22px;
+  height: 18px;
   width: auto;
 }
 
@@ -998,8 +998,8 @@
 .partners-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 32px;
-  margin-top: 40px;
+  gap: 24px;
+  margin-top: 24px;
 }
 
 @media (max-width: 809px) {
@@ -1010,13 +1010,13 @@
 
 .partner-card-dark {
   position: relative;
-  border-radius: 28px;
-  padding: 44px 36px 36px 36px;
+  border-radius: 24px;
+  padding: 24px 24px 20px 24px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  min-height: 480px;
+  min-height: 310px;
   text-align: center;
   border: 1px solid rgba(255, 255, 255, 0.12);
   box-shadow: 0 16px 45px -10px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.12);
@@ -1030,8 +1030,8 @@
   position: absolute;
   top: -80px;
   right: -80px;
-  width: 260px;
-  height: 260px;
+  width: 220px;
+  height: 220px;
   background: radial-gradient(circle, rgba(1, 118, 211, 0.22) 0%, transparent 70%);
   pointer-events: none;
 }
@@ -1041,8 +1041,8 @@
   position: absolute;
   top: -80px;
   right: -80px;
-  width: 260px;
-  height: 260px;
+  width: 220px;
+  height: 220px;
   background: radial-gradient(circle, rgba(0, 164, 239, 0.22) 0%, transparent 70%);
   pointer-events: none;
 }
@@ -1066,20 +1066,20 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 12px;
+  gap: 6px;
   z-index: 1;
 }
 
 .partner-badge-glow {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
-  padding: 6px 16px;
+  gap: 6px;
+  padding: 4px 12px;
   border-radius: var(--radius-full);
   font-family: var(--font-space);
-  font-size: 11.5px;
+  font-size: 11px;
   font-weight: 700;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
 }
 
@@ -1096,8 +1096,8 @@
 }
 
 .partner-badge-dot {
-  width: 6px;
-  height: 6px;
+  width: 5px;
+  height: 5px;
   border-radius: 50%;
   background: currentColor;
   box-shadow: 0 0 8px currentColor;
@@ -1105,7 +1105,7 @@
 
 .partner-card-label {
   font-family: var(--font-satoshi), sans-serif;
-  font-size: 26px;
+  font-size: 20px;
   font-weight: 900;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -1114,16 +1114,16 @@
 
 .partner-card-img-box {
   width: 100%;
-  max-width: 260px;
-  height: 140px;
+  max-width: 220px;
+  height: 80px;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 20px 0;
-  padding: 16px 24px;
+  margin: 12px 0;
+  padding: 10px 18px;
   background: rgba(255, 255, 255, 0.04);
   border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 20px;
+  border-radius: 16px;
   z-index: 1;
   transition: all 0.35s ease;
 }
@@ -1144,19 +1144,19 @@
 .partner-card-highlights {
   display: flex;
   flex-wrap: wrap;
-  gap: 8px;
+  gap: 6px;
   justify-content: center;
-  margin-bottom: 28px;
+  margin-bottom: 16px;
   z-index: 1;
 }
 
 .partner-card-highlights span {
-  padding: 7px 14px;
+  padding: 5px 12px;
   background: rgba(255, 255, 255, 0.06);
   border: 1px solid rgba(255, 255, 255, 0.12);
   border-radius: var(--radius-full);
   font-family: var(--font-inter);
-  font-size: 12.5px;
+  font-size: 11.5px;
   color: #e2e8f0;
   font-weight: 600;
   transition: all 0.25s ease;
@@ -1172,14 +1172,14 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 10px;
+  gap: 8px;
   width: 100%;
-  padding: 15px 32px;
+  padding: 10px 24px;
   border-radius: var(--radius-full);
   border: 1.5px solid rgba(255, 255, 255, 0.6);
   color: #ffffff;
   font-family: var(--font-satoshi);
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 800;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -2243,8 +2243,8 @@
    PARTNER SPECIFIC PAGES (SALESFORCE / MICROSOFT)
    ========================================================================== */
 .partner-hero {
-  padding-top: 60px;
-  padding-bottom: 80px;
+  padding-top: 40px;
+  padding-bottom: 50px;
 }
 
 .partner-hero-split {
@@ -2270,9 +2270,9 @@
 
 .partner-hero-glass-card {
   width: 100%;
-  max-width: 420px;
-  padding: 36px 28px;
-  border-radius: 28px;
+  max-width: 380px;
+  padding: 24px 20px;
+  border-radius: 24px;
   background: radial-gradient(circle at 50% 0%, #0f172a 0%, #030712 100%);
   border: 1px solid rgba(255, 255, 255, 0.12);
   box-shadow: 0 25px 60px rgba(0, 0, 0, 0.35);
@@ -2309,12 +2309,12 @@
 
 .partner-hero-logo-wrap {
   width: 100%;
-  max-width: 260px;
-  height: 140px;
+  max-width: 220px;
+  height: 80px;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 12px 0 20px;
+  margin: 8px 0 14px;
 }
 
 .partner-hero-logo-wrap img {
