@@ -33,11 +33,6 @@
       </nav>
 
       <div class="nav-actions">
-        <a href="#contact" class="btn-primary">
-          Contact us
-          <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
-        </a>
-
         <!-- 3-Dot Quick Options Dropdown -->
         <div class="three-dots-wrapper">
           <button class="three-dots-btn" onclick="toggleThreeDotsMenu(event)" aria-label="More options" title="More options">
@@ -85,36 +80,94 @@
     </div>
   </div>
 
-  <!-- Hero Section (Matching Coralgenz.co.in Screenshot 2) -->
-  <section class="section hero-section" style="background: #f4f6fa; padding-top: 40px; padding-bottom: 60px;">
-    <div class="container hero-grid">
-      <div class="hero-content reveal-init">
-        <div class="section-tag" style="color: #64748b; font-weight: 600; font-size: 13px; letter-spacing: 0.1em; margin-bottom: 16px;">
-          INFORMATION TECHNOLOGY
+  <!-- Hero / Landing Section (Ultra-Professional Tech Agency Design) -->
+  <section class="hero-v4-section" id="hero">
+    <div class="hero-v4-bg-glow"></div>
+    <div class="hero-v4-grid-overlay"></div>
+
+    <div class="container hero-v4-grid">
+      <!-- Left Column: Content -->
+      <div class="hero-v4-content reveal-init">
+
+        <!-- Top Pill Badge -->
+        <div class="hero-v4-badge">
+          <span class="hero-v4-badge-pulse"></span>
+          <span class="hero-v4-badge-text">INFORMATION TECHNOLOGY & DIGITAL SERVICES</span>
         </div>
-        <h1 class="hero-serif-title">Coralgenz Global</h1>
-        <p class="hero-description" style="font-size: 16px; color: #334155; line-height: 1.7; margin-bottom: 32px; max-width: 580px;">
+
+        <!-- Headline -->
+        <h1 class="hero-v4-title">
+          Coralgenz <span class="hero-v4-gradient">Global</span>
+        </h1>
+
+        <p class="hero-v4-subtitle">
+          Building Digital Products &amp; Enterprise IT Systems
+        </p>
+
+        <!-- Rich Description -->
+        <p class="hero-v4-desc">
           Coralgenz Global is a dynamic Information Technology company based in Coimbatore, Tamil Nadu, India. The company specializes in building digital products and providing high-quality IT services. Their work ranges from designing simple websites to developing complex enterprise systems and offering expert digital consulting.
         </p>
-        <div class="hero-actions flex items-center gap-4">
-          <a href="mailto:coralgenz@gmail.com" class="hero-pill-btn">
-            Contact us
-            <div class="pill-arrow-circle">
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
-            </div>
+
+        <!-- Feature Chips Grid -->
+        <div class="hero-v4-chips-grid">
+          <div class="hero-v4-chip">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#0066ff" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            <span>Custom Software &amp; MVPs</span>
+          </div>
+          <div class="hero-v4-chip">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#0066ff" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            <span>Full-Stack Cloud Systems</span>
+          </div>
+          <div class="hero-v4-chip">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#0066ff" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            <span>Coimbatore HQ &bull; Global Reach</span>
+          </div>
+          <div class="hero-v4-chip">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#0066ff" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            <span>Expert Digital Consulting</span>
+          </div>
+        </div>
+
+        <!-- Action CTAs -->
+        <div class="hero-v4-actions">
+          <a href="#services" class="hero-v4-btn-primary">
+            <span>Explore Services</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
           </a>
-          <a href="https://in.linkedin.com/company/coralgenz" target="_blank" rel="noopener noreferrer" class="hero-pill-btn" style="background: #2b3a54;">
-            LINKEDIN
-            <div class="pill-arrow-circle">
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
-            </div>
+          <a href="mailto:coralgenz@gmail.com" class="hero-v4-btn-secondary">
+            <span>Contact Us</span>
+          </a>
+          <a href="https://in.linkedin.com/company/coralgenz" target="_blank" rel="noopener noreferrer" class="hero-v4-btn-linkedin" title="Follow Coralgenz Global on LinkedIn">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/></svg>
+            <span>LinkedIn</span>
           </a>
         </div>
+
+        <!-- Trust Metric Footer Bar -->
+        <div class="hero-v4-trust-bar">
+          <div class="hero-v4-trust-item">
+            <span class="hero-v4-trust-val">100%</span>
+            <span class="hero-v4-trust-lbl">Quality Commitment</span>
+          </div>
+          <div class="hero-v4-trust-divider"></div>
+          <div class="hero-v4-trust-item">
+            <span class="hero-v4-trust-val">Enterprise</span>
+            <span class="hero-v4-trust-lbl">Scalable Architecture</span>
+          </div>
+          <div class="hero-v4-trust-divider"></div>
+          <div class="hero-v4-trust-item">
+            <span class="hero-v4-trust-val">MSME</span>
+            <span class="hero-v4-trust-lbl">Registered IT Company</span>
+          </div>
+        </div>
+
       </div>
 
-      <div class="hero-visual reveal-init reveal-delay-2 flex items-center justify-center">
+      <!-- Right Column: Logo Only Visual Showcase -->
+      <div class="hero-v4-visual reveal-init reveal-delay-1 flex items-center justify-center">
         <div class="hero-logo-card">
-          <img src="assets/images/DVyu6tz4dqPirA4TwAJZUz5CUw.png" alt="Coralgenz Logo">
+          <img src="assets/images/DVyu6tz4dqPirA4TwAJZUz5CUw.png" alt="Coralgenz Global Logo">
         </div>
       </div>
     </div>
@@ -170,31 +223,50 @@
               Unlike generic certificate mills, Coralgenz Global operates on a strict, excellence-driven standard. <strong>No fees are charged upfront during application</strong>—receive your official verifiable Offer Letter first, and pay a small registration fee only after receiving your Offer Letter to confirm your seat.
             </p>
 
-            <!-- Trust Chips Grid -->
-            <div class="cert-v2-chips">
-              <div class="cert-v2-chip">
-                <span class="cert-v2-chip-check">✓</span>
-                ₹0 Upfront Application Fee
-              </div>
-              <div class="cert-v2-chip">
-                <span class="cert-v2-chip-check">✓</span>
-                Offer Letter Issued First
-              </div>
-              <div class="cert-v2-chip">
-                <span class="cert-v2-chip-check">✓</span>
-                Small Registration Fee After Offer Letter
-              </div>
-              <div class="cert-v2-chip">
-                <span class="cert-v2-chip-check">✓</span>
-                2-in-1 Certificate &amp; Letter of Recommendation
-              </div>
-              <div class="cert-v2-chip">
-                <span class="cert-v2-chip-check">✓</span>
-                Add to LinkedIn Experience as Internship
-              </div>
-              <div class="cert-v2-chip">
-                <span class="cert-v2-chip-check">✓</span>
-                Registered MSME Credential
+            <!-- Interactive Features Dropdown Accordion -->
+            <div class="cert-v2-dropdown-wrap">
+              <button class="cert-v2-dropdown-toggle" onclick="toggleCertDropdown(event)">
+                <div class="cert-v2-dropdown-label">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+                  <span>Program Key Highlights &amp; Benefits</span>
+                </div>
+                <div class="cert-v2-dropdown-arrow">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                </div>
+              </button>
+
+              <div id="certDropdownContent" class="cert-v2-dropdown-content">
+                <p class="cert-dropdown-note">
+                  ✉️ <strong>Offer Letter to confirm your seat</strong> issued prior to small registration fee payment.
+                </p>
+
+                <!-- Trust Chips Grid -->
+                <div class="cert-v2-chips">
+                  <div class="cert-v2-chip">
+                    <span class="cert-v2-chip-check">✓</span>
+                    ₹0 Upfront Application Fee
+                  </div>
+                  <div class="cert-v2-chip">
+                    <span class="cert-v2-chip-check">✓</span>
+                    Offer Letter Issued First
+                  </div>
+                  <div class="cert-v2-chip">
+                    <span class="cert-v2-chip-check">✓</span>
+                    Small Registration Fee After Offer Letter
+                  </div>
+                  <div class="cert-v2-chip">
+                    <span class="cert-v2-chip-check">✓</span>
+                    2-in-1 Certificate &amp; Letter of Recommendation
+                  </div>
+                  <div class="cert-v2-chip">
+                    <span class="cert-v2-chip-check">✓</span>
+                    Add to LinkedIn Experience as Internship
+                  </div>
+                  <div class="cert-v2-chip">
+                    <span class="cert-v2-chip-check">✓</span>
+                    Registered MSME Credential
+                  </div>
+                </div>
               </div>
             </div>
 
