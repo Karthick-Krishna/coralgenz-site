@@ -161,6 +161,136 @@ function toggleCertDropdown(e) {
 }
 window.toggleCertDropdown = toggleCertDropdown;
 
+/* Values Principle Studio - Slider & Filter Logic */
+let currentValIndex = 0;
 
+function updateValueDots(index) {
+  const dots = document.querySelectorAll('#valuesDots .v-dot');
+  dots.forEach((dot, i) => {
+    dot.classList.toggle('active', i === index);
+  });
+}
 
+function slideValues(direction) {
+  const track = document.getElementById('valuesTrack');
+  const cards = document.querySelectorAll('.v-slide-card:not([style*="display: none"])');
+  if (!track || cards.length === 0) return;
+
+  currentValIndex += direction;
+  if (currentValIndex < 0) currentValIndex = cards.length - 1;
+  if (currentValIndex >= cards.length) currentValIndex = 0;
+
+  const targetCard = cards[currentValIndex];
+  if (targetCard) {
+    targetCard.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+  }
+  updateValueDots(currentValIndex);
+}
+
+function jumpValueSlide(index) {
+  const cards = document.querySelectorAll('.v-slide-card:not([style*="display: none"])');
+  if (!cards[index]) return;
+  currentValIndex = index;
+  cards[index].scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+  updateValueDots(index);
+}
+
+function filterValues(category) {
+  const tabs = document.querySelectorAll('.v-pill-tab');
+  tabs.forEach(tab => {
+    const isSelected = tab.getAttribute('onclick')?.includes(`'${category}'`);
+    tab.classList.toggle('active', isSelected);
+  });
+
+  const cards = document.querySelectorAll('.v-slide-card');
+  let firstVisible = -1;
+  cards.forEach((card, idx) => {
+    const cardCat = card.getAttribute('data-category');
+    if (category === 'all' || cardCat === category) {
+      card.style.display = 'flex';
+      if (firstVisible === -1) firstVisible = idx;
+    } else {
+      card.style.display = 'none';
+    }
+  });
+
+  if (firstVisible !== -1) {
+    jumpValueSlide(0);
+  }
+}
+
+window.slideValues = slideValues;
+window.jumpValueSlide = jumpValueSlide;
+window.filterValues = filterValues;
+
+/* Why Choose Us - Slider Logic */
+let currentWhyIndex = 0;
+
+function updateWhyDots(index) {
+  const dots = document.querySelectorAll('#whyDots .why-dot');
+  dots.forEach((dot, i) => {
+    dot.classList.toggle('active', i === index);
+  });
+}
+
+function slideWhy(direction) {
+  const track = document.getElementById('whyTrack');
+  const cards = track ? track.querySelectorAll('.why-graphical-card') : [];
+  if (!track || cards.length === 0) return;
+
+  currentWhyIndex += direction;
+  if (currentWhyIndex < 0) currentWhyIndex = cards.length - 1;
+  if (currentWhyIndex >= cards.length) currentWhyIndex = 0;
+
+  const targetCard = cards[currentWhyIndex];
+  if (targetCard) {
+    targetCard.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'start' });
+  }
+  updateWhyDots(currentWhyIndex);
+}
+
+function jumpWhySlide(index) {
+  const track = document.getElementById('whyTrack');
+  const cards = track ? track.querySelectorAll('.why-graphical-card') : [];
+  if (!cards[index]) return;
+  currentWhyIndex = index;
+  cards[index].scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'start' });
+  updateWhyDots(index);
+}
+
+window.slideWhy = slideWhy;
+window.jumpWhySlide = jumpWhySlide;
+
+// Auto-sync active dots on scroll/swipe for both tracks
+document.addEventListener('DOMContentLoaded', () => {
+  const whyTrack = document.getElementById('whyTrack');
+  if (whyTrack) {
+    whyTrack.addEventListener('scroll', () => {
+      const cards = whyTrack.querySelectorAll('.why-graphical-card');
+      const trackRect = whyTrack.getBoundingClientRect();
+      cards.forEach((card, idx) => {
+        const cardRect = card.getBoundingClientRect();
+        if (cardRect.left >= trackRect.left - 40 && cardRect.left <= trackRect.left + trackRect.width / 2) {
+          currentWhyIndex = idx;
+          updateWhyDots(idx);
+        }
+      });
+    }, { passive: true });
+  }
+
+  const valuesTrack = document.getElementById('valuesTrack');
+  if (valuesTrack) {
+    valuesTrack.addEventListener('scroll', () => {
+      const cards = valuesTrack.querySelectorAll('.v-slide-card');
+      const trackRect = valuesTrack.getBoundingClientRect();
+      cards.forEach((card, idx) => {
+        const cardRect = card.getBoundingClientRect();
+        if (cardRect.left >= trackRect.left - 40 && cardRect.left <= trackRect.left + trackRect.width / 2) {
+          currentValIndex = idx;
+          updateValueDots(idx);
+        }
+      });
+    }, { passive: true });
+  }
+});
 

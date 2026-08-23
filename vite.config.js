@@ -7,6 +7,8 @@ export default defineConfig({
       input: {
         main: resolve('index.html'),
         team: resolve('team.html'),
+        karthickKrishna: resolve('karthick-krishna.html'),
+        thanvanthH: resolve('thanvanth-h.html'),
         knowMore: resolve('know-more.html'),
         notFound: resolve('404.html'),
         customSoftware: resolve('custom-software-development.html'),
