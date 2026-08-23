@@ -134,6 +134,22 @@ function toggleThreeDotsMenu(e) {
   }
 }
 
+/* Mobile Menu Our Services Dropdown Toggle */
+function toggleMobileServicesMenu(e) {
+  if (e) {
+    e.preventDefault();
+    e.stopPropagation();
+  }
+  const btn = e?.currentTarget || document.querySelector('.mobile-services-toggle');
+  const dropdown = document.getElementById('mobileServicesDropdown');
+  if (btn && dropdown) {
+    btn.classList.toggle('active');
+    dropdown.classList.toggle('open');
+    const isExpanded = dropdown.classList.contains('open');
+    btn.setAttribute('aria-expanded', isExpanded ? 'true' : 'false');
+  }
+}
+
 document.addEventListener('click', (e) => {
   const dropdown = document.getElementById('threeDotsDropdown');
   if (dropdown && !dropdown.contains(e.target) && !e.target.closest('.three-dots-btn')) {
@@ -142,6 +158,7 @@ document.addEventListener('click', (e) => {
 });
 
 window.toggleThreeDotsMenu = toggleThreeDotsMenu;
+window.toggleMobileServicesMenu = toggleMobileServicesMenu;
 
 /* Certification Card Dropdown Toggle */
 function toggleCertDropdown(e) {
@@ -161,7 +178,7 @@ function toggleCertDropdown(e) {
 }
 window.toggleCertDropdown = toggleCertDropdown;
 
-/* Values Principle Studio - Slider & Filter Logic */
+/* Values Principle Studio - Slider & Preview Logic */
 let currentValIndex = 0;
 
 function updateValueDots(index) {
@@ -169,29 +186,31 @@ function updateValueDots(index) {
   dots.forEach((dot, i) => {
     dot.classList.toggle('active', i === index);
   });
+  const chips = document.querySelectorAll('.values-preview-chip');
+  chips.forEach((chip, i) => {
+    chip.classList.toggle('active', i === index);
+  });
 }
 
 function slideValues(direction) {
   const track = document.getElementById('valuesTrack');
-  const cards = document.querySelectorAll('.v-slide-card:not([style*="display: none"])');
+  const cards = track ? track.querySelectorAll('.v-slide-card') : [];
   if (!track || cards.length === 0) return;
 
-  currentValIndex += direction;
-  if (currentValIndex < 0) currentValIndex = cards.length - 1;
-  if (currentValIndex >= cards.length) currentValIndex = 0;
-
-  const targetCard = cards[currentValIndex];
-  if (targetCard) {
-    targetCard.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
-  }
-  updateValueDots(currentValIndex);
+  currentValIndex = (currentValIndex + direction + cards.length) % cards.length;
+  jumpValueSlide(currentValIndex);
 }
 
 function jumpValueSlide(index) {
-  const cards = document.querySelectorAll('.v-slide-card:not([style*="display: none"])');
-  if (!cards[index]) return;
+  const track = document.getElementById('valuesTrack');
+  const cards = track ? track.querySelectorAll('.v-slide-card') : [];
+  if (!track || !cards[index]) return;
   currentValIndex = index;
-  cards[index].scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+  const card = cards[index];
+  const trackLeft = track.getBoundingClientRect().left;
+  const cardLeft = card.getBoundingClientRect().left;
+  const scrollOffset = cardLeft - trackLeft + track.scrollLeft;
+  track.scrollTo({ left: scrollOffset, behavior: 'smooth' });
   updateValueDots(index);
 }
 
@@ -223,13 +242,17 @@ window.slideValues = slideValues;
 window.jumpValueSlide = jumpValueSlide;
 window.filterValues = filterValues;
 
-/* Why Choose Us - Slider Logic */
+/* Why Choose Us - Slider & Preview Logic */
 let currentWhyIndex = 0;
 
 function updateWhyDots(index) {
   const dots = document.querySelectorAll('#whyDots .why-dot');
   dots.forEach((dot, i) => {
     dot.classList.toggle('active', i === index);
+  });
+  const chips = document.querySelectorAll('.why-preview-chip');
+  chips.forEach((chip, i) => {
+    chip.classList.toggle('active', i === index);
   });
 }
 
@@ -238,56 +261,73 @@ function slideWhy(direction) {
   const cards = track ? track.querySelectorAll('.why-graphical-card') : [];
   if (!track || cards.length === 0) return;
 
-  currentWhyIndex += direction;
-  if (currentWhyIndex < 0) currentWhyIndex = cards.length - 1;
-  if (currentWhyIndex >= cards.length) currentWhyIndex = 0;
-
-  const targetCard = cards[currentWhyIndex];
-  if (targetCard) {
-    targetCard.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'start' });
-  }
-  updateWhyDots(currentWhyIndex);
+  currentWhyIndex = (currentWhyIndex + direction + cards.length) % cards.length;
+  jumpWhySlide(currentWhyIndex);
 }
 
 function jumpWhySlide(index) {
   const track = document.getElementById('whyTrack');
   const cards = track ? track.querySelectorAll('.why-graphical-card') : [];
-  if (!cards[index]) return;
+  if (!track || !cards[index]) return;
   currentWhyIndex = index;
-  cards[index].scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'start' });
+  const card = cards[index];
+  const trackLeft = track.getBoundingClientRect().left;
+  const cardLeft = card.getBoundingClientRect().left;
+  const scrollOffset = cardLeft - trackLeft + track.scrollLeft;
+  track.scrollTo({ left: scrollOffset, behavior: 'smooth' });
   updateWhyDots(index);
 }
 
 window.slideWhy = slideWhy;
 window.jumpWhySlide = jumpWhySlide;
 
-// Auto-sync active dots on scroll/swipe for both tracks
+// Auto-sync active preview chips and dots with zero buffering
 document.addEventListener('DOMContentLoaded', () => {
   const whyTrack = document.getElementById('whyTrack');
+  let whyAnimId;
   if (whyTrack) {
     whyTrack.addEventListener('scroll', () => {
-      const cards = whyTrack.querySelectorAll('.why-graphical-card');
-      const trackRect = whyTrack.getBoundingClientRect();
-      cards.forEach((card, idx) => {
-        const cardRect = card.getBoundingClientRect();
-        if (cardRect.left >= trackRect.left - 40 && cardRect.left <= trackRect.left + trackRect.width / 2) {
-          currentWhyIndex = idx;
-          updateWhyDots(idx);
+      if (whyAnimId) cancelAnimationFrame(whyAnimId);
+      whyAnimId = requestAnimationFrame(() => {
+        const cards = whyTrack.querySelectorAll('.why-graphical-card');
+        const trackLeft = whyTrack.getBoundingClientRect().left;
+        let closestIdx = 0;
+        let minDiff = Infinity;
+        cards.forEach((card, idx) => {
+          const diff = Math.abs(card.getBoundingClientRect().left - trackLeft);
+          if (diff < minDiff) {
+            minDiff = diff;
+            closestIdx = idx;
+          }
+        });
+        if (currentWhyIndex !== closestIdx) {
+          currentWhyIndex = closestIdx;
+          updateWhyDots(closestIdx);
         }
       });
     }, { passive: true });
   }
 
   const valuesTrack = document.getElementById('valuesTrack');
+  let valAnimId;
   if (valuesTrack) {
     valuesTrack.addEventListener('scroll', () => {
-      const cards = valuesTrack.querySelectorAll('.v-slide-card');
-      const trackRect = valuesTrack.getBoundingClientRect();
-      cards.forEach((card, idx) => {
-        const cardRect = card.getBoundingClientRect();
-        if (cardRect.left >= trackRect.left - 40 && cardRect.left <= trackRect.left + trackRect.width / 2) {
-          currentValIndex = idx;
-          updateValueDots(idx);
+      if (valAnimId) cancelAnimationFrame(valAnimId);
+      valAnimId = requestAnimationFrame(() => {
+        const cards = valuesTrack.querySelectorAll('.v-slide-card');
+        const trackLeft = valuesTrack.getBoundingClientRect().left;
+        let closestIdx = 0;
+        let minDiff = Infinity;
+        cards.forEach((card, idx) => {
+          const diff = Math.abs(card.getBoundingClientRect().left - trackLeft);
+          if (diff < minDiff) {
+            minDiff = diff;
+            closestIdx = idx;
+          }
+        });
+        if (currentValIndex !== closestIdx) {
+          currentValIndex = closestIdx;
+          updateValueDots(closestIdx);
         }
       });
     }, { passive: true });

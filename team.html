@@ -27,7 +27,22 @@
       <nav class="nav-links">
         <a href="index.html" class="nav-link">Homepage</a>
         <a href="know-more.html" class="nav-link">About</a>
-        <a href="index.html#services" class="nav-link">Specialisations</a>
+        <div class="nav-dropdown-wrapper">
+          <a href="index.html#services" class="nav-link nav-dropdown-btn">
+            <span>Our Services</span>
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </a>
+          <div class="nav-dropdown-menu">
+            <a href="custom-software-development.html" class="nav-dropdown-item">Custom Software Development</a>
+            <a href="mvp-development.html" class="nav-dropdown-item">MVP Development</a>
+            <a href="full-stack-software.html" class="nav-dropdown-item">Full Stack Software</a>
+            <a href="legacy-software-modernization.html" class="nav-dropdown-item">Legacy Software Modernization</a>
+            <a href="pwa-development.html" class="nav-dropdown-item">Progressive Web Applications (PWAs)</a>
+            <a href="modern-admin-dashboards.html" class="nav-dropdown-item">Modern Admin Dashboards</a>
+            <a href="frontend-modernization.html" class="nav-dropdown-item">Frontend Modernization</a>
+            <a href="domain-and-deployment-service.html" class="nav-dropdown-item">Domain &amp; Deployment Service</a>
+          </div>
+        </div>
         <a href="team.html" class="nav-link active">TEAM</a>
         <a href="index.html#contact" class="nav-link">Contact</a>
       </nav>
@@ -48,7 +63,7 @@
               <span>PROGRAMS</span>
             </a>
             <a href="team.html" class="three-dots-item">
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 1-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
               <span>OUR TEAM</span>
             </a>
             <a href="index.html#contact" class="three-dots-item">
@@ -70,7 +85,52 @@
   <div class="mobile-menu">
     <a href="index.html" class="nav-link">Homepage</a>
     <a href="know-more.html" class="nav-link">About</a>
-    <a href="index.html#services" class="nav-link">Specialisations</a>
+    
+    <!-- Mobile Our Services Dropdown -->
+    <div class="mobile-services-dropdown-wrap">
+      <button class="mobile-services-toggle" onclick="toggleMobileServicesMenu(event)" aria-expanded="false">
+        <span>Our Services</span>
+        <div class="services-toggle-meta">
+          <span class="services-count-badge">8</span>
+          <svg class="services-chevron-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </div>
+      </button>
+      <div id="mobileServicesDropdown" class="mobile-services-window">
+        <a href="custom-software-development.html" class="mobile-sub-service-item">
+          <span class="sub-service-bullet"></span>
+          <span>Custom Software Development</span>
+        </a>
+        <a href="mvp-development.html" class="mobile-sub-service-item">
+          <span class="sub-service-bullet"></span>
+          <span>MVP Development</span>
+        </a>
+        <a href="full-stack-software.html" class="mobile-sub-service-item">
+          <span class="sub-service-bullet"></span>
+          <span>Full Stack Software</span>
+        </a>
+        <a href="legacy-software-modernization.html" class="mobile-sub-service-item">
+          <span class="sub-service-bullet"></span>
+          <span>Legacy Software Modernization</span>
+        </a>
+        <a href="pwa-development.html" class="mobile-sub-service-item">
+          <span class="sub-service-bullet"></span>
+          <span>Progressive Web Applications (PWAs)</span>
+        </a>
+        <a href="modern-admin-dashboards.html" class="mobile-sub-service-item">
+          <span class="sub-service-bullet"></span>
+          <span>Modern Admin Dashboards</span>
+        </a>
+        <a href="frontend-modernization.html" class="mobile-sub-service-item">
+          <span class="sub-service-bullet"></span>
+          <span>Frontend Modernization</span>
+        </a>
+        <a href="domain-and-deployment-service.html" class="mobile-sub-service-item">
+          <span class="sub-service-bullet"></span>
+          <span>Domain &amp; Deployment Service</span>
+        </a>
+      </div>
+    </div>
+
     <a href="team.html" class="nav-link active">TEAM</a>
     <a href="index.html#contact" class="nav-link">Contact</a>
     <div style="margin-top: 24px;">
@@ -125,6 +185,182 @@
             </div>
           </div>
         </a>
+      </div>
+
+      <!-- ═══ 12 Senior High-Level Engineering & Technical Leaders ═══ -->
+      <div class="senior-team-section reveal-init" style="margin-top: 56px;">
+        <div class="senior-team-header text-center" style="max-width: 680px; margin: 0 auto 32px auto;">
+          <span class="badge-pill" style="margin-bottom: 8px;">Technical Leadership</span>
+          <h2 class="section-title title-md" style="margin-bottom: 8px;">SENIOR ENGINEERING &amp; SPECIALIST ROLES</h2>
+          <p class="section-desc" style="font-size: 14px; margin: 0 auto; color: #64748b;">
+            High-level domain experts and senior technical leaders driving full-stack engineering, cloud architecture, and security protocols across Coralgenz Global.
+          </p>
+        </div>
+
+        <div class="senior-roles-grid">
+          <!-- Role 1: Cloud Architecture -->
+          <div class="senior-role-card">
+            <div class="senior-role-icon icon-blue">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"></path></svg>
+            </div>
+            <div class="senior-role-info">
+              <span class="senior-role-tag tag-blue">Cloud &amp; Deployment</span>
+              <h4 class="senior-role-title">Lead Cloud Infrastructure Architect</h4>
+              <p class="senior-role-desc">Azure &amp; AWS cloud backends, serverless routing, and multi-region load resilience.</p>
+            </div>
+          </div>
+
+          <!-- Role 2: Full Stack -->
+          <div class="senior-role-card">
+            <div class="senior-role-icon icon-indigo">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+            </div>
+            <div class="senior-role-info">
+              <span class="senior-role-tag tag-indigo">Full-Stack Engineering</span>
+              <h4 class="senior-role-title">Senior Full-Stack Software Lead</h4>
+              <p class="senior-role-desc">High-speed React, Vite &amp; Node.js applications built with zero monolithic debt.</p>
+            </div>
+          </div>
+
+          <!-- Role 3: AI & Automation -->
+          <div class="senior-role-card">
+            <div class="senior-role-icon icon-purple">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+            </div>
+            <div class="senior-role-info">
+              <span class="senior-role-tag tag-purple">AI &amp; Automation</span>
+              <h4 class="senior-role-title">AI Systems &amp; Automation Director</h4>
+              <p class="senior-role-desc">Next-gen LLM agent pipelines, automated code validation, and Copilot AI integrations.</p>
+            </div>
+          </div>
+
+          <!-- Role 4: Cybersecurity -->
+          <div class="senior-role-card">
+            <div class="senior-role-icon icon-emerald">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+            </div>
+            <div class="senior-role-info">
+              <span class="senior-role-tag tag-emerald">Cybersecurity</span>
+              <h4 class="senior-role-title">Enterprise Security &amp; Compliance Lead</h4>
+              <p class="senior-role-desc">AES-256 encryption protocols, SOC2/GDPR standards, and security threat auditing.</p>
+            </div>
+          </div>
+
+          <!-- Role 5: DevOps -->
+          <div class="senior-role-card">
+            <div class="senior-role-icon icon-cyan">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="23 4 23 10 17 10"></polyline><polyline points="1 20 1 14 7 14"></polyline><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"></path></svg>
+            </div>
+            <div class="senior-role-info">
+              <span class="senior-role-tag tag-cyan">DevOps &amp; Release</span>
+              <h4 class="senior-role-title">DevOps &amp; CI/CD Specialist</h4>
+              <p class="senior-role-desc">Automated release pipelines, zero-downtime deployments, and 99.99% uptime SLAs.</p>
+            </div>
+          </div>
+
+          <!-- Role 6: Frontend & UI/UX -->
+          <div class="senior-role-card">
+            <div class="senior-role-icon icon-amber">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+            </div>
+            <div class="senior-role-info">
+              <span class="senior-role-tag tag-amber">Frontend Modernization</span>
+              <h4 class="senior-role-title">Lead UI/UX &amp; Frontend Architect</h4>
+              <p class="senior-role-desc">Human-centered UI design systems, glassmorphic styling, and progressive web apps (PWAs).</p>
+            </div>
+          </div>
+
+          <!-- Role 7: Salesforce Ecosystem -->
+          <div class="senior-role-card">
+            <div class="senior-role-icon icon-blue">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+            </div>
+            <div class="senior-role-info">
+              <span class="senior-role-tag tag-blue">Salesforce Ecosystem</span>
+              <h4 class="senior-role-title">Salesforce Solutions Architect</h4>
+              <p class="senior-role-desc">Lightning Web Components (LWC), Apex cloud APIs, and custom enterprise CRM portals.</p>
+            </div>
+          </div>
+
+          <!-- Role 8: Microsoft Ecosystem -->
+          <div class="senior-role-card">
+            <div class="senior-role-icon icon-indigo">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="1" y="1" width="10" height="10"/><rect x="13" y="1" width="10" height="10"/><rect x="1" y="13" width="10" height="10"/><rect x="13" y="13" width="10" height="10"/></svg>
+            </div>
+            <div class="senior-role-info">
+              <span class="senior-role-tag tag-indigo">Microsoft Partner Cloud</span>
+              <h4 class="senior-role-title">Microsoft Cloud Solutions Architect</h4>
+              <p class="senior-role-desc">Azure enterprise systems, Power Platform workflows, and partner network solutions.</p>
+            </div>
+          </div>
+
+          <!-- Role 9: Legacy Modernization -->
+          <div class="senior-role-card">
+            <div class="senior-role-icon icon-emerald">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            </div>
+            <div class="senior-role-info">
+              <span class="senior-role-tag tag-emerald">Legacy Modernization</span>
+              <h4 class="senior-role-title">Legacy Software Modernization Lead</h4>
+              <p class="senior-role-desc">Converting legacy monolithic systems into modular SOLID architectures with zero downtime.</p>
+            </div>
+          </div>
+
+          <!-- Role 10: MVP Development -->
+          <div class="senior-role-card">
+            <div class="senior-role-icon icon-purple">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"></path></svg>
+            </div>
+            <div class="senior-role-info">
+              <span class="senior-role-tag tag-purple">MVP &amp; Accelerator</span>
+              <h4 class="senior-role-title">MVP Engineering Lead</h4>
+              <p class="senior-role-desc">Rapid startup velocity turning complex specifications into resilient production applications.</p>
+            </div>
+          </div>
+
+          <!-- Role 11: Admin Dashboards & Analytics -->
+          <div class="senior-role-card">
+            <div class="senior-role-icon icon-cyan">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
+            </div>
+            <div class="senior-role-info">
+              <span class="senior-role-tag tag-cyan">Control Portals</span>
+              <h4 class="senior-role-title">Admin Dashboards &amp; Analytics Lead</h4>
+              <p class="senior-role-desc">Real-time control portals, data-rich analytics visualization, and role access workflows.</p>
+            </div>
+          </div>
+
+          <!-- Role 12: Customer Success & SLA -->
+          <div class="senior-role-card">
+            <div class="senior-role-icon icon-amber">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+            </div>
+            <div class="senior-role-info">
+              <span class="senior-role-tag tag-amber">Executive Governance</span>
+              <h4 class="senior-role-title">Customer Success &amp; SLA Director</h4>
+              <p class="senior-role-desc">Founder-level client alignment, 24-hour SLA guarantees, and ongoing feature sprints.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ═══ 20+ Additional Engineering Team Count Banner ═══ -->
+      <div class="extended-team-card reveal-init" style="margin-top: 48px;">
+        <div class="extended-team-content">
+          <div class="extended-badge-row">
+            <span class="ext-pulse-dot"></span>
+            <span class="ext-pill-tag">+20 CORE CONTRIBUTORS</span>
+          </div>
+          <h3 class="extended-team-title">+20 Specialized Engineers &amp; Technical Contributors</h3>
+          <p class="extended-team-desc">
+            Supported by over 20+ dedicated software engineers, cloud architects, QA analysts, and domain specialists powering full-stack deployments across North America, Europe, and Asia-Pacific.
+          </p>
+          <div class="extended-metrics-row">
+            <span class="ext-metric-chip">👥 20+ Technical Specialists</span>
+            <span class="ext-metric-chip">🌐 Global Remote Delivery Units</span>
+            <span class="ext-metric-chip">⚡ 100% Agile Sprint Coverage</span>
+          </div>
+        </div>
       </div>
 
     </div>

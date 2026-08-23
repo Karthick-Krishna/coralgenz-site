@@ -26,7 +26,22 @@
       <nav class="nav-links">
         <a href="index.html" class="nav-link">Homepage</a>
         <a href="know-more.html" class="nav-link active">About</a>
-        <a href="index.html#services" class="nav-link">Specialisations</a>
+        <div class="nav-dropdown-wrapper">
+          <a href="index.html#services" class="nav-link nav-dropdown-btn">
+            <span>Our Services</span>
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </a>
+          <div class="nav-dropdown-menu">
+            <a href="custom-software-development.html" class="nav-dropdown-item">Custom Software Development</a>
+            <a href="mvp-development.html" class="nav-dropdown-item">MVP Development</a>
+            <a href="full-stack-software.html" class="nav-dropdown-item">Full Stack Software</a>
+            <a href="legacy-software-modernization.html" class="nav-dropdown-item">Legacy Software Modernization</a>
+            <a href="pwa-development.html" class="nav-dropdown-item">Progressive Web Applications (PWAs)</a>
+            <a href="modern-admin-dashboards.html" class="nav-dropdown-item">Modern Admin Dashboards</a>
+            <a href="frontend-modernization.html" class="nav-dropdown-item">Frontend Modernization</a>
+            <a href="domain-and-deployment-service.html" class="nav-dropdown-item">Domain &amp; Deployment Service</a>
+          </div>
+        </div>
         <a href="https://certifications-coralgenz.vercel.app/" target="_blank" rel="noopener noreferrer" class="nav-link">Certifications</a>
         <a href="team.html" class="nav-link">TEAM</a>
         <a href="index.html#contact" class="nav-link">Contact</a>
@@ -74,7 +89,52 @@
   <div class="mobile-menu">
     <a href="index.html" class="nav-link">Homepage</a>
     <a href="know-more.html" class="nav-link active">About</a>
-    <a href="index.html#services" class="nav-link">Specialisations</a>
+    
+    <!-- Mobile Our Services Dropdown -->
+    <div class="mobile-services-dropdown-wrap">
+      <button class="mobile-services-toggle" onclick="toggleMobileServicesMenu(event)" aria-expanded="false">
+        <span>Our Services</span>
+        <div class="services-toggle-meta">
+          <span class="services-count-badge">8</span>
+          <svg class="services-chevron-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </div>
+      </button>
+      <div id="mobileServicesDropdown" class="mobile-services-window">
+        <a href="custom-software-development.html" class="mobile-sub-service-item">
+          <span class="sub-service-bullet"></span>
+          <span>Custom Software Development</span>
+        </a>
+        <a href="mvp-development.html" class="mobile-sub-service-item">
+          <span class="sub-service-bullet"></span>
+          <span>MVP Development</span>
+        </a>
+        <a href="full-stack-software.html" class="mobile-sub-service-item">
+          <span class="sub-service-bullet"></span>
+          <span>Full Stack Software</span>
+        </a>
+        <a href="legacy-software-modernization.html" class="mobile-sub-service-item">
+          <span class="sub-service-bullet"></span>
+          <span>Legacy Software Modernization</span>
+        </a>
+        <a href="pwa-development.html" class="mobile-sub-service-item">
+          <span class="sub-service-bullet"></span>
+          <span>Progressive Web Applications (PWAs)</span>
+        </a>
+        <a href="modern-admin-dashboards.html" class="mobile-sub-service-item">
+          <span class="sub-service-bullet"></span>
+          <span>Modern Admin Dashboards</span>
+        </a>
+        <a href="frontend-modernization.html" class="mobile-sub-service-item">
+          <span class="sub-service-bullet"></span>
+          <span>Frontend Modernization</span>
+        </a>
+        <a href="domain-and-deployment-service.html" class="mobile-sub-service-item">
+          <span class="sub-service-bullet"></span>
+          <span>Domain &amp; Deployment Service</span>
+        </a>
+      </div>
+    </div>
+
     <a href="https://certifications-coralgenz.vercel.app/" target="_blank" rel="noopener noreferrer" class="nav-link">Certifications</a>
     <a href="team.html" class="nav-link">TEAM</a>
     <a href="index.html#contact" class="nav-link">Contact</a>

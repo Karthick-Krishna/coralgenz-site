@@ -9,8 +9,8 @@
   <link rel="apple-touch-icon" href="/assets/DVyu6tz4dqPirA4TwAJZUz5CUw-lPQmtTmF.png">
 
   <!-- Core CSS -->
-  <script type="module" crossorigin src="/assets/main-CkdbCl86.js"></script>
-  <link rel="stylesheet" crossorigin href="/assets/main-Wt5GAXGs.css">
+  <script type="module" crossorigin src="/assets/main-afgzjKKC.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/main-ZZGTcL-3.css">
 </head>
 <body>
 
@@ -26,7 +26,82 @@
       <nav class="nav-links">
         <a href="index.html" class="nav-link">Homepage</a>
         <a href="know-more.html" class="nav-link">About</a>
-        <a href="index.html#services" class="nav-link">Specialisations</a>
+
+        <!-- Our Services Dropdown -->
+        <div class="nav-dropdown-wrapper">
+          <button class="nav-link nav-dropdown-btn" onclick="toggleServicesDropdown(event)">
+            <span>Our Services</span>
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" class="dropdown-chevron"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </button>
+          <div class="services-dropdown-menu">
+            <div class="services-dropdown-header">OUR 8 CORE SERVICES</div>
+            <div class="services-dropdown-grid">
+              <a href="custom-software-development.html" class="services-dropdown-item">
+                <span class="service-icon">🚀</span>
+                <div class="service-item-text">
+                  <strong>Custom Software Development</strong>
+                  <span>Bespoke cloud solutions &amp; logic</span>
+                </div>
+              </a>
+              <a href="mvp-development.html" class="services-dropdown-item">
+                <span class="service-icon">⚡</span>
+                <div class="service-item-text">
+                  <strong>MVP Development</strong>
+                  <span>Rapid speed to market delivery</span>
+                </div>
+              </a>
+              <a href="full-stack-software.html" class="services-dropdown-item">
+                <span class="service-icon">💻</span>
+                <div class="service-item-text">
+                  <strong>Full Stack Software</strong>
+                  <span>Frontend UI &amp; robust backends</span>
+                </div>
+              </a>
+              <a href="legacy-software-modernization.html" class="services-dropdown-item">
+                <span class="service-icon">🔄</span>
+                <div class="service-item-text">
+                  <strong>Legacy Software Modernization</strong>
+                  <span>Zero debt SOLID refactoring</span>
+                </div>
+              </a>
+              <a href="pwa-development.html" class="services-dropdown-item">
+                <span class="service-icon">📱</span>
+                <div class="service-item-text">
+                  <strong>Progressive Web Apps (PWAs)</strong>
+                  <span>Installable offline web apps</span>
+                </div>
+              </a>
+              <a href="modern-admin-dashboards.html" class="services-dropdown-item">
+                <span class="service-icon">📊</span>
+                <div class="service-item-text">
+                  <strong>Modern Admin Dashboards</strong>
+                  <span>Analytics &amp; role control portals</span>
+                </div>
+              </a>
+              <a href="frontend-modernization.html" class="services-dropdown-item">
+                <span class="service-icon">🎨</span>
+                <div class="service-item-text">
+                  <strong>Frontend Modernization</strong>
+                  <span>High-end glassmorphic UI design</span>
+                </div>
+              </a>
+              <a href="domain-and-deployment-service.html" class="services-dropdown-item">
+                <span class="service-icon">🌐</span>
+                <div class="service-item-text">
+                  <strong>Domain &amp; Deployment Service</strong>
+                  <span>Automated CI/CD &amp; SSL hosting</span>
+                </div>
+              </a>
+            </div>
+            <div class="services-dropdown-footer">
+              <a href="index.html#services" class="services-all-link">
+                <span>View Overview on Homepage</span>
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+
         <a href="team.html" class="nav-link">TEAM</a>
         <a href="index.html#contact" class="nav-link">Contact</a>
       </nav>
@@ -69,7 +144,52 @@
   <div class="mobile-menu">
     <a href="index.html" class="nav-link">Homepage</a>
     <a href="know-more.html" class="nav-link">About</a>
-    <a href="index.html#services" class="nav-link">Specialisations</a>
+
+    <!-- Mobile Our Services Dropdown -->
+    <div class="mobile-services-dropdown-wrap">
+      <button class="mobile-services-toggle" onclick="toggleMobileServicesMenu(event)" aria-expanded="false">
+        <span>Our Services</span>
+        <div class="services-toggle-meta">
+          <span class="services-count-badge">8</span>
+          <svg class="services-chevron-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </div>
+      </button>
+      <div id="mobileServicesDropdown" class="mobile-services-window">
+        <a href="custom-software-development.html" class="mobile-sub-service-item">
+          <span class="sub-service-bullet"></span>
+          <span>Custom Software Development</span>
+        </a>
+        <a href="mvp-development.html" class="mobile-sub-service-item">
+          <span class="sub-service-bullet"></span>
+          <span>MVP Development</span>
+        </a>
+        <a href="full-stack-software.html" class="mobile-sub-service-item">
+          <span class="sub-service-bullet"></span>
+          <span>Full Stack Software</span>
+        </a>
+        <a href="legacy-software-modernization.html" class="mobile-sub-service-item">
+          <span class="sub-service-bullet"></span>
+          <span>Legacy Software Modernization</span>
+        </a>
+        <a href="pwa-development.html" class="mobile-sub-service-item">
+          <span class="sub-service-bullet"></span>
+          <span>Progressive Web Applications (PWAs)</span>
+        </a>
+        <a href="modern-admin-dashboards.html" class="mobile-sub-service-item">
+          <span class="sub-service-bullet"></span>
+          <span>Modern Admin Dashboards</span>
+        </a>
+        <a href="frontend-modernization.html" class="mobile-sub-service-item">
+          <span class="sub-service-bullet"></span>
+          <span>Frontend Modernization</span>
+        </a>
+        <a href="domain-and-deployment-service.html" class="mobile-sub-service-item">
+          <span class="sub-service-bullet"></span>
+          <span>Domain &amp; Deployment Service</span>
+        </a>
+      </div>
+    </div>
+
     <a href="team.html" class="nav-link">TEAM</a>
     <a href="index.html#contact" class="nav-link">Contact</a>
     <div style="margin-top: 24px;">
