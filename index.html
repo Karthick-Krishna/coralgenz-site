@@ -610,90 +610,229 @@
     </div>
   </section>
 
-  <!-- Why Choose Us Section -->
-  <section class="section" id="why-us" style="padding-top: 40px; padding-bottom: 60px;">
+  <!-- Why Choose Us Section (Graphical UI & Compact Mobile Layout) -->
+  <section class="section" id="why-us" style="padding-top: 28px; padding-bottom: 36px;">
     <div class="container">
-      <div class="why-us-header reveal-init text-center" style="max-width: 720px; margin: 0 auto 36px auto;">
-        <span class="badge-pill" style="margin-bottom: 12px;">
-          <span class="badge-dot"></span>
-          Why Choose Us
-        </span>
-        <h2 class="section-title" style="font-size: 32px; margin-bottom: 12px;">Engineering Trusted by High-Growth Teams</h2>
-        <p class="section-desc" style="font-size: 15px; margin: 0 auto;">
-          Microsoft and Salesforce partner delivering custom software, integrations, and automation with direct founder-level attention.
-        </p>
+      
+      <!-- Section Pill Header Outside -->
+      <div class="section-pill-header reveal-init">
+        <h2 class="section-pill-title">WHY CHOOSE US</h2>
+        <div class="pill-badge-black" title="Why Work With Coralgenz Global">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+        </div>
       </div>
 
-      <div class="why-us-compact-grid">
+      <!-- Spaced Subtitle -->
+      <p class="section-desc reveal-init why-intro-text">
+        <strong style="color: #0f172a;">Engineering Trusted by High-Growth Teams:</strong> Microsoft and Salesforce partner delivering custom software, integrations, and automation with direct founder-level attention.
+      </p>
+
+      <!-- Graphical 6-Card Grid (Expanded 3x2 / 2x3 Layout) -->
+      <div class="why-us-graphical-grid">
         <!-- Card 1: Founder-Led Delivery -->
-        <div class="why-card reveal-init">
-          <div class="why-icon-box">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+        <div class="why-graphical-card reveal-init">
+          <div class="why-card-top-row">
+            <div class="why-icon-box why-icon-blue">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+            </div>
+            <span class="why-badge-pill pill-blue">Direct Founder Sync</span>
           </div>
-          <div class="why-card-content">
-            <h4 class="why-card-title">Founder-Led Delivery</h4>
+
+          <div class="why-card-main">
+            <h3 class="why-card-title">Founder-Led Delivery</h3>
             <p class="why-card-desc">Work directly with senior engineers and founders without middle management layers.</p>
           </div>
+
+          <!-- Bespoke Graphical Widget: Direct Sync Beam -->
+          <div class="why-sync-widget">
+            <div class="sync-node-diagram">
+              <span class="node-badge">Founders</span>
+              <div class="node-beam">
+                <span class="beam-dot"></span>
+              </div>
+              <span class="node-badge badge-client">Your Team</span>
+            </div>
+            <div class="why-chips-row">
+              <span class="why-chip">Zero Middlemen</span>
+              <span class="why-chip">100% Senior Tech</span>
+            </div>
+          </div>
         </div>
 
-        <!-- Card 2: 96% Retention -->
-        <div class="why-card reveal-init reveal-delay-1">
-          <div class="why-stat-box">
-            <span class="why-stat-num count-up" data-target="96" data-suffix="%">96%</span>
+        <!-- Card 2: 96% Client Retention -->
+        <div class="why-graphical-card reveal-init reveal-delay-1">
+          <div class="why-card-top-row">
+            <div class="why-stat-box">
+              <span class="why-stat-num count-up" data-target="96" data-suffix="%">96%</span>
+            </div>
+            <span class="why-badge-pill pill-emerald">Long-Term Partners</span>
           </div>
-          <div class="why-card-content">
-            <h4 class="why-card-title">Client Retention</h4>
+
+          <div class="why-card-main">
+            <h3 class="why-card-title">Client Retention</h3>
             <p class="why-card-desc">Clients return for ongoing feature additions and long-term engineering support.</p>
           </div>
+
+          <!-- Bespoke Graphical Widget: Retention Velocity Meter -->
+          <div class="why-retention-widget">
+            <div class="retention-metric-header">
+              <span class="retention-label">Partner Loyalty Index</span>
+              <span class="retention-val">96% High</span>
+            </div>
+            <div class="retention-track">
+              <div class="retention-fill" style="width: 96%;"></div>
+            </div>
+            <div class="why-chips-row">
+              <span class="why-chip">Verified Loyalty</span>
+              <span class="why-chip">Quarterly Sprints</span>
+            </div>
+          </div>
         </div>
 
-        <!-- Card 3: 25+ Projects -->
-        <div class="why-card reveal-init reveal-delay-2">
-          <div class="why-stat-box">
-            <span class="why-stat-num count-up" data-target="25" data-suffix="+">25+</span>
+        <!-- Card 3: 25+ Projects Delivered -->
+        <div class="why-graphical-card reveal-init reveal-delay-2">
+          <div class="why-card-top-row">
+            <div class="why-stat-box">
+              <span class="why-stat-num count-up" data-target="25" data-suffix="+">25+</span>
+            </div>
+            <span class="why-badge-pill pill-indigo">Global Scale</span>
           </div>
-          <div class="why-card-content">
-            <h4 class="why-card-title">Projects Delivered</h4>
+
+          <div class="why-card-main">
+            <h3 class="why-card-title">Projects Delivered</h3>
             <p class="why-card-desc">Custom software, enterprise portals, and cloud systems shipped globally.</p>
           </div>
+
+          <!-- Bespoke Graphical Widget: Global Ship Nodes -->
+          <div class="why-global-widget">
+            <div class="global-nodes-row">
+              <span class="global-node-chip"><span class="node-pulse-dot"></span>US</span>
+              <span class="global-node-chip"><span class="node-pulse-dot"></span>EU</span>
+              <span class="global-node-chip"><span class="node-pulse-dot"></span>APAC</span>
+            </div>
+            <div class="why-chips-row">
+              <span class="why-chip">Portals &amp; Cloud</span>
+              <span class="why-chip">Global Delivery</span>
+            </div>
+          </div>
         </div>
 
-        <!-- Card 4: Direct Support -->
-        <div class="why-card reveal-init reveal-delay-3">
-          <div class="why-icon-box">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg>
+        <!-- Card 4: Industry-Certified Courses -->
+        <div class="why-graphical-card reveal-init reveal-delay-1">
+          <div class="why-card-top-row">
+            <div class="why-icon-box why-icon-amber">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+            </div>
+            <span class="why-badge-pill pill-amber">Certified Learning</span>
           </div>
-          <div class="why-card-content">
-            <h4 class="why-card-title">Direct Dev Support</h4>
-            <p class="why-card-desc">Instant developer answers and rapid turnaround with zero ticketing bottlenecks.</p>
+
+          <div class="why-card-main">
+            <h3 class="why-card-title">Industry-Certified Courses</h3>
+            <p class="why-card-desc">Providing real-world engineering courses, hands-on project cohorts, and recognized industry certifications.</p>
+          </div>
+
+          <!-- Bespoke Graphical Widget: Certified Courses Badge Widget -->
+          <div class="why-courses-widget">
+            <div class="courses-live-header">
+              <span class="course-badge-mini">★ Dual Certification</span>
+              <span class="course-batch-status">
+                <span class="live-course-dot"></span> Active Cohorts
+              </span>
+            </div>
+            <div class="why-chips-row">
+              <span class="why-chip">Hands-On Projects</span>
+              <span class="why-chip">Verified Credentials</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 5: Zero Technical Debt -->
+        <div class="why-graphical-card reveal-init reveal-delay-2">
+          <div class="why-card-top-row">
+            <div class="why-icon-box why-icon-emerald">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            </div>
+            <span class="why-badge-pill pill-emerald">Clean Architecture</span>
+          </div>
+
+          <div class="why-card-main">
+            <h3 class="why-card-title">Zero Technical Debt</h3>
+            <p class="why-card-desc">Modular SOLID codebase, full test coverage, and automated CI/CD deployment pipelines.</p>
+          </div>
+
+          <!-- Bespoke Graphical Widget: Pipeline Health Check -->
+          <div class="why-pipeline-widget">
+            <div class="pipeline-status-row">
+              <span class="pipeline-dot green"></span>
+              <span class="pipeline-label">CI/CD Automated Tests</span>
+              <span class="pipeline-badge">100% Pass</span>
+            </div>
+            <div class="why-chips-row">
+              <span class="why-chip">SOLID Standards</span>
+              <span class="why-chip">Automated CI/CD</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 6: Certified Ecosystem Partners -->
+        <div class="why-graphical-card reveal-init reveal-delay-3">
+          <div class="why-card-top-row">
+            <div class="why-icon-box why-icon-indigo">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+            </div>
+            <span class="why-badge-pill pill-indigo">Enterprise Grade</span>
+          </div>
+
+          <div class="why-card-main">
+            <h3 class="why-card-title">Certified Ecosystem Partners</h3>
+            <p class="why-card-desc">Official Microsoft &amp; Salesforce partner adhering to strict SOC2 and GDPR standards.</p>
+          </div>
+
+          <!-- Bespoke Graphical Widget: Ecosystem Security -->
+          <div class="why-security-widget">
+            <div class="security-nodes-row">
+              <span class="sec-node-badge">Microsoft</span>
+              <span class="sec-connector">⚡</span>
+              <span class="sec-node-badge">Salesforce</span>
+            </div>
+            <div class="why-chips-row">
+              <span class="why-chip">MS &amp; SF Certified</span>
+              <span class="why-chip">Enterprise SOC2</span>
+            </div>
           </div>
         </div>
       </div>
 
-      <!-- Compact CTA Bar -->
-      <div class="why-cta-bar reveal-init" style="margin-top: 24px;">
-        <div class="why-cta-text">
-          <strong>Ready to build your next product?</strong>
-          <span>We turn complex specifications into resilient, high-speed applications.</span>
+      <!-- Compact & Graphical CTA Bar -->
+      <div class="why-cta-bar-graphical reveal-init">
+        <div class="why-cta-text-wrap">
+          <div class="why-cta-headline-row">
+            <span class="why-cta-pulse-dot"></span>
+            <strong class="why-cta-title">Ready to build your next product?</strong>
+          </div>
+          <span class="why-cta-subtitle">We turn complex specifications into resilient, high-speed applications.</span>
         </div>
-        <a href="mailto:coralgenz@gmail.com" class="btn-primary" style="padding: 10px 22px; font-size: 13.5px; white-space: nowrap;">
-          Talk to Coralgenz
+        <a href="mailto:coralgenz@gmail.com" class="why-cta-btn">
+          <span class="btn-shine"></span>
+          <span>Talk to Coralgenz</span>
           <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
         </a>
       </div>
+
     </div>
   </section>
 
   <!-- What We Stand For Section (Graphical UI, Outside Heading & Compact Design) -->
-  <section class="section values-section" id="values" style="padding-top: 44px; padding-bottom: 56px;">
+  <section class="section values-section" id="values" style="padding-top: 28px; padding-bottom: 32px;">
     <div class="container">
       
       <!-- Section Pill Header (Outside the Box) -->
       <div class="section-pill-header reveal-init">
         <h2 class="section-pill-title">OUR VALUES</h2>
         <div class="pill-badge-black" title="Our Core Engineering Principles">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
         </div>
       </div>
 
@@ -707,7 +846,7 @@
         <div class="value-graphic-card reveal-init">
           <div class="value-card-top">
             <div class="value-icon-box value-icon-blue">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
             </div>
             <div class="value-card-headings">
               <span class="value-micro-tag">Architecture</span>
@@ -743,7 +882,7 @@
         <div class="value-graphic-card reveal-init reveal-delay-1">
           <div class="value-card-top">
             <div class="value-icon-box value-icon-amber">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
             </div>
             <div class="value-card-headings">
               <span class="value-micro-tag">Velocity &amp; Security</span>
@@ -784,7 +923,7 @@
         <div class="value-graphic-card reveal-init reveal-delay-2">
           <div class="value-card-top">
             <div class="value-icon-box value-icon-indigo">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path></svg>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path></svg>
             </div>
             <div class="value-card-headings">
               <span class="value-micro-tag">Ecosystem</span>
@@ -799,12 +938,12 @@
           <!-- Graphical UI Widget: Cloud & CRM Partner Badges -->
           <div class="value-graphic-widget widget-partners">
             <div class="partner-badge-pill pill-ms">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="#00a4ef"><rect x="1" y="1" width="10" height="10"/><rect x="13" y="1" width="10" height="10" fill="#7fba00"/><rect x="1" y="13" width="10" height="10" fill="#ffb900"/><rect x="13" y="13" width="10" height="10" fill="#f25022"/></svg>
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="#00a4ef"><rect x="1" y="1" width="10" height="10"/><rect x="13" y="1" width="10" height="10" fill="#7fba00"/><rect x="1" y="13" width="10" height="10" fill="#ffb900"/><rect x="13" y="13" width="10" height="10" fill="#f25022"/></svg>
               <span>Microsoft Partner</span>
             </div>
             <div class="partner-connector"></div>
             <div class="partner-badge-pill pill-sf">
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="#00a1e0"><path d="M19.35 10.04C18.67 6.59 15.64 4 12 4 9.11 4 6.6 5.64 5.35 8.04 2.34 8.36 0 10.91 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96z"/></svg>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="#00a1e0"><path d="M19.35 10.04C18.67 6.59 15.64 4 12 4 9.11 4 6.6 5.64 5.35 8.04 2.34 8.36 0 10.91 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96z"/></svg>
               <span>Salesforce Certified</span>
             </div>
           </div>
@@ -820,7 +959,7 @@
         <div class="value-graphic-card reveal-init reveal-delay-3">
           <div class="value-card-top">
             <div class="value-icon-box value-icon-gold">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
             </div>
             <div class="value-card-headings">
               <span class="value-micro-tag">Global Trust</span>
@@ -861,51 +1000,75 @@
     </div>
   </section>
 
-  <!-- Ratings & Social Proof V2 (Positioned Before Contact Us) -->
-  <section class="section" style="padding-top: 24px; padding-bottom: 32px;">
+  <!-- Ratings & Social Proof V2 (Ultra-Attractive Graphical Card) -->
+  <section class="section" style="padding-top: 18px; padding-bottom: 24px;">
     <div class="container">
-      <!-- Section Pill Header Outside the Box (Compact & Refined) -->
+      <!-- Section Pill Header Outside the Box -->
       <div class="rate-us-header-wrap reveal-init">
         <h2 class="rate-us-pill-title">RATE US</h2>
         <div class="rate-us-mini-badge" title="Rate Us on Global Ratings">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="#fbbf24" stroke="#fbbf24" stroke-width="1.5"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="#f59e0b" stroke="#f59e0b" stroke-width="1.5"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
           <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
         </div>
       </div>
 
       <div class="ratings-v2-banner reveal-init">
+        <!-- Floating Ambient Glows -->
+        <div class="ratings-glow-amber"></div>
+        <div class="ratings-glow-blue"></div>
+
         <!-- Top Pill & Stars Row -->
         <div class="ratings-v2-top-bar">
           <div class="ratings-v2-pill">
-            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+            <span class="ratings-live-dot"></span>
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="#f59e0b" stroke="#f59e0b" stroke-width="1"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
             RATE US NOW • CORALGENZ GLOBAL RATINGS
           </div>
+
+          <!-- Star Pod Graphic -->
           <div class="ratings-v2-stars-wrap">
-            <span class="ratings-v2-stars">★★★★★</span>
-            <span class="ratings-v2-score-badge">4.9/5 average client rating</span>
+            <div class="ratings-star-cluster">
+              <span class="star-icon">★</span>
+              <span class="star-icon">★</span>
+              <span class="star-icon">★</span>
+              <span class="star-icon">★</span>
+              <span class="star-icon">★</span>
+            </div>
+            <div class="ratings-score-pod">
+              <strong class="score-bold">4.9/5</strong>
+              <span class="score-sub">average rating</span>
+            </div>
           </div>
         </div>
 
-        <!-- Description Text -->
+        <!-- Description Text with Highlight Accents -->
         <p class="ratings-v2-desc">
-          Clients value our punctuality, attention to detail, and the confidence of knowing the job is handled professionally. We are honored to be trusted by 50000+ people worldwide, maintaining consistent 5-star ratings.
+          Clients value our <strong class="txt-highlight">punctuality</strong>, <strong class="txt-highlight">attention to detail</strong>, and the confidence of knowing the job is handled professionally. We are honored to be trusted by <span class="badge-inline-count">50,000+ people worldwide</span>, maintaining consistent 5-star ratings.
         </p>
 
         <!-- Action & Metrics Bar -->
         <div class="ratings-v2-bottom-bar">
           <a href="https://ratingscore.vercel.app/" target="_blank" rel="noopener noreferrer" class="ratings-v2-btn">
-            Rate Us Now
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+            <span class="btn-shine"></span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="#fbbf24" stroke="#fbbf24" stroke-width="1"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+            <span>Rate Us Now</span>
+            <svg class="btn-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
           </a>
 
           <div class="ratings-v2-metrics-row">
-            <div class="ratings-v2-metric-chip">
+            <div class="ratings-v2-metric-chip chip-emerald">
+              <span class="chip-dot emerald"></span>
               <span class="ratings-v2-metric-num count-up" data-target="98" data-suffix="%">98%</span>
               <span class="ratings-v2-metric-txt">repeat-ready satisfaction</span>
             </div>
-            <div class="ratings-v2-metric-chip">
+            <div class="ratings-v2-metric-chip chip-blue">
+              <span class="chip-dot blue"></span>
               <span class="ratings-v2-metric-num">24h</span>
               <span class="ratings-v2-metric-txt">response window</span>
+            </div>
+            <div class="ratings-trust-tag">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+              <span>Verified Global Trust</span>
             </div>
           </div>
         </div>
