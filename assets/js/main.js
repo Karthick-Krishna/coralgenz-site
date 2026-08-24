@@ -164,7 +164,7 @@ window.toggleMobileServicesMenu = toggleMobileServicesMenu;
 function toggleCertDropdown(e) {
   if (e) e.preventDefault();
   const content = document.getElementById('certDropdownContent');
-  const toggleBtn = document.querySelector('.cert-v2-dropdown-toggle');
+  const toggleBtn = document.querySelector('.cert-glass-accordion-btn, .cert-v2-dropdown-toggle');
   if (content && toggleBtn) {
     const isOpen = content.classList.contains('open');
     if (isOpen) {
@@ -180,6 +180,8 @@ window.toggleCertDropdown = toggleCertDropdown;
 
 /* Values Principle Studio - Slider & Preview Logic */
 let currentValIndex = 0;
+let isProgrammaticVal = false;
+let valProgrammaticTimer = null;
 
 function updateValueDots(index) {
   const dots = document.querySelectorAll('#valuesDots .v-dot');
@@ -188,7 +190,22 @@ function updateValueDots(index) {
   });
   const chips = document.querySelectorAll('.values-preview-chip');
   chips.forEach((chip, i) => {
-    chip.classList.toggle('active', i === index);
+    const isActive = (i === index);
+    chip.classList.toggle('active', isActive);
+    if (isActive && chip.parentElement) {
+      const rail = chip.parentElement;
+      const chipLeft = chip.offsetLeft;
+      const chipWidth = chip.offsetWidth;
+      const railScroll = rail.scrollLeft;
+      const railWidth = rail.clientWidth;
+      if (chipLeft < railScroll || (chipLeft + chipWidth) > (railScroll + railWidth)) {
+        rail.scrollTo({ left: Math.max(0, chipLeft - (railWidth - chipWidth) / 2), behavior: 'smooth' });
+      }
+    }
+  });
+  const cards = document.querySelectorAll('#valuesTrack .v-slide-card');
+  cards.forEach((card, i) => {
+    card.classList.toggle('active', i === index);
   });
 }
 
@@ -205,12 +222,27 @@ function jumpValueSlide(index) {
   const track = document.getElementById('valuesTrack');
   const cards = track ? track.querySelectorAll('.v-slide-card') : [];
   if (!track || !cards[index]) return;
+
+  isProgrammaticVal = true;
+  if (valProgrammaticTimer) clearTimeout(valProgrammaticTimer);
+  valProgrammaticTimer = setTimeout(() => {
+    isProgrammaticVal = false;
+  }, 450);
+
   currentValIndex = index;
   const card = cards[index];
-  const trackLeft = track.getBoundingClientRect().left;
-  const cardLeft = card.getBoundingClientRect().left;
-  const scrollOffset = cardLeft - trackLeft + track.scrollLeft;
-  track.scrollTo({ left: scrollOffset, behavior: 'smooth' });
+  const isMobile = window.innerWidth <= 768;
+  let scrollOffset;
+  if (isMobile) {
+    const cardCenter = card.offsetLeft + card.offsetWidth / 2;
+    const trackHalfWidth = track.clientWidth / 2;
+    scrollOffset = cardCenter - trackHalfWidth;
+  } else {
+    const trackLeft = track.getBoundingClientRect().left;
+    const cardLeft = card.getBoundingClientRect().left;
+    scrollOffset = cardLeft - trackLeft + track.scrollLeft;
+  }
+  track.scrollTo({ left: Math.max(0, scrollOffset), behavior: 'smooth' });
   updateValueDots(index);
 }
 
@@ -244,6 +276,8 @@ window.filterValues = filterValues;
 
 /* Why Choose Us - Slider & Preview Logic */
 let currentWhyIndex = 0;
+let isProgrammaticWhy = false;
+let whyProgrammaticTimer = null;
 
 function updateWhyDots(index) {
   const dots = document.querySelectorAll('#whyDots .why-dot');
@@ -252,7 +286,22 @@ function updateWhyDots(index) {
   });
   const chips = document.querySelectorAll('.why-preview-chip');
   chips.forEach((chip, i) => {
-    chip.classList.toggle('active', i === index);
+    const isActive = (i === index);
+    chip.classList.toggle('active', isActive);
+    if (isActive && chip.parentElement) {
+      const rail = chip.parentElement;
+      const chipLeft = chip.offsetLeft;
+      const chipWidth = chip.offsetWidth;
+      const railScroll = rail.scrollLeft;
+      const railWidth = rail.clientWidth;
+      if (chipLeft < railScroll || (chipLeft + chipWidth) > (railScroll + railWidth)) {
+        rail.scrollTo({ left: Math.max(0, chipLeft - (railWidth - chipWidth) / 2), behavior: 'smooth' });
+      }
+    }
+  });
+  const cards = document.querySelectorAll('#whyTrack .why-graphical-card');
+  cards.forEach((card, i) => {
+    card.classList.toggle('active', i === index);
   });
 }
 
@@ -269,32 +318,57 @@ function jumpWhySlide(index) {
   const track = document.getElementById('whyTrack');
   const cards = track ? track.querySelectorAll('.why-graphical-card') : [];
   if (!track || !cards[index]) return;
+
+  isProgrammaticWhy = true;
+  if (whyProgrammaticTimer) clearTimeout(whyProgrammaticTimer);
+  whyProgrammaticTimer = setTimeout(() => {
+    isProgrammaticWhy = false;
+  }, 450);
+
   currentWhyIndex = index;
   const card = cards[index];
-  const trackLeft = track.getBoundingClientRect().left;
-  const cardLeft = card.getBoundingClientRect().left;
-  const scrollOffset = cardLeft - trackLeft + track.scrollLeft;
-  track.scrollTo({ left: scrollOffset, behavior: 'smooth' });
+  const isMobile = window.innerWidth <= 768;
+  let scrollOffset;
+  if (isMobile) {
+    const cardCenter = card.offsetLeft + card.offsetWidth / 2;
+    const trackHalfWidth = track.clientWidth / 2;
+    scrollOffset = cardCenter - trackHalfWidth;
+  } else {
+    const trackLeft = track.getBoundingClientRect().left;
+    const cardLeft = card.getBoundingClientRect().left;
+    scrollOffset = cardLeft - trackLeft + track.scrollLeft;
+  }
+  track.scrollTo({ left: Math.max(0, scrollOffset), behavior: 'smooth' });
   updateWhyDots(index);
 }
 
 window.slideWhy = slideWhy;
 window.jumpWhySlide = jumpWhySlide;
 
-// Auto-sync active preview chips and dots with zero buffering
+// Auto-sync active preview chips and dots with zero buffering & zero fluctuation
 document.addEventListener('DOMContentLoaded', () => {
   const whyTrack = document.getElementById('whyTrack');
   let whyAnimId;
   if (whyTrack) {
-    whyTrack.addEventListener('scroll', () => {
+    const handleWhyScroll = () => {
+      if (isProgrammaticWhy) return;
       if (whyAnimId) cancelAnimationFrame(whyAnimId);
       whyAnimId = requestAnimationFrame(() => {
+        if (isProgrammaticWhy) return;
         const cards = whyTrack.querySelectorAll('.why-graphical-card');
-        const trackLeft = whyTrack.getBoundingClientRect().left;
+        const trackBounds = whyTrack.getBoundingClientRect();
+        const isMobile = window.innerWidth <= 768;
+        const targetPoint = isMobile 
+          ? (trackBounds.left + trackBounds.width / 2) 
+          : (trackBounds.left + 35);
         let closestIdx = 0;
         let minDiff = Infinity;
         cards.forEach((card, idx) => {
-          const diff = Math.abs(card.getBoundingClientRect().left - trackLeft);
+          const cardBounds = card.getBoundingClientRect();
+          const cardPoint = isMobile 
+            ? (cardBounds.left + cardBounds.width / 2) 
+            : cardBounds.left;
+          const diff = Math.abs(cardPoint - targetPoint);
           if (diff < minDiff) {
             minDiff = diff;
             closestIdx = idx;
@@ -305,21 +379,36 @@ document.addEventListener('DOMContentLoaded', () => {
           updateWhyDots(closestIdx);
         }
       });
-    }, { passive: true });
+    };
+
+    whyTrack.addEventListener('scroll', handleWhyScroll, { passive: true });
+    whyTrack.addEventListener('scrollend', () => {
+      isProgrammaticWhy = false;
+    });
   }
 
   const valuesTrack = document.getElementById('valuesTrack');
   let valAnimId;
   if (valuesTrack) {
-    valuesTrack.addEventListener('scroll', () => {
+    const handleValScroll = () => {
+      if (isProgrammaticVal) return;
       if (valAnimId) cancelAnimationFrame(valAnimId);
       valAnimId = requestAnimationFrame(() => {
+        if (isProgrammaticVal) return;
         const cards = valuesTrack.querySelectorAll('.v-slide-card');
-        const trackLeft = valuesTrack.getBoundingClientRect().left;
+        const trackBounds = valuesTrack.getBoundingClientRect();
+        const isMobile = window.innerWidth <= 768;
+        const targetPoint = isMobile 
+          ? (trackBounds.left + trackBounds.width / 2) 
+          : (trackBounds.left + 35);
         let closestIdx = 0;
         let minDiff = Infinity;
         cards.forEach((card, idx) => {
-          const diff = Math.abs(card.getBoundingClientRect().left - trackLeft);
+          const cardBounds = card.getBoundingClientRect();
+          const cardPoint = isMobile 
+            ? (cardBounds.left + cardBounds.width / 2) 
+            : cardBounds.left;
+          const diff = Math.abs(cardPoint - targetPoint);
           if (diff < minDiff) {
             minDiff = diff;
             closestIdx = idx;
@@ -330,7 +419,12 @@ document.addEventListener('DOMContentLoaded', () => {
           updateValueDots(closestIdx);
         }
       });
-    }, { passive: true });
+    };
+
+    valuesTrack.addEventListener('scroll', handleValScroll, { passive: true });
+    valuesTrack.addEventListener('scrollend', () => {
+      isProgrammaticVal = false;
+    });
   }
 });
 
