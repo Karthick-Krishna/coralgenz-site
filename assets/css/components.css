@@ -6784,27 +6784,31 @@ select:focus {
    ═══════════════════════════════════════════ */
 @media (max-width: 768px) {
   .corp-cert-section {
-    padding: 56px 0 48px;
+    padding: 24px 0 20px;
   }
   .corp-main-card {
-    padding: 24px 18px 22px;
-    border-radius: 22px;
+    padding: 16px 14px 14px;
+    border-radius: 18px;
   }
 
-  /* Ribbon scrolls horizontally */
+  /* Static 2-column grid (no slider/scrolling) */
   .corp-ribbon {
-    flex-wrap: nowrap;
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-    gap: 8px;
-    margin-bottom: 22px;
-    padding-bottom: 4px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 6px;
+    margin-bottom: 12px;
+    overflow: visible;
   }
   .corp-pill {
-    padding: 5px 12px;
-    font-size: 10px;
+    display: flex;
+    justify-content: center;
+    padding: 5px 6px;
+    font-size: 9.5px;
+    gap: 4px;
     white-space: nowrap;
-    flex-shrink: 0;
+    text-align: center;
+    width: 100%;
+    box-sizing: border-box;
   }
 
   /* Single column — hide credential pass */
@@ -6817,119 +6821,171 @@ select:focus {
   }
 
   /* Typography */
+  .corp-heading-group {
+    margin-bottom: 0;
+  }
   .corp-eyebrow {
-    font-size: 9px;
-    letter-spacing: 2px;
-    padding: 3px 10px;
-    margin-bottom: 8px;
+    font-size: 8.5px;
+    letter-spacing: 1.5px;
+    padding: 2px 8px;
+    margin-bottom: 4px;
+    border-radius: 4px;
   }
   .corp-title {
-    font-size: 20px;
+    font-size: 17px;
+    line-height: 1.25;
     letter-spacing: -0.3px;
   }
   .corp-desc {
-    font-size: 13px;
-    line-height: 1.55;
+    font-size: 11.5px;
+    line-height: 1.45;
+    margin: 4px 0 0;
   }
   .corp-desc-full { display: none; }
   .corp-desc-short { display: inline; }
 
-  /* Process Strip vertical */
+  /* Compact Horizontal 3-Step Process Strip */
   .corp-process-strip {
-    flex-direction: column;
-    gap: 0;
-    padding: 14px 16px;
-    border-radius: 14px;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 8px 10px;
+    border-radius: 12px;
+    gap: 4px;
   }
   .corp-step {
-    gap: 10px;
-    padding: 6px 0;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 3px;
+    padding: 0;
+    flex: 1;
+    min-width: 0;
   }
   .corp-step-badge {
-    width: 32px; height: 32px;
-    border-radius: 10px;
-    font-size: 12px;
+    width: 22px; height: 22px;
+    border-radius: 6px;
+    font-size: 9.5px;
+    font-weight: 800;
   }
-  .corp-step-text strong { font-size: 12px; }
-  .corp-step-sub { font-size: 10px; }
+  .corp-step-text strong {
+    font-size: 10px;
+    line-height: 1.2;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .corp-step-sub {
+    display: none;
+  }
   .corp-step-connector {
-    padding: 4px 0 4px 15px;
+    padding: 0 2px;
   }
   .connector-line {
-    width: 2px;
-    height: 20px;
+    width: 14px;
+    height: 1.5px;
+  }
+  .connector-dot {
+    width: 3.5px;
+    height: 3.5px;
   }
 
   /* Content panel spacing */
-  .corp-content-panel { gap: 18px; }
+  .corp-content-panel {
+    gap: 10px;
+  }
 
   /* Accordion Mobile Refinements */
   .neo-accordion-trigger {
-    padding: 12px 16px;
+    padding: 9px 12px;
   }
   .trigger-left {
-    gap: 8px;
+    gap: 6px;
   }
   .trigger-icon-box {
-    width: 26px;
-    height: 26px;
-    border-radius: 8px;
+    width: 22px;
+    height: 22px;
+    border-radius: 6px;
   }
   .trigger-icon-box svg {
-    width: 12px;
-    height: 12px;
+    width: 11px;
+    height: 11px;
   }
   .trigger-title {
-    font-size: 12px;
+    font-size: 11.5px;
   }
   .trigger-badge {
-    font-size: 10px;
-    padding: 2px 7px;
+    font-size: 9px;
+    padding: 2px 6px;
   }
   .trigger-chevron {
-    width: 24px;
-    height: 24px;
+    width: 20px;
+    height: 20px;
+  }
+  .trigger-chevron svg {
+    width: 10px;
+    height: 10px;
   }
   .neo-accordion-drawer.open {
-    padding: 14px 16px 18px;
+    padding: 10px 12px 14px;
   }
   .neo-drawer-note {
-    font-size: 11px;
-    padding: 10px 12px;
-    gap: 8px;
-    margin-bottom: 12px;
+    font-size: 10px;
+    line-height: 1.4;
+    padding: 8px 10px;
+    gap: 6px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+  }
+  .note-badge {
+    font-size: 13px;
   }
   .neo-tiles-grid {
     grid-template-columns: 1fr;
-    gap: 8px;
+    gap: 6px;
   }
   .neo-tile {
-    padding: 10px 12px;
-    gap: 10px;
-    border-radius: 10px;
+    padding: 8px 10px;
+    gap: 8px;
+    border-radius: 8px;
   }
   .neo-check-icon {
-    width: 18px;
-    height: 18px;
-    font-size: 10px;
+    width: 16px;
+    height: 16px;
+    font-size: 9px;
   }
   .tile-content strong {
-    font-size: 12px;
+    font-size: 11px;
   }
   .tile-content span {
-    font-size: 10px;
+    font-size: 9.5px;
+    line-height: 1.35;
   }
 
-  /* Buttons */
-  .corp-btns { gap: 10px; }
+  /* Actions & Buttons */
+  .corp-actions {
+    gap: 8px;
+  }
+  .corp-btns {
+    gap: 8px;
+  }
   .corp-btn-fill, .corp-btn-outline {
     flex: 1;
     justify-content: center;
-    padding: 11px 14px;
-    font-size: 12px;
-    border-radius: 12px;
+    padding: 9px 10px;
+    font-size: 11.5px;
+    border-radius: 10px;
+    gap: 6px;
   }
-  .corp-trust-line { font-size: 9px; text-align: center; }
+  .corp-btn-fill svg, .corp-btn-outline svg {
+    width: 11px;
+    height: 11px;
+  }
+  .corp-trust-line {
+    font-size: 8px;
+    line-height: 1.25;
+    text-align: center;
+  }
 }
 
 @media (min-width: 769px) and (max-width: 1024px) {
