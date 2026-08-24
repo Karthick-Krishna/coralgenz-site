@@ -164,7 +164,7 @@ window.toggleMobileServicesMenu = toggleMobileServicesMenu;
 function toggleCertDropdown(e) {
   if (e) e.preventDefault();
   const content = document.getElementById('certDropdownContent');
-  const toggleBtn = document.querySelector('.cert-glass-accordion-btn, .cert-v2-dropdown-toggle');
+  const toggleBtn = document.querySelector('.neo-accordion-trigger, .apple-accordion-toggle, .cert-glass-accordion-btn, .cert-v2-dropdown-toggle');
   if (content && toggleBtn) {
     const isOpen = content.classList.contains('open');
     if (isOpen) {
