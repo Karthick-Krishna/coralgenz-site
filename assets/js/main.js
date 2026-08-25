@@ -164,7 +164,7 @@ window.toggleMobileServicesMenu = toggleMobileServicesMenu;
 function toggleCertDropdown(e) {
   if (e) e.preventDefault();
   const content = document.getElementById('certDropdownContent');
-  const toggleBtn = document.querySelector('.neo-accordion-trigger, .apple-accordion-toggle, .cert-glass-accordion-btn, .cert-v2-dropdown-toggle');
+  const toggleBtn = document.querySelector('.accordion-trigger-clean, .neo-accordion-trigger, .apple-accordion-toggle, .cert-glass-accordion-btn, .cert-v2-dropdown-toggle');
   if (content && toggleBtn) {
     const isOpen = content.classList.contains('open');
     if (isOpen) {
@@ -177,6 +177,56 @@ function toggleCertDropdown(e) {
   }
 }
 window.toggleCertDropdown = toggleCertDropdown;
+
+/* Live 4D Interactive Spatial Parallax for Credential Pass */
+function init4DPassTilt() {
+  const passCard = document.getElementById('credentialPass4D');
+  const stage = document.querySelector('.corp-stage-4d');
+  if (!passCard || !stage) return;
+
+  stage.addEventListener('mousemove', (e) => {
+    if (window.innerWidth <= 768) return;
+    const rect = passCard.getBoundingClientRect();
+    const x = e.clientX - (rect.left + rect.width / 2);
+    const y = e.clientY - (rect.top + rect.height / 2);
+    const rotX = Math.max(-12, Math.min(12, -y / 15));
+    const rotY = Math.max(-14, Math.min(14, x / 15));
+    passCard.style.transform = `perspective(1000px) rotateX(${rotX}deg) rotateY(${rotY}deg) translateZ(12px)`;
+  });
+
+  stage.addEventListener('mouseleave', () => {
+    passCard.style.transform = '';
+  });
+}
+
+/* Live 3D Interactive Parallax for Hero 3D Logo Stage */
+function init3DHeroTilt() {
+  const heroStage = document.getElementById('hero3DStage') || document.getElementById('hero4DShowcase');
+  const heroSection = document.getElementById('hero');
+  if (!heroStage || !heroSection) return;
+
+  heroSection.addEventListener('mousemove', (e) => {
+    if (window.innerWidth <= 991) return;
+    const rect = heroStage.getBoundingClientRect();
+    const x = e.clientX - (rect.left + rect.width / 2);
+    const y = e.clientY - (rect.top + rect.height / 2);
+    const rotX = Math.max(-10, Math.min(10, -y / 22));
+    const rotY = Math.max(-12, Math.min(12, x / 22));
+    heroStage.style.transform = `perspective(1200px) rotateX(${rotX}deg) rotateY(${rotY}deg) translateZ(12px)`;
+  });
+
+  heroSection.addEventListener('mouseleave', () => {
+    heroStage.style.transform = '';
+  });
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  init4DPassTilt();
+  init3DHeroTilt();
+});
+
+
+
 
 /* Values Principle Studio - Slider & Preview Logic */
 let currentValIndex = 0;
