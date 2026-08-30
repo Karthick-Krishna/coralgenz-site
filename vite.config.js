@@ -11,16 +11,20 @@ export default defineConfig({
         thanvanthH: resolve('thanvanth-h.html'),
         knowMore: resolve('know-more.html'),
         notFound: resolve('404.html'),
-        customSoftware: resolve('custom-software-development.html'),
-        domainDeployment: resolve('domain-and-deployment-service.html'),
-        frontendModernization: resolve('frontend-modernization.html'),
-        fullStackSoftware: resolve('full-stack-software.html'),
-        legacySoftware: resolve('legacy-software-modernization.html'),
+        customSoftware: resolve('our-services/custom-software-development.html'),
+        domainDeployment: resolve('our-services/domain-and-deployment-service.html'),
+        frontendModernization: resolve('our-services/frontend-modernization.html'),
+        fullStackSoftware: resolve('our-services/full-stack-software.html'),
+        legacySoftware: resolve('our-services/legacy-software-modernization.html'),
         microsoft: resolve('microsoft.html'),
-        modernAdminDashboards: resolve('modern-admin-dashboards.html'),
-        mvpDevelopment: resolve('mvp-development.html'),
-        pwaDevelopment: resolve('pwa-development.html'),
-        salesforce: resolve('salesforce.html')
+        modernAdminDashboards: resolve('our-services/modern-admin-dashboards.html'),
+        mvpDevelopment: resolve('our-services/mvp-development.html'),
+        pwaDevelopment: resolve('our-services/pwa-development.html'),
+        salesforce: resolve('salesforce.html'),
+        qr: resolve('coralgenz-qr.html'),
+        vault: resolve('coralgenz-vault.html'),
+        compiler: resolve('coralgenz-compiler.html'),
+        ourServices: resolve('our-services.html')
       }
     }
   }
