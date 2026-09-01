@@ -3,6 +3,77 @@
  * Pure Vanilla JavaScript
  */
 
+/**
+ * ==============================================================================
+ * ENTERPRISE ANTI-INSPECT & DEVTOOLS PROTECTION ENGINE
+ * Disables Right-Click Context Menu, DevTools Shortcuts, View Source, and Dragging
+ * ==============================================================================
+ */
+(function initAntiInspect() {
+  // 1. Disable Right Click Context Menu
+  document.addEventListener('contextmenu', (e) => {
+    e.preventDefault();
+    return false;
+  }, { capture: true });
+
+  // 2. Disable DevTools & Source View Keyboard Shortcuts
+  document.addEventListener('keydown', (e) => {
+    // F12
+    if (e.key === 'F12' || e.keyCode === 123) {
+      e.preventDefault();
+      e.stopPropagation();
+      return false;
+    }
+
+    const isCtrlOrCmd = e.ctrlKey || e.metaKey;
+    const isShift = e.shiftKey;
+    const isAlt = e.altKey;
+    const key = e.key ? e.key.toLowerCase() : '';
+    const code = e.keyCode;
+
+    // Ctrl+Shift+I / J / C / K / E (Inspect Element & Console)
+    if (isCtrlOrCmd && isShift && (key === 'i' || key === 'j' || key === 'c' || key === 'k' || key === 'e' || code === 73 || code === 74 || code === 67 || code === 75 || code === 69)) {
+      e.preventDefault();
+      e.stopPropagation();
+      return false;
+    }
+
+    // Cmd+Option+I / J / C / U (macOS DevTools & View Source)
+    if (isCtrlOrCmd && isAlt && (key === 'i' || key === 'j' || key === 'c' || key === 'u' || code === 73 || code === 74 || code === 67 || code === 85)) {
+      e.preventDefault();
+      e.stopPropagation();
+      return false;
+    }
+
+    // Ctrl+U / Cmd+U (View Page Source)
+    if (isCtrlOrCmd && (key === 'u' || code === 85)) {
+      e.preventDefault();
+      e.stopPropagation();
+      return false;
+    }
+
+    // Ctrl+S / Cmd+S (Save Page)
+    if (isCtrlOrCmd && (key === 's' || code === 83)) {
+      e.preventDefault();
+      e.stopPropagation();
+      return false;
+    }
+  }, { capture: true });
+
+  // 3. Prevent Drag & Drop of Images
+  document.addEventListener('dragstart', (e) => {
+    e.preventDefault();
+    return false;
+  }, { capture: true });
+
+  // 4. Console Protection
+  if (typeof window !== 'undefined') {
+    setInterval(() => {
+      console.clear();
+    }, 1500);
+  }
+})();
+
 document.addEventListener('DOMContentLoaded', () => {
   initNavbar();
   initScrollReveals();
