@@ -9,6 +9,7 @@ export default defineConfig({
         team: resolve('team.html'),
         karthickKrishna: resolve('karthick-krishna.html'),
         thanvanthH: resolve('thanvanth-h.html'),
+        sharveshwaranR: resolve('sharveshwaran-r.html'),
         knowMore: resolve('know-more.html'),
         notFound: resolve('404.html'),
         customSoftware: resolve('our-services/custom-software-development.html'),
