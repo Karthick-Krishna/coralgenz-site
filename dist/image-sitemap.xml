@@ -204,8 +204,23 @@
     <loc>https://coralgenz.co.in/our-products.html</loc>
     <image:image>
       <image:loc>https://coralgenz.co.in/assets/images/keurnaCtookRPkuKPv04gdjnYl0.png</image:loc>
-      <image:title>Coralgenz Proprietary Products</image:title>
+      <image:title>Coralgenz Proprietary Digital Products</image:title>
       <image:caption>In-house cloud developer tools, online multi-language compilers, smart QR code generators, and zero-knowledge encryption vaults</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://coralgenz.co.in/assets/images/bWAAzmxMCxdnsSetSctYnU3YiUc.png</image:loc>
+      <image:title>Coralgenz Compiler - Multi-Language Cloud IDE</image:title>
+      <image:caption>High-performance online cloud compiler supporting C, C++, Python, Java, SQL, and HTML/CSS/JS</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://coralgenz.co.in/assets/images/3JTkDW5Aoei5uyxXo6VXHc2SaU.jpg</image:loc>
+      <image:title>Coralgenz QR - Dynamic QR Code Platform</image:title>
+      <image:caption>Enterprise QR generator with customizable branding, high error correction, and real-time scan analytics</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://coralgenz.co.in/assets/images/5TJoRKj7qDumzI97c2JGZnDr7Gg.jpg</image:loc>
+      <image:title>Coralgenz Vault - Zero-Knowledge Secure Storage</image:title>
+      <image:caption>Client-side AES-256 encrypted file protection suite and sensitive digital asset vault</image:caption>
     </image:image>
   </url>
   <url>

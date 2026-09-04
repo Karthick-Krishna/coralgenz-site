@@ -70,9 +70,9 @@
   </url>
   <url>
     <loc>https://coralgenz.co.in/our-services.html</loc>
-    <lastmod>2026-08-30</lastmod>
+    <lastmod>2026-09-04</lastmod>
     <changefreq>daily</changefreq>
-    <priority>0.95</priority>
+    <priority>0.98</priority>
     <image:image>
       <image:loc>https://coralgenz.co.in/assets/images/DVyu6tz4dqPirA4TwAJZUz5CUw.png</image:loc>
       <image:title>Coralgenz Global Services Hub Logo</image:title>
@@ -121,9 +121,9 @@
   </url>
   <url>
     <loc>https://coralgenz.co.in/our-services/custom-software-development.html</loc>
-    <lastmod>2026-08-30</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.90</priority>
+    <lastmod>2026-09-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.40</priority>
     <image:image>
       <image:loc>https://coralgenz.co.in/assets/images/custom-solution.jpg</image:loc>
       <image:title>Custom Software Development Services</image:title>
@@ -132,9 +132,9 @@
   </url>
   <url>
     <loc>https://coralgenz.co.in/our-services/mvp-development.html</loc>
-    <lastmod>2026-08-30</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.90</priority>
+    <lastmod>2026-09-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.40</priority>
     <image:image>
       <image:loc>https://coralgenz.co.in/assets/images/mvp-development.png</image:loc>
       <image:title>MVP Development Services</image:title>
@@ -143,9 +143,9 @@
   </url>
   <url>
     <loc>https://coralgenz.co.in/our-services/full-stack-software.html</loc>
-    <lastmod>2026-08-30</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.90</priority>
+    <lastmod>2026-09-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.40</priority>
     <image:image>
       <image:loc>https://coralgenz.co.in/assets/images/fullstack-development.png</image:loc>
       <image:title>Full Stack Software Development</image:title>
@@ -154,9 +154,9 @@
   </url>
   <url>
     <loc>https://coralgenz.co.in/our-services/legacy-software-modernization.html</loc>
-    <lastmod>2026-08-30</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.90</priority>
+    <lastmod>2026-09-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.40</priority>
     <image:image>
       <image:loc>https://coralgenz.co.in/assets/images/legacy-modernization.png</image:loc>
       <image:title>Legacy Software Modernization Services</image:title>
@@ -165,9 +165,9 @@
   </url>
   <url>
     <loc>https://coralgenz.co.in/our-services/pwa-development.html</loc>
-    <lastmod>2026-08-30</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.90</priority>
+    <lastmod>2026-09-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.40</priority>
     <image:image>
       <image:loc>https://coralgenz.co.in/assets/images/pwa-development.png</image:loc>
       <image:title>Progressive Web Apps Development</image:title>
@@ -176,9 +176,9 @@
   </url>
   <url>
     <loc>https://coralgenz.co.in/our-services/modern-admin-dashboards.html</loc>
-    <lastmod>2026-08-30</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.90</priority>
+    <lastmod>2026-09-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.40</priority>
     <image:image>
       <image:loc>https://coralgenz.co.in/assets/images/admin-dashboards.jpg</image:loc>
       <image:title>Modern Admin Dashboards Services</image:title>
@@ -187,9 +187,9 @@
   </url>
   <url>
     <loc>https://coralgenz.co.in/our-services/frontend-modernization.html</loc>
-    <lastmod>2026-08-30</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.90</priority>
+    <lastmod>2026-09-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.40</priority>
     <image:image>
       <image:loc>https://coralgenz.co.in/assets/images/frontend-modernization.png</image:loc>
       <image:title>Frontend Modernization Services</image:title>
@@ -198,9 +198,9 @@
   </url>
   <url>
     <loc>https://coralgenz.co.in/our-services/domain-and-deployment-service.html</loc>
-    <lastmod>2026-08-30</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.90</priority>
+    <lastmod>2026-09-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.40</priority>
     <image:image>
       <image:loc>https://coralgenz.co.in/assets/images/domain-deployment.jpg</image:loc>
       <image:title>Domain and Cloud Deployment Services</image:title>
@@ -243,12 +243,27 @@
   <url>
     <loc>https://coralgenz.co.in/our-products.html</loc>
     <lastmod>2026-09-04</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.85</priority>
+    <changefreq>daily</changefreq>
+    <priority>0.98</priority>
     <image:image>
       <image:loc>https://coralgenz.co.in/assets/images/keurnaCtookRPkuKPv04gdjnYl0.png</image:loc>
-      <image:title>Coralgenz Proprietary Products</image:title>
+      <image:title>Coralgenz Proprietary Digital Products</image:title>
       <image:caption>In-house cloud developer tools, online multi-language compilers, smart QR code generators, and zero-knowledge encryption vaults</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://coralgenz.co.in/assets/images/bWAAzmxMCxdnsSetSctYnU3YiUc.png</image:loc>
+      <image:title>Coralgenz Compiler - Multi-Language Cloud IDE</image:title>
+      <image:caption>High-performance online cloud compiler supporting C, C++, Python, Java, SQL, and HTML/CSS/JS</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://coralgenz.co.in/assets/images/3JTkDW5Aoei5uyxXo6VXHc2SaU.jpg</image:loc>
+      <image:title>Coralgenz QR - Dynamic QR Code Platform</image:title>
+      <image:caption>Enterprise QR generator with customizable branding, high error correction, and real-time scan analytics</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://coralgenz.co.in/assets/images/5TJoRKj7qDumzI97c2JGZnDr7Gg.jpg</image:loc>
+      <image:title>Coralgenz Vault - Zero-Knowledge Secure Storage</image:title>
+      <image:caption>Client-side AES-256 encrypted file protection suite and sensitive digital asset vault</image:caption>
     </image:image>
   </url>
   <url>
