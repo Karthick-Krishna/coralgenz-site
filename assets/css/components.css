@@ -6873,7 +6873,7 @@ select:focus {
 
   .cert-preview-top {
     display: flex !important;
-    justify-content: space-between !important;
+    justify-content: center !important;
     align-items: center !important;
     margin-bottom: 5px !important;
   }
