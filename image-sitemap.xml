@@ -201,6 +201,14 @@
     </image:image>
   </url>
   <url>
+    <loc>https://coralgenz.co.in/our-products.html</loc>
+    <image:image>
+      <image:loc>https://coralgenz.co.in/assets/images/keurnaCtookRPkuKPv04gdjnYl0.png</image:loc>
+      <image:title>Coralgenz Proprietary Products</image:title>
+      <image:caption>In-house cloud developer tools, online multi-language compilers, smart QR code generators, and zero-knowledge encryption vaults</image:caption>
+    </image:image>
+  </url>
+  <url>
     <loc>https://coralgenz.co.in/know-more.html</loc>
     <image:image>
       <image:loc>https://coralgenz.co.in/assets/images/DVyu6tz4dqPirA4TwAJZUz5CUw.png</image:loc>

@@ -128,8 +128,9 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 76px;
-  max-width: 1040px;
+  height: 74px;
+  width: 100%;
+  max-width: var(--container-max);
   margin: 0 auto;
 }
 
@@ -141,10 +142,10 @@
 }
 
 .brand-logo img {
-  width: 54px;
-  height: 54px;
+  width: 40px;
+  height: 40px;
   object-fit: contain;
-  filter: drop-shadow(0 2px 12px rgba(0, 102, 255, 0.3));
+  filter: drop-shadow(0 2px 8px rgba(0, 102, 255, 0.25));
   transition: transform var(--transition-smooth);
 }
 
@@ -154,53 +155,48 @@
 
 .brand-name {
   font-family: var(--font-satoshi);
-  font-size: 22px;
+  font-size: 20px;
   font-weight: 800;
   letter-spacing: -0.02em;
-  color: var(--text-white);
+  color: #0f172a;
 }
 
 .nav-links {
   display: flex;
   align-items: center;
-  gap: 32px;
+  gap: 22px;
 }
 
 .nav-link {
   font-family: var(--font-inter);
-  font-size: 15px;
-  font-weight: 500;
-  color: var(--text-muted);
+  font-size: 14.5px;
+  font-weight: 600;
+  color: #475569;
   position: relative;
-  padding: 6px 0;
-  transition: color var(--transition-fast);
+  padding: 6px 12px;
+  border-radius: 8px;
+  transition: all var(--transition-fast);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
 }
 
-.nav-link:hover,
+.nav-link:hover {
+  color: #0066ff;
+  background: rgba(0, 102, 255, 0.05);
+}
+
 .nav-link.active {
-  color: var(--text-white);
-}
-
-.nav-link::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 0;
-  height: 2px;
-  background: linear-gradient(90deg, var(--color-primary), var(--color-cyan));
-  transition: width var(--transition-smooth);
-}
-
-.nav-link:hover::after,
-.nav-link.active::after {
-  width: 100%;
+  color: #0066ff;
+  font-weight: 700;
+  background: rgba(0, 102, 255, 0.08);
 }
 
 .nav-actions {
   display: flex;
   align-items: center;
-  gap: 16px;
+  gap: 14px;
 }
 
 /* Primary Button with Glow & Arrow */
@@ -4932,8 +4928,8 @@
 
 .footer-top {
   display: grid;
-  grid-template-columns: 1.5fr 1fr 1fr;
-  gap: 48px;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 40px;
   padding-bottom: 48px;
   border-bottom: 1px solid #cbd5e1;
 }

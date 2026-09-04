@@ -25,7 +25,8 @@ export default defineConfig({
         qr: resolve('coralgenz-qr.html'),
         vault: resolve('coralgenz-vault.html'),
         compiler: resolve('coralgenz-compiler.html'),
-        ourServices: resolve('our-services.html')
+        ourServices: resolve('our-services.html'),
+        ourProducts: resolve('our-products.html')
       }
     }
   }
