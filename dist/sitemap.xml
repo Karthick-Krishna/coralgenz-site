@@ -4,7 +4,7 @@
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://coralgenz.co.in/</loc>
-    <lastmod>2026-08-30</lastmod>
+    <lastmod>2026-09-04</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
     <image:image>
@@ -115,129 +115,8 @@
     </image:image>
     <image:image>
       <image:loc>https://coralgenz.co.in/assets/images/domain-deployment.jpg</image:loc>
-      <image:title>Domain & Deployment Services</image:title>
-      <image:caption>Cloud Infrastructure & CI/CD Pipelines</image:caption>
-    </image:image>
-  </url>
-  <url>
-    <loc>https://coralgenz.co.in/our-services/custom-software-development.html</loc>
-    <lastmod>2026-09-04</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.40</priority>
-    <image:image>
-      <image:loc>https://coralgenz.co.in/assets/images/custom-solution.jpg</image:loc>
-      <image:title>Custom Software Development Services</image:title>
-      <image:caption>Tailor-made software engineering by Coralgenz Global</image:caption>
-    </image:image>
-  </url>
-  <url>
-    <loc>https://coralgenz.co.in/our-services/mvp-development.html</loc>
-    <lastmod>2026-09-04</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.40</priority>
-    <image:image>
-      <image:loc>https://coralgenz.co.in/assets/images/mvp-development.png</image:loc>
-      <image:title>MVP Development Services</image:title>
-      <image:caption>Turn startup concepts into investor-ready MVPs</image:caption>
-    </image:image>
-  </url>
-  <url>
-    <loc>https://coralgenz.co.in/our-services/full-stack-software.html</loc>
-    <lastmod>2026-09-04</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.40</priority>
-    <image:image>
-      <image:loc>https://coralgenz.co.in/assets/images/fullstack-development.png</image:loc>
-      <image:title>Full Stack Software Development</image:title>
-      <image:caption>Complete end-to-end full stack web architecture</image:caption>
-    </image:image>
-  </url>
-  <url>
-    <loc>https://coralgenz.co.in/our-services/legacy-software-modernization.html</loc>
-    <lastmod>2026-09-04</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.40</priority>
-    <image:image>
-      <image:loc>https://coralgenz.co.in/assets/images/legacy-modernization.png</image:loc>
-      <image:title>Legacy Software Modernization Services</image:title>
-      <image:caption>Refactor legacy monolithic apps to cloud microservices</image:caption>
-    </image:image>
-  </url>
-  <url>
-    <loc>https://coralgenz.co.in/our-services/pwa-development.html</loc>
-    <lastmod>2026-09-04</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.40</priority>
-    <image:image>
-      <image:loc>https://coralgenz.co.in/assets/images/pwa-development.png</image:loc>
-      <image:title>Progressive Web Apps Development</image:title>
-      <image:caption>Installable offline-capable progressive web apps</image:caption>
-    </image:image>
-  </url>
-  <url>
-    <loc>https://coralgenz.co.in/our-services/modern-admin-dashboards.html</loc>
-    <lastmod>2026-09-04</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.40</priority>
-    <image:image>
-      <image:loc>https://coralgenz.co.in/assets/images/admin-dashboards.jpg</image:loc>
-      <image:title>Modern Admin Dashboards Services</image:title>
-      <image:caption>Custom enterprise administrative dashboards and BI analytics</image:caption>
-    </image:image>
-  </url>
-  <url>
-    <loc>https://coralgenz.co.in/our-services/frontend-modernization.html</loc>
-    <lastmod>2026-09-04</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.40</priority>
-    <image:image>
-      <image:loc>https://coralgenz.co.in/assets/images/frontend-modernization.png</image:loc>
-      <image:title>Frontend Modernization Services</image:title>
-      <image:caption>Refactor legacy UIs to React, Next.js, and modern CSS</image:caption>
-    </image:image>
-  </url>
-  <url>
-    <loc>https://coralgenz.co.in/our-services/domain-and-deployment-service.html</loc>
-    <lastmod>2026-09-04</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.40</priority>
-    <image:image>
-      <image:loc>https://coralgenz.co.in/assets/images/domain-deployment.jpg</image:loc>
-      <image:title>Domain and Cloud Deployment Services</image:title>
-      <image:caption>DNS routing, SSL security, and multi-region cloud deployment</image:caption>
-    </image:image>
-  </url>
-  <url>
-    <loc>https://coralgenz.co.in/coralgenz-qr.html</loc>
-    <lastmod>2026-08-30</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.85</priority>
-    <image:image>
-      <image:loc>https://coralgenz.co.in/assets/images/3JTkDW5Aoei5uyxXo6VXHc2SaU.jpg</image:loc>
-      <image:title>Coralgenz QR Product</image:title>
-      <image:caption>Dynamic QR Code Generator & Analytics Platform</image:caption>
-    </image:image>
-  </url>
-  <url>
-    <loc>https://coralgenz.co.in/coralgenz-vault.html</loc>
-    <lastmod>2026-08-30</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.85</priority>
-    <image:image>
-      <image:loc>https://coralgenz.co.in/assets/images/5TJoRKj7qDumzI97c2JGZnDr7Gg.jpg</image:loc>
-      <image:title>Coralgenz Vault Product</image:title>
-      <image:caption>Zero-Knowledge Encrypted Enterprise Cloud Storage</image:caption>
-    </image:image>
-  </url>
-  <url>
-    <loc>https://coralgenz.co.in/coralgenz-compiler.html</loc>
-    <lastmod>2026-08-30</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.85</priority>
-    <image:image>
-      <image:loc>https://coralgenz.co.in/assets/images/bWAAzmxMCxdnsSetSctYnU3YiUc.png</image:loc>
-      <image:title>Coralgenz Compiler Product</image:title>
-      <image:caption>Ultra-Fast Online Multi-Language Cloud IDE & Code Sandbox</image:caption>
+      <image:title>Domain &amp; Deployment Services</image:title>
+      <image:caption>Cloud Infrastructure &amp; CI/CD Pipelines</image:caption>
     </image:image>
   </url>
   <url>
@@ -268,9 +147,9 @@
   </url>
   <url>
     <loc>https://coralgenz.co.in/know-more.html</loc>
-    <lastmod>2026-08-30</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.80</priority>
+    <lastmod>2026-09-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
     <image:image>
       <image:loc>https://coralgenz.co.in/assets/images/DVyu6tz4dqPirA4TwAJZUz5CUw.png</image:loc>
       <image:title>About Coralgenz Global</image:title>
@@ -278,14 +157,25 @@
     </image:image>
   </url>
   <url>
+    <loc>https://coralgenz.co.in/contact.html</loc>
+    <lastmod>2026-09-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
+    <image:image>
+      <image:loc>https://coralgenz.co.in/assets/images/DVyu6tz4dqPirA4TwAJZUz5CUw.png</image:loc>
+      <image:title>Contact Coralgenz Global</image:title>
+      <image:caption>Direct Engineering &amp; Executive Consultation Desk in Coimbatore, India</image:caption>
+    </image:image>
+  </url>
+  <url>
     <loc>https://coralgenz.co.in/team.html</loc>
-    <lastmod>2026-08-30</lastmod>
+    <lastmod>2026-09-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.80</priority>
     <image:image>
       <image:loc>https://coralgenz.co.in/assets/images/karthick-krishna.jpg</image:loc>
-      <image:title>Karthick Krishna - Founder & CEO</image:title>
-      <image:caption>Founder & Chief Executive Officer of Coralgenz Global</image:caption>
+      <image:title>Karthick Krishna - Founder &amp; CEO</image:title>
+      <image:caption>Founder &amp; Chief Executive Officer of Coralgenz Global</image:caption>
     </image:image>
     <image:image>
       <image:loc>https://coralgenz.co.in/assets/images/kmUbbqN7jwVRUVuglgbqRYXOtY.png</image:loc>
@@ -299,19 +189,52 @@
     </image:image>
   </url>
   <url>
+    <loc>https://coralgenz.co.in/coralgenz-compiler.html</loc>
+    <lastmod>2026-09-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
+    <image:image>
+      <image:loc>https://coralgenz.co.in/assets/images/bWAAzmxMCxdnsSetSctYnU3YiUc.png</image:loc>
+      <image:title>Coralgenz Compiler Product</image:title>
+      <image:caption>Ultra-Fast Online Multi-Language Cloud IDE &amp; Code Sandbox</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://coralgenz.co.in/coralgenz-qr.html</loc>
+    <lastmod>2026-09-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
+    <image:image>
+      <image:loc>https://coralgenz.co.in/assets/images/3JTkDW5Aoei5uyxXo6VXHc2SaU.jpg</image:loc>
+      <image:title>Coralgenz QR Product</image:title>
+      <image:caption>Dynamic QR Code Generator &amp; Analytics Platform</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://coralgenz.co.in/coralgenz-vault.html</loc>
+    <lastmod>2026-09-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
+    <image:image>
+      <image:loc>https://coralgenz.co.in/assets/images/5TJoRKj7qDumzI97c2JGZnDr7Gg.jpg</image:loc>
+      <image:title>Coralgenz Vault Product</image:title>
+      <image:caption>Zero-Knowledge Encrypted Enterprise Cloud Storage</image:caption>
+    </image:image>
+  </url>
+  <url>
     <loc>https://coralgenz.co.in/karthick-krishna.html</loc>
-    <lastmod>2026-09-03</lastmod>
+    <lastmod>2026-09-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
     <image:image>
       <image:loc>https://coralgenz.co.in/assets/images/karthick-krishna.jpg</image:loc>
       <image:title>Karthick Krishna</image:title>
-      <image:caption>Founder & CEO Profile - Coralgenz Global</image:caption>
+      <image:caption>Founder &amp; CEO Profile - Coralgenz Global</image:caption>
     </image:image>
   </url>
   <url>
     <loc>https://coralgenz.co.in/thanvanth-h.html</loc>
-    <lastmod>2026-08-30</lastmod>
+    <lastmod>2026-09-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
     <image:image>
@@ -322,7 +245,7 @@
   </url>
   <url>
     <loc>https://coralgenz.co.in/sharveshwaran-r.html</loc>
-    <lastmod>2026-09-03</lastmod>
+    <lastmod>2026-09-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
     <image:image>
@@ -333,7 +256,7 @@
   </url>
   <url>
     <loc>https://coralgenz.co.in/microsoft.html</loc>
-    <lastmod>2026-08-30</lastmod>
+    <lastmod>2026-09-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.70</priority>
     <image:image>
@@ -344,7 +267,7 @@
   </url>
   <url>
     <loc>https://coralgenz.co.in/salesforce.html</loc>
-    <lastmod>2026-08-30</lastmod>
+    <lastmod>2026-09-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.70</priority>
     <image:image>
