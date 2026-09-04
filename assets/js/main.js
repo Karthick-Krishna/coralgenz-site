@@ -249,6 +249,24 @@ function toggleCertDropdown(e) {
 }
 window.toggleCertDropdown = toggleCertDropdown;
 
+/* Available Courses Dropdown Toggle */
+function toggleCoursesDropdown(e) {
+  if (e) e.preventDefault();
+  const content = document.getElementById('coursesDropdownContent');
+  const toggleBtn = document.querySelector('.courses-trigger-clean');
+  if (content && toggleBtn) {
+    const isOpen = content.classList.contains('open');
+    if (isOpen) {
+      content.classList.remove('open');
+      toggleBtn.classList.remove('active');
+    } else {
+      content.classList.add('open');
+      toggleBtn.classList.add('active');
+    }
+  }
+}
+window.toggleCoursesDropdown = toggleCoursesDropdown;
+
 /* Live 4D Interactive Spatial Parallax for Credential Pass */
 function init4DPassTilt() {
   const passCard = document.getElementById('credentialPass4D');
