@@ -227,3 +227,51 @@
     opacity: 0.75;
   }
 }
+
+/* Spinner Animation for Dynamic Code Execution & Async Actions */
+@keyframes spinAnim {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.spin-anim {
+  animation: spinAnim 1s linear infinite;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+/* Button Dynamic Light Sweep Effect */
+@keyframes btnShineSweep {
+  0% {
+    left: -100%;
+  }
+  100% {
+    left: 200%;
+  }
+}
+
+.btn-shine {
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.28) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  transform: skewX(-20deg);
+  pointer-events: none;
+}
+
+.why-cta-btn:hover .btn-shine,
+.ratings-v2-btn:hover .btn-shine,
+.btn-primary:hover .btn-shine {
+  animation: btnShineSweep 0.85s ease-in-out;
+}

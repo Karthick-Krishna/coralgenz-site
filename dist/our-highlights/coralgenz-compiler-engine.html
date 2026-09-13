@@ -74,8 +74,8 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@500;700&display=swap">
     <link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700,900&display=swap">
   </noscript>
-  <script type="module" crossorigin src="/assets/main-DtZ3fC40.js"></script>
-  <link rel="stylesheet" crossorigin href="/assets/main-Bact4f_1.css">
+  <script type="module" crossorigin src="/assets/main-DnfKibMk.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/main-Dg7PZXH-.css">
 </head>
 <body class="hl-subpage-wrap">
 
@@ -329,11 +329,29 @@
       </div>
     </section>
 
+    <!-- Visual Mockup Showcase Frame -->
+    <div style="max-width: 960px; margin: -20px auto 30px auto; padding: 0 20px;">
+      <div class="hl-showcase-frame reveal-init">
+        <div class="hl-showcase-bar">
+          <div class="hl-showcase-dots">
+            <span class="hl-showcase-dot red"></span>
+            <span class="hl-showcase-dot yellow"></span>
+            <span class="hl-showcase-dot green"></span>
+          </div>
+          <span>CORALGENZ_COMPILER // MULTI-LANGUAGE WEBASSEMBLY SANDBOX</span>
+          <span class="hl-live-beacon">
+            <span class="beacon-pulse-dot"></span>
+            <span>WASM V8 ISOLATED RUNTIME</span>
+          </span>
+        </div>
+        <img src="/assets/keurnaCtookRPkuKPv04gdjnYl0-BHYVxSjv.png" alt="Coralgenz Compiler In-Browser WebAssembly Execution Engine" class="hl-showcase-img" loading="eager" decoding="async">
+      </div>
+    </div>
+
     <!-- Deep-Dive Cards Body -->
     <article class="hl-article-body">
       
-      
-      <div class="hl-premium-card">
+      <div class="hl-premium-card reveal-init">
         <div class="hl-card-header">
           <span class="hl-card-tag">CLOUD EXECUTION PLATFORM</span>
           <span style="font-family:var(--font-space), monospace; font-size:12px; color:#64748b;">MULTI-LANGUAGE KERNEL</span>
@@ -367,6 +385,133 @@
             <div class="hl-step-title">SQL In-Memory SQLite</div>
             <p class="hl-step-desc">Relational query execution with live visual table renders and query plan metrics.</p>
           </div>
+        </div>
+      </div>
+
+      <!-- Feature Bento Grid -->
+      <div class="hl-feature-bento reveal-init">
+        <div class="hl-feature-card">
+          <div class="hl-feature-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
+          </div>
+          <h4>Sub-10ms Cold Starts</h4>
+          <p>Instantaneous execution lifecycle powered by pre-warmed WebAssembly sandboxes eliminating traditional VM boot latencies.</p>
+        </div>
+        <div class="hl-feature-card">
+          <div class="hl-feature-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+          </div>
+          <h4>Process Isolation &amp; Cgroups</h4>
+          <p>Strict memory limits and network syscall blacklisting ensure zero host vulnerability or runaway thread resource consumption.</p>
+        </div>
+        <div class="hl-feature-card">
+          <div class="hl-feature-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="4 17 10 11 4 5"></polyline><line x1="12" y1="19" x2="20" y2="19"></line></svg>
+          </div>
+          <h4>Interactive Stdin Streaming</h4>
+          <p>Real-time bidirectional terminal input and output handling for interactive CLI programs and user prompts.</p>
+        </div>
+        <div class="hl-feature-card">
+          <div class="hl-feature-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+          </div>
+          <h4>Zero Local Setup</h4>
+          <p>Engineers and students run complex code anywhere on any device, from budget Chromebooks to smartphones.</p>
+        </div>
+      </div>
+
+      <!-- Execution Sandbox Code Representation -->
+      <div class="hl-premium-card reveal-init">
+        <div class="hl-card-header">
+          <span class="hl-card-tag">EXECUTION PIPELINE</span>
+          <span style="font-family:var(--font-space), monospace; font-size:12px; color:#64748b;">DETERMINISTIC WASM AST</span>
+        </div>
+        <h2 class="hl-card-title">Isolated Execution Loop Architecture</h2>
+        <p class="hl-card-text">
+          Code is ingested, sanitized, and compiled inside an isolated virtual memory boundary before dispatch:
+        </p>
+
+        <div class="hl-code-block">
+          <span class="hl-code-comment">// 1. Client Dispatches Source Code Buffer</span><br>
+          <span class="hl-code-keyword">const</span> payload = { lang: <span class="hl-code-string">"c"</span>, code: <span class="hl-code-string">"#include &lt;stdio.h&gt;\nint main() { printf(\"Hello Coralgenz\"); return 0; }"</span> };<br><br>
+          <span class="hl-code-comment">// 2. WASM Worker Instantiation with Memory Cap (128MB)</span><br>
+          <span class="hl-code-keyword">const</span> instance = <span class="hl-code-keyword">await</span> WebAssembly.<span class="hl-code-func">instantiate</span>(wasmModule, {<br>
+          &nbsp;&nbsp;env: { memory: <span class="hl-code-keyword">new</span> WebAssembly.<span class="hl-code-func">Memory</span>({ initial: 256, maximum: 2048 }) },<br>
+          &nbsp;&nbsp;wasi_snapshot_preview1: wasiBindings<br>
+          });<br><br>
+          <span class="hl-code-comment">// 3. Sub-millisecond Execution &amp; Terminal Stdout Capture</span><br>
+          instance.exports.<span class="hl-code-func">_start</span>(); <span class="hl-code-comment">// Output: "Hello Coralgenz" (Execution Time: 3.2ms)</span>
+        </div>
+      </div>
+
+      <!-- Comparison Matrix Table -->
+      <div class="hl-premium-card reveal-init">
+        <div class="hl-card-header">
+          <span class="hl-card-tag">BENCHMARK COMPARISON</span>
+          <span style="font-family:var(--font-space), monospace; font-size:12px; color:#64748b;">EXECUTION ARCHITECTURE</span>
+        </div>
+        <h2 class="hl-card-title">Coralgenz Compiler vs Cloud Alternatives</h2>
+        <div class="hl-table-wrap">
+          <table class="hl-comp-matrix">
+            <thead>
+              <tr>
+                <th>Execution Metric</th>
+                <th>Traditional Local Toolchain</th>
+                <th>Heavy Cloud IDEs (Replit)</th>
+                <th>Coralgenz Web Compiler</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Setup Requirement</strong></td>
+                <td>Gigabytes of SDKs &amp; compilers</td>
+                <td>Account login &amp; container boot</td>
+                <td class="highlight">0 Seconds (Runs immediately in browser)</td>
+              </tr>
+              <tr>
+                <td><strong>Cold Boot Latency</strong></td>
+                <td>N/A (Local dependency)</td>
+                <td>10 - 25 Seconds VM spin-up</td>
+                <td class="highlight">&lt; 10 Milliseconds WASM instant boot</td>
+              </tr>
+              <tr>
+                <td><strong>Resource Overhead</strong></td>
+                <td>High RAM and CPU usage</td>
+                <td>Cloud container billing costs</td>
+                <td class="highlight">Ultra-lightweight sandboxed thread</td>
+              </tr>
+              <tr>
+                <td><strong>Host Security</strong></td>
+                <td>Local machine vulnerability</td>
+                <td>Container escape risk</td>
+                <td class="highlight">Browser WebAssembly Sandbox (100% Isolated)</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Supported Environments 4-Grid -->
+      <div class="hl-compliance-grid reveal-init">
+        <div class="hl-compliance-card">
+          <span class="hl-compliance-icon">⚙️</span>
+          <h4 class="hl-compliance-title">C &amp; C++ (C17 / C++20)</h4>
+          <p class="hl-compliance-desc">Fast Clang/LLVM optimization with memory bounds and leak sanitizer checks.</p>
+        </div>
+        <div class="hl-compliance-card">
+          <span class="hl-compliance-icon">🐍</span>
+          <h4 class="hl-compliance-title">Python 3.12 Runtime</h4>
+          <p class="hl-compliance-desc">Clean interpreter environment supporting algorithmic problem solving and scripting.</p>
+        </div>
+        <div class="hl-compliance-card">
+          <span class="hl-compliance-icon">☕</span>
+          <h4 class="hl-compliance-title">Java JDK 21</h4>
+          <p class="hl-compliance-desc">Full object-oriented programming execution with real-time class compilation.</p>
+        </div>
+        <div class="hl-compliance-card">
+          <span class="hl-compliance-icon">🗄️</span>
+          <h4 class="hl-compliance-title">In-Memory SQL</h4>
+          <p class="hl-compliance-desc">SQLite relational query engine with visual table output and transaction support.</p>
         </div>
       </div>
     
