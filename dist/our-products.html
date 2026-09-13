@@ -185,7 +185,7 @@
     .op-page-wrapper {
       background-color: #f8fafc;
       min-height: 100vh;
-      overflow-x: hidden;
+      overflow-x: clip;
     }
 
     /* Hero Section */
@@ -920,8 +920,8 @@
       }
     }
   </style>
-  <script type="module" crossorigin src="/assets/main-DGTw-fCX.js"></script>
-  <link rel="stylesheet" crossorigin href="/assets/main-CGtU_b8X.css">
+  <script type="module" crossorigin src="/assets/main-DRwr3c8E.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/main-D5HG6BLp.css">
 </head>
 <body class="coralgenz-theme op-page-wrapper">
 
@@ -936,6 +936,21 @@
 
       <nav class="nav-links">
         <a href="index.html" class="nav-link">Homepage</a>
+                <div class="nav-dropdown-wrapper">
+          <a href="our-highlights.html" class="nav-link nav-dropdown-btn">
+            <span>Our Highlights</span>
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </a>
+          <div class="nav-dropdown-menu">
+            <a href="our-highlights.html" class="nav-dropdown-item" style="font-weight: 800; color: #0066ff; border-bottom: 1px solid #e2e8f0; margin-bottom: 4px; padding-bottom: 8px;">All 6 Highlights Hub &rarr;</a>
+            <a href="our-highlights/worlds-first-secure-format.html" class="nav-dropdown-item">World's First .secure Format</a>
+            <a href="our-highlights/coralgenz-vault-security.html" class="nav-dropdown-item">Coralgenz Vault Security</a>
+            <a href="our-highlights/coralgenz-qr-telemetry.html" class="nav-dropdown-item">Coralgenz QR Telemetry</a>
+            <a href="our-highlights/coralgenz-compiler-engine.html" class="nav-dropdown-item">Coralgenz Compiler Engine</a>
+            <a href="our-highlights/clean-architecture-standards.html" class="nav-dropdown-item">Clean Architecture Standards</a>
+            <a href="our-highlights/microsoft-salesforce-partner.html" class="nav-dropdown-item">Microsoft &amp; Salesforce Partner</a>
+          </div>
+        </div>
         <a href="know-more.html" class="nav-link">About</a>
         <a href="our-products.html" class="nav-link active" style="font-weight: 700; color: #0066ff;">Our Products</a>
         
@@ -969,6 +984,10 @@
             <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="5" r="2.25"></circle><circle cx="12" cy="12" r="2.25"></circle><circle cx="12" cy="19" r="2.25"></circle></svg>
           </button>
           <div id="threeDotsDropdown" class="three-dots-dropdown" style="display: none;">
+            <a href="our-highlights.html" class="three-dots-item highlight" style="color: #0066ff;">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polygon points="12 6 12 12 16 14"></polygon></svg>
+              <span>OUR HIGHLIGHTS</span>
+            </a>
             <a href="mailto:contact@coralgenz.co.in" class="three-dots-item">
               <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
               <span>contact@coralgenz.co.in</span>
@@ -1005,6 +1024,46 @@
   <!-- Mobile Drawer Menu (3-Line Navigation Menu) -->
   <div class="mobile-menu">
     <a href="index.html" class="nav-link">Homepage</a>
+        <!-- Mobile Our Highlights Dropdown -->
+    <div class="mobile-highlights-dropdown-wrap">
+      <button class="mobile-highlights-toggle" onclick="toggleMobileHighlightsMenu(event)" aria-expanded="false">
+        <span>✨ Our Highlights</span>
+        <div class="highlights-toggle-meta">
+          <span class="highlights-count-badge">6</span>
+          <svg class="highlights-chevron-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </div>
+      </button>
+      <div id="mobileHighlightsDropdown" class="mobile-highlights-window">
+        <a href="our-highlights.html" class="mobile-sub-highlight-item" style="font-weight: 800; color: #0066ff;">
+          <span class="sub-highlight-bullet" style="background: #0066ff;"></span>
+          <span>All 6 Highlights Hub &rarr;</span>
+        </a>
+        <a href="our-highlights/worlds-first-secure-format.html" class="mobile-sub-highlight-item">
+          <span class="sub-highlight-bullet"></span>
+          <span>World's First .secure Format</span>
+        </a>
+        <a href="our-highlights/coralgenz-vault-security.html" class="mobile-sub-highlight-item">
+          <span class="sub-highlight-bullet"></span>
+          <span>Coralgenz Vault Security</span>
+        </a>
+        <a href="our-highlights/coralgenz-qr-telemetry.html" class="mobile-sub-highlight-item">
+          <span class="sub-highlight-bullet"></span>
+          <span>Coralgenz QR Telemetry</span>
+        </a>
+        <a href="our-highlights/coralgenz-compiler-engine.html" class="mobile-sub-highlight-item">
+          <span class="sub-highlight-bullet"></span>
+          <span>Coralgenz Compiler Engine</span>
+        </a>
+        <a href="our-highlights/clean-architecture-standards.html" class="mobile-sub-highlight-item">
+          <span class="sub-highlight-bullet"></span>
+          <span>Clean Architecture Standards</span>
+        </a>
+        <a href="our-highlights/microsoft-salesforce-partner.html" class="mobile-sub-highlight-item">
+          <span class="sub-highlight-bullet"></span>
+          <span>Microsoft &amp; Salesforce Partner</span>
+        </a>
+      </div>
+    </div>
     <a href="know-more.html" class="nav-link">About</a>
     <a href="our-products.html" class="nav-link" style="font-weight: 800; color: #0066ff;">🚀 Our Products</a>
     
@@ -1125,7 +1184,7 @@
         <!-- Product 1: Coralgenz Compiler -->
         <div class="op-card reveal-init">
           <div class="op-media-frame">
-            <img src="/assets/keurnaCtookRPkuKPv04gdjnYl0-BHYVxSjv.png" alt="Coralgenz Compiler Cloud IDE interface preview" loading="lazy" width="400" height="250">
+            <img src="/assets/keurnaCtookRPkuKPv04gdjnYl0-BHYVxSjv.png" alt="Coralgenz Compiler Cloud IDE interface preview" loading="eager" decoding="async" width="400" height="250">
           </div>
           
           <div class="op-meta-row">
@@ -1176,7 +1235,7 @@
         <!-- Product 2: Coralgenz QR -->
         <div class="op-card op-card-qr reveal-init reveal-delay-1">
           <div class="op-media-frame">
-            <img src="/assets/5TJoRKj7qDumzI97c2JGZnDr7Gg-BnLplfsn.jpg" alt="Coralgenz QR Enterprise code generation suite preview" loading="lazy" width="400" height="250">
+            <img src="/assets/5TJoRKj7qDumzI97c2JGZnDr7Gg-BnLplfsn.jpg" alt="Coralgenz QR Enterprise code generation suite preview" loading="eager" decoding="async" width="400" height="250">
           </div>
 
           <div class="op-meta-row">
@@ -1227,7 +1286,7 @@
         <!-- Product 3: Coralgenz Vault -->
         <div class="op-card op-card-vault reveal-init reveal-delay-2">
           <div class="op-media-frame">
-            <img src="/assets/3JTkDW5Aoei5uyxXo6VXHc2SaU-dupBWgfC.jpg" alt="Coralgenz Vault AES-256 GCM client-side encryption preview" loading="lazy" width="400" height="250">
+            <img src="/assets/3JTkDW5Aoei5uyxXo6VXHc2SaU-dupBWgfC.jpg" alt="Coralgenz Vault AES-256 GCM client-side encryption preview" loading="eager" decoding="async" width="400" height="250">
           </div>
 
           <div class="op-meta-row">
@@ -1335,7 +1394,7 @@
           <div class="footer-brand" itemscope itemtype="https://schema.org/Organization">
             <a href="index.html" class="brand-logo" aria-label="Coralgenz Global Official Homepage">
               <link itemprop="url" href="https://coralgenz.co.in/">
-              <img itemprop="logo" src="/assets/DVyu6tz4dqPirA4TwAJZUz5CUw-lPQmtTmF.png" alt="Coralgenz Global - Enterprise Software &amp; IT Solutions Official Logo" title="Coralgenz Global Logo" width="40" height="40" loading="lazy">
+              <img itemprop="logo" src="/assets/DVyu6tz4dqPirA4TwAJZUz5CUw-lPQmtTmF.png" alt="Coralgenz Global - Enterprise Software &amp; IT Solutions Official Logo" title="Coralgenz Global Logo" width="40" height="40" loading="eager" decoding="async">
               <span class="brand-name" itemprop="name">Coralgenz Global</span>
             </a>
             <div class="footer-sub">Information Technology Company</div>
@@ -1349,6 +1408,7 @@
             <h5 class="footer-col-title">Navigation</h5>
             <div class="footer-col-links">
               <a href="index.html">Homepage</a>
+              <a href="our-highlights.html" style="font-weight: 700; color: #0066ff;">Our Highlights</a>
               <a href="know-more.html">About Us</a>
               <a href="our-products.html" style="font-weight: 700; color: #0066ff;">Our Products</a>
               <a href="our-services.html">Our Services</a>

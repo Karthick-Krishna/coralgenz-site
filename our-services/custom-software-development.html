@@ -113,6 +113,21 @@
 
       <nav class="nav-links">
         <a href="../index.html" class="nav-link">Homepage</a>
+                <div class="nav-dropdown-wrapper">
+          <a href="../our-highlights.html" class="nav-link nav-dropdown-btn">
+            <span>Our Highlights</span>
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </a>
+          <div class="nav-dropdown-menu">
+            <a href="../our-highlights.html" class="nav-dropdown-item" style="font-weight: 800; color: #0066ff; border-bottom: 1px solid #e2e8f0; margin-bottom: 4px; padding-bottom: 8px;">All 6 Highlights Hub &rarr;</a>
+            <a href="../our-highlights/worlds-first-secure-format.html" class="nav-dropdown-item">World's First .secure Format</a>
+            <a href="../our-highlights/coralgenz-vault-security.html" class="nav-dropdown-item">Coralgenz Vault Security</a>
+            <a href="../our-highlights/coralgenz-qr-telemetry.html" class="nav-dropdown-item">Coralgenz QR Telemetry</a>
+            <a href="../our-highlights/coralgenz-compiler-engine.html" class="nav-dropdown-item">Coralgenz Compiler Engine</a>
+            <a href="../our-highlights/clean-architecture-standards.html" class="nav-dropdown-item">Clean Architecture Standards</a>
+            <a href="../our-highlights/microsoft-salesforce-partner.html" class="nav-dropdown-item">Microsoft &amp; Salesforce Partner</a>
+          </div>
+        </div>
         <a href="../know-more.html" class="nav-link">About</a>
         <a href="../our-products.html" class="nav-link">Our Products</a>
         <div class="nav-dropdown-wrapper">
@@ -142,6 +157,10 @@
             <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="5" r="2.25"></circle><circle cx="12" cy="12" r="2.25"></circle><circle cx="12" cy="19" r="2.25"></circle></svg>
           </button>
           <div id="threeDotsDropdown" class="three-dots-dropdown" style="display: none;">
+            <a href="../our-highlights.html" class="three-dots-item highlight" style="color: #0066ff;">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polygon points="12 6 12 12 16 14"></polygon></svg>
+              <span>OUR HIGHLIGHTS</span>
+            </a>
             <a href="mailto:coralgenz@gmail.com" class="three-dots-item">
               <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
               <span>coralgenz@gmail.com</span>
@@ -173,6 +192,46 @@
   <!-- Mobile Drawer Menu -->
   <div class="mobile-menu">
     <a href="../index.html" class="nav-link">Homepage</a>
+        <!-- Mobile Our Highlights Dropdown -->
+    <div class="mobile-highlights-dropdown-wrap">
+      <button class="mobile-highlights-toggle" onclick="toggleMobileHighlightsMenu(event)" aria-expanded="false">
+        <span>✨ Our Highlights</span>
+        <div class="highlights-toggle-meta">
+          <span class="highlights-count-badge">6</span>
+          <svg class="highlights-chevron-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </div>
+      </button>
+      <div id="mobileHighlightsDropdown" class="mobile-highlights-window">
+        <a href="../our-highlights.html" class="mobile-sub-highlight-item" style="font-weight: 800; color: #0066ff;">
+          <span class="sub-highlight-bullet" style="background: #0066ff;"></span>
+          <span>All 6 Highlights Hub &rarr;</span>
+        </a>
+        <a href="../our-highlights/worlds-first-secure-format.html" class="mobile-sub-highlight-item">
+          <span class="sub-highlight-bullet"></span>
+          <span>World's First .secure Format</span>
+        </a>
+        <a href="../our-highlights/coralgenz-vault-security.html" class="mobile-sub-highlight-item">
+          <span class="sub-highlight-bullet"></span>
+          <span>Coralgenz Vault Security</span>
+        </a>
+        <a href="../our-highlights/coralgenz-qr-telemetry.html" class="mobile-sub-highlight-item">
+          <span class="sub-highlight-bullet"></span>
+          <span>Coralgenz QR Telemetry</span>
+        </a>
+        <a href="../our-highlights/coralgenz-compiler-engine.html" class="mobile-sub-highlight-item">
+          <span class="sub-highlight-bullet"></span>
+          <span>Coralgenz Compiler Engine</span>
+        </a>
+        <a href="../our-highlights/clean-architecture-standards.html" class="mobile-sub-highlight-item">
+          <span class="sub-highlight-bullet"></span>
+          <span>Clean Architecture Standards</span>
+        </a>
+        <a href="../our-highlights/microsoft-salesforce-partner.html" class="mobile-sub-highlight-item">
+          <span class="sub-highlight-bullet"></span>
+          <span>Microsoft &amp; Salesforce Partner</span>
+        </a>
+      </div>
+    </div>
     <a href="../know-more.html" class="nav-link">About</a>
     
     <!-- Mobile Our Services Dropdown -->
@@ -272,7 +331,7 @@
             Enterprise Engineering Standard
           </div>
           <div class="service-hero-img-wrap">
-            <img src="../assets/images/custom-solution.jpg" alt="Custom Software Development Graphic" loading="lazy">
+            <img src="../assets/images/custom-solution.jpg" alt="Custom Software Development Graphic" loading="eager" decoding="async">
           </div>
           <div class="service-hero-chips">
             <div class="service-hero-chip">
@@ -462,7 +521,8 @@
               <a href="../index.html#services">Specialisations</a>
               <a href="../team.html">TEAM</a>
               <a href="../contact.html">Contact Us</a>
-            </div>
+            
+              <a href="../our-highlights.html" style="font-weight: 700; color: #0066ff;">Our Highlights</a></div>
           </div>
 
           <div>

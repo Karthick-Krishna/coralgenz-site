@@ -1,85 +1,54 @@
 /**
  * Coralgenz Global - Frontend Interactions & Dynamic Engine
- * Pure Vanilla JavaScript
+ * Pure Vanilla JavaScript - High Performance & Ultra-Smooth 60-120fps
  */
 
 /**
- * ==============================================================================
- * ENTERPRISE ANTI-INSPECT & DEVTOOLS PROTECTION ENGINE
- * Disables Right-Click Context Menu, DevTools Shortcuts, View Source, and Dragging
- * ==============================================================================
+ * Enterprise Anti-Inspect Protection (Lightweight & Non-blocking)
  */
 (function initAntiInspect() {
-  // 1. Disable Right Click Context Menu
   document.addEventListener('contextmenu', (e) => {
     e.preventDefault();
     return false;
-  }, { capture: true });
+  }, { capture: true, passive: false });
 
-  // 2. Disable DevTools & Source View Keyboard Shortcuts
   document.addEventListener('keydown', (e) => {
-    // F12
     if (e.key === 'F12' || e.keyCode === 123) {
       e.preventDefault();
-      e.stopPropagation();
       return false;
     }
-
     const isCtrlOrCmd = e.ctrlKey || e.metaKey;
-    const isShift = e.shiftKey;
-    const isAlt = e.altKey;
-    const key = e.key ? e.key.toLowerCase() : '';
-    const code = e.keyCode;
-
-    // Ctrl+Shift+I / J / C / K / E (Inspect Element & Console)
-    if (isCtrlOrCmd && isShift && (key === 'i' || key === 'j' || key === 'c' || key === 'k' || key === 'e' || code === 73 || code === 74 || code === 67 || code === 75 || code === 69)) {
-      e.preventDefault();
-      e.stopPropagation();
-      return false;
+    if (isCtrlOrCmd) {
+      const key = e.key ? e.key.toLowerCase() : '';
+      // Block Ctrl+Shift+I/J/C, Ctrl+U, Ctrl+S
+      if ((e.shiftKey && (key === 'i' || key === 'j' || key === 'c')) || key === 'u' || key === 's') {
+        e.preventDefault();
+        return false;
+      }
     }
+  }, { capture: true, passive: false });
 
-    // Cmd+Option+I / J / C / U (macOS DevTools & View Source)
-    if (isCtrlOrCmd && isAlt && (key === 'i' || key === 'j' || key === 'c' || key === 'u' || code === 73 || code === 74 || code === 67 || code === 85)) {
-      e.preventDefault();
-      e.stopPropagation();
-      return false;
-    }
-
-    // Ctrl+U / Cmd+U (View Page Source)
-    if (isCtrlOrCmd && (key === 'u' || code === 85)) {
-      e.preventDefault();
-      e.stopPropagation();
-      return false;
-    }
-
-    // Ctrl+S / Cmd+S (Save Page)
-    if (isCtrlOrCmd && (key === 's' || code === 83)) {
-      e.preventDefault();
-      e.stopPropagation();
-      return false;
-    }
-  }, { capture: true });
-
-  // 3. Prevent Drag & Drop of Images
   document.addEventListener('dragstart', (e) => {
     e.preventDefault();
     return false;
-  }, { capture: true });
-
-  // 4. Console Protection
-  if (typeof window !== 'undefined') {
-    setInterval(() => {
-      console.clear();
-    }, 1500);
-  }
+  }, { capture: true, passive: false });
 })();
 
-document.addEventListener('DOMContentLoaded', () => {
+function initCore() {
   initNavbar();
   initScrollReveals();
   initCounters();
   initSmoothScroll();
-});
+  init4DPassTilt();
+  init3DHeroTilt();
+  initSliderTracks();
+}
+
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', initCore);
+} else {
+  initCore();
+}
 
 /* Sticky Navbar & Mobile Drawer */
 function initNavbar() {
@@ -88,17 +57,26 @@ function initNavbar() {
   const mobileMenu = document.querySelector('.mobile-menu');
 
   if (header) {
+    let ticking = false;
+    let isScrolled = false;
     window.addEventListener('scroll', () => {
-      if (window.scrollY > 40) {
-        header.classList.add('scrolled');
-      } else {
-        header.classList.remove('scrolled');
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          const shouldScroll = window.scrollY > 40;
+          if (shouldScroll !== isScrolled) {
+            isScrolled = shouldScroll;
+            header.classList.toggle('scrolled', isScrolled);
+          }
+          ticking = false;
+        });
+        ticking = true;
       }
-    });
+    }, { passive: true });
   }
 
   if (toggleBtn && mobileMenu) {
-    toggleBtn.addEventListener('click', () => {
+    toggleBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
       toggleBtn.classList.toggle('active');
       mobileMenu.classList.toggle('open');
       document.body.style.overflow = mobileMenu.classList.contains('open') ? 'hidden' : '';
@@ -115,24 +93,47 @@ function initNavbar() {
   }
 }
 
-/* Scroll Reveal using IntersectionObserver */
+/* High-Performance RAF-based Scroll Reveal System (Fixes Safari Scroll Halting) */
 function initScrollReveals() {
   const revealElements = document.querySelectorAll('.reveal-init');
   if (!revealElements.length) return;
 
-  const observer = new IntersectionObserver((entries, obs) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('reveal-visible');
-        obs.unobserve(entry.target);
-      }
-    });
-  }, {
-    threshold: 0.12,
-    rootMargin: '0px 0px -40px 0px'
-  });
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    revealElements.forEach(el => el.classList.add('reveal-visible'));
+    return;
+  }
 
-  revealElements.forEach(el => observer.observe(el));
+  // Convert NodeList to Array for faster manipulation and removal of processed items
+  let elementsToReveal = Array.from(revealElements);
+
+  function checkReveals() {
+    if (!elementsToReveal.length) return;
+    const triggerBottom = window.innerHeight + 80;
+    
+    elementsToReveal = elementsToReveal.filter(el => {
+      const rect = el.getBoundingClientRect();
+      if (rect.top < triggerBottom) {
+        el.classList.add('reveal-visible');
+        return false; // Remove from array once revealed
+      }
+      return true; // Keep in array if not yet visible
+    });
+  }
+
+  // Initial check on load
+  checkReveals();
+
+  let ticking = false;
+  window.addEventListener('scroll', () => {
+    if (!elementsToReveal.length) return; // Stop listening when all are revealed
+    if (!ticking) {
+      window.requestAnimationFrame(() => {
+        checkReveals();
+        ticking = false;
+      });
+      ticking = true;
+    }
+  }, { passive: true });
 }
 
 /* Smooth Scrolling for internal hash anchors */
@@ -144,7 +145,7 @@ function initSmoothScroll() {
       const targetEl = document.querySelector(targetId);
       if (targetEl) {
         e.preventDefault();
-        const headerHeight = document.querySelector('.site-header')?.offsetHeight || 80;
+        const headerHeight = document.querySelector('.site-header')?.offsetHeight || 74;
         const targetPos = targetEl.getBoundingClientRect().top + window.pageYOffset - headerHeight;
         window.scrollTo({
           top: targetPos,
@@ -155,7 +156,7 @@ function initSmoothScroll() {
   });
 }
 
-/* Number Counter Animation */
+/* Fast & Smooth Number Counter Animation */
 function initCounters() {
   const counterElements = document.querySelectorAll('.count-up');
   if (!counterElements.length) return;
@@ -164,17 +165,17 @@ function initCounters() {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         const el = entry.target;
-        const targetVal = parseFloat(el.getAttribute('data-target'));
+        obs.unobserve(el);
+        const targetVal = parseFloat(el.getAttribute('data-target')) || 0;
         const suffix = el.getAttribute('data-suffix') || '';
         const prefix = el.getAttribute('data-prefix') || '';
-        const duration = 1800;
+        const duration = 1000;
         const startTime = performance.now();
 
         function updateCount(currentTime) {
           const elapsed = currentTime - startTime;
           const progress = Math.min(elapsed / duration, 1);
-          // Ease-out expo
-          const easeOut = progress === 1 ? 1 : 1 - Math.pow(2, -10 * progress);
+          const easeOut = progress === 1 ? 1 : 1 - Math.pow(2, -8 * progress);
           const currentCount = Math.floor(easeOut * targetVal);
 
           el.textContent = `${prefix}${currentCount}${suffix}`;
@@ -187,10 +188,9 @@ function initCounters() {
         }
 
         requestAnimationFrame(updateCount);
-        obs.unobserve(el);
       }
     });
-  }, { threshold: 0.2 });
+  }, { threshold: 0.1 });
 
   counterElements.forEach(el => observer.observe(el));
 }
@@ -221,6 +221,22 @@ function toggleMobileServicesMenu(e) {
   }
 }
 
+/* Mobile Menu Our Highlights Dropdown Toggle */
+function toggleMobileHighlightsMenu(e) {
+  if (e) {
+    e.preventDefault();
+    e.stopPropagation();
+  }
+  const btn = e?.currentTarget || document.querySelector('.mobile-highlights-toggle');
+  const dropdown = document.getElementById('mobileHighlightsDropdown');
+  if (btn && dropdown) {
+    btn.classList.toggle('active');
+    dropdown.classList.toggle('open');
+    const isExpanded = dropdown.classList.contains('open');
+    btn.setAttribute('aria-expanded', isExpanded ? 'true' : 'false');
+  }
+}
+
 document.addEventListener('click', (e) => {
   const dropdown = document.getElementById('threeDotsDropdown');
   if (dropdown && !dropdown.contains(e.target) && !e.target.closest('.three-dots-btn')) {
@@ -230,6 +246,7 @@ document.addEventListener('click', (e) => {
 
 window.toggleThreeDotsMenu = toggleThreeDotsMenu;
 window.toggleMobileServicesMenu = toggleMobileServicesMenu;
+window.toggleMobileHighlightsMenu = toggleMobileHighlightsMenu;
 
 /* Certification Card Dropdown Toggle */
 function toggleCertDropdown(e) {
@@ -267,55 +284,56 @@ function toggleCoursesDropdown(e) {
 }
 window.toggleCoursesDropdown = toggleCoursesDropdown;
 
-/* Live 4D Interactive Spatial Parallax for Credential Pass */
+/* High-Performance 3D/4D Tilt (Hardware Accelerated & RAF Throttled) */
 function init4DPassTilt() {
   const passCard = document.getElementById('credentialPass4D');
   const stage = document.querySelector('.corp-stage-4d');
   if (!passCard || !stage) return;
+  let rafId = null;
 
   stage.addEventListener('mousemove', (e) => {
     if (window.innerWidth <= 768) return;
-    const rect = passCard.getBoundingClientRect();
-    const x = e.clientX - (rect.left + rect.width / 2);
-    const y = e.clientY - (rect.top + rect.height / 2);
-    const rotX = Math.max(-12, Math.min(12, -y / 15));
-    const rotY = Math.max(-14, Math.min(14, x / 15));
-    passCard.style.transform = `perspective(1000px) rotateX(${rotX}deg) rotateY(${rotY}deg) translateZ(12px)`;
-  });
+    if (rafId) cancelAnimationFrame(rafId);
+    rafId = requestAnimationFrame(() => {
+      const rect = passCard.getBoundingClientRect();
+      const x = e.clientX - (rect.left + rect.width / 2);
+      const y = e.clientY - (rect.top + rect.height / 2);
+      const rotX = Math.max(-8, Math.min(8, -y / 20));
+      const rotY = Math.max(-10, Math.min(10, x / 20));
+      passCard.style.transform = `perspective(1000px) rotateX(${rotX}deg) rotateY(${rotY}deg) translateZ(8px)`;
+    });
+  }, { passive: true });
 
   stage.addEventListener('mouseleave', () => {
+    if (rafId) cancelAnimationFrame(rafId);
     passCard.style.transform = '';
   });
 }
 
-/* Live 3D Interactive Parallax for Hero 3D Logo Stage */
 function init3DHeroTilt() {
   const heroStage = document.getElementById('hero3DStage') || document.getElementById('hero4DShowcase');
   const heroSection = document.getElementById('hero');
   if (!heroStage || !heroSection) return;
+  let rafId = null;
 
   heroSection.addEventListener('mousemove', (e) => {
     if (window.innerWidth <= 991) return;
-    const rect = heroStage.getBoundingClientRect();
-    const x = e.clientX - (rect.left + rect.width / 2);
-    const y = e.clientY - (rect.top + rect.height / 2);
-    const rotX = Math.max(-10, Math.min(10, -y / 22));
-    const rotY = Math.max(-12, Math.min(12, x / 22));
-    heroStage.style.transform = `perspective(1200px) rotateX(${rotX}deg) rotateY(${rotY}deg) translateZ(12px)`;
-  });
+    if (rafId) cancelAnimationFrame(rafId);
+    rafId = requestAnimationFrame(() => {
+      const rect = heroStage.getBoundingClientRect();
+      const x = e.clientX - (rect.left + rect.width / 2);
+      const y = e.clientY - (rect.top + rect.height / 2);
+      const rotX = Math.max(-8, Math.min(8, -y / 25));
+      const rotY = Math.max(-10, Math.min(10, x / 25));
+      heroStage.style.transform = `perspective(1200px) rotateX(${rotX}deg) rotateY(${rotY}deg) translateZ(8px)`;
+    });
+  }, { passive: true });
 
   heroSection.addEventListener('mouseleave', () => {
+    if (rafId) cancelAnimationFrame(rafId);
     heroStage.style.transform = '';
   });
 }
-
-document.addEventListener('DOMContentLoaded', () => {
-  init4DPassTilt();
-  init3DHeroTilt();
-});
-
-
-
 
 /* Values Principle Studio - Slider & Preview Logic */
 let currentValIndex = 0;
@@ -331,16 +349,6 @@ function updateValueDots(index) {
   chips.forEach((chip, i) => {
     const isActive = (i === index);
     chip.classList.toggle('active', isActive);
-    if (isActive && chip.parentElement) {
-      const rail = chip.parentElement;
-      const chipLeft = chip.offsetLeft;
-      const chipWidth = chip.offsetWidth;
-      const railScroll = rail.scrollLeft;
-      const railWidth = rail.clientWidth;
-      if (chipLeft < railScroll || (chipLeft + chipWidth) > (railScroll + railWidth)) {
-        rail.scrollTo({ left: Math.max(0, chipLeft - (railWidth - chipWidth) / 2), behavior: 'smooth' });
-      }
-    }
   });
   const cards = document.querySelectorAll('#valuesTrack .v-slide-card');
   cards.forEach((card, i) => {
@@ -370,18 +378,7 @@ function jumpValueSlide(index) {
 
   currentValIndex = index;
   const card = cards[index];
-  const isMobile = window.innerWidth <= 768;
-  let scrollOffset;
-  if (isMobile) {
-    const cardCenter = card.offsetLeft + card.offsetWidth / 2;
-    const trackHalfWidth = track.clientWidth / 2;
-    scrollOffset = cardCenter - trackHalfWidth;
-  } else {
-    const trackLeft = track.getBoundingClientRect().left;
-    const cardLeft = card.getBoundingClientRect().left;
-    scrollOffset = cardLeft - trackLeft + track.scrollLeft;
-  }
-  track.scrollTo({ left: Math.max(0, scrollOffset), behavior: 'smooth' });
+  track.scrollTo({ left: card.offsetLeft - 16, behavior: 'smooth' });
   updateValueDots(index);
 }
 
@@ -427,16 +424,6 @@ function updateWhyDots(index) {
   chips.forEach((chip, i) => {
     const isActive = (i === index);
     chip.classList.toggle('active', isActive);
-    if (isActive && chip.parentElement) {
-      const rail = chip.parentElement;
-      const chipLeft = chip.offsetLeft;
-      const chipWidth = chip.offsetWidth;
-      const railScroll = rail.scrollLeft;
-      const railWidth = rail.clientWidth;
-      if (chipLeft < railScroll || (chipLeft + chipWidth) > (railScroll + railWidth)) {
-        rail.scrollTo({ left: Math.max(0, chipLeft - (railWidth - chipWidth) / 2), behavior: 'smooth' });
-      }
-    }
   });
   const cards = document.querySelectorAll('#whyTrack .why-graphical-card');
   cards.forEach((card, i) => {
@@ -466,104 +453,66 @@ function jumpWhySlide(index) {
 
   currentWhyIndex = index;
   const card = cards[index];
-  const isMobile = window.innerWidth <= 768;
-  let scrollOffset;
-  if (isMobile) {
-    const cardCenter = card.offsetLeft + card.offsetWidth / 2;
-    const trackHalfWidth = track.clientWidth / 2;
-    scrollOffset = cardCenter - trackHalfWidth;
-  } else {
-    const trackLeft = track.getBoundingClientRect().left;
-    const cardLeft = card.getBoundingClientRect().left;
-    scrollOffset = cardLeft - trackLeft + track.scrollLeft;
-  }
-  track.scrollTo({ left: Math.max(0, scrollOffset), behavior: 'smooth' });
+  track.scrollTo({ left: card.offsetLeft - 16, behavior: 'smooth' });
   updateWhyDots(index);
 }
 
 window.slideWhy = slideWhy;
 window.jumpWhySlide = jumpWhySlide;
 
-// Auto-sync active preview chips and dots with zero buffering & zero fluctuation
-document.addEventListener('DOMContentLoaded', () => {
+/* Ultra-Fast Slider Sync (Zero Reflow / Zero Layout Thrashing) */
+function initSliderTracks() {
   const whyTrack = document.getElementById('whyTrack');
-  let whyAnimId;
   if (whyTrack) {
-    const handleWhyScroll = () => {
+    let ticking = false;
+    whyTrack.addEventListener('scroll', () => {
       if (isProgrammaticWhy) return;
-      if (whyAnimId) cancelAnimationFrame(whyAnimId);
-      whyAnimId = requestAnimationFrame(() => {
-        if (isProgrammaticWhy) return;
-        const cards = whyTrack.querySelectorAll('.why-graphical-card');
-        const trackBounds = whyTrack.getBoundingClientRect();
-        const isMobile = window.innerWidth <= 768;
-        const targetPoint = isMobile 
-          ? (trackBounds.left + trackBounds.width / 2) 
-          : (trackBounds.left + 35);
-        let closestIdx = 0;
-        let minDiff = Infinity;
-        cards.forEach((card, idx) => {
-          const cardBounds = card.getBoundingClientRect();
-          const cardPoint = isMobile 
-            ? (cardBounds.left + cardBounds.width / 2) 
-            : cardBounds.left;
-          const diff = Math.abs(cardPoint - targetPoint);
-          if (diff < minDiff) {
-            minDiff = diff;
-            closestIdx = idx;
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          const cards = whyTrack.querySelectorAll('.why-graphical-card');
+          if (cards.length > 0) {
+            const cardWidth = cards[0].offsetWidth + 18;
+            const idx = Math.max(0, Math.min(cards.length - 1, Math.round(whyTrack.scrollLeft / cardWidth)));
+            if (currentWhyIndex !== idx) {
+              currentWhyIndex = idx;
+              updateWhyDots(idx);
+            }
           }
+          ticking = false;
         });
-        if (currentWhyIndex !== closestIdx) {
-          currentWhyIndex = closestIdx;
-          updateWhyDots(closestIdx);
-        }
-      });
-    };
+        ticking = true;
+      }
+    }, { passive: true });
 
-    whyTrack.addEventListener('scroll', handleWhyScroll, { passive: true });
     whyTrack.addEventListener('scrollend', () => {
       isProgrammaticWhy = false;
     });
   }
 
   const valuesTrack = document.getElementById('valuesTrack');
-  let valAnimId;
   if (valuesTrack) {
-    const handleValScroll = () => {
+    let ticking = false;
+    valuesTrack.addEventListener('scroll', () => {
       if (isProgrammaticVal) return;
-      if (valAnimId) cancelAnimationFrame(valAnimId);
-      valAnimId = requestAnimationFrame(() => {
-        if (isProgrammaticVal) return;
-        const cards = valuesTrack.querySelectorAll('.v-slide-card');
-        const trackBounds = valuesTrack.getBoundingClientRect();
-        const isMobile = window.innerWidth <= 768;
-        const targetPoint = isMobile 
-          ? (trackBounds.left + trackBounds.width / 2) 
-          : (trackBounds.left + 35);
-        let closestIdx = 0;
-        let minDiff = Infinity;
-        cards.forEach((card, idx) => {
-          const cardBounds = card.getBoundingClientRect();
-          const cardPoint = isMobile 
-            ? (cardBounds.left + cardBounds.width / 2) 
-            : cardBounds.left;
-          const diff = Math.abs(cardPoint - targetPoint);
-          if (diff < minDiff) {
-            minDiff = diff;
-            closestIdx = idx;
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          const cards = valuesTrack.querySelectorAll('.v-slide-card');
+          if (cards.length > 0) {
+            const cardWidth = cards[0].offsetWidth + 18;
+            const idx = Math.max(0, Math.min(cards.length - 1, Math.round(valuesTrack.scrollLeft / cardWidth)));
+            if (currentValIndex !== idx) {
+              currentValIndex = idx;
+              updateValueDots(idx);
+            }
           }
+          ticking = false;
         });
-        if (currentValIndex !== closestIdx) {
-          currentValIndex = closestIdx;
-          updateValueDots(closestIdx);
-        }
-      });
-    };
+        ticking = true;
+      }
+    }, { passive: true });
 
-    valuesTrack.addEventListener('scroll', handleValScroll, { passive: true });
     valuesTrack.addEventListener('scrollend', () => {
       isProgrammaticVal = false;
     });
   }
-});
-
+}

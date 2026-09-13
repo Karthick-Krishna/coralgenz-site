@@ -188,8 +188,8 @@
     ]
   }
   </script>
-  <script type="module" crossorigin src="/assets/main-DGTw-fCX.js"></script>
-  <link rel="stylesheet" crossorigin href="/assets/main-CGtU_b8X.css">
+  <script type="module" crossorigin src="/assets/main-DRwr3c8E.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/main-D5HG6BLp.css">
 </head>
 <body>
 
@@ -203,6 +203,21 @@
 
       <nav class="nav-links">
         <a href="index.html" class="nav-link">Homepage</a>
+                <div class="nav-dropdown-wrapper">
+          <a href="our-highlights.html" class="nav-link nav-dropdown-btn">
+            <span>Our Highlights</span>
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </a>
+          <div class="nav-dropdown-menu">
+            <a href="our-highlights.html" class="nav-dropdown-item" style="font-weight: 800; color: #0066ff; border-bottom: 1px solid #e2e8f0; margin-bottom: 4px; padding-bottom: 8px;">All 6 Highlights Hub &rarr;</a>
+            <a href="our-highlights/worlds-first-secure-format.html" class="nav-dropdown-item">World's First .secure Format</a>
+            <a href="our-highlights/coralgenz-vault-security.html" class="nav-dropdown-item">Coralgenz Vault Security</a>
+            <a href="our-highlights/coralgenz-qr-telemetry.html" class="nav-dropdown-item">Coralgenz QR Telemetry</a>
+            <a href="our-highlights/coralgenz-compiler-engine.html" class="nav-dropdown-item">Coralgenz Compiler Engine</a>
+            <a href="our-highlights/clean-architecture-standards.html" class="nav-dropdown-item">Clean Architecture Standards</a>
+            <a href="our-highlights/microsoft-salesforce-partner.html" class="nav-dropdown-item">Microsoft &amp; Salesforce Partner</a>
+          </div>
+        </div>
         <a href="know-more.html" class="nav-link">About</a>
         
         <!-- Active Services Dropdown -->
@@ -236,6 +251,10 @@
             <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="5" r="2.25"></circle><circle cx="12" cy="12" r="2.25"></circle><circle cx="12" cy="19" r="2.25"></circle></svg>
           </button>
           <div id="threeDotsDropdown" class="three-dots-dropdown" style="display: none;">
+            <a href="our-highlights.html" class="three-dots-item highlight" style="color: #0066ff;">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polygon points="12 6 12 12 16 14"></polygon></svg>
+              <span>OUR HIGHLIGHTS</span>
+            </a>
             <a href="mailto:coralgenz@gmail.com" class="three-dots-item">
               <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
               <span>coralgenz@gmail.com</span>
@@ -267,6 +286,46 @@
   <!-- Mobile Drawer Menu -->
   <div class="mobile-menu">
     <a href="index.html" class="nav-link">Homepage</a>
+        <!-- Mobile Our Highlights Dropdown -->
+    <div class="mobile-highlights-dropdown-wrap">
+      <button class="mobile-highlights-toggle" onclick="toggleMobileHighlightsMenu(event)" aria-expanded="false">
+        <span>✨ Our Highlights</span>
+        <div class="highlights-toggle-meta">
+          <span class="highlights-count-badge">6</span>
+          <svg class="highlights-chevron-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </div>
+      </button>
+      <div id="mobileHighlightsDropdown" class="mobile-highlights-window">
+        <a href="our-highlights.html" class="mobile-sub-highlight-item" style="font-weight: 800; color: #0066ff;">
+          <span class="sub-highlight-bullet" style="background: #0066ff;"></span>
+          <span>All 6 Highlights Hub &rarr;</span>
+        </a>
+        <a href="our-highlights/worlds-first-secure-format.html" class="mobile-sub-highlight-item">
+          <span class="sub-highlight-bullet"></span>
+          <span>World's First .secure Format</span>
+        </a>
+        <a href="our-highlights/coralgenz-vault-security.html" class="mobile-sub-highlight-item">
+          <span class="sub-highlight-bullet"></span>
+          <span>Coralgenz Vault Security</span>
+        </a>
+        <a href="our-highlights/coralgenz-qr-telemetry.html" class="mobile-sub-highlight-item">
+          <span class="sub-highlight-bullet"></span>
+          <span>Coralgenz QR Telemetry</span>
+        </a>
+        <a href="our-highlights/coralgenz-compiler-engine.html" class="mobile-sub-highlight-item">
+          <span class="sub-highlight-bullet"></span>
+          <span>Coralgenz Compiler Engine</span>
+        </a>
+        <a href="our-highlights/clean-architecture-standards.html" class="mobile-sub-highlight-item">
+          <span class="sub-highlight-bullet"></span>
+          <span>Clean Architecture Standards</span>
+        </a>
+        <a href="our-highlights/microsoft-salesforce-partner.html" class="mobile-sub-highlight-item">
+          <span class="sub-highlight-bullet"></span>
+          <span>Microsoft &amp; Salesforce Partner</span>
+        </a>
+      </div>
+    </div>
     <a href="know-more.html" class="nav-link">About</a>
     
     <div class="mobile-services-dropdown-wrap">
@@ -476,7 +535,7 @@
           <article>
             <a href="our-services/custom-software-development.html" class="service-card reveal-init" data-category="fullstack" title="Custom Software Development Services">
               <div class="service-card-banner">
-                <img src="/assets/custom-solution-DLWXjxC2.jpg" alt="Custom Software Development Services by Coralgenz Global" loading="lazy">
+                <img src="/assets/custom-solution-DLWXjxC2.jpg" alt="Custom Software Development Services by Coralgenz Global" loading="eager" decoding="async">
               </div>
               <div class="service-card-body">
                 <h3 class="service-title">Custom Software Development</h3>
@@ -495,7 +554,7 @@
           <article>
             <a href="our-services/mvp-development.html" class="service-card reveal-init reveal-delay-1" data-category="fullstack" title="MVP Development Services for Startups">
               <div class="service-card-banner">
-                <img src="/assets/mvp-development-Csw7OvlZ.png" alt="MVP Development Services for Tech Startups by Coralgenz Global" loading="lazy">
+                <img src="/assets/mvp-development-Csw7OvlZ.png" alt="MVP Development Services for Tech Startups by Coralgenz Global" loading="eager" decoding="async">
               </div>
               <div class="service-card-body">
                 <h3 class="service-title">MVP Development</h3>
@@ -514,7 +573,7 @@
           <article>
             <a href="our-services/full-stack-software.html" class="service-card reveal-init reveal-delay-2" data-category="fullstack" title="Full Stack Software Engineering Services">
               <div class="service-card-banner">
-                <img src="/assets/fullstack-development-cMzPCrvm.png" alt="Full Stack Software Engineering Services by Coralgenz Global" loading="lazy">
+                <img src="/assets/fullstack-development-cMzPCrvm.png" alt="Full Stack Software Engineering Services by Coralgenz Global" loading="eager" decoding="async">
               </div>
               <div class="service-card-body">
                 <h3 class="service-title">Full Stack Software</h3>
@@ -533,7 +592,7 @@
           <article>
             <a href="our-services/legacy-software-modernization.html" class="service-card reveal-init reveal-delay-3" data-category="modernization" title="Legacy Software Modernization Services">
               <div class="service-card-banner">
-                <img src="/assets/legacy-modernization-BOE_PYYU.png" alt="Legacy Software Modernization Services by Coralgenz Global" loading="lazy">
+                <img src="/assets/legacy-modernization-BOE_PYYU.png" alt="Legacy Software Modernization Services by Coralgenz Global" loading="eager" decoding="async">
               </div>
               <div class="service-card-body">
                 <h3 class="service-title">Legacy Software Modernization</h3>
@@ -552,7 +611,7 @@
           <article>
             <a href="our-services/pwa-development.html" class="service-card reveal-init" data-category="modernization" title="Progressive Web Applications Development">
               <div class="service-card-banner">
-                <img src="/assets/pwa-development-BVLwaezk.png" alt="Progressive Web Applications PWA Development Services by Coralgenz Global" loading="lazy">
+                <img src="/assets/pwa-development-BVLwaezk.png" alt="Progressive Web Applications PWA Development Services by Coralgenz Global" loading="eager" decoding="async">
               </div>
               <div class="service-card-body">
                 <h3 class="service-title">Progressive Web Applications (PWAs)</h3>
@@ -571,7 +630,7 @@
           <article>
             <a href="our-services/modern-admin-dashboards.html" class="service-card reveal-init reveal-delay-1" data-category="cloud" title="Modern Admin Dashboards Services">
               <div class="service-card-banner">
-                <img src="/assets/admin-dashboards-Cedz9dHf.jpg" alt="Modern Admin Dashboards Development by Coralgenz Global" loading="lazy">
+                <img src="/assets/admin-dashboards-Cedz9dHf.jpg" alt="Modern Admin Dashboards Development by Coralgenz Global" loading="eager" decoding="async">
               </div>
               <div class="service-card-body">
                 <h3 class="service-title">Modern Admin Dashboards</h3>
@@ -590,7 +649,7 @@
           <article>
             <a href="our-services/frontend-modernization.html" class="service-card reveal-init reveal-delay-2" data-category="modernization" title="Frontend Modernization Services">
               <div class="service-card-banner">
-                <img src="/assets/frontend-modernization-Dns_gek5.png" alt="Frontend Modernization and Performance Optimization by Coralgenz Global" loading="lazy">
+                <img src="/assets/frontend-modernization-Dns_gek5.png" alt="Frontend Modernization and Performance Optimization by Coralgenz Global" loading="eager" decoding="async">
               </div>
               <div class="service-card-body">
                 <h3 class="service-title">Frontend Modernization</h3>
@@ -609,7 +668,7 @@
           <article>
             <a href="our-services/domain-and-deployment-service.html" class="service-card reveal-init reveal-delay-3" data-category="cloud" title="Domain and Cloud Deployment Infrastructure Services">
               <div class="service-card-banner">
-                <img src="/assets/domain-deployment-DXoj3Q_7.jpg" alt="Domain and Cloud Deployment Infrastructure Services by Coralgenz Global" loading="lazy">
+                <img src="/assets/domain-deployment-DXoj3Q_7.jpg" alt="Domain and Cloud Deployment Infrastructure Services by Coralgenz Global" loading="eager" decoding="async">
               </div>
               <div class="service-card-body">
                 <h3 class="service-title">Domain &amp; Deployment Service</h3>
@@ -978,8 +1037,9 @@
           </div>
 
           <div>
-            <h5 class="footer-col-title">Products</h5>
+            <h5 class="footer-col-title">Products &amp; Highlights</h5>
             <div class="footer-col-links">
+              <a href="our-highlights.html" style="font-weight: 700; color: #38bdf8;">Our Highlights</a>
               <a href="coralgenz-qr.html">Coralgenz QR</a>
               <a href="coralgenz-vault.html">Coralgenz Vault</a>
               <a href="coralgenz-compiler.html">Coralgenz Compiler</a>

@@ -276,4 +276,57 @@
       <image:caption>Coralgenz Global Salesforce Partner Ecosystem</image:caption>
     </image:image>
   </url>
+  <url>
+    <loc>https://coralgenz.co.in/our-highlights.html</loc>
+    <lastmod>2026-09-13</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
+    <image:image>
+      <image:loc>https://coralgenz.co.in/assets/images/DVyu6tz4dqPirA4TwAJZUz5CUw.png</image:loc>
+      <image:title>Coralgenz Global Highlights</image:title>
+      <image:caption>World's First Company to Invent .secure Format and Enterprise Engineering Highlights</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://coralgenz.co.in/our-highlights/worlds-first-secure-format.html</loc>
+    <lastmod>2026-09-13</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
+    <image:image>
+      <image:loc>https://coralgenz.co.in/assets/images/DVyu6tz4dqPirA4TwAJZUz5CUw.png</image:loc>
+      <image:title>World's First .secure Format Invention</image:title>
+      <image:caption>Client-side cryptographic file format specification by Coralgenz Global</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://coralgenz.co.in/our-highlights/coralgenz-vault-security.html</loc>
+    <lastmod>2026-09-13</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+  </url>
+  <url>
+    <loc>https://coralgenz.co.in/our-highlights/coralgenz-qr-telemetry.html</loc>
+    <lastmod>2026-09-13</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://coralgenz.co.in/our-highlights/coralgenz-compiler-engine.html</loc>
+    <lastmod>2026-09-13</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://coralgenz.co.in/our-highlights/clean-architecture-standards.html</loc>
+    <lastmod>2026-09-13</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://coralgenz.co.in/our-highlights/microsoft-salesforce-partner.html</loc>
+    <lastmod>2026-09-13</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
 </urlset>
+

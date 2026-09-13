@@ -27,7 +27,14 @@ export default defineConfig({
         compiler: resolve('coralgenz-compiler.html'),
         ourServices: resolve('our-services.html'),
         ourProducts: resolve('our-products.html'),
-        contact: resolve('contact.html')
+        contact: resolve('contact.html'),
+        ourHighlights: resolve('our-highlights.html'),
+        highlightSecureFormat: resolve('our-highlights/worlds-first-secure-format.html'),
+        highlightVault: resolve('our-highlights/coralgenz-vault-security.html'),
+        highlightQr: resolve('our-highlights/coralgenz-qr-telemetry.html'),
+        highlightCompiler: resolve('our-highlights/coralgenz-compiler-engine.html'),
+        highlightCleanArch: resolve('our-highlights/clean-architecture-standards.html'),
+        highlightPartner: resolve('our-highlights/microsoft-salesforce-partner.html')
       }
     }
   }

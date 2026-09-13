@@ -2,24 +2,45 @@
    CORALGENZ GLOBAL - DYNAMIC ANIMATIONS & INTERACTIONS
    ========================================================================== */
 
-/* Scroll Reveal States */
+/* Scroll Reveal States - Silky Smooth 60-120fps Scroll Animations */
 .reveal-init {
   opacity: 0;
-  transform: translateY(28px);
-  transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
-  will-change: opacity, transform;
+  transform: translate3d(0, 24px, 0);
+  transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .reveal-visible {
-  opacity: 1;
-  transform: translateY(0);
+  opacity: 1 !important;
+  transform: translate3d(0, 0, 0) !important;
 }
 
-.reveal-delay-1 { transition-delay: 0.1s; }
-.reveal-delay-2 { transition-delay: 0.2s; }
-.reveal-delay-3 { transition-delay: 0.3s; }
-.reveal-delay-4 { transition-delay: 0.4s; }
-.reveal-delay-5 { transition-delay: 0.5s; }
+.reveal-delay-1 {
+  transition-delay: 0.08s;
+}
+
+.reveal-delay-2 {
+  transition-delay: 0.16s;
+}
+
+.reveal-delay-3 {
+  transition-delay: 0.24s;
+}
+
+.reveal-delay-4 {
+  transition-delay: 0.32s;
+}
+
+.reveal-delay-5 {
+  transition-delay: 0.40s;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal-init {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+}
 
 /* Subtle Glow Animations */
 @keyframes glowPulse {
@@ -115,12 +136,12 @@
 
 @keyframes brandLogoGlow {
   0%, 100% {
-    filter: drop-shadow(0 0 16px rgba(0, 102, 255, 0.35)) drop-shadow(0 0 32px rgba(56, 189, 248, 0.2));
     transform: scale(1);
+    opacity: 0.95;
   }
   50% {
-    filter: drop-shadow(0 0 28px rgba(0, 102, 255, 0.65)) drop-shadow(0 0 55px rgba(56, 189, 248, 0.4));
-    transform: scale(1.04);
+    transform: scale(1.03);
+    opacity: 1;
   }
 }
 
