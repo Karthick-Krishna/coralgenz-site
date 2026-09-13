@@ -6,6 +6,7 @@
 .reveal-init {
   opacity: 0;
   transform: translate3d(0, 24px, 0);
+  backface-visibility: hidden;
   transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
@@ -39,6 +40,15 @@
     opacity: 1 !important;
     transform: none !important;
     transition: none !important;
+  }
+}
+
+/* Mobile: Never show blank white spaces during fast touch/momentum scrolling */
+@media (max-width: 768px) {
+  .reveal-init {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: opacity 0.3s ease, transform 0.3s ease !important;
   }
 }
 

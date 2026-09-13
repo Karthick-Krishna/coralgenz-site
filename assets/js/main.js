@@ -93,47 +93,77 @@ function initNavbar() {
   }
 }
 
-/* High-Performance RAF-based Scroll Reveal System (Fixes Safari Scroll Halting) */
+/* Bulletproof Dual-Mechanism Scroll Reveal System */
 function initScrollReveals() {
   const revealElements = document.querySelectorAll('.reveal-init');
   if (!revealElements.length) return;
 
-  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-    revealElements.forEach(el => el.classList.add('reveal-visible'));
+  function revealElement(el) {
+    if (!el.classList.contains('reveal-visible')) {
+      el.classList.add('reveal-visible');
+    }
+  }
+
+  // Instant reveal for reduced-motion or mobile devices to prevent any scroll stutter
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches || window.innerWidth <= 768) {
+    revealElements.forEach(revealElement);
     return;
   }
 
-  // Convert NodeList to Array for faster manipulation and removal of processed items
-  let elementsToReveal = Array.from(revealElements);
+  /* Primary: IntersectionObserver with generous bidirectional 600px rootMargin */
+  if ('IntersectionObserver' in window) {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          revealElement(entry.target);
+          observer.unobserve(entry.target);
+        }
+      });
+    }, {
+      rootMargin: '600px 0px 600px 0px',
+      threshold: 0
+    });
+    revealElements.forEach(el => observer.observe(el));
+  }
+
+  /* Fallback: RAF scroll listener catches anything the observer misses */
+  let pending = Array.from(revealElements);
 
   function checkReveals() {
-    if (!elementsToReveal.length) return;
-    const triggerBottom = window.innerHeight + 80;
-    
-    elementsToReveal = elementsToReveal.filter(el => {
-      const rect = el.getBoundingClientRect();
-      if (rect.top < triggerBottom) {
-        el.classList.add('reveal-visible');
-        return false; // Remove from array once revealed
+    if (!pending.length) return;
+    const triggerBottom = window.innerHeight + 600;
+
+    pending = pending.filter(el => {
+      if (el.getBoundingClientRect().top < triggerBottom) {
+        revealElement(el);
+        return false;
       }
-      return true; // Keep in array if not yet visible
+      return true;
     });
   }
 
-  // Initial check on load
+  // Immediate check on load
   checkReveals();
 
   let ticking = false;
   window.addEventListener('scroll', () => {
-    if (!elementsToReveal.length) return; // Stop listening when all are revealed
+    if (!pending.length) return;
     if (!ticking) {
-      window.requestAnimationFrame(() => {
+      requestAnimationFrame(() => {
         checkReveals();
         ticking = false;
       });
       ticking = true;
     }
   }, { passive: true });
+
+  // Safety net: reveal any remaining elements after 1.5s so nothing ever stays white or stuck
+  setTimeout(() => {
+    if (pending.length) {
+      pending.forEach(revealElement);
+      pending = [];
+    }
+  }, 1500);
 }
 
 /* Smooth Scrolling for internal hash anchors */

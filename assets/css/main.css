@@ -90,12 +90,16 @@ html {
   background-color: var(--bg-light-base);
   color: var(--text-dark);
   font-family: var(--font-satoshi);
+  overflow-x: hidden;
+  width: 100%;
 }
 
 body {
   min-height: 100vh;
   line-height: 1.6;
-  overflow-x: clip;
+  overflow-x: hidden;
+  width: 100%;
+  position: relative;
   background: radial-gradient(ellipse at 50% -10%, #ebf3ff 0%, #f8fafc 70%);
   color: var(--text-dark);
 }
