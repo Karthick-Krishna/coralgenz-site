@@ -8047,52 +8047,53 @@ select:focus {
 
 @media (max-width: 768px) {
   .hero-light-modern {
-    padding: 16px 0 20px !important;
+    padding: 20px 0 24px !important;
   }
   
   .hero-light-container {
-    gap: 12px !important;
+    gap: 16px !important;
   }
 
   .hero-light-logo-stage {
-    max-width: 200px !important;
+    max-width: 230px !important;
+    margin: 4px auto 8px !important;
   }
   
   .hero-light-large-logo {
-    width: 160px !important;
-    height: 160px !important;
-    filter: drop-shadow(0 14px 28px rgba(0, 102, 255, 0.16)) !important;
+    width: 180px !important;
+    height: 180px !important;
+    filter: drop-shadow(0 16px 32px rgba(0, 102, 255, 0.18)) !important;
   }
 
   .hero-light-badge {
     margin-bottom: 8px !important;
-    padding: 3.5px 10px !important;
-    font-size: 10px !important;
+    padding: 4px 12px !important;
+    font-size: 10.5px !important;
     gap: 6px !important;
   }
 
   .badge-text-light {
-    font-size: 10px !important;
+    font-size: 10.5px !important;
   }
   
   .hero-light-title {
-    font-size: 27px !important;
-    line-height: 1.12 !important;
-    margin-bottom: 5px !important;
+    font-size: 28px !important;
+    line-height: 1.15 !important;
+    margin-bottom: 6px !important;
     letter-spacing: -0.02em !important;
   }
   
   .hero-light-subtitle {
-    font-size: 13.5px !important;
-    line-height: 1.25 !important;
-    margin-bottom: 8px !important;
+    font-size: 14px !important;
+    line-height: 1.3 !important;
+    margin-bottom: 10px !important;
   }
   
   .hero-light-desc {
-    font-size: 12px !important;
-    line-height: 1.42 !important;
-    margin: 0 auto 14px auto !important;
-    max-width: 96% !important;
+    font-size: 12.5px !important;
+    line-height: 1.48 !important;
+    margin: 0 auto 16px auto !important;
+    max-width: 95% !important;
     color: #475569 !important;
   }
 
@@ -8102,12 +8103,12 @@ select:focus {
     flex-wrap: wrap !important;
     justify-content: center !important;
     align-items: center !important;
-    gap: 8px !important;
+    gap: 10px !important;
   }
   
   .btn-light-primary {
-    padding: 8px 16px !important;
-    font-size: 12.5px !important;
+    padding: 9px 18px !important;
+    font-size: 13px !important;
     border-radius: 8px !important;
     flex: 1 1 auto !important;
     max-width: 160px !important;
@@ -8116,8 +8117,8 @@ select:focus {
   }
   
   .btn-light-secondary {
-    padding: 8px 14px !important;
-    font-size: 12.5px !important;
+    padding: 9px 16px !important;
+    font-size: 13px !important;
     border-radius: 8px !important;
     flex: 1 1 auto !important;
     max-width: 130px !important;
@@ -8125,8 +8126,8 @@ select:focus {
   }
 
   .btn-light-linkedin {
-    padding: 8px 12px !important;
-    font-size: 12px !important;
+    padding: 9px 14px !important;
+    font-size: 12.5px !important;
     border-radius: 8px !important;
     width: auto !important;
     min-height: 38px !important;
@@ -8139,48 +8140,53 @@ select:focus {
 
 @media (max-width: 480px) {
   .hero-light-modern {
-    padding: 12px 0 16px !important;
+    padding: 16px 0 20px !important;
   }
 
   .hero-light-container {
-    gap: 10px !important;
+    gap: 14px !important;
   }
 
   .hero-light-logo-stage {
-    max-width: 170px !important;
+    max-width: 200px !important;
+    margin: 4px auto 6px !important;
   }
 
   .hero-light-large-logo {
-    width: 140px !important;
-    height: 140px !important;
+    width: 165px !important;
+    height: 165px !important;
   }
 
   .hero-light-title {
-    font-size: 23px !important;
+    font-size: 24px !important;
   }
 
   .hero-light-subtitle {
-    font-size: 12px !important;
-    margin-bottom: 6px !important;
+    font-size: 13px !important;
+    margin-bottom: 8px !important;
   }
 
   .hero-light-desc {
-    font-size: 11.5px !important;
-    line-height: 1.36 !important;
-    margin: 0 auto 12px auto !important;
+    font-size: 12px !important;
+    line-height: 1.42 !important;
+    margin: 0 auto 14px auto !important;
+  }
+
+  .hero-light-actions {
+    gap: 8px !important;
   }
 
   .btn-light-primary,
   .btn-light-secondary {
-    padding: 7px 12px !important;
-    font-size: 11.5px !important;
-    min-height: 36px !important;
+    padding: 8px 14px !important;
+    font-size: 12px !important;
+    min-height: 38px !important;
   }
 
   .btn-light-linkedin {
-    padding: 7px 10px !important;
-    font-size: 11px !important;
-    min-height: 36px !important;
+    padding: 8px 12px !important;
+    font-size: 11.5px !important;
+    min-height: 38px !important;
   }
 }
 
@@ -8204,13 +8210,17 @@ select:focus {
     padding-right: 12px !important;
   }
 
+  .brand-logo {
+    gap: 10px !important;
+  }
+
   .brand-logo img {
-    width: 32px !important;
-    height: 32px !important;
+    width: 34px !important;
+    height: 34px !important;
   }
 
   .brand-name {
-    font-size: 15.5px !important;
+    font-size: 16px !important;
     font-weight: 800 !important;
   }
 
@@ -8233,18 +8243,22 @@ select:focus {
   }
 
   .navbar {
-    height: 52px !important;
-    padding-left: 10px !important;
-    padding-right: 10px !important;
+    height: 54px !important;
+    padding-left: 12px !important;
+    padding-right: 12px !important;
+  }
+
+  .brand-logo {
+    gap: 9px !important;
   }
 
   .brand-logo img {
-    width: 28px !important;
-    height: 28px !important;
+    width: 30px !important;
+    height: 30px !important;
   }
 
   .brand-name {
-    font-size: 14px !important;
+    font-size: 14.5px !important;
   }
 
   .mobile-menu {
