@@ -390,6 +390,71 @@
       </div>
 
       <!-- Feature Bento Grid -->
+      
+      <!-- Visual SVG Multi-Tier Vault Defense Graph -->
+      <div class="hl-chart-card reveal-init">
+        <div class="hl-chart-header">
+          <div>
+            <h3 class="hl-chart-title">Visual Architecture: Zero-Knowledge Multi-Tier Vault Defense</h3>
+            <p class="hl-chart-subtitle">See how SecureVault isolates encryption keys from cloud database storage.</p>
+          </div>
+          <span class="hl-live-beacon">
+            <span class="beacon-pulse-dot"></span>
+            <span>AES-256 AIR GAPPED</span>
+          </span>
+        </div>
+
+        <div class="hl-chart-svg-wrap">
+          <svg class="hl-chart-svg" viewBox="0 0 800 220" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect width="800" height="220" rx="12" fill="#0f172a"/>
+            <path d="M40 55 H760 M40 110 H760 M40 165 H760" stroke="#1e293b" stroke-width="1" stroke-dasharray="4 4"/>
+            
+            <rect x="40" y="65" width="160" height="85" rx="8" fill="#1e293b" stroke="#0066ff" stroke-width="2"/>
+            <text x="120" y="100" fill="#38bdf8" font-family="sans-serif" font-size="13" font-weight="bold" text-anchor="middle">Client Terminal</text>
+            <text x="120" y="120" fill="#94a3b8" font-family="sans-serif" font-size="11" text-anchor="middle">Master Passphrase In-RAM</text>
+
+            <path d="M210 107 H280" stroke="#0066ff" stroke-width="2.5"/>
+
+            <rect x="290" y="65" width="200" height="85" rx="8" fill="#1e293b" stroke="#10b981" stroke-width="2"/>
+            <text x="390" y="100" fill="#34d399" font-family="sans-serif" font-size="13" font-weight="bold" text-anchor="middle">PBKDF2 Key Derivation</text>
+            <text x="390" y="120" fill="#94a3b8" font-family="sans-serif" font-size="11" text-anchor="middle">600,000 SHA-256 Iterations</text>
+
+            <path d="M500 107 H570" stroke="#10b981" stroke-width="2.5"/>
+
+            <rect x="580" y="65" width="180" height="85" rx="8" fill="#1e293b" stroke="#334155" stroke-width="2"/>
+            <text x="670" y="100" fill="#f8fafc" font-family="sans-serif" font-size="13" font-weight="bold" text-anchor="middle">Cloud Store</text>
+            <text x="670" y="120" fill="#94a3b8" font-family="sans-serif" font-size="11" text-anchor="middle">Encrypted Blobs Only (0 Keys)</text>
+          </svg>
+        </div>
+
+        <div class="hl-stat-bars">
+          <div class="hl-stat-bar-row">
+            <div class="hl-stat-bar-meta">
+              <span>Coralgenz Vault Key Exposure to Cloud Servers</span>
+              <span class="hl-stat-bar-val" style="color: #10b981;">0% (Absolute Zero-Knowledge)</span>
+            </div>
+            <div class="hl-stat-bar-track">
+              <div class="hl-stat-bar-fill emerald" style="width: 100%;"></div>
+            </div>
+          </div>
+          <div class="hl-stat-bar-row">
+            <div class="hl-stat-bar-meta">
+              <span>Traditional Cloud Drive Security (Vendor Key Escrow)</span>
+              <span class="hl-stat-bar-val" style="color: #f59e0b;">High Vulnerability (Server Reads Data)</span>
+            </div>
+            <div class="hl-stat-bar-track">
+              <div class="hl-stat-bar-fill" style="width: 35%; background: #f59e0b;"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="hl-chart-legend">
+          <div class="hl-legend-item"><span class="hl-legend-dot blue"></span> User-Held Secret</div>
+          <div class="hl-legend-item"><span class="hl-legend-dot emerald"></span> Hardware Key Isolation</div>
+          <div class="hl-legend-item"><span class="hl-legend-dot sky"></span> Zero-Exposure Storage</div>
+        </div>
+      </div>
+
       <div class="hl-feature-bento reveal-init">
         <div class="hl-feature-card">
           <div class="hl-feature-icon">
@@ -489,19 +554,59 @@
     
 
       <!-- Bottom Subpage Navigator -->
+      
+      <!-- Plain English Executive FAQ Section -->
+      <div class="hl-premium-card reveal-init">
+        <div class="hl-card-header">
+          <span class="hl-card-tag">EXECUTIVE FAQ</span>
+          <span style="font-family:var(--font-space), monospace; font-size:12px; color:#64748b;">FREQUENTLY ASKED QUESTIONS</span>
+        </div>
+        <h3 style="font-family: var(--font-satoshi), sans-serif; font-size: 20px; font-weight: 800; color: #0f172a; margin-bottom: 20px;">
+          Frequently Asked Questions About Coralgenz Vault
+        </h3>
+
+        <div class="partner-faq-list">
+          <details class="partner-faq-item" open>
+            <summary class="partner-faq-trigger">
+              <span>What happens if an attacker breaches the Coralgenz Vault database?</span>
+              <svg class="partner-faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </summary>
+            <div class="partner-faq-content">
+              Even if an attacker gains complete access to our database, they obtain only scrambled, high-entropy ciphertexts. Without your personal master key—which exists solely in your browser memory—the stolen data is mathematically impossible to decrypt.
+            </div>
+          </details>
+
+          <details class="partner-faq-item">
+            <summary class="partner-faq-trigger">
+              <span>Can our enterprise deploy Coralgenz Vault on private company servers?</span>
+              <svg class="partner-faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </summary>
+            <div class="partner-faq-content">
+              Yes. We offer self-hosted enterprise deployments compatible with Docker and Kubernetes for on-premises air-gapped data centers, Microsoft Azure, AWS, and private clouds.
+            </div>
+          </details>
+
+          <details class="partner-faq-item">
+            <summary class="partner-faq-trigger">
+              <span>Does SecureVault support role-based team file sharing?</span>
+              <svg class="partner-faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </summary>
+            <div class="partner-faq-content">
+              Yes. SecureVault supports asymmetric public-key cryptography (RSA-OAEP / ECDH) allowing employees to share encrypted vaults with specific colleagues without revealing passwords.
+            </div>
+          </details>
+        </div>
+      </div>
+
       <div class="hl-subpage-nav-bar">
-        
-      <a href="worlds-first-secure-format.html" class="hl-nav-btn-prev">
-        <span class="hl-nav-label">&larr; Highlight 01</span>
-        <span class="hl-nav-title">World's First .secure Format</span>
-      </a>
-    
-        
-      <a href="coralgenz-qr-telemetry.html" class="hl-nav-btn-next" style="text-align:right;">
-        <span class="hl-nav-label">Highlight 03 &rarr;</span>
-        <span class="hl-nav-title">Coralgenz QR Telemetry</span>
-      </a>
-    
+        <a href="worlds-first-secure-format.html" class="hl-nav-btn-prev">
+          <span class="hl-nav-label">&larr; Highlight 01</span>
+          <span class="hl-nav-title">World's First .secure Format</span>
+        </a>
+        <a href="coralgenz-qr-telemetry.html" class="hl-nav-btn-next" style="text-align:right;">
+          <span class="hl-nav-label">Highlight 03 &rarr;</span>
+          <span class="hl-nav-title">Coralgenz QR Telemetry</span>
+        </a>
       </div>
 
       <!-- High Converting CTA Banner -->
