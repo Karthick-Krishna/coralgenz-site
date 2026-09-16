@@ -320,4 +320,26 @@
       <image:caption>Certified Salesforce CRM architecture and automation</image:caption>
     </image:image>
   </url>
+  <url>
+    <loc>https://coralgenz.co.in/privacy-policy</loc>
+    <lastmod>2026-09-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+    <image:image>
+      <image:loc>https://coralgenz.co.in/assets/images/certification-showcase.jpg</image:loc>
+      <image:title>Coralgenz Global Corporate Privacy Policy</image:title>
+      <image:caption>Corporate Privacy Policy and Statutory Data Governance Disclosures</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://coralgenz.co.in/coralgenz-vault-privacy</loc>
+    <lastmod>2026-09-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://coralgenz.co.in/assets/images/secure-format-showcase.jpg</image:loc>
+      <image:title>Coralgenz Vault Zero-Knowledge Privacy Architecture</image:title>
+      <image:caption>Zero-Knowledge Privacy Policy and .secure Container Cryptographic Standards</image:caption>
+    </image:image>
+  </url>
 </urlset>

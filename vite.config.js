@@ -34,7 +34,9 @@ export default defineConfig({
         highlightQr: resolve('our-highlights/coralgenz-qr-telemetry.html'),
         highlightCompiler: resolve('our-highlights/coralgenz-compiler-engine.html'),
         highlightCleanArch: resolve('our-highlights/clean-architecture-standards.html'),
-        highlightPartner: resolve('our-highlights/microsoft-salesforce-partner.html')
+        highlightPartner: resolve('our-highlights/microsoft-salesforce-partner.html'),
+        privacyPolicy: resolve('privacy-policy.html'),
+        vaultPrivacy: resolve('coralgenz-vault-privacy.html')
       }
     }
   }
