@@ -42,6 +42,7 @@ function initCore() {
   init4DPassTilt();
   init3DHeroTilt();
   initSliderTracks();
+  initPolicyDrawer();
 }
 
 if (document.readyState === 'loading') {
@@ -62,7 +63,7 @@ function initNavbar() {
     window.addEventListener('scroll', () => {
       if (!ticking) {
         window.requestAnimationFrame(() => {
-          const shouldScroll = window.scrollY > 40;
+          const shouldScroll = window.scrollY > 20;
           if (shouldScroll !== isScrolled) {
             isScrolled = shouldScroll;
             header.classList.toggle('scrolled', isScrolled);
@@ -75,20 +76,64 @@ function initNavbar() {
   }
 
   if (toggleBtn && mobileMenu) {
+    let scrollOffset = 0;
+
+    function openMobileDrawer() {
+      scrollOffset = window.pageYOffset || document.documentElement.scrollTop || 0;
+      toggleBtn.classList.add('active');
+      mobileMenu.classList.add('open');
+      toggleBtn.setAttribute('aria-expanded', 'true');
+
+      // Dismiss 3-dots dropdown if open
+      const threeDots = document.getElementById('threeDotsDropdown');
+      if (threeDots) threeDots.style.display = 'none';
+
+      // Bulletproof mobile scroll lock that preserves scroll position
+      document.body.classList.add('mobile-nav-locked');
+      document.body.style.top = `-${scrollOffset}px`;
+    }
+
+    function closeMobileDrawer() {
+      if (!mobileMenu.classList.contains('open') && !toggleBtn.classList.contains('active')) return;
+      toggleBtn.classList.remove('active');
+      mobileMenu.classList.remove('open');
+      toggleBtn.setAttribute('aria-expanded', 'false');
+
+      const savedTop = document.body.style.top;
+      document.body.classList.remove('mobile-nav-locked');
+      document.body.style.top = '';
+
+      if (savedTop) {
+        window.scrollTo(0, scrollOffset);
+      }
+    }
+
+    window.closeMobileDrawer = closeMobileDrawer;
+    window.openMobileDrawer = openMobileDrawer;
+
     toggleBtn.addEventListener('click', (e) => {
       e.stopPropagation();
-      toggleBtn.classList.toggle('active');
-      mobileMenu.classList.toggle('open');
-      document.body.style.overflow = mobileMenu.classList.contains('open') ? 'hidden' : '';
+      const willOpen = !mobileMenu.classList.contains('open');
+      if (willOpen) {
+        openMobileDrawer();
+      } else {
+        closeMobileDrawer();
+      }
     });
 
-    const mobileLinks = mobileMenu.querySelectorAll('a');
-    mobileLinks.forEach(link => {
-      link.addEventListener('click', () => {
-        toggleBtn.classList.remove('active');
-        mobileMenu.classList.remove('open');
-        document.body.style.overflow = '';
-      });
+    // Close mobile menu on clicking any navigation link
+    mobileMenu.addEventListener('click', (e) => {
+      const link = e.target.closest('a');
+      if (link && !link.classList.contains('mobile-toggle') && !link.classList.contains('no-close')) {
+        closeMobileDrawer();
+      }
+    });
+
+    // Close mobile drawer on Escape key
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && mobileMenu.classList.contains('open')) {
+        closeMobileDrawer();
+      }
     });
   }
 }
@@ -225,9 +270,37 @@ function initCounters() {
   counterElements.forEach(el => observer.observe(el));
 }
 
+/* Helper to close other open mobile accordions */
+function closeOtherMobileAccordions(except) {
+  if (except !== 'highlights') {
+    const hToggle = document.querySelector('.mobile-highlights-toggle');
+    const hDropdown = document.getElementById('mobileHighlightsDropdown');
+    if (hToggle) hToggle.classList.remove('active');
+    if (hDropdown) hDropdown.classList.remove('open');
+    if (hToggle) hToggle.setAttribute('aria-expanded', 'false');
+  }
+  if (except !== 'services') {
+    const sToggle = document.querySelector('.mobile-services-toggle');
+    const sDropdown = document.getElementById('mobileServicesDropdown');
+    if (sToggle) sToggle.classList.remove('active');
+    if (sDropdown) sDropdown.classList.remove('open');
+    if (sToggle) sToggle.setAttribute('aria-expanded', 'false');
+  }
+  if (except !== 'policies') {
+    const pToggle = document.querySelector('.mobile-policies-toggle');
+    const pDropdown = document.getElementById('mobilePoliciesDropdown');
+    if (pToggle) pToggle.classList.remove('active');
+    if (pDropdown) pDropdown.classList.remove('open');
+    if (pToggle) pToggle.setAttribute('aria-expanded', 'false');
+  }
+}
+
 /* 3-Dot Quick Options Dropdown Toggle */
 function toggleThreeDotsMenu(e) {
   if (e) e.stopPropagation();
+  if (window.closeMobileDrawer) {
+    window.closeMobileDrawer();
+  }
   const dropdown = document.getElementById('threeDotsDropdown');
   if (dropdown) {
     const isHidden = dropdown.style.display === 'none' || dropdown.style.display === '';
@@ -244,10 +317,11 @@ function toggleMobileServicesMenu(e) {
   const btn = e?.currentTarget || document.querySelector('.mobile-services-toggle');
   const dropdown = document.getElementById('mobileServicesDropdown');
   if (btn && dropdown) {
-    btn.classList.toggle('active');
-    dropdown.classList.toggle('open');
-    const isExpanded = dropdown.classList.contains('open');
-    btn.setAttribute('aria-expanded', isExpanded ? 'true' : 'false');
+    const willOpen = !dropdown.classList.contains('open');
+    if (willOpen) closeOtherMobileAccordions('services');
+    btn.classList.toggle('active', willOpen);
+    dropdown.classList.toggle('open', willOpen);
+    btn.setAttribute('aria-expanded', willOpen ? 'true' : 'false');
   }
 }
 
@@ -260,10 +334,11 @@ function toggleMobileHighlightsMenu(e) {
   const btn = e?.currentTarget || document.querySelector('.mobile-highlights-toggle');
   const dropdown = document.getElementById('mobileHighlightsDropdown');
   if (btn && dropdown) {
-    btn.classList.toggle('active');
-    dropdown.classList.toggle('open');
-    const isExpanded = dropdown.classList.contains('open');
-    btn.setAttribute('aria-expanded', isExpanded ? 'true' : 'false');
+    const willOpen = !dropdown.classList.contains('open');
+    if (willOpen) closeOtherMobileAccordions('highlights');
+    btn.classList.toggle('active', willOpen);
+    dropdown.classList.toggle('open', willOpen);
+    btn.setAttribute('aria-expanded', willOpen ? 'true' : 'false');
   }
 }
 
@@ -546,3 +621,94 @@ function initSliderTracks() {
     });
   }
 }
+
+/* ==========================================================================
+   POLICIES OFFCANVAS SIDE DRAWER & SLIDABLE TAB ENGINE
+   ========================================================================== */
+function initPolicyDrawer() {
+  const triggers = document.querySelectorAll('[data-policy-drawer-trigger], .policy-drawer-trigger');
+  const drawer = document.getElementById('policyOffcanvasDrawer');
+  const backdrop = document.getElementById('policyDrawerBackdrop');
+  const closeBtn = document.getElementById('policyDrawerCloseBtn');
+
+  function openDrawer(tabName) {
+    const mobileMenu = document.querySelector('.mobile-menu');
+    const toggleBtn = document.querySelector('.mobile-toggle');
+    if (mobileMenu) mobileMenu.classList.remove('open');
+    if (toggleBtn) toggleBtn.classList.remove('active');
+    const threeDots = document.getElementById('threeDotsDropdown');
+    if (threeDots) threeDots.style.display = 'none';
+
+    if (drawer) drawer.classList.add('open');
+    if (backdrop) backdrop.classList.add('open');
+    document.body.style.overflow = 'hidden';
+    if (tabName) switchPolicyTab(tabName);
+  }
+
+  function closeDrawer() {
+    if (drawer) drawer.classList.remove('open');
+    if (backdrop) backdrop.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  function switchPolicyTab(tabName) {
+    const tabs = document.querySelectorAll('.policy-tab-btn');
+    const panes = document.querySelectorAll('.policy-tab-pane');
+    tabs.forEach(t => {
+      t.classList.toggle('active', t.getAttribute('data-tab') === tabName);
+    });
+    panes.forEach(p => {
+      p.classList.toggle('active', p.id === ('pane-' + tabName));
+    });
+  }
+
+  window.openPolicyDrawer = openDrawer;
+  window.closePolicyDrawer = closeDrawer;
+  window.switchPolicyTab = switchPolicyTab;
+
+  triggers.forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      const tab = btn.getAttribute('data-tab') || 'corporate';
+      openDrawer(tab);
+    });
+  });
+
+  if (closeBtn) closeBtn.addEventListener('click', closeDrawer);
+  if (backdrop) backdrop.addEventListener('click', closeDrawer);
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && drawer && drawer.classList.contains('open')) {
+      closeDrawer();
+    }
+  });
+
+  const tabs = document.querySelectorAll('.policy-tab-btn');
+  tabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      const tabName = tab.getAttribute('data-tab');
+      if (tabName) switchPolicyTab(tabName);
+    });
+  });
+}
+
+// Global Mobile Policy Accordion Toggle
+window.toggleMobilePoliciesMenu = function(e) {
+  if (e) {
+    e.preventDefault();
+    e.stopPropagation();
+  }
+  const toggle = document.querySelector('.mobile-policies-toggle');
+  const windowEl = document.getElementById('mobilePoliciesDropdown');
+  if (toggle && windowEl) {
+    const willOpen = !windowEl.classList.contains('open');
+    if (willOpen && typeof closeOtherMobileAccordions === 'function') {
+      closeOtherMobileAccordions('policies');
+    }
+    windowEl.classList.toggle('open', willOpen);
+    toggle.classList.toggle('active', willOpen);
+    toggle.setAttribute('aria-expanded', willOpen ? 'true' : 'false');
+  }
+};
+
+

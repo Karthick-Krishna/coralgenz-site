@@ -1,6 +1,28 @@
 {
   "cleanUrls": true,
   "trailingSlash": false,
+  "redirects": [
+    { "source": "/home", "destination": "/", "permanent": true },
+    { "source": "/services", "destination": "/our-services", "permanent": true },
+    { "source": "/products", "destination": "/our-products", "permanent": true },
+    { "source": "/highlights", "destination": "/our-highlights", "permanent": true },
+    { "source": "/vault", "destination": "/coralgenz-vault", "permanent": true },
+    { "source": "/compiler", "destination": "/coralgenz-compiler", "permanent": true },
+    { "source": "/qr", "destination": "/coralgenz-qr", "permanent": true },
+    { "source": "/about", "destination": "/know-more", "permanent": true },
+    { "source": "/about-us", "destination": "/know-more", "permanent": true },
+    { "source": "/privacy", "destination": "/privacy-policy", "permanent": true },
+    { "source": "/terms", "destination": "/privacy-policy", "permanent": true },
+    { "source": "/terms-of-service", "destination": "/privacy-policy", "permanent": true },
+    { "source": "/founder", "destination": "/karthick-krishna", "permanent": true },
+    { "source": "/ceo", "destination": "/karthick-krishna", "permanent": true },
+    { "source": "/coo", "destination": "/thanvanth-h", "permanent": true },
+    { "source": "/cto", "destination": "/sharveshwaran-r", "permanent": true },
+    { "source": "/internship", "destination": "/contact", "permanent": true },
+    { "source": "/internships", "destination": "/contact", "permanent": true },
+    { "source": "/careers", "destination": "/contact", "permanent": true },
+    { "source": "/jobs", "destination": "/contact", "permanent": true }
+  ],
   "headers": [
     {
       "source": "/(.*)",
@@ -16,6 +38,10 @@
         {
           "key": "X-XSS-Protection",
           "value": "1; mode=block"
+        },
+        {
+          "key": "Referrer-Policy",
+          "value": "strict-origin-when-cross-origin"
         }
       ]
     },

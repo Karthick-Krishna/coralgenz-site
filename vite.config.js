@@ -1,7 +1,26 @@
 import { resolve } from 'path';
+import fs from 'fs';
 import { defineConfig } from 'vite';
 
 export default defineConfig({
+  plugins: [
+    {
+      name: 'clean-urls-dev-server',
+      configureServer(server) {
+        server.middlewares.use((req, res, next) => {
+          if (!req.url) return next();
+          const [pathname, search] = req.url.split('?');
+          if (pathname && !pathname.includes('.') && pathname !== '/') {
+            const potentialPath = resolve('.' + pathname + '.html');
+            if (fs.existsSync(potentialPath)) {
+              req.url = pathname + '.html' + (search ? '?' + search : '');
+            }
+          }
+          next();
+        });
+      }
+    }
+  ],
   build: {
     rollupOptions: {
       input: {
