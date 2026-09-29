@@ -158,24 +158,29 @@
 
   <style>
     /* ==========================================================================
-       CORALGENZ VAULT ZERO-KNOWLEDGE PRIVACY - CYBERSECURITY DESIGN SYSTEM
+       CORALGENZ VAULT ZERO-KNOWLEDGE PRIVACY - PREMIUM LIGHT THEME DESIGN SYSTEM
        ========================================================================== */
     :root {
-      --vault-cyan: #38bdf8;
-      --vault-cyan-glow: rgba(56, 189, 248, 0.25);
-      --vault-emerald: #34d399;
-      --vault-emerald-glow: rgba(52, 211, 153, 0.2);
-      --vault-bg: #070b14;
-      --vault-card-bg: rgba(15, 23, 42, 0.7);
-      --vault-card-border: rgba(255, 255, 255, 0.08);
-      --vault-text-main: #ffffff;
-      --vault-text-muted: #94a3b8;
+      --vault-primary: #0066ff;
+      --vault-primary-dark: #004ecc;
+      --vault-primary-light: rgba(0, 102, 255, 0.08);
+      --vault-cyan: #0284c7;
+      --vault-cyan-light: rgba(2, 132, 199, 0.08);
+      --vault-emerald: #10b981;
+      --vault-emerald-bg: #f0fdf4;
+      --vault-emerald-border: rgba(16, 185, 129, 0.3);
+      --vault-bg: #f8fafc;
+      --vault-card-bg: #ffffff;
+      --vault-border: #e2e8f0;
+      --vault-border-light: #f1f5f9;
+      --vault-text-main: #0f172a;
+      --vault-text-muted: #475569;
       --vault-text-subtle: #64748b;
     }
 
     body.vault-privacy-page {
       background-color: var(--vault-bg);
-      color: #cbd5e1;
+      color: var(--vault-text-main);
       min-height: 100vh;
       font-family: var(--font-inter), sans-serif;
       overflow-x: clip;
@@ -198,13 +203,13 @@
     .reading-progress-fill {
       height: 100%;
       width: 0%;
-      background: linear-gradient(90deg, #0284c7 0%, #38bdf8 50%, #34d399 100%);
+      background: linear-gradient(90deg, #0066ff 0%, #0284c7 50%, #10b981 100%);
       transition: width 0.1s ease-out;
     }
 
     /* Formal Meta Header Bar */
     .vault-meta-bar {
-      background: #030712;
+      background: #0f172a;
       border-bottom: 1px solid rgba(255, 255, 255, 0.08);
       font-family: var(--font-jetbrains), monospace;
       font-size: 11px;
@@ -254,16 +259,16 @@
       font-weight: 700;
       font-size: 13.5px;
       border-radius: 9999px;
-      border: 1px solid rgba(56, 189, 248, 0.35);
-      box-shadow: 0 4px 14px rgba(2, 132, 199, 0.35);
+      background: linear-gradient(135deg, #0066ff 0%, #0284c7 100%);
+      border: 1px solid rgba(0, 102, 255, 0.35);
+      box-shadow: 0 4px 14px rgba(0, 102, 255, 0.25);
       text-decoration: none;
       transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
     }
 
     .nav-cta-btn:hover {
-      transform: translateY(-2px) scale(1.03);
-      box-shadow: 0 8px 25px rgba(56, 189, 248, 0.55);
-      border-color: rgba(56, 189, 248, 0.7);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(0, 102, 255, 0.35);
       color: #ffffff !important;
     }
 
@@ -273,13 +278,13 @@
       }
     }
 
-    /* Dark Hero Section */
+    /* Light Hero Section */
     .vault-hero {
       position: relative;
       padding: 100px 0 40px 0;
-      background: radial-gradient(circle at 50% -10%, rgba(2, 132, 199, 0.28) 0%, rgba(7, 11, 20, 0) 70%),
-                  linear-gradient(180deg, #0d1527 0%, #070b14 100%);
-      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      background: radial-gradient(circle at 50% -10%, rgba(0, 102, 255, 0.05) 0%, rgba(248, 250, 252, 0) 70%),
+                  linear-gradient(180deg, #f1f5f9 0%, #f8fafc 100%);
+      border-bottom: 1px solid var(--vault-border);
       text-align: center;
     }
 
@@ -295,34 +300,34 @@
       align-items: center;
       gap: 6px;
       padding: 5px 16px;
-      background: rgba(15, 23, 42, 0.85);
-      border: 1px solid rgba(56, 189, 248, 0.25);
+      background: #ffffff;
+      border: 1px solid var(--vault-border);
       border-radius: 9999px;
       font-size: 12.5px;
       font-weight: 600;
-      color: #94a3b8;
+      color: var(--vault-text-subtle);
       margin-bottom: 16px;
-      backdrop-filter: blur(10px);
+      box-shadow: 0 2px 6px rgba(15, 23, 42, 0.04);
     }
 
     .vault-breadcrumb a {
-      color: #94a3b8;
+      color: var(--vault-text-subtle);
       text-decoration: none;
       transition: color 0.15s ease;
     }
 
     .vault-breadcrumb a:hover {
-      color: #38bdf8;
+      color: var(--vault-primary);
     }
 
     .vault-hero-badge {
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      padding: 4px 14px;
-      background: rgba(16, 185, 129, 0.12);
-      border: 1px solid rgba(16, 185, 129, 0.35);
-      color: #34d399;
+      padding: 5px 14px;
+      background: rgba(16, 185, 129, 0.1);
+      border: 1px solid rgba(16, 185, 129, 0.3);
+      color: #059669;
       border-radius: 100px;
       font-size: 11.5px;
       font-weight: 800;
@@ -335,14 +340,14 @@
       font-family: var(--font-satoshi), sans-serif;
       font-size: clamp(28px, 4.5vw, 46px);
       font-weight: 900;
-      color: #ffffff;
+      color: var(--vault-text-main);
       line-height: 1.18;
       letter-spacing: -0.025em;
       margin-bottom: 14px;
     }
 
     .vault-hero-title span {
-      background: linear-gradient(135deg, #38bdf8 0%, #34d399 100%);
+      background: linear-gradient(135deg, #0066ff 0%, #0284c7 50%, #10b981 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
@@ -350,7 +355,7 @@
     .vault-hero-desc {
       font-size: 16px;
       line-height: 1.65;
-      color: #94a3b8;
+      color: var(--vault-text-muted);
       max-width: 760px;
       margin: 0 auto 26px;
     }
@@ -365,48 +370,48 @@
     }
 
     .vault-stat-card {
-      background: rgba(15, 23, 42, 0.7);
-      border: 1px solid rgba(255, 255, 255, 0.08);
+      background: #ffffff;
+      border: 1px solid var(--vault-border);
       border-radius: 14px;
       padding: 14px 12px;
-      backdrop-filter: blur(10px);
+      box-shadow: 0 4px 14px rgba(15, 23, 42, 0.04);
       transition: all 0.2s ease;
     }
 
     .vault-stat-card:hover {
-      border-color: rgba(56, 189, 248, 0.4);
+      border-color: var(--vault-primary);
       transform: translateY(-2px);
-      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+      box-shadow: 0 8px 24px rgba(0, 102, 255, 0.12);
     }
 
     .vault-stat-icon {
       width: 36px;
       height: 36px;
       border-radius: 10px;
-      background: rgba(56, 189, 248, 0.12);
-      color: #38bdf8;
+      background: rgba(0, 102, 255, 0.08);
+      color: #0066ff;
       display: flex;
       align-items: center;
       justify-content: center;
       margin-bottom: 10px;
     }
 
-    .vault-stat-icon.green { background: rgba(52, 211, 153, 0.12); color: #34d399; }
-    .vault-stat-icon.amber { background: rgba(251, 191, 36, 0.12); color: #fbbf24; }
-    .vault-stat-icon.purple { background: rgba(192, 132, 252, 0.12); color: #c084fc; }
+    .vault-stat-icon.green { background: rgba(16, 185, 129, 0.1); color: #10b981; }
+    .vault-stat-icon.amber { background: rgba(245, 158, 11, 0.1); color: #d97706; }
+    .vault-stat-icon.purple { background: rgba(147, 51, 234, 0.1); color: #9333ea; }
 
     .vault-stat-card strong {
       display: block;
       font-size: 13.5px;
       font-weight: 800;
-      color: #ffffff;
+      color: var(--vault-text-main);
       margin-bottom: 2px;
       line-height: 1.3;
     }
 
     .vault-stat-card span {
       font-size: 11px;
-      color: #94a3b8;
+      color: var(--vault-text-subtle);
       line-height: 1.35;
       display: block;
     }
@@ -417,9 +422,9 @@
       position: sticky;
       top: 60px;
       z-index: 90;
-      background: rgba(13, 21, 39, 0.96);
+      background: rgba(255, 255, 255, 0.96);
       backdrop-filter: blur(12px);
-      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      border-bottom: 1px solid var(--vault-border);
       padding: 9px 12px;
       overflow-x: auto;
       white-space: nowrap;
@@ -436,22 +441,22 @@
       align-items: center;
       gap: 6px;
       padding: 6px 13px;
-      background: rgba(255, 255, 255, 0.06);
+      background: #f1f5f9;
       border-radius: 9999px;
       font-size: 12px;
       font-weight: 600;
-      color: #cbd5e1;
+      color: var(--vault-text-muted);
       text-decoration: none;
       margin-right: 6px;
-      border: 1px solid transparent;
+      border: 1px solid var(--vault-border);
       transition: all 0.2s ease;
       flex-shrink: 0;
     }
 
     .mobile-vault-chip.active, .mobile-vault-chip:active {
-      background: rgba(56, 189, 248, 0.2);
-      color: #38bdf8;
-      border-color: rgba(56, 189, 248, 0.4);
+      background: var(--vault-primary);
+      color: #ffffff;
+      border-color: var(--vault-primary);
       font-weight: 700;
     }
 
@@ -468,15 +473,14 @@
     .vault-sidebar {
       position: sticky;
       top: 90px;
-      background: rgba(15, 23, 42, 0.85);
-      border: 1px solid rgba(255, 255, 255, 0.08);
+      background: #ffffff;
+      border: 1px solid var(--vault-border);
       border-radius: 18px;
       padding: 20px;
-      backdrop-filter: blur(14px);
       max-height: calc(100vh - 110px);
       overflow-y: auto;
       scrollbar-width: thin;
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+      box-shadow: 0 4px 20px rgba(15, 23, 42, 0.04);
     }
 
     .vault-sidebar-title {
@@ -484,7 +488,7 @@
       font-weight: 800;
       text-transform: uppercase;
       letter-spacing: 0.8px;
-      color: #38bdf8;
+      color: var(--vault-primary);
       margin-bottom: 12px;
       display: flex;
       align-items: center;
@@ -499,19 +503,20 @@
     .vault-sidebar-search {
       width: 100%;
       padding: 9px 30px 9px 12px;
-      border: 1px solid rgba(255, 255, 255, 0.12);
+      border: 1px solid var(--vault-border);
       border-radius: 8px;
       font-size: 12.5px;
       outline: none;
-      background: rgba(2, 6, 23, 0.7);
-      color: #ffffff;
+      background: #f8fafc;
+      color: var(--vault-text-main);
       box-sizing: border-box;
       transition: all 0.2s ease;
     }
 
     .vault-sidebar-search:focus {
-      border-color: #38bdf8;
-      box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.15);
+      border-color: var(--vault-primary);
+      background: #ffffff;
+      box-shadow: 0 0 0 3px rgba(0, 102, 255, 0.1);
     }
 
     .vault-clear-btn {
@@ -521,7 +526,7 @@
       transform: translateY(-50%);
       background: none;
       border: none;
-      color: #94a3b8;
+      color: var(--vault-text-subtle);
       cursor: pointer;
       font-size: 14px;
       padding: 2px 4px;
@@ -530,7 +535,7 @@
 
     .vault-match-count {
       font-size: 11px;
-      color: #64748b;
+      color: var(--vault-text-subtle);
       margin-bottom: 12px;
       display: flex;
       align-items: center;
@@ -552,7 +557,7 @@
       gap: 8px;
       padding: 8px 10px;
       font-size: 12.5px;
-      color: #94a3b8;
+      color: var(--vault-text-muted);
       text-decoration: none;
       border-radius: 8px;
       transition: all 0.15s ease;
@@ -560,36 +565,36 @@
     }
 
     .vault-nav-link:hover {
-      color: #38bdf8;
-      background: rgba(56, 189, 248, 0.08);
+      color: var(--vault-primary);
+      background: var(--vault-primary-light);
     }
 
     .vault-nav-link.active {
-      color: #ffffff;
-      background: rgba(56, 189, 248, 0.15);
-      border-left: 2px solid #38bdf8;
+      color: var(--vault-primary);
+      background: rgba(0, 102, 255, 0.08);
+      border-left: 2px solid var(--vault-primary);
       font-weight: 700;
     }
 
     .vault-nav-badge {
       font-family: var(--font-jetbrains), monospace;
       font-size: 10px;
-      background: rgba(255, 255, 255, 0.06);
-      color: #64748b;
+      background: #f1f5f9;
+      color: var(--vault-text-subtle);
       padding: 2px 5px;
       border-radius: 4px;
       flex-shrink: 0;
     }
 
     .vault-nav-link.active .vault-nav-badge {
-      background: #0284c7;
+      background: var(--vault-primary);
       color: #ffffff;
     }
 
     .vault-side-actions {
       margin-top: 18px;
       padding-top: 14px;
-      border-top: 1px solid rgba(255, 255, 255, 0.06);
+      border-top: 1px solid var(--vault-border);
       display: flex;
       flex-direction: column;
       gap: 8px;
@@ -611,25 +616,25 @@
     }
 
     .btn-vault-launch {
-      background: linear-gradient(135deg, #0284c7 0%, #10b981 100%);
+      background: linear-gradient(135deg, #0066ff 0%, #10b981 100%);
       color: #ffffff;
-      box-shadow: 0 3px 12px rgba(2, 132, 199, 0.3);
+      box-shadow: 0 3px 12px rgba(0, 102, 255, 0.25);
     }
 
     .btn-vault-launch:hover {
       transform: translateY(-1px);
-      box-shadow: 0 5px 16px rgba(2, 132, 199, 0.4);
+      box-shadow: 0 5px 16px rgba(0, 102, 255, 0.35);
     }
 
     .btn-vault-corp {
-      background: rgba(255, 255, 255, 0.06);
-      color: #cbd5e1;
-      border: 1px solid rgba(255, 255, 255, 0.08);
+      background: #f8fafc;
+      color: var(--vault-text-main);
+      border: 1px solid var(--vault-border);
     }
 
     .btn-vault-corp:hover {
-      background: rgba(255, 255, 255, 0.1);
-      color: #ffffff;
+      background: #f1f5f9;
+      color: var(--vault-primary);
     }
 
     /* Main Content Article */
@@ -640,12 +645,11 @@
     }
 
     .vault-policy-card {
-      background: rgba(15, 23, 42, 0.65);
-      border: 1px solid rgba(255, 255, 255, 0.08);
+      background: #ffffff;
+      border: 1px solid var(--vault-border);
       border-radius: 18px;
       padding: 30px;
-      backdrop-filter: blur(12px);
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+      box-shadow: 0 4px 20px rgba(15, 23, 42, 0.03);
       scroll-margin-top: 120px;
       position: relative;
     }
@@ -657,7 +661,7 @@
       gap: 12px;
       padding-bottom: 14px;
       margin-bottom: 18px;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+      border-bottom: 1px solid var(--vault-border-light);
     }
 
     .vault-card-header-left {
@@ -671,9 +675,9 @@
       font-size: 11px;
       font-weight: 800;
       padding: 3px 8px;
-      background: rgba(56, 189, 248, 0.12);
-      color: #38bdf8;
-      border: 1px solid rgba(56, 189, 248, 0.25);
+      background: rgba(0, 102, 255, 0.08);
+      color: var(--vault-primary);
+      border: 1px solid rgba(0, 102, 255, 0.2);
       border-radius: 6px;
       flex-shrink: 0;
     }
@@ -682,7 +686,7 @@
       font-family: var(--font-satoshi), sans-serif;
       font-size: 21px;
       font-weight: 800;
-      color: #ffffff;
+      color: var(--vault-text-main);
       margin: 0;
       letter-spacing: -0.015em;
     }
@@ -691,9 +695,9 @@
       display: inline-flex;
       align-items: center;
       gap: 5px;
-      background: transparent;
-      border: 1px solid rgba(255, 255, 255, 0.12);
-      color: #94a3b8;
+      background: #f8fafc;
+      border: 1px solid var(--vault-border);
+      color: var(--vault-text-muted);
       padding: 5px 10px;
       border-radius: 6px;
       font-size: 11.5px;
@@ -704,15 +708,15 @@
     }
 
     .btn-copy-vault-clause:hover {
-      background: rgba(56, 189, 248, 0.1);
-      color: #38bdf8;
-      border-color: rgba(56, 189, 248, 0.3);
+      background: rgba(0, 102, 255, 0.06);
+      color: var(--vault-primary);
+      border-color: rgba(0, 102, 255, 0.3);
     }
 
-    /* Simple English Callout (Cyber Theme) */
+    /* Simple English Callout */
     .simple-english-cyber-box {
-      background: rgba(16, 185, 129, 0.08);
-      border: 1px solid rgba(52, 211, 153, 0.3);
+      background: #f0fdf4;
+      border: 1px solid rgba(16, 185, 129, 0.3);
       border-radius: 12px;
       padding: 14px 16px;
       margin-bottom: 18px;
@@ -722,7 +726,7 @@
     }
 
     .simple-cyber-icon {
-      color: #34d399;
+      color: #10b981;
       font-size: 18px;
       flex-shrink: 0;
       line-height: 1;
@@ -731,7 +735,7 @@
 
     .simple-cyber-body strong {
       display: block;
-      color: #34d399;
+      color: #065f46;
       font-size: 13.5px;
       font-weight: 800;
       margin-bottom: 3px;
@@ -740,14 +744,14 @@
     .simple-cyber-body p {
       margin: 0;
       font-size: 13.5px;
-      color: #a7f3d0;
+      color: #047857;
       line-height: 1.55;
     }
 
     .vault-policy-card p {
       font-size: 14.5px;
       line-height: 1.7;
-      color: #94a3b8;
+      color: var(--vault-text-muted);
       margin-bottom: 14px;
     }
 
@@ -756,14 +760,14 @@
     }
 
     .vault-policy-card strong {
-      color: #f1f5f9;
+      color: var(--vault-text-main);
       font-weight: 700;
     }
 
-    .vault-policy-card ul {
+    .vault-policy-card ul, .vault-policy-card ol {
       padding-left: 20px;
       margin-bottom: 16px;
-      color: #94a3b8;
+      color: var(--vault-text-muted);
       font-size: 14px;
       line-height: 1.65;
     }
@@ -781,8 +785,8 @@
     }
 
     .step-card {
-      background: rgba(2, 6, 23, 0.85);
-      border: 1px solid rgba(255, 255, 255, 0.08);
+      background: #f8fafc;
+      border: 1px solid var(--vault-border);
       border-radius: 12px;
       padding: 14px 10px;
       text-align: center;
@@ -793,39 +797,39 @@
     }
 
     .step-card.active {
-      border-color: rgba(56, 189, 248, 0.4);
-      background: rgba(2, 132, 199, 0.1);
+      border-color: rgba(0, 102, 255, 0.35);
+      background: rgba(0, 102, 255, 0.05);
     }
 
     .step-card.success {
-      border-color: rgba(52, 211, 153, 0.4);
-      background: rgba(16, 185, 129, 0.1);
+      border-color: rgba(16, 185, 129, 0.35);
+      background: rgba(16, 185, 129, 0.05);
     }
 
     .step-card .num {
       font-family: var(--font-jetbrains), monospace;
       font-size: 9.5px;
-      color: #64748b;
+      color: var(--vault-text-subtle);
       font-weight: 700;
     }
 
     .step-card .title {
       font-size: 12.5px;
       font-weight: 800;
-      color: #ffffff;
+      color: var(--vault-text-main);
       line-height: 1.25;
     }
 
     .step-card .detail {
       font-size: 10.5px;
-      color: #94a3b8;
+      color: var(--vault-text-muted);
       font-family: var(--font-jetbrains), monospace;
     }
 
     /* V10 4-Tier 16-Layer Security Architecture Breakdown in Privacy Spec */
     .sec-tier-block-dark {
-      background: #090d16;
-      border: 1px solid rgba(255, 255, 255, 0.08);
+      background: #f8fafc;
+      border: 1px solid var(--vault-border);
       border-radius: 16px;
       padding: 24px;
       margin-bottom: 24px;
@@ -838,7 +842,7 @@
       gap: 12px;
       margin-bottom: 18px;
       padding-bottom: 14px;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+      border-bottom: 1px solid var(--vault-border);
       flex-wrap: wrap;
     }
     .sec-tier-badge-dark {
@@ -852,20 +856,20 @@
       text-transform: uppercase;
       letter-spacing: 0.06em;
     }
-    .sec-tier-badge-dark.t1 { background: rgba(168, 85, 247, 0.15); color: #c084fc; border: 1px solid rgba(168, 85, 247, 0.3); }
-    .sec-tier-badge-dark.t2 { background: rgba(59, 130, 246, 0.15); color: #60a5fa; border: 1px solid rgba(59, 130, 246, 0.3); }
-    .sec-tier-badge-dark.t3 { background: rgba(16, 185, 129, 0.15); color: #34d399; border: 1px solid rgba(16, 185, 129, 0.3); }
-    .sec-tier-badge-dark.t4 { background: rgba(245, 158, 11, 0.15); color: #fbbf24; border: 1px solid rgba(245, 158, 11, 0.3); }
+    .sec-tier-badge-dark.t1 { background: rgba(168, 85, 247, 0.12); color: #9333ea; border: 1px solid rgba(168, 85, 247, 0.25); }
+    .sec-tier-badge-dark.t2 { background: rgba(0, 102, 255, 0.1); color: #0066ff; border: 1px solid rgba(0, 102, 255, 0.25); }
+    .sec-tier-badge-dark.t3 { background: rgba(16, 185, 129, 0.12); color: #059669; border: 1px solid rgba(16, 185, 129, 0.25); }
+    .sec-tier-badge-dark.t4 { background: rgba(245, 158, 11, 0.12); color: #d97706; border: 1px solid rgba(245, 158, 11, 0.25); }
     .sec-tier-title-dark {
       font-size: 18px;
       font-weight: 800;
-      color: #ffffff;
+      color: var(--vault-text-main);
       margin-top: 6px;
       margin-bottom: 4px;
     }
     .sec-tier-sub-dark {
       font-size: 13px;
-      color: #94a3b8;
+      color: var(--vault-text-muted);
       margin: 0;
     }
     .sec-layers-grid-dark {
@@ -874,14 +878,15 @@
       gap: 14px;
     }
     .sec-layer-card-dark {
-      background: rgba(15, 23, 42, 0.6);
-      border: 1px solid rgba(255, 255, 255, 0.06);
+      background: #ffffff;
+      border: 1px solid var(--vault-border);
       border-radius: 12px;
       padding: 16px;
+      box-shadow: 0 2px 8px rgba(15, 23, 42, 0.02);
     }
     .sec-layer-card-dark:hover {
-      border-color: rgba(56, 189, 248, 0.3);
-      background: rgba(15, 23, 42, 0.85);
+      border-color: rgba(0, 102, 255, 0.3);
+      box-shadow: 0 4px 14px rgba(15, 23, 42, 0.05);
     }
     .sec-layer-top-dark {
       display: flex;
@@ -895,38 +900,38 @@
       font-family: var(--font-jetbrains), monospace;
       font-size: 11px;
       font-weight: 800;
-      color: #38bdf8;
+      color: var(--vault-primary);
       letter-spacing: 0.05em;
     }
     .sec-code-chip-dark {
-      background: rgba(255, 255, 255, 0.06);
-      border: 1px solid rgba(255, 255, 255, 0.1);
+      background: #f1f5f9;
+      border: 1px solid var(--vault-border);
       padding: 2px 8px;
       border-radius: 6px;
       font-family: var(--font-jetbrains), monospace;
       font-size: 11px;
-      color: #e2e8f0;
+      color: var(--vault-text-main);
     }
     .sec-layer-name-dark {
       font-size: 15px;
       font-weight: 700;
-      color: #f8fafc;
+      color: var(--vault-text-main);
       margin-bottom: 6px;
     }
     .sec-layer-desc-dark {
       font-size: 13.5px;
-      color: #94a3b8;
+      color: var(--vault-text-muted);
       line-height: 1.6;
       margin-bottom: 10px;
     }
     .sec-terminal-snippet-dark {
-      background: #020617;
-      border: 1px solid rgba(255, 255, 255, 0.08);
+      background: #0f172a;
+      border: 1px solid #1e293b;
       border-radius: 8px;
       padding: 10px 12px;
       font-family: var(--font-jetbrains), monospace;
       font-size: 11.5px;
-      color: #e2e8f0;
+      color: #38bdf8;
       line-height: 1.5;
       overflow-x: auto;
     }
@@ -934,20 +939,21 @@
     /* Table with swipe hint */
     .cyber-table-box {
       overflow-x: auto;
-      border: 1px solid rgba(255, 255, 255, 0.08);
+      border: 1px solid var(--vault-border);
       border-radius: 12px;
       margin: 18px 0;
       -webkit-overflow-scrolling: touch;
       position: relative;
+      background: #ffffff;
     }
 
     .cyber-swipe-hint {
       display: none;
       font-size: 11px;
-      color: #94a3b8;
+      color: var(--vault-text-subtle);
       padding: 6px 12px;
-      background: #0f172a;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      background: #f8fafc;
+      border-bottom: 1px solid var(--vault-border);
       text-align: right;
       font-weight: 600;
     }
@@ -961,17 +967,17 @@
     }
 
     .cyber-table th {
-      background: #0f172a;
-      color: #ffffff;
+      background: #f8fafc;
+      color: var(--vault-text-main);
       font-weight: 700;
       padding: 11px 14px;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      border-bottom: 1px solid var(--vault-border);
     }
 
     .cyber-table td {
       padding: 12px 14px;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-      color: #94a3b8;
+      border-bottom: 1px solid var(--vault-border-light);
+      color: var(--vault-text-muted);
       vertical-align: middle;
       line-height: 1.5;
     }
@@ -990,13 +996,13 @@
       font-weight: 700;
     }
 
-    .pill-status.green { background: rgba(16, 185, 129, 0.15); color: #34d399; }
-    .pill-status.red { background: rgba(239, 68, 68, 0.15); color: #f87171; }
+    .pill-status.green { background: rgba(16, 185, 129, 0.12); color: #059669; }
+    .pill-status.red { background: rgba(239, 68, 68, 0.12); color: #dc2626; }
 
     /* Code Terminal block */
     .code-terminal {
-      background: #020617;
-      border: 1px solid rgba(56, 189, 248, 0.2);
+      background: #0f172a;
+      border: 1px solid #1e293b;
       border-radius: 10px;
       padding: 14px 18px;
       font-family: var(--font-jetbrains), monospace;
@@ -1009,15 +1015,15 @@
 
     /* Subpoena Box */
     .subpoena-box {
-      background: linear-gradient(135deg, rgba(239, 68, 68, 0.12) 0%, rgba(15, 23, 42, 0.8) 100%);
-      border: 1px solid rgba(239, 68, 68, 0.35);
+      background: #fef2f2;
+      border: 1px solid rgba(239, 68, 68, 0.25);
       border-radius: 14px;
       padding: 20px;
       margin: 18px 0;
     }
 
     .subpoena-box h4 {
-      color: #f87171;
+      color: #dc2626;
       font-size: 15.5px;
       font-weight: 800;
       margin-bottom: 6px;
@@ -1027,7 +1033,7 @@
     }
 
     .subpoena-box p {
-      color: #cbd5e1;
+      color: #7f1d1d;
       font-size: 13.5px;
       line-height: 1.6;
       margin: 0;
@@ -1035,8 +1041,8 @@
 
     /* Formal Sign-off */
     .vault-signoff-card {
-      background: rgba(15, 23, 42, 0.9);
-      border: 1px solid rgba(255, 255, 255, 0.08);
+      background: #ffffff;
+      border: 1px solid var(--vault-border);
       border-radius: 18px;
       padding: 24px 28px;
       display: flex;
@@ -1044,18 +1050,19 @@
       align-items: center;
       flex-wrap: wrap;
       gap: 18px;
+      box-shadow: 0 4px 16px rgba(15, 23, 42, 0.04);
     }
 
     .vault-signoff-meta strong {
       display: block;
       font-size: 14.5px;
-      color: #ffffff;
+      color: var(--vault-text-main);
       margin-bottom: 3px;
     }
 
     .vault-signoff-meta span {
       font-size: 12.5px;
-      color: #94a3b8;
+      color: var(--vault-text-subtle);
     }
 
     /* Floating Back to Top Button */
@@ -1066,10 +1073,10 @@
       width: 44px;
       height: 44px;
       border-radius: 50%;
-      background: #0284c7;
+      background: var(--vault-primary);
       color: #ffffff;
       border: none;
-      box-shadow: 0 4px 16px rgba(2, 132, 199, 0.5);
+      box-shadow: 0 4px 16px rgba(0, 102, 255, 0.4);
       cursor: pointer;
       display: flex;
       align-items: center;
@@ -1088,9 +1095,9 @@
     }
 
     .vault-back-to-top-btn:hover {
-      background: #38bdf8;
+      background: var(--vault-primary-dark);
       transform: translateY(-2px);
-      box-shadow: 0 6px 20px rgba(56, 189, 248, 0.6);
+      box-shadow: 0 6px 20px rgba(0, 102, 255, 0.5);
     }
 
     /* Toast Notification */
@@ -1101,7 +1108,7 @@
       transform: translateX(-50%) translateY(30px);
       background: #0f172a;
       color: #ffffff;
-      border: 1px solid rgba(56, 189, 248, 0.3);
+      border: 1px solid rgba(0, 102, 255, 0.3);
       padding: 10px 18px;
       border-radius: 100px;
       font-size: 13px;
@@ -1109,7 +1116,7 @@
       display: flex;
       align-items: center;
       gap: 8px;
-      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+      box-shadow: 0 8px 24px rgba(15, 23, 42, 0.15);
       z-index: 1000;
       opacity: 0;
       pointer-events: none;
@@ -1324,6 +1331,24 @@
       }
       .sec-tier-block-dark {
         padding: 14px 10px;
+      }
+    }
+
+    @media (max-width: 380px) {
+      .vault-hero-title {
+        font-size: 19px;
+      }
+      .vault-card-title {
+        font-size: 15px;
+      }
+      .sec-tier-title-dark {
+        font-size: 15px;
+      }
+      .sec-layer-name-dark {
+        font-size: 13.5px;
+      }
+      .cyber-table {
+        min-width: 380px;
       }
     }
 
@@ -2411,57 +2436,57 @@
   </div>
 
   <!-- Site Footer -->
-  <footer class="site-footer" style="background: #050811; border-top: 1px solid rgba(255, 255, 255, 0.08);">
+  <footer class="site-footer">
     <div class="container">
       <div class="footer-wrapper">
         <div class="footer-top">
           <div class="footer-brand">
             <a href="/" class="brand-logo" aria-label="Coralgenz Global Official Homepage">
               <img src="/assets/images/DVyu6tz4dqPirA4TwAJZUz5CUw.png" alt="Coralgenz Global Logo" width="40" height="40" loading="lazy" decoding="async">
-              <span class="brand-name" style="color: #ffffff;">Coralgenz Global</span>
+              <span class="brand-name">Coralgenz Global</span>
             </a>
-            <div class="footer-sub" style="color: #64748b;">Inventor &amp; Introducer of the .secure Format &bull; All Rights Owned &bull; Zero-Knowledge Systems</div>
+            <div class="footer-sub">Inventor &amp; Introducer of the .secure Format &bull; All Rights Owned &bull; Zero-Knowledge Systems</div>
           </div>
 
           <div>
-            <h5 class="footer-col-title" style="color: #ffffff;">Vault Ecosystem</h5>
+            <h5 class="footer-col-title">Vault Ecosystem</h5>
             <div class="footer-col-links">
-              <a href="/coralgenz-vault" style="color: #38bdf8; font-weight: 700;">Coralgenz Vault Main</a>
+              <a href="/coralgenz-vault" style="color: #0066ff; font-weight: 700;">Coralgenz Vault Main</a>
               <a href="/our-highlights/worlds-first-secure-format">World's First .secure Format</a>
               <a href="/our-highlights/coralgenz-vault-security">Cryptographic Security Architecture</a>
-              <a href="/coralgenz-vault-privacy" style="color: #34d399; font-weight: 700;">Zero-Knowledge Privacy Policy</a>
+              <a href="/coralgenz-vault-privacy" style="color: #10b981; font-weight: 700;">Zero-Knowledge Privacy Policy</a>
               <a href="/our-products">All Proprietary Products</a>
             </div>
           </div>
 
           <div>
-            <h5 class="footer-col-title" style="color: #ffffff;">Legal &amp; Trust</h5>
+            <h5 class="footer-col-title">Legal &amp; Trust</h5>
             <div class="footer-col-links">
               <a href="/privacy-policy">Corporate Privacy Policy</a>
-              <a href="/coralgenz-vault-privacy" style="color: #38bdf8;">Vault Zero-Knowledge Policy</a>
+              <a href="/coralgenz-vault-privacy" style="color: #0066ff; font-weight: 700;">Vault Zero-Knowledge Policy</a>
               <a href="mailto:security@coralgenz.co.in">Vulnerability Disclosure</a>
             </div>
           </div>
 
           <div>
-            <h5 class="footer-col-title" style="color: #ffffff;">Direct Security Contact</h5>
+            <h5 class="footer-col-title">Direct Security Contact</h5>
             <div class="footer-col-links">
               <a href="mailto:security@coralgenz.co.in">security@coralgenz.co.in</a>
               <a href="mailto:contact@coralgenz.co.in">contact@coralgenz.co.in</a>
               <a href="mailto:coralgenz@gmail.com">coralgenz@gmail.com</a>
             </div>
             <div class="footer-social-icons">
-              <a href="https://in.linkedin.com/company/coralgenz" target="_blank" rel="noopener noreferrer" class="footer-social-icon" aria-label="LinkedIn" style="color: #94a3b8;">
+              <a href="https://in.linkedin.com/company/coralgenz" target="_blank" rel="noopener noreferrer" class="footer-social-icon" aria-label="LinkedIn">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/></svg>
               </a>
-              <a href="https://github.com/Coralgenz-Global" target="_blank" rel="noopener noreferrer" class="footer-social-icon" aria-label="GitHub" style="color: #94a3b8;">
+              <a href="https://github.com/Coralgenz-Global" target="_blank" rel="noopener noreferrer" class="footer-social-icon" aria-label="GitHub">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.1-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2z"/></svg>
               </a>
             </div>
           </div>
         </div>
 
-        <div class="footer-bottom" style="border-color: rgba(255, 255, 255, 0.06); color: #64748b;">
+        <div class="footer-bottom">
           <div>&copy; 2026 Coralgenz Global. The .secure format was invented and introduced by Coralgenz Global, and all rights are owned by the company. All rights reserved.</div>
           <div>Coimbatore, Tamil Nadu, India &bull; Zero-Knowledge Cloud Storage</div>
         </div>
