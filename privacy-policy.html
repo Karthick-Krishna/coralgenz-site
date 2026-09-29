@@ -977,29 +977,131 @@
 
     @media (max-width: 640px) {
       .privacy-hero {
-        padding: 85px 0 25px 0;
+        padding: 85px 0 24px 0;
+      }
+      .privacy-hero-inner {
+        padding: 0 14px;
+      }
+      .privacy-hero-title {
+        font-size: 24px;
+        line-height: 1.25;
+        margin-bottom: 10px;
+      }
+      .privacy-hero-desc {
+        font-size: 13.5px;
+        line-height: 1.55;
+        margin-bottom: 16px;
+      }
+      .formal-meta-inner {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 6px;
+        padding: 4px 12px;
+      }
+      .policy-view-switcher {
+        flex-direction: column !important;
+        border-radius: 14px !important;
+        padding: 6px !important;
+        gap: 6px !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        margin-bottom: 20px !important;
+      }
+      .policy-switch-btn {
+        width: 100% !important;
+        padding: 9px 12px !important;
+        font-size: 12px !important;
+        white-space: normal !important;
+        text-align: center !important;
+        border-radius: 10px !important;
       }
       .trust-grid {
         grid-template-columns: 1fr;
+        gap: 8px;
+      }
+      .trust-card {
+        padding: 12px;
+        border-radius: 12px;
+      }
+      .policy-layout-grid {
+        padding: 16px 0 40px 0;
+        gap: 16px;
       }
       .formal-card {
-        padding: 20px 16px;
+        padding: 18px 14px;
         border-radius: 14px;
+        margin-bottom: 14px;
+      }
+      .formal-card-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+        padding-bottom: 10px;
+        margin-bottom: 12px;
+      }
+      .formal-card-title {
+        font-size: 17px;
+      }
+      .formal-card p {
+        font-size: 13.5px;
+        line-height: 1.6;
+        margin-bottom: 10px;
+      }
+      .formal-card ul, .formal-card ol {
+        padding-left: 18px;
+        font-size: 13px;
+        line-height: 1.55;
+      }
+      .btn-copy-clause {
+        font-size: 11px;
+        padding: 5px 10px;
+        align-self: flex-start;
+      }
+      .plain-english-box {
+        padding: 12px 14px;
+        border-radius: 10px;
+        font-size: 12.5px;
+        margin-bottom: 14px;
       }
       .rights-grid {
         grid-template-columns: 1fr;
+        gap: 8px;
+      }
+      .rights-pill {
+        padding: 12px;
+      }
+      .table-responsive-box {
+        margin: 12px 0;
+        border-radius: 10px;
+      }
+      .formal-table {
+        min-width: 480px;
+        font-size: 12px;
+      }
+      .formal-table th, .formal-table td {
+        padding: 8px 10px;
       }
       .grievance-desk-box {
-        padding: 18px;
+        padding: 16px 14px;
+        border-radius: 14px;
+        gap: 12px;
       }
       .formal-signoff-card {
-        padding: 18px;
+        padding: 16px 14px;
+        border-radius: 14px;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+      }
+      .signoff-badges {
+        flex-wrap: wrap;
+        gap: 6px;
       }
       .back-to-top-btn {
         bottom: 16px;
         right: 16px;
-        width: 40px;
-        height: 40px;
+        width: 38px;
+        height: 38px;
       }
     }
 
