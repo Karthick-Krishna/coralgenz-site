@@ -1204,7 +1204,7 @@
         gap: 16px;
       }
       .vault-policy-card {
-        padding: 18px 14px;
+        padding: 16px 12px;
         border-radius: 14px;
         margin-bottom: 14px;
       }
@@ -1216,16 +1216,17 @@
         margin-bottom: 12px;
       }
       .vault-card-title {
-        font-size: 17px;
+        font-size: 16px;
       }
       .vault-policy-card p {
-        font-size: 13.5px;
+        font-size: 13px;
         line-height: 1.6;
         margin-bottom: 10px;
+        word-break: break-word;
       }
       .vault-policy-card ul, .vault-policy-card ol {
         padding-left: 18px;
-        font-size: 13px;
+        font-size: 12.5px;
         line-height: 1.55;
       }
       .btn-copy-vault-clause {
@@ -1234,10 +1235,11 @@
         align-self: flex-start;
       }
       .simple-english-cyber-box {
-        padding: 12px 14px;
+        padding: 12px 12px;
         border-radius: 10px;
-        font-size: 12.5px;
+        font-size: 12px;
         margin-bottom: 14px;
+        word-break: break-word;
       }
       .sec-tier-block-dark {
         padding: 16px 12px;
@@ -1262,37 +1264,66 @@
         font-size: 14px;
       }
       .code-terminal {
-        padding: 10px 12px;
-        font-size: 11px;
+        padding: 10px 10px;
+        font-size: 10.5px;
+        overflow-x: auto;
+        max-width: 100%;
+        word-break: break-word;
       }
       .cyber-table-box {
         margin: 12px 0;
         border-radius: 10px;
+        width: 100%;
+        max-width: 100%;
       }
       .cyber-table {
-        min-width: 480px;
-        font-size: 12px;
+        min-width: 440px;
+        font-size: 11.5px;
       }
       .cyber-table th, .cyber-table td {
         padding: 8px 10px;
       }
       .subpoena-box {
-        padding: 16px 14px;
+        padding: 14px 12px;
         border-radius: 12px;
         margin: 14px 0;
+        word-break: break-word;
       }
       .vault-signoff-card {
-        padding: 16px 14px;
+        padding: 14px 12px;
         border-radius: 14px;
         flex-direction: column;
         align-items: flex-start;
         gap: 12px;
+        word-break: break-word;
       }
       .vault-back-to-top-btn {
         bottom: 16px;
         right: 16px;
         width: 38px;
         height: 38px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .vault-hero {
+        padding: 75px 0 20px 0;
+      }
+      .vault-hero-title {
+        font-size: 21px;
+      }
+      .vault-hero-desc {
+        font-size: 13px;
+      }
+      .policy-switch-btn {
+        font-size: 11.5px !important;
+        padding: 8px 10px !important;
+      }
+      .vault-policy-card {
+        padding: 14px 10px;
+      }
+      .sec-tier-block-dark {
+        padding: 14px 10px;
       }
     }
 
