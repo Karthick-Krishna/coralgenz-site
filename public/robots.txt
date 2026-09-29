@@ -1,6 +1,6 @@
 # ==============================================================================
 # CORALGENZ GLOBAL - SEARCH ENGINE CRAWLER DIRECTIVES
-# High-Priority Instant Indexing & Image Crawling Directives
+# 100% Valid Search Engine Directives for Instant Indexing & Image Crawling
 # ==============================================================================
 
 User-agent: *
@@ -10,15 +10,20 @@ Allow: /assets/images/
 Allow: /assets/css/
 Allow: /assets/js/
 Allow: /our-services/
+Allow: /our-highlights/
+Disallow: /node_modules/
+Disallow: /.git/
+Disallow: /dist/
 
-# Googlebot Optimized
+# Googlebot
 User-agent: Googlebot
 Allow: /
+Allow: /assets/
 Allow: /assets/images/
 Allow: /*.js$
 Allow: /*.css$
 
-# Googlebot-Image Optimized
+# Googlebot-Image
 User-agent: Googlebot-Image
 Allow: /assets/images/
 Allow: /
@@ -26,9 +31,9 @@ Allow: /
 # Bingbot
 User-agent: Bingbot
 Allow: /
-Crawl-delay: 0
+Allow: /assets/
 
-# Applebot & Twitterbot
+# Applebot & Twitterbot & Social Crawlers
 User-agent: Applebot
 Allow: /
 
@@ -37,11 +42,6 @@ Allow: /
 
 User-agent: facebookexternalhit
 Allow: /
-
-# Disallow sensitive directories
-Disallow: /node_modules/
-Disallow: /.git/
-Disallow: /dist/
 
 # XML Sitemaps
 Sitemap: https://coralgenz.co.in/sitemap.xml

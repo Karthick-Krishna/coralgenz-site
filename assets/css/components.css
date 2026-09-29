@@ -813,6 +813,14 @@ body.mobile-nav-locked {
   padding-left: 15px;
 }
 
+.dropdown-hub-link {
+  font-weight: 700 !important;
+  color: #0066ff !important;
+  background: rgba(0, 102, 255, 0.05);
+  border-bottom: 1px solid #f1f5f9;
+  margin-bottom: 4px;
+}
+
 /* ==========================================================================
    POLICIES NAVIGATION & SLIDABLE OFFCANVAS DRAWER SYSTEM
    ========================================================================== */

@@ -21,7 +21,12 @@
     { "source": "/internship", "destination": "/contact", "permanent": true },
     { "source": "/internships", "destination": "/contact", "permanent": true },
     { "source": "/careers", "destination": "/contact", "permanent": true },
-    { "source": "/jobs", "destination": "/contact", "permanent": true }
+    { "source": "/jobs", "destination": "/contact", "permanent": true },
+    { "source": "/ur-services", "destination": "/our-services", "permanent": true },
+    { "source": "/ur-services/:match*", "destination": "/our-services/:match*", "permanent": true },
+    { "source": "/ur-products", "destination": "/our-products", "permanent": true },
+    { "source": "/ur-highlights", "destination": "/our-highlights", "permanent": true },
+    { "source": "/ur-highlights/:match*", "destination": "/our-highlights/:match*", "permanent": true }
   ],
   "headers": [
     {

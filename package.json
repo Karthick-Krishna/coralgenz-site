@@ -1,5 +1,5 @@
 {
-  "name": "coralgenz-1-copy",
+  "name": "coralgenz-site",
   "version": "1.0.0",
   "description": "",
   "private": true,
@@ -7,8 +7,7 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview",
-    "seo:ping": "node scripts/ping-crawlers.js"
+    "preview": "vite preview"
   },
   "devDependencies": {
     "vite": "^8.2.2"
