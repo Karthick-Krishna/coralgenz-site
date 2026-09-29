@@ -10891,13 +10891,15 @@ select:focus {
   background: #ffffff;
   border: 1px solid #e2e8f0;
   border-radius: 18px;
-  overflow: hidden;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
   box-shadow: 0 8px 24px -6px rgba(15, 23, 42, 0.06);
   margin-top: 32px;
 }
 
 .comparison-table {
   width: 100%;
+  min-width: 620px;
   border-collapse: collapse;
   text-align: left;
   font-family: var(--font-inter), sans-serif;
@@ -15400,5 +15402,290 @@ select:focus {
   }
   .hl-chart-subtitle {
     font-size: 13px;
+  }
+}
+
+/* ==========================================================================
+   ENHANCED MOBILE UI OPTIMIZATIONS (Services, Team, Contact & Highlights)
+   ========================================================================== */
+
+/* Universal Service Grid Uniform Card Height */
+.services-grid article {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+}
+
+.services-grid article .service-card {
+  flex: 1;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.services-grid article .service-card-body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.services-grid article .service-card-footer {
+  margin-top: auto;
+}
+
+/* Tablet & Mobile Breakpoints for Services & Team (<= 768px) */
+@media (max-width: 768px) {
+  .services-hero-right {
+    overflow: hidden;
+    max-width: 100%;
+    margin: 0 auto;
+  }
+}
+
+/* Mobile Devices (<= 600px, including 500px, 480px, 414px, 390px, 360px) */
+@media (max-width: 600px) {
+  /* Services Page Mobile Polish */
+  .services-grid {
+    grid-template-columns: 1fr !important;
+    gap: 14px !important;
+  }
+
+  .service-card {
+    padding: 14px !important;
+    border-radius: 16px !important;
+  }
+
+  .service-card-banner {
+    height: 140px !important;
+    border-radius: 10px !important;
+  }
+
+  .service-title {
+    font-size: 16px !important;
+    line-height: 1.3 !important;
+  }
+
+  .service-desc {
+    font-size: 13px !important;
+    line-height: 1.5 !important;
+  }
+
+  .services-filter-bar {
+    display: flex !important;
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+    flex-wrap: nowrap !important;
+    justify-content: flex-start !important;
+    padding: 4px 6px 12px 6px !important;
+    gap: 8px !important;
+    scrollbar-width: none !important;
+  }
+
+  .services-filter-bar::-webkit-scrollbar {
+    display: none !important;
+  }
+
+  .services-filter-bar .qr-tab-btn {
+    flex-shrink: 0 !important;
+    white-space: nowrap !important;
+    padding: 7px 14px !important;
+    font-size: 12px !important;
+  }
+
+  .hero-brand-motion-stage {
+    max-width: 290px !important;
+    height: 290px !important;
+    transform: scale(0.82) !important;
+    margin: -10px auto !important;
+  }
+
+  .process-steps-grid {
+    grid-template-columns: 1fr !important;
+    gap: 10px !important;
+  }
+
+  .sla-matrix-grid {
+    grid-template-columns: 1fr !important;
+    gap: 10px !important;
+  }
+
+  .tech-radar-grid {
+    grid-template-columns: 1fr !important;
+    gap: 12px !important;
+  }
+
+  /* Team Page Mobile Polish */
+  .leaders-grid {
+    grid-template-columns: 1fr !important;
+    gap: 14px !important;
+    margin-top: 20px !important;
+  }
+
+  .executive-card {
+    flex-direction: row !important;
+    align-items: center !important;
+    padding: 14px !important;
+    gap: 14px !important;
+    border-radius: 16px !important;
+  }
+
+  .executive-photo-wrap {
+    width: 84px !important;
+    min-width: 84px !important;
+    height: 84px !important;
+    border-radius: 12px !important;
+    flex-shrink: 0 !important;
+  }
+
+  .executive-info {
+    flex: 1 !important;
+    min-width: 0 !important;
+  }
+
+  .executive-name {
+    font-size: 15px !important;
+    margin-bottom: 2px !important;
+  }
+
+  .executive-role {
+    font-size: 10.5px !important;
+  }
+
+  .executive-info p {
+    display: -webkit-box !important;
+    -webkit-line-clamp: 2 !important;
+    -webkit-box-orient: vertical !important;
+    overflow: hidden !important;
+    font-size: 11.5px !important;
+    line-height: 1.4 !important;
+    margin-top: 4px !important;
+    margin-bottom: 6px !important;
+  }
+
+  .executive-action-btn {
+    min-height: 38px !important;
+    padding: 6px 12px !important;
+    font-size: 11px !important;
+    width: auto !important;
+    display: inline-flex !important;
+  }
+
+  .senior-roles-grid {
+    grid-template-columns: 1fr !important;
+    gap: 10px !important;
+  }
+
+  .senior-role-card {
+    padding: 14px 14px !important;
+    border-radius: 14px !important;
+  }
+
+  .extended-team-card {
+    padding: 20px 16px !important;
+    border-radius: 18px !important;
+    margin-top: 28px !important;
+  }
+
+  .extended-team-title {
+    font-size: 17px !important;
+  }
+
+  .extended-team-desc {
+    font-size: 12.5px !important;
+    line-height: 1.5 !important;
+  }
+
+  .extended-metrics-row {
+    gap: 8px !important;
+  }
+
+  .ext-metric-chip {
+    font-size: 11px !important;
+    padding: 6px 10px !important;
+    border-radius: 8px !important;
+  }
+
+  /* Highlights Subpages Mobile Architecture */
+  .hl-premium-card {
+    padding: 20px 16px !important;
+    border-radius: 18px !important;
+  }
+
+  .hl-article-body {
+    padding: 0 14px !important;
+    gap: 20px !important;
+    margin: 24px auto 48px auto !important;
+  }
+
+  .hl-subpage-hero {
+    padding: 40px 0 28px 0 !important;
+  }
+
+  .hl-subpage-hero-inner {
+    padding: 0 16px !important;
+  }
+
+  .hl-hero-title {
+    font-size: clamp(24px, 6vw, 32px) !important;
+    line-height: 1.25 !important;
+  }
+
+  .hl-hero-desc {
+    font-size: 13.5px !important;
+    line-height: 1.55 !important;
+  }
+
+  .hl-metric-ribbon {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 8px !important;
+  }
+
+  .hl-metric-pill {
+    padding: 10px 12px !important;
+  }
+
+  .hl-metric-val {
+    font-size: 18px !important;
+  }
+
+  .hl-metric-lbl {
+    font-size: 10.5px !important;
+  }
+
+  .hl-showcase-frame {
+    margin: 16px auto 20px auto !important;
+    border-radius: 14px !important;
+  }
+
+  .hl-showcase-bar {
+    padding: 8px 12px !important;
+  }
+
+  .hl-code-block {
+    padding: 14px 12px !important;
+    font-size: 11.5px !important;
+    border-radius: 12px !important;
+  }
+
+  .hl-feature-bento {
+    grid-template-columns: 1fr !important;
+    gap: 12px !important;
+  }
+
+  .hl-feature-card {
+    padding: 18px 16px !important;
+    border-radius: 14px !important;
+  }
+
+  .hl-subpage-nav-bar {
+    grid-template-columns: 1fr !important;
+    gap: 10px !important;
+  }
+
+  .hl-nav-btn-prev,
+  .hl-nav-btn-next {
+    padding: 14px 16px !important;
+    border-radius: 14px !important;
   }
 }
