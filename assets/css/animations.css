@@ -191,6 +191,41 @@
   }
 }
 
+/* Cardinal Satellite Counter-Rotations (Preserving translate offsets during 360deg orbit) */
+@keyframes satCounterRotateTop {
+  from { transform: translate(-50%, -50%) rotate(0deg); }
+  to { transform: translate(-50%, -50%) rotate(-360deg); }
+}
+@keyframes satCounterRotateRight {
+  from { transform: translate(50%, -50%) rotate(0deg); }
+  to { transform: translate(50%, -50%) rotate(-360deg); }
+}
+@keyframes satCounterRotateBottom {
+  from { transform: translate(-50%, 50%) rotate(0deg); }
+  to { transform: translate(-50%, 50%) rotate(-360deg); }
+}
+@keyframes satCounterRotateLeft {
+  from { transform: translate(-50%, -50%) rotate(0deg); }
+  to { transform: translate(-50%, -50%) rotate(-360deg); }
+}
+
+@keyframes satCounterRotateTopRev {
+  from { transform: translate(-50%, -50%) rotate(0deg); }
+  to { transform: translate(-50%, -50%) rotate(360deg); }
+}
+@keyframes satCounterRotateRightRev {
+  from { transform: translate(50%, -50%) rotate(0deg); }
+  to { transform: translate(50%, -50%) rotate(360deg); }
+}
+@keyframes satCounterRotateBottomRev {
+  from { transform: translate(-50%, 50%) rotate(0deg); }
+  to { transform: translate(-50%, 50%) rotate(360deg); }
+}
+@keyframes satCounterRotateLeftRev {
+  from { transform: translate(-50%, -50%) rotate(0deg); }
+  to { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
 @keyframes ringConcentricPulse {
   0%, 100% {
     transform: translate(-50%, -50%) scale(1);

@@ -12077,62 +12077,62 @@ select:focus {
   z-index: 30;
 }
 
-.orbit-outer .orbit-satellite {
-  animation: satelliteCounterRotate 32s linear infinite;
-}
-
-.orbit-inner .orbit-satellite {
-  animation: satelliteCounterRotateReverse 24s linear infinite;
-}
-
-/* Outer Orbit: 4 Service Capability Satellites */
-.orbit-satellite.sat-outer-1 {
+/* Outer Track (Clockwise, 32s) -> Satellites Counter-Rotate Counter-Clockwise */
+.orbit-outer .sat-outer-1 {
   top: 0;
   left: 50%;
   transform: translate(-50%, -50%);
+  animation: satCounterRotateTop 32s linear infinite;
 }
 
-.orbit-satellite.sat-outer-2 {
+.orbit-outer .sat-outer-2 {
   top: 50%;
   right: 0;
   transform: translate(50%, -50%);
+  animation: satCounterRotateRight 32s linear infinite;
 }
 
-.orbit-satellite.sat-outer-3 {
+.orbit-outer .sat-outer-3 {
   bottom: 0;
   left: 50%;
   transform: translate(-50%, 50%);
+  animation: satCounterRotateBottom 32s linear infinite;
 }
 
-.orbit-satellite.sat-outer-4 {
+.orbit-outer .sat-outer-4 {
   top: 50%;
   left: 0;
   transform: translate(-50%, -50%);
+  animation: satCounterRotateLeft 32s linear infinite;
 }
 
-/* Inner Orbit: 4 Technology Stack Satellites */
-.orbit-satellite.sat-inner-1 {
+/* Inner Track (Counter-Clockwise, 24s) -> Satellites Counter-Rotate Clockwise */
+.orbit-inner .sat-inner-1 {
   top: 0;
   left: 50%;
   transform: translate(-50%, -50%);
+  animation: satCounterRotateTopRev 24s linear infinite;
 }
 
-.orbit-satellite.sat-inner-2 {
+.orbit-inner .sat-inner-2 {
   top: 50%;
   right: 0;
   transform: translate(50%, -50%);
+  animation: satCounterRotateRightRev 24s linear infinite;
 }
 
-.orbit-satellite.sat-inner-3 {
+.orbit-inner .sat-inner-3 {
   bottom: 0;
   left: 50%;
   transform: translate(-50%, 50%);
+  animation: satCounterRotateBottomRev 24s linear infinite;
 }
 
-.orbit-satellite.sat-inner-4 {
+.orbit-inner .sat-inner-4 {
   top: 50%;
   left: 0;
   transform: translate(-50%, -50%);
+  animation: satCounterRotateLeftRev 24s linear infinite;
 }
 
 /* Central Glowing Brand Core */
@@ -15493,11 +15493,124 @@ select:focus {
     font-size: 12px !important;
   }
 
+  /* Services Hero Brand Motion Stage Mobile UI */
+  .services-hero-right {
+    overflow: hidden !important;
+    max-width: 100% !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    margin: 12px auto 0 auto !important;
+  }
+
   .hero-brand-motion-stage {
-    max-width: 290px !important;
-    height: 290px !important;
-    transform: scale(0.82) !important;
-    margin: -10px auto !important;
+    width: 100% !important;
+    max-width: 320px !important;
+    height: 310px !important;
+    margin: 0 auto !important;
+    transform: none !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+
+  .brand-orbit-track.orbit-outer {
+    width: 250px !important;
+    height: 250px !important;
+  }
+
+  .brand-orbit-track.orbit-inner {
+    width: 155px !important;
+    height: 155px !important;
+  }
+
+  .motion-ring.ring-1 {
+    width: 110px !important;
+    height: 110px !important;
+  }
+
+  .motion-ring.ring-2 {
+    width: 195px !important;
+    height: 195px !important;
+  }
+
+  .motion-ring.ring-3 {
+    display: none !important;
+  }
+
+  /* Outer Orbit Badges on Mobile: Compact, Glassmorphic & Collision-Free */
+  .orbit-outer .orbit-satellite {
+    padding: 3px 8px !important;
+    font-size: 9.5px !important;
+    font-weight: 700 !important;
+    gap: 4px !important;
+    border-radius: 9999px !important;
+    box-shadow: 0 2px 10px rgba(0, 102, 255, 0.15) !important;
+    background: rgba(255, 255, 255, 0.96) !important;
+  }
+
+  .orbit-outer .orbit-satellite svg {
+    width: 11px !important;
+    height: 11px !important;
+  }
+
+  /* Inner Orbit Satellites on Mobile: Tech Node Icons without Text Collisions */
+  .orbit-inner .orbit-satellite {
+    width: 24px !important;
+    height: 24px !important;
+    min-width: 24px !important;
+    padding: 0 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    border-radius: 50% !important;
+    background: rgba(255, 255, 255, 0.96) !important;
+    box-shadow: 0 2px 8px rgba(0, 102, 255, 0.2) !important;
+    border: 1.5px solid rgba(0, 102, 255, 0.3) !important;
+  }
+
+  .orbit-inner .orbit-satellite span {
+    display: none !important;
+  }
+
+  .orbit-inner .orbit-satellite svg {
+    width: 12px !important;
+    height: 12px !important;
+  }
+
+  /* Center Brand Core Shield on Mobile */
+  .brand-core-glass-shield {
+    width: 76px !important;
+    height: 76px !important;
+    border-radius: 18px !important;
+    border-width: 1.5px !important;
+    box-shadow: 0 10px 30px -4px rgba(0, 102, 255, 0.28) !important;
+  }
+
+  .brand-core-logo-img {
+    width: 48px !important;
+    height: 48px !important;
+  }
+
+  .brand-core-title-badge {
+    display: none !important;
+  }
+
+  /* Status Capsule below */
+  .brand-motion-status-card {
+    padding: 5px 12px !important;
+    border-radius: 10px !important;
+    bottom: -6px !important;
+    z-index: 20 !important;
+    background: rgba(255, 255, 255, 0.95) !important;
+  }
+
+  .telemetry-title {
+    font-size: 10px !important;
+  }
+
+  .telemetry-stats {
+    font-size: 8.5px !important;
   }
 
   .process-steps-grid {
