@@ -12452,40 +12452,105 @@ select:focus {
 }
 
 @media (max-width: 640px) {
+  .services-hero-left .badge-pill {
+    white-space: normal !important;
+    text-align: center !important;
+    font-size: 11px !important;
+    padding: 5px 12px !important;
+    line-height: 1.35 !important;
+    margin: 0 auto 12px auto !important;
+    max-width: 100% !important;
+    display: inline-flex !important;
+  }
+
   .services-hub-title-elevated {
-    font-size: 25px !important;
+    font-size: 24px !important;
     line-height: 1.25 !important;
     margin-bottom: 12px !important;
+    letter-spacing: -0.02em !important;
+    text-align: center !important;
   }
 
   .services-hub-desc-elevated {
     font-size: 13.5px !important;
-    line-height: 1.5 !important;
+    line-height: 1.55 !important;
     margin-bottom: 18px !important;
+    color: #475569 !important;
+    text-align: center !important;
+    max-width: 100% !important;
   }
 
   .hero-quick-metrics {
-    gap: 12px;
-    padding: 10px 14px;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
     width: 100% !important;
-    max-width: 340px !important;
-    justify-content: space-around !important;
+    max-width: 350px !important;
+    margin: 0 auto 20px auto !important;
+    padding: 10px 12px !important;
+    background: #ffffff !important;
+    border: 1px solid #e2e8f0 !important;
+    border-radius: 14px !important;
+    box-shadow: 0 4px 14px rgba(15, 23, 42, 0.04) !important;
+    gap: 4px !important;
+  }
+
+  .hero-quick-metrics .quick-metric-item {
+    flex: 1 1 0 !important;
+    min-width: 0 !important;
+    text-align: center !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+  }
+
+  .hero-quick-metrics .quick-metric-val {
+    font-size: 16px !important;
+    font-weight: 900 !important;
+    color: #0066ff !important;
+    line-height: 1.1 !important;
+  }
+
+  .hero-quick-metrics .quick-metric-lbl {
+    font-size: 9.5px !important;
+    font-weight: 600 !important;
+    color: #64748b !important;
+    white-space: nowrap !important;
+    margin-top: 2px !important;
+  }
+
+  .hero-quick-metrics .quick-metric-divider {
+    width: 1px !important;
+    height: 24px !important;
+    background: #e2e8f0 !important;
+    flex-shrink: 0 !important;
+    margin: 0 2px !important;
   }
 
   .services-filter-bar {
+    display: flex !important;
     justify-content: flex-start !important;
     overflow-x: auto !important;
-    padding: 0 4px 8px 4px !important;
-    scrollbar-width: none;
-    -webkit-overflow-scrolling: touch;
+    -webkit-overflow-scrolling: touch !important;
+    flex-wrap: nowrap !important;
+    padding: 4px 4px 10px 4px !important;
+    gap: 6px !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    scrollbar-width: none !important;
   }
 
-  .quick-metric-val {
-    font-size: 16px;
+  .services-filter-bar::-webkit-scrollbar {
+    display: none !important;
   }
 
-  .quick-metric-lbl {
-    font-size: 10px;
+  .services-filter-bar .qr-tab-btn {
+    flex-shrink: 0 !important;
+    white-space: nowrap !important;
+    padding: 7px 13px !important;
+    font-size: 11.5px !important;
+    font-weight: 700 !important;
+    border-radius: 9999px !important;
   }
 
   .tech-radar-grid {
@@ -15431,8 +15496,8 @@ select:focus {
     -webkit-overflow-scrolling: touch !important;
     flex-wrap: nowrap !important;
     justify-content: flex-start !important;
-    padding: 4px 6px 12px 6px !important;
-    gap: 8px !important;
+    padding: 4px 4px 10px 4px !important;
+    gap: 6px !important;
     scrollbar-width: none !important;
   }
 
@@ -15443,8 +15508,10 @@ select:focus {
   .services-filter-bar .qr-tab-btn {
     flex-shrink: 0 !important;
     white-space: nowrap !important;
-    padding: 7px 14px !important;
-    font-size: 12px !important;
+    padding: 7px 13px !important;
+    font-size: 11.5px !important;
+    font-weight: 700 !important;
+    border-radius: 9999px !important;
   }
 
   /* Services Hero Brand Motion Stage Mobile UI: Exact Desktop Movement, Kinetics & Fidelity */
@@ -15473,6 +15540,13 @@ select:focus {
   }
 
   @media (max-width: 480px) {
+    .services-hub-title-elevated {
+      font-size: 23px !important;
+      line-height: 1.22 !important;
+    }
+    .services-hub-desc-elevated {
+      font-size: 13px !important;
+    }
     .services-hero-right {
       height: 335px !important;
     }
@@ -15482,6 +15556,27 @@ select:focus {
   }
 
   @media (max-width: 400px) {
+    .services-hub-title-elevated {
+      font-size: 21px !important;
+      line-height: 1.2 !important;
+    }
+    .services-hub-desc-elevated {
+      font-size: 12.5px !important;
+    }
+    .hero-quick-metrics {
+      padding: 8px 10px !important;
+      gap: 3px !important;
+    }
+    .hero-quick-metrics .quick-metric-val {
+      font-size: 14.5px !important;
+    }
+    .hero-quick-metrics .quick-metric-lbl {
+      font-size: 8.5px !important;
+    }
+    .services-filter-bar .qr-tab-btn {
+      padding: 6px 11px !important;
+      font-size: 11px !important;
+    }
     .services-hero-right {
       height: 310px !important;
     }
