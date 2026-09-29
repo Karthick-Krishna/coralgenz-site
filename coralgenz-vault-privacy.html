@@ -209,12 +209,14 @@
 
     /* Formal Meta Header Bar */
     .vault-meta-bar {
-      background: #0f172a;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      background: #ffffff;
+      border: 1px solid var(--vault-border);
+      border-radius: 12px;
       font-family: var(--font-jetbrains), monospace;
-      font-size: 11px;
-      color: #94a3b8;
-      padding: 7px 0;
+      font-size: 11.5px;
+      color: var(--vault-text-subtle);
+      padding: 10px 16px;
+      box-shadow: 0 2px 8px rgba(15, 23, 42, 0.03);
     }
 
     .vault-meta-inner {
@@ -229,23 +231,24 @@
       display: inline-flex;
       align-items: center;
       gap: 6px;
+      color: var(--vault-text-muted);
     }
 
     .vault-tag {
-      background: rgba(56, 189, 248, 0.15);
-      color: #38bdf8;
-      border: 1px solid rgba(56, 189, 248, 0.3);
-      padding: 2px 8px;
-      border-radius: 4px;
+      background: #f0f9ff;
+      color: #0284c7;
+      border: 1px solid #bae6fd;
+      padding: 3px 8px;
+      border-radius: 6px;
       font-weight: 700;
       font-size: 10.5px;
       letter-spacing: 0.3px;
     }
 
     .vault-tag.green {
-      background: rgba(52, 211, 153, 0.15);
-      color: #34d399;
-      border-color: rgba(52, 211, 153, 0.3);
+      background: #ecfdf5;
+      color: #059669;
+      border-color: #a7f3d0;
     }
 
     /* Navigation CTA Button */
@@ -1348,7 +1351,7 @@
         font-size: 13.5px;
       }
       .cyber-table {
-        min-width: 380px;
+        min-width: 340px;
       }
     }
 
@@ -1648,19 +1651,19 @@
           <span>&rsaquo;</span>
           <a href="/coralgenz-vault">Coralgenz Vault</a>
           <span>&rsaquo;</span>
-          <span style="color: #38bdf8;">Zero-Knowledge Policy</span>
+          <span style="color: #0284c7; font-weight: 700;">Zero-Knowledge Policy</span>
         </div>
 
         <!-- Spec Meta Bar -->
-        <div class="vault-meta-bar" style="border-radius: 10px; border: 1px solid rgba(255, 255, 255, 0.08); margin-bottom: 20px; padding: 10px 16px;">
+        <div class="vault-meta-bar" style="margin-bottom: 20px;">
           <div class="vault-meta-inner">
             <div class="vault-meta-item">
               <span>SPEC ID:</span>
-              <span style="color: #ffffff; font-weight: 700;">CG-ZKV-PRIV-2026-V2</span>
+              <span style="color: #0f172a; font-weight: 700;">CG-ZKV-PRIV-2026-V2</span>
             </div>
             <div class="vault-meta-item">
               <span>INVENTED &amp; INTRODUCED BY:</span>
-              <span style="color: #ffffff; font-weight: 700;">Coralgenz Global &bull; All Rights Owned</span>
+              <span style="color: #0f172a; font-weight: 700;">Coralgenz Global &bull; All Rights Owned</span>
             </div>
             <div class="vault-meta-item">
               <span class="vault-tag">CLIENT-SIDE AES-256-GCM</span>
@@ -1685,7 +1688,7 @@
           <a href="/coralgenz-vault-privacy" class="policy-switch-btn active" title="Current: Vault Zero-Knowledge Architecture">
             <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
             <span>Vault Zero-Knowledge Policy</span>
-            <span class="policy-switch-badge" style="background: rgba(16, 185, 129, 0.25); color: #34d399;">.secure</span>
+            <span class="policy-switch-badge" style="background: rgba(16, 185, 129, 0.15); color: #059669;">.secure</span>
           </a>
         </div>
 
@@ -2372,33 +2375,33 @@
           </div>
 
           <div style="display: flex; flex-direction: column; gap: 10px;">
-            <div style="border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 10px; overflow: hidden; background: rgba(15, 23, 42, 0.5);">
-              <div onclick="toggleVaultFaq(this)" style="padding: 14px 16px; font-weight: 700; color: #ffffff; cursor: pointer; display: flex; justify-content: space-between; align-items: center; font-size: 14px;">
+            <div style="border: 1px solid #e2e8f0; border-radius: 10px; overflow: hidden; background: #ffffff;">
+              <div onclick="toggleVaultFaq(this)" style="padding: 14px 16px; background: #f8fafc; font-weight: 700; color: #0f172a; cursor: pointer; display: flex; justify-content: space-between; align-items: center; font-size: 14px;">
                 <span>Who invented and introduced the .secure file format? Who owns all rights?</span>
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="transition: transform 0.2s ease;"><polyline points="6 9 12 15 18 9"></polyline></svg>
               </div>
-              <div style="padding: 14px 16px; font-size: 13.5px; color: #94a3b8; line-height: 1.6; border-top: 1px solid rgba(255, 255, 255, 0.06); background: rgba(2, 6, 23, 0.8);">
+              <div style="padding: 14px 16px; font-size: 13.5px; color: #475569; line-height: 1.6; border-top: 1px solid #e2e8f0; background: #ffffff;">
                 The .secure file format was invented and introduced by <strong>Coralgenz Global</strong> in Coimbatore, India, and all rights are owned exclusively by the company. It was created as the world's first browser-native zero-knowledge encrypted container capable of running complete decryption inside offline browser memory. All intellectual property, cryptographic specifications, and container standards belong solely to Coralgenz Global.
               </div>
             </div>
 
-            <div style="border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 10px; overflow: hidden; background: rgba(15, 23, 42, 0.5);">
-              <div onclick="toggleVaultFaq(this)" style="padding: 14px 16px; font-weight: 700; color: #ffffff; cursor: pointer; display: flex; justify-content: space-between; align-items: center; font-size: 14px;">
+            <div style="border: 1px solid #e2e8f0; border-radius: 10px; overflow: hidden; background: #ffffff;">
+              <div onclick="toggleVaultFaq(this)" style="padding: 14px 16px; background: #f8fafc; font-weight: 700; color: #0f172a; cursor: pointer; display: flex; justify-content: space-between; align-items: center; font-size: 14px;">
                 <span>Can Coralgenz recover my file if I forget the password?</span>
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="transition: transform 0.2s ease;"><polyline points="6 9 12 15 18 9"></polyline></svg>
               </div>
-              <div style="padding: 14px 16px; font-size: 13.5px; color: #94a3b8; line-height: 1.6; border-top: 1px solid rgba(255, 255, 255, 0.06); background: rgba(2, 6, 23, 0.8);">
+              <div style="padding: 14px 16px; font-size: 13.5px; color: #475569; line-height: 1.6; border-top: 1px solid #e2e8f0; background: #ffffff;">
                 No. Real zero-knowledge encryption makes server recovery mathematically impossible. If you lose your password, nobody can unlock the file.
               </div>
             </div>
 
-            <div style="border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 10px; overflow: hidden; background: rgba(15, 23, 42, 0.5);">
-              <div onclick="toggleVaultFaq(this)" style="padding: 14px 16px; font-weight: 700; color: #ffffff; cursor: pointer; display: flex; justify-content: space-between; align-items: center; font-size: 14px;">
+            <div style="border: 1px solid #e2e8f0; border-radius: 10px; overflow: hidden; background: #ffffff;">
+              <div onclick="toggleVaultFaq(this)" style="padding: 14px 16px; background: #f8fafc; font-weight: 700; color: #0f172a; cursor: pointer; display: flex; justify-content: space-between; align-items: center; font-size: 14px;">
                 <span>How can I report a security vulnerability?</span>
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="transition: transform 0.2s ease;"><polyline points="6 9 12 15 18 9"></polyline></svg>
               </div>
-              <div style="padding: 14px 16px; font-size: 13.5px; color: #94a3b8; line-height: 1.6; border-top: 1px solid rgba(255, 255, 255, 0.06); background: rgba(2, 6, 23, 0.8);">
-                Security researchers can contact our Cryptographic Response Team directly at <a href="mailto:security@coralgenz.co.in" style="color: #38bdf8; font-weight: 700;">security@coralgenz.co.in</a> or <a href="mailto:contact@coralgenz.co.in" style="color: #38bdf8; font-weight: 700;">contact@coralgenz.co.in</a>. We respond to all verified reports within 24 hours.
+              <div style="padding: 14px 16px; font-size: 13.5px; color: #475569; line-height: 1.6; border-top: 1px solid #e2e8f0; background: #ffffff;">
+                Security researchers can contact our Cryptographic Response Team directly at <a href="mailto:security@coralgenz.co.in" style="color: #0284c7; font-weight: 700;">security@coralgenz.co.in</a> or <a href="mailto:contact@coralgenz.co.in" style="color: #0284c7; font-weight: 700;">contact@coralgenz.co.in</a>. We respond to all verified reports within 24 hours.
               </div>
             </div>
           </div>

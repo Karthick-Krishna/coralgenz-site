@@ -188,12 +188,14 @@
 
     /* Formal Meta Header Bar */
     .formal-meta-bar {
-      background: #0f172a;
-      color: #94a3b8;
+      background: #ffffff;
+      color: var(--priv-text-subtle);
       font-size: 11.5px;
-      padding: 7px 0;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      padding: 10px 16px;
+      border: 1px solid var(--priv-border);
+      border-radius: 12px;
       font-family: var(--font-jetbrains), monospace;
+      box-shadow: 0 2px 8px rgba(15, 23, 42, 0.03);
     }
 
     .formal-meta-inner {
@@ -208,21 +210,24 @@
       display: inline-flex;
       align-items: center;
       gap: 6px;
+      color: var(--priv-text-muted);
     }
 
     .formal-meta-tag {
-      background: rgba(16, 185, 129, 0.2);
-      color: #34d399;
-      padding: 2px 8px;
-      border-radius: 4px;
+      background: #ecfdf5;
+      color: #059669;
+      border: 1px solid #a7f3d0;
+      padding: 3px 8px;
+      border-radius: 6px;
       font-weight: 700;
       font-size: 10.5px;
       letter-spacing: 0.3px;
     }
 
     .formal-meta-tag.blue {
-      background: rgba(56, 189, 248, 0.18);
-      color: #38bdf8;
+      background: #eff6ff;
+      color: #0066ff;
+      border: 1px solid #bfdbfe;
     }
 
     /* Hero Section */
@@ -808,8 +813,9 @@
 
     /* Grievance Desk Box */
     .grievance-desk-box {
-      background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
-      color: #ffffff;
+      background: #f8fafc;
+      color: var(--priv-text-main);
+      border: 1px solid var(--priv-border);
       border-radius: 16px;
       padding: 24px;
       margin-top: 16px;
@@ -821,7 +827,7 @@
     .grievance-desk-box h4 {
       font-size: 16px;
       font-weight: 800;
-      color: #ffffff;
+      color: var(--priv-text-main);
       margin-bottom: 10px;
     }
 
@@ -831,11 +837,11 @@
       gap: 10px;
       margin-bottom: 10px;
       font-size: 13px;
-      color: #e2e8f0;
+      color: var(--priv-text-muted);
     }
 
     .grievance-contact-row a {
-      color: #38bdf8;
+      color: var(--priv-primary);
       text-decoration: none;
       font-weight: 600;
     }
@@ -1127,6 +1133,18 @@
       }
       .formal-card {
         padding: 14px 10px;
+      }
+    }
+
+    @media (max-width: 380px) {
+      .privacy-hero-title {
+        font-size: 19px;
+      }
+      .formal-card-title {
+        font-size: 15px;
+      }
+      .formal-table {
+        min-width: 360px;
       }
     }
 
@@ -1440,15 +1458,15 @@
         </div>
 
         <!-- Formal Corporate Document Bar -->
-        <div class="formal-meta-bar" style="border-radius: 10px; border: 1px solid rgba(255, 255, 255, 0.08); margin: 0 auto 24px auto; padding: 10px 16px; max-width: 800px;">
+        <div class="formal-meta-bar" style="margin: 0 auto 24px auto; max-width: 800px;">
           <div class="formal-meta-inner">
             <div class="formal-meta-item">
               <span>DOCUMENT ID:</span>
-              <span style="color: #ffffff; font-weight: 700;">CG-POL-PRIV-2026-V2</span>
+              <span style="color: #0f172a; font-weight: 700;">CG-POL-PRIV-2026-V2</span>
             </div>
             <div class="formal-meta-item">
               <span>STATUTORY JURISDICTION:</span>
-              <span style="color: #ffffff;">Coimbatore, Tamil Nadu, India</span>
+              <span style="color: #0f172a; font-weight: 600;">Coimbatore, Tamil Nadu, India</span>
             </div>
             <div class="formal-meta-item">
               <span class="formal-meta-tag">DPDP ACT 2023 CERTIFIED</span>
@@ -1913,30 +1931,30 @@
           <div class="grievance-desk-box">
             <div>
               <h4>Designated Grievance Redressal Desk</h4>
-              <p style="font-size: 13px; color: #94a3b8; margin-bottom: 14px;">In compliance with Section 8(10) and Section 13 of India's Digital Personal Data Protection Act, 2023:</p>
+              <p style="font-size: 13px; color: var(--priv-text-muted); margin-bottom: 14px;">In compliance with Section 8(10) and Section 13 of India's Digital Personal Data Protection Act, 2023:</p>
 
               <div class="grievance-contact-row">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#38bdf8" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0066ff" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
                 <span>Email: <a href="mailto:grievance@coralgenz.co.in">grievance@coralgenz.co.in</a></span>
               </div>
 
               <div class="grievance-contact-row">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#38bdf8" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0066ff" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
                 <span>Office: Coimbatore, Tamil Nadu 641001, India</span>
               </div>
 
               <div class="grievance-contact-row">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#38bdf8" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0066ff" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
                 <span>SLA: Initial response within 24 to 48 business hours</span>
               </div>
             </div>
 
-            <div style="border-left: 1px solid rgba(255, 255, 255, 0.1); padding-left: 18px;">
-              <h4 style="font-size: 14.5px; color: #f8fafc;">Regulatory Escalation</h4>
-              <p style="font-size: 12.5px; line-height: 1.55; color: #cbd5e1;">
+            <div style="border-left: 1px solid var(--priv-border); padding-left: 18px;">
+              <h4 style="font-size: 14.5px; color: var(--priv-text-main);">Regulatory Escalation</h4>
+              <p style="font-size: 12.5px; line-height: 1.55; color: var(--priv-text-muted);">
                 If you ever feel our resolution was insufficient, you have the statutory legal right under Section 13(3) of the DPDP Act to escalate your grievance directly to the <strong>Data Protection Board of India</strong>.
               </p>
-              <p style="font-size: 12.5px; line-height: 1.55; color: #cbd5e1; margin-top: 8px;">
+              <p style="font-size: 12.5px; line-height: 1.55; color: var(--priv-text-muted); margin-top: 8px;">
                 European citizens may contact their national Data Protection Authority (DPA) under Article 77 of the GDPR.
               </p>
             </div>
