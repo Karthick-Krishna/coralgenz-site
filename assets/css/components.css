@@ -12045,10 +12045,12 @@ select:focus {
 }
 
 /* Rotating Orbit Tracks */
+/* Rotating Orbit Tracks */
 .brand-orbit-track {
   position: absolute;
   top: 50%;
   left: 50%;
+  transform: translate(-50%, -50%);
   border-radius: 50%;
   pointer-events: none;
 }
@@ -12156,13 +12158,17 @@ select:focus {
 
 /* Central Glowing Brand Core */
 .brand-core-container {
-  position: relative;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   z-index: 10;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   gap: 10px;
-  animation: brandCoreFloat 5s ease-in-out infinite;
+  pointer-events: none;
 }
 
 .brand-core-glass-shield {
@@ -12178,6 +12184,8 @@ select:focus {
   align-items: center;
   justify-content: center;
   box-shadow: 0 16px 45px -8px rgba(0, 102, 255, 0.32), inset 0 0 24px rgba(0, 102, 255, 0.08);
+  animation: brandCoreFloat 5s ease-in-out infinite;
+  pointer-events: auto;
 }
 
 .brand-core-inner-glow {
@@ -12222,6 +12230,8 @@ select:focus {
 .brand-motion-status-card {
   position: absolute;
   bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
   background: rgba(255, 255, 255, 0.94);
   backdrop-filter: blur(12px);
   border: 1px solid #e2e8f0;
@@ -12232,6 +12242,7 @@ select:focus {
   flex-direction: column;
   gap: 3px;
   z-index: 15;
+  white-space: nowrap;
 }
 
 .telemetry-header {
@@ -12477,75 +12488,6 @@ select:focus {
     font-size: 10px;
   }
 
-  .hero-brand-motion-stage {
-    max-width: 320px;
-    height: 320px;
-  }
-
-  .brand-orbit-track.orbit-outer {
-    width: 260px;
-    height: 260px;
-  }
-
-  .brand-orbit-track.orbit-inner {
-    width: 170px;
-    height: 170px;
-  }
-
-  .motion-ring.ring-1 {
-    width: 120px;
-    height: 120px;
-  }
-
-  .motion-ring.ring-2 {
-    width: 180px;
-    height: 180px;
-  }
-
-  .motion-ring.ring-3 {
-    width: 240px;
-    height: 240px;
-  }
-
-  .brand-core-glass-shield {
-    width: 76px;
-    height: 76px;
-    border-radius: 16px;
-  }
-
-  .brand-core-logo-img {
-    width: 48px;
-    height: 48px;
-  }
-
-  .brand-core-title-badge {
-    font-size: 8.5px;
-    padding: 2px 7px;
-  }
-
-  .orbit-satellite {
-    padding: 2.5px 6px;
-    font-size: 8px;
-    gap: 3px;
-  }
-
-  .orbit-satellite svg {
-    width: 10px;
-    height: 10px;
-  }
-
-  .brand-motion-status-card {
-    padding: 6px 10px;
-  }
-
-  .telemetry-title {
-    font-size: 9.5px;
-  }
-
-  .telemetry-stats {
-    font-size: 8.5px;
-  }
-
   .tech-radar-grid {
     grid-template-columns: 1fr;
   }
@@ -12557,13 +12499,6 @@ select:focus {
   .sla-matrix-grid {
     grid-template-columns: 1fr !important;
     gap: 10px;
-  }
-}
-
-@media (max-width: 400px) {
-  .hero-brand-motion-stage {
-    transform: scale(0.85);
-    margin: -15px auto;
   }
 }
 
@@ -15515,6 +15450,7 @@ select:focus {
   /* Services Hero Brand Motion Stage Mobile UI */
   .services-hero-right {
     overflow: hidden !important;
+    width: 100% !important;
     max-width: 100% !important;
     display: flex !important;
     justify-content: center !important;
@@ -15523,14 +15459,22 @@ select:focus {
   }
 
   .hero-brand-motion-stage {
-    width: 100% !important;
-    max-width: 320px !important;
-    height: 310px !important;
-    margin: 0 auto !important;
+    position: relative !important;
+    width: 320px !important;
+    height: 320px !important;
+    max-width: 100% !important;
+    margin: 8px auto !important;
     transform: none !important;
     display: flex !important;
     align-items: center !important;
     justify-content: center !important;
+  }
+
+  .brand-orbit-track {
+    position: absolute !important;
+    top: 50% !important;
+    left: 50% !important;
+    transform: translate(-50%, -50%) !important;
   }
 
   .brand-orbit-track.orbit-outer {
@@ -15546,11 +15490,19 @@ select:focus {
   .motion-ring.ring-1 {
     width: 110px !important;
     height: 110px !important;
+    position: absolute !important;
+    top: 50% !important;
+    left: 50% !important;
+    transform: translate(-50%, -50%) !important;
   }
 
   .motion-ring.ring-2 {
     width: 195px !important;
     height: 195px !important;
+    position: absolute !important;
+    top: 50% !important;
+    left: 50% !important;
+    transform: translate(-50%, -50%) !important;
   }
 
   .motion-ring.ring-3 {
@@ -15598,17 +15550,29 @@ select:focus {
   }
 
   /* Center Brand Core Shield on Mobile */
+  .brand-core-container {
+    position: absolute !important;
+    top: 50% !important;
+    left: 50% !important;
+    transform: translate(-50%, -50%) !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    z-index: 10 !important;
+    pointer-events: none !important;
+  }
+
   .brand-core-glass-shield {
-    width: 76px !important;
-    height: 76px !important;
+    width: 72px !important;
+    height: 72px !important;
     border-radius: 18px !important;
     border-width: 1.5px !important;
-    box-shadow: 0 10px 30px -4px rgba(0, 102, 255, 0.28) !important;
+    box-shadow: 0 8px 24px -2px rgba(0, 102, 255, 0.28) !important;
+    pointer-events: auto !important;
   }
 
   .brand-core-logo-img {
-    width: 48px !important;
-    height: 48px !important;
+    width: 44px !important;
+    height: 44px !important;
   }
 
   .brand-core-title-badge {
@@ -15617,11 +15581,15 @@ select:focus {
 
   /* Status Capsule below */
   .brand-motion-status-card {
+    position: absolute !important;
+    bottom: -6px !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
     padding: 5px 12px !important;
     border-radius: 10px !important;
-    bottom: -6px !important;
     z-index: 20 !important;
     background: rgba(255, 255, 255, 0.95) !important;
+    white-space: nowrap !important;
   }
 
   .telemetry-title {
@@ -15630,6 +15598,14 @@ select:focus {
 
   .telemetry-stats {
     font-size: 8.5px !important;
+  }
+
+  @media (max-width: 375px) {
+    .hero-brand-motion-stage {
+      transform: scale(0.9) !important;
+      transform-origin: center center !important;
+      margin: 0 auto -10px auto !important;
+    }
   }
 
   .process-steps-grid {
