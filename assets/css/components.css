@@ -11716,11 +11716,11 @@ select:focus {
   }
 
   .service-card-master {
-    border-radius: 12px !important;
+    border-radius: 14px !important;
   }
 
   .service-card-master-imgwrap {
-    height: 95px !important;
+    height: 105px !important;
   }
 
   .service-card-master-badge {
@@ -11731,19 +11731,19 @@ select:focus {
   }
 
   .service-card-master-body {
-    padding: 10px 8px !important;
+    padding: 12px 10px !important;
   }
 
   .service-card-master-title {
-    font-size: 13.5px !important;
-    line-height: 1.2 !important;
+    font-size: 14px !important;
+    line-height: 1.25 !important;
     margin-bottom: 4px !important;
   }
 
   .service-card-master-desc {
-    font-size: 10.5px !important;
-    line-height: 1.35 !important;
-    margin-bottom: 6px !important;
+    font-size: 11px !important;
+    line-height: 1.4 !important;
+    margin-bottom: 8px !important;
     display: -webkit-box;
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
@@ -11775,9 +11775,88 @@ select:focus {
   }
 
   .service-card-master-footer .btn-primary {
-    padding: 6px 8px !important;
+    padding: 8px 12px !important;
+    font-size: 12px !important;
+    border-radius: 8px !important;
+    min-height: 38px !important;
+  }
+}
+
+/* Dedicated Smartphone UI (< 540px) - Full-Width Legible Cards & Touch Targets */
+@media (max-width: 540px) {
+  .master-services-grid {
+    grid-template-columns: 1fr !important;
+    gap: 16px !important;
+  }
+
+  .service-card-master {
+    border-radius: 18px !important;
+    box-shadow: 0 4px 20px rgba(15, 23, 42, 0.05) !important;
+  }
+
+  .service-card-master-imgwrap {
+    height: 160px !important;
+  }
+
+  .service-card-master-badge {
+    top: 10px !important;
+    left: 10px !important;
+    font-size: 10.5px !important;
+    padding: 4px 10px !important;
+  }
+
+  .service-card-master-body {
+    padding: 16px 14px !important;
+  }
+
+  .service-card-master-title {
+    font-size: 18px !important;
+    line-height: 1.25 !important;
+    margin-bottom: 6px !important;
+  }
+
+  .service-card-master-desc {
+    font-size: 13.5px !important;
+    line-height: 1.55 !important;
+    margin-bottom: 12px !important;
+    -webkit-line-clamp: 3 !important;
+  }
+
+  .service-card-master-checklist {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 6px !important;
+    margin-bottom: 14px !important;
+    padding: 0 !important;
+  }
+
+  .service-card-master-checklist li {
+    font-size: 12.5px !important;
+    color: #475569 !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 8px !important;
+  }
+
+  .service-card-master-tech-row {
+    gap: 6px !important;
+    margin-bottom: 14px !important;
+    flex-wrap: wrap !important;
+  }
+
+  .tech-tag-pill {
+    padding: 4px 8px !important;
     font-size: 11px !important;
     border-radius: 6px !important;
+  }
+
+  .service-card-master-footer .btn-primary {
+    width: 100% !important;
+    justify-content: center !important;
+    padding: 11px 18px !important;
+    font-size: 13.5px !important;
+    min-height: 44px !important;
+    border-radius: 10px !important;
   }
 }
 
@@ -12342,20 +12421,31 @@ select:focus {
 
 @media (max-width: 640px) {
   .services-hub-title-elevated {
-    font-size: 24px !important;
+    font-size: 25px !important;
     line-height: 1.25 !important;
     margin-bottom: 12px !important;
   }
 
   .services-hub-desc-elevated {
-    font-size: 13px !important;
-    line-height: 1.45 !important;
+    font-size: 13.5px !important;
+    line-height: 1.5 !important;
     margin-bottom: 18px !important;
   }
 
   .hero-quick-metrics {
     gap: 12px;
-    padding: 8px 14px;
+    padding: 10px 14px;
+    width: 100% !important;
+    max-width: 340px !important;
+    justify-content: space-around !important;
+  }
+
+  .services-filter-bar {
+    justify-content: flex-start !important;
+    overflow-x: auto !important;
+    padding: 0 4px 8px 4px !important;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
   }
 
   .quick-metric-val {
@@ -12367,44 +12457,44 @@ select:focus {
   }
 
   .hero-brand-motion-stage {
-    max-width: 350px;
-    height: 350px;
+    max-width: 320px;
+    height: 320px;
   }
 
   .brand-orbit-track.orbit-outer {
-    width: 295px;
-    height: 295px;
+    width: 260px;
+    height: 260px;
   }
 
   .brand-orbit-track.orbit-inner {
-    width: 195px;
-    height: 195px;
+    width: 170px;
+    height: 170px;
   }
 
   .motion-ring.ring-1 {
-    width: 140px;
-    height: 140px;
+    width: 120px;
+    height: 120px;
   }
 
   .motion-ring.ring-2 {
-    width: 210px;
-    height: 210px;
+    width: 180px;
+    height: 180px;
   }
 
   .motion-ring.ring-3 {
-    width: 270px;
-    height: 270px;
+    width: 240px;
+    height: 240px;
   }
 
   .brand-core-glass-shield {
-    width: 82px;
-    height: 82px;
-    border-radius: 18px;
+    width: 76px;
+    height: 76px;
+    border-radius: 16px;
   }
 
   .brand-core-logo-img {
-    width: 52px;
-    height: 52px;
+    width: 48px;
+    height: 48px;
   }
 
   .brand-core-title-badge {
@@ -12413,14 +12503,14 @@ select:focus {
   }
 
   .orbit-satellite {
-    padding: 2.5px 6.5px;
-    font-size: 8.5px;
-    gap: 3.5px;
+    padding: 2.5px 6px;
+    font-size: 8px;
+    gap: 3px;
   }
 
   .orbit-satellite svg {
-    width: 11px;
-    height: 11px;
+    width: 10px;
+    height: 10px;
   }
 
   .brand-motion-status-card {
@@ -12444,8 +12534,15 @@ select:focus {
   }
 
   .sla-matrix-grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 1fr !important;
     gap: 10px;
+  }
+}
+
+@media (max-width: 400px) {
+  .hero-brand-motion-stage {
+    transform: scale(0.85);
+    margin: -15px auto;
   }
 }
 

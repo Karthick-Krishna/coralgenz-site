@@ -265,6 +265,38 @@ ul, ol {
   }
 }
 
+@media (max-width: 480px) {
+  :root {
+    --container-pad: 16px;
+  }
+  .container {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+  }
+  .section {
+    padding-top: 48px !important;
+    padding-bottom: 48px !important;
+  }
+  .section-title {
+    font-size: 26px !important;
+    line-height: 1.2 !important;
+    margin-bottom: 12px !important;
+  }
+  .section-title.title-lg {
+    font-size: 29px !important;
+    line-height: 1.2 !important;
+  }
+  .section-desc {
+    font-size: 13.5px !important;
+    line-height: 1.55 !important;
+  }
+  .badge-pill {
+    font-size: 11px !important;
+    padding: 4px 10px !important;
+    gap: 6px !important;
+  }
+}
+
 /* Gradient Text effects */
 .gradient-text-blue {
   background: linear-gradient(135deg, #0f172a 30%, #0066ff 100%);
