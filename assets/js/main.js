@@ -42,7 +42,6 @@ function initCore() {
   init4DPassTilt();
   init3DHeroTilt();
   initSliderTracks();
-  initPolicyDrawer();
 }
 
 if (document.readyState === 'loading') {
@@ -622,93 +621,6 @@ function initSliderTracks() {
   }
 }
 
-/* ==========================================================================
-   POLICIES OFFCANVAS SIDE DRAWER & SLIDABLE TAB ENGINE
-   ========================================================================== */
-function initPolicyDrawer() {
-  const triggers = document.querySelectorAll('[data-policy-drawer-trigger], .policy-drawer-trigger');
-  const drawer = document.getElementById('policyOffcanvasDrawer');
-  const backdrop = document.getElementById('policyDrawerBackdrop');
-  const closeBtn = document.getElementById('policyDrawerCloseBtn');
 
-  function openDrawer(tabName) {
-    const mobileMenu = document.querySelector('.mobile-menu');
-    const toggleBtn = document.querySelector('.mobile-toggle');
-    if (mobileMenu) mobileMenu.classList.remove('open');
-    if (toggleBtn) toggleBtn.classList.remove('active');
-    const threeDots = document.getElementById('threeDotsDropdown');
-    if (threeDots) threeDots.style.display = 'none';
-
-    if (drawer) drawer.classList.add('open');
-    if (backdrop) backdrop.classList.add('open');
-    document.body.style.overflow = 'hidden';
-    if (tabName) switchPolicyTab(tabName);
-  }
-
-  function closeDrawer() {
-    if (drawer) drawer.classList.remove('open');
-    if (backdrop) backdrop.classList.remove('open');
-    document.body.style.overflow = '';
-  }
-
-  function switchPolicyTab(tabName) {
-    const tabs = document.querySelectorAll('.policy-tab-btn');
-    const panes = document.querySelectorAll('.policy-tab-pane');
-    tabs.forEach(t => {
-      t.classList.toggle('active', t.getAttribute('data-tab') === tabName);
-    });
-    panes.forEach(p => {
-      p.classList.toggle('active', p.id === ('pane-' + tabName));
-    });
-  }
-
-  window.openPolicyDrawer = openDrawer;
-  window.closePolicyDrawer = closeDrawer;
-  window.switchPolicyTab = switchPolicyTab;
-
-  triggers.forEach(btn => {
-    btn.addEventListener('click', (e) => {
-      e.preventDefault();
-      const tab = btn.getAttribute('data-tab') || 'corporate';
-      openDrawer(tab);
-    });
-  });
-
-  if (closeBtn) closeBtn.addEventListener('click', closeDrawer);
-  if (backdrop) backdrop.addEventListener('click', closeDrawer);
-
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && drawer && drawer.classList.contains('open')) {
-      closeDrawer();
-    }
-  });
-
-  const tabs = document.querySelectorAll('.policy-tab-btn');
-  tabs.forEach(tab => {
-    tab.addEventListener('click', () => {
-      const tabName = tab.getAttribute('data-tab');
-      if (tabName) switchPolicyTab(tabName);
-    });
-  });
-}
-
-// Global Mobile Policy Accordion Toggle
-window.toggleMobilePoliciesMenu = function(e) {
-  if (e) {
-    e.preventDefault();
-    e.stopPropagation();
-  }
-  const toggle = document.querySelector('.mobile-policies-toggle');
-  const windowEl = document.getElementById('mobilePoliciesDropdown');
-  if (toggle && windowEl) {
-    const willOpen = !windowEl.classList.contains('open');
-    if (willOpen && typeof closeOtherMobileAccordions === 'function') {
-      closeOtherMobileAccordions('policies');
-    }
-    windowEl.classList.toggle('open', willOpen);
-    toggle.classList.toggle('active', willOpen);
-    toggle.setAttribute('aria-expanded', willOpen ? 'true' : 'false');
-  }
-};
 
 
