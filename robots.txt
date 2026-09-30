@@ -1,6 +1,6 @@
 # ==============================================================================
-# CORALGENZ GLOBAL - SEARCH ENGINE CRAWLER DIRECTIVES
-# 100% Valid Search Engine Directives for Instant Indexing & Image Crawling
+# CORALGENZ GLOBAL - SEARCH ENGINE & IMAGE CRAWLER DIRECTIVES
+# Full Crawlability & Immediate Image Indexing for Google, Bing & Social Crawlers
 # ==============================================================================
 
 User-agent: *
@@ -11,6 +11,12 @@ Allow: /assets/css/
 Allow: /assets/js/
 Allow: /our-services/
 Allow: /our-highlights/
+Allow: /*.jpg$
+Allow: /*.jpeg$
+Allow: /*.png$
+Allow: /*.webp$
+Allow: /*.svg$
+Allow: /*.ico$
 Disallow: /node_modules/
 Disallow: /.git/
 Disallow: /dist/
@@ -22,26 +28,54 @@ Allow: /assets/
 Allow: /assets/images/
 Allow: /*.js$
 Allow: /*.css$
+Allow: /*.jpg$
+Allow: /*.jpeg$
+Allow: /*.png$
+Allow: /*.webp$
+Allow: /*.svg$
 
 # Googlebot-Image
 User-agent: Googlebot-Image
-Allow: /assets/images/
 Allow: /
+Allow: /assets/
+Allow: /assets/images/
+Allow: /*.jpg$
+Allow: /*.jpeg$
+Allow: /*.png$
+Allow: /*.webp$
+Allow: /*.svg$
 
-# Bingbot
+# Bingbot & MSN Media Bot
 User-agent: Bingbot
 Allow: /
 Allow: /assets/
+Allow: /assets/images/
 
-# Applebot & Twitterbot & Social Crawlers
-User-agent: Applebot
+User-agent: msnbot-media
 Allow: /
+Allow: /assets/
+Allow: /assets/images/
 
+# Social & Messaging Image Crawlers
 User-agent: Twitterbot
 Allow: /
+Allow: /assets/images/
 
 User-agent: facebookexternalhit
 Allow: /
+Allow: /assets/images/
+
+User-agent: Applebot
+Allow: /
+Allow: /assets/images/
+
+User-agent: LinkedInBot
+Allow: /
+Allow: /assets/images/
+
+User-agent: Pinterestbot
+Allow: /
+Allow: /assets/images/
 
 # XML Sitemaps
 Sitemap: https://coralgenz.co.in/sitemap.xml

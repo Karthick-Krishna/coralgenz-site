@@ -3,321 +3,610 @@
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://coralgenz.co.in/</loc>
-    <lastmod>2026-09-29</lastmod>
+    <lastmod>2026-09-30</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>1.00</priority>
     <image:image>
       <image:loc>https://coralgenz.co.in/assets/images/3JTkDW5Aoei5uyxXo6VXHc2SaU.jpg</image:loc>
-      <image:title>Coralgenz Global - Enterprise IT Solutions</image:title>
-      <image:caption>Coralgenz Global Corporate Headquarters and Engineering Team</image:caption>
+      <image:title>Coralgenz Global Corporate Headquarters and Engineering Team</image:title>
+      <image:caption>Coralgenz Global Enterprise IT Solutions & Software Engineering Headquarters in Coimbatore, India</image:caption>
+      <image:geo_location>Coimbatore, Tamil Nadu, India</image:geo_location>
+      <image:license>https://coralgenz.co.in/</image:license>
+    </image:image>
+    <image:image>
+      <image:loc>https://coralgenz.co.in/assets/images/DVyu6tz4dqPirA4TwAJZUz5CUw.png</image:loc>
+      <image:title>Coralgenz Global Official Corporate Logo</image:title>
+      <image:caption>Coralgenz Global Official Brand Identity & Enterprise IT Solutions Logo</image:caption>
+      <image:geo_location>Coimbatore, Tamil Nadu, India</image:geo_location>
+      <image:license>https://coralgenz.co.in/</image:license>
+    </image:image>
+    <image:image>
+      <image:loc>https://coralgenz.co.in/assets/images/5TJoRKj7qDumzI97c2JGZnDr7Gg.jpg</image:loc>
+      <image:title>Enterprise Systems Architecture and Cloud Infrastructure</image:title>
+      <image:caption>Cloud Microservices, Scalable Distributed Systems, and Modern Architecture by Coralgenz Global</image:caption>
+      <image:geo_location>Coimbatore, Tamil Nadu, India</image:geo_location>
+      <image:license>https://coralgenz.co.in/</image:license>
+    </image:image>
+    <image:image>
+      <image:loc>https://coralgenz.co.in/assets/images/certification-showcase.jpg</image:loc>
+      <image:title>ISO 27001, SOC 2, and DPDP Act 2023 Enterprise Certification Standards</image:title>
+      <image:caption>Rigorous security compliance, ISO 27001 standards, and certified enterprise data governance</image:caption>
+      <image:geo_location>Coimbatore, Tamil Nadu, India</image:geo_location>
+      <image:license>https://coralgenz.co.in/</image:license>
+    </image:image>
+    <image:image>
+      <image:loc>https://coralgenz.co.in/assets/images/secure-format-showcase.jpg</image:loc>
+      <image:title>World First .secure Encrypted Format Invention</image:title>
+      <image:caption>Zero-knowledge browser-native encryption and standalone encrypted container invented by Coralgenz Global</image:caption>
+      <image:geo_location>Coimbatore, Tamil Nadu, India</image:geo_location>
+      <image:license>https://coralgenz.co.in/</image:license>
     </image:image>
   </url>
   <url>
     <loc>https://coralgenz.co.in/our-highlights</loc>
-    <lastmod>2026-09-29</lastmod>
+    <lastmod>2026-09-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.95</priority>
     <image:image>
-      <image:loc>https://coralgenz.co.in/assets/images/DVyu6tz4dqPirA4TwAJZUz5CUw.png</image:loc>
-      <image:title>Coralgenz Global Highlights</image:title>
+      <image:loc>https://coralgenz.co.in/assets/images/5TJoRKj7qDumzI97c2JGZnDr7Gg.jpg</image:loc>
+      <image:title>Coralgenz Global Strategic Engineering Highlights</image:title>
       <image:caption>World First Company to Invent .secure Format and Enterprise Engineering Highlights</image:caption>
+      <image:geo_location>Coimbatore, Tamil Nadu, India</image:geo_location>
+      <image:license>https://coralgenz.co.in/</image:license>
+    </image:image>
+    <image:image>
+      <image:loc>https://coralgenz.co.in/assets/images/secure-format-showcase.jpg</image:loc>
+      <image:title>World First .secure Zero-Knowledge Container Architecture</image:title>
+      <image:caption>Client-side AES-256-GCM encryption with 0% server custody invented by Coralgenz Global</image:caption>
+      <image:geo_location>Coimbatore, Tamil Nadu, India</image:geo_location>
+      <image:license>https://coralgenz.co.in/</image:license>
+    </image:image>
+    <image:image>
+      <image:loc>https://coralgenz.co.in/assets/images/kmUbbqN7jwVRUVuglgbqRYXOtY.png</image:loc>
+      <image:title>Coralgenz Compiler Execution Engine Sandbox</image:title>
+      <image:caption>Sub-millisecond isolated compiler engine for polyglot runtimes</image:caption>
+      <image:geo_location>Coimbatore, Tamil Nadu, India</image:geo_location>
+      <image:license>https://coralgenz.co.in/</image:license>
+    </image:image>
+    <image:image>
+      <image:loc>https://coralgenz.co.in/assets/images/keurnaCtookRPkuKPv04gdjnYl0.png</image:loc>
+      <image:title>Dynamic QR Telemetry and Distributed Threat Defense</image:title>
+      <image:caption>Real-time telemetry, edge routing, and threat detection infrastructure</image:caption>
+      <image:geo_location>Coimbatore, Tamil Nadu, India</image:geo_location>
+      <image:license>https://coralgenz.co.in/</image:license>
+    </image:image>
+    <image:image>
+      <image:loc>https://coralgenz.co.in/assets/images/clean-architecture-blueprint.jpg</image:loc>
+      <image:title>Clean Architecture Standards and Domain-Driven Design</image:title>
+      <image:caption>Zero-dependency core domain layer and high-throughput microservices architecture</image:caption>
+      <image:geo_location>Coimbatore, Tamil Nadu, India</image:geo_location>
+      <image:license>https://coralgenz.co.in/</image:license>
+    </image:image>
+    <image:image>
+      <image:loc>https://coralgenz.co.in/assets/images/partner-microsoft.png</image:loc>
+      <image:title>Official Microsoft Partner Cloud Solutions</image:title>
+      <image:caption>Microsoft Partner certified cloud engineering and Azure enterprise integrations</image:caption>
+      <image:geo_location>Coimbatore, Tamil Nadu, India</image:geo_location>
+      <image:license>https://coralgenz.co.in/</image:license>
+    </image:image>
+    <image:image>
+      <image:loc>https://coralgenz.co.in/assets/images/partner-salesforce.png</image:loc>
+      <image:title>Official Salesforce Certified CRM Partner</image:title>
+      <image:caption>Salesforce CRM architecture, custom Apex, and enterprise workflow automation</image:caption>
+      <image:geo_location>Coimbatore, Tamil Nadu, India</image:geo_location>
+      <image:license>https://coralgenz.co.in/</image:license>
     </image:image>
   </url>
   <url>
     <loc>https://coralgenz.co.in/our-services</loc>
-    <lastmod>2026-09-29</lastmod>
-    <changefreq>daily</changefreq>
+    <lastmod>2026-09-30</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>0.95</priority>
     <image:image>
       <image:loc>https://coralgenz.co.in/assets/images/5TJoRKj7qDumzI97c2JGZnDr7Gg.jpg</image:loc>
-      <image:title>Enterprise Engineering Services</image:title>
-      <image:caption>Custom Software, Modernization, and Cloud Engineering Services</image:caption>
+      <image:title>8 Specialized Enterprise Software Engineering Services</image:title>
+      <image:caption>End-to-end software engineering, modern fluid UI aesthetics, and distributed cloud microservices</image:caption>
+      <image:geo_location>Coimbatore, Tamil Nadu, India</image:geo_location>
+      <image:license>https://coralgenz.co.in/</image:license>
+    </image:image>
+    <image:image>
+      <image:loc>https://coralgenz.co.in/assets/images/custom-solution.jpg</image:loc>
+      <image:title>Custom Software Development</image:title>
+      <image:caption>Bespoke software solutions bridging complex enterprise logic with seamless cloud scalability</image:caption>
+      <image:geo_location>Coimbatore, Tamil Nadu, India</image:geo_location>
+      <image:license>https://coralgenz.co.in/</image:license>
+    </image:image>
+    <image:image>
+      <image:loc>https://coralgenz.co.in/assets/images/mvp-development.png</image:loc>
+      <image:title>MVP Development and Rapid Prototyping</image:title>
+      <image:caption>Accelerate time-to-market with a razor-sharp MVP that balances beautiful UI/UX with bulletproof architecture</image:caption>
+      <image:geo_location>Coimbatore, Tamil Nadu, India</image:geo_location>
+      <image:license>https://coralgenz.co.in/</image:license>
+    </image:image>
+    <image:image>
+      <image:loc>https://coralgenz.co.in/assets/images/fullstack-development.png</image:loc>
+      <image:title>Full Stack Software Engineering</image:title>
+      <image:caption>End-to-end frontend aesthetics and robust backend architecture delivering secure systems</image:caption>
+      <image:geo_location>Coimbatore, Tamil Nadu, India</image:geo_location>
+      <image:license>https://coralgenz.co.in/</image:license>
+    </image:image>
+    <image:image>
+      <image:loc>https://coralgenz.co.in/assets/images/legacy-modernization.png</image:loc>
+      <image:title>Legacy Software Modernization</image:title>
+      <image:caption>Revitalize legacy infrastructure with cutting-edge cloud stacks and zero downtime</image:caption>
+      <image:geo_location>Coimbatore, Tamil Nadu, India</image:geo_location>
+      <image:license>https://coralgenz.co.in/</image:license>
+    </image:image>
+    <image:image>
+      <image:loc>https://coralgenz.co.in/assets/images/pwa-development.png</image:loc>
+      <image:title>Progressive Web Applications (PWAs)</image:title>
+      <image:caption>Native-like web apps with offline persistence, background sync, and push notifications</image:caption>
+      <image:geo_location>Coimbatore, Tamil Nadu, India</image:geo_location>
+      <image:license>https://coralgenz.co.in/</image:license>
+    </image:image>
+    <image:image>
+      <image:loc>https://coralgenz.co.in/assets/images/admin-dashboards.jpg</image:loc>
+      <image:title>Modern Admin Dashboards</image:title>
+      <image:caption>Real-time telemetry dashboards with interactive charting and role-based access</image:caption>
+      <image:geo_location>Coimbatore, Tamil Nadu, India</image:geo_location>
+      <image:license>https://coralgenz.co.in/</image:license>
+    </image:image>
+    <image:image>
+      <image:loc>https://coralgenz.co.in/assets/images/frontend-modernization.png</image:loc>
+      <image:title>Frontend Modernization</image:title>
+      <image:caption>Fluid CSS transforms, accessible semantic components, and micro-interactions</image:caption>
+      <image:geo_location>Coimbatore, Tamil Nadu, India</image:geo_location>
+      <image:license>https://coralgenz.co.in/</image:license>
+    </image:image>
+    <image:image>
+      <image:loc>https://coralgenz.co.in/assets/images/domain-deployment.jpg</image:loc>
+      <image:title>Domain and Deployment Infrastructure</image:title>
+      <image:caption>Automated CI/CD pipelines, DNS routing, edge SSL, and multi-region failover</image:caption>
+      <image:geo_location>Coimbatore, Tamil Nadu, India</image:geo_location>
+      <image:license>https://coralgenz.co.in/</image:license>
     </image:image>
   </url>
   <url>
     <loc>https://coralgenz.co.in/our-products</loc>
-    <lastmod>2026-09-29</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.95</priority>
+    <lastmod>2026-09-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
     <image:image>
       <image:loc>https://coralgenz.co.in/assets/images/keurnaCtookRPkuKPv04gdjnYl0.png</image:loc>
       <image:title>Coralgenz Global Products Ecosystem</image:title>
-      <image:caption>Compiler, Vault, and QR Suite</image:caption>
+      <image:caption>High-performance suite: Compiler, Vault, and Dynamic QR Ecosystem</image:caption>
+      <image:geo_location>Coimbatore, Tamil Nadu, India</image:geo_location>
+      <image:license>https://coralgenz.co.in/</image:license>
+    </image:image>
+    <image:image>
+      <image:loc>https://coralgenz.co.in/assets/images/secure-format-showcase.jpg</image:loc>
+      <image:title>Coralgenz Vault Zero-Knowledge Architecture</image:title>
+      <image:caption>Browser-native AES-256-GCM zero-knowledge file encryption container .secure</image:caption>
+      <image:geo_location>Coimbatore, Tamil Nadu, India</image:geo_location>
+      <image:license>https://coralgenz.co.in/</image:license>
+    </image:image>
+    <image:image>
+      <image:loc>https://coralgenz.co.in/assets/images/kmUbbqN7jwVRUVuglgbqRYXOtY.png</image:loc>
+      <image:title>Coralgenz Cloud Compiler IDE</image:title>
+      <image:caption>Browser-based multi-language code compilation platform with sub-millisecond execution</image:caption>
+      <image:geo_location>Coimbatore, Tamil Nadu, India</image:geo_location>
+      <image:license>https://coralgenz.co.in/</image:license>
+    </image:image>
+    <image:image>
+      <image:loc>https://coralgenz.co.in/assets/images/bWAAzmxMCxdnsSetSctYnU3YiUc.png</image:loc>
+      <image:title>Compiler Cloud Sandbox Runtime</image:title>
+      <image:caption>Polyglot sandbox execution with isolated memory safety</image:caption>
+      <image:geo_location>Coimbatore, Tamil Nadu, India</image:geo_location>
+      <image:license>https://coralgenz.co.in/</image:license>
     </image:image>
   </url>
   <url>
     <loc>https://coralgenz.co.in/coralgenz-vault</loc>
-    <lastmod>2026-09-29</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.95</priority>
+    <lastmod>2026-09-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
     <image:image>
       <image:loc>https://coralgenz.co.in/assets/images/secure-format-showcase.jpg</image:loc>
       <image:title>Coralgenz Vault .secure Format Showcase</image:title>
-      <image:caption>Coralgenz Vault inventor of .secure encrypted format</image:caption>
+      <image:caption>Coralgenz Vault inventor and introducer of .secure encrypted format with all rights owned</image:caption>
+      <image:geo_location>Coimbatore, Tamil Nadu, India</image:geo_location>
+      <image:license>https://coralgenz.co.in/</image:license>
+    </image:image>
+    <image:image>
+      <image:loc>https://coralgenz.co.in/assets/images/5TJoRKj7qDumzI97c2JGZnDr7Gg.jpg</image:loc>
+      <image:title>16-Layer Zero-Knowledge Security Model</image:title>
+      <image:caption>Client-side PBKDF2 2M rounds and AES-256-GCM authenticated encryption</image:caption>
+      <image:geo_location>Coimbatore, Tamil Nadu, India</image:geo_location>
+      <image:license>https://coralgenz.co.in/</image:license>
     </image:image>
   </url>
   <url>
     <loc>https://coralgenz.co.in/coralgenz-compiler</loc>
-    <lastmod>2026-09-29</lastmod>
+    <lastmod>2026-09-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.90</priority>
     <image:image>
       <image:loc>https://coralgenz.co.in/assets/images/kmUbbqN7jwVRUVuglgbqRYXOtY.png</image:loc>
       <image:title>Coralgenz Cloud Compiler IDE</image:title>
-      <image:caption>Browser-based multi-language code compilation platform</image:caption>
+      <image:caption>Multi-language polyglot compiler engine with instant browser compilation</image:caption>
+      <image:geo_location>Coimbatore, Tamil Nadu, India</image:geo_location>
+      <image:license>https://coralgenz.co.in/</image:license>
+    </image:image>
+    <image:image>
+      <image:loc>https://coralgenz.co.in/assets/images/bWAAzmxMCxdnsSetSctYnU3YiUc.png</image:loc>
+      <image:title>Isolated Execution Sandbox</image:title>
+      <image:caption>Low-latency containerized compiler sandbox for C++, Rust, Python, Go, Java</image:caption>
+      <image:geo_location>Coimbatore, Tamil Nadu, India</image:geo_location>
+      <image:license>https://coralgenz.co.in/</image:license>
     </image:image>
   </url>
   <url>
     <loc>https://coralgenz.co.in/coralgenz-qr</loc>
-    <lastmod>2026-09-29</lastmod>
+    <lastmod>2026-09-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.90</priority>
     <image:image>
       <image:loc>https://coralgenz.co.in/assets/images/keurnaCtookRPkuKPv04gdjnYl0.png</image:loc>
       <image:title>Coralgenz Smart QR Ecosystem</image:title>
       <image:caption>Enterprise dynamic QR generation and real-time scan analytics</image:caption>
+      <image:geo_location>Coimbatore, Tamil Nadu, India</image:geo_location>
+      <image:license>https://coralgenz.co.in/</image:license>
+    </image:image>
+    <image:image>
+      <image:loc>https://coralgenz.co.in/assets/images/3JTkDW5Aoei5uyxXo6VXHc2SaU.jpg</image:loc>
+      <image:title>Smart QR Analytics and Threat Defense</image:title>
+      <image:caption>Real-time telemetry, geo-analytics, and anti-phishing payload protection</image:caption>
+      <image:geo_location>Coimbatore, Tamil Nadu, India</image:geo_location>
+      <image:license>https://coralgenz.co.in/</image:license>
     </image:image>
   </url>
   <url>
     <loc>https://coralgenz.co.in/our-highlights/worlds-first-secure-format</loc>
-    <lastmod>2026-09-29</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.95</priority>
+    <lastmod>2026-09-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.90</priority>
     <image:image>
       <image:loc>https://coralgenz.co.in/assets/images/secure-format-showcase.jpg</image:loc>
       <image:title>Worlds First Secure Format Invention</image:title>
       <image:caption>Architectural breakdown of the proprietary .secure container invented by Coralgenz Global</image:caption>
+      <image:geo_location>Coimbatore, Tamil Nadu, India</image:geo_location>
+      <image:license>https://coralgenz.co.in/</image:license>
+    </image:image>
+    <image:image>
+      <image:loc>https://coralgenz.co.in/assets/images/5TJoRKj7qDumzI97c2JGZnDr7Gg.jpg</image:loc>
+      <image:title>Proprietary Binary Container Specifications</image:title>
+      <image:caption>Non-custodial browser-native zero-knowledge encrypted container specifications</image:caption>
+      <image:geo_location>Coimbatore, Tamil Nadu, India</image:geo_location>
+      <image:license>https://coralgenz.co.in/</image:license>
     </image:image>
   </url>
   <url>
     <loc>https://coralgenz.co.in/our-highlights/coralgenz-vault-security</loc>
-    <lastmod>2026-09-29</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.92</priority>
+    <lastmod>2026-09-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.90</priority>
     <image:image>
       <image:loc>https://coralgenz.co.in/assets/images/secure-format-showcase.jpg</image:loc>
-      <image:title>Vault Cryptographic Architecture</image:title>
-      <image:caption>Zero-knowledge browser decryption and PBKDF2 key derivation standards</image:caption>
+      <image:title>Vault Cryptographic Architecture Blueprint</image:title>
+      <image:caption>Zero-knowledge browser decryption, memory wiping, and PBKDF2 key derivation standards</image:caption>
+      <image:geo_location>Coimbatore, Tamil Nadu, India</image:geo_location>
+      <image:license>https://coralgenz.co.in/</image:license>
+    </image:image>
+    <image:image>
+      <image:loc>https://coralgenz.co.in/assets/images/5TJoRKj7qDumzI97c2JGZnDr7Gg.jpg</image:loc>
+      <image:title>16-Layer Defense-in-Depth Security Matrix</image:title>
+      <image:caption>Full technical breakdown of mathematical non-custodial file storage</image:caption>
+      <image:geo_location>Coimbatore, Tamil Nadu, India</image:geo_location>
+      <image:license>https://coralgenz.co.in/</image:license>
     </image:image>
   </url>
   <url>
     <loc>https://coralgenz.co.in/our-highlights/coralgenz-qr-telemetry</loc>
-    <lastmod>2026-09-29</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.88</priority>
+    <lastmod>2026-09-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
     <image:image>
       <image:loc>https://coralgenz.co.in/assets/images/keurnaCtookRPkuKPv04gdjnYl0.png</image:loc>
-      <image:title>QR Telemetry &amp; Threat Defense</image:title>
-      <image:caption>Real-time threat detection and geo-analytics infrastructure</image:caption>
+      <image:title>QR Telemetry and Threat Defense Architecture</image:title>
+      <image:caption>Real-time threat detection, geo-analytics, and distributed edge routing</image:caption>
+      <image:geo_location>Coimbatore, Tamil Nadu, India</image:geo_location>
+      <image:license>https://coralgenz.co.in/</image:license>
     </image:image>
   </url>
   <url>
     <loc>https://coralgenz.co.in/our-highlights/coralgenz-compiler-engine</loc>
-    <lastmod>2026-09-29</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.88</priority>
+    <lastmod>2026-09-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
     <image:image>
       <image:loc>https://coralgenz.co.in/assets/images/kmUbbqN7jwVRUVuglgbqRYXOtY.png</image:loc>
       <image:title>Cloud Execution Sandbox Architecture</image:title>
-      <image:caption>Sub-millisecond isolated compiler engine for polyglot runtimes</image:caption>
+      <image:caption>Sub-millisecond isolated compiler engine for polyglot runtime execution</image:caption>
+      <image:geo_location>Coimbatore, Tamil Nadu, India</image:geo_location>
+      <image:license>https://coralgenz.co.in/</image:license>
+    </image:image>
+    <image:image>
+      <image:loc>https://coralgenz.co.in/assets/images/bWAAzmxMCxdnsSetSctYnU3YiUc.png</image:loc>
+      <image:title>High-Throughput Polyglot Execution Matrix</image:title>
+      <image:caption>Memory-safe sandboxed code execution pipeline</image:caption>
+      <image:geo_location>Coimbatore, Tamil Nadu, India</image:geo_location>
+      <image:license>https://coralgenz.co.in/</image:license>
     </image:image>
   </url>
   <url>
     <loc>https://coralgenz.co.in/our-highlights/clean-architecture-standards</loc>
-    <lastmod>2026-09-29</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.88</priority>
+    <lastmod>2026-09-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
     <image:image>
       <image:loc>https://coralgenz.co.in/assets/images/clean-architecture-blueprint.jpg</image:loc>
-      <image:title>Clean Architecture Standards</image:title>
+      <image:title>Clean Architecture Standards and Domain Blueprint</image:title>
       <image:caption>Domain-Driven Design and zero-dependency domain layer specifications</image:caption>
+      <image:geo_location>Coimbatore, Tamil Nadu, India</image:geo_location>
+      <image:license>https://coralgenz.co.in/</image:license>
     </image:image>
   </url>
   <url>
     <loc>https://coralgenz.co.in/our-highlights/microsoft-salesforce-partner</loc>
-    <lastmod>2026-09-29</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.90</priority>
+    <lastmod>2026-09-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
     <image:image>
-      <image:loc>https://coralgenz.co.in/assets/images/certification-showcase.jpg</image:loc>
-      <image:title>Microsoft and Salesforce Certified Partner</image:title>
-      <image:caption>Official certified partner delivering enterprise cloud integrations</image:caption>
+      <image:loc>https://coralgenz.co.in/assets/images/partner-microsoft.png</image:loc>
+      <image:title>Microsoft Certified Partner Enterprise Cloud</image:title>
+      <image:caption>Azure cloud architecture, enterprise microservices, and Microsoft ecosystem integrations</image:caption>
+      <image:geo_location>Coimbatore, Tamil Nadu, India</image:geo_location>
+      <image:license>https://coralgenz.co.in/</image:license>
+    </image:image>
+    <image:image>
+      <image:loc>https://coralgenz.co.in/assets/images/partner-salesforce.png</image:loc>
+      <image:title>Salesforce Certified CRM Architecture</image:title>
+      <image:caption>Salesforce custom automation, Apex engineering, and CRM platform modernization</image:caption>
+      <image:geo_location>Coimbatore, Tamil Nadu, India</image:geo_location>
+      <image:license>https://coralgenz.co.in/</image:license>
     </image:image>
   </url>
   <url>
     <loc>https://coralgenz.co.in/our-services/custom-software-development</loc>
-    <lastmod>2026-09-29</lastmod>
-    <changefreq>weekly</changefreq>
+    <lastmod>2026-09-30</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.85</priority>
     <image:image>
       <image:loc>https://coralgenz.co.in/assets/images/custom-solution.jpg</image:loc>
       <image:title>Custom Software Development Services</image:title>
-      <image:caption>Scalable enterprise software solutions tailored to business needs</image:caption>
+      <image:caption>Tailored enterprise software systems with clean architecture and scalable microservices</image:caption>
+      <image:geo_location>Coimbatore, Tamil Nadu, India</image:geo_location>
+      <image:license>https://coralgenz.co.in/</image:license>
     </image:image>
   </url>
   <url>
     <loc>https://coralgenz.co.in/our-services/full-stack-software</loc>
-    <lastmod>2026-09-29</lastmod>
-    <changefreq>weekly</changefreq>
+    <lastmod>2026-09-30</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.85</priority>
     <image:image>
       <image:loc>https://coralgenz.co.in/assets/images/fullstack-development.png</image:loc>
-      <image:title>Full Stack Software Development Services</image:title>
-      <image:caption>End-to-end full stack web and cloud applications</image:caption>
+      <image:title>Full Stack Software Engineering Services</image:title>
+      <image:caption>Modern full stack architectures with high performance, resilient data layers, and clean UI</image:caption>
+      <image:geo_location>Coimbatore, Tamil Nadu, India</image:geo_location>
+      <image:license>https://coralgenz.co.in/</image:license>
     </image:image>
   </url>
   <url>
     <loc>https://coralgenz.co.in/our-services/legacy-software-modernization</loc>
-    <lastmod>2026-09-29</lastmod>
-    <changefreq>weekly</changefreq>
+    <lastmod>2026-09-30</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.85</priority>
     <image:image>
       <image:loc>https://coralgenz.co.in/assets/images/legacy-modernization.png</image:loc>
       <image:title>Legacy Software Modernization Services</image:title>
-      <image:caption>Modernize legacy codebases to cloud-native microservices</image:caption>
+      <image:caption>Zero-downtime database migration, monolith refactoring, and cloud modernization</image:caption>
+      <image:geo_location>Coimbatore, Tamil Nadu, India</image:geo_location>
+      <image:license>https://coralgenz.co.in/</image:license>
     </image:image>
   </url>
   <url>
     <loc>https://coralgenz.co.in/our-services/frontend-modernization</loc>
-    <lastmod>2026-09-29</lastmod>
-    <changefreq>weekly</changefreq>
+    <lastmod>2026-09-30</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.85</priority>
     <image:image>
       <image:loc>https://coralgenz.co.in/assets/images/frontend-modernization.png</image:loc>
       <image:title>Frontend Modernization Services</image:title>
-      <image:caption>High-performance reactive frontend architectures</image:caption>
+      <image:caption>High-performance fluid interfaces, design systems, and responsive web aesthetics</image:caption>
+      <image:geo_location>Coimbatore, Tamil Nadu, India</image:geo_location>
+      <image:license>https://coralgenz.co.in/</image:license>
     </image:image>
   </url>
   <url>
     <loc>https://coralgenz.co.in/our-services/modern-admin-dashboards</loc>
-    <lastmod>2026-09-29</lastmod>
-    <changefreq>weekly</changefreq>
+    <lastmod>2026-09-30</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.85</priority>
     <image:image>
       <image:loc>https://coralgenz.co.in/assets/images/admin-dashboards.jpg</image:loc>
       <image:title>Modern Admin Dashboards Services</image:title>
-      <image:caption>Executive real-time analytics and management dashboards</image:caption>
+      <image:caption>Enterprise admin portals with real-time charting, RBAC, and telemetry streams</image:caption>
+      <image:geo_location>Coimbatore, Tamil Nadu, India</image:geo_location>
+      <image:license>https://coralgenz.co.in/</image:license>
     </image:image>
   </url>
   <url>
     <loc>https://coralgenz.co.in/our-services/domain-and-deployment-service</loc>
-    <lastmod>2026-09-29</lastmod>
-    <changefreq>weekly</changefreq>
+    <lastmod>2026-09-30</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.85</priority>
     <image:image>
       <image:loc>https://coralgenz.co.in/assets/images/domain-deployment.jpg</image:loc>
-      <image:title>Domain &amp; Deployment Services</image:title>
-      <image:caption>Zero-downtime DNS, SSL provisioning, and cloud deployment</image:caption>
+      <image:title>Domain and Deployment Infrastructure Services</image:title>
+      <image:caption>Automated CI/CD workflows, DNS failover, zero-trust security, and global CDN delivery</image:caption>
+      <image:geo_location>Coimbatore, Tamil Nadu, India</image:geo_location>
+      <image:license>https://coralgenz.co.in/</image:license>
     </image:image>
   </url>
   <url>
     <loc>https://coralgenz.co.in/our-services/mvp-development</loc>
-    <lastmod>2026-09-29</lastmod>
-    <changefreq>weekly</changefreq>
+    <lastmod>2026-09-30</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.85</priority>
     <image:image>
       <image:loc>https://coralgenz.co.in/assets/images/mvp-development.png</image:loc>
-      <image:title>MVP Development Services</image:title>
-      <image:caption>Rapid prototyping and minimum viable product engineering</image:caption>
+      <image:title>MVP Development and Rapid Prototyping Services</image:title>
+      <image:caption>Turn product ideas into market-ready MVPs with rapid iteration and scalable code</image:caption>
+      <image:geo_location>Coimbatore, Tamil Nadu, India</image:geo_location>
+      <image:license>https://coralgenz.co.in/</image:license>
     </image:image>
   </url>
   <url>
     <loc>https://coralgenz.co.in/our-services/pwa-development</loc>
-    <lastmod>2026-09-29</lastmod>
-    <changefreq>weekly</changefreq>
+    <lastmod>2026-09-30</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.85</priority>
     <image:image>
       <image:loc>https://coralgenz.co.in/assets/images/pwa-development.png</image:loc>
-      <image:title>Progressive Web App Development Services</image:title>
-      <image:caption>Offline-first high speed Progressive Web Applications</image:caption>
+      <image:title>Progressive Web Application Development Services</image:title>
+      <image:caption>Offline-ready PWAs with service workers, instant load times, and installable apps</image:caption>
+      <image:geo_location>Coimbatore, Tamil Nadu, India</image:geo_location>
+      <image:license>https://coralgenz.co.in/</image:license>
     </image:image>
   </url>
   <url>
     <loc>https://coralgenz.co.in/team</loc>
-    <lastmod>2026-09-29</lastmod>
+    <lastmod>2026-09-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.80</priority>
     <image:image>
       <image:loc>https://coralgenz.co.in/assets/images/3JTkDW5Aoei5uyxXo6VXHc2SaU.jpg</image:loc>
-      <image:title>Executive Leadership Team</image:title>
-      <image:caption>Coralgenz Global Executive Leadership and Core Engineers</image:caption>
+      <image:title>Coralgenz Global Executive Leadership and Engineering Team</image:title>
+      <image:caption>Core executive leaders and specialized software engineers at Coralgenz Global</image:caption>
+      <image:geo_location>Coimbatore, Tamil Nadu, India</image:geo_location>
+      <image:license>https://coralgenz.co.in/</image:license>
+    </image:image>
+    <image:image>
+      <image:loc>https://coralgenz.co.in/assets/images/karthick-krishna.jpg</image:loc>
+      <image:title>Karthick Krishna - Founder and Chief Executive Officer</image:title>
+      <image:caption>Founder & CEO of Coralgenz Global leading enterprise software engineering</image:caption>
+      <image:geo_location>Coimbatore, Tamil Nadu, India</image:geo_location>
+      <image:license>https://coralgenz.co.in/</image:license>
+    </image:image>
+    <image:image>
+      <image:loc>https://coralgenz.co.in/assets/images/sharveshwaran-r.jpg</image:loc>
+      <image:title>Sharveshwaran R - Co-Founder and Chief Technology Officer</image:title>
+      <image:caption>Co-Founder & CTO of Coralgenz Global architecting zero-knowledge systems</image:caption>
+      <image:geo_location>Coimbatore, Tamil Nadu, India</image:geo_location>
+      <image:license>https://coralgenz.co.in/</image:license>
+    </image:image>
+    <image:image>
+      <image:loc>https://coralgenz.co.in/assets/images/kmUbbqN7jwVRUVuglgbqRYXOtY.png</image:loc>
+      <image:title>Thanvanth H - Co-Founder and Chief Operating Officer</image:title>
+      <image:caption>Co-Founder & COO of Coralgenz Global managing enterprise delivery</image:caption>
+      <image:geo_location>Coimbatore, Tamil Nadu, India</image:geo_location>
+      <image:license>https://coralgenz.co.in/</image:license>
     </image:image>
   </url>
   <url>
     <loc>https://coralgenz.co.in/karthick-krishna</loc>
-    <lastmod>2026-09-29</lastmod>
+    <lastmod>2026-09-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.80</priority>
     <image:image>
       <image:loc>https://coralgenz.co.in/assets/images/karthick-krishna.jpg</image:loc>
-      <image:title>Karthick Krishna - Chief Executive Officer</image:title>
-      <image:caption>Founder and CEO of Coralgenz Global</image:caption>
+      <image:title>Karthick Krishna - Founder and Chief Executive Officer</image:title>
+      <image:caption>Official profile of Karthick Krishna, Founder & CEO of Coralgenz Global</image:caption>
+      <image:geo_location>Coimbatore, Tamil Nadu, India</image:geo_location>
+      <image:license>https://coralgenz.co.in/</image:license>
     </image:image>
   </url>
   <url>
     <loc>https://coralgenz.co.in/thanvanth-h</loc>
-    <lastmod>2026-09-29</lastmod>
+    <lastmod>2026-09-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.80</priority>
     <image:image>
-      <image:loc>https://coralgenz.co.in/assets/images/3JTkDW5Aoei5uyxXo6VXHc2SaU.jpg</image:loc>
-      <image:title>Thanvanth H - Chief Operations Officer</image:title>
-      <image:caption>Co-Founder and COO of Coralgenz Global</image:caption>
+      <image:loc>https://coralgenz.co.in/assets/images/kmUbbqN7jwVRUVuglgbqRYXOtY.png</image:loc>
+      <image:title>Thanvanth H - Co-Founder and Chief Operating Officer</image:title>
+      <image:caption>Official profile of Thanvanth H, Co-Founder & COO of Coralgenz Global</image:caption>
+      <image:geo_location>Coimbatore, Tamil Nadu, India</image:geo_location>
+      <image:license>https://coralgenz.co.in/</image:license>
     </image:image>
   </url>
   <url>
     <loc>https://coralgenz.co.in/sharveshwaran-r</loc>
-    <lastmod>2026-09-29</lastmod>
+    <lastmod>2026-09-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.80</priority>
     <image:image>
       <image:loc>https://coralgenz.co.in/assets/images/sharveshwaran-r.jpg</image:loc>
-      <image:title>Sharveshwaran R - Chief Technology Officer</image:title>
-      <image:caption>Co-Founder and CTO of Coralgenz Global</image:caption>
+      <image:title>Sharveshwaran R - Co-Founder and Chief Technology Officer</image:title>
+      <image:caption>Official profile of Sharveshwaran R, Co-Founder & CTO of Coralgenz Global</image:caption>
+      <image:geo_location>Coimbatore, Tamil Nadu, India</image:geo_location>
+      <image:license>https://coralgenz.co.in/</image:license>
     </image:image>
   </url>
   <url>
     <loc>https://coralgenz.co.in/know-more</loc>
-    <lastmod>2026-09-29</lastmod>
+    <lastmod>2026-09-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.80</priority>
     <image:image>
       <image:loc>https://coralgenz.co.in/assets/images/3JTkDW5Aoei5uyxXo6VXHc2SaU.jpg</image:loc>
-      <image:title>About Coralgenz Global</image:title>
-      <image:caption>Mission, vision, values, and engineering culture</image:caption>
+      <image:title>About Coralgenz Global Corporate Culture and Mission</image:title>
+      <image:caption>Enterprise software development ethos, zero technical debt, and engineering precision</image:caption>
+      <image:geo_location>Coimbatore, Tamil Nadu, India</image:geo_location>
+      <image:license>https://coralgenz.co.in/</image:license>
+    </image:image>
+    <image:image>
+      <image:loc>https://coralgenz.co.in/assets/images/DVyu6tz4dqPirA4TwAJZUz5CUw.png</image:loc>
+      <image:title>Coralgenz Global Corporate Brand Mark</image:title>
+      <image:caption>Official brand identity of Coralgenz Global IT solutions</image:caption>
+      <image:geo_location>Coimbatore, Tamil Nadu, India</image:geo_location>
+      <image:license>https://coralgenz.co.in/</image:license>
     </image:image>
   </url>
   <url>
     <loc>https://coralgenz.co.in/contact</loc>
-    <lastmod>2026-09-29</lastmod>
+    <lastmod>2026-09-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.80</priority>
     <image:image>
       <image:loc>https://coralgenz.co.in/assets/images/3JTkDW5Aoei5uyxXo6VXHc2SaU.jpg</image:loc>
-      <image:title>Contact Coralgenz Global</image:title>
-      <image:caption>Enterprise inquiries and consultation</image:caption>
+      <image:title>Contact Coralgenz Global Corporate Office in Coimbatore</image:title>
+      <image:caption>Corporate office location and direct engineering consultation channels</image:caption>
+      <image:geo_location>Coimbatore, Tamil Nadu, India</image:geo_location>
+      <image:license>https://coralgenz.co.in/</image:license>
+    </image:image>
+    <image:image>
+      <image:loc>https://coralgenz.co.in/assets/images/DVyu6tz4dqPirA4TwAJZUz5CUw.png</image:loc>
+      <image:title>Coralgenz Global Direct Inquiries</image:title>
+      <image:caption>Get in touch with Coralgenz Global enterprise engineering teams</image:caption>
+      <image:geo_location>Coimbatore, Tamil Nadu, India</image:geo_location>
+      <image:license>https://coralgenz.co.in/</image:license>
     </image:image>
   </url>
   <url>
     <loc>https://coralgenz.co.in/microsoft</loc>
-    <lastmod>2026-09-29</lastmod>
+    <lastmod>2026-09-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
     <image:image>
       <image:loc>https://coralgenz.co.in/assets/images/partner-microsoft.png</image:loc>
-      <image:title>Microsoft Partner Solutions</image:title>
+      <image:title>Microsoft Partner Solutions and Azure Cloud Architecture</image:title>
       <image:caption>Official Microsoft partner cloud solutions and enterprise integrations</image:caption>
+      <image:geo_location>Coimbatore, Tamil Nadu, India</image:geo_location>
+      <image:license>https://coralgenz.co.in/</image:license>
     </image:image>
   </url>
   <url>
     <loc>https://coralgenz.co.in/salesforce</loc>
-    <lastmod>2026-09-29</lastmod>
+    <lastmod>2026-09-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
     <image:image>
       <image:loc>https://coralgenz.co.in/assets/images/partner-salesforce.png</image:loc>
-      <image:title>Salesforce Partner Solutions</image:title>
-      <image:caption>Certified Salesforce CRM architecture and automation</image:caption>
+      <image:title>Salesforce Certified Partner Solutions and CRM Architecture</image:title>
+      <image:caption>Certified Salesforce CRM architecture and automated workflows</image:caption>
+      <image:geo_location>Coimbatore, Tamil Nadu, India</image:geo_location>
+      <image:license>https://coralgenz.co.in/</image:license>
     </image:image>
   </url>
 </urlset>
