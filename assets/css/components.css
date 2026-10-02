@@ -2291,32 +2291,32 @@ body.mobile-nav-locked {
   box-shadow: 0 4px 12px rgba(0, 120, 212, 0.3);
 }
 
-/* Shopify Button - Unified with Partner Card Style */
+/* Shopify Button - Exact Color Match with Partner Buttons */
 .partner-btn-shopify,
 .partner-card-shopify .partner-btn-pill {
-  background: linear-gradient(135deg, #0066ff 0%, #0052cc 60%, #003d99 100%);
+  background: linear-gradient(135deg, #0176d3 0%, #0056b3 60%, #003e80 100%);
   color: #ffffff !important;
-  border: 1.5px solid rgba(0, 102, 255, 0.4);
-  box-shadow: 0 8px 24px -4px rgba(0, 102, 255, 0.42), inset 0 1px 0 rgba(255, 255, 255, 0.35);
+  border: 1.5px solid rgba(1, 118, 211, 0.4);
+  box-shadow: 0 8px 24px -4px rgba(1, 118, 211, 0.42), inset 0 1px 0 rgba(255, 255, 255, 0.35);
 }
 
 .partner-btn-shopify .partner-btn-icon-wrap,
 .partner-card-shopify .partner-btn-pill .partner-btn-icon-wrap {
-  color: #0066ff;
+  color: #0176d3;
 }
 
 .partner-btn-shopify:hover,
 .partner-card-shopify .partner-btn-pill:hover {
   transform: translateY(-3px) scale(1.02);
-  background: linear-gradient(135deg, #1a75ff 0%, #0066ff 60%, #0052cc 100%);
-  border-color: #60a5fa;
-  box-shadow: 0 14px 34px -4px rgba(0, 102, 255, 0.65), inset 0 1px 0 rgba(255, 255, 255, 0.5);
+  background: linear-gradient(135deg, #0288d1 0%, #0176d3 60%, #0056b3 100%);
+  border-color: #38bdf8;
+  box-shadow: 0 14px 34px -4px rgba(1, 118, 211, 0.65), inset 0 1px 0 rgba(255, 255, 255, 0.5);
 }
 
 .partner-btn-shopify:hover .partner-btn-icon-wrap,
 .partner-card-shopify .partner-btn-pill:hover .partner-btn-icon-wrap {
   transform: translateX(3px) rotate(15deg);
-  box-shadow: 0 4px 12px rgba(0, 102, 255, 0.3);
+  box-shadow: 0 4px 12px rgba(1, 118, 211, 0.3);
 }
 
 .partner-btn-pill::before {
