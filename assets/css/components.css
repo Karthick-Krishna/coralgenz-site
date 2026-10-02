@@ -4052,22 +4052,36 @@ body.mobile-nav-locked {
   position: absolute;
   top: -80px;
   right: 8%;
-  width: 300px;
-  height: 300px;
+  width: 320px;
+  height: 320px;
   background: radial-gradient(circle, rgba(245, 158, 11, 0.18) 0%, rgba(251, 191, 36, 0.05) 50%, transparent 70%);
   pointer-events: none;
   filter: blur(36px);
+  animation: floatGlowAmber 10s ease-in-out infinite alternate;
 }
 
 .ratings-glow-blue {
   position: absolute;
   bottom: -80px;
   left: 4%;
-  width: 320px;
-  height: 320px;
-  background: radial-gradient(circle, rgba(0, 102, 255, 0.15) 0%, rgba(56, 189, 248, 0.05) 50%, transparent 70%);
+  width: 340px;
+  height: 340px;
+  background: radial-gradient(circle, rgba(0, 102, 255, 0.16) 0%, rgba(56, 189, 248, 0.05) 50%, transparent 70%);
   pointer-events: none;
   filter: blur(40px);
+  animation: floatGlowBlue 12s ease-in-out infinite alternate;
+}
+
+@keyframes floatGlowAmber {
+  0% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(-30px, 20px) scale(1.15); }
+  100% { transform: translate(15px, -15px) scale(0.95); }
+}
+
+@keyframes floatGlowBlue {
+  0% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(30px, -25px) scale(1.18); }
+  100% { transform: translate(-20px, 15px) scale(0.92); }
 }
 
 .ratings-v2-top-bar {
@@ -4198,34 +4212,101 @@ body.mobile-nav-locked {
 .ratings-v2-desc {
   font-family: var(--font-inter), sans-serif;
   font-size: 18px;
-  line-height: 1.75;
+  line-height: 1.85;
   color: #334155;
-  max-width: 920px;
+  max-width: 940px;
   margin: 0;
 }
 
-.txt-highlight-pill {
-  display: inline-block;
+/* Graphical Motion Highlight Badges (No Emojis) */
+.rate-feature-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  background: rgba(255, 255, 255, 0.95);
+  border: 1.5px solid #cbd5e1;
+  border-radius: 12px;
+  padding: 3px 12px;
+  vertical-align: middle;
+  box-shadow: 0 3px 10px rgba(15, 23, 42, 0.05), inset 0 1px 0 #ffffff;
   color: #0f172a;
-  font-weight: 800;
-  padding: 2px 8px;
-  background: rgba(255, 255, 255, 0.85);
-  border: 1px solid #e2e8f0;
-  border-radius: 8px;
-  box-shadow: 0 2px 6px rgba(15, 23, 42, 0.03);
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+  position: relative;
+  margin: 0 2px;
 }
 
-.badge-inline-count {
-  display: inline-block;
-  background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
+.rate-feature-tag:hover {
+  transform: translateY(-2px);
+  background: #ffffff;
+}
+
+.rate-feature-tag.tag-precision {
+  border-color: #93c5fd;
+  color: #0284c7;
+}
+
+.rate-feature-tag.tag-precision:hover {
+  border-color: #0284c7;
+  box-shadow: 0 6px 18px rgba(2, 132, 199, 0.2), inset 0 1px 0 #ffffff;
+}
+
+.rate-feature-tag.tag-precision .rate-tag-icon {
+  color: #0284c7;
+}
+
+.rate-feature-tag.tag-detail {
+  border-color: #fed7aa;
+  color: #ea580c;
+}
+
+.rate-feature-tag.tag-detail:hover {
+  border-color: #ea580c;
+  box-shadow: 0 6px 18px rgba(234, 88, 12, 0.2), inset 0 1px 0 #ffffff;
+}
+
+.rate-feature-tag.tag-detail .rate-tag-icon {
+  color: #ea580c;
+}
+
+.rate-tag-icon {
+  flex-shrink: 0;
+  transition: transform 0.3s ease;
+}
+
+.rate-feature-tag:hover .rate-tag-icon {
+  transform: scale(1.15) rotate(5deg);
+}
+
+.rate-trust-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: linear-gradient(135deg, #eff6ff 0%, #e0f2fe 50%, #f0fdf4 100%);
   color: #0176d3;
-  padding: 3px 12px;
-  border-radius: 10px;
-  font-weight: 800;
+  padding: 4px 14px;
+  border-radius: 12px;
   border: 1.5px solid #93c5fd;
-  font-size: 17px;
-  white-space: nowrap;
-  box-shadow: 0 2px 8px rgba(0, 102, 255, 0.1);
+  box-shadow: 0 4px 14px rgba(0, 102, 255, 0.12), inset 0 1px 0 #ffffff;
+  vertical-align: middle;
+  margin: 0 3px;
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.rate-trust-pill:hover {
+  transform: translateY(-2px) scale(1.02);
+  border-color: #38bdf8;
+  box-shadow: 0 8px 22px rgba(0, 102, 255, 0.22), inset 0 1px 0 #ffffff;
+}
+
+.rate-trust-icon {
+  display: flex;
+  align-items: center;
+  color: #0284c7;
+  transition: transform 0.4s ease;
+}
+
+.rate-trust-pill:hover .rate-trust-icon {
+  transform: rotate(30deg) scale(1.12);
 }
 
 .ratings-v2-bottom-bar {
