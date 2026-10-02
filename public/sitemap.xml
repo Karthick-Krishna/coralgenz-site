@@ -96,6 +96,13 @@
       <image:geo_location>Coimbatore, Tamil Nadu, India</image:geo_location>
       <image:license>https://coralgenz.co.in/</image:license>
     </image:image>
+    <image:image>
+      <image:loc>https://coralgenz.co.in/assets/images/partner-shopify.png</image:loc>
+      <image:title>Official Shopify Development Partner</image:title>
+      <image:caption>Shopify headless commerce, custom Storefront GraphQL APIs, and app extensions</image:caption>
+      <image:geo_location>Coimbatore, Tamil Nadu, India</image:geo_location>
+      <image:license>https://coralgenz.co.in/</image:license>
+    </image:image>
   </url>
   <url>
     <loc>https://coralgenz.co.in/our-services</loc>
@@ -605,6 +612,19 @@
       <image:loc>https://coralgenz.co.in/assets/images/partner-salesforce.png</image:loc>
       <image:title>Salesforce Certified Partner Solutions and CRM Architecture</image:title>
       <image:caption>Certified Salesforce CRM architecture and automated workflows</image:caption>
+      <image:geo_location>Coimbatore, Tamil Nadu, India</image:geo_location>
+      <image:license>https://coralgenz.co.in/</image:license>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://coralgenz.co.in/shopify</loc>
+    <lastmod>2026-09-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+    <image:image>
+      <image:loc>https://coralgenz.co.in/assets/images/partner-shopify.png</image:loc>
+      <image:title>Shopify Official Partner Solutions and Headless Commerce</image:title>
+      <image:caption>Official Shopify partner headless commerce, Hydrogen storefronts, and custom app engineering</image:caption>
       <image:geo_location>Coimbatore, Tamil Nadu, India</image:geo_location>
       <image:license>https://coralgenz.co.in/</image:license>
     </image:image>

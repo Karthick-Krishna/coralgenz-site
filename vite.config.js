@@ -37,6 +37,7 @@ export default defineConfig({
         fullStackSoftware: resolve('our-services/full-stack-software.html'),
         legacySoftware: resolve('our-services/legacy-software-modernization.html'),
         microsoft: resolve('microsoft.html'),
+        shopify: resolve('shopify.html'),
         modernAdminDashboards: resolve('our-services/modern-admin-dashboards.html'),
         mvpDevelopment: resolve('our-services/mvp-development.html'),
         pwaDevelopment: resolve('our-services/pwa-development.html'),

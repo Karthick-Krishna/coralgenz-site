@@ -1990,12 +1990,18 @@ body.mobile-nav-locked {
 
 .partners-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 24px;
   margin-top: 24px;
 }
 
-@media (max-width: 809px) {
+@media (max-width: 1024px) {
+  .partners-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
   .partners-grid {
     grid-template-columns: 1fr;
   }
@@ -2027,6 +2033,11 @@ body.mobile-nav-locked {
   border-color: #e2e8f0;
 }
 
+.partner-card-shopify {
+  background: #ffffff;
+  border-color: #e2e8f0;
+}
+
 .partner-card-dark::after {
   content: '';
   position: absolute;
@@ -2046,8 +2057,13 @@ body.mobile-nav-locked {
   background: linear-gradient(90deg, #f25022 0%, #7fba00 33%, #00a4ef 66%, #ffb900 100%);
 }
 
+.partner-card-shopify::after {
+  background: linear-gradient(90deg, #008060 0%, #95bf47 50%, #004c3f 100%);
+}
+
 .partner-card-salesforce::before,
-.partner-card-microsoft::before {
+.partner-card-microsoft::before,
+.partner-card-shopify::before {
   display: none !important;
 }
 
@@ -2058,7 +2074,8 @@ body.mobile-nav-locked {
 }
 
 .partner-card-salesforce:hover,
-.partner-card-microsoft:hover {
+.partner-card-microsoft:hover,
+.partner-card-shopify:hover {
   border-color: #cbd5e1;
   box-shadow: 0 24px 50px -12px rgba(15, 23, 42, 0.1), inset 0 1px 0 #ffffff;
 }
@@ -2089,7 +2106,8 @@ body.mobile-nav-locked {
 }
 
 .partner-card-salesforce .partner-badge-glow,
-.partner-card-microsoft .partner-badge-glow {
+.partner-card-microsoft .partner-badge-glow,
+.partner-card-shopify .partner-badge-glow {
   background: #f8fafc;
   border: 1px solid #e2e8f0;
   color: #334155;
@@ -2271,6 +2289,34 @@ body.mobile-nav-locked {
 .partner-card-microsoft .partner-btn-pill:hover .partner-btn-icon-wrap {
   transform: translateX(3px) rotate(15deg);
   box-shadow: 0 4px 12px rgba(0, 120, 212, 0.3);
+}
+
+/* Shopify Vibrant Button */
+.partner-btn-shopify,
+.partner-card-shopify .partner-btn-pill {
+  background: linear-gradient(135deg, #008060 0%, #004c3f 60%, #002e26 100%);
+  color: #ffffff !important;
+  border: 1.5px solid rgba(0, 128, 96, 0.4);
+  box-shadow: 0 8px 24px -4px rgba(0, 128, 96, 0.42), inset 0 1px 0 rgba(255, 255, 255, 0.35);
+}
+
+.partner-btn-shopify .partner-btn-icon-wrap,
+.partner-card-shopify .partner-btn-pill .partner-btn-icon-wrap {
+  color: #008060;
+}
+
+.partner-btn-shopify:hover,
+.partner-card-shopify .partner-btn-pill:hover {
+  transform: translateY(-3px) scale(1.02);
+  background: linear-gradient(135deg, #00a078 0%, #008060 60%, #004c3f 100%);
+  border-color: #95bf47;
+  box-shadow: 0 14px 34px -4px rgba(0, 128, 96, 0.65), inset 0 1px 0 rgba(255, 255, 255, 0.5);
+}
+
+.partner-btn-shopify:hover .partner-btn-icon-wrap,
+.partner-card-shopify .partner-btn-pill:hover .partner-btn-icon-wrap {
+  transform: translateX(3px) rotate(15deg);
+  box-shadow: 0 4px 12px rgba(0, 128, 96, 0.3);
 }
 
 .partner-btn-pill::before {
@@ -5929,6 +5975,15 @@ body.mobile-nav-locked {
 
 .microsoft-theme:hover {
   box-shadow: 0 30px 70px rgba(0, 164, 239, 0.3), 0 0 60px rgba(0, 164, 239, 0.2);
+}
+
+.shopify-theme {
+  border-color: rgba(0, 128, 96, 0.4);
+  box-shadow: 0 20px 50px rgba(0, 128, 96, 0.18), 0 0 40px rgba(0, 128, 96, 0.1);
+}
+
+.shopify-theme:hover {
+  box-shadow: 0 30px 70px rgba(0, 128, 96, 0.3), 0 0 60px rgba(0, 128, 96, 0.2);
 }
 
 .partner-hero-logo-wrap {
