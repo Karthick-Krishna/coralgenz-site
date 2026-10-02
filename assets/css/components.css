@@ -2058,7 +2058,7 @@ body.mobile-nav-locked {
 }
 
 .partner-card-shopify::after {
-  background: linear-gradient(90deg, #008060 0%, #95bf47 50%, #004c3f 100%);
+  background: linear-gradient(90deg, #0066ff 0%, #00a4ef 50%, #38bdf8 100%);
 }
 
 .partner-card-salesforce::before,
@@ -2291,32 +2291,32 @@ body.mobile-nav-locked {
   box-shadow: 0 4px 12px rgba(0, 120, 212, 0.3);
 }
 
-/* Shopify Vibrant Button */
+/* Shopify Button - Unified with Partner Card Style */
 .partner-btn-shopify,
 .partner-card-shopify .partner-btn-pill {
-  background: linear-gradient(135deg, #008060 0%, #004c3f 60%, #002e26 100%);
+  background: linear-gradient(135deg, #0066ff 0%, #0052cc 60%, #003d99 100%);
   color: #ffffff !important;
-  border: 1.5px solid rgba(0, 128, 96, 0.4);
-  box-shadow: 0 8px 24px -4px rgba(0, 128, 96, 0.42), inset 0 1px 0 rgba(255, 255, 255, 0.35);
+  border: 1.5px solid rgba(0, 102, 255, 0.4);
+  box-shadow: 0 8px 24px -4px rgba(0, 102, 255, 0.42), inset 0 1px 0 rgba(255, 255, 255, 0.35);
 }
 
 .partner-btn-shopify .partner-btn-icon-wrap,
 .partner-card-shopify .partner-btn-pill .partner-btn-icon-wrap {
-  color: #008060;
+  color: #0066ff;
 }
 
 .partner-btn-shopify:hover,
 .partner-card-shopify .partner-btn-pill:hover {
   transform: translateY(-3px) scale(1.02);
-  background: linear-gradient(135deg, #00a078 0%, #008060 60%, #004c3f 100%);
-  border-color: #95bf47;
-  box-shadow: 0 14px 34px -4px rgba(0, 128, 96, 0.65), inset 0 1px 0 rgba(255, 255, 255, 0.5);
+  background: linear-gradient(135deg, #1a75ff 0%, #0066ff 60%, #0052cc 100%);
+  border-color: #60a5fa;
+  box-shadow: 0 14px 34px -4px rgba(0, 102, 255, 0.65), inset 0 1px 0 rgba(255, 255, 255, 0.5);
 }
 
 .partner-btn-shopify:hover .partner-btn-icon-wrap,
 .partner-card-shopify .partner-btn-pill:hover .partner-btn-icon-wrap {
   transform: translateX(3px) rotate(15deg);
-  box-shadow: 0 4px 12px rgba(0, 128, 96, 0.3);
+  box-shadow: 0 4px 12px rgba(0, 102, 255, 0.3);
 }
 
 .partner-btn-pill::before {
@@ -5978,12 +5978,12 @@ body.mobile-nav-locked {
 }
 
 .shopify-theme {
-  border-color: rgba(0, 128, 96, 0.4);
-  box-shadow: 0 20px 50px rgba(0, 128, 96, 0.18), 0 0 40px rgba(0, 128, 96, 0.1);
+  border-color: rgba(0, 102, 255, 0.4);
+  box-shadow: 0 20px 50px rgba(0, 102, 255, 0.18), 0 0 40px rgba(0, 102, 255, 0.1);
 }
 
 .shopify-theme:hover {
-  box-shadow: 0 30px 70px rgba(0, 128, 96, 0.3), 0 0 60px rgba(0, 128, 96, 0.2);
+  box-shadow: 0 30px 70px rgba(0, 102, 255, 0.3), 0 0 60px rgba(0, 102, 255, 0.2);
 }
 
 .partner-hero-logo-wrap {
