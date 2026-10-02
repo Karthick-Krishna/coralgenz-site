@@ -4459,82 +4459,213 @@ body.mobile-nav-locked {
 }
 
 /* ==========================================================================
-   RATINGS MOBILE RESPONSIVENESS
+   RATINGS MOBILE RESPONSIVENESS (PERFECT ALIGNMENT & PROPORTIONS)
    ========================================================================== */
 @media (max-width: 768px) {
   .rate-us-section {
-    padding-top: 24px !important;
-    padding-bottom: 32px !important;
+    padding-top: 20px !important;
+    padding-bottom: 28px !important;
+  }
+
+  .rate-us-header-wrap {
+    margin-bottom: 14px;
+  }
+
+  .rate-us-pill-title {
+    font-size: 11.5px;
+    padding: 5px 14px;
+  }
+
+  .rate-us-mini-badge {
+    width: 38px;
+    height: 38px;
   }
 
   .ratings-v2-banner {
-    padding: 24px 20px !important;
-    border-radius: 22px !important;
+    padding: 22px 18px !important;
+    border-radius: 20px !important;
     min-height: unset !important;
-    gap: 20px !important;
+    gap: 18px !important;
+  }
+
+  .ratings-v2-top-bar {
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 12px !important;
   }
 
   .ratings-v2-pill {
+    width: 100% !important;
+    justify-content: center !important;
     font-size: 10px !important;
-    padding: 6px 14px !important;
+    padding: 6px 12px !important;
+    letter-spacing: 0.04em !important;
+    text-align: center;
   }
 
   .ratings-v2-stars-wrap {
-    padding: 6px 14px !important;
+    width: 100% !important;
+    justify-content: space-between !important;
+    padding: 8px 16px !important;
+    border-radius: 16px !important;
     gap: 10px !important;
   }
 
+  .ratings-star-cluster {
+    gap: 3px !important;
+  }
+
   .star-svg {
-    width: 18px !important;
-    height: 18px !important;
+    width: 17px !important;
+    height: 17px !important;
+  }
+
+  .ratings-score-pod {
+    padding-left: 8px !important;
+    border-left: 1.5px solid #fed7aa !important;
+    text-align: right;
   }
 
   .score-bold {
     font-size: 18px !important;
   }
 
+  .score-max {
+    font-size: 11px !important;
+  }
+
   .score-sub {
-    font-size: 9px !important;
+    font-size: 8.5px !important;
+    letter-spacing: 0.04em !important;
+  }
+
+  .ratings-v2-main-text {
+    margin: 2px 0;
   }
 
   .ratings-v2-desc {
-    font-size: 14.5px !important;
-    line-height: 1.6 !important;
+    font-size: 14px !important;
+    line-height: 1.7 !important;
+    color: #334155 !important;
   }
 
-  .badge-inline-count {
-    font-size: 13.5px !important;
+  .rate-feature-tag {
     padding: 2px 8px !important;
+    font-size: 12.5px !important;
+    gap: 5px !important;
+    border-radius: 8px !important;
+    margin: 2px 1px !important;
+  }
+
+  .rate-tag-icon {
+    width: 13px !important;
+    height: 13px !important;
+  }
+
+  .rate-trust-pill {
+    padding: 3px 10px !important;
+    font-size: 12.5px !important;
+    border-radius: 8px !important;
+    gap: 6px !important;
+    margin: 3px 1px !important;
+  }
+
+  .rate-trust-icon svg {
+    width: 13px !important;
+    height: 13px !important;
   }
 
   .ratings-v2-bottom-bar {
     flex-direction: column !important;
     align-items: stretch !important;
-    gap: 16px !important;
+    gap: 14px !important;
     padding-top: 14px !important;
+    border-top: 1px dashed #bfdbfe !important;
   }
 
   .ratings-v2-btn {
     width: 100% !important;
     justify-content: space-between !important;
-    padding: 8px 10px 8px 20px !important;
+    padding: 8px 8px 8px 18px !important;
     font-size: 14px !important;
   }
 
+  .btn-arrow-circle {
+    width: 30px !important;
+    height: 30px !important;
+  }
+
   .ratings-v2-metrics-row {
-    flex-direction: column !important;
-    align-items: stretch !important;
-    gap: 10px !important;
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 8px !important;
+    width: 100% !important;
   }
 
   .ratings-v2-metric-chip {
-    padding: 8px 14px !important;
+    padding: 8px 10px !important;
+    border-radius: 14px !important;
+    gap: 8px !important;
+    align-items: center !important;
+  }
+
+  .metric-icon-wrap {
+    width: 26px !important;
+    height: 26px !important;
+    border-radius: 8px !important;
+  }
+
+  .metric-icon-wrap svg {
+    width: 13px !important;
+    height: 13px !important;
+  }
+
+  .ratings-v2-metric-num {
+    font-size: 15px !important;
+  }
+
+  .ratings-v2-metric-txt {
+    font-size: 10px !important;
+    line-height: 1.15 !important;
   }
 
   .ratings-trust-tag {
+    grid-column: 1 / -1 !important;
     width: 100% !important;
     justify-content: center !important;
-    padding: 8px 14px !important;
+    padding: 8px 12px !important;
+    font-size: 12px !important;
+    border-radius: 12px !important;
+  }
+}
+
+@media (max-width: 380px) {
+  .ratings-v2-banner {
+    padding: 18px 14px !important;
+  }
+
+  .ratings-v2-pill {
+    font-size: 9px !important;
+    padding: 5px 8px !important;
+  }
+
+  .star-svg {
+    width: 15px !important;
+    height: 15px !important;
+  }
+
+  .ratings-v2-desc {
+    font-size: 13px !important;
+    line-height: 1.65 !important;
+  }
+
+  .rate-feature-tag,
+  .rate-trust-pill {
+    font-size: 11.5px !important;
+  }
+
+  .ratings-v2-metrics-row {
+    grid-template-columns: 1fr !important;
   }
 }
 
