@@ -77,6 +77,33 @@ User-agent: Pinterestbot
 Allow: /
 Allow: /assets/images/
 
+# AI Crawlers & LLM Agents
+User-agent: GPTBot
+Allow: /
+Allow: /llms.txt
+Allow: /llms-full.txt
+
+User-agent: ChatGPT-User
+Allow: /
+Allow: /llms.txt
+Allow: /llms-full.txt
+
+User-agent: ClaudeBot
+Allow: /
+Allow: /llms.txt
+Allow: /llms-full.txt
+
+User-agent: PerplexityBot
+Allow: /
+Allow: /llms.txt
+Allow: /llms-full.txt
+
+User-agent: Google-Extended
+Allow: /
+Allow: /llms.txt
+Allow: /llms-full.txt
+
 # XML Sitemaps
 Sitemap: https://coralgenz.co.in/sitemap.xml
 Sitemap: https://coralgenz.co.in/image-sitemap.xml
+

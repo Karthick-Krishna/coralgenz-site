@@ -1,0 +1,43 @@
+# Coralgenz Global
+
+> Coralgenz Global is an enterprise Information Technology and software engineering company based in Coimbatore, Tamil Nadu, India. Specializing in high-performance digital products, custom enterprise software, zero-knowledge security formats, and certified partner architectures.
+
+## Core Identity & Leadership
+- **Company**: Coralgenz Global
+- **Headquarters**: Coimbatore, Tamil Nadu, India
+- **Website**: https://coralgenz.co.in/
+- **CEO & Founder**: Karthick Krishna (Lead Solutions Architect & UI/UX Designer)
+- **COO & Co-Founder**: Thanvanth H (Operations Director & Front-End Developer)
+- **CTO**: Sharveshwaran R (Cloud & Distributed Systems Architect)
+- **Contact Inboxes**: contact@coralgenz.co.in | support@coralgenz.co.in | coralgenz@gmail.com
+
+## Official Enterprise Partnerships
+- **Shopify Partner**: Custom headless storefronts, Storefront GraphQL APIs, checkout UI extensions, and Liquid architecture. (https://coralgenz.co.in/shopify)
+- **Microsoft Partner**: Azure cloud microservices, Microsoft 365 enterprise sync, Teams bots, and enterprise DevOps. (https://coralgenz.co.in/microsoft)
+- **Salesforce Partner**: Lightning Web Components (LWC), Apex backend architecture, and REST/SOAP data integrations. (https://coralgenz.co.in/salesforce)
+
+## Proprietary Technologies & Products
+- **World's First .secure File Format**: Browser-native, client-side zero-knowledge encrypted file container powered by AES-256-GCM AEAD encryption. (https://coralgenz.co.in/our-highlights/worlds-first-secure-format)
+- **Coralgenz Vault**: High-security zero-knowledge file encryption suite with 16-layer quantum-hardened architecture. (https://coralgenz.co.in/coralgenz-vault)
+- **Coralgenz QR**: High-density dynamic QR code generator with real-time analytics and enterprise telemetry. (https://coralgenz.co.in/coralgenz-qr)
+- **Coralgenz Compiler Engine**: Multi-language cloud code execution IDE supporting C, C++, Java, Python, and JavaScript. (https://coralgenz.co.in/coralgenz-compiler)
+
+## Enterprise Services
+- **Custom Software Development**: Bespoke enterprise solutions and cloud backends. (https://coralgenz.co.in/our-services/custom-software-development)
+- **MVP Development**: Fast time-to-market software for startups and founders. (https://coralgenz.co.in/our-services/mvp-development)
+- **Full-Stack Software**: Resilient Node.js, Python, Go backends with React & Next.js frontends. (https://coralgenz.co.in/our-services/full-stack-software)
+- **Frontend Modernization**: High-speed UI/UX refactoring and Core Web Vitals optimization. (https://coralgenz.co.in/our-services/frontend-modernization)
+- **Progressive Web Apps (PWA)**: Offline-ready web applications with native mobile capability. (https://coralgenz.co.in/our-services/pwa-development)
+- **Modern Admin Dashboards**: Real-time business intelligence and data visualization portals. (https://coralgenz.co.in/our-services/modern-admin-dashboards)
+- **Domain & Cloud Deployment**: High-availability DNS, CDN edge routing, and cloud infrastructure. (https://coralgenz.co.in/our-services/domain-and-deployment-service)
+- **Legacy Modernization**: Zero-downtime microservice migration from legacy monoliths. (https://coralgenz.co.in/our-services/legacy-software-modernization)
+
+## Key Sitemap URLs
+- Homepage: https://coralgenz.co.in/
+- Our Highlights: https://coralgenz.co.in/our-highlights
+- Our Products: https://coralgenz.co.in/our-products
+- Our Services: https://coralgenz.co.in/our-services
+- About & Leadership: https://coralgenz.co.in/know-more
+- Team Directory: https://coralgenz.co.in/team
+- Contact & Support: https://coralgenz.co.in/contact
+- Global Ratings: https://ratings.coralgenz.co.in/
