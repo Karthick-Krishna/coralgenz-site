@@ -591,7 +591,7 @@
       padding: 26px 22px;
       display: flex;
       flex-direction: column;
-      justify-content: space-between;
+      height: 100%;
       position: relative;
       overflow: hidden;
       box-shadow: 0 4px 20px -4px rgba(15, 23, 42, 0.05);
@@ -720,6 +720,8 @@
       color: #0066ff;
       border-top: 1px solid #f1f5f9;
       padding-top: 14px;
+      margin-top: auto;
+      transition: gap 0.2s ease, color 0.2s ease;
     }
 
     .hl-card:hover .hl-card-link-arrow {
@@ -1370,20 +1372,17 @@
           </div>
         </a>
 
-        <!-- Highlight 06: Salesforce, Microsoft & Shopify Partner -->
+        <!-- Highlight 06: Salesforce ISV & Microsoft Developer Partner -->
         <a href="/our-highlights/microsoft-salesforce-partner" class="hl-card reveal-init reveal-delay-2">
           <div class="hl-card-media"
-            style="display: flex; align-items: center; justify-content: space-around; padding: 16px 12px; background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);">
-            <img src="/assets/images/partner-microsoft.png" alt="Microsoft Developer Partner" loading="lazy"
-              decoding="async"
-              style="width: 30%; height: auto; object-fit: contain; filter: drop-shadow(0 4px 12px rgba(0,0,0,0.3));">
-            <div style="width: 1px; height: 50%; background: rgba(255,255,255,0.15);"></div>
+            style="display: flex; align-items: center; justify-content: space-around; padding: 20px 16px; background: linear-gradient(135deg, #0b1120 0%, #1e293b 100%);">
             <img src="/assets/images/partner-salesforce.png" alt="Salesforce ISV Partner" loading="lazy"
               decoding="async"
-              style="width: 30%; height: auto; object-fit: contain; filter: drop-shadow(0 4px 12px rgba(0,0,0,0.3));">
+              style="width: 40%; height: auto; max-height: 48px; object-fit: contain; filter: drop-shadow(0 4px 12px rgba(0,0,0,0.4));">
             <div style="width: 1px; height: 50%; background: rgba(255,255,255,0.15);"></div>
-            <img src="/assets/images/partner-shopify.png" alt="Shopify Official Partner" loading="lazy" decoding="async"
-              style="width: 30%; height: auto; object-fit: contain; filter: drop-shadow(0 4px 12px rgba(0,0,0,0.3));">
+            <img src="/assets/images/partner-microsoft.png" alt="Microsoft Developer Partner" loading="lazy"
+              decoding="async"
+              style="width: 40%; height: auto; max-height: 48px; object-fit: contain; filter: drop-shadow(0 4px 12px rgba(0,0,0,0.4));">
             <span class="hl-card-media-badge">
               <span class="hl-pulse-beacon"></span>
               <span>VERIFIED ECOSYSTEM</span>
@@ -1394,16 +1393,15 @@
               <span class="hl-card-num">HIGHLIGHT 06</span>
               <span class="hl-card-badge badge-indigo">ECOSYSTEM LEADERSHIP</span>
             </div>
-            <h3 class="hl-card-title">Salesforce, Microsoft &amp; Shopify Partner</h3>
+            <h3 class="hl-card-title">Salesforce ISV &amp; Microsoft Partner</h3>
             <p class="hl-card-desc">
-              Official Salesforce ISV, Microsoft Developer Partner, and Shopify Partner delivering enterprise cloud
-              systems, automated CRM workflows, and high-speed online stores.
+              Official Salesforce ISV Partner and Microsoft Developer Partner, with active memberships in Microsoft Collaborate and Microsoft Edge ecosystems for cloud enterprise systems.
             </p>
             <div class="hl-card-meta-chips">
               <span class="hl-meta-chip">Salesforce ISV</span>
-              <span class="hl-meta-chip">Microsoft Dev</span>
-              <span class="hl-meta-chip">Shopify Partner</span>
-              <span class="hl-meta-chip">100% Code Ownership</span>
+              <span class="hl-meta-chip">Microsoft Dev Partner</span>
+              <span class="hl-meta-chip">Microsoft Collaborate</span>
+              <span class="hl-meta-chip">Microsoft Edge</span>
             </div>
           </div>
           <div class="hl-card-link-arrow">
@@ -1411,18 +1409,21 @@
             <span>&rarr;</span>
           </div>
         </a>
-        <!-- Enterprise Technical Capabilities Matrix -->
-        <section class="hl-grid-section" style="margin-top: -20px; margin-bottom: 60px;">
-          <div class="hl-section-head">
-            <span class="hl-pill-eyebrow">ENTERPRISE AUDIT</span>
-            <h2 class="hl-section-title">Technical Capabilities Matrix</h2>
-            <p class="hl-section-desc">Comparing our 6 landmark proprietary platforms against legacy market
-              alternatives.</p>
-          </div>
 
-          <div class="hl-table-wrap">
-            <table class="hl-comp-matrix">
-              <thead>
+      </div>
+    </section>
+
+    <!-- Enterprise Technical Capabilities Matrix -->
+    <section class="hl-grid-section" style="margin-top: 20px; margin-bottom: 70px;">
+      <div class="hl-section-head">
+        <span class="hl-pill-eyebrow">ENTERPRISE AUDIT</span>
+        <h2 class="hl-section-title">Technical Capabilities Matrix</h2>
+        <p class="hl-section-desc">Comparing our 6 landmark proprietary platforms against legacy market alternatives.</p>
+      </div>
+
+      <div class="hl-table-wrap">
+        <table class="hl-comp-matrix">
+          <thead>
                 <tr>
                   <th>Platform / Highlight</th>
                   <th>Core Architecture</th>
