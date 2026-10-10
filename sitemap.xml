@@ -629,4 +629,30 @@
       <image:license>https://coralgenz.co.in/</image:license>
     </image:image>
   </url>
+  <url>
+    <loc>https://coralgenz.co.in/partnered-startups</loc>
+    <lastmod>2026-10-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://coralgenz.co.in/assets/images/DVyu6tz4dqPirA4TwAJZUz5CUw.png</image:loc>
+      <image:title>Coralgenz Global Partnered Startups and Co-Engineering Hub</image:title>
+      <image:caption>Active startup incubation and co-engineering alliances with Coralgenz Global</image:caption>
+      <image:geo_location>Coimbatore, Tamil Nadu, India</image:geo_location>
+      <image:license>https://coralgenz.co.in/</image:license>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://coralgenz.co.in/become-a-partner</loc>
+    <lastmod>2026-10-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+    <image:image>
+      <image:loc>https://coralgenz.co.in/assets/images/DVyu6tz4dqPirA4TwAJZUz5CUw.png</image:loc>
+      <image:title>Become a Partner and Apply to Coralgenz Global</image:title>
+      <image:caption>Apply to become an official technology or startup partner with Coralgenz Global</image:caption>
+      <image:geo_location>Coimbatore, Tamil Nadu, India</image:geo_location>
+      <image:license>https://coralgenz.co.in/</image:license>
+    </image:image>
+  </url>
 </urlset>

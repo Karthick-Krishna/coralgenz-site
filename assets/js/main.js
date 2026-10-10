@@ -75,21 +75,18 @@ function initNavbar() {
   }
 
   if (toggleBtn && mobileMenu) {
-    let scrollOffset = 0;
-
     function openMobileDrawer() {
-      scrollOffset = window.pageYOffset || document.documentElement.scrollTop || 0;
       toggleBtn.classList.add('active');
       mobileMenu.classList.add('open');
       toggleBtn.setAttribute('aria-expanded', 'true');
+      if (header) header.classList.add('nav-drawer-active');
 
       // Dismiss 3-dots dropdown if open
       const threeDots = document.getElementById('threeDotsDropdown');
       if (threeDots) threeDots.style.display = 'none';
 
-      // Bulletproof mobile scroll lock that preserves scroll position
+      document.documentElement.classList.add('mobile-nav-locked');
       document.body.classList.add('mobile-nav-locked');
-      document.body.style.top = `-${scrollOffset}px`;
     }
 
     function closeMobileDrawer() {
@@ -97,14 +94,10 @@ function initNavbar() {
       toggleBtn.classList.remove('active');
       mobileMenu.classList.remove('open');
       toggleBtn.setAttribute('aria-expanded', 'false');
+      if (header) header.classList.remove('nav-drawer-active');
 
-      const savedTop = document.body.style.top;
+      document.documentElement.classList.remove('mobile-nav-locked');
       document.body.classList.remove('mobile-nav-locked');
-      document.body.style.top = '';
-
-      if (savedTop) {
-        window.scrollTo(0, scrollOffset);
-      }
     }
 
     window.closeMobileDrawer = closeMobileDrawer;

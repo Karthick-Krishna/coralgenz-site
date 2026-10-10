@@ -11,10 +11,12 @@
 - **CTO**: Sharveshwaran R (Cloud & Distributed Systems Architect)
 - **Contact Inboxes**: contact@coralgenz.co.in | support@coralgenz.co.in | coralgenz@gmail.com
 
-## Official Enterprise Partnerships
+## Official Enterprise Partnerships & Startup Ecosystem
+- **Become a Partner (Application Portal)**: Official partner intake and co-engineering application hub for startups, ISVs, and agencies. (https://coralgenz.co.in/become-a-partner)
+- **Partnered Startups**: Official co-engineering network providing startup project completion, hands-on architectural guidance, AI co-development, and cloud scaling. Featured startup: **Zevionix Technologies** (AI & Computer Vision, AURA Incident Engine, Microservices). (https://coralgenz.co.in/partnered-startups)
 - **Shopify Partner**: Custom headless storefronts, Storefront GraphQL APIs, checkout UI extensions, and Liquid architecture. (https://coralgenz.co.in/shopify)
-- **Microsoft Partner**: Azure cloud microservices, Microsoft 365 enterprise sync, Teams bots, and enterprise DevOps. (https://coralgenz.co.in/microsoft)
-- **Salesforce Partner**: Lightning Web Components (LWC), Apex backend architecture, and REST/SOAP data integrations. (https://coralgenz.co.in/salesforce)
+- **Microsoft Developer Partner & Member**: Official Microsoft Developer Partner and active member of Microsoft Collaborate & Microsoft Edge ecosystems, delivering Azure AI systems, cloud microservices, and enterprise DevOps. (https://coralgenz.co.in/microsoft)
+- **Salesforce ISV Partner**: Official Salesforce ISV Partner specializing in AppExchange solutions, Second-Generation Managed Packages (2GP), Lightning Web Components (LWC), and Apex backend architecture. (https://coralgenz.co.in/salesforce)
 
 ## Proprietary Technologies & Products
 - **World's First .secure File Format**: Browser-native, client-side zero-knowledge encrypted file container powered by AES-256-GCM AEAD encryption. (https://coralgenz.co.in/our-highlights/worlds-first-secure-format)
@@ -34,6 +36,8 @@
 
 ## Key Sitemap URLs
 - Homepage: https://coralgenz.co.in/
+- Become a Partner: https://coralgenz.co.in/become-a-partner
+- Partnered Startups: https://coralgenz.co.in/partnered-startups
 - Our Highlights: https://coralgenz.co.in/our-highlights
 - Our Products: https://coralgenz.co.in/our-products
 - Our Services: https://coralgenz.co.in/our-services
