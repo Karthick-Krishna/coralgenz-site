@@ -436,8 +436,7 @@
           <!-- Dual CTA Buttons -->
           <div class="reveal-init"
             style="display: flex; gap: 16px; justify-content: center; align-items: center; flex-wrap: wrap;">
-            <a href="https://docs.google.com/forms/d/e/1FAIpQLScEYUpHlxhwr3P_VcOaX853Eh4d_pqsl62rHc2gYLsjWe7tYg/viewform"
-              onclick="openPartnerFormModal(event)" id="becomePartnerHeroBtn" class="btn btn-primary"
+            <a href="/become-a-partner#partner-form" id="becomePartnerHeroBtn" class="btn btn-primary"
               style="padding: 14px 28px; font-size: 15px; font-weight: 600; border-radius: 12px; display: inline-flex; align-items: center; gap: 10px; box-shadow: 0 8px 24px rgba(0, 102, 255, 0.3);">
               <span>Apply to Become a Partner</span>
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
@@ -905,8 +904,7 @@
 
             <!-- Blank Action Button as requested -->
             <div>
-              <a href="https://docs.google.com/forms/d/e/1FAIpQLScEYUpHlxhwr3P_VcOaX853Eh4d_pqsl62rHc2gYLsjWe7tYg/viewform"
-                onclick="openPartnerFormModal(event)" id="becomePartnerBannerBtn" class="btn btn-primary"
+              <a href="/become-a-partner#partner-form" id="becomePartnerBannerBtn" class="btn btn-primary"
                 style="padding: 16px 36px; font-size: 16px; font-weight: 700; border-radius: 14px; display: inline-flex; align-items: center; gap: 10px; background: linear-gradient(135deg, #0066ff 0%, #38bdf8 100%); box-shadow: 0 10px 30px rgba(0, 102, 255, 0.4); text-decoration: none;">
                 <span>Apply to Become a Partner</span>
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
@@ -1009,6 +1007,15 @@
           <h3 class="partner-form-modal-title">Official Partner Application</h3>
         </div>
         <div class="partner-form-modal-controls">
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLScEYUpHlxhwr3P_VcOaX853Eh4d_pqsl62rHc2gYLsjWe7tYg/viewform"
+            target="_blank" rel="noopener noreferrer" class="partner-modal-ext-btn">
+            <span>Open in Tab</span>
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+              <polyline points="15 3 21 3 21 9"></polyline>
+              <line x1="10" y1="14" x2="21" y2="3"></line>
+            </svg>
+          </a>
           <button class="partner-form-modal-close" onclick="closePartnerFormModal()"
             aria-label="Close partner application form">&times;</button>
         </div>
@@ -1022,6 +1029,7 @@
         <iframe id="partnerFormIframe" src="about:blank"
           data-src="https://docs.google.com/forms/d/e/1FAIpQLScEYUpHlxhwr3P_VcOaX853Eh4d_pqsl62rHc2gYLsjWe7tYg/viewform?embedded=true"
           width="100%" height="100%" frameborder="0" marginheight="0" marginwidth="0" onload="handlePartnerIframeLoad()"
+          allow="storage-access; identity-credentials-get"
           style="border: none; width: 100%; height: 100%; border-radius: 0 0 22px 22px; display: block;">Loading…</iframe>
       </div>
     </div>
