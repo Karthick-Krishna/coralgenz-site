@@ -2557,17 +2557,22 @@ body.mobile-nav-locked {
 /* ==========================================================================
    EXCLUSIVE PRODUCTS SECTION (ATTRACTIVE LIGHT UI DESIGN)
    ========================================================================== */
+#products.section {
+  padding-top: 56px;
+  padding-bottom: 60px;
+}
+
 .products-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 28px;
-  margin-top: 36px;
+  gap: 22px;
+  margin-top: 24px;
 }
 
 @media (max-width: 991px) {
   .products-grid {
     grid-template-columns: 1fr;
-    gap: 20px;
+    gap: 18px;
   }
 }
 
@@ -2575,11 +2580,11 @@ body.mobile-nav-locked {
   position: relative;
   background: #ffffff;
   border: 1px solid #e2e8f0;
-  border-radius: 24px;
-  padding: 24px;
+  border-radius: 20px;
+  padding: 18px 20px;
   display: flex;
   flex-direction: column;
-  gap: 18px;
+  gap: 14px;
   box-shadow: 0 8px 30px rgba(15, 23, 42, 0.04);
   transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.35s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.35s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s cubic-bezier(0.16, 1, 0.3, 1), color 0.35s cubic-bezier(0.16, 1, 0.3, 1);
   overflow: hidden;
@@ -2593,8 +2598,8 @@ body.mobile-nav-locked {
 
 .product-preview {
   width: 100%;
-  height: 200px;
-  border-radius: 16px;
+  height: 155px;
+  border-radius: 14px;
   overflow: hidden;
   position: relative;
   background: linear-gradient(145deg, #f8fafc 0%, #f1f5f9 100%);
@@ -2602,7 +2607,7 @@ body.mobile-nav-locked {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 16px;
+  padding: 12px;
   transition: transform 0.3s ease, opacity 0.3s ease, background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease, color 0.3s ease;
 }
 
@@ -2628,7 +2633,7 @@ body.mobile-nav-locked {
 .product-info {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 10px;
   flex: 1;
 }
 
@@ -2636,12 +2641,12 @@ body.mobile-nav-locked {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 12px;
+  gap: 10px;
 }
 
 .product-title {
   font-family: var(--font-satoshi), sans-serif;
-  font-size: 21px;
+  font-size: 19px;
   font-weight: 800;
   color: #0f172a;
   letter-spacing: -0.01em;
@@ -2649,51 +2654,51 @@ body.mobile-nav-locked {
 
 .product-desc {
   font-family: var(--font-inter), sans-serif;
-  font-size: 14px;
-  line-height: 1.6;
+  font-size: 13.5px;
+  line-height: 1.55;
   color: #475569;
 }
 
 .product-btn-wrap {
   margin-top: auto;
-  padding-top: 14px;
+  padding-top: 8px;
 }
 
 @media (max-width: 768px) {
   #products.section {
-    padding-top: 28px !important;
-    padding-bottom: 36px !important;
+    padding-top: 24px !important;
+    padding-bottom: 28px !important;
   }
 
   .products-intro-desc {
-    margin: 10px auto 26px auto !important;
-    font-size: 15px !important;
-    line-height: 1.6 !important;
+    margin: 6px auto 18px auto !important;
+    font-size: 14px !important;
+    line-height: 1.5 !important;
     color: #475569 !important;
     text-align: center !important;
   }
 
   .products-grid {
     grid-template-columns: 1fr !important;
-    gap: 18px !important;
-    margin-top: 20px !important;
+    gap: 14px !important;
+    margin-top: 14px !important;
   }
 
   .product-card {
     flex-direction: column !important;
     align-items: stretch !important;
-    padding: 20px !important;
-    border-radius: 20px !important;
-    gap: 16px !important;
+    padding: 16px !important;
+    border-radius: 18px !important;
+    gap: 12px !important;
     box-shadow: 0 4px 20px rgba(15, 23, 42, 0.05) !important;
   }
 
   .product-preview {
     width: 100% !important;
     min-width: 100% !important;
-    height: 165px !important;
-    padding: 14px !important;
-    border-radius: 14px !important;
+    height: 140px !important;
+    padding: 12px !important;
+    border-radius: 12px !important;
     flex-shrink: 0 !important;
   }
 
