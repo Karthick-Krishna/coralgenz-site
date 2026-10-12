@@ -57,7 +57,8 @@ export default defineConfig({
         highlightPartner: resolve('our-highlights/microsoft-salesforce-partner.html'),
         partneredStartups: resolve('partnered-startups.html'),
         becomePartner: resolve('become-a-partner.html'),
-        privacyPolicy: resolve('privacy-policy.html')
+        privacyPolicy: resolve('privacy-policy.html'),
+        rateUs: resolve('rate-us.html')
       }
     }
   }
