@@ -85,13 +85,13 @@
     <image:image>
       <image:loc>https://coralgenz.co.in/assets/images/partner-microsoft.png</image:loc>
       <image:title>Official Microsoft Partner Cloud Solutions</image:title>
-      <image:caption>Microsoft Partner certified cloud engineering and Azure enterprise integrations</image:caption>
+      <image:caption>Microsoft Partner cloud engineering and Azure enterprise integrations</image:caption>
       <image:geo_location>Coimbatore, Tamil Nadu, India</image:geo_location>
       <image:license>https://coralgenz.co.in/</image:license>
     </image:image>
     <image:image>
       <image:loc>https://coralgenz.co.in/assets/images/partner-salesforce.png</image:loc>
-      <image:title>Official Salesforce Certified CRM Partner</image:title>
+      <image:title>Official Salesforce CRM Partner</image:title>
       <image:caption>Salesforce CRM architecture, custom Apex, and enterprise workflow automation</image:caption>
       <image:geo_location>Coimbatore, Tamil Nadu, India</image:geo_location>
       <image:license>https://coralgenz.co.in/</image:license>
@@ -360,14 +360,14 @@
     <priority>0.85</priority>
     <image:image>
       <image:loc>https://coralgenz.co.in/assets/images/partner-microsoft.png</image:loc>
-      <image:title>Microsoft Certified Partner Enterprise Cloud</image:title>
+      <image:title>Microsoft Partner Enterprise Cloud</image:title>
       <image:caption>Azure cloud architecture, enterprise microservices, and Microsoft ecosystem integrations</image:caption>
       <image:geo_location>Coimbatore, Tamil Nadu, India</image:geo_location>
       <image:license>https://coralgenz.co.in/</image:license>
     </image:image>
     <image:image>
       <image:loc>https://coralgenz.co.in/assets/images/partner-salesforce.png</image:loc>
-      <image:title>Salesforce Certified CRM Architecture</image:title>
+      <image:title>Salesforce Partner CRM Architecture</image:title>
       <image:caption>Salesforce custom automation, Apex engineering, and CRM platform modernization</image:caption>
       <image:geo_location>Coimbatore, Tamil Nadu, India</image:geo_location>
       <image:license>https://coralgenz.co.in/</image:license>
@@ -610,8 +610,8 @@
     <priority>0.75</priority>
     <image:image>
       <image:loc>https://coralgenz.co.in/assets/images/partner-salesforce.png</image:loc>
-      <image:title>Salesforce Certified Partner Solutions and CRM Architecture</image:title>
-      <image:caption>Certified Salesforce CRM architecture and automated workflows</image:caption>
+      <image:title>Salesforce Partner Solutions and CRM Architecture</image:title>
+      <image:caption>Salesforce CRM architecture and automated workflows</image:caption>
       <image:geo_location>Coimbatore, Tamil Nadu, India</image:geo_location>
       <image:license>https://coralgenz.co.in/</image:license>
     </image:image>
