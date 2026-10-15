@@ -2428,7 +2428,7 @@ body.mobile-nav-locked {
 }
 
 /* ==========================================================================
-   PARTNERS SECTION - MOBILE UI HEIGHT REDUCTION
+   PARTNERS SECTION - MOBILE UI PREMIUM ELEVATION (COMPACT & SLEEK)
    ========================================================================== */
 @media (max-width: 768px) {
   #partners.section {
@@ -2437,8 +2437,9 @@ body.mobile-nav-locked {
   }
 
   .partner-intro-text {
-    margin: 12px auto 16px auto !important;
-    font-size: 13px !important;
+    margin: 10px auto 16px auto !important;
+    font-size: 13.5px !important;
+    letter-spacing: -0.01em !important;
     line-height: 1.45 !important;
   }
 
@@ -2451,21 +2452,40 @@ body.mobile-nav-locked {
   .partner-card-dark {
     min-height: auto !important;
     height: auto !important;
-    padding: 14px 14px 12px 14px !important;
-    border-radius: 16px !important;
-    gap: 8px !important;
+    padding: 15px 14px 13px 14px !important;
+    border-radius: 18px !important;
+    gap: 10px !important;
     justify-content: flex-start !important;
+    background: #ffffff !important;
+    border: 1px solid rgba(226, 232, 240, 0.9) !important;
+    box-shadow: 0 4px 16px -2px rgba(15, 23, 42, 0.05), 0 1px 2px rgba(15, 23, 42, 0.03) !important;
+    transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease !important;
+  }
+
+  .partner-card-dark::after {
+    height: 3.5px !important;
+    border-radius: 18px 18px 0 0 !important;
   }
 
   .partner-top-meta {
-    gap: 3px !important;
+    flex-direction: row !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    width: 100% !important;
+    padding-bottom: 4px !important;
+    border-bottom: 1px dashed rgba(226, 232, 240, 0.8) !important;
     margin-bottom: 0 !important;
   }
 
   .partner-badge-glow {
-    padding: 2.5px 8px !important;
-    font-size: 9.5px !important;
-    letter-spacing: 0.04em !important;
+    padding: 3px 9px !important;
+    font-size: 10px !important;
+    letter-spacing: 0.03em !important;
+    font-weight: 700 !important;
+    background: #f1f5f9 !important;
+    border: 1px solid #e2e8f0 !important;
+    color: #475569 !important;
+    border-radius: 9999px !important;
   }
 
   .partner-badge-dot {
@@ -2474,83 +2494,133 @@ body.mobile-nav-locked {
   }
 
   .partner-card-label {
-    font-size: 15px !important;
-    letter-spacing: 0.04em !important;
+    font-size: 12px !important;
+    font-weight: 800 !important;
+    letter-spacing: 0.06em !important;
     margin: 0 !important;
-    line-height: 1.2 !important;
+    line-height: 1 !important;
+    color: #0284c7 !important;
+    background: rgba(2, 132, 199, 0.08) !important;
+    padding: 3px 8px !important;
+    border-radius: 6px !important;
+  }
+
+  .partner-card-salesforce .partner-card-label {
+    color: #0176d3 !important;
+    background: rgba(1, 118, 211, 0.08) !important;
+  }
+
+  .partner-card-microsoft .partner-card-label {
+    color: #0078d4 !important;
+    background: rgba(0, 120, 212, 0.08) !important;
+  }
+
+  .partner-card-shopify .partner-card-label {
+    color: #0284c7 !important;
+    background: rgba(2, 132, 199, 0.08) !important;
   }
 
   .partner-card-img-box {
-    height: 40px !important;
-    max-width: 140px !important;
-    margin: 4px 0 6px 0 !important;
-    padding: 4px 10px !important;
-    border-radius: 10px !important;
+    height: 48px !important;
+    max-width: 155px !important;
+    margin: 2px 0 2px 0 !important;
+    padding: 6px 12px !important;
+    border-radius: 12px !important;
+    background: #f8fafc !important;
+    border: 1px solid #edf2f7 !important;
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.02) !important;
   }
 
   .partner-card-highlights {
-    gap: 4px !important;
-    margin-bottom: 8px !important;
+    display: flex !important;
+    flex-wrap: wrap !important;
+    gap: 5px !important;
+    justify-content: center !important;
+    margin-bottom: 2px !important;
+    width: 100% !important;
   }
 
   .partner-card-highlights span {
-    padding: 3.5px 8px !important;
+    padding: 4px 9px !important;
     font-size: 10.5px !important;
+    font-weight: 600 !important;
     border-radius: 8px !important;
-    line-height: 1.2 !important;
+    line-height: 1.25 !important;
+    background: #f8fafc !important;
+    border: 1px solid #e2e8f0 !important;
+    color: #334155 !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 4px !important;
   }
 
   .partner-btn-pill {
-    max-width: 220px !important;
-    padding: 5px 6px 5px 14px !important;
-    font-size: 11px !important;
+    max-width: 100% !important;
+    width: 100% !important;
+    padding: 7px 8px 7px 16px !important;
+    font-size: 11.5px !important;
+    font-weight: 800 !important;
     letter-spacing: 0.06em !important;
-    margin-top: 2px !important;
+    margin-top: 4px !important;
+    border-radius: 12px !important;
+    box-shadow: 0 4px 14px -2px rgba(1, 118, 211, 0.3) !important;
+  }
+
+  .partner-btn-text {
+    padding-left: 0 !important;
+    text-align: center !important;
   }
 
   .partner-btn-icon-wrap {
-    width: 24px !important;
-    height: 24px !important;
+    width: 26px !important;
+    height: 26px !important;
+    border-radius: 8px !important;
   }
 
   .partner-btn-icon-wrap svg {
-    width: 12px !important;
-    height: 12px !important;
+    width: 13px !important;
+    height: 13px !important;
   }
 }
 
 @media (max-width: 480px) {
   .partner-card-dark {
-    padding: 12px 10px 10px 10px !important;
-    border-radius: 14px !important;
-    gap: 6px !important;
+    padding: 13px 12px 11px 12px !important;
+    border-radius: 16px !important;
+    gap: 8px !important;
+  }
+
+  .partner-badge-glow {
+    font-size: 9.5px !important;
+    padding: 2.5px 7px !important;
   }
 
   .partner-card-label {
-    font-size: 14px !important;
+    font-size: 11px !important;
+    padding: 2.5px 6px !important;
   }
 
   .partner-card-img-box {
-    height: 36px !important;
-    max-width: 125px !important;
-    margin: 3px 0 5px 0 !important;
-    padding: 3px 8px !important;
+    height: 44px !important;
+    max-width: 140px !important;
+    padding: 4px 10px !important;
   }
 
   .partner-card-highlights span {
-    padding: 3px 6px !important;
-    font-size: 9.5px !important;
-  }
-
-  .partner-btn-pill {
-    max-width: 190px !important;
-    padding: 4px 5px 4px 12px !important;
+    padding: 3.5px 7px !important;
     font-size: 10px !important;
   }
 
+  .partner-btn-pill {
+    padding: 6px 7px 6px 14px !important;
+    font-size: 11px !important;
+    border-radius: 10px !important;
+  }
+
   .partner-btn-icon-wrap {
-    width: 22px !important;
-    height: 22px !important;
+    width: 24px !important;
+    height: 24px !important;
+    border-radius: 6px !important;
   }
 }
 
@@ -13868,15 +13938,15 @@ select:focus {
   flex: 0 0 calc(33.333% - 12px);
   min-width: calc(33.333% - 12px);
   scroll-snap-align: start;
-  min-height: 290px;
+  min-height: 250px;
   background: #ffffff;
   border: 1.5px solid #e2e8f0;
-  border-radius: 22px;
-  padding: 22px 20px;
+  border-radius: 20px;
+  padding: 20px 20px 18px 20px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  gap: 14px;
+  gap: 12px;
   position: relative;
   overflow: hidden;
   box-shadow: 0 4px 20px -4px rgba(15, 23, 42, 0.05);
@@ -14869,48 +14939,286 @@ select:focus {
   display: none;
 }
 
+/* ==========================================================================
+   WHAT WE STAND FOR - CLEAN LIGHT STAGE (NO DOTTED BG / NO BORDER)
+   ========================================================================== */
+.values-blueprint-stage {
+  background: transparent !important;
+  border: none !important;
+  border-radius: 0 !important;
+  padding: 0 !important;
+  box-shadow: none !important;
+  position: relative;
+  overflow: visible;
+}
+
+.values-blueprint-stage::before {
+  display: none !important;
+}
+
+/* Watermark Number in What We Stand For (Disabled as requested) */
+.v-watermark-num {
+  display: none !important;
+}
+
+/* Architectural Studio Cards for What We Stand For (Light Theme) */
 .v-slide-card {
   flex: 0 0 calc(33.333% - 12px) !important;
   min-width: calc(33.333% - 12px) !important;
   scroll-snap-align: start !important;
-  min-height: 290px;
-  background: #ffffff;
-  border: 1.5px solid #e2e8f0;
-  border-radius: 22px;
-  padding: 22px 20px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  gap: 14px;
+  min-height: 250px !important;
+  background: #ffffff !important;
+  border: 1.5px solid #e2e8f0 !important;
+  border-left: 4.5px solid #0284c7 !important;
+  border-radius: 20px !important;
+  padding: 20px 20px 18px 20px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: space-between !important;
+  gap: 12px !important;
   position: relative;
   overflow: hidden;
-  box-shadow: 0 4px 20px -4px rgba(15, 23, 42, 0.05);
-  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.3s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1), color 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 4px 18px -4px rgba(15, 23, 42, 0.05) !important;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
 }
 
-.v-slide-card::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 3.5px;
-  opacity: 0.85;
-  transition: height 0.25s ease;
-}
+/* Distinct Left Accent Colors for What We Stand For */
+.v-slide-card[data-slide-index="0"],
+.v-slide-card[data-category="priority"] { border-left-color: #0284c7 !important; }
+
+.v-slide-card[data-slide-index="1"],
+.v-slide-card[data-category="code"] { border-left-color: #f59e0b !important; }
+
+.v-slide-card[data-slide-index="2"],
+.v-slide-card[data-category="transparency"] { border-left-color: #6366f1 !important; }
+
+.v-slide-card[data-slide-index="3"],
+.v-slide-card[data-category="velocity"] { border-left-color: #d97706 !important; }
+
+.v-slide-card[data-slide-index="4"],
+.v-slide-card[data-category="freedom"] { border-left-color: #10b981 !important; }
+
+.v-slide-card[data-slide-index="5"],
+.v-slide-card[data-category="craft"] { border-left-color: #8b5cf6 !important; }
+
+.v-slide-card[data-slide-index="6"],
+.v-slide-card[data-category="tech"] { border-left-color: #0ea5e9 !important; }
+
+.v-slide-card[data-slide-index="7"],
+.v-slide-card[data-category="simplicity"] { border-left-color: #ea580c !important; }
+
+.v-slide-card[data-slide-index="8"],
+.v-slide-card[data-category="security"] { border-left-color: #4338ca !important; }
+
+.v-slide-card[data-slide-index="9"],
+.v-slide-card[data-category="partnership"] { border-left-color: #059669 !important; }
 
 .v-slide-card:hover {
-  transform: translateY(-4px);
-  border-color: #cbd5e1;
-  box-shadow: 0 16px 36px -8px rgba(15, 23, 42, 0.12);
+  transform: translateY(-4px) !important;
+  border-color: #cbd5e1 !important;
+  box-shadow: 0 16px 36px -8px rgba(15, 23, 42, 0.12) !important;
 }
 
-.v-slide-card:hover::before {
-  height: 5px;
+.v-slide-card .standard-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
 }
 
-/* Values Controls Bar */
-.values-slider-control-bar {
+.v-slide-card .standard-card-title {
+  color: #0f172a !important;
+  font-size: 17px !important;
+  font-weight: 800 !important;
+  line-height: 1.3 !important;
+  margin: 0 0 5px 0 !important;
+}
+
+.v-slide-card .standard-card-desc {
+  color: #64748b !important;
+  font-size: 13px !important;
+  line-height: 1.55 !important;
+  margin: 0 !important;
+}
+
+.v-slide-card .standard-micro-badge {
+  color: #64748b !important;
+  background: #f1f5f9;
+  border: 1px solid #e2e8f0;
+  padding: 3px 8px;
+  border-radius: 100px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  font-size: 10.5px !important;
+  font-weight: 700;
+}
+
+.v-slide-card .standard-chips-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.v-slide-card .std-chip {
+  background: #f8fafc !important;
+  border: 1px solid #e2e8f0 !important;
+  color: #334155 !important;
+  font-size: 11px !important;
+  font-weight: 600 !important;
+  padding: 4px 8px !important;
+  border-radius: 6px !important;
+}
+
+.v-slide-card .std-chip.highlight-chip {
+  background: #eff6ff !important;
+  border-color: #bfdbfe !important;
+  color: #0284c7 !important;
+}
+
+/* ==========================================================================
+   UNIVERSAL BOTTOM TELEMETRY STRIP (Fixed for WHY CHOOSE US & WHAT WE STAND FOR)
+   ========================================================================== */
+.v-compact-strip {
+  display: flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  padding: 6px 10px !important;
+  background: #f8fafc !important;
+  border: 1px solid #e2e8f0 !important;
+  border-radius: 8px !important;
+  margin-top: auto !important;
+  transition: background-color 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease !important;
+  width: 100% !important;
+  box-sizing: border-box !important;
+}
+
+.why-graphical-card:hover .v-compact-strip,
+.v-slide-card:hover .v-compact-strip {
+  background: #f1f5f9 !important;
+  border-color: #cbd5e1 !important;
+}
+
+.strip-badge {
+  font-family: var(--font-space), monospace !important;
+  font-size: 9.5px !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.05em !important;
+  padding: 2.5px 7px !important;
+  border-radius: 4px !important;
+  text-transform: uppercase !important;
+  flex-shrink: 0 !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  line-height: 1.2 !important;
+}
+
+.strip-badge.blue {
+  background: rgba(2, 132, 199, 0.12) !important;
+  color: #0284c7 !important;
+  border: 1px solid rgba(2, 132, 199, 0.25) !important;
+}
+
+.strip-badge.emerald {
+  background: rgba(16, 185, 129, 0.12) !important;
+  color: #059669 !important;
+  border: 1px solid rgba(16, 185, 129, 0.25) !important;
+}
+
+.strip-badge.indigo {
+  background: rgba(99, 102, 241, 0.12) !important;
+  color: #4f46e5 !important;
+  border: 1px solid rgba(99, 102, 241, 0.25) !important;
+}
+
+.strip-badge.amber,
+.strip-badge.gold {
+  background: rgba(245, 158, 11, 0.12) !important;
+  color: #d97706 !important;
+  border: 1px solid rgba(245, 158, 11, 0.25) !important;
+}
+
+.strip-badge.purple {
+  background: rgba(168, 85, 247, 0.12) !important;
+  color: #7c3aed !important;
+  border: 1px solid rgba(168, 85, 247, 0.25) !important;
+}
+
+.strip-text {
+  font-size: 11px !important;
+  font-weight: 500 !important;
+  color: #64748b !important;
+  white-space: nowrap !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  line-height: 1.3 !important;
+  flex: 1 !important;
+}
+
+/* Values Light Controls & Preview Rail */
+.values-blueprint-stage .values-preview-rail {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  padding-bottom: 14px;
+  margin-bottom: 12px;
+  -webkit-overflow-scrolling: touch;
+}
+
+.values-blueprint-stage .values-preview-rail::-webkit-scrollbar {
+  display: none;
+}
+
+.values-blueprint-stage .values-preview-chip {
+  background: #ffffff !important;
+  border: 1.5px solid #e2e8f0 !important;
+  color: #475569 !important;
+  border-radius: 100px;
+  padding: 7px 14px;
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 12.5px;
+  font-weight: 600;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  flex-shrink: 0;
+  box-shadow: 0 2px 6px rgba(15, 23, 42, 0.04);
+}
+
+.values-blueprint-stage .values-preview-chip:hover {
+  background: #f8fafc !important;
+  color: #0f172a !important;
+  border-color: #cbd5e1 !important;
+  transform: translateY(-1px);
+}
+
+.values-blueprint-stage .values-preview-chip.active {
+  background: #0f172a !important;
+  border-color: #0f172a !important;
+  color: #ffffff !important;
+  box-shadow: 0 4px 14px rgba(15, 23, 42, 0.2) !important;
+}
+
+.values-blueprint-stage .values-preview-chip .preview-num {
+  font-family: var(--font-space), monospace;
+  font-size: 11px;
+  font-weight: 800;
+  background: #f1f5f9 !important;
+  color: #0f172a !important;
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+.values-blueprint-stage .values-preview-chip.active .preview-num {
+  background: rgba(255, 255, 255, 0.2) !important;
+  color: #ffffff !important;
+}
+
+/* Values Slider Controls Bar */
+.values-blueprint-stage .values-slider-control-bar {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -14918,73 +15226,73 @@ select:focus {
   margin-bottom: 12px;
 }
 
-.values-arrow-controls {
+.values-blueprint-stage .values-arrow-controls {
   display: flex;
   align-items: center;
   gap: 10px;
 }
 
-.v-arrow-btn {
+.values-blueprint-stage .v-arrow-btn {
   width: 38px;
   height: 38px;
   border-radius: 50%;
-  background: #ffffff;
-  border: 1.5px solid #e2e8f0;
-  color: #0f172a;
+  background: #ffffff !important;
+  border: 1.5px solid #e2e8f0 !important;
+  color: #0f172a !important;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  transition: transform 0.2s ease, opacity 0.2s ease, background-color 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease, color 0.2s ease;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+  transition: transform 0.2s ease, background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.06) !important;
 }
 
-.v-arrow-btn:hover {
-  background: #0066ff;
-  border-color: #0066ff;
-  color: #ffffff;
+.values-blueprint-stage .v-arrow-btn:hover {
+  background: #0f172a !important;
+  border-color: #0f172a !important;
+  color: #ffffff !important;
   transform: scale(1.05);
 }
 
-.v-slide-dots {
+.values-blueprint-stage .v-slide-dots {
   display: flex;
   align-items: center;
   gap: 6px;
 }
 
-.v-dot {
+.values-blueprint-stage .v-dot {
   width: 8px;
   height: 8px;
   border-radius: 50%;
-  background: #cbd5e1;
+  background: #cbd5e1 !important;
   cursor: pointer;
-  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.3s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1), color 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.v-dot.active {
+.values-blueprint-stage .v-dot.active {
   width: 26px;
   border-radius: 100px;
-  background: #0066ff;
-  box-shadow: 0 0 10px rgba(0, 102, 255, 0.4);
+  background: #0f172a !important;
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.25) !important;
 }
 
-.values-swipe-hint {
+.values-blueprint-stage .values-swipe-hint {
   display: inline-flex;
   align-items: center;
   gap: 6px;
   font-family: var(--font-space), monospace;
   font-size: 11.5px;
   font-weight: 700;
-  color: #64748b;
+  color: #64748b !important;
   letter-spacing: 0.03em;
 }
 
-.v-pulse-hint {
+.values-blueprint-stage .v-pulse-hint {
   width: 6px;
   height: 6px;
   border-radius: 50%;
-  background: #6366f1;
-  box-shadow: 0 0 6px #6366f1;
+  background: #0284c7 !important;
+  box-shadow: 0 0 8px #0284c7 !important;
   animation: pulse 1.8s infinite;
 }
 
@@ -14995,33 +15303,143 @@ select:focus {
   }
 }
 
+/* Dedicated Mobile UI for What We Stand For */
 @media (max-width: 640px) {
-  .values-slider-track {
-    gap: 12px !important;
-    scroll-padding: 0 16px !important;
-    padding: 8px 16px 16px 16px !important;
-    margin: 0 -16px !important;
+  .values-blueprint-stage {
+    padding: 0 !important;
+    border: none !important;
+    background: transparent !important;
   }
 
-  .v-slide-card {
-    flex: 0 0 86% !important;
-    min-width: 86% !important;
-    max-width: 86% !important;
-    scroll-snap-align: center !important;
-    scroll-snap-stop: always !important;
-    padding: 16px 14px !important;
-    border-radius: 18px !important;
-    gap: 12px !important;
+  .values-preview-rail {
+    gap: 6px !important;
+    padding-bottom: 10px !important;
+    margin-bottom: 10px !important;
   }
 
-  .values-preview-chip {
-    padding: 5px 10px !important;
-    font-size: 11px !important;
+  .values-blueprint-stage .values-preview-chip {
+    padding: 6px 11px !important;
+    font-size: 11.5px !important;
+    gap: 5px !important;
+    border-radius: 100px !important;
+  }
+
+  .values-blueprint-stage .values-preview-chip .preview-num {
+    font-size: 10px !important;
+    padding: 1px 5px !important;
   }
 
   .values-slider-control-bar {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    gap: 8px !important;
+    margin-bottom: 10px !important;
     flex-wrap: wrap !important;
+  }
+
+  .values-blueprint-stage .v-arrow-btn {
+    width: 34px !important;
+    height: 34px !important;
+  }
+
+  .values-blueprint-stage .v-dot {
+    width: 6px !important;
+    height: 6px !important;
+  }
+
+  .values-blueprint-stage .v-dot.active {
+    width: 20px !important;
+  }
+
+  .values-blueprint-stage .values-swipe-hint {
+    font-size: 10.5px !important;
+  }
+
+  .values-slider-track-wrap {
+    padding: 4px 0 10px 0 !important;
+    margin-bottom: 14px !important;
+  }
+
+  .values-slider-track {
+    gap: 12px !important;
+    scroll-padding: 0 16px !important;
+    padding: 6px 16px 14px 16px !important;
+    margin: 0 -12px !important;
+    scroll-snap-type: x mandatory !important;
+    -webkit-overflow-scrolling: touch !important;
+  }
+
+  .v-slide-card {
+    flex: 0 0 88% !important;
+    min-width: 88% !important;
+    max-width: 88% !important;
+    scroll-snap-align: center !important;
+    scroll-snap-stop: always !important;
+    padding: 16px 14px 14px 14px !important;
+    border-radius: 18px !important;
     gap: 10px !important;
+    min-height: 230px !important;
+    box-shadow: 0 4px 16px -2px rgba(15, 23, 42, 0.08) !important;
+  }
+
+  .v-slide-card .standard-card-header {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    gap: 8px !important;
+    margin-bottom: 2px !important;
+  }
+
+  .v-slide-card .standard-num-tag {
+    font-size: 10px !important;
+    padding: 2.5px 7px !important;
+  }
+
+  .v-slide-card .standard-micro-badge {
+    font-size: 10px !important;
+    padding: 2.5px 7px !important;
+  }
+
+  .v-slide-card .standard-card-title {
+    font-size: 15.5px !important;
+    font-weight: 800 !important;
+    line-height: 1.35 !important;
+    margin: 0 0 3px 0 !important;
+  }
+
+  .v-slide-card .standard-card-desc {
+    font-size: 12.5px !important;
+    line-height: 1.5 !important;
+    color: #475569 !important;
+    margin: 0 !important;
+  }
+
+  .v-slide-card .standard-chips-row {
+    gap: 5px !important;
+    margin: 2px 0 !important;
+  }
+
+  .v-slide-card .std-chip {
+    font-size: 10.5px !important;
+    padding: 3px 7px !important;
+    border-radius: 5px !important;
+  }
+
+  .v-slide-card .v-compact-strip {
+    padding: 5px 8px !important;
+    margin-top: auto !important;
+    gap: 6px !important;
+    border-radius: 7px !important;
+  }
+
+  .v-slide-card .strip-badge {
+    font-size: 9px !important;
+    padding: 2px 5px !important;
+  }
+
+  .v-slide-card .strip-text {
+    font-size: 10.5px !important;
   }
 }
 
