@@ -614,6 +614,35 @@ function initSliderTracks() {
   }
 }
 
+/* FAQ Section Toggle (See More / Show Less) */
+function toggleFaqQuestions() {
+  const hiddenItems = document.querySelectorAll('.home-faq-item.faq-extra');
+  const btn = document.getElementById('toggleFaqBtn');
+  if (!btn || hiddenItems.length === 0) return;
 
+  const isExpanded = btn.classList.contains('expanded');
 
+  hiddenItems.forEach(item => {
+    if (isExpanded) {
+      item.style.display = 'none';
+      item.removeAttribute('open');
+    } else {
+      item.style.display = 'block';
+    }
+  });
 
+  if (isExpanded) {
+    btn.classList.remove('expanded');
+    const textEl = btn.querySelector('.faq-btn-text');
+    if (textEl) textEl.textContent = 'See More Questions';
+    const badge = btn.querySelector('.faq-btn-badge');
+    if (badge) badge.style.display = 'inline-block';
+  } else {
+    btn.classList.add('expanded');
+    const textEl = btn.querySelector('.faq-btn-text');
+    if (textEl) textEl.textContent = 'Show Less';
+    const badge = btn.querySelector('.faq-btn-badge');
+    if (badge) badge.style.display = 'none';
+  }
+}
+window.toggleFaqQuestions = toggleFaqQuestions;
