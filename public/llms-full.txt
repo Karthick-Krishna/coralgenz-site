@@ -13,7 +13,7 @@
 
 ## Official Enterprise Partnerships & Startup Ecosystem
 - **Become a Partner (Application Portal)**: Official partner intake and co-engineering application hub for startups, ISVs, and agencies. (https://coralgenz.co.in/become-a-partner)
-- **Partnered Startups**: Official co-engineering network providing startup project completion, hands-on architectural guidance, AI co-development, and cloud scaling. Featured startup: **Zevionix Technologies** (AI & Computer Vision, AURA Incident Engine, Microservices). (https://coralgenz.co.in/partnered-startups)
+- **Partnered Startups**: Official co-engineering network providing startup project completion, hands-on architectural guidance, AI co-development, and cloud scaling. Featured startups: **Zevionix Technologies** (AI & Computer Vision, AURA Incident Engine, Microservices) and **Zorquelz Technologies** (Core Product Development Partner, Software Engineering, Applied AI, Defensive Cybersecurity, Cloud & DevOps). (https://coralgenz.co.in/partnered-startups)
 - **Shopify Partner**: Custom headless storefronts, Storefront GraphQL APIs, checkout UI extensions, and Liquid architecture. (https://coralgenz.co.in/shopify)
 - **Microsoft Developer Partner & Member**: Official Microsoft Developer Partner and active member of Microsoft Collaborate & Microsoft Edge ecosystems, delivering Azure AI systems, cloud microservices, and enterprise DevOps. (https://coralgenz.co.in/microsoft)
 - **Salesforce ISV Partner**: Official Salesforce ISV Partner specializing in AppExchange solutions, Second-Generation Managed Packages (2GP), Lightning Web Components (LWC), and Apex backend architecture. (https://coralgenz.co.in/salesforce)
