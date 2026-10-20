@@ -5,43 +5,43 @@
 ## Core Identity & Leadership
 - **Company**: Coralgenz Global
 - **Headquarters**: Coimbatore, Tamil Nadu, India
-- **Website**: https://coralgenz.co.in/
+- **Website**: https://coralgenz.net/
 - **CEO & Founder**: Karthick Krishna (Lead Solutions Architect & UI/UX Designer)
 - **COO & Co-Founder**: Thanvanth H (Operations Director & Front-End Developer)
 - **CTO**: Sharveshwaran R (Cloud & Distributed Systems Architect)
-- **Contact Inboxes**: contact@coralgenz.co.in | support@coralgenz.co.in | coralgenz@gmail.com
+- **Contact Inboxes**: contact@coralgenz.net | support@coralgenz.net | coralgenz@gmail.com
 
 ## Official Enterprise Partnerships & Startup Ecosystem
-- **Become a Partner (Application Portal)**: Official partner intake and co-engineering application hub for startups, ISVs, and agencies. (https://coralgenz.co.in/become-a-partner)
-- **Partnered Startups**: Official co-engineering network providing startup project completion, hands-on architectural guidance, AI co-development, and cloud scaling. Featured startups: **Zevionix Technologies** (AI & Computer Vision, AURA Incident Engine, Microservices) and **Zorquelz Technologies** (Core Product Development Partner, Software Engineering, Applied AI, Defensive Cybersecurity, Cloud & DevOps). (https://coralgenz.co.in/partnered-startups)
-- **Shopify Partner**: Custom headless storefronts, Storefront GraphQL APIs, checkout UI extensions, and Liquid architecture. (https://coralgenz.co.in/shopify)
-- **Microsoft Developer Partner & Member**: Official Microsoft Developer Partner and active member of Microsoft Collaborate & Microsoft Edge ecosystems, delivering Azure AI systems, cloud microservices, and enterprise DevOps. (https://coralgenz.co.in/microsoft)
-- **Salesforce ISV Partner**: Official Salesforce ISV Partner specializing in AppExchange solutions, Second-Generation Managed Packages (2GP), Lightning Web Components (LWC), and Apex backend architecture. (https://coralgenz.co.in/salesforce)
+- **Become a Partner (Application Portal)**: Official partner intake and co-engineering application hub for startups, ISVs, and agencies. (https://coralgenz.net/become-a-partner)
+- **Partnered Startups**: Official co-engineering network providing startup project completion, hands-on architectural guidance, AI co-development, and cloud scaling. Featured startups: **Zevionix Technologies** (AI & Computer Vision, AURA Incident Engine, Microservices) and **Zorquelz Technologies** (Core Product Development Partner, Software Engineering, Applied AI, Defensive Cybersecurity, Cloud & DevOps). (https://coralgenz.net/partnered-startups)
+- **Shopify Partner**: Custom headless storefronts, Storefront GraphQL APIs, checkout UI extensions, and Liquid architecture. (https://coralgenz.net/shopify)
+- **Microsoft Developer Partner & Member**: Official Microsoft Developer Partner and active member of Microsoft Collaborate & Microsoft Edge ecosystems, delivering Azure AI systems, cloud microservices, and enterprise DevOps. (https://coralgenz.net/microsoft)
+- **Salesforce ISV Partner**: Official Salesforce ISV Partner specializing in AppExchange solutions, Second-Generation Managed Packages (2GP), Lightning Web Components (LWC), and Apex backend architecture. (https://coralgenz.net/salesforce)
 
 ## Proprietary Technologies & Products
-- **World's First .secure File Format**: Browser-native, client-side zero-knowledge encrypted file container powered by AES-256-GCM AEAD encryption. (https://coralgenz.co.in/our-highlights/worlds-first-secure-format)
-- **Coralgenz Vault**: High-security zero-knowledge file encryption suite with 16-layer quantum-hardened architecture. (https://coralgenz.co.in/coralgenz-vault)
-- **Coralgenz QR**: High-density dynamic QR code generator with real-time analytics and enterprise telemetry. (https://coralgenz.co.in/coralgenz-qr)
-- **Coralgenz Compiler Engine**: Multi-language cloud code execution IDE supporting C, C++, Java, Python, and JavaScript. (https://coralgenz.co.in/coralgenz-compiler)
+- **World's First .secure File Format**: Browser-native, client-side zero-knowledge encrypted file container powered by AES-256-GCM AEAD encryption. (https://coralgenz.net/our-highlights/worlds-first-secure-format)
+- **Coralgenz Vault**: High-security zero-knowledge file encryption suite with 16-layer quantum-hardened architecture. (https://coralgenz.net/coralgenz-vault)
+- **Coralgenz QR**: High-density dynamic QR code generator with real-time analytics and enterprise telemetry. (https://coralgenz.net/coralgenz-qr)
+- **Coralgenz Compiler Engine**: Multi-language cloud code execution IDE supporting C, C++, Java, Python, and JavaScript. (https://coralgenz.net/coralgenz-compiler)
 
 ## Enterprise Services
-- **Custom Software Development**: Bespoke enterprise solutions and cloud backends. (https://coralgenz.co.in/our-services/custom-software-development)
-- **MVP Development**: Fast time-to-market software for startups and founders. (https://coralgenz.co.in/our-services/mvp-development)
-- **Full-Stack Software**: Resilient Node.js, Python, Go backends with React & Next.js frontends. (https://coralgenz.co.in/our-services/full-stack-software)
-- **Frontend Modernization**: High-speed UI/UX refactoring and Core Web Vitals optimization. (https://coralgenz.co.in/our-services/frontend-modernization)
-- **Progressive Web Apps (PWA)**: Offline-ready web applications with native mobile capability. (https://coralgenz.co.in/our-services/pwa-development)
-- **Modern Admin Dashboards**: Real-time business intelligence and data visualization portals. (https://coralgenz.co.in/our-services/modern-admin-dashboards)
-- **Domain & Cloud Deployment**: High-availability DNS, CDN edge routing, and cloud infrastructure. (https://coralgenz.co.in/our-services/domain-and-deployment-service)
-- **Legacy Modernization**: Zero-downtime microservice migration from legacy monoliths. (https://coralgenz.co.in/our-services/legacy-software-modernization)
+- **Custom Software Development**: Bespoke enterprise solutions and cloud backends. (https://coralgenz.net/our-services/custom-software-development)
+- **MVP Development**: Fast time-to-market software for startups and founders. (https://coralgenz.net/our-services/mvp-development)
+- **Full-Stack Software**: Resilient Node.js, Python, Go backends with React & Next.js frontends. (https://coralgenz.net/our-services/full-stack-software)
+- **Frontend Modernization**: High-speed UI/UX refactoring and Core Web Vitals optimization. (https://coralgenz.net/our-services/frontend-modernization)
+- **Progressive Web Apps (PWA)**: Offline-ready web applications with native mobile capability. (https://coralgenz.net/our-services/pwa-development)
+- **Modern Admin Dashboards**: Real-time business intelligence and data visualization portals. (https://coralgenz.net/our-services/modern-admin-dashboards)
+- **Domain & Cloud Deployment**: High-availability DNS, CDN edge routing, and cloud infrastructure. (https://coralgenz.net/our-services/domain-and-deployment-service)
+- **Legacy Modernization**: Zero-downtime microservice migration from legacy monoliths. (https://coralgenz.net/our-services/legacy-software-modernization)
 
 ## Key Sitemap URLs
-- Homepage: https://coralgenz.co.in/
-- Become a Partner: https://coralgenz.co.in/become-a-partner
-- Partnered Startups: https://coralgenz.co.in/partnered-startups
-- Our Highlights: https://coralgenz.co.in/our-highlights
-- Our Products: https://coralgenz.co.in/our-products
-- Our Services: https://coralgenz.co.in/our-services
-- About & Leadership: https://coralgenz.co.in/know-more
-- Team Directory: https://coralgenz.co.in/team
-- Contact & Support: https://coralgenz.co.in/contact
-- Rate Us & Reviews: https://coralgenz.co.in/rate-us (Ratings Portal: https://ratings.coralgenz.co.in/)
+- Homepage: https://coralgenz.net/
+- Become a Partner: https://coralgenz.net/become-a-partner
+- Partnered Startups: https://coralgenz.net/partnered-startups
+- Our Highlights: https://coralgenz.net/our-highlights
+- Our Products: https://coralgenz.net/our-products
+- Our Services: https://coralgenz.net/our-services
+- About & Leadership: https://coralgenz.net/know-more
+- Team Directory: https://coralgenz.net/team
+- Contact & Support: https://coralgenz.net/contact
+- Rate Us & Reviews: https://coralgenz.net/rate-us (Ratings Portal: https://ratings.coralgenz.net/)

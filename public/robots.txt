@@ -104,6 +104,6 @@ Allow: /llms.txt
 Allow: /llms-full.txt
 
 # XML Sitemaps
-Sitemap: https://coralgenz.co.in/sitemap.xml
-Sitemap: https://coralgenz.co.in/image-sitemap.xml
+Sitemap: https://coralgenz.net/sitemap.xml
+Sitemap: https://coralgenz.net/image-sitemap.xml
 
