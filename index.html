@@ -58,6 +58,13 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="default">
   <meta name="apple-mobile-web-app-title" content="Coralgenz Global">
 
+  <!-- Microsoft / Bing / Yahoo Application & Webmaster Entity Directives -->
+  <meta name="application-name" content="Coralgenz Global">
+  <meta name="msapplication-TileColor" content="#0066ff">
+  <meta name="msapplication-TileImage" content="https://coralgenz.net/assets/images/DVyu6tz4dqPirA4TwAJZUz5CUw.png">
+  <meta name="msapplication-tooltip" content="Coralgenz Global - Enterprise IT & Software Engineering">
+  <meta name="msapplication-starturl" content="https://coralgenz.net/">
+
   <meta name="twitter:image:alt" content="Coralgenz Global Corporate Headquarters and Engineering Team in Coimbatore">
 
   <!-- Favicons & Brand Image Links -->
@@ -101,21 +108,37 @@
   "@context": "https://schema.org",
   "@graph": [
     {
-      "@type": "Organization",
+      "@type": [
+        "Organization",
+        "Corporation"
+      ],
       "@id": "https://coralgenz.net/#organization",
       "name": "Coralgenz Global",
       "legalName": "Coralgenz Global Information Technology",
       "alternateName": [
         "Coralgenz",
-        "Coralgenz IT"
+        "Coralgenz IT",
+        "Coralgenz Technologies"
       ],
       "url": "https://coralgenz.net/",
+      "disambiguatingDescription": "Coralgenz Global is an Indian enterprise software engineering and cryptographic technology corporation headquartered in Coimbatore, Tamil Nadu, India, known for inventing the browser-native .secure zero-knowledge file container format and Coralgenz Vault workstation.",
+      "foundingDate": "2024",
+      "foundingLocation": {
+        "@type": "Place",
+        "name": "Coimbatore, Tamil Nadu, India",
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": 11.0168,
+          "longitude": 76.9558
+        }
+      },
+      "slogan": "Innovating with Precision, Delivering with Excellence",
       "logo": {
         "@type": "ImageObject",
         "@id": "https://coralgenz.net/#logo",
         "url": "https://coralgenz.net/assets/images/DVyu6tz4dqPirA4TwAJZUz5CUw.png",
         "contentUrl": "https://coralgenz.net/assets/images/DVyu6tz4dqPirA4TwAJZUz5CUw.png",
-        "caption": "Coralgenz Global Official Logo",
+        "caption": "Coralgenz Global Official Corporate Logo",
         "representativeOfPage": true,
         "width": "512",
         "height": "512"
@@ -125,22 +148,161 @@
       },
       "sameAs": [
         "https://in.linkedin.com/company/coralgenz",
-        "https://www.instagram.com/coralgenz_global/"
+        "https://www.instagram.com/coralgenz_global/",
+        "https://github.com/Coralgenz-Global",
+        "https://ratings.coralgenz.net/"
       ],
       "address": {
         "@type": "PostalAddress",
+        "streetAddress": "Coimbatore Tech Corridor",
         "addressLocality": "Coimbatore",
         "addressRegion": "Tamil Nadu",
-        "addressCountry": "India"
+        "postalCode": "641001",
+        "addressCountry": "IN"
       },
-      "description": "Coralgenz Global is a dynamic Information Technology company based in Coimbatore, Tamil Nadu, India, specializing in enterprise digital products, software engineering, and cloud solutions.",
+      "description": "Coralgenz Global is an enterprise Information Technology company in Coimbatore, Tamil Nadu, India, specializing in digital products, custom software, zero-knowledge cryptographic formats, and enterprise cloud solutions.",
       "geo": {
         "@type": "GeoCoordinates",
         "latitude": 11.0168,
         "longitude": 76.9558
       },
       "areaServed": "Worldwide",
+      "founder": [
+        {
+          "@type": "Person",
+          "@id": "https://coralgenz.net/karthick-krishna#person",
+          "name": "Karthick Krishna",
+          "jobTitle": "Chief Executive Officer & Founder",
+          "url": "https://coralgenz.net/karthick-krishna"
+        },
+        {
+          "@type": "Person",
+          "@id": "https://coralgenz.net/thanvanth-h#person",
+          "name": "Thanvanth H",
+          "jobTitle": "Chief Operating Officer & Co-Founder",
+          "url": "https://coralgenz.net/thanvanth-h"
+        }
+      ],
+      "employee": [
+        {
+          "@type": "Person",
+          "@id": "https://coralgenz.net/sharveshwaran-r#person",
+          "name": "Sharveshwaran R",
+          "jobTitle": "Chief Technology Officer",
+          "url": "https://coralgenz.net/sharveshwaran-r"
+        }
+      ],
+      "contactPoint": [
+        {
+          "@type": "ContactPoint",
+          "email": "contact@coralgenz.net",
+          "contactType": "customer service",
+          "availableLanguage": [
+            "English",
+            "Tamil",
+            "Hindi"
+          ],
+          "areaServed": "Worldwide"
+        },
+        {
+          "@type": "ContactPoint",
+          "email": "support@coralgenz.net",
+          "contactType": "technical support",
+          "availableLanguage": [
+            "English",
+            "Tamil"
+          ],
+          "areaServed": "Worldwide"
+        }
+      ],
+      "memberOf": [
+        {
+          "@type": "Organization",
+          "name": "Microsoft Developer Partner Network",
+          "url": "https://coralgenz.net/microsoft"
+        },
+        {
+          "@type": "Organization",
+          "name": "Salesforce ISV Partner Program",
+          "url": "https://coralgenz.net/salesforce"
+        },
+        {
+          "@type": "Organization",
+          "name": "Shopify Partner Program",
+          "url": "https://coralgenz.net/shopify"
+        }
+      ],
+      "hasCredential": [
+        {
+          "@type": "EducationalOccupationalCredential",
+          "name": "Microsoft Developer Partner Certification",
+          "url": "https://coralgenz.net/microsoft"
+        },
+        {
+          "@type": "EducationalOccupationalCredential",
+          "name": "Salesforce ISV Partner Accreditation",
+          "url": "https://coralgenz.net/salesforce"
+        },
+        {
+          "@type": "EducationalOccupationalCredential",
+          "name": "Shopify Partner Designation",
+          "url": "https://coralgenz.net/shopify"
+        }
+      ],
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.98",
+        "bestRating": "5.0",
+        "ratingCount": "128",
+        "reviewCount": "86",
+        "url": "https://ratings.coralgenz.net/"
+      },
       "knowsAbout": [
+        {
+          "@type": "Thing",
+          "name": "Software Engineering",
+          "sameAs": "https://www.wikidata.org/wiki/Q8078"
+        },
+        {
+          "@type": "Thing",
+          "name": "Information Technology",
+          "sameAs": "https://www.wikidata.org/wiki/Q11083"
+        },
+        {
+          "@type": "Thing",
+          "name": "Zero-Knowledge Proof",
+          "sameAs": "https://www.wikidata.org/wiki/Q191942"
+        },
+        {
+          "@type": "Thing",
+          "name": "Cryptography",
+          "sameAs": "https://www.wikidata.org/wiki/Q8777"
+        },
+        {
+          "@type": "Thing",
+          "name": "Cloud Computing",
+          "sameAs": "https://www.wikidata.org/wiki/Q483247"
+        },
+        {
+          "@type": "Thing",
+          "name": "WebAssembly",
+          "sameAs": "https://www.wikidata.org/wiki/Q20035542"
+        },
+        {
+          "@type": "Thing",
+          "name": "Microsoft Azure",
+          "sameAs": "https://www.wikidata.org/wiki/Q725967"
+        },
+        {
+          "@type": "Thing",
+          "name": "Salesforce",
+          "sameAs": "https://www.wikidata.org/wiki/Q1140026"
+        },
+        {
+          "@type": "Thing",
+          "name": "Shopify",
+          "sameAs": "https://www.wikidata.org/wiki/Q7501170"
+        },
         "Enterprise Software Development",
         "Zero-Knowledge Cryptography",
         "WebAssembly Compilers",
@@ -150,7 +312,69 @@
         "Shopify Partner Engineering",
         "Salesforce ISV AppExchange",
         "Microsoft Azure Cloud"
-      ]
+      ],
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Coralgenz Global Enterprise Services & Products",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Custom Software Development",
+              "url": "https://coralgenz.net/our-services/custom-software-development"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "MVP Development",
+              "url": "https://coralgenz.net/our-services/mvp-development"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Full-Stack Software Engineering",
+              "url": "https://coralgenz.net/our-services/full-stack-software"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Frontend Modernization",
+              "url": "https://coralgenz.net/our-services/frontend-modernization"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "SoftwareApplication",
+              "name": "Coralgenz Vault",
+              "url": "https://coralgenz.net/coralgenz-vault"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "SoftwareApplication",
+              "name": "Coralgenz QR",
+              "url": "https://coralgenz.net/coralgenz-qr"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "SoftwareApplication",
+              "name": "Coralgenz Compiler",
+              "url": "https://coralgenz.net/coralgenz-compiler"
+            }
+          }
+        ]
+      }
     },
     {
       "@type": "ProfessionalService",
@@ -186,6 +410,58 @@
       }
     },
     {
+      "@type": "Person",
+      "@id": "https://coralgenz.net/karthick-krishna#person",
+      "name": "Karthick Krishna",
+      "jobTitle": "Chief Executive Officer & Founder",
+      "worksFor": {
+        "@id": "https://coralgenz.net/#organization"
+      },
+      "url": "https://coralgenz.net/karthick-krishna",
+      "image": "https://coralgenz.net/assets/images/karthick-krishna.jpg",
+      "knowsAbout": [
+        "Zero-Knowledge Cryptography",
+        "Enterprise Architecture",
+        ".secure File Container Format",
+        "Coralgenz Vault",
+        "Post-Quantum Systems"
+      ]
+    },
+    {
+      "@type": "Person",
+      "@id": "https://coralgenz.net/thanvanth-h#person",
+      "name": "Thanvanth H",
+      "jobTitle": "Chief Operating Officer & Co-Founder",
+      "worksFor": {
+        "@id": "https://coralgenz.net/#organization"
+      },
+      "url": "https://coralgenz.net/thanvanth-h",
+      "image": "https://coralgenz.net/assets/images/thanvanth-h.jpg",
+      "knowsAbout": [
+        "Operations Management",
+        "Frontend Engineering",
+        "Agile Methodology",
+        "Client Delivery Excellence"
+      ]
+    },
+    {
+      "@type": "Person",
+      "@id": "https://coralgenz.net/sharveshwaran-r#person",
+      "name": "Sharveshwaran R",
+      "jobTitle": "Chief Technology Officer",
+      "worksFor": {
+        "@id": "https://coralgenz.net/#organization"
+      },
+      "url": "https://coralgenz.net/sharveshwaran-r",
+      "image": "https://coralgenz.net/assets/images/sharveshwaran-r.jpg",
+      "knowsAbout": [
+        "Cloud Native Architecture",
+        "Kubernetes & Microservices",
+        "DevSecOps Automation",
+        "Distributed Systems"
+      ]
+    },
+    {
       "@type": "Brand",
       "@id": "https://coralgenz.net/#brand",
       "name": "Coralgenz Global",
@@ -199,8 +475,17 @@
       "@id": "https://coralgenz.net/#website",
       "url": "https://coralgenz.net/",
       "name": "Coralgenz Global",
+      "inLanguage": "en-US",
       "publisher": {
         "@id": "https://coralgenz.net/#organization"
+      },
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": {
+          "@type": "EntryPoint",
+          "urlTemplate": "https://coralgenz.net/our-services?q={search_term_string}"
+        },
+        "query-input": "required name=search_term_string"
       },
       "speakable": {
         "@type": "SpeakableSpecification",
@@ -220,18 +505,58 @@
       "mainEntity": [
         {
           "@type": "Question",
-          "name": "What software engineering services does Coralgenz Global provide?",
+          "name": "What core services and solutions does Coralgenz deliver?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Coralgenz Global delivers custom enterprise software development, MVP engineering for startups, full-stack cloud systems, frontend modernization, progressive web apps (PWA), modern admin dashboards, domain deployment, and legacy software modernization."
+            "text": "We provide full-lifecycle custom software engineering, modern web and mobile applications, high-scale cloud backend architecture, and enterprise API integrations. As official partners with Microsoft, Salesforce, and Shopify, we build resilient, high-speed digital products designed for high scale from day one."
           }
         },
         {
           "@type": "Question",
-          "name": "Where is Coralgenz Global located?",
+          "name": "Do we retain 100% intellectual property and source code ownership?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Coralgenz Global is headquartered in Coimbatore, Tamil Nadu, India, serving enterprises and fast-growing businesses worldwide."
+            "text": "Yes, unconditionally. All source code, Git repositories, deployment configurations, architecture documentation, and visual assets belong 100% to your organization from the start. We do not use proprietary vendor lock-in mechanisms, licensing royalties, or restricted dependencies."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do your development sprints and client communications operate?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "We operate in focused weekly sprints. Every week, your team receives working software demos, live preview environments, and direct access to the core developers building your product. There are no middlemen, account managers, or bureaucratic delays."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How is project pricing structured? Are there any hidden costs?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Our pricing is transparent and milestone-based. Before kickoff, we define exact deliverable milestones and fixed costs for each phase. You only pay as agreed deliverables are completed and verified, with zero unexpected charges, surprise invoices, or hidden fees."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How does Coralgenz maintain application security and code quality?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "We enforce strict clean-architecture guidelines, automated CI/CD security scanning, peer review protocols, and thorough multi-device testing. Every release is tested against modern performance benchmarks and encrypted with standard security best practices."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How fast can we kick off a new project with your team?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Once you submit your project requirements through our contact form or email, our engineering founders review your specifications and schedule a discovery call within 24 hours. We typically deliver a full architecture proposal, milestone breakdown, and start sprint 1 within days."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Where is Coralgenz Global located and what regions do you serve?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Coralgenz Global is headquartered in Coimbatore, Tamil Nadu, India, serving enterprise clients, fast-growing startups, and scale-ups worldwide across the Americas, Europe, Middle East, and Asia-Pacific."
           }
         },
         {
@@ -239,7 +564,7 @@
           "name": "What proprietary technology has Coralgenz Global invented?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Coralgenz Global invented the world's first .secure zero-knowledge client-side encrypted container format, Coralgenz Vault workstation, Coralgenz Dynamic QR telemetry engine, and Coralgenz Cloud Compiler IDE."
+            "text": "Coralgenz Global invented the world's first .secure browser-native zero-knowledge encrypted container format (featuring a 16-layer security architecture), the Coralgenz Vault workstation, Coralgenz Dynamic QR telemetry engine, and Coralgenz Cloud Compiler IDE."
           }
         },
         {
@@ -247,7 +572,7 @@
           "name": "Who are Coralgenz Global official technology partners?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Coralgenz Global is an official partner with Shopify (headless commerce and app engineering), Microsoft (Azure cloud solutions and enterprise DevOps), and Salesforce (Lightning Web Components and Apex CRM integrations)."
+            "text": "Coralgenz Global is an official partner with Microsoft (Azure cloud solutions & DevOps), Salesforce (AppExchange ISV partner for 2GP & LWC), and Shopify (headless commerce & custom apps)."
           }
         },
         {
@@ -255,7 +580,7 @@
           "name": "How can clients get in touch with Coralgenz Global leadership?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Clients can reach our executive engineering desk directly via contact@coralgenz.net or support@coralgenz.net with a guaranteed 1-day response SLA."
+            "text": "Clients can reach our executive engineering desk directly via contact@coralgenz.net or support@coralgenz.net with a guaranteed 24-hour response SLA."
           }
         }
       ]
@@ -2468,13 +2793,77 @@
             </div>
           </details>
 
+          <!-- Q7 (Hidden initially) -->
+          <details class="home-faq-item faq-extra">
+            <summary class="home-faq-trigger">
+              <div class="home-faq-title-wrap">
+                <span class="home-faq-num">07</span>
+                <span>Where is Coralgenz Global located and what regions do you serve?</span>
+              </div>
+              <div class="home-faq-icon-pill">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+              </div>
+            </summary>
+            <div class="home-faq-content">
+              Coralgenz Global is headquartered in Coimbatore, Tamil Nadu, India, serving enterprise clients, fast-growing startups, and scale-ups worldwide across the Americas, Europe, Middle East, and Asia-Pacific with high-availability distributed agile delivery.
+            </div>
+          </details>
+
+          <!-- Q8 (Hidden initially) -->
+          <details class="home-faq-item faq-extra">
+            <summary class="home-faq-trigger">
+              <div class="home-faq-title-wrap">
+                <span class="home-faq-num">08</span>
+                <span>What proprietary technology has Coralgenz Global invented?</span>
+              </div>
+              <div class="home-faq-icon-pill">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+              </div>
+            </summary>
+            <div class="home-faq-content">
+              Coralgenz Global invented the world's first .secure browser-native zero-knowledge encrypted container format (featuring a 16-layer security architecture across 4 distinct tiers), the Coralgenz Vault workstation, Coralgenz Dynamic QR telemetry engine, and Coralgenz Cloud Compiler IDE.
+            </div>
+          </details>
+
+          <!-- Q9 (Hidden initially) -->
+          <details class="home-faq-item faq-extra">
+            <summary class="home-faq-trigger">
+              <div class="home-faq-title-wrap">
+                <span class="home-faq-num">09</span>
+                <span>Who are Coralgenz Global official technology partners?</span>
+              </div>
+              <div class="home-faq-icon-pill">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+              </div>
+            </summary>
+            <div class="home-faq-content">
+              Coralgenz Global is an official partner with Microsoft (Azure cloud solutions & DevOps), Salesforce (AppExchange ISV partner for 2GP & LWC), and Shopify (headless commerce & custom apps), backed by active co-engineering startup partnerships with Zevionix Technologies and Zorquelz Technologies.
+            </div>
+          </details>
+
+          <!-- Q10 (Hidden initially) -->
+          <details class="home-faq-item faq-extra">
+            <summary class="home-faq-trigger">
+              <div class="home-faq-title-wrap">
+                <span class="home-faq-num">10</span>
+                <span>How can clients get in touch with Coralgenz Global leadership?</span>
+              </div>
+              <div class="home-faq-icon-pill">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+              </div>
+            </summary>
+            <div class="home-faq-content">
+              Clients can reach our executive engineering desk directly via contact@coralgenz.net or support@coralgenz.net with a guaranteed 24-hour response SLA.
+            </div>
+          </details>
+
         </div>
 
         <!-- See More Button -->
         <div class="faq-see-more-wrap">
           <button id="toggleFaqBtn" class="faq-see-more-btn" onclick="toggleFaqQuestions()" aria-label="Toggle all FAQ questions">
             <span class="faq-btn-text">See More Questions</span>
-            <span class="faq-btn-badge">+2 More</span>
+            <span class="faq-btn-badge">+6 More</span>
             <svg class="faq-btn-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
               <polyline points="6 9 12 15 18 9"></polyline>
             </svg>

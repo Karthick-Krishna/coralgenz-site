@@ -46,16 +46,47 @@ Allow: /*.png$
 Allow: /*.webp$
 Allow: /*.svg$
 
-# Bingbot & MSN Media Bot
+# Bingbot, MSN Media Bot & Yahoo Slurp (Powers Bing, Yahoo, DuckDuckGo, Ecosia & Microsoft Copilot)
 User-agent: Bingbot
 Allow: /
 Allow: /assets/
 Allow: /assets/images/
+Allow: /assets/css/
+Allow: /assets/js/
+Allow: /*.js$
+Allow: /*.css$
+Allow: /*.jpg$
+Allow: /*.jpeg$
+Allow: /*.png$
+Allow: /*.webp$
+Allow: /*.svg$
+Allow: /llms.txt
+Allow: /llms-full.txt
+Allow: /sitemap.xml
+Allow: /image-sitemap.xml
 
 User-agent: msnbot-media
 Allow: /
 Allow: /assets/
 Allow: /assets/images/
+Allow: /*.jpg$
+Allow: /*.jpeg$
+Allow: /*.png$
+Allow: /*.webp$
+Allow: /*.svg$
+
+User-agent: Slurp
+Allow: /
+Allow: /assets/
+Allow: /assets/images/
+Allow: /*.js$
+Allow: /*.css$
+Allow: /*.jpg$
+Allow: /*.jpeg$
+Allow: /*.png$
+Allow: /*.webp$
+Allow: /*.svg$
+
 
 # Social & Messaging Image Crawlers
 User-agent: Twitterbot
@@ -78,7 +109,7 @@ User-agent: Pinterestbot
 Allow: /
 Allow: /assets/images/
 
-# AI Crawlers & LLM Agents
+# AI Crawlers, Answer Engines & LLM Agents (Peak GEO & AEO Directives)
 User-agent: GPTBot
 Allow: /
 Allow: /llms.txt
@@ -89,7 +120,22 @@ Allow: /
 Allow: /llms.txt
 Allow: /llms-full.txt
 
+User-agent: OAI-SearchBot
+Allow: /
+Allow: /llms.txt
+Allow: /llms-full.txt
+
 User-agent: ClaudeBot
+Allow: /
+Allow: /llms.txt
+Allow: /llms-full.txt
+
+User-agent: Claude-Web
+Allow: /
+Allow: /llms.txt
+Allow: /llms-full.txt
+
+User-agent: anthropic-ai
 Allow: /
 Allow: /llms.txt
 Allow: /llms-full.txt
@@ -104,7 +150,48 @@ Allow: /
 Allow: /llms.txt
 Allow: /llms-full.txt
 
+User-agent: Applebot-Extended
+Allow: /
+Allow: /llms.txt
+Allow: /llms-full.txt
+
+User-agent: Amazonbot
+Allow: /
+Allow: /llms.txt
+Allow: /llms-full.txt
+
+User-agent: Cohere-ai
+Allow: /
+Allow: /llms.txt
+Allow: /llms-full.txt
+
+User-agent: Bytespider
+Allow: /
+Allow: /llms.txt
+Allow: /llms-full.txt
+
+User-agent: Meta-ExternalAgent
+Allow: /
+Allow: /llms.txt
+Allow: /llms-full.txt
+
+User-agent: Diffbot
+Allow: /
+Allow: /llms.txt
+Allow: /llms-full.txt
+
+User-agent: CCBot
+Allow: /
+Allow: /llms.txt
+Allow: /llms-full.txt
+
+User-agent: YouBot
+Allow: /
+Allow: /llms.txt
+Allow: /llms-full.txt
+
 # XML Sitemaps
 Sitemap: https://coralgenz.net/sitemap.xml
 Sitemap: https://coralgenz.net/image-sitemap.xml
+
 

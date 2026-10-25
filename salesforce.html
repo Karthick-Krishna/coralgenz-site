@@ -52,6 +52,13 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="default">
   <meta name="apple-mobile-web-app-title" content="Coralgenz Global">
 
+  <!-- Microsoft / Bing / Yahoo Application & Webmaster Entity Directives -->
+  <meta name="application-name" content="Coralgenz Global">
+  <meta name="msapplication-TileColor" content="#0066ff">
+  <meta name="msapplication-TileImage" content="https://coralgenz.net/assets/images/DVyu6tz4dqPirA4TwAJZUz5CUw.png">
+  <meta name="msapplication-tooltip" content="Official Salesforce ISV Partner - Coralgenz Global">
+  <meta name="msapplication-starturl" content="https://coralgenz.net/salesforce">
+
   <meta name="twitter:image:alt" content="Coralgenz Global Salesforce ISV Partner Solutions and AppExchange Managed Packages">
 
   <!-- Instant Indexing & Resource Hints -->
@@ -69,20 +76,45 @@
   "@context": "https://schema.org",
   "@graph": [
     {
-      "@type": "Organization",
+      "@type": [
+        "Organization",
+        "Corporation"
+      ],
       "@id": "https://coralgenz.net/#organization",
       "name": "Coralgenz Global",
+      "legalName": "Coralgenz Global Information Technology",
+      "alternateName": [
+        "Coralgenz",
+        "Coralgenz IT",
+        "Coralgenz Technologies"
+      ],
       "url": "https://coralgenz.net/",
+      "disambiguatingDescription": "Coralgenz Global is an Indian enterprise software engineering and cryptographic technology corporation headquartered in Coimbatore, Tamil Nadu, India, known for inventing the browser-native .secure zero-knowledge file container format and Coralgenz Vault workstation.",
+      "foundingDate": "2024",
+      "foundingLocation": {
+        "@type": "Place",
+        "name": "Coimbatore, Tamil Nadu, India",
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": 11.0168,
+          "longitude": 76.9558
+        }
+      },
+      "slogan": "Innovating with Precision, Delivering with Excellence",
       "logo": "https://coralgenz.net/assets/images/DVyu6tz4dqPirA4TwAJZUz5CUw.png",
       "address": {
         "@type": "PostalAddress",
+        "streetAddress": "Coimbatore Tech Corridor",
         "addressLocality": "Coimbatore",
         "addressRegion": "Tamil Nadu",
+        "postalCode": "641001",
         "addressCountry": "IN"
       },
       "sameAs": [
-        "https://www.linkedin.com/company/coralgenz",
-        "https://github.com/Coralgenz-Global"
+        "https://in.linkedin.com/company/coralgenz",
+        "https://www.instagram.com/coralgenz_global/",
+        "https://github.com/Coralgenz-Global",
+        "https://ratings.coralgenz.net/"
       ],
       "geo": {
         "@type": "GeoCoordinates",
@@ -90,7 +122,111 @@
         "longitude": 76.9558
       },
       "areaServed": "Worldwide",
+      "founder": [
+        {
+          "@type": "Person",
+          "@id": "https://coralgenz.net/karthick-krishna#person",
+          "name": "Karthick Krishna",
+          "jobTitle": "Chief Executive Officer & Founder",
+          "url": "https://coralgenz.net/karthick-krishna"
+        },
+        {
+          "@type": "Person",
+          "@id": "https://coralgenz.net/thanvanth-h#person",
+          "name": "Thanvanth H",
+          "jobTitle": "Chief Operating Officer & Co-Founder",
+          "url": "https://coralgenz.net/thanvanth-h"
+        }
+      ],
+      "employee": [
+        {
+          "@type": "Person",
+          "@id": "https://coralgenz.net/sharveshwaran-r#person",
+          "name": "Sharveshwaran R",
+          "jobTitle": "Chief Technology Officer",
+          "url": "https://coralgenz.net/sharveshwaran-r"
+        }
+      ],
+      "memberOf": [
+        {
+          "@type": "Organization",
+          "name": "Microsoft Developer Partner Network",
+          "url": "https://coralgenz.net/microsoft"
+        },
+        {
+          "@type": "Organization",
+          "name": "Salesforce ISV Partner Program",
+          "url": "https://coralgenz.net/salesforce"
+        },
+        {
+          "@type": "Organization",
+          "name": "Shopify Partner Program",
+          "url": "https://coralgenz.net/shopify"
+        }
+      ],
+      "hasCredential": [
+        {
+          "@type": "EducationalOccupationalCredential",
+          "name": "Microsoft Developer Partner Certification",
+          "url": "https://coralgenz.net/microsoft"
+        },
+        {
+          "@type": "EducationalOccupationalCredential",
+          "name": "Salesforce ISV Partner Accreditation",
+          "url": "https://coralgenz.net/salesforce"
+        },
+        {
+          "@type": "EducationalOccupationalCredential",
+          "name": "Shopify Partner Designation",
+          "url": "https://coralgenz.net/shopify"
+        }
+      ],
       "knowsAbout": [
+        {
+          "@type": "Thing",
+          "name": "Software Engineering",
+          "sameAs": "https://www.wikidata.org/wiki/Q8078"
+        },
+        {
+          "@type": "Thing",
+          "name": "Information Technology",
+          "sameAs": "https://www.wikidata.org/wiki/Q11083"
+        },
+        {
+          "@type": "Thing",
+          "name": "Zero-Knowledge Proof",
+          "sameAs": "https://www.wikidata.org/wiki/Q191942"
+        },
+        {
+          "@type": "Thing",
+          "name": "Cryptography",
+          "sameAs": "https://www.wikidata.org/wiki/Q8777"
+        },
+        {
+          "@type": "Thing",
+          "name": "Cloud Computing",
+          "sameAs": "https://www.wikidata.org/wiki/Q483247"
+        },
+        {
+          "@type": "Thing",
+          "name": "WebAssembly",
+          "sameAs": "https://www.wikidata.org/wiki/Q20035542"
+        },
+        {
+          "@type": "Thing",
+          "name": "Microsoft Azure",
+          "sameAs": "https://www.wikidata.org/wiki/Q725967"
+        },
+        {
+          "@type": "Thing",
+          "name": "Salesforce",
+          "sameAs": "https://www.wikidata.org/wiki/Q1140026"
+        },
+        {
+          "@type": "Thing",
+          "name": "Shopify",
+          "sameAs": "https://www.wikidata.org/wiki/Q7501170"
+        },
         "Enterprise Software Development",
         "Zero-Knowledge Cryptography",
         "WebAssembly Compilers",
