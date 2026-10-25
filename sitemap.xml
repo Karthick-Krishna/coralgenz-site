@@ -551,7 +551,7 @@
     </image:image>
   </url>
   <url>
-    <loc>https://coralgenz.net/know-more</loc>
+    <loc>https://coralgenz.net/about-us</loc>
     <lastmod>2026-10-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.80</priority>
@@ -736,5 +736,11 @@
       <image:geo_location>Coimbatore, Tamil Nadu, India</image:geo_location>
       <image:license>https://coralgenz.net/</image:license>
     </image:image>
+  </url>
+  <url>
+    <loc>https://coralgenz.net/collaborated-products</loc>
+    <lastmod>2026-10-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
   </url>
 </urlset>

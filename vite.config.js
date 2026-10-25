@@ -10,6 +10,10 @@ export default defineConfig({
         server.middlewares.use((req, res, next) => {
           if (!req.url) return next();
           const [pathname, search] = req.url.split('?');
+          if (pathname === '/about' || pathname === '/about-us') {
+            req.url = '/about-us.html' + (search ? '?' + search : '');
+            return next();
+          }
           if (pathname && !pathname.includes('.') && pathname !== '/') {
             const potentialPath = resolve('.' + pathname + '.html');
             if (fs.existsSync(potentialPath)) {
@@ -29,7 +33,9 @@ export default defineConfig({
         karthickKrishna: resolve('karthick-krishna.html'),
         thanvanthH: resolve('thanvanth-h.html'),
         sharveshwaranR: resolve('sharveshwaran-r.html'),
+        aboutUs: resolve('about-us.html'),
         knowMore: resolve('know-more.html'),
+        collaboratedProducts: resolve('collaborated-products.html'),
         notFound: resolve('404.html'),
         customSoftware: resolve('our-services/custom-software-development.html'),
         domainDeployment: resolve('our-services/domain-and-deployment-service.html'),

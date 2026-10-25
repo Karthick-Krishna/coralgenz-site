@@ -278,6 +278,13 @@ function closeOtherMobileAccordions(except) {
     if (sDropdown) sDropdown.classList.remove('open');
     if (sToggle) sToggle.setAttribute('aria-expanded', 'false');
   }
+  if (except !== 'products') {
+    const pToggle = document.querySelector('.mobile-products-toggle');
+    const pDropdown = document.getElementById('mobileProductsDropdown');
+    if (pToggle) pToggle.classList.remove('active');
+    if (pDropdown) pDropdown.classList.remove('open');
+    if (pToggle) pToggle.setAttribute('aria-expanded', 'false');
+  }
   if (except !== 'policies') {
     const pToggle = document.querySelector('.mobile-policies-toggle');
     const pDropdown = document.getElementById('mobilePoliciesDropdown');
@@ -297,6 +304,23 @@ function toggleThreeDotsMenu(e) {
   if (dropdown) {
     const isHidden = dropdown.style.display === 'none' || dropdown.style.display === '';
     dropdown.style.display = isHidden ? 'flex' : 'none';
+  }
+}
+
+/* Mobile Menu Our Products Dropdown Toggle */
+function toggleMobileProductsMenu(e) {
+  if (e) {
+    e.preventDefault();
+    e.stopPropagation();
+  }
+  const btn = e?.currentTarget || document.querySelector('.mobile-products-toggle');
+  const dropdown = document.getElementById('mobileProductsDropdown');
+  if (btn && dropdown) {
+    const willOpen = !dropdown.classList.contains('open');
+    if (willOpen) closeOtherMobileAccordions('products');
+    btn.classList.toggle('active', willOpen);
+    dropdown.classList.toggle('open', willOpen);
+    btn.setAttribute('aria-expanded', willOpen ? 'true' : 'false');
   }
 }
 
@@ -334,16 +358,68 @@ function toggleMobileHighlightsMenu(e) {
   }
 }
 
+/* Active Highlight for 3-Line Menu when on/clicking an item inside it */
+function updateThreeDotsActiveState() {
+  const threeDotsBtn = document.querySelector('.three-dots-btn');
+  const mobileToggle = document.querySelector('.mobile-toggle');
+  const path = (window.location.pathname.replace(/\/$/, '') || '/').toLowerCase();
+  const hash = window.location.hash;
+  const href = window.location.href.toLowerCase();
+
+  const isInsideThreeDotsPage = 
+    path === '/rate-us' || href.includes('/rate-us') ||
+    path === '/team' || href.includes('/team') ||
+    path === '/collaborated-products' || href.includes('/collaborated-products') ||
+    path === '/karthick-krishna' || href.includes('/karthick-krishna') ||
+    path === '/thanvanth-h' || href.includes('/thanvanth-h') ||
+    path === '/sharveshwaran-r' || href.includes('/sharveshwaran-r') ||
+    path === '/privacy-policy' || href.includes('/privacy-policy') ||
+    hash === '#certifications';
+
+  if (threeDotsBtn) {
+    if (isInsideThreeDotsPage) {
+      threeDotsBtn.classList.add('active', 'is-active-page');
+      threeDotsBtn.setAttribute('title', 'Active Menu Section');
+    } else {
+      threeDotsBtn.classList.remove('active', 'is-active-page');
+    }
+  }
+
+  if (mobileToggle) {
+    if (isInsideThreeDotsPage) {
+      mobileToggle.classList.add('is-active-page');
+    } else {
+      mobileToggle.classList.remove('is-active-page');
+    }
+  }
+}
+
 document.addEventListener('click', (e) => {
   const dropdown = document.getElementById('threeDotsDropdown');
   if (dropdown && !dropdown.contains(e.target) && !e.target.closest('.three-dots-btn')) {
     dropdown.style.display = 'none';
   }
+  // When an item inside 3-line menu is clicked
+  if (e.target.closest('#threeDotsDropdown a')) {
+    const threeDotsBtn = document.querySelector('.three-dots-btn');
+    if (threeDotsBtn) {
+      threeDotsBtn.classList.add('active', 'is-active-page');
+    }
+    const mobileToggle = document.querySelector('.mobile-toggle');
+    if (mobileToggle) {
+      mobileToggle.classList.add('is-active-page');
+    }
+  }
 });
 
+document.addEventListener('DOMContentLoaded', updateThreeDotsActiveState);
+window.addEventListener('hashchange', updateThreeDotsActiveState);
+
 window.toggleThreeDotsMenu = toggleThreeDotsMenu;
+window.toggleMobileProductsMenu = toggleMobileProductsMenu;
 window.toggleMobileServicesMenu = toggleMobileServicesMenu;
 window.toggleMobileHighlightsMenu = toggleMobileHighlightsMenu;
+window.updateThreeDotsActiveState = updateThreeDotsActiveState;
 
 /* Certification Card Dropdown Toggle */
 function toggleCertDropdown(e) {

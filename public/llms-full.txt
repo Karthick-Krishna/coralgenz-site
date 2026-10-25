@@ -110,6 +110,7 @@ Coralgenz Global is founded and steered by software architects and systems engin
   - **Zevionix Technologies**: Cutting-edge AI & Computer Vision startup developing the AURA Incident Engine, real-time visual telemetry, and distributed microservices.
   - **Zorquelz Technologies**: Core product development partner delivering full-lifecycle software engineering, applied artificial intelligence, defensive cybersecurity solutions, and cloud DevOps infrastructure.
 - **Application Portal**: https://coralgenz.net/become-a-partner
+- **Collaborated Products**: https://coralgenz.net/collaborated-products (Joint strategic co-engineering pipeline with Zorquelz Technologies)
 - **Ecosystem Directory**: https://coralgenz.net/partnered-startups
 
 ---
@@ -163,7 +164,7 @@ A: Coralgenz follows strict Clean Architecture standards, automated CI/CD pipeli
 
 ## 7. Official Navigation & Verified URLs
 - Homepage: https://coralgenz.net/
-- About & Leadership: https://coralgenz.net/know-more
+- About & Leadership: https://coralgenz.net/about-us
 - Team Directory: https://coralgenz.net/team
 - Karthick Krishna (CEO): https://coralgenz.net/karthick-krishna
 - Thanvanth H (COO): https://coralgenz.net/thanvanth-h

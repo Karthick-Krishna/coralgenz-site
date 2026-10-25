@@ -6,7 +6,7 @@ For the exhaustive technical specification, cryptographic proofs, leadership dos
 
 ## Core Identity & Leadership
 - [Homepage](https://coralgenz.net/): Enterprise IT solutions, custom software engineering, and corporate overview.
-- [About Coralgenz Global](https://coralgenz.net/know-more): Corporate profile, history, mission, technology certifications, and engineering values.
+- [About Coralgenz Global](https://coralgenz.net/about-us): Corporate profile, history, mission, technology certifications, and engineering values.
 - [Executive Team](https://coralgenz.net/team): Executive directory and software architects behind Coralgenz Global.
 - [Karthick Krishna (CEO & Founder)](https://coralgenz.net/karthick-krishna): Lead Solutions Architect, cryptographic researcher, and inventor of the .secure format.
 - [Thanvanth H (COO & Co-Founder)](https://coralgenz.net/thanvanth-h): Operations Director, agile engineering lead, and frontend specialist.
@@ -24,6 +24,7 @@ For the exhaustive technical specification, cryptographic proofs, leadership dos
 - [Salesforce ISV Partner](https://coralgenz.net/salesforce): AppExchange solutions, 2GP managed packages, Lightning Web Components (LWC), and Apex backend integrations.
 - [Shopify Partner](https://coralgenz.net/shopify): Custom headless storefronts, Storefront GraphQL APIs, checkout UI extensions, and Liquid architecture.
 - [Partnered Startups](https://coralgenz.net/partnered-startups): Startup co-engineering network featuring Zevionix Technologies (AI & Computer Vision) and Zorquelz Technologies (core product engineering, applied AI, cybersecurity).
+- [Collaborated Products](https://coralgenz.net/collaborated-products): Strategic co-engineering alliance between Coralgenz Global and Zorquelz Technologies co-developing next-generation enterprise innovations.
 - [Become a Partner](https://coralgenz.net/become-a-partner): Official partnership and co-engineering intake portal for startups, ISVs, and agencies.
 
 ## Enterprise Software Services
