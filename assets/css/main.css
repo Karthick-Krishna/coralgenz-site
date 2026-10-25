@@ -82,23 +82,31 @@
 }
 
 html {
+  scroll-behavior: smooth;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: var(--bg-light-base);
   color: var(--text-dark);
   font-family: var(--font-satoshi);
-  overflow-x: hidden;
+  overflow-x: clip;
   width: 100%;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
 }
 
 body {
   min-height: 100vh;
   line-height: 1.6;
-  overflow-x: hidden;
+  overflow-x: clip;
   width: 100%;
   position: relative;
   background: radial-gradient(ellipse at 50% -10%, #ebf3ff 0%, #f8fafc 70%);
   color: var(--text-dark);
+  -webkit-overflow-scrolling: touch;
 }
 
 body.light-theme {

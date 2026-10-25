@@ -5,14 +5,16 @@
 /* Scroll Reveal States - Silky Smooth 60-120fps Scroll Animations */
 .reveal-init {
   opacity: 0;
-  transform: translate3d(0, 24px, 0);
+  transform: translate3d(0, 20px, 0);
   backface-visibility: hidden;
-  transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+  transition: opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1), transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .reveal-visible {
   opacity: 1 !important;
   transform: translate3d(0, 0, 0) !important;
+  will-change: auto;
 }
 
 .reveal-delay-1 {
