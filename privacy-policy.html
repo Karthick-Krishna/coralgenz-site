@@ -17,6 +17,12 @@
   <link rel="alternate" hreflang="en" href="https://coralgenz.net/privacy-policy">
   <link rel="alternate" hreflang="x-default" href="https://coralgenz.net/privacy-policy">
   <link rel="alternate" type="text/markdown" href="https://coralgenz.net/llms.txt" title="LLM Knowledge Base">
+<!-- Geographic & Local Entity GEO Tags -->
+  <meta name="geo.region" content="IN-TN">
+  <meta name="geo.placename" content="Coimbatore, Tamil Nadu, India">
+  <meta name="geo.position" content="11.0168;76.9558">
+  <meta name="ICBM" content="11.0168, 76.9558">
+
 
   <!-- Open Graph / Facebook Meta Tags -->
   <meta property="og:type" content="website">
@@ -30,6 +36,9 @@
   <meta property="og:image:height" content="512">
   <meta property="og:image:alt" content="Coralgenz Global Privacy &amp; Policies Official Documentation">
   <meta property="og:site_name" content="Coralgenz Global">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:locale:alternate" content="en_GB">
+  <meta property="og:locale:alternate" content="en_IN">
 
   <!-- Twitter Card Meta Tags -->
   <meta name="twitter:card" content="summary_large_image">
@@ -37,6 +46,13 @@
   <meta name="twitter:title" content="Privacy &amp; Policies | Coralgenz Global">
   <meta name="twitter:description" content="Official Privacy Policy and corporate policies of Coralgenz Global. Transparent data protection, strict IP protection, and zero data selling commitments.">
   <meta name="twitter:image" content="https://coralgenz.net/assets/images/DVyu6tz4dqPirA4TwAJZUz5CUw.png">
+<!-- Mobile Browser Experience & Theme Tuning -->
+  <meta name="theme-color" content="#0066ff">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="Coralgenz Global">
+
   <meta name="twitter:image:alt" content="Coralgenz Global Privacy &amp; Policies Official Documentation">
 
   <!-- Favicons -->
@@ -65,7 +81,30 @@
         "url": "https://coralgenz.net/assets/images/DVyu6tz4dqPirA4TwAJZUz5CUw.png",
         "caption": "Coralgenz Global Official Logo"
       },
-      "email": "contact@coralgenz.net"
+      "email": "contact@coralgenz.net",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Coimbatore",
+        "addressRegion": "Tamil Nadu",
+        "addressCountry": "IN"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 11.0168,
+        "longitude": 76.9558
+      },
+      "areaServed": "Worldwide",
+      "knowsAbout": [
+        "Enterprise Software Development",
+        "Zero-Knowledge Cryptography",
+        "WebAssembly Compilers",
+        "Dynamic QR Telemetry",
+        "Cloud Native Architecture",
+        "Clean Architecture Standards",
+        "Shopify Partner Engineering",
+        "Salesforce ISV AppExchange",
+        "Microsoft Azure Cloud"
+      ]
     },
     {
       "@type": "WebPage",
@@ -92,7 +131,48 @@
             "item": "https://coralgenz.net/privacy-policy"
           }
         ]
+      },
+      "speakable": {
+        "@type": "SpeakableSpecification",
+        "cssSelector": [
+          "h1",
+          ".hero-desc",
+          ".section-desc",
+          "p.lead",
+          ".page-intro",
+          "h2"
+        ]
       }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://coralgenz.net/privacy-policy#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What data does Coralgenz Global collect and process?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Coralgenz Global processes business contact information, authenticated client communication inboxes, website analytics, and technical telemetry strictly necessary for enterprise service delivery."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does Coralgenz Global sell client data or share it with third-party advertisers?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. Coralgenz Global maintains a strict zero-sale privacy standard. No user or enterprise client data is ever sold, rented, or monetized for commercial advertising."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How can users request data modification or deletion under GDPR and global regulations?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Clients and users can submit data access, correction, or permanent deletion requests anytime by emailing privacy@coralgenz.net or contact@coralgenz.net with a guaranteed 30-day resolution SLA."
+          }
+        }
+      ]
     }
   ]
 }
@@ -114,85 +194,169 @@
   <!-- Main Navigation Header -->
   <header class="site-header">
     <div class="container navbar">
-      <a href="/" class="brand-logo" aria-label="Coralgenz Global - Enterprise IT &amp; Software Engineering Company Homepage">
-        <img src="/assets/images/DVyu6tz4dqPirA4TwAJZUz5CUw.png" alt="Coralgenz Global - Enterprise Software &amp; IT Solutions Official Logo" title="Coralgenz Global Logo" width="38" height="38" loading="eager" fetchpriority="high" decoding="async">
+      <a href="/" class="brand-logo"
+        aria-label="Coralgenz Global - Enterprise IT &amp; Software Engineering Company Homepage">
+        <img src="/assets/images/DVyu6tz4dqPirA4TwAJZUz5CUw.png"
+          alt="Coralgenz Global - Enterprise Software &amp; IT Solutions Official Logo" title="Coralgenz Global Logo"
+          width="38" height="38" loading="eager" fetchpriority="high" decoding="async">
         <span class="brand-name">Coralgenz Global</span>
       </a>
 
       <nav class="nav-links">
         <a href="/" class="nav-link">Homepage</a>
-        
+
         <!-- Our Highlights Dropdown -->
         <div class="nav-dropdown-wrapper">
           <a href="/our-highlights" class="nav-link nav-dropdown-btn">
             <span>Our Highlights</span>
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
           </a>
           <div class="nav-dropdown-menu">
             <a href="/our-highlights" class="nav-dropdown-item dropdown-hub-link">
               <span>All 6 Highlights Hub</span>
               <span>&rarr;</span>
             </a>
-            <a href="/our-highlights/worlds-first-secure-format" class="nav-dropdown-item">World's First .secure Format</a>
+            <a href="/our-highlights/worlds-first-secure-format" class="nav-dropdown-item">World's First .secure
+              Format</a>
             <a href="/our-highlights/coralgenz-vault-security" class="nav-dropdown-item">Coralgenz Vault Security</a>
             <a href="/our-highlights/coralgenz-qr-telemetry" class="nav-dropdown-item">Coralgenz QR Telemetry</a>
             <a href="/our-highlights/coralgenz-compiler-engine" class="nav-dropdown-item">Coralgenz Compiler Engine</a>
-            <a href="/our-highlights/clean-architecture-standards" class="nav-dropdown-item">Clean Architecture Standards</a>
-            <a href="/our-highlights/microsoft-salesforce-partner" class="nav-dropdown-item">Microsoft &amp; Salesforce Partner</a>
+            <a href="/our-highlights/clean-architecture-standards" class="nav-dropdown-item">Clean Architecture
+              Standards</a>
+            <a href="/our-highlights/microsoft-salesforce-partner" class="nav-dropdown-item">Microsoft &amp; Salesforce
+              Partner</a>
           </div>
         </div>
 
-        <a href="/know-more" class="nav-link">About</a>
+        <a href="/#about" class="nav-link">About</a>
         <a href="/our-products" class="nav-link">Our Products</a>
 
         <!-- Our Services Dropdown -->
         <div class="nav-dropdown-wrapper">
           <a href="/our-services" class="nav-link nav-dropdown-btn">
             <span>Our Services</span>
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
           </a>
           <div class="nav-dropdown-menu">
             <a href="/our-services" class="nav-dropdown-item dropdown-hub-link">
-              <span>All 8 Specialisations</span>
+              <span>All 8 Services Hub</span>
               <span>&rarr;</span>
             </a>
-            <a href="/our-services/custom-software-development" class="nav-dropdown-item">Custom Software Development</a>
-            <a href="/our-services/mvp-development" class="nav-dropdown-item">MVP Development for Startups</a>
-            <a href="/our-services/full-stack-software" class="nav-dropdown-item">Full Stack Software Engineering</a>
-            <a href="/our-services/legacy-software-modernization" class="nav-dropdown-item">Legacy Modernization</a>
-            <a href="/our-services/pwa-development" class="nav-dropdown-item">Progressive Web Apps (PWA)</a>
+            <a href="/our-services/custom-software-development" class="nav-dropdown-item">Custom Software
+              Development</a>
+            <a href="/our-services/mvp-development" class="nav-dropdown-item">MVP Development</a>
+            <a href="/our-services/full-stack-software" class="nav-dropdown-item">Full Stack Software</a>
+            <a href="/our-services/legacy-software-modernization" class="nav-dropdown-item">Legacy Software
+              Modernization</a>
+            <a href="/our-services/pwa-development" class="nav-dropdown-item">Progressive Web Applications (PWAs)</a>
             <a href="/our-services/modern-admin-dashboards" class="nav-dropdown-item">Modern Admin Dashboards</a>
             <a href="/our-services/frontend-modernization" class="nav-dropdown-item">Frontend Modernization</a>
-            <a href="/our-services/domain-and-deployment-service" class="nav-dropdown-item">Domain &amp; Cloud Deployment</a>
+            <a href="/our-services/domain-and-deployment-service" class="nav-dropdown-item">Domain &amp; Deployment
+              Service</a>
           </div>
         </div>
-
-        <!-- Partnerships Dropdown -->
-        <div class="nav-dropdown-wrapper">
-          <a href="/#partners" class="nav-link nav-dropdown-btn">
-            <span>Partnerships</span>
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
-          </a>
-          <div class="nav-dropdown-menu">
-            <a href="/become-a-partner" class="nav-dropdown-item dropdown-hub-link">
-              <span>Apply to Become a Partner</span>
-              <span>&rarr;</span>
-            </a>
-            <a href="/partnered-startups" class="nav-dropdown-item">Partnered Startups (Zevionix)</a>
-            <a href="/salesforce" class="nav-dropdown-item">Salesforce ISV Partner</a>
-            <a href="/microsoft" class="nav-dropdown-item">Microsoft Developer Partner</a>
-            <a href="/shopify" class="nav-dropdown-item">Shopify Partner</a>
-          </div>
-        </div>
-
-        <a href="/#certifications" class="nav-link">Certifications</a>
-        <a href="/team" class="nav-link">Team</a>
         <a href="/contact" class="nav-link">Contact Us</a>
       </nav>
 
-      <div class="header-right">
-        <a href="/contact" class="btn btn-primary nav-cta">Let's Connect</a>
-        <button class="mobile-toggle" aria-label="Toggle Navigation Menu">
+      <div class="nav-actions">
+        <!-- 3-Line Quick Options Dropdown (Desktop) -->
+        <div class="three-dots-wrapper">
+          <button class="three-dots-btn" onclick="toggleThreeDotsMenu(event)" aria-label="More options"
+            title="More options">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
+              stroke-linecap="round">
+              <line x1="4" y1="6" x2="20" y2="6"></line>
+              <line x1="4" y1="12" x2="20" y2="12"></line>
+              <line x1="4" y1="18" x2="20" y2="18"></line>
+            </svg>
+          </button>
+          <div id="threeDotsDropdown" class="three-dots-dropdown" style="display: none;">
+            <a href="/rate-us" class="three-dots-item highlight" style="color: #f59e0b;">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polygon
+                  points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
+                </polygon>
+              </svg>
+              <span>RATE US (4.9/5)</span>
+            </a>
+            <a href="/partnered-startups" class="three-dots-item highlight" style="color: #0066ff;">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                <circle cx="9" cy="7" r="4"></circle>
+                <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+              </svg>
+              <span>PARTNERED STARTUPS</span>
+            </a>
+            <a href="/become-a-partner" class="three-dots-item" style="color: #10b981;">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                <circle cx="8.5" cy="7" r="4"></circle>
+                <line x1="20" y1="8" x2="20" y2="14"></line>
+                <line x1="23" y1="11" x2="17" y2="11"></line>
+              </svg>
+              <span>BECOME A PARTNER</span>
+            </a>
+            <a href="/#certifications" class="three-dots-item">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z">
+                </path>
+              </svg>
+              <span>CERTIFICATIONS</span>
+            </a>
+            <a href="/team" class="three-dots-item">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                <circle cx="9" cy="7" r="4"></circle>
+                <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+              </svg>
+              <span>OUR TEAM</span>
+            </a>
+            <a href="/our-highlights" class="three-dots-item highlight">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10"></circle>
+                <polygon points="12 6 12 12 16 14"></polygon>
+              </svg>
+              <span>OUR HIGHLIGHTS</span>
+            </a>
+            <a href="/our-products" class="three-dots-item highlight">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path
+                  d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z">
+                </path>
+                <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
+                <line x1="12" y1="22.08" x2="12" y2="12"></line>
+              </svg>
+              <span>OUR PRODUCTS</span>
+            </a>
+            <a href="/privacy-policy" class="three-dots-item active" style="color: #0066ff;">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+              </svg>
+              <span>PRIVACY &amp; POLICIES</span>
+            </a>
+            <a href="mailto:coralgenz@gmail.com" class="three-dots-item">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                <polyline points="22,6 12,13 2,6"></polyline>
+              </svg>
+              <span>coralgenz@gmail.com</span>
+            </a>
+            <a href="/contact" class="three-dots-item">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+              </svg>
+              <span>Contact Us</span>
+            </a>
+          </div>
+        </div>
+
+        <button class="mobile-toggle" aria-label="Toggle navigation menu">
           <span></span>
           <span></span>
           <span></span>
@@ -201,16 +365,115 @@
     </div>
   </header>
 
-  <!-- Mobile Menu Drawer -->
+  <!-- Mobile Drawer Menu -->
   <div class="mobile-menu">
     <a href="/" class="nav-link">Homepage</a>
-    <a href="/our-highlights" class="nav-link">Our Highlights (All 6 Innovations)</a>
-    <a href="/know-more" class="nav-link">About</a>
+
+    <!-- Mobile Our Highlights Dropdown -->
+    <div class="mobile-highlights-dropdown-wrap">
+      <button class="mobile-highlights-toggle" onclick="toggleMobileHighlightsMenu(event)" aria-expanded="false">
+        <span>Our Highlights</span>
+        <div class="highlights-toggle-meta">
+          <span class="highlights-count-badge">6</span>
+          <svg class="highlights-chevron-icon" width="16" height="16" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2.5">
+            <polyline points="6 9 12 15 18 9"></polyline>
+          </svg>
+        </div>
+      </button>
+      <div id="mobileHighlightsDropdown" class="mobile-highlights-window">
+        <a href="/our-highlights" class="mobile-sub-highlight-item hub-link">
+          <span class="sub-highlight-bullet"></span>
+          <span>All 6 Highlights Hub &rarr;</span>
+        </a>
+        <a href="/our-highlights/worlds-first-secure-format" class="mobile-sub-highlight-item">
+          <span class="sub-highlight-bullet"></span>
+          <span>World's First .secure Format</span>
+        </a>
+        <a href="/our-highlights/coralgenz-vault-security" class="mobile-sub-highlight-item">
+          <span class="sub-highlight-bullet"></span>
+          <span>Coralgenz Vault Security</span>
+        </a>
+        <a href="/our-highlights/coralgenz-qr-telemetry" class="mobile-sub-highlight-item">
+          <span class="sub-highlight-bullet"></span>
+          <span>Coralgenz QR Telemetry</span>
+        </a>
+        <a href="/our-highlights/coralgenz-compiler-engine" class="mobile-sub-highlight-item">
+          <span class="sub-highlight-bullet"></span>
+          <span>Coralgenz Compiler Engine</span>
+        </a>
+        <a href="/our-highlights/clean-architecture-standards" class="mobile-sub-highlight-item">
+          <span class="sub-highlight-bullet"></span>
+          <span>Clean Architecture Standards</span>
+        </a>
+        <a href="/our-highlights/microsoft-salesforce-partner" class="mobile-sub-highlight-item">
+          <span class="sub-highlight-bullet"></span>
+          <span>Microsoft &amp; Salesforce Partner</span>
+        </a>
+      </div>
+    </div>
+
+    <a href="/#about" class="nav-link">About</a>
     <a href="/our-products" class="nav-link">Our Products</a>
-    <a href="/our-services" class="nav-link">Our Services (8 Specialisations)</a>
+
+    <!-- Mobile Our Services Dropdown -->
+    <div class="mobile-services-dropdown-wrap">
+      <button class="mobile-services-toggle" onclick="toggleMobileServicesMenu(event)" aria-expanded="false">
+        <span>Our Services</span>
+        <div class="services-toggle-meta">
+          <span class="services-count-badge">8</span>
+          <svg class="services-chevron-icon" width="16" height="16" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2.5">
+            <polyline points="6 9 12 15 18 9"></polyline>
+          </svg>
+        </div>
+      </button>
+      <div id="mobileServicesDropdown" class="mobile-services-window">
+        <a href="/our-services" class="mobile-sub-service-item hub-link">
+          <span class="sub-service-bullet"></span>
+          <span>All 8 Services Hub &rarr;</span>
+        </a>
+        <a href="/our-services/custom-software-development" class="mobile-sub-service-item">
+          <span class="sub-service-bullet"></span>
+          <span>Custom Software Development</span>
+        </a>
+        <a href="/our-services/mvp-development" class="mobile-sub-service-item">
+          <span class="sub-service-bullet"></span>
+          <span>MVP Development</span>
+        </a>
+        <a href="/our-services/full-stack-software" class="mobile-sub-service-item">
+          <span class="sub-service-bullet"></span>
+          <span>Full Stack Software</span>
+        </a>
+        <a href="/our-services/legacy-software-modernization" class="mobile-sub-service-item">
+          <span class="sub-service-bullet"></span>
+          <span>Legacy Software Modernization</span>
+        </a>
+        <a href="/our-services/pwa-development" class="mobile-sub-service-item">
+          <span class="sub-service-bullet"></span>
+          <span>Progressive Web Applications (PWAs)</span>
+        </a>
+        <a href="/our-services/modern-admin-dashboards" class="mobile-sub-service-item">
+          <span class="sub-service-bullet"></span>
+          <span>Modern Admin Dashboards</span>
+        </a>
+        <a href="/our-services/frontend-modernization" class="mobile-sub-service-item">
+          <span class="sub-service-bullet"></span>
+          <span>Frontend Modernization</span>
+        </a>
+        <a href="/our-services/domain-and-deployment-service" class="mobile-sub-service-item">
+          <span class="sub-service-bullet"></span>
+          <span>Domain &amp; Deployment Service</span>
+        </a>
+      </div>
+    </div>
+
     <a href="/#certifications" class="nav-link">Certifications</a>
     <a href="/partnered-startups" class="nav-link">Partnered Startups</a>
-    <a href="/become-a-partner" class="nav-link">Apply to Become a Partner</a>
+    <a href="/become-a-partner" class="nav-link">Become a Partner</a>
+
+    <a href="/rate-us" class="nav-link" style="color: #f59e0b; font-weight: 700;">Rate Us • 4.9/5</a>
+    <a href="/privacy-policy" class="nav-link active" style="color: #0066ff; font-weight: 700;">Privacy &amp; Policies</a>
     <a href="/team" class="nav-link">Team</a>
     <a href="/contact" class="nav-link">Contact Us</a>
   </div>

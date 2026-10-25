@@ -16,6 +16,12 @@
   <link rel="alternate" hreflang="en" href="https://coralgenz.net/salesforce">
   <link rel="alternate" hreflang="x-default" href="https://coralgenz.net/salesforce">
   <link rel="alternate" type="text/markdown" href="https://coralgenz.net/llms.txt" title="LLM Knowledge Base">
+<!-- Geographic & Local Entity GEO Tags -->
+  <meta name="geo.region" content="IN-TN">
+  <meta name="geo.placename" content="Coimbatore, Tamil Nadu, India">
+  <meta name="geo.position" content="11.0168;76.9558">
+  <meta name="ICBM" content="11.0168, 76.9558">
+
 
   <!-- Open Graph / Facebook Meta Tags -->
   <meta property="og:type" content="website">
@@ -29,6 +35,9 @@
   <meta property="og:image:height" content="630">
   <meta property="og:image:alt" content="Coralgenz Global Salesforce ISV Partner Solutions and AppExchange Managed Packages">
   <meta property="og:site_name" content="Coralgenz Global">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:locale:alternate" content="en_GB">
+  <meta property="og:locale:alternate" content="en_IN">
 
   <!-- Twitter Card Meta Tags -->
   <meta name="twitter:card" content="summary_large_image">
@@ -36,6 +45,13 @@
   <meta name="twitter:title" content="Salesforce ISV Partner | Coralgenz Global">
   <meta name="twitter:description" content="Coralgenz Global is an official Salesforce ISV Partner specializing in AppExchange solutions, managed packages, custom CRM engines, and enterprise Lightning Web Components.">
   <meta name="twitter:image" content="https://coralgenz.net/assets/images/partner-salesforce.png">
+<!-- Mobile Browser Experience & Theme Tuning -->
+  <meta name="theme-color" content="#0066ff">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="Coralgenz Global">
+
   <meta name="twitter:image:alt" content="Coralgenz Global Salesforce ISV Partner Solutions and AppExchange Managed Packages">
 
   <!-- Instant Indexing & Resource Hints -->
@@ -67,6 +83,23 @@
       "sameAs": [
         "https://www.linkedin.com/company/coralgenz",
         "https://github.com/Coralgenz-Global"
+      ],
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 11.0168,
+        "longitude": 76.9558
+      },
+      "areaServed": "Worldwide",
+      "knowsAbout": [
+        "Enterprise Software Development",
+        "Zero-Knowledge Cryptography",
+        "WebAssembly Compilers",
+        "Dynamic QR Telemetry",
+        "Cloud Native Architecture",
+        "Clean Architecture Standards",
+        "Shopify Partner Engineering",
+        "Salesforce ISV AppExchange",
+        "Microsoft Azure Cloud"
       ]
     },
     {
@@ -81,7 +114,18 @@
       "primaryImageOfPage": {
         "@id": "https://coralgenz.net/assets/images/partner-salesforce.png#image"
       },
-      "image": "https://coralgenz.net/assets/images/partner-salesforce.png"
+      "image": "https://coralgenz.net/assets/images/partner-salesforce.png",
+      "speakable": {
+        "@type": "SpeakableSpecification",
+        "cssSelector": [
+          "h1",
+          ".hero-desc",
+          ".section-desc",
+          "p.lead",
+          ".page-intro",
+          "h2"
+        ]
+      }
     },
     {
       "@type": "BreadcrumbList",
@@ -112,6 +156,36 @@
       "height": 630,
       "license": "https://coralgenz.net/",
       "acquireLicensePage": "https://coralgenz.net/contact"
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://coralgenz.net/salesforce#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What Salesforce ISV Partner services does Coralgenz Global deliver?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Coralgenz Global is an official Salesforce ISV Partner engineering AppExchange-ready Second-Generation Managed Packages (2GP), Lightning Web Components (LWC), and Apex microservices."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How does Coralgenz integrate Salesforce CRM with external enterprise databases?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Coralgenz connects Salesforce with enterprise databases and REST/GraphQL APIs using MuleSoft, Salesforce Connect, change data capture (CDC), and secure bidirectional OAuth 2.0 webhooks."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does Coralgenz assist ISVs with the Salesforce AppExchange Security Review?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, Coralgenz conducts automated static code analysis, vulnerability remediation, and architectural audits to ensure 100% first-pass approval on the Salesforce Security Review."
+          }
+        }
+      ]
     }
   ]
 }

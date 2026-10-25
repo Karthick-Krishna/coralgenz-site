@@ -20,6 +20,12 @@
   <link rel="alternate" hreflang="en" href="https://coralgenz.net/rate-us">
   <link rel="alternate" hreflang="x-default" href="https://coralgenz.net/rate-us">
   <link rel="alternate" type="text/markdown" href="https://coralgenz.net/llms.txt" title="LLM Knowledge Base">
+<!-- Geographic & Local Entity GEO Tags -->
+  <meta name="geo.region" content="IN-TN">
+  <meta name="geo.placename" content="Coimbatore, Tamil Nadu, India">
+  <meta name="geo.position" content="11.0168;76.9558">
+  <meta name="ICBM" content="11.0168, 76.9558">
+
 
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website">
@@ -34,6 +40,9 @@
   <meta property="og:image:height" content="630">
   <meta property="og:image:alt" content="Coralgenz Global Customer Ratings &amp; Reviews Portal">
   <meta property="og:site_name" content="Coralgenz Global">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:locale:alternate" content="en_GB">
+  <meta property="og:locale:alternate" content="en_IN">
 
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image">
@@ -42,6 +51,13 @@
   <meta name="twitter:description"
     content="Rate Coralgenz Global. Read verified customer reviews and submit your rating directly on our verified ratings portal. 4.9/5 average rating across 50,000+ clients worldwide.">
   <meta name="twitter:image" content="https://coralgenz.net/assets/images/3JTkDW5Aoei5uyxXo6VXHc2SaU.jpg">
+<!-- Mobile Browser Experience & Theme Tuning -->
+  <meta name="theme-color" content="#0066ff">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="Coralgenz Global">
+
   <meta name="twitter:image:alt" content="Coralgenz Global Customer Ratings &amp; Reviews Portal">
 
   <!-- Favicon -->
@@ -77,7 +93,30 @@
         "worstRating": "1",
         "ratingCount": "5240",
         "reviewCount": "5240"
-      }
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Coimbatore",
+        "addressRegion": "Tamil Nadu",
+        "addressCountry": "IN"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 11.0168,
+        "longitude": 76.9558
+      },
+      "areaServed": "Worldwide",
+      "knowsAbout": [
+        "Enterprise Software Development",
+        "Zero-Knowledge Cryptography",
+        "WebAssembly Compilers",
+        "Dynamic QR Telemetry",
+        "Cloud Native Architecture",
+        "Clean Architecture Standards",
+        "Shopify Partner Engineering",
+        "Salesforce ISV AppExchange",
+        "Microsoft Azure Cloud"
+      ]
     },
     {
       "@type": "WebPage",
@@ -103,6 +142,17 @@
             "name": "Rate Us",
             "item": "https://coralgenz.net/rate-us"
           }
+        ]
+      },
+      "speakable": {
+        "@type": "SpeakableSpecification",
+        "cssSelector": [
+          "h1",
+          ".hero-desc",
+          ".section-desc",
+          "p.lead",
+          ".page-intro",
+          "h2"
         ]
       }
     },
@@ -318,14 +368,112 @@
   <!-- Mobile Drawer Menu -->
   <div class="mobile-menu">
     <a href="/" class="nav-link">Homepage</a>
-    <a href="/rate-us" class="nav-link active" style="color: #f59e0b; font-weight: 800;">Rate Us • 4.9/5</a>
-    <a href="/our-highlights" class="nav-link">Our Highlights</a>
+
+    <!-- Mobile Our Highlights Dropdown -->
+    <div class="mobile-highlights-dropdown-wrap">
+      <button class="mobile-highlights-toggle" onclick="toggleMobileHighlightsMenu(event)" aria-expanded="false">
+        <span>Our Highlights</span>
+        <div class="highlights-toggle-meta">
+          <span class="highlights-count-badge">6</span>
+          <svg class="highlights-chevron-icon" width="16" height="16" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2.5">
+            <polyline points="6 9 12 15 18 9"></polyline>
+          </svg>
+        </div>
+      </button>
+      <div id="mobileHighlightsDropdown" class="mobile-highlights-window">
+        <a href="/our-highlights" class="mobile-sub-highlight-item hub-link">
+          <span class="sub-highlight-bullet"></span>
+          <span>All 6 Highlights Hub &rarr;</span>
+        </a>
+        <a href="/our-highlights/worlds-first-secure-format" class="mobile-sub-highlight-item">
+          <span class="sub-highlight-bullet"></span>
+          <span>World's First .secure Format</span>
+        </a>
+        <a href="/our-highlights/coralgenz-vault-security" class="mobile-sub-highlight-item">
+          <span class="sub-highlight-bullet"></span>
+          <span>Coralgenz Vault Security</span>
+        </a>
+        <a href="/our-highlights/coralgenz-qr-telemetry" class="mobile-sub-highlight-item">
+          <span class="sub-highlight-bullet"></span>
+          <span>Coralgenz QR Telemetry</span>
+        </a>
+        <a href="/our-highlights/coralgenz-compiler-engine" class="mobile-sub-highlight-item">
+          <span class="sub-highlight-bullet"></span>
+          <span>Coralgenz Compiler Engine</span>
+        </a>
+        <a href="/our-highlights/clean-architecture-standards" class="mobile-sub-highlight-item">
+          <span class="sub-highlight-bullet"></span>
+          <span>Clean Architecture Standards</span>
+        </a>
+        <a href="/our-highlights/microsoft-salesforce-partner" class="mobile-sub-highlight-item">
+          <span class="sub-highlight-bullet"></span>
+          <span>Microsoft &amp; Salesforce Partner</span>
+        </a>
+      </div>
+    </div>
+
     <a href="/#about" class="nav-link">About</a>
     <a href="/our-products" class="nav-link">Our Products</a>
-    <a href="/our-services" class="nav-link">Our Services</a>
-    <a href="/become-a-partner" class="nav-link">Become a Partner</a>
+
+    <!-- Mobile Our Services Dropdown -->
+    <div class="mobile-services-dropdown-wrap">
+      <button class="mobile-services-toggle" onclick="toggleMobileServicesMenu(event)" aria-expanded="false">
+        <span>Our Services</span>
+        <div class="services-toggle-meta">
+          <span class="services-count-badge">8</span>
+          <svg class="services-chevron-icon" width="16" height="16" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2.5">
+            <polyline points="6 9 12 15 18 9"></polyline>
+          </svg>
+        </div>
+      </button>
+      <div id="mobileServicesDropdown" class="mobile-services-window">
+        <a href="/our-services" class="mobile-sub-service-item hub-link">
+          <span class="sub-service-bullet"></span>
+          <span>All 8 Services Hub &rarr;</span>
+        </a>
+        <a href="/our-services/custom-software-development" class="mobile-sub-service-item">
+          <span class="sub-service-bullet"></span>
+          <span>Custom Software Development</span>
+        </a>
+        <a href="/our-services/mvp-development" class="mobile-sub-service-item">
+          <span class="sub-service-bullet"></span>
+          <span>MVP Development</span>
+        </a>
+        <a href="/our-services/full-stack-software" class="mobile-sub-service-item">
+          <span class="sub-service-bullet"></span>
+          <span>Full Stack Software</span>
+        </a>
+        <a href="/our-services/legacy-software-modernization" class="mobile-sub-service-item">
+          <span class="sub-service-bullet"></span>
+          <span>Legacy Software Modernization</span>
+        </a>
+        <a href="/our-services/pwa-development" class="mobile-sub-service-item">
+          <span class="sub-service-bullet"></span>
+          <span>Progressive Web Applications (PWAs)</span>
+        </a>
+        <a href="/our-services/modern-admin-dashboards" class="mobile-sub-service-item">
+          <span class="sub-service-bullet"></span>
+          <span>Modern Admin Dashboards</span>
+        </a>
+        <a href="/our-services/frontend-modernization" class="mobile-sub-service-item">
+          <span class="sub-service-bullet"></span>
+          <span>Frontend Modernization</span>
+        </a>
+        <a href="/our-services/domain-and-deployment-service" class="mobile-sub-service-item">
+          <span class="sub-service-bullet"></span>
+          <span>Domain &amp; Deployment Service</span>
+        </a>
+      </div>
+    </div>
+
+    <a href="/#certifications" class="nav-link">Certifications</a>
     <a href="/partnered-startups" class="nav-link">Partnered Startups</a>
-    <a href="/team" class="nav-link">Our Team</a>
+    <a href="/become-a-partner" class="nav-link">Become a Partner</a>
+
+    <a href="/rate-us" class="nav-link active" style="color: #f59e0b; font-weight: 700;">Rate Us • 4.9/5</a>
+    <a href="/team" class="nav-link">Team</a>
     <a href="/contact" class="nav-link">Contact Us</a>
     <a href="/privacy-policy" class="nav-link">Privacy &amp; Policies</a>
   </div>
@@ -350,6 +498,18 @@
       loading="eager"
       onload="handleRatingsFrameLoaded()">
     </iframe>
+
+    <!-- Direct Launch Action Pill -->
+    <div style="position: fixed; bottom: 16px; right: 20px; z-index: 1000; pointer-events: auto;">
+      <a href="https://ratings.coralgenz.net/" target="_blank" rel="noopener noreferrer"
+        style="display: inline-flex; align-items: center; gap: 8px; padding: 8px 16px; background: rgba(15, 23, 42, 0.88); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); color: #ffffff; border-radius: 9999px; font-size: 12.5px; font-weight: 600; text-decoration: none; border: 1px solid rgba(255, 255, 255, 0.15); box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2); transition: transform 0.2s ease, background 0.2s ease;">
+        <span>Open ratings.coralgenz.net in New Tab</span>
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+          <line x1="7" y1="17" x2="17" y2="7"></line>
+          <polyline points="7 7 17 7 17 17"></polyline>
+        </svg>
+      </a>
+    </div>
 
     <!-- Visually-Hidden SEO & Accessibility Semantic Text -->
     <div class="visually-hidden">

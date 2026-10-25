@@ -19,6 +19,12 @@
   <link rel="alternate" hreflang="en" href="https://coralgenz.net/shopify">
   <link rel="alternate" hreflang="x-default" href="https://coralgenz.net/shopify">
   <link rel="alternate" type="text/markdown" href="https://coralgenz.net/llms.txt" title="LLM Knowledge Base">
+<!-- Geographic & Local Entity GEO Tags -->
+  <meta name="geo.region" content="IN-TN">
+  <meta name="geo.placename" content="Coimbatore, Tamil Nadu, India">
+  <meta name="geo.position" content="11.0168;76.9558">
+  <meta name="ICBM" content="11.0168, 76.9558">
+
 
   <!-- Open Graph / Facebook Meta Tags -->
   <meta property="og:type" content="website">
@@ -33,6 +39,9 @@
   <meta property="og:image:height" content="181">
   <meta property="og:image:alt" content="Coralgenz Global Shopify Official Partner Architecture and Headless Commerce">
   <meta property="og:site_name" content="Coralgenz Global">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:locale:alternate" content="en_GB">
+  <meta property="og:locale:alternate" content="en_IN">
 
   <!-- Twitter Card Meta Tags -->
   <meta name="twitter:card" content="summary_large_image">
@@ -41,6 +50,13 @@
   <meta name="twitter:description"
     content="Coralgenz Global is an official Shopify Partner specializing in headless commerce, custom Storefront APIs, Liquid architecture, and app engineering.">
   <meta name="twitter:image" content="https://coralgenz.net/assets/images/partner-shopify.png">
+<!-- Mobile Browser Experience & Theme Tuning -->
+  <meta name="theme-color" content="#0066ff">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="Coralgenz Global">
+
   <meta name="twitter:image:alt" content="Coralgenz Global Shopify Official Partner Architecture and Headless Commerce">
 
   <!-- Instant Indexing & Resource Hints -->
@@ -72,6 +88,23 @@
       "sameAs": [
         "https://www.linkedin.com/company/coralgenz",
         "https://github.com/Coralgenz-Global"
+      ],
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 11.0168,
+        "longitude": 76.9558
+      },
+      "areaServed": "Worldwide",
+      "knowsAbout": [
+        "Enterprise Software Development",
+        "Zero-Knowledge Cryptography",
+        "WebAssembly Compilers",
+        "Dynamic QR Telemetry",
+        "Cloud Native Architecture",
+        "Clean Architecture Standards",
+        "Shopify Partner Engineering",
+        "Salesforce ISV AppExchange",
+        "Microsoft Azure Cloud"
       ]
     },
     {
@@ -86,7 +119,18 @@
       "primaryImageOfPage": {
         "@id": "https://coralgenz.net/assets/images/partner-shopify.png#image"
       },
-      "image": "https://coralgenz.net/assets/images/partner-shopify.png"
+      "image": "https://coralgenz.net/assets/images/partner-shopify.png",
+      "speakable": {
+        "@type": "SpeakableSpecification",
+        "cssSelector": [
+          "h1",
+          ".hero-desc",
+          ".section-desc",
+          "p.lead",
+          ".page-intro",
+          "h2"
+        ]
+      }
     },
     {
       "@type": "BreadcrumbList",
@@ -123,6 +167,36 @@
       "height": 181,
       "license": "https://coralgenz.net/",
       "acquireLicensePage": "https://coralgenz.net/contact"
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://coralgenz.net/shopify#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What Shopify development services does Coralgenz Global provide?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Coralgenz Global delivers custom Shopify Plus architectures, headless Hydrogen and Oxygen storefronts, Storefront GraphQL API integrations, custom Liquid themes, and checkout UI extensions."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How does Coralgenz optimize Shopify store speed and conversion rate?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Coralgenz eliminates render-blocking assets, optimizes Core Web Vitals to 95+ PageSpeed scores, implements sub-second page transitions, and builds high-converting one-click checkout funnels."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can Coralgenz migrate existing e-commerce stores to Shopify?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, Coralgenz engineers zero-downtime data migrations from WooCommerce, Magento, custom SQL platforms, and BigCommerce directly into Shopify with full SEO preservation."
+          }
+        }
+      ]
     }
   ]
 }

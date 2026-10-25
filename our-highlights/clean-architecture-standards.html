@@ -16,6 +16,12 @@
   <link rel="alternate" hreflang="en" href="https://coralgenz.net/our-highlights/clean-architecture-standards">
   <link rel="alternate" hreflang="x-default" href="https://coralgenz.net/our-highlights/clean-architecture-standards">
   <link rel="alternate" type="text/markdown" href="https://coralgenz.net/llms.txt" title="LLM Knowledge Base">
+<!-- Geographic & Local Entity GEO Tags -->
+  <meta name="geo.region" content="IN-TN">
+  <meta name="geo.placename" content="Coimbatore, Tamil Nadu, India">
+  <meta name="geo.position" content="11.0168;76.9558">
+  <meta name="ICBM" content="11.0168, 76.9558">
+
 
   <!-- Open Graph / Social Media -->
   <meta property="og:type" content="article">
@@ -29,6 +35,9 @@
   <meta property="og:image:height" content="630">
   <meta property="og:image:alt" content="Domain-Driven Design and Universal Clean Architecture Standards Blueprint">
   <meta property="og:site_name" content="Coralgenz Global">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:locale:alternate" content="en_GB">
+  <meta property="og:locale:alternate" content="en_IN">
 
   <link rel="stylesheet" href="/assets/css/main.css">
   <link rel="stylesheet" href="/assets/css/components.css">
@@ -51,7 +60,18 @@
       "primaryImageOfPage": {
         "@id": "https://coralgenz.net/assets/images/clean-architecture-blueprint.jpg#image"
       },
-      "image": "https://coralgenz.net/assets/images/clean-architecture-blueprint.jpg"
+      "image": "https://coralgenz.net/assets/images/clean-architecture-blueprint.jpg",
+      "speakable": {
+        "@type": "SpeakableSpecification",
+        "cssSelector": [
+          "h1",
+          ".hero-desc",
+          ".section-desc",
+          "p.lead",
+          ".page-intro",
+          "h2"
+        ]
+      }
     },
     {
       "@type": "BreadcrumbList",
@@ -88,6 +108,36 @@
       "height": 630,
       "license": "https://coralgenz.net/",
       "acquireLicensePage": "https://coralgenz.net/contact"
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://coralgenz.net/our-highlights/clean-architecture-standards#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What clean architecture standards does Coralgenz Global mandate?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Coralgenz mandates Uncle Bob Clean Architecture principles: strict separation of domain business logic, use-case interactors, repository interfaces, and decoupled framework adapters."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How does clean architecture benefit long-term enterprise software maintenance?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Clean architecture prevents vendor lock-in, enables independent database and UI swapping without touching core business rules, and ensures testability with mockable boundaries."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What test coverage does Coralgenz enforce on enterprise codebases?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Coralgenz enforces a minimum 85% branch and statement test coverage across core domain entities, validated through automated GitHub Actions CI/CD pipelines."
+          }
+        }
+      ]
     }
   ]
 }
@@ -111,6 +161,13 @@
   <meta name="twitter:title" content="Clean Architecture & SOLID | Coralgenz Global">
   <meta name="twitter:description" content="Explore Clean Architecture & Domain-Driven Design standards by Coralgenz Global for high-performance, maintainable, zero-debt enterprise software.">
   <meta name="twitter:image" content="https://coralgenz.net/assets/images/clean-architecture-blueprint.jpg">
+<!-- Mobile Browser Experience & Theme Tuning -->
+  <meta name="theme-color" content="#0066ff">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="Coralgenz Global">
+
   <meta name="twitter:image:alt" content="Domain-Driven Design and Universal Clean Architecture Standards Blueprint">
 </head>
 <body class="hl-subpage-wrap">

@@ -19,6 +19,12 @@
   <link rel="alternate" hreflang="en" href="https://coralgenz.net/coralgenz-compiler">
   <link rel="alternate" hreflang="x-default" href="https://coralgenz.net/coralgenz-compiler">
   <link rel="alternate" type="text/markdown" href="https://coralgenz.net/llms.txt" title="LLM Knowledge Base">
+<!-- Geographic & Local Entity GEO Tags -->
+  <meta name="geo.region" content="IN-TN">
+  <meta name="geo.placename" content="Coimbatore, Tamil Nadu, India">
+  <meta name="geo.position" content="11.0168;76.9558">
+  <meta name="ICBM" content="11.0168, 76.9558">
+
 
   <!-- Open Graph / Facebook Meta Tags -->
   <meta property="og:type" content="website">
@@ -33,6 +39,9 @@
   <meta property="og:image:height" content="630">
   <meta property="og:image:alt" content="Coralgenz Cloud Compiler Polyglot Runtime and Execution Sandbox">
   <meta property="og:site_name" content="Coralgenz Global">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:locale:alternate" content="en_GB">
+  <meta property="og:locale:alternate" content="en_IN">
 
   <!-- Twitter Card Meta Tags -->
   <meta name="twitter:card" content="summary_large_image">
@@ -41,6 +50,13 @@
   <meta name="twitter:description"
     content="Execute, debug, and share code across 40+ programming languages directly in the browser with sub-second execution speeds and isolated sandboxes.">
   <meta name="twitter:image" content="https://coralgenz.net/assets/images/kmUbbqN7jwVRUVuglgbqRYXOtY.png">
+<!-- Mobile Browser Experience & Theme Tuning -->
+  <meta name="theme-color" content="#0066ff">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="Coralgenz Global">
+
   <meta name="twitter:image:alt" content="Coralgenz Cloud Compiler Polyglot Runtime and Execution Sandbox">
 
   <!-- Instant Indexing & Resource Hints -->
@@ -62,7 +78,50 @@
       "@id": "https://coralgenz.net/#organization",
       "name": "Coralgenz Global",
       "url": "https://coralgenz.net/",
-      "logo": "https://coralgenz.net/assets/images/DVyu6tz4dqPirA4TwAJZUz5CUw.png"
+      "logo": "https://coralgenz.net/assets/images/DVyu6tz4dqPirA4TwAJZUz5CUw.png",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Coimbatore",
+        "addressRegion": "Tamil Nadu",
+        "addressCountry": "IN"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 11.0168,
+        "longitude": 76.9558
+      },
+      "areaServed": "Worldwide",
+      "knowsAbout": [
+        "Enterprise Software Development",
+        "Zero-Knowledge Cryptography",
+        "WebAssembly Compilers",
+        "Dynamic QR Telemetry",
+        "Cloud Native Architecture",
+        "Clean Architecture Standards",
+        "Shopify Partner Engineering",
+        "Salesforce ISV AppExchange",
+        "Microsoft Azure Cloud"
+      ]
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://coralgenz.net/coralgenz-compiler#webpage",
+      "url": "https://coralgenz.net/coralgenz-compiler",
+      "name": "Coralgenz Compiler | Multi-Language Cloud IDE",
+      "isPartOf": {
+        "@id": "https://coralgenz.net/#website"
+      },
+      "speakable": {
+        "@type": "SpeakableSpecification",
+        "cssSelector": [
+          "h1",
+          ".hero-desc",
+          ".section-desc",
+          "p.lead",
+          ".page-intro",
+          "h2"
+        ]
+      }
     },
     {
       "@type": "SoftwareApplication",
@@ -112,6 +171,36 @@
       "height": 630,
       "license": "https://coralgenz.net/",
       "acquireLicensePage": "https://coralgenz.net/contact"
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://coralgenz.net/coralgenz-compiler#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is the Coralgenz Cloud Compiler Engine?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Coralgenz Compiler is an enterprise cloud IDE and multi-language execution engine built with WebAssembly isolation and containerized sandboxing, delivering sub-400ms code compilation across C, C++, Java, Python, and JavaScript."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Which programming languages and standards does Coralgenz Compiler support?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The engine natively supports C (C17/C23), C++ (C++20/C++23 with STL), Python 3.11+, Java (OpenJDK 21 LTS), and modern ECMAScript/JavaScript with strict sandboxing and real-time output telemetry."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is Coralgenz Compiler free to use for developers?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, the core web execution engine is freely accessible online for developers, students, and engineering teams, with premium high-concurrency API plans available for institutional integrations."
+          }
+        }
+      ]
     }
   ]
 }
