@@ -4979,55 +4979,8 @@ body.rate-us-page-active .site-header {
 }
 
 .ratings-fullscreen-spinner-wrap {
-  position: absolute !important;
-  inset: 0 !important;
-  background: #ffffff !important;
-  display: flex !important;
-  flex-direction: column !important;
-  align-items: center !important;
-  justify-content: center !important;
-  gap: 16px !important;
-  z-index: 10 !important;
-  transition: opacity 0.35s ease, visibility 0.35s ease !important;
-}
-
-.ratings-fullscreen-spinner-wrap.is-loaded {
-  opacity: 0 !important;
-  visibility: hidden !important;
+  display: none !important;
   pointer-events: none !important;
-}
-
-.ratings-fullscreen-spinner {
-  width: 44px !important;
-  height: 44px !important;
-  border: 3.5px solid #e2e8f0 !important;
-  border-top-color: #0176d3 !important;
-  border-right-color: #f59e0b !important;
-  border-radius: 50% !important;
-  animation: ratingsSpin 0.75s linear infinite !important;
-}
-
-.ratings-spinner-text {
-  display: flex !important;
-  flex-direction: column !important;
-  align-items: center !important;
-  gap: 6px !important;
-  text-align: center !important;
-}
-
-.spinner-brand {
-  font-family: var(--font-satoshi), sans-serif !important;
-  font-size: 15px !important;
-  font-weight: 800 !important;
-  color: #0f172a !important;
-  letter-spacing: -0.01em !important;
-}
-
-.spinner-status {
-  font-family: var(--font-inter), sans-serif !important;
-  font-size: 13px !important;
-  font-weight: 500 !important;
-  color: #64748b !important;
 }
 
 .visually-hidden {

@@ -783,36 +783,14 @@
   </div>
 <!-- Fullscreen Interactive Ratings Portal App -->
   <main class="rate-us-fullscreen-app" id="mainContent">
-    <!-- Seamless Preloader Spinner -->
-    <div id="ratingsAppSpinner" class="ratings-fullscreen-spinner-wrap" aria-live="polite">
-      <div class="ratings-fullscreen-spinner"></div>
-      <div class="ratings-spinner-text">
-        <span class="spinner-brand">Coralgenz Global Ratings</span>
-        <span class="spinner-status">Connecting to live ratings portal...</span>
-      </div>
-    </div>
-
     <!-- Live Fullscreen Iframe -->
     <iframe id="pageRatingsIframe"
       src="/rate/"
       class="ratings-fullscreen-frame"
       title="Coralgenz Global Ratings &amp; Reviews Interactive Portal"
       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-      loading="eager"
-      onload="handleRatingsFrameLoaded()">
+      loading="eager">
     </iframe>
-
-    <!-- Direct Launch Action Pill -->
-    <div style="position: fixed; bottom: 16px; right: 20px; z-index: 1000; pointer-events: auto;">
-      <a href="/rate/" target="_blank" rel="noopener noreferrer"
-        style="display: inline-flex; align-items: center; gap: 8px; padding: 8px 16px; background: rgba(15, 23, 42, 0.88); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); color: #ffffff; border-radius: 9999px; font-size: 12.5px; font-weight: 600; text-decoration: none; border: 1px solid rgba(255, 255, 255, 0.15); box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2); transition: transform 0.2s ease, background 0.2s ease;">
-        <span>Open Ratings App Fullscreen</span>
-        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-          <line x1="7" y1="17" x2="17" y2="7"></line>
-          <polyline points="7 7 17 7 17 17"></polyline>
-        </svg>
-      </a>
-    </div>
 
     <!-- Visually-Hidden SEO, AEO, GEO, AI Overviews & Accessibility Semantic Knowledge Graph -->
     <div class="visually-hidden">
@@ -898,21 +876,6 @@
   </main>
 
   <script type="module" src="/assets/js/main.js"></script>
-  <script>
-    // Handle Iframe preloader dismissal
-    function handleRatingsFrameLoaded() {
-      const spinner = document.getElementById('ratingsAppSpinner');
-      if (spinner && !spinner.classList.contains('is-loaded')) {
-        spinner.classList.add('is-loaded');
-        setTimeout(() => {
-          spinner.style.display = 'none';
-        }, 400);
-      }
-    }
-
-    // Safety timeout: ensure spinner never stays stuck if network or cache delays load event
-    setTimeout(handleRatingsFrameLoaded, 3000);
-  </script>
 </body>
 
 </html>
