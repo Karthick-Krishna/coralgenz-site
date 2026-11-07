@@ -18,19 +18,13 @@ from collections import Counter
 with open("index.html", "r", encoding="utf-8") as f:
     _idx_html = f.read()
 
-_h_match = re.search(
-    r'(<!-- Main Navigation Header -->\s*<header class="site-header">.*?</header>\s*<!-- Mobile Drawer Menu -->\s*<div class="mobile-menu">.*?</div>)',
-    _idx_html,
-    re.DOTALL
-)
-SITE_HEADER_HTML = _h_match.group(1) if _h_match else ""
+_h_start = _idx_html.find('<!-- Main Navigation Header -->')
+_h_end = _idx_html.find('<section class="hero-light-modern"')
+SITE_HEADER_HTML = _idx_html[_h_start:_h_end].strip() if _h_start != -1 and _h_end != -1 else ""
 
-_f_match = re.search(
-    r'(<!-- Site Footer -->\s*<footer class="site-footer">.*?</footer>)',
-    _idx_html,
-    re.DOTALL
-)
-SITE_FOOTER_HTML = _f_match.group(1) if _f_match else ""
+_f_start = _idx_html.find('<!-- Site Footer -->')
+_f_end = _idx_html.find('</footer>') + len('</footer>')
+SITE_FOOTER_HTML = _idx_html[_f_start:_f_end].strip() if _f_start != -1 and _f_end != -1 else ""
 
 random.seed(42)
 
@@ -765,8 +759,8 @@ __SITE_HEADER__
 
       <!-- Previous / Next Navigation -->
       <nav style="display: flex; justify-content: space-between; align-items: center; margin-top: 48px; padding-top: 24px; border-top: 1px solid #e2e8f0; gap: 16px; flex-wrap: wrap;">
-        {f'<a href="/blog/{prev_post["slug"]}.html" style="color: #0055fe; text-decoration: none; font-size: 14px; font-weight: 600; display: inline-flex; align-items: center; gap: 6px;">&larr; Previous: {prev_post["title"][:38]}...</a>' if prev_post else '<span></span>'}
-        {f'<a href="/blog/{next_post["slug"]}.html" style="color: #0055fe; text-decoration: none; font-size: 14px; font-weight: 600; display: inline-flex; align-items: center; gap: 6px;">Next: {next_post["title"][:38]}... &rarr;</a>' if next_post else '<span></span>'}
+        {f'<a href="/blog/{prev_post["slug"]}" style="color: #0055fe; text-decoration: none; font-size: 14px; font-weight: 600; display: inline-flex; align-items: center; gap: 6px;">&larr; Previous: {prev_post["title"][:38]}...</a>' if prev_post else '<span></span>'}
+        {f'<a href="/blog/{next_post["slug"]}" style="color: #0055fe; text-decoration: none; font-size: 14px; font-weight: 600; display: inline-flex; align-items: center; gap: 6px;">Next: {next_post["title"][:38]}... &rarr;</a>' if next_post else '<span></span>'}
       </nav>
     </article>
   </main>
@@ -844,8 +838,7 @@ def generate_blog_hub_html(posts):
             "id": p["id"],
             "title": p["title"],
             "slug": p["slug"],
-            "url": f"/blog/{p['slug']}.html",
-            "cleanUrl": f"/blog/{p['slug']}",
+            "url": f"/blog/{p['slug']}",
             "date": p["displayDate"],
             "category": p["category"],
             "readTime": p["readTime"],
@@ -1260,156 +1253,6 @@ __HUB_SCHEMA_JSON__
     .filter-apply-btn:hover {
       background: #0044cc;
     }
-
-    /* ==========================================================================
-       Article Reader Modal (Instant In-Page Reading Experience)
-       ========================================================================== */
-    .article-reader-modal {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      z-index: 10000;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 24px;
-      box-sizing: border-box;
-      animation: readerFadeIn 0.2s ease-out;
-    }
-    @keyframes readerFadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
-    }
-    .article-reader-backdrop {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(15, 23, 42, 0.72);
-      backdrop-filter: blur(8px);
-      -webkit-backdrop-filter: blur(8px);
-    }
-    .article-reader-container {
-      position: relative;
-      width: 100%;
-      max-width: 920px;
-      max-height: 90vh;
-      background: #ffffff;
-      border-radius: 24px;
-      box-shadow: 0 25px 60px -15px rgba(15, 23, 42, 0.35);
-      border: 1.5px solid #e2e8f0;
-      display: flex;
-      flex-direction: column;
-      overflow: hidden;
-      animation: readerSlideUp 0.25s cubic-bezier(0.16, 1, 0.3, 1);
-    }
-    @keyframes readerSlideUp {
-      from { transform: translateY(20px) scale(0.98); opacity: 0; }
-      to { transform: translateY(0) scale(1); opacity: 1; }
-    }
-    .article-reader-topbar {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 14px 24px;
-      background: #ffffff;
-      border-bottom: 1px solid #f1f5f9;
-      position: sticky;
-      top: 0;
-      z-index: 10;
-      gap: 12px;
-      flex-wrap: wrap;
-    }
-    .reader-back-btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 8px 14px;
-      border-radius: 10px;
-      border: 1px solid #e2e8f0;
-      background: #f8fafc;
-      font-size: 13.5px;
-      font-weight: 700;
-      color: #0f172a;
-      cursor: pointer;
-      transition: all 0.15s;
-    }
-    .reader-back-btn:hover {
-      background: #eff6ff;
-      border-color: #bfdbfe;
-      color: #0055fe;
-    }
-    .reader-actions-right {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-    .reader-external-btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      padding: 8px 14px;
-      border-radius: 10px;
-      background: #eff6ff;
-      border: 1px solid #bfdbfe;
-      color: #0055fe;
-      font-size: 13px;
-      font-weight: 700;
-      text-decoration: none;
-      transition: all 0.15s;
-    }
-    .reader-external-btn:hover {
-      background: #0055fe;
-      color: #ffffff;
-    }
-    .reader-close-btn {
-      width: 36px;
-      height: 36px;
-      border-radius: 10px;
-      border: 1px solid #e2e8f0;
-      background: #f8fafc;
-      font-size: 22px;
-      line-height: 1;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: #64748b;
-      cursor: pointer;
-      transition: all 0.15s;
-    }
-    .reader-close-btn:hover {
-      background: #fee2e2;
-      border-color: #fecaca;
-      color: #dc2626;
-    }
-    .article-reader-body {
-      padding: 32px 36px 60px 36px;
-      overflow-y: auto;
-      -webkit-overflow-scrolling: touch;
-      line-height: 1.75;
-    }
-    @keyframes spin {
-      to { transform: rotate(360deg); }
-    }
-    @media (max-width: 768px) {
-      .article-reader-modal {
-        padding: 0;
-      }
-      .article-reader-container {
-        max-height: 100vh;
-        height: 100%;
-        border-radius: 0;
-      }
-      .article-reader-topbar {
-        padding: 12px 16px;
-      }
-      .article-reader-body {
-        padding: 20px 18px 40px 18px;
-      }
-    }
   </style>
 </head>
 
@@ -1549,40 +1392,6 @@ __SITE_HEADER__
       </div>
     </section>
   </main>
-
-  <!-- Interactive In-Page Article Reader Modal (Instant Reading Experience) -->
-  <div id="articleReaderModal" class="article-reader-modal" style="display: none;" role="dialog" aria-modal="true" aria-label="Article Reader">
-    <div class="article-reader-backdrop" onclick="closeArticleReader()"></div>
-    <div class="article-reader-container" id="articleReaderContent">
-      <!-- Reader Header Action Bar -->
-      <div class="article-reader-topbar">
-        <button type="button" class="reader-back-btn" onclick="closeArticleReader()" aria-label="Back to Articles">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-            <line x1="19" y1="12" x2="5" y2="12"></line>
-            <polyline points="12 19 5 12 12 5"></polyline>
-          </svg>
-          <span>Back to All Articles</span>
-        </button>
-
-        <div class="reader-actions-right">
-          <a id="readerFullPageLink" href="#" class="reader-external-btn" title="Open as standalone page">
-            <span>Open Full Page</span>
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
-              <polyline points="15 3 21 3 21 9"></polyline>
-              <line x1="10" y1="14" x2="21" y2="3"></line>
-            </svg>
-          </a>
-          <button type="button" class="reader-close-btn" onclick="closeArticleReader()" aria-label="Close reader">&times;</button>
-        </div>
-      </div>
-
-      <!-- Reader Scrollable Body -->
-      <div id="articleReaderBody" class="article-reader-body">
-        <!-- Dynamically injected article content -->
-      </div>
-    </div>
-  </div>
 
 __SITE_FOOTER__
 
@@ -1775,7 +1584,7 @@ __SITE_FOOTER__
             </div>
 
             <h2 style="font-family: var(--font-satoshi), sans-serif; font-size: 17.5px; font-weight: 800; color: #0f172a; line-height: 1.35; margin: 0 0 12px 0;">
-              <a href="${post.url}" onclick="handleArticleClick(event, '${post.slug}', '${post.url}')" style="color: #0f172a; text-decoration: none; transition: color 0.2s;" onmouseenter="this.style.color='#0055fe'" onmouseleave="this.style.color='#0f172a'">
+              <a href="${post.url}" style="color: #0f172a; text-decoration: none; transition: color 0.2s;" onmouseenter="this.style.color='#0055fe'" onmouseleave="this.style.color='#0f172a'">
                 ${post.title}
               </a>
             </h2>
@@ -1796,9 +1605,8 @@ __SITE_FOOTER__
 
           <div style="display: flex; justify-content: space-between; align-items: center; padding-top: 14px; border-top: 1px solid #f1f5f9; margin-top: 14px;">
             <span style="font-size: 12.5px; color: #64748b; font-weight: 500;">${post.date}</span>
-            <a href="${post.url}" onclick="handleArticleClick(event, '${post.slug}', '${post.url}')" style="font-size: 13px; font-weight: 700; color: #0055fe; text-decoration: none; display: inline-flex; align-items: center; gap: 4px; padding: 5px 12px; border-radius: 8px; background: #eff6ff; border: 1px solid #bfdbfe; transition: all 0.2s;" onmouseenter="this.style.background='#0055fe'; this.style.color='#ffffff';" onmouseleave="this.style.background='#eff6ff'; this.style.color='#0055fe';">
-              <span>Read Article</span>
-              <span>&rarr;</span>
+            <a href="${post.url}" style="font-size: 13px; font-weight: 700; color: #0055fe; text-decoration: none; display: inline-flex; align-items: center; gap: 4px;">
+              Read Article &rarr;
             </a>
           </div>
         </article>
@@ -1806,111 +1614,6 @@ __SITE_FOOTER__
 
       renderPagination(totalPages);
     }
-
-    // In-Page Interactive Article Reader Engine
-    let currentReadingSlug = null;
-
-    window.handleArticleClick = function(event, slug, url) {
-      if (event.ctrlKey || event.metaKey || event.shiftKey || event.button !== 0) {
-        return; // Allow open in new tab
-      }
-      event.preventDefault();
-      openArticleReader(slug, url);
-    };
-
-    window.openArticleReader = async function(slug, directUrl) {
-      const modal = document.getElementById('articleReaderModal');
-      const modalBody = document.getElementById('articleReaderBody');
-      const fullPageLink = document.getElementById('readerFullPageLink');
-
-      if (!modal || !modalBody) {
-        window.location.href = directUrl;
-        return;
-      }
-
-      if (fullPageLink) {
-        fullPageLink.href = directUrl;
-      }
-
-      modal.style.display = 'flex';
-      document.body.style.overflow = 'hidden';
-      modalBody.innerHTML = `
-        <div style="text-align: center; padding: 60px 20px;">
-          <div style="display: inline-block; width: 44px; height: 44px; border: 3.5px solid #e2e8f0; border-top-color: #0055fe; border-radius: 50%; animation: spin 0.8s linear infinite;"></div>
-          <p style="margin-top: 18px; color: #64748b; font-size: 15px; font-weight: 600;">Loading article content...</p>
-        </div>
-      `;
-
-      try {
-        let fetchUrl = directUrl;
-        if (window.location.protocol === 'file:') {
-          fetchUrl = 'blog/' + slug + '.html';
-        }
-        const res = await fetch(fetchUrl);
-        if (!res.ok) {
-          throw new Error('Failed to load article: ' + res.status);
-        }
-        const htmlText = await res.text();
-        const parser = new DOMParser();
-        const doc = parser.parseFromString(htmlText, 'text/html');
-        const article = doc.querySelector('article');
-
-        if (!article) {
-          throw new Error('Article element not found');
-        }
-
-        modalBody.innerHTML = article.innerHTML;
-        currentReadingSlug = slug;
-
-        const modalContent = document.getElementById('articleReaderContent');
-        if (modalContent) modalContent.scrollTop = 0;
-
-        try {
-          history.pushState({ articleSlug: slug }, '', '#article=' + slug);
-        } catch(e) {}
-      } catch (err) {
-        console.warn('In-page reader fallback to direct URL:', err);
-        window.location.href = directUrl;
-      }
-    };
-
-    window.closeArticleReader = function() {
-      const modal = document.getElementById('articleReaderModal');
-      if (modal) {
-        modal.style.display = 'none';
-      }
-      document.body.style.overflow = '';
-      currentReadingSlug = null;
-      if (window.location.hash.startsWith('#article=')) {
-        try {
-          history.pushState(null, '', window.location.pathname + window.location.search);
-        } catch(e) {}
-      }
-    };
-
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape') closeArticleReader();
-    });
-
-    window.addEventListener('DOMContentLoaded', () => {
-      const hash = window.location.hash;
-      if (hash && hash.startsWith('#article=')) {
-        const slug = hash.replace('#article=', '');
-        const post = ALL_POSTS.find(p => p.slug === slug);
-        if (post) openArticleReader(post.slug, post.url);
-      }
-    });
-
-    window.addEventListener('popstate', (e) => {
-      const hash = window.location.hash;
-      if (hash && hash.startsWith('#article=')) {
-        const slug = hash.replace('#article=', '');
-        const post = ALL_POSTS.find(p => p.slug === slug);
-        if (post) openArticleReader(post.slug, post.url);
-      } else {
-        closeArticleReader();
-      }
-    });
 
     function renderPagination(totalPages) {
       if (totalPages <= 1) {
