@@ -812,19 +812,50 @@ def generate_blog_hub_html(posts):
             },
             {
                 "@type": "SoftwareApplication",
-                "name": "Coralgenz Global Engineering Portal",
+                "@id": "https://coralgenz.net/blog#software",
+                "name": "Coralgenz Global Blog & Technology Insights",
+                "url": "https://coralgenz.net/blog",
                 "applicationCategory": "Business/Productivity",
                 "operatingSystem": "Android, Web, iOS, Windows, macOS, Linux",
+                "image": "https://coralgenz.net/assets/images/DVyu6tz4dqPirA4TwAJZUz5CUw.png",
+                "description": "180 expert software engineering guides, zero-knowledge security playbooks, startup MVP roadmaps, and cloud scalability systems by Coralgenz Global.",
                 "offers": {
                     "@type": "Offer",
                     "price": "0",
-                    "priceCurrency": "USD"
+                    "priceCurrency": "USD",
+                    "availability": "https://schema.org/InStock"
                 },
                 "aggregateRating": {
                     "@type": "AggregateRating",
                     "ratingValue": "4.9",
-                    "bestRating": "5.0",
-                    "worstRating": "1.0",
+                    "bestRating": "5",
+                    "worstRating": "1",
+                    "ratingCount": total_reviews,
+                    "reviewCount": total_reviews
+                }
+            },
+            {
+                "@type": "Product",
+                "@id": "https://coralgenz.net/blog#product",
+                "name": "Coralgenz Global Blog & Technology Insights",
+                "url": "https://coralgenz.net/blog",
+                "image": "https://coralgenz.net/assets/images/DVyu6tz4dqPirA4TwAJZUz5CUw.png",
+                "description": "Comprehensive library of 180 practical guides, architectural frameworks, and enterprise software engineering playbooks.",
+                "brand": {
+                    "@type": "Brand",
+                    "name": "Coralgenz Global"
+                },
+                "offers": {
+                    "@type": "Offer",
+                    "price": "0",
+                    "priceCurrency": "USD",
+                    "availability": "https://schema.org/InStock"
+                },
+                "aggregateRating": {
+                    "@type": "AggregateRating",
+                    "ratingValue": "4.9",
+                    "bestRating": "5",
+                    "worstRating": "1",
                     "ratingCount": total_reviews,
                     "reviewCount": total_reviews
                 }
