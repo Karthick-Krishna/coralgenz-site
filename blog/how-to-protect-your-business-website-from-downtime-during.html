@@ -37,6 +37,7 @@
   <!-- Core Stylesheets -->
   <link rel="stylesheet" href="/assets/css/main.css">
   <link rel="stylesheet" href="/assets/css/components.css">
+  <link rel="stylesheet" href="/assets/css/animations.css">
 
   <!-- Google Star Rating & Structured Data JSON-LD -->
   <script type="application/ld+json">
@@ -76,8 +77,8 @@
       "@type": "SoftwareApplication",
       "@id": "https://coralgenz.net/blog/how-to-protect-your-business-website-from-downtime-during#software",
       "name": "Coralgenz Global \u2014 High Availability",
-      "applicationCategory": "BusinessApplication",
-      "operatingSystem": "All modern browsers, Android, iOS, Windows, macOS, Linux",
+      "applicationCategory": "Business/Productivity",
+      "operatingSystem": "Android, Web, iOS, Windows, macOS, Linux",
       "offers": {
         "@type": "Offer",
         "price": "0",
@@ -152,27 +153,97 @@
 </head>
 
 <body class="light-theme blog-post-page">
-  <!-- Global Header -->
-  <header class="site-header scrolled">
-    <div class="header-container">
-      <a href="/" class="brand-logo" aria-label="Coralgenz Global Home">
-        <img src="/assets/images/DVyu6tz4dqPirA4TwAJZUz5CUw.png" alt="Coralgenz Global Logo" class="logo-img" width="38" height="38">
-        <span class="logo-text">CORALGENZ</span>
+<!-- Main Navigation Header -->
+  <header class="site-header">
+    <div class="container navbar">
+      <a href="/" class="brand-logo"
+        aria-label="Coralgenz Global - Enterprise IT &amp; Software Engineering Company Homepage">
+        <img src="/assets/images/DVyu6tz4dqPirA4TwAJZUz5CUw.png"
+          alt="Coralgenz Global - Enterprise Software &amp; IT Solutions Official Logo" title="Coralgenz Global Logo"
+          width="38" height="38" loading="eager" fetchpriority="high" decoding="async">
+        <span class="brand-name">Coralgenz Global</span>
       </a>
 
       <nav class="nav-links">
-        <a href="/" class="nav-link">Home</a>
+        <a href="/" class="nav-link active">Home</a>
         <a href="/about-us" class="nav-link">About</a>
-        <a href="/our-services" class="nav-link">Services</a>
-        <a href="/our-products" class="nav-link">Products</a>
-        <a href="/our-highlights" class="nav-link">Highlights</a>
-        <a href="/blog" class="nav-link active" style="color: #0055fe; font-weight: 700;">Blog</a>
-        <a href="/contact" class="nav-link">Contact</a>
 
-        <!-- 3-Line Menu -->
+        <!-- Our Services Dropdown -->
+        <div class="nav-dropdown-wrapper">
+          <a href="/our-services" class="nav-link nav-dropdown-btn">
+            <span>Our Services</span>
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </a>
+          <div class="nav-dropdown-menu">
+            <a href="/our-services" class="nav-dropdown-item dropdown-hub-link">
+              <span>All 8 Services Hub</span>
+              <span>&rarr;</span>
+            </a>
+            <a href="/our-services/custom-software-development" class="nav-dropdown-item">Custom Software Development</a>
+            <a href="/our-services/mvp-development" class="nav-dropdown-item">MVP Development</a>
+            <a href="/our-services/full-stack-software" class="nav-dropdown-item">Full Stack Software</a>
+            <a href="/our-services/legacy-software-modernization" class="nav-dropdown-item">Legacy Software Modernization</a>
+            <a href="/our-services/pwa-development" class="nav-dropdown-item">Progressive Web Applications (PWAs)</a>
+            <a href="/our-services/modern-admin-dashboards" class="nav-dropdown-item">Modern Admin Dashboards</a>
+            <a href="/our-services/frontend-modernization" class="nav-dropdown-item">Frontend Modernization</a>
+            <a href="/our-services/domain-and-deployment-service" class="nav-dropdown-item">Domain &amp; Deployment Service</a>
+          </div>
+        </div>
+
+        <!-- Our Products Dropdown -->
+        <div class="nav-dropdown-wrapper">
+          <a href="/our-products" class="nav-link nav-dropdown-btn">
+            <span>Our Products</span>
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </a>
+          <div class="nav-dropdown-menu">
+            <a href="/our-products" class="nav-dropdown-item dropdown-hub-link">
+              <span>All 3 Products Hub</span>
+              <span>&rarr;</span>
+            </a>
+            <a href="/coralgenz-vault" class="nav-dropdown-item">Coralgenz Vault</a>
+            <a href="/coralgenz-qr" class="nav-dropdown-item">Coralgenz QR</a>
+            <a href="/coralgenz-compiler" class="nav-dropdown-item">Coralgenz Compiler</a>
+          </div>
+        </div>
+
+        <!-- Our Highlights Dropdown -->
+        <div class="nav-dropdown-wrapper">
+          <a href="/our-highlights" class="nav-link nav-dropdown-btn">
+            <span>Our Highlights</span>
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </a>
+          <div class="nav-dropdown-menu">
+            <a href="/our-highlights" class="nav-dropdown-item dropdown-hub-link">
+              <span>All 6 Highlights Hub</span>
+              <span>&rarr;</span>
+            </a>
+            <a href="/our-highlights/worlds-first-secure-format" class="nav-dropdown-item">World's First .secure Format</a>
+            <a href="/our-highlights/coralgenz-vault-security" class="nav-dropdown-item">Coralgenz Vault Security</a>
+            <a href="/our-highlights/coralgenz-qr-telemetry" class="nav-dropdown-item">Coralgenz QR Telemetry</a>
+            <a href="/our-highlights/coralgenz-compiler-engine" class="nav-dropdown-item">Coralgenz Compiler Engine</a>
+            <a href="/our-highlights/clean-architecture-standards" class="nav-dropdown-item">Clean Architecture Standards</a>
+            <a href="/our-highlights/microsoft-salesforce-partner" class="nav-dropdown-item">Microsoft &amp; Salesforce Partner</a>
+          </div>
+        </div>
+
+        <a href="/become-a-partner" class="nav-link">Become a Partner</a>
+        <a href="/contact" class="nav-link">Contact Us</a>
+      </nav>
+
+      <div class="nav-actions">
+        <!-- 3-Line Quick Options Dropdown (Desktop) -->
         <div class="three-dots-wrapper">
-          <button class="three-dots-btn active is-active-page" onclick="toggleThreeDotsMenu(event)" aria-label="More options" title="More options">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round">
+          <button class="three-dots-btn" onclick="toggleThreeDotsMenu(event)" aria-label="More options"
+            title="More options">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
+              stroke-linecap="round">
               <line x1="4" y1="6" x2="20" y2="6"></line>
               <line x1="4" y1="12" x2="20" y2="12"></line>
               <line x1="4" y1="18" x2="20" y2="18"></line>
@@ -188,11 +259,12 @@
             </a>
             <a href="/#certifications" class="three-dots-item">
               <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
+                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z">
+                </path>
               </svg>
               <span>CERTIFICATION PROGRAM</span>
             </a>
-            <a href="/collaborated-products" class="three-dots-item">
+            <a href="/collaborated-products" class="three-dots-item highlight">
               <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                 <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
                 <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
@@ -203,6 +275,8 @@
               <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                 <path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"></path>
                 <path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"></path>
+                <path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"></path>
+                <path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"></path>
               </svg>
               <span>PARTNERED STARTUPS</span>
             </a>
@@ -215,7 +289,9 @@
             </a>
             <a href="/rate-us" class="three-dots-item highlight" style="color: #f59e0b; font-weight: 700;">
               <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                <polygon
+                  points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
+                </polygon>
               </svg>
               <span>RATE US (4.9/5)</span>
             </a>
@@ -223,18 +299,17 @@
               <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                 <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
                 <circle cx="9" cy="7" r="4"></circle>
+                <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
               </svg>
               <span>OUR TEAM</span>
             </a>
-            <a href="#cookie-settings" data-open-cookie-preferences class="three-dots-item">
+            <a href="mailto:coralgenz@gmail.com" class="three-dots-item">
               <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <circle cx="12" cy="12" r="10"></circle>
-                <path d="M12 2a10 10 0 0 1 10 10 4 4 0 0 1-5-5 4 4 0 0 1-5-5"></path>
-                <path d="M8.5 8.5v.01"></path>
-                <path d="M16 15.5v.01"></path>
-                <path d="M12 12v.01"></path>
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                <polyline points="22,6 12,13 2,6"></polyline>
               </svg>
-              <span>COOKIE SETTINGS</span>
+              <span>coralgenz@gmail.com</span>
             </a>
           </div>
         </div>
@@ -244,25 +319,26 @@
           <span></span>
           <span></span>
         </button>
-      </nav>
+      </div>
     </div>
   </header>
 
   <!-- Mobile Drawer Menu -->
   <div class="mobile-menu">
-    <a href="/" class="nav-link">Home</a>
+    <a href="/" class="nav-link active">Home</a>
     <a href="/about-us" class="nav-link">About</a>
-    <a href="/our-services" class="nav-link">Services</a>
-    <a href="/our-products" class="nav-link">Products</a>
-    <a href="/our-highlights" class="nav-link">Highlights</a>
-    <a href="/blog" class="nav-link active" style="color: #0055fe; font-weight: 700;">Blog &amp; Insights</a>
-    <a href="/become-a-partner" class="nav-link">Become a Partner</a>
-    <a href="/contact" class="nav-link">Contact Us</a>
-    <div style="height: 1px; background: #e2e8f0; margin: 8px 0;"></div>
-    <a href="/rate-us" class="nav-link" style="color: #f59e0b; font-weight: 700;">Rate Us • 4.9/5</a>
-    <a href="/team" class="nav-link">Team</a>
-    <a href="/privacy-policy" class="nav-link">Privacy &amp; Policies</a>
-  </div>
+
+    <!-- Mobile Our Services Dropdown -->
+    <div class="mobile-services-dropdown-wrap">
+      <button class="mobile-services-toggle" onclick="toggleMobileServicesMenu(event)" aria-expanded="false">
+        <span>Our Services</span>
+        <div class="services-toggle-meta">
+          <span class="services-count-badge">8</span>
+          <svg class="services-chevron-icon" width="16" height="16" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2.5">
+            <polyline points="6 9 12 15 18 9"></polyline>
+          </svg>
+        </div>
 
   <main>
     <!-- Breadcrumb Bar -->
@@ -301,7 +377,7 @@
           <span style="color: #cbd5e1;">·</span>
           <span style="color: #475569;">Free</span>
           <span style="color: #cbd5e1;">·</span>
-          <span style="color: #475569;">Cloud &amp; Software</span>
+          <span style="color: #475569;">Android</span>
           <span style="color: #cbd5e1;">·</span>
           <span style="color: #0055fe; font-weight: 600;">Business/Productivity</span>
         </div>
@@ -441,54 +517,88 @@
     </article>
   </main>
 
-  <!-- Global Footer -->
+  <!-- Site Footer -->
   <footer class="site-footer">
-    <div class="footer-container">
-      <div class="footer-grid">
-        <div class="footer-brand-col">
-          <a href="/" class="footer-brand-logo" aria-label="Coralgenz Global">
-            <img src="/assets/images/DVyu6tz4dqPirA4TwAJZUz5CUw.png" alt="Coralgenz Global Logo" width="34" height="34">
-            <span class="footer-brand-name">Coralgenz Global</span>
-          </a>
-          <p class="footer-tagline">
-            Simple, Fast, and Reliable Software for Every Business. Headquartered in Coimbatore &amp; Chennai, delivering worldwide.
-          </p>
-        </div>
+    <div class="container">
+      <div class="footer-wrapper">
+        <div class="footer-top">
+          <div class="footer-brand" itemscope itemtype="https://schema.org/Organization">
+            <a href="/" class="brand-logo" aria-label="Coralgenz Global Official Homepage">
+              <link itemprop="url" href="https://coralgenz.net/">
+              <img itemprop="logo" src="/assets/images/DVyu6tz4dqPirA4TwAJZUz5CUw.png"
+                alt="Coralgenz Global - Enterprise Software &amp; IT Solutions Official Logo"
+                title="Coralgenz Global Logo" width="40" height="40" loading="lazy" decoding="async">
+              <span class="brand-name" itemprop="name">Coralgenz Global</span>
+            </a>
+            <div class="footer-sub">Information Technology Company</div>
+          </div>
 
-        <div>
-          <h5 class="footer-col-title">Solutions</h5>
-          <div class="footer-col-links">
-            <a href="/our-services">Enterprise Software Services</a>
-            <a href="/coralgenz-vault">Coralgenz Vault (.secure)</a>
-            <a href="/coralgenz-compiler">Coralgenz Compiler</a>
-            <a href="/coralgenz-qr">Coralgenz Smart QR</a>
+          <div>
+            <h5 class="footer-col-title">Pages</h5>
+            <div class="footer-col-links">
+              <a href="/">Homepage</a>
+              <a href="/rate-us" style="font-weight: 700; color: #f59e0b;">Rate Us • 4.9/5</a>
+              <a href="/our-highlights" style="font-weight: 700; color: #38bdf8;">Our Highlights</a>
+              <a href="/blog" style="font-weight: 700; color: #38bdf8;">Blog &amp; Insights</a>
+              <a href="/about-us">About</a>
+              <a href="/our-products">Our Products</a>
+              <a href="/our-services">Specialisations</a>
+              <a href="/team">Team</a>
+              <a href="/contact">Contact Us</a>
+            </div>
+          </div>
+
+          <div>
+            <h5 class="footer-col-title">Partnerships</h5>
+            <div class="footer-col-links">
+              <a href="/become-a-partner" style="font-weight: 700; color: #38bdf8;">Apply to Become a Partner</a>
+              <a href="/partnered-startups">Partnered Startups</a>
+              <a href="/salesforce">Salesforce ISV Partner</a>
+              <a href="/microsoft">Microsoft Developer Partner</a>
+              <a href="/shopify">Shopify Partner</a>
+            </div>
+          </div>
+
+          <div>
+            <h5 class="footer-col-title">Legal &amp; Trust</h5>
+            <div class="footer-col-links">
+              <a href="/rate-us">Client Ratings &amp; Reviews</a>
+              <a href="/privacy-policy">Privacy &amp; Policies</a>
+              <a href="#cookie-settings" data-open-cookie-preferences>Cookie Settings</a>
+              <a href="/our-highlights/coralgenz-vault-security">Vault Security Architecture</a>
+              <a href="/our-highlights/worlds-first-secure-format">World's First .secure Format</a>
+            </div>
+          </div>
+
+          <div>
+            <h5 class="footer-col-title">Contact</h5>
+            <div class="footer-col-links">
+              <a href="mailto:coralgenz@gmail.com">coralgenz@gmail.com</a>
+              <a href="/contact">Contact Us</a>
+            </div>
+            <div class="footer-social-icons">
+              <a href="https://www.instagram.com/coralgenz_global/" target="_blank" rel="noopener noreferrer"
+                class="footer-social-icon" aria-label="Instagram">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                  <path
+                    d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+                </svg>
+              </a>
+              <a href="https://in.linkedin.com/company/coralgenz" target="_blank" rel="noopener noreferrer"
+                class="footer-social-icon" aria-label="LinkedIn">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                  <path
+                    d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z" />
+                </svg>
+              </a>
+            </div>
           </div>
         </div>
 
-        <div>
-          <h5 class="footer-col-title">Resources</h5>
-          <div class="footer-col-links">
-            <a href="/blog" style="font-weight: 700; color: #0055fe;">Blog &amp; Insights (180 Articles)</a>
-            <a href="/rate-us">Client Ratings &amp; Reviews</a>
-            <a href="/privacy-policy">Privacy &amp; Policies</a>
-            <a href="#cookie-settings" data-open-cookie-preferences>Cookie Settings</a>
-          </div>
+        <div class="footer-bottom">
+          <div>© 2026 Coralgenz Global</div>
+          <div>Site by Coralgenz &amp; Team</div>
         </div>
-
-        <div>
-          <h5 class="footer-col-title">Contact</h5>
-          <div class="footer-col-links">
-            <a href="mailto:coralgenz@gmail.com">coralgenz@gmail.com</a>
-            <a href="/contact">Get in Touch</a>
-            <a href="/karthick-krishna">Executive Desk</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="footer-bottom">
-        <p class="copyright">
-          &copy; 2026 Coralgenz Global. All Rights Reserved. Built with clean architecture and zero vendor lock-in.
-        </p>
       </div>
     </div>
   </footer>

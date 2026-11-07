@@ -12,6 +12,25 @@ import os
 import re
 import json
 import random
+from collections import Counter
+
+# Authoritative Header & Footer extracted from index.html for 100% home page parity
+with open("index.html", "r", encoding="utf-8") as f:
+    _idx_html = f.read()
+
+_h_match = re.search(
+    r'(<!-- Main Navigation Header -->\s*<header class="site-header">.*?</header>\s*<!-- Mobile Drawer Menu -->\s*<div class="mobile-menu">.*?</div>)',
+    _idx_html,
+    re.DOTALL
+)
+SITE_HEADER_HTML = _h_match.group(1) if _h_match else ""
+
+_f_match = re.search(
+    r'(<!-- Site Footer -->\s*<footer class="site-footer">.*?</footer>)',
+    _idx_html,
+    re.DOTALL
+)
+SITE_FOOTER_HTML = _f_match.group(1) if _f_match else ""
 
 random.seed(42)
 
@@ -484,8 +503,8 @@ def render_post_html(p, content, prev_post, next_post):
                 "@type": "SoftwareApplication",
                 "@id": f"{url}#software",
                 "name": f"Coralgenz Global — {category}",
-                "applicationCategory": "BusinessApplication",
-                "operatingSystem": "All modern browsers, Android, iOS, Windows, macOS, Linux",
+                "applicationCategory": "Business/Productivity",
+                "operatingSystem": "Android, Web, iOS, Windows, macOS, Linux",
                 "offers": {
                     "@type": "Offer",
                     "price": "0",
@@ -543,7 +562,7 @@ def render_post_html(p, content, prev_post, next_post):
     }
     schema_json = json.dumps(schema_graph, indent=2)
 
-    return f"""<!DOCTYPE html>
+    post_html = f"""<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -582,6 +601,7 @@ def render_post_html(p, content, prev_post, next_post):
   <!-- Core Stylesheets -->
   <link rel="stylesheet" href="/assets/css/main.css">
   <link rel="stylesheet" href="/assets/css/components.css">
+  <link rel="stylesheet" href="/assets/css/animations.css">
 
   <!-- Google Star Rating & Structured Data JSON-LD -->
   <script type="application/ld+json">
@@ -590,117 +610,7 @@ def render_post_html(p, content, prev_post, next_post):
 </head>
 
 <body class="light-theme blog-post-page">
-  <!-- Global Header -->
-  <header class="site-header scrolled">
-    <div class="header-container">
-      <a href="/" class="brand-logo" aria-label="Coralgenz Global Home">
-        <img src="/assets/images/DVyu6tz4dqPirA4TwAJZUz5CUw.png" alt="Coralgenz Global Logo" class="logo-img" width="38" height="38">
-        <span class="logo-text">CORALGENZ</span>
-      </a>
-
-      <nav class="nav-links">
-        <a href="/" class="nav-link">Home</a>
-        <a href="/about-us" class="nav-link">About</a>
-        <a href="/our-services" class="nav-link">Services</a>
-        <a href="/our-products" class="nav-link">Products</a>
-        <a href="/our-highlights" class="nav-link">Highlights</a>
-        <a href="/blog" class="nav-link active" style="color: #0055fe; font-weight: 700;">Blog</a>
-        <a href="/contact" class="nav-link">Contact</a>
-
-        <!-- 3-Line Menu -->
-        <div class="three-dots-wrapper">
-          <button class="three-dots-btn active is-active-page" onclick="toggleThreeDotsMenu(event)" aria-label="More options" title="More options">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round">
-              <line x1="4" y1="6" x2="20" y2="6"></line>
-              <line x1="4" y1="12" x2="20" y2="12"></line>
-              <line x1="4" y1="18" x2="20" y2="18"></line>
-            </svg>
-          </button>
-          <div id="threeDotsDropdown" class="three-dots-dropdown" style="display: none;">
-            <a href="/blog" class="three-dots-item highlight" style="color: #0055fe; font-weight: 700;">
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
-                <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
-              </svg>
-              <span>BLOG &amp; INSIGHTS</span>
-            </a>
-            <a href="/#certifications" class="three-dots-item">
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
-              </svg>
-              <span>CERTIFICATION PROGRAM</span>
-            </a>
-            <a href="/collaborated-products" class="three-dots-item">
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
-                <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
-              </svg>
-              <span>COLLABORATED PRODUCTS</span>
-            </a>
-            <a href="/partnered-startups" class="three-dots-item">
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"></path>
-                <path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"></path>
-              </svg>
-              <span>PARTNERED STARTUPS</span>
-            </a>
-            <a href="/privacy-policy" class="three-dots-item">
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
-                <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
-              </svg>
-              <span>PRIVACY &amp; POLICIES</span>
-            </a>
-            <a href="/rate-us" class="three-dots-item highlight" style="color: #f59e0b; font-weight: 700;">
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
-              </svg>
-              <span>RATE US (4.9/5)</span>
-            </a>
-            <a href="/team" class="three-dots-item">
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
-                <circle cx="9" cy="7" r="4"></circle>
-              </svg>
-              <span>OUR TEAM</span>
-            </a>
-            <a href="#cookie-settings" data-open-cookie-preferences class="three-dots-item">
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <circle cx="12" cy="12" r="10"></circle>
-                <path d="M12 2a10 10 0 0 1 10 10 4 4 0 0 1-5-5 4 4 0 0 1-5-5"></path>
-                <path d="M8.5 8.5v.01"></path>
-                <path d="M16 15.5v.01"></path>
-                <path d="M12 12v.01"></path>
-              </svg>
-              <span>COOKIE SETTINGS</span>
-            </a>
-          </div>
-        </div>
-
-        <button class="mobile-toggle" aria-label="Toggle navigation menu">
-          <span></span>
-          <span></span>
-          <span></span>
-        </button>
-      </nav>
-    </div>
-  </header>
-
-  <!-- Mobile Drawer Menu -->
-  <div class="mobile-menu">
-    <a href="/" class="nav-link">Home</a>
-    <a href="/about-us" class="nav-link">About</a>
-    <a href="/our-services" class="nav-link">Services</a>
-    <a href="/our-products" class="nav-link">Products</a>
-    <a href="/our-highlights" class="nav-link">Highlights</a>
-    <a href="/blog" class="nav-link active" style="color: #0055fe; font-weight: 700;">Blog &amp; Insights</a>
-    <a href="/become-a-partner" class="nav-link">Become a Partner</a>
-    <a href="/contact" class="nav-link">Contact Us</a>
-    <div style="height: 1px; background: #e2e8f0; margin: 8px 0;"></div>
-    <a href="/rate-us" class="nav-link" style="color: #f59e0b; font-weight: 700;">Rate Us • 4.9/5</a>
-    <a href="/team" class="nav-link">Team</a>
-    <a href="/privacy-policy" class="nav-link">Privacy &amp; Policies</a>
-  </div>
+__SITE_HEADER__
 
   <main>
     <!-- Breadcrumb Bar -->
@@ -739,7 +649,7 @@ def render_post_html(p, content, prev_post, next_post):
           <span style="color: #cbd5e1;">·</span>
           <span style="color: #475569;">Free</span>
           <span style="color: #cbd5e1;">·</span>
-          <span style="color: #475569;">Cloud &amp; Software</span>
+          <span style="color: #475569;">Android</span>
           <span style="color: #cbd5e1;">·</span>
           <span style="color: #0055fe; font-weight: 600;">Business/Productivity</span>
         </div>
@@ -861,69 +771,34 @@ def render_post_html(p, content, prev_post, next_post):
     </article>
   </main>
 
-  <!-- Global Footer -->
-  <footer class="site-footer">
-    <div class="footer-container">
-      <div class="footer-grid">
-        <div class="footer-brand-col">
-          <a href="/" class="footer-brand-logo" aria-label="Coralgenz Global">
-            <img src="/assets/images/DVyu6tz4dqPirA4TwAJZUz5CUw.png" alt="Coralgenz Global Logo" width="34" height="34">
-            <span class="footer-brand-name">Coralgenz Global</span>
-          </a>
-          <p class="footer-tagline">
-            Simple, Fast, and Reliable Software for Every Business. Headquartered in Coimbatore &amp; Chennai, delivering worldwide.
-          </p>
-        </div>
-
-        <div>
-          <h5 class="footer-col-title">Solutions</h5>
-          <div class="footer-col-links">
-            <a href="/our-services">Enterprise Software Services</a>
-            <a href="/coralgenz-vault">Coralgenz Vault (.secure)</a>
-            <a href="/coralgenz-compiler">Coralgenz Compiler</a>
-            <a href="/coralgenz-qr">Coralgenz Smart QR</a>
-          </div>
-        </div>
-
-        <div>
-          <h5 class="footer-col-title">Resources</h5>
-          <div class="footer-col-links">
-            <a href="/blog" style="font-weight: 700; color: #0055fe;">Blog &amp; Insights (180 Articles)</a>
-            <a href="/rate-us">Client Ratings &amp; Reviews</a>
-            <a href="/privacy-policy">Privacy &amp; Policies</a>
-            <a href="#cookie-settings" data-open-cookie-preferences>Cookie Settings</a>
-          </div>
-        </div>
-
-        <div>
-          <h5 class="footer-col-title">Contact</h5>
-          <div class="footer-col-links">
-            <a href="mailto:coralgenz@gmail.com">coralgenz@gmail.com</a>
-            <a href="/contact">Get in Touch</a>
-            <a href="/karthick-krishna">Executive Desk</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="footer-bottom">
-        <p class="copyright">
-          &copy; 2026 Coralgenz Global. All Rights Reserved. Built with clean architecture and zero vendor lock-in.
-        </p>
-      </div>
-    </div>
-  </footer>
+  __SITE_FOOTER__
 
   <script type="module" src="/assets/js/main.js"></script>
 </body>
 
 </html>
 """
+    return post_html.replace("__SITE_HEADER__", SITE_HEADER_HTML).replace("__SITE_FOOTER__", SITE_FOOTER_HTML)
 
 def generate_blog_hub_html(posts):
     total_reviews = sum(p["ratingCount"] for p in posts)
     total_reviews_str = f"{total_reviews:,}"
 
-    categories = sorted(list(set(p["category"] for p in posts)))
+    # Calculate categories and post counts sorted descending
+    cat_counts = Counter(p["category"] for p in posts)
+    sorted_cats = sorted(cat_counts.items(), key=lambda x: (-x[1], x[0]))
+
+    # Pre-render category chips for the Filter Drawer
+    chips_html_list = [
+        f'<button type="button" class="filter-chip-btn active" data-category="all" data-category-name="all topics" data-display-name="All Topics" data-count="{len(posts)}"><span>All Topics</span><span class="chip-count">({len(posts)})</span></button>'
+    ]
+    for cat, cnt in sorted_cats:
+        cat_escaped = cat.replace('"', '&quot;')
+        cat_lower = cat.lower().replace('"', '&quot;')
+        chips_html_list.append(
+            f'<button type="button" class="filter-chip-btn" data-category="{cat_escaped}" data-category-name="{cat_lower}" data-display-name="{cat_escaped}" data-count="{cnt}"><span>{cat_escaped}</span><span class="chip-count">({cnt})</span></button>'
+        )
+    category_chips_html = "\n          ".join(chips_html_list)
 
     # JSON-LD for Blog Hub
     hub_schema = {
@@ -944,8 +819,8 @@ def generate_blog_hub_html(posts):
             {
                 "@type": "SoftwareApplication",
                 "name": "Coralgenz Global Engineering Portal",
-                "applicationCategory": "BusinessApplication",
-                "operatingSystem": "All Platforms",
+                "applicationCategory": "Business/Productivity",
+                "operatingSystem": "Android, Web, iOS, Windows, macOS, Linux",
                 "offers": {
                     "@type": "Offer",
                     "price": "0",
@@ -954,6 +829,8 @@ def generate_blog_hub_html(posts):
                 "aggregateRating": {
                     "@type": "AggregateRating",
                     "ratingValue": "4.9",
+                    "bestRating": "5.0",
+                    "worstRating": "1.0",
                     "ratingCount": total_reviews,
                     "reviewCount": total_reviews
                 }
@@ -977,8 +854,6 @@ def generate_blog_hub_html(posts):
         }
         for p in posts
     ])
-
-    cat_buttons = "".join(f'<button type="button" class="blog-cat-pill" data-category="{cat}" style="padding: 7px 16px; border-radius: 9999px; border: 1.5px solid #e2e8f0; background: #ffffff; color: #475569; font-size: 13px; font-weight: 600; cursor: pointer; transition: all 0.2s;">{cat}</button>' for cat in categories)
 
     tmpl = """<!DOCTYPE html>
 <html lang="en">
@@ -1016,128 +891,383 @@ def generate_blog_hub_html(posts):
   <!-- Core Stylesheets -->
   <link rel="stylesheet" href="/assets/css/main.css">
   <link rel="stylesheet" href="/assets/css/components.css">
+  <link rel="stylesheet" href="/assets/css/animations.css">
 
   <script type="application/ld+json">
 __HUB_SCHEMA_JSON__
   </script>
+
+  <style>
+    /* Filter & Controls Styling */
+    .blog-controls-section {
+      max-width: 1140px;
+      margin: 0 auto 36px auto;
+      padding: 0 20px;
+    }
+    .blog-controls-bar {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    .blog-search-wrap {
+      position: relative;
+      flex: 1;
+      min-width: 260px;
+    }
+    .blog-search-icon {
+      position: absolute;
+      left: 16px;
+      top: 50%;
+      transform: translateY(-50%);
+      pointer-events: none;
+    }
+    .blog-search-input {
+      width: 100%;
+      height: 52px;
+      padding: 0 44px 0 48px;
+      border-radius: 14px;
+      border: 1.5px solid #cbd5e1;
+      background: #ffffff;
+      font-size: 15px;
+      color: #0f172a;
+      outline: none;
+      transition: all 0.2s ease;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+      font-family: inherit;
+      box-sizing: border-box;
+    }
+    .blog-search-input:focus {
+      border-color: #0055fe;
+      box-shadow: 0 0 0 3px rgba(0, 85, 254, 0.12);
+    }
+    .clear-search-btn {
+      position: absolute;
+      right: 14px;
+      top: 50%;
+      transform: translateY(-50%);
+      background: none;
+      border: none;
+      color: #94a3b8;
+      font-size: 20px;
+      cursor: pointer;
+      display: none;
+      line-height: 1;
+      padding: 4px;
+    }
+    .clear-search-btn:hover {
+      color: #0f172a;
+    }
+    .blog-filter-btn {
+      height: 52px;
+      padding: 0 20px;
+      border-radius: 14px;
+      border: 1.5px solid #0055fe;
+      background: #ffffff;
+      color: #0055fe;
+      font-size: 14.5px;
+      font-weight: 700;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      box-shadow: 0 2px 8px rgba(0, 85, 254, 0.08);
+      font-family: inherit;
+      white-space: nowrap;
+      box-sizing: border-box;
+    }
+    .blog-filter-btn:hover, .blog-filter-btn.open {
+      background: #eff6ff;
+      border-color: #0055fe;
+    }
+    .blog-filter-btn.has-active-filter {
+      background: #0055fe;
+      color: #ffffff;
+    }
+    .blog-filter-btn.has-active-filter .filter-badge {
+      background: #ffffff;
+      color: #0055fe;
+    }
+    .blog-filter-btn.has-active-filter .filter-chevron {
+      color: #ffffff;
+    }
+    .blog-filter-btn .filter-badge {
+      padding: 3px 10px;
+      border-radius: 9999px;
+      background: #eff6ff;
+      color: #0055fe;
+      font-size: 12px;
+      font-weight: 700;
+      transition: all 0.2s ease;
+    }
+    .blog-filter-btn .filter-chevron {
+      transition: transform 0.25s ease;
+    }
+    .blog-filter-btn.open .filter-chevron {
+      transform: rotate(180deg);
+    }
+    
+    /* Active Filter Banner */
+    .active-filter-banner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: 14px;
+      padding: 10px 18px;
+      background: #eff6ff;
+      border: 1px solid #bfdbfe;
+      border-radius: 12px;
+      font-size: 13.5px;
+      animation: filterFadeIn 0.2s ease;
+    }
+    @keyframes filterFadeIn {
+      from { opacity: 0; transform: translateY(-4px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .active-filter-info {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+    .active-filter-label {
+      color: #64748b;
+    }
+    .active-filter-pill {
+      font-weight: 700;
+      color: #0055fe;
+      background: #ffffff;
+      padding: 2px 10px;
+      border-radius: 9999px;
+      border: 1px solid #bfdbfe;
+    }
+    .active-filter-count {
+      color: #64748b;
+      font-size: 12.5px;
+    }
+    .clear-filter-btn {
+      background: none;
+      border: none;
+      color: #0055fe;
+      font-weight: 700;
+      cursor: pointer;
+      text-decoration: underline;
+      font-size: 13px;
+      padding: 4px;
+    }
+    .clear-filter-btn:hover {
+      color: #003db3;
+    }
+
+    /* Filter Drawer Panel */
+    .filter-drawer-card {
+      margin-top: 16px;
+      background: #ffffff;
+      border: 1.5px solid #e2e8f0;
+      border-radius: 20px;
+      padding: 24px;
+      box-shadow: 0 16px 40px rgba(15, 23, 42, 0.08);
+      animation: filterSlideDown 0.25s ease-out;
+    }
+    @keyframes filterSlideDown {
+      from { opacity: 0; transform: translateY(-8px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .filter-drawer-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 16px;
+      padding-bottom: 14px;
+      border-bottom: 1px solid #f1f5f9;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .filter-drawer-title {
+      font-family: var(--font-satoshi), sans-serif;
+      font-size: 18px;
+      font-weight: 800;
+      color: #0f172a;
+      margin: 0 0 4px 0;
+    }
+    .filter-drawer-subtitle {
+      font-size: 12.5px;
+      color: #64748b;
+      margin: 0;
+    }
+    .filter-drawer-actions {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+    }
+    .filter-reset-btn {
+      padding: 7px 14px;
+      border-radius: 8px;
+      border: 1px solid #e2e8f0;
+      background: #f8fafc;
+      font-size: 12.5px;
+      font-weight: 600;
+      color: #475569;
+      cursor: pointer;
+      transition: all 0.15s;
+    }
+    .filter-reset-btn:hover {
+      background: #f1f5f9;
+      color: #0f172a;
+    }
+    .filter-close-btn {
+      padding: 4px 10px;
+      border-radius: 8px;
+      border: 1px solid #e2e8f0;
+      background: #f8fafc;
+      font-size: 18px;
+      color: #475569;
+      cursor: pointer;
+      font-weight: 700;
+      line-height: 1;
+    }
+    .filter-close-btn:hover {
+      background: #fee2e2;
+      color: #dc2626;
+      border-color: #fca5a5;
+    }
+
+    /* Filter Search Input */
+    .filter-search-box {
+      position: relative;
+      margin-bottom: 12px;
+    }
+    .filter-search-icon {
+      position: absolute;
+      left: 14px;
+      top: 50%;
+      transform: translateY(-50%);
+      pointer-events: none;
+    }
+    .filter-search-input {
+      width: 100%;
+      height: 44px;
+      padding: 0 40px 0 42px;
+      border-radius: 12px;
+      border: 1.5px solid #cbd5e1;
+      background: #f8fafc;
+      font-size: 14px;
+      color: #0f172a;
+      outline: none;
+      transition: all 0.2s;
+      font-family: inherit;
+      box-sizing: border-box;
+    }
+    .filter-search-input:focus {
+      background: #ffffff;
+      border-color: #0055fe;
+      box-shadow: 0 0 0 3px rgba(0, 85, 254, 0.1);
+    }
+    .clear-filter-search-btn {
+      position: absolute;
+      right: 12px;
+      top: 50%;
+      transform: translateY(-50%);
+      background: none;
+      border: none;
+      color: #94a3b8;
+      font-size: 18px;
+      cursor: pointer;
+      line-height: 1;
+      padding: 4px;
+    }
+    .filter-category-match-count {
+      font-size: 12px;
+      color: #64748b;
+      margin-bottom: 12px;
+      font-weight: 600;
+    }
+
+    /* Filter Chips Grid */
+    .filter-chips-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      max-height: 290px;
+      overflow-y: auto;
+      padding: 12px;
+      border: 1px solid #f1f5f9;
+      border-radius: 14px;
+      background: #f8fafc;
+    }
+    .filter-chip-btn {
+      padding: 7px 14px;
+      border-radius: 9999px;
+      border: 1.5px solid #e2e8f0;
+      background: #ffffff;
+      color: #334155;
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: all 0.15s ease;
+      font-family: inherit;
+    }
+    .filter-chip-btn:hover {
+      border-color: #93c5fd;
+      color: #0055fe;
+      background: #eff6ff;
+    }
+    .filter-chip-btn.active {
+      background: #0055fe;
+      color: #ffffff;
+      border-color: #0055fe;
+      box-shadow: 0 4px 12px rgba(0, 85, 254, 0.25);
+    }
+    .filter-chip-btn .chip-count {
+      font-size: 11.5px;
+      opacity: 0.75;
+    }
+    .filter-chip-btn.active .chip-count {
+      opacity: 0.9;
+    }
+    .no-categories-msg {
+      padding: 24px;
+      text-align: center;
+      color: #64748b;
+      font-size: 13.5px;
+      background: #f8fafc;
+      border-radius: 12px;
+      margin-top: 8px;
+    }
+    .filter-drawer-footer {
+      display: flex;
+      justify-content: flex-end;
+      margin-top: 16px;
+      padding-top: 14px;
+      border-top: 1px solid #f1f5f9;
+    }
+    .filter-apply-btn {
+      padding: 10px 22px;
+      border-radius: 10px;
+      background: #0055fe;
+      color: #ffffff;
+      border: none;
+      font-size: 13.5px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    .filter-apply-btn:hover {
+      background: #0044cc;
+    }
+  </style>
 </head>
 
 <body class="light-theme blog-hub-page">
-  <!-- Global Header -->
-  <header class="site-header scrolled">
-    <div class="header-container">
-      <a href="/" class="brand-logo" aria-label="Coralgenz Global Home">
-        <img src="/assets/images/DVyu6tz4dqPirA4TwAJZUz5CUw.png" alt="Coralgenz Global Logo" class="logo-img" width="38" height="38">
-        <span class="logo-text">CORALGENZ</span>
-      </a>
-
-      <nav class="nav-links">
-        <a href="/" class="nav-link">Home</a>
-        <a href="/about-us" class="nav-link">About</a>
-        <a href="/our-services" class="nav-link">Services</a>
-        <a href="/our-products" class="nav-link">Products</a>
-        <a href="/our-highlights" class="nav-link">Highlights</a>
-        <a href="/blog" class="nav-link active" style="color: #0055fe; font-weight: 700;">Blog</a>
-        <a href="/contact" class="nav-link">Contact</a>
-
-        <!-- 3-Line Menu -->
-        <div class="three-dots-wrapper">
-          <button class="three-dots-btn active is-active-page" onclick="toggleThreeDotsMenu(event)" aria-label="More options" title="More options">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round">
-              <line x1="4" y1="6" x2="20" y2="6"></line>
-              <line x1="4" y1="12" x2="20" y2="12"></line>
-              <line x1="4" y1="18" x2="20" y2="18"></line>
-            </svg>
-          </button>
-          <div id="threeDotsDropdown" class="three-dots-dropdown" style="display: none;">
-            <a href="/blog" class="three-dots-item highlight" style="color: #0055fe; font-weight: 700;">
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
-                <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
-              </svg>
-              <span>BLOG &amp; INSIGHTS (180)</span>
-            </a>
-            <a href="/#certifications" class="three-dots-item">
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
-              </svg>
-              <span>CERTIFICATION PROGRAM</span>
-            </a>
-            <a href="/collaborated-products" class="three-dots-item">
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
-                <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
-              </svg>
-              <span>COLLABORATED PRODUCTS</span>
-            </a>
-            <a href="/partnered-startups" class="three-dots-item">
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"></path>
-                <path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"></path>
-              </svg>
-              <span>PARTNERED STARTUPS</span>
-            </a>
-            <a href="/privacy-policy" class="three-dots-item">
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
-                <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
-              </svg>
-              <span>PRIVACY &amp; POLICIES</span>
-            </a>
-            <a href="/rate-us" class="three-dots-item highlight" style="color: #f59e0b; font-weight: 700;">
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
-              </svg>
-              <span>RATE US (4.9/5)</span>
-            </a>
-            <a href="/team" class="three-dots-item">
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
-                <circle cx="9" cy="7" r="4"></circle>
-              </svg>
-              <span>OUR TEAM</span>
-            </a>
-            <a href="#cookie-settings" data-open-cookie-preferences class="three-dots-item">
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <circle cx="12" cy="12" r="10"></circle>
-                <path d="M12 2a10 10 0 0 1 10 10 4 4 0 0 1-5-5 4 4 0 0 1-5-5"></path>
-                <path d="M8.5 8.5v.01"></path>
-                <path d="M16 15.5v.01"></path>
-                <path d="M12 12v.01"></path>
-              </svg>
-              <span>COOKIE SETTINGS</span>
-            </a>
-          </div>
-        </div>
-
-        <button class="mobile-toggle" aria-label="Toggle navigation menu">
-          <span></span>
-          <span></span>
-          <span></span>
-        </button>
-      </nav>
-    </div>
-  </header>
-
-  <!-- Mobile Drawer Menu -->
-  <div class="mobile-menu">
-    <a href="/" class="nav-link">Home</a>
-    <a href="/about-us" class="nav-link">About</a>
-    <a href="/our-services" class="nav-link">Services</a>
-    <a href="/our-products" class="nav-link">Products</a>
-    <a href="/our-highlights" class="nav-link">Highlights</a>
-    <a href="/blog" class="nav-link active" style="color: #0055fe; font-weight: 700;">Blog &amp; Insights</a>
-    <a href="/become-a-partner" class="nav-link">Become a Partner</a>
-    <a href="/contact" class="nav-link">Contact Us</a>
-    <div style="height: 1px; background: #e2e8f0; margin: 8px 0;"></div>
-    <a href="/rate-us" class="nav-link" style="color: #f59e0b; font-weight: 700;">Rate Us • 4.9/5</a>
-    <a href="/team" class="nav-link">Team</a>
-    <a href="/privacy-policy" class="nav-link">Privacy &amp; Policies</a>
-  </div>
+__SITE_HEADER__
 
   <main>
     <!-- Blog Hero Section -->
-    <section class="section" style="padding-top: 40px; padding-bottom: 40px; background: radial-gradient(at 50% 0%, #ebf3ff 0%, #ffffff 70%);">
+    <section class="section" style="padding-top: 48px; padding-bottom: 32px; background: radial-gradient(at 50% 0%, #ebf3ff 0%, #ffffff 70%);">
       <div class="container" style="text-align: center; max-width: 900px;">
         <div style="display: inline-flex; align-items: center; gap: 8px; padding: 6px 18px; background: #eff6ff; border: 1.5px solid #bfdbfe; border-radius: 9999px; font-size: 12px; font-weight: 700; color: #0055fe; text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 18px;">
           <span>180 KNOWLEDGE ARTICLES &amp; ENGINEERING PLAYBOOKS</span>
@@ -1148,45 +1278,113 @@ __HUB_SCHEMA_JSON__
         </h1>
 
         <p style="font-size: clamp(16px, 2.2vw, 18px); color: #475569; line-height: 1.65; max-width: 720px; margin: 0 auto 24px auto;">
-          Everything you need to know about building custom software, launching startup MVPs, zero-knowledge file security, and scaling on Microsoft Azure, Salesforce, and Shopify.
+          Plain-English software guides, startup MVP roadmaps, cloud scalability, and zero-knowledge security architecture written for founders, leaders, and engineers.
         </p>
 
-        <!-- Aggregate Rating Badge Matching Image Reference -->
-        <div style="display: inline-flex; align-items: center; gap: 8px; padding: 8px 18px; background: #ffffff; border: 1.5px solid #e2e8f0; border-radius: 9999px; box-shadow: 0 4px 16px rgba(15, 23, 42, 0.05); font-size: 13.5px; font-weight: 600; color: #0f172a; flex-wrap: wrap; justify-content: center;">
-          <span style="font-weight: 800; font-size: 15px;">4.9</span>
-          <span style="color: #f59e0b; font-size: 16px; letter-spacing: 2px;">★★★★★</span>
-          <span style="color: #64748b; font-weight: 500;">(__TOTAL_REVIEWS_STR__ Verified Client Reviews)</span>
-          <span style="color: #cbd5e1;">·</span>
-          <span style="color: #0055fe; font-weight: 700;">Free Access</span>
-          <span style="color: #cbd5e1;">·</span>
-          <span style="color: #475569;">Business &amp; Productivity</span>
+        <!-- Social Proof & Google Star Ratings Bar -->
+        <div style="display: inline-flex; align-items: center; gap: 12px; padding: 10px 22px; background: #ffffff; border: 1.5px solid #e2e8f0; border-radius: 9999px; box-shadow: 0 4px 16px rgba(15, 23, 42, 0.06); flex-wrap: wrap; justify-content: center;">
+          <div style="display: flex; align-items: center; gap: 6px;">
+            <span style="font-size: 15px; font-weight: 800; color: #0f172a;">4.9</span>
+            <span style="color: #f59e0b; font-size: 16px; letter-spacing: 1px;">★★★★★</span>
+          </div>
+          <span style="color: #cbd5e1;">|</span>
+          <span style="font-size: 13.5px; color: #475569; font-weight: 600;">
+            __TOTAL_REVIEWS_STR__ Global Client Ratings
+          </span>
+          <span style="color: #cbd5e1;">|</span>
+          <span style="font-size: 13px; color: #0055fe; font-weight: 700;">
+            180 Verified Guides
+          </span>
         </div>
       </div>
     </section>
 
-    <!-- Search & Filter Controls -->
-    <section class="container" style="max-width: 1200px; padding-bottom: 30px;">
-      <div style="display: flex; gap: 16px; flex-wrap: wrap; align-items: center; justify-content: space-between; margin-bottom: 24px;">
-        <div style="position: relative; flex: 1 1 320px; max-width: 480px;">
-          <input type="text" id="blogSearchInput" placeholder="Search 180 articles (e.g. Vault, MVP, Python, QR, AI)..."
-            style="width: 100%; padding: 12px 18px 12px 42px; border: 1.5px solid #cbd5e1; border-radius: 12px; font-family: var(--font-inter); font-size: 14.5px; outline: none; transition: border-color 0.2s ease, box-shadow 0.2s ease;">
-          <svg style="position: absolute; left: 14px; top: 50%; transform: translateY(-50%); color: #94a3b8;" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+    <!-- Search & Filter Controls Section -->
+    <section class="blog-controls-section">
+      <div class="blog-controls-bar">
+        <!-- Main Search Bar -->
+        <div class="blog-search-wrap">
+          <svg class="blog-search-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#64748b" stroke-width="2.2">
             <circle cx="11" cy="11" r="8"></circle>
             <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
           </svg>
+          <input type="text" id="blogSearchInput" class="blog-search-input" placeholder="Search 180+ articles, topics, technical playbooks..." autocomplete="off">
+          <button type="button" id="clearMainSearchBtn" class="clear-search-btn" onclick="clearMainSearch()" aria-label="Clear search">&times;</button>
         </div>
 
+        <!-- Filter Trigger Button -->
+        <button type="button" id="filterToggleBtn" class="blog-filter-btn" onclick="toggleFilterDrawer()" aria-expanded="false" aria-controls="filterDrawerCard">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"></polygon>
+          </svg>
+          <span>Filters</span>
+          <span id="activeFilterBadge" class="filter-badge">All Topics (180)</span>
+          <svg class="filter-chevron" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <polyline points="6 9 12 15 18 9"></polyline>
+          </svg>
+        </button>
+      </div>
+
+      <!-- Active Filter Banner (Visible when a specific category is chosen) -->
+      <div id="activeFilterBanner" class="active-filter-banner" style="display: none;">
+        <div class="active-filter-info">
+          <span class="active-filter-label">Active Filter:</span>
+          <span id="activeFilterName" class="active-filter-pill"></span>
+          <span id="activeFilterCount" class="active-filter-count"></span>
+        </div>
+        <button type="button" class="clear-filter-btn" onclick="resetCategoryFilter()">Clear Filter &times;</button>
+      </div>
+
+      <!-- Filter Drawer Card -->
+      <div id="filterDrawerCard" class="filter-drawer-card" style="display: none;">
+        <div class="filter-drawer-header">
+          <div>
+            <h3 class="filter-drawer-title">Filter by Category &amp; Topic</h3>
+            <p class="filter-drawer-subtitle" id="filterStatsSubtitle">103 specialized categories across 180 articles</p>
+          </div>
+          <div class="filter-drawer-actions">
+            <button type="button" class="filter-reset-btn" onclick="resetCategoryFilter()">Reset Filter</button>
+            <button type="button" class="filter-close-btn" onclick="toggleFilterDrawer()" aria-label="Close filters">&times;</button>
+          </div>
+        </div>
+
+        <!-- Search Feature to Search the Filters -->
+        <div class="filter-search-box">
+          <svg class="filter-search-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#64748b" stroke-width="2.2">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+          <input type="text" id="filterCategorySearchInput" class="filter-search-input" placeholder="Search filter categories (e.g. AI, Security, Cloud, QR, Shopify, MVP, Web)..." oninput="onFilterCategorySearch(this.value)" autocomplete="off">
+          <button type="button" id="clearFilterCategorySearchBtn" class="clear-filter-search-btn" onclick="clearCategorySearch()" style="display: none;" aria-label="Clear filter search">&times;</button>
+        </div>
+
+        <!-- Filter Match Count -->
+        <div id="filterCategoryMatchCount" class="filter-category-match-count">Showing 103 categories</div>
+
+        <!-- Filter Chips Grid -->
+        <div id="filterCategoryChipsGrid" class="filter-chips-grid">
+          __CATEGORY_CHIPS__
+        </div>
+
+        <div id="noCategoriesMessage" class="no-categories-msg" style="display: none;">
+          No filter categories match your search. Try another keyword like "AI", "Cloud", "Security", or "QR".
+        </div>
+
+        <div class="filter-drawer-footer">
+          <button type="button" class="filter-apply-btn" onclick="toggleFilterDrawer()">View Filtered Articles &rarr;</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Articles Section -->
+    <section id="blogArticlesSection" class="section" style="max-width: 1140px; margin: 0 auto; padding: 0 20px 80px 20px;">
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px; flex-wrap: wrap; gap: 12px;">
+        <h2 style="font-family: var(--font-satoshi), sans-serif; font-size: 22px; font-weight: 800; color: #0f172a; margin: 0;">
+          Articles &amp; Playbooks
+        </h2>
         <div style="font-size: 14px; color: #64748b; font-weight: 600;" id="blogCountLabel">
           Showing 180 articles
         </div>
-      </div>
-
-      <!-- Category Filter Pills -->
-      <div style="display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 32px;" id="blogCategoryPills">
-        <button type="button" class="blog-cat-pill active" data-category="all" style="padding: 7px 16px; border-radius: 9999px; border: 1.5px solid #0055fe; background: #0055fe; color: #ffffff; font-size: 13px; font-weight: 600; cursor: pointer; transition: all 0.2s;">
-          All Topics (180)
-        </button>
-        __CAT_BUTTONS__
       </div>
 
       <!-- Articles Grid -->
@@ -1201,57 +1399,7 @@ __HUB_SCHEMA_JSON__
     </section>
   </main>
 
-  <!-- Global Footer -->
-  <footer class="site-footer">
-    <div class="footer-container">
-      <div class="footer-grid">
-        <div class="footer-brand-col">
-          <a href="/" class="footer-brand-logo" aria-label="Coralgenz Global">
-            <img src="/assets/images/DVyu6tz4dqPirA4TwAJZUz5CUw.png" alt="Coralgenz Global Logo" width="34" height="34">
-            <span class="footer-brand-name">Coralgenz Global</span>
-          </a>
-          <p class="footer-tagline">
-            Simple, Fast, and Reliable Software for Every Business. Headquartered in Coimbatore &amp; Chennai, delivering worldwide.
-          </p>
-        </div>
-
-        <div>
-          <h5 class="footer-col-title">Solutions</h5>
-          <div class="footer-col-links">
-            <a href="/our-services">Enterprise Software Services</a>
-            <a href="/coralgenz-vault">Coralgenz Vault (.secure)</a>
-            <a href="/coralgenz-compiler">Coralgenz Compiler</a>
-            <a href="/coralgenz-qr">Coralgenz Smart QR</a>
-          </div>
-        </div>
-
-        <div>
-          <h5 class="footer-col-title">Resources</h5>
-          <div class="footer-col-links">
-            <a href="/blog" style="font-weight: 700; color: #0055fe;">Blog &amp; Insights (180 Articles)</a>
-            <a href="/rate-us">Client Ratings &amp; Reviews</a>
-            <a href="/privacy-policy">Privacy &amp; Policies</a>
-            <a href="#cookie-settings" data-open-cookie-preferences>Cookie Settings</a>
-          </div>
-        </div>
-
-        <div>
-          <h5 class="footer-col-title">Contact</h5>
-          <div class="footer-col-links">
-            <a href="mailto:coralgenz@gmail.com">coralgenz@gmail.com</a>
-            <a href="/contact">Get in Touch</a>
-            <a href="/karthick-krishna">Executive Desk</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="footer-bottom">
-        <p class="copyright">
-          &copy; 2026 Coralgenz Global. All Rights Reserved. Built with clean architecture and zero vendor lock-in.
-        </p>
-      </div>
-    </div>
-  </footer>
+__SITE_FOOTER__
 
   <script type="module" src="/assets/js/main.js"></script>
 
@@ -1262,12 +1410,146 @@ __HUB_SCHEMA_JSON__
     let currentPage = 1;
     let currentCategory = 'all';
     let currentSearch = '';
+    let categorySearchTerm = '';
 
     const grid = document.getElementById('blogGrid');
     const pagination = document.getElementById('blogPagination');
     const countLabel = document.getElementById('blogCountLabel');
-    const searchInput = document.getElementById('blogSearchInput');
-    const categoryPills = document.querySelectorAll('.blog-cat-pill');
+    const blogSearchInput = document.getElementById('blogSearchInput');
+    const clearMainSearchBtn = document.getElementById('clearMainSearchBtn');
+    
+    const filterToggleBtn = document.getElementById('filterToggleBtn');
+    const filterDrawerCard = document.getElementById('filterDrawerCard');
+    const filterCategorySearchInput = document.getElementById('filterCategorySearchInput');
+    const clearFilterCategorySearchBtn = document.getElementById('clearFilterCategorySearchBtn');
+    const filterCategoryMatchCount = document.getElementById('filterCategoryMatchCount');
+    const noCategoriesMessage = document.getElementById('noCategoriesMessage');
+    const filterCategoryChipsGrid = document.getElementById('filterCategoryChipsGrid');
+    
+    const activeFilterBadge = document.getElementById('activeFilterBadge');
+    const activeFilterBanner = document.getElementById('activeFilterBanner');
+    const activeFilterName = document.getElementById('activeFilterName');
+    const activeFilterCount = document.getElementById('activeFilterCount');
+
+    // Toggle Filter Drawer
+    window.toggleFilterDrawer = function() {
+      const isClosed = filterDrawerCard.style.display === 'none';
+      filterDrawerCard.style.display = isClosed ? 'block' : 'none';
+      filterToggleBtn.classList.toggle('open', isClosed);
+      filterToggleBtn.setAttribute('aria-expanded', isClosed ? 'true' : 'false');
+      if (isClosed && filterCategorySearchInput) {
+        setTimeout(() => filterCategorySearchInput.focus(), 100);
+      }
+    };
+
+    // Filter Categories in the Drawer via search feature
+    window.onFilterCategorySearch = function(query) {
+      categorySearchTerm = (query || '').toLowerCase().trim();
+      clearFilterCategorySearchBtn.style.display = categorySearchTerm ? 'block' : 'none';
+      
+      const chips = filterCategoryChipsGrid.querySelectorAll('.filter-chip-btn');
+      let visibleCount = 0;
+      
+      chips.forEach(chip => {
+        const cat = chip.dataset.category;
+        const name = (chip.dataset.categoryName || '').toLowerCase();
+        
+        if (cat === 'all') {
+          chip.style.display = (!categorySearchTerm || name.includes(categorySearchTerm)) ? 'inline-flex' : 'none';
+          if (chip.style.display !== 'none') visibleCount++;
+          return;
+        }
+        
+        const isMatch = !categorySearchTerm || name.includes(categorySearchTerm);
+        chip.style.display = isMatch ? 'inline-flex' : 'none';
+        if (isMatch) visibleCount++;
+      });
+
+      if (categorySearchTerm) {
+        filterCategoryMatchCount.textContent = 'Found ' + visibleCount + ' matching ' + (visibleCount === 1 ? 'category' : 'categories');
+      } else {
+        filterCategoryMatchCount.textContent = 'Showing 103 categories';
+      }
+
+      noCategoriesMessage.style.display = visibleCount === 0 ? 'block' : 'none';
+    };
+
+    window.clearCategorySearch = function() {
+      if (filterCategorySearchInput) {
+        filterCategorySearchInput.value = '';
+        window.onFilterCategorySearch('');
+        filterCategorySearchInput.focus();
+      }
+    };
+
+    // Category Selection via chip click
+    window.selectCategory = function(catSlug, catName, catCount) {
+      currentCategory = catSlug;
+      currentPage = 1;
+
+      // Update active chip classes
+      const chips = filterCategoryChipsGrid.querySelectorAll('.filter-chip-btn');
+      chips.forEach(chip => {
+        chip.classList.toggle('active', chip.dataset.category === catSlug);
+      });
+
+      // Update badge on trigger button
+      if (catSlug === 'all') {
+        activeFilterBadge.textContent = 'All Topics (180)';
+        filterToggleBtn.classList.remove('has-active-filter');
+        activeFilterBanner.style.display = 'none';
+      } else {
+        activeFilterBadge.textContent = catName + ' (' + catCount + ')';
+        filterToggleBtn.classList.add('has-active-filter');
+        activeFilterName.textContent = catName;
+        activeFilterCount.textContent = '(' + catCount + ' articles)';
+        activeFilterBanner.style.display = 'flex';
+      }
+
+      // Close drawer for fluid reading experience
+      filterDrawerCard.style.display = 'none';
+      filterToggleBtn.classList.remove('open');
+      filterToggleBtn.setAttribute('aria-expanded', 'false');
+
+      renderPosts();
+
+      // Scroll to articles section
+      const articlesSec = document.getElementById('blogArticlesSection');
+      if (articlesSec) {
+        window.scrollTo({ top: articlesSec.offsetTop - 80, behavior: 'smooth' });
+      }
+    };
+
+    window.resetCategoryFilter = function() {
+      window.selectCategory('all', 'All Topics', ALL_POSTS.length);
+    };
+
+    // Listen to chip clicks inside grid delegation
+    filterCategoryChipsGrid.addEventListener('click', (e) => {
+      const btn = e.target.closest('.filter-chip-btn');
+      if (!btn) return;
+      const slug = btn.dataset.category;
+      const name = btn.dataset.displayName || slug;
+      const count = btn.dataset.count;
+      window.selectCategory(slug, name, count);
+    });
+
+    // Main Blog Search
+    blogSearchInput.addEventListener('input', (e) => {
+      currentSearch = e.target.value.toLowerCase().trim();
+      clearMainSearchBtn.style.display = currentSearch ? 'block' : 'none';
+      currentPage = 1;
+      renderPosts();
+    });
+
+    window.clearMainSearch = function() {
+      blogSearchInput.value = '';
+      currentSearch = '';
+      clearMainSearchBtn.style.display = 'none';
+      currentPage = 1;
+      renderPosts();
+      blogSearchInput.focus();
+    };
 
     function getFilteredPosts() {
       return ALL_POSTS.filter(post => {
@@ -1290,7 +1572,7 @@ __HUB_SCHEMA_JSON__
       const paginated = filtered.slice(startIdx, startIdx + POSTS_PER_PAGE);
 
       if (paginated.length === 0) {
-        grid.innerHTML = '<div style="grid-column: 1 / -1; text-align: center; padding: 48px; background: #ffffff; border: 1.5px solid #e2e8f0; border-radius: 16px;"><p style="font-size: 16px; color: #64748b; margin: 0 0 12px 0;">No articles found matching your criteria.</p><button onclick="resetFilters()" style="padding: 8px 18px; border-radius: 8px; background: #0055fe; color: #fff; border: none; cursor: pointer; font-weight: 600;">Reset Filters</button></div>';
+        grid.innerHTML = '<div style="grid-column: 1 / -1; text-align: center; padding: 48px; background: #ffffff; border: 1.5px solid #e2e8f0; border-radius: 16px;"><p style="font-size: 16px; color: #64748b; margin: 0 0 12px 0;">No articles found matching your criteria.</p><button onclick="resetCategoryFilter(); clearMainSearch();" style="padding: 8px 18px; border-radius: 8px; background: #0055fe; color: #fff; border: none; cursor: pointer; font-weight: 600;">Reset Filters & Search</button></div>';
         pagination.innerHTML = '';
         return;
       }
@@ -1313,13 +1595,17 @@ __HUB_SCHEMA_JSON__
               </a>
             </h2>
 
-            <!-- Rating Snippet Badge (Matches User Reference Image) -->
-            <div style="display: inline-flex; align-items: center; gap: 6px; padding: 3px 10px; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 9999px; font-size: 12px; color: #0f172a; margin-bottom: 14px;">
+            <!-- Rating Snippet Badge (Matches Google Search Reference Image) -->
+            <div style="display: inline-flex; align-items: center; gap: 6px; padding: 4px 10px; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 9999px; font-size: 11.5px; color: #0f172a; margin-bottom: 14px; flex-wrap: wrap;">
               <span style="font-weight: 700;">${post.ratingVal}</span>
-              <span style="color: #f59e0b; letter-spacing: 1px;">★★★★★</span>
+              <span style="color: #f59e0b; letter-spacing: 0.5px;">★★★★★</span>
               <span style="color: #64748b;">(${post.ratingCount})</span>
               <span style="color: #cbd5e1;">·</span>
-              <span style="color: #64748b;">Free</span>
+              <span style="color: #475569;">Free</span>
+              <span style="color: #cbd5e1;">·</span>
+              <span style="color: #475569;">Android</span>
+              <span style="color: #cbd5e1;">·</span>
+              <span style="color: #0055fe; font-weight: 600;">Business/Productivity</span>
             </div>
           </div>
 
@@ -1365,50 +1651,11 @@ __HUB_SCHEMA_JSON__
     window.goToPage = function(page) {
       currentPage = page;
       renderPosts();
-      const pills = document.getElementById('blogCategoryPills');
-      if (pills) {
-        window.scrollTo({ top: pills.offsetTop - 90, behavior: 'smooth' });
+      const articlesSec = document.getElementById('blogArticlesSection');
+      if (articlesSec) {
+        window.scrollTo({ top: articlesSec.offsetTop - 80, behavior: 'smooth' });
       }
     };
-
-    window.resetFilters = function() {
-      currentCategory = 'all';
-      currentSearch = '';
-      if (searchInput) searchInput.value = '';
-      categoryPills.forEach(p => {
-        const isAll = p.dataset.category === 'all';
-        p.classList.toggle('active', isAll);
-        p.style.background = isAll ? '#0055fe' : '#ffffff';
-        p.style.color = isAll ? '#ffffff' : '#475569';
-        p.style.borderColor = isAll ? '#0055fe' : '#e2e8f0';
-      });
-      renderPosts();
-    };
-
-    searchInput.addEventListener('input', (e) => {
-      currentSearch = e.target.value.toLowerCase().trim();
-      currentPage = 1;
-      renderPosts();
-    });
-
-    categoryPills.forEach(pill => {
-      pill.addEventListener('click', () => {
-        categoryPills.forEach(p => {
-          p.classList.remove('active');
-          p.style.background = '#ffffff';
-          p.style.color = '#475569';
-          p.style.borderColor = '#e2e8f0';
-        });
-        pill.classList.add('active');
-        pill.style.background = '#0055fe';
-        pill.style.color = '#ffffff';
-        pill.style.borderColor = '#0055fe';
-
-        currentCategory = pill.dataset.category;
-        currentPage = 1;
-        renderPosts();
-      });
-    });
 
     // Initial render
     renderPosts();
@@ -1417,10 +1664,12 @@ __HUB_SCHEMA_JSON__
 
 </html>
 """
-    return tmpl.replace("__POSTS_JSON__", posts_json)\
+    return tmpl.replace("__SITE_HEADER__", SITE_HEADER_HTML)\
+               .replace("__SITE_FOOTER__", SITE_FOOTER_HTML)\
+               .replace("__POSTS_JSON__", posts_json)\
                .replace("__TOTAL_REVIEWS_STR__", total_reviews_str)\
                .replace("__HUB_SCHEMA_JSON__", hub_schema_json)\
-               .replace("__CAT_BUTTONS__", cat_buttons)
+               .replace("__CATEGORY_CHIPS__", category_chips_html)
 
 def main():
     print("Starting generation of 180 blog post pages and blog hub...")

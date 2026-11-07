@@ -34,6 +34,7 @@
   <!-- Core Stylesheets -->
   <link rel="stylesheet" href="/assets/css/main.css">
   <link rel="stylesheet" href="/assets/css/components.css">
+  <link rel="stylesheet" href="/assets/css/animations.css">
 
   <script type="application/ld+json">
 {
@@ -54,8 +55,8 @@
     {
       "@type": "SoftwareApplication",
       "name": "Coralgenz Global Engineering Portal",
-      "applicationCategory": "BusinessApplication",
-      "operatingSystem": "All Platforms",
+      "applicationCategory": "Business/Productivity",
+      "operatingSystem": "Android, Web, iOS, Windows, macOS, Linux",
       "offers": {
         "@type": "Offer",
         "price": "0",
@@ -64,6 +65,8 @@
       "aggregateRating": {
         "@type": "AggregateRating",
         "ratingValue": "4.9",
+        "bestRating": "5.0",
+        "worstRating": "1.0",
         "ratingCount": 1807278,
         "reviewCount": 1807278
       }
@@ -71,30 +74,464 @@
   ]
 }
   </script>
+
+  <style>
+    /* Filter & Controls Styling */
+    .blog-controls-section {
+      max-width: 1140px;
+      margin: 0 auto 36px auto;
+      padding: 0 20px;
+    }
+    .blog-controls-bar {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    .blog-search-wrap {
+      position: relative;
+      flex: 1;
+      min-width: 260px;
+    }
+    .blog-search-icon {
+      position: absolute;
+      left: 16px;
+      top: 50%;
+      transform: translateY(-50%);
+      pointer-events: none;
+    }
+    .blog-search-input {
+      width: 100%;
+      height: 52px;
+      padding: 0 44px 0 48px;
+      border-radius: 14px;
+      border: 1.5px solid #cbd5e1;
+      background: #ffffff;
+      font-size: 15px;
+      color: #0f172a;
+      outline: none;
+      transition: all 0.2s ease;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+      font-family: inherit;
+      box-sizing: border-box;
+    }
+    .blog-search-input:focus {
+      border-color: #0055fe;
+      box-shadow: 0 0 0 3px rgba(0, 85, 254, 0.12);
+    }
+    .clear-search-btn {
+      position: absolute;
+      right: 14px;
+      top: 50%;
+      transform: translateY(-50%);
+      background: none;
+      border: none;
+      color: #94a3b8;
+      font-size: 20px;
+      cursor: pointer;
+      display: none;
+      line-height: 1;
+      padding: 4px;
+    }
+    .clear-search-btn:hover {
+      color: #0f172a;
+    }
+    .blog-filter-btn {
+      height: 52px;
+      padding: 0 20px;
+      border-radius: 14px;
+      border: 1.5px solid #0055fe;
+      background: #ffffff;
+      color: #0055fe;
+      font-size: 14.5px;
+      font-weight: 700;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      box-shadow: 0 2px 8px rgba(0, 85, 254, 0.08);
+      font-family: inherit;
+      white-space: nowrap;
+      box-sizing: border-box;
+    }
+    .blog-filter-btn:hover, .blog-filter-btn.open {
+      background: #eff6ff;
+      border-color: #0055fe;
+    }
+    .blog-filter-btn.has-active-filter {
+      background: #0055fe;
+      color: #ffffff;
+    }
+    .blog-filter-btn.has-active-filter .filter-badge {
+      background: #ffffff;
+      color: #0055fe;
+    }
+    .blog-filter-btn.has-active-filter .filter-chevron {
+      color: #ffffff;
+    }
+    .blog-filter-btn .filter-badge {
+      padding: 3px 10px;
+      border-radius: 9999px;
+      background: #eff6ff;
+      color: #0055fe;
+      font-size: 12px;
+      font-weight: 700;
+      transition: all 0.2s ease;
+    }
+    .blog-filter-btn .filter-chevron {
+      transition: transform 0.25s ease;
+    }
+    .blog-filter-btn.open .filter-chevron {
+      transform: rotate(180deg);
+    }
+    
+    /* Active Filter Banner */
+    .active-filter-banner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: 14px;
+      padding: 10px 18px;
+      background: #eff6ff;
+      border: 1px solid #bfdbfe;
+      border-radius: 12px;
+      font-size: 13.5px;
+      animation: filterFadeIn 0.2s ease;
+    }
+    @keyframes filterFadeIn {
+      from { opacity: 0; transform: translateY(-4px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .active-filter-info {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+    .active-filter-label {
+      color: #64748b;
+    }
+    .active-filter-pill {
+      font-weight: 700;
+      color: #0055fe;
+      background: #ffffff;
+      padding: 2px 10px;
+      border-radius: 9999px;
+      border: 1px solid #bfdbfe;
+    }
+    .active-filter-count {
+      color: #64748b;
+      font-size: 12.5px;
+    }
+    .clear-filter-btn {
+      background: none;
+      border: none;
+      color: #0055fe;
+      font-weight: 700;
+      cursor: pointer;
+      text-decoration: underline;
+      font-size: 13px;
+      padding: 4px;
+    }
+    .clear-filter-btn:hover {
+      color: #003db3;
+    }
+
+    /* Filter Drawer Panel */
+    .filter-drawer-card {
+      margin-top: 16px;
+      background: #ffffff;
+      border: 1.5px solid #e2e8f0;
+      border-radius: 20px;
+      padding: 24px;
+      box-shadow: 0 16px 40px rgba(15, 23, 42, 0.08);
+      animation: filterSlideDown 0.25s ease-out;
+    }
+    @keyframes filterSlideDown {
+      from { opacity: 0; transform: translateY(-8px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .filter-drawer-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 16px;
+      padding-bottom: 14px;
+      border-bottom: 1px solid #f1f5f9;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .filter-drawer-title {
+      font-family: var(--font-satoshi), sans-serif;
+      font-size: 18px;
+      font-weight: 800;
+      color: #0f172a;
+      margin: 0 0 4px 0;
+    }
+    .filter-drawer-subtitle {
+      font-size: 12.5px;
+      color: #64748b;
+      margin: 0;
+    }
+    .filter-drawer-actions {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+    }
+    .filter-reset-btn {
+      padding: 7px 14px;
+      border-radius: 8px;
+      border: 1px solid #e2e8f0;
+      background: #f8fafc;
+      font-size: 12.5px;
+      font-weight: 600;
+      color: #475569;
+      cursor: pointer;
+      transition: all 0.15s;
+    }
+    .filter-reset-btn:hover {
+      background: #f1f5f9;
+      color: #0f172a;
+    }
+    .filter-close-btn {
+      padding: 4px 10px;
+      border-radius: 8px;
+      border: 1px solid #e2e8f0;
+      background: #f8fafc;
+      font-size: 18px;
+      color: #475569;
+      cursor: pointer;
+      font-weight: 700;
+      line-height: 1;
+    }
+    .filter-close-btn:hover {
+      background: #fee2e2;
+      color: #dc2626;
+      border-color: #fca5a5;
+    }
+
+    /* Filter Search Input */
+    .filter-search-box {
+      position: relative;
+      margin-bottom: 12px;
+    }
+    .filter-search-icon {
+      position: absolute;
+      left: 14px;
+      top: 50%;
+      transform: translateY(-50%);
+      pointer-events: none;
+    }
+    .filter-search-input {
+      width: 100%;
+      height: 44px;
+      padding: 0 40px 0 42px;
+      border-radius: 12px;
+      border: 1.5px solid #cbd5e1;
+      background: #f8fafc;
+      font-size: 14px;
+      color: #0f172a;
+      outline: none;
+      transition: all 0.2s;
+      font-family: inherit;
+      box-sizing: border-box;
+    }
+    .filter-search-input:focus {
+      background: #ffffff;
+      border-color: #0055fe;
+      box-shadow: 0 0 0 3px rgba(0, 85, 254, 0.1);
+    }
+    .clear-filter-search-btn {
+      position: absolute;
+      right: 12px;
+      top: 50%;
+      transform: translateY(-50%);
+      background: none;
+      border: none;
+      color: #94a3b8;
+      font-size: 18px;
+      cursor: pointer;
+      line-height: 1;
+      padding: 4px;
+    }
+    .filter-category-match-count {
+      font-size: 12px;
+      color: #64748b;
+      margin-bottom: 12px;
+      font-weight: 600;
+    }
+
+    /* Filter Chips Grid */
+    .filter-chips-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      max-height: 290px;
+      overflow-y: auto;
+      padding: 12px;
+      border: 1px solid #f1f5f9;
+      border-radius: 14px;
+      background: #f8fafc;
+    }
+    .filter-chip-btn {
+      padding: 7px 14px;
+      border-radius: 9999px;
+      border: 1.5px solid #e2e8f0;
+      background: #ffffff;
+      color: #334155;
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: all 0.15s ease;
+      font-family: inherit;
+    }
+    .filter-chip-btn:hover {
+      border-color: #93c5fd;
+      color: #0055fe;
+      background: #eff6ff;
+    }
+    .filter-chip-btn.active {
+      background: #0055fe;
+      color: #ffffff;
+      border-color: #0055fe;
+      box-shadow: 0 4px 12px rgba(0, 85, 254, 0.25);
+    }
+    .filter-chip-btn .chip-count {
+      font-size: 11.5px;
+      opacity: 0.75;
+    }
+    .filter-chip-btn.active .chip-count {
+      opacity: 0.9;
+    }
+    .no-categories-msg {
+      padding: 24px;
+      text-align: center;
+      color: #64748b;
+      font-size: 13.5px;
+      background: #f8fafc;
+      border-radius: 12px;
+      margin-top: 8px;
+    }
+    .filter-drawer-footer {
+      display: flex;
+      justify-content: flex-end;
+      margin-top: 16px;
+      padding-top: 14px;
+      border-top: 1px solid #f1f5f9;
+    }
+    .filter-apply-btn {
+      padding: 10px 22px;
+      border-radius: 10px;
+      background: #0055fe;
+      color: #ffffff;
+      border: none;
+      font-size: 13.5px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    .filter-apply-btn:hover {
+      background: #0044cc;
+    }
+  </style>
 </head>
 
 <body class="light-theme blog-hub-page">
-  <!-- Global Header -->
-  <header class="site-header scrolled">
-    <div class="header-container">
-      <a href="/" class="brand-logo" aria-label="Coralgenz Global Home">
-        <img src="/assets/images/DVyu6tz4dqPirA4TwAJZUz5CUw.png" alt="Coralgenz Global Logo" class="logo-img" width="38" height="38">
-        <span class="logo-text">CORALGENZ</span>
+<!-- Main Navigation Header -->
+  <header class="site-header">
+    <div class="container navbar">
+      <a href="/" class="brand-logo"
+        aria-label="Coralgenz Global - Enterprise IT &amp; Software Engineering Company Homepage">
+        <img src="/assets/images/DVyu6tz4dqPirA4TwAJZUz5CUw.png"
+          alt="Coralgenz Global - Enterprise Software &amp; IT Solutions Official Logo" title="Coralgenz Global Logo"
+          width="38" height="38" loading="eager" fetchpriority="high" decoding="async">
+        <span class="brand-name">Coralgenz Global</span>
       </a>
 
       <nav class="nav-links">
-        <a href="/" class="nav-link">Home</a>
+        <a href="/" class="nav-link active">Home</a>
         <a href="/about-us" class="nav-link">About</a>
-        <a href="/our-services" class="nav-link">Services</a>
-        <a href="/our-products" class="nav-link">Products</a>
-        <a href="/our-highlights" class="nav-link">Highlights</a>
-        <a href="/blog" class="nav-link active" style="color: #0055fe; font-weight: 700;">Blog</a>
-        <a href="/contact" class="nav-link">Contact</a>
 
-        <!-- 3-Line Menu -->
+        <!-- Our Services Dropdown -->
+        <div class="nav-dropdown-wrapper">
+          <a href="/our-services" class="nav-link nav-dropdown-btn">
+            <span>Our Services</span>
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </a>
+          <div class="nav-dropdown-menu">
+            <a href="/our-services" class="nav-dropdown-item dropdown-hub-link">
+              <span>All 8 Services Hub</span>
+              <span>&rarr;</span>
+            </a>
+            <a href="/our-services/custom-software-development" class="nav-dropdown-item">Custom Software Development</a>
+            <a href="/our-services/mvp-development" class="nav-dropdown-item">MVP Development</a>
+            <a href="/our-services/full-stack-software" class="nav-dropdown-item">Full Stack Software</a>
+            <a href="/our-services/legacy-software-modernization" class="nav-dropdown-item">Legacy Software Modernization</a>
+            <a href="/our-services/pwa-development" class="nav-dropdown-item">Progressive Web Applications (PWAs)</a>
+            <a href="/our-services/modern-admin-dashboards" class="nav-dropdown-item">Modern Admin Dashboards</a>
+            <a href="/our-services/frontend-modernization" class="nav-dropdown-item">Frontend Modernization</a>
+            <a href="/our-services/domain-and-deployment-service" class="nav-dropdown-item">Domain &amp; Deployment Service</a>
+          </div>
+        </div>
+
+        <!-- Our Products Dropdown -->
+        <div class="nav-dropdown-wrapper">
+          <a href="/our-products" class="nav-link nav-dropdown-btn">
+            <span>Our Products</span>
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </a>
+          <div class="nav-dropdown-menu">
+            <a href="/our-products" class="nav-dropdown-item dropdown-hub-link">
+              <span>All 3 Products Hub</span>
+              <span>&rarr;</span>
+            </a>
+            <a href="/coralgenz-vault" class="nav-dropdown-item">Coralgenz Vault</a>
+            <a href="/coralgenz-qr" class="nav-dropdown-item">Coralgenz QR</a>
+            <a href="/coralgenz-compiler" class="nav-dropdown-item">Coralgenz Compiler</a>
+          </div>
+        </div>
+
+        <!-- Our Highlights Dropdown -->
+        <div class="nav-dropdown-wrapper">
+          <a href="/our-highlights" class="nav-link nav-dropdown-btn">
+            <span>Our Highlights</span>
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </a>
+          <div class="nav-dropdown-menu">
+            <a href="/our-highlights" class="nav-dropdown-item dropdown-hub-link">
+              <span>All 6 Highlights Hub</span>
+              <span>&rarr;</span>
+            </a>
+            <a href="/our-highlights/worlds-first-secure-format" class="nav-dropdown-item">World's First .secure Format</a>
+            <a href="/our-highlights/coralgenz-vault-security" class="nav-dropdown-item">Coralgenz Vault Security</a>
+            <a href="/our-highlights/coralgenz-qr-telemetry" class="nav-dropdown-item">Coralgenz QR Telemetry</a>
+            <a href="/our-highlights/coralgenz-compiler-engine" class="nav-dropdown-item">Coralgenz Compiler Engine</a>
+            <a href="/our-highlights/clean-architecture-standards" class="nav-dropdown-item">Clean Architecture Standards</a>
+            <a href="/our-highlights/microsoft-salesforce-partner" class="nav-dropdown-item">Microsoft &amp; Salesforce Partner</a>
+          </div>
+        </div>
+
+        <a href="/become-a-partner" class="nav-link">Become a Partner</a>
+        <a href="/contact" class="nav-link">Contact Us</a>
+      </nav>
+
+      <div class="nav-actions">
+        <!-- 3-Line Quick Options Dropdown (Desktop) -->
         <div class="three-dots-wrapper">
-          <button class="three-dots-btn active is-active-page" onclick="toggleThreeDotsMenu(event)" aria-label="More options" title="More options">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round">
+          <button class="three-dots-btn" onclick="toggleThreeDotsMenu(event)" aria-label="More options"
+            title="More options">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
+              stroke-linecap="round">
               <line x1="4" y1="6" x2="20" y2="6"></line>
               <line x1="4" y1="12" x2="20" y2="12"></line>
               <line x1="4" y1="18" x2="20" y2="18"></line>
@@ -106,15 +543,16 @@
                 <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
                 <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
               </svg>
-              <span>BLOG &amp; INSIGHTS (180)</span>
+              <span>BLOG &amp; INSIGHTS</span>
             </a>
             <a href="/#certifications" class="three-dots-item">
               <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
+                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z">
+                </path>
               </svg>
               <span>CERTIFICATION PROGRAM</span>
             </a>
-            <a href="/collaborated-products" class="three-dots-item">
+            <a href="/collaborated-products" class="three-dots-item highlight">
               <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                 <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
                 <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
@@ -125,6 +563,8 @@
               <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                 <path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"></path>
                 <path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"></path>
+                <path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"></path>
+                <path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"></path>
               </svg>
               <span>PARTNERED STARTUPS</span>
             </a>
@@ -137,7 +577,9 @@
             </a>
             <a href="/rate-us" class="three-dots-item highlight" style="color: #f59e0b; font-weight: 700;">
               <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                <polygon
+                  points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
+                </polygon>
               </svg>
               <span>RATE US (4.9/5)</span>
             </a>
@@ -145,18 +587,17 @@
               <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                 <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
                 <circle cx="9" cy="7" r="4"></circle>
+                <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
               </svg>
               <span>OUR TEAM</span>
             </a>
-            <a href="#cookie-settings" data-open-cookie-preferences class="three-dots-item">
+            <a href="mailto:coralgenz@gmail.com" class="three-dots-item">
               <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <circle cx="12" cy="12" r="10"></circle>
-                <path d="M12 2a10 10 0 0 1 10 10 4 4 0 0 1-5-5 4 4 0 0 1-5-5"></path>
-                <path d="M8.5 8.5v.01"></path>
-                <path d="M16 15.5v.01"></path>
-                <path d="M12 12v.01"></path>
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                <polyline points="22,6 12,13 2,6"></polyline>
               </svg>
-              <span>COOKIE SETTINGS</span>
+              <span>coralgenz@gmail.com</span>
             </a>
           </div>
         </div>
@@ -166,29 +607,30 @@
           <span></span>
           <span></span>
         </button>
-      </nav>
+      </div>
     </div>
   </header>
 
   <!-- Mobile Drawer Menu -->
   <div class="mobile-menu">
-    <a href="/" class="nav-link">Home</a>
+    <a href="/" class="nav-link active">Home</a>
     <a href="/about-us" class="nav-link">About</a>
-    <a href="/our-services" class="nav-link">Services</a>
-    <a href="/our-products" class="nav-link">Products</a>
-    <a href="/our-highlights" class="nav-link">Highlights</a>
-    <a href="/blog" class="nav-link active" style="color: #0055fe; font-weight: 700;">Blog &amp; Insights</a>
-    <a href="/become-a-partner" class="nav-link">Become a Partner</a>
-    <a href="/contact" class="nav-link">Contact Us</a>
-    <div style="height: 1px; background: #e2e8f0; margin: 8px 0;"></div>
-    <a href="/rate-us" class="nav-link" style="color: #f59e0b; font-weight: 700;">Rate Us • 4.9/5</a>
-    <a href="/team" class="nav-link">Team</a>
-    <a href="/privacy-policy" class="nav-link">Privacy &amp; Policies</a>
-  </div>
+
+    <!-- Mobile Our Services Dropdown -->
+    <div class="mobile-services-dropdown-wrap">
+      <button class="mobile-services-toggle" onclick="toggleMobileServicesMenu(event)" aria-expanded="false">
+        <span>Our Services</span>
+        <div class="services-toggle-meta">
+          <span class="services-count-badge">8</span>
+          <svg class="services-chevron-icon" width="16" height="16" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2.5">
+            <polyline points="6 9 12 15 18 9"></polyline>
+          </svg>
+        </div>
 
   <main>
     <!-- Blog Hero Section -->
-    <section class="section" style="padding-top: 40px; padding-bottom: 40px; background: radial-gradient(at 50% 0%, #ebf3ff 0%, #ffffff 70%);">
+    <section class="section" style="padding-top: 48px; padding-bottom: 32px; background: radial-gradient(at 50% 0%, #ebf3ff 0%, #ffffff 70%);">
       <div class="container" style="text-align: center; max-width: 900px;">
         <div style="display: inline-flex; align-items: center; gap: 8px; padding: 6px 18px; background: #eff6ff; border: 1.5px solid #bfdbfe; border-radius: 9999px; font-size: 12px; font-weight: 700; color: #0055fe; text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 18px;">
           <span>180 KNOWLEDGE ARTICLES &amp; ENGINEERING PLAYBOOKS</span>
@@ -199,45 +641,216 @@
         </h1>
 
         <p style="font-size: clamp(16px, 2.2vw, 18px); color: #475569; line-height: 1.65; max-width: 720px; margin: 0 auto 24px auto;">
-          Everything you need to know about building custom software, launching startup MVPs, zero-knowledge file security, and scaling on Microsoft Azure, Salesforce, and Shopify.
+          Plain-English software guides, startup MVP roadmaps, cloud scalability, and zero-knowledge security architecture written for founders, leaders, and engineers.
         </p>
 
-        <!-- Aggregate Rating Badge Matching Image Reference -->
-        <div style="display: inline-flex; align-items: center; gap: 8px; padding: 8px 18px; background: #ffffff; border: 1.5px solid #e2e8f0; border-radius: 9999px; box-shadow: 0 4px 16px rgba(15, 23, 42, 0.05); font-size: 13.5px; font-weight: 600; color: #0f172a; flex-wrap: wrap; justify-content: center;">
-          <span style="font-weight: 800; font-size: 15px;">4.9</span>
-          <span style="color: #f59e0b; font-size: 16px; letter-spacing: 2px;">★★★★★</span>
-          <span style="color: #64748b; font-weight: 500;">(1,807,278 Verified Client Reviews)</span>
-          <span style="color: #cbd5e1;">·</span>
-          <span style="color: #0055fe; font-weight: 700;">Free Access</span>
-          <span style="color: #cbd5e1;">·</span>
-          <span style="color: #475569;">Business &amp; Productivity</span>
+        <!-- Social Proof & Google Star Ratings Bar -->
+        <div style="display: inline-flex; align-items: center; gap: 12px; padding: 10px 22px; background: #ffffff; border: 1.5px solid #e2e8f0; border-radius: 9999px; box-shadow: 0 4px 16px rgba(15, 23, 42, 0.06); flex-wrap: wrap; justify-content: center;">
+          <div style="display: flex; align-items: center; gap: 6px;">
+            <span style="font-size: 15px; font-weight: 800; color: #0f172a;">4.9</span>
+            <span style="color: #f59e0b; font-size: 16px; letter-spacing: 1px;">★★★★★</span>
+          </div>
+          <span style="color: #cbd5e1;">|</span>
+          <span style="font-size: 13.5px; color: #475569; font-weight: 600;">
+            1,807,278 Global Client Ratings
+          </span>
+          <span style="color: #cbd5e1;">|</span>
+          <span style="font-size: 13px; color: #0055fe; font-weight: 700;">
+            180 Verified Guides
+          </span>
         </div>
       </div>
     </section>
 
-    <!-- Search & Filter Controls -->
-    <section class="container" style="max-width: 1200px; padding-bottom: 30px;">
-      <div style="display: flex; gap: 16px; flex-wrap: wrap; align-items: center; justify-content: space-between; margin-bottom: 24px;">
-        <div style="position: relative; flex: 1 1 320px; max-width: 480px;">
-          <input type="text" id="blogSearchInput" placeholder="Search 180 articles (e.g. Vault, MVP, Python, QR, AI)..."
-            style="width: 100%; padding: 12px 18px 12px 42px; border: 1.5px solid #cbd5e1; border-radius: 12px; font-family: var(--font-inter); font-size: 14.5px; outline: none; transition: border-color 0.2s ease, box-shadow 0.2s ease;">
-          <svg style="position: absolute; left: 14px; top: 50%; transform: translateY(-50%); color: #94a3b8;" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+    <!-- Search & Filter Controls Section -->
+    <section class="blog-controls-section">
+      <div class="blog-controls-bar">
+        <!-- Main Search Bar -->
+        <div class="blog-search-wrap">
+          <svg class="blog-search-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#64748b" stroke-width="2.2">
             <circle cx="11" cy="11" r="8"></circle>
             <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
           </svg>
+          <input type="text" id="blogSearchInput" class="blog-search-input" placeholder="Search 180+ articles, topics, technical playbooks..." autocomplete="off">
+          <button type="button" id="clearMainSearchBtn" class="clear-search-btn" onclick="clearMainSearch()" aria-label="Clear search">&times;</button>
         </div>
 
+        <!-- Filter Trigger Button -->
+        <button type="button" id="filterToggleBtn" class="blog-filter-btn" onclick="toggleFilterDrawer()" aria-expanded="false" aria-controls="filterDrawerCard">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"></polygon>
+          </svg>
+          <span>Filters</span>
+          <span id="activeFilterBadge" class="filter-badge">All Topics (180)</span>
+          <svg class="filter-chevron" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <polyline points="6 9 12 15 18 9"></polyline>
+          </svg>
+        </button>
+      </div>
+
+      <!-- Active Filter Banner (Visible when a specific category is chosen) -->
+      <div id="activeFilterBanner" class="active-filter-banner" style="display: none;">
+        <div class="active-filter-info">
+          <span class="active-filter-label">Active Filter:</span>
+          <span id="activeFilterName" class="active-filter-pill"></span>
+          <span id="activeFilterCount" class="active-filter-count"></span>
+        </div>
+        <button type="button" class="clear-filter-btn" onclick="resetCategoryFilter()">Clear Filter &times;</button>
+      </div>
+
+      <!-- Filter Drawer Card -->
+      <div id="filterDrawerCard" class="filter-drawer-card" style="display: none;">
+        <div class="filter-drawer-header">
+          <div>
+            <h3 class="filter-drawer-title">Filter by Category &amp; Topic</h3>
+            <p class="filter-drawer-subtitle" id="filterStatsSubtitle">103 specialized categories across 180 articles</p>
+          </div>
+          <div class="filter-drawer-actions">
+            <button type="button" class="filter-reset-btn" onclick="resetCategoryFilter()">Reset Filter</button>
+            <button type="button" class="filter-close-btn" onclick="toggleFilterDrawer()" aria-label="Close filters">&times;</button>
+          </div>
+        </div>
+
+        <!-- Search Feature to Search the Filters -->
+        <div class="filter-search-box">
+          <svg class="filter-search-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#64748b" stroke-width="2.2">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+          <input type="text" id="filterCategorySearchInput" class="filter-search-input" placeholder="Search filter categories (e.g. AI, Security, Cloud, QR, Shopify, MVP, Web)..." oninput="onFilterCategorySearch(this.value)" autocomplete="off">
+          <button type="button" id="clearFilterCategorySearchBtn" class="clear-filter-search-btn" onclick="clearCategorySearch()" style="display: none;" aria-label="Clear filter search">&times;</button>
+        </div>
+
+        <!-- Filter Match Count -->
+        <div id="filterCategoryMatchCount" class="filter-category-match-count">Showing 103 categories</div>
+
+        <!-- Filter Chips Grid -->
+        <div id="filterCategoryChipsGrid" class="filter-chips-grid">
+          <button type="button" class="filter-chip-btn active" data-category="all" data-category-name="all topics" data-display-name="All Topics" data-count="180"><span>All Topics</span><span class="chip-count">(180)</span></button>
+          <button type="button" class="filter-chip-btn" data-category="Security & Vault" data-category-name="security & vault" data-display-name="Security & Vault" data-count="13"><span>Security & Vault</span><span class="chip-count">(13)</span></button>
+          <button type="button" class="filter-chip-btn" data-category="Smart QR & Telemetry" data-category-name="smart qr & telemetry" data-display-name="Smart QR & Telemetry" data-count="10"><span>Smart QR & Telemetry</span><span class="chip-count">(10)</span></button>
+          <button type="button" class="filter-chip-btn" data-category="Developer Tools" data-category-name="developer tools" data-display-name="Developer Tools" data-count="8"><span>Developer Tools</span><span class="chip-count">(8)</span></button>
+          <button type="button" class="filter-chip-btn" data-category="Startups & MVP" data-category-name="startups & mvp" data-display-name="Startups & MVP" data-count="8"><span>Startups & MVP</span><span class="chip-count">(8)</span></button>
+          <button type="button" class="filter-chip-btn" data-category="Company & Culture" data-category-name="company & culture" data-display-name="Company & Culture" data-count="6"><span>Company & Culture</span><span class="chip-count">(6)</span></button>
+          <button type="button" class="filter-chip-btn" data-category="Industry Solutions" data-category-name="industry solutions" data-display-name="Industry Solutions" data-count="5"><span>Industry Solutions</span><span class="chip-count">(5)</span></button>
+          <button type="button" class="filter-chip-btn" data-category="Case Studies" data-category-name="case studies" data-display-name="Case Studies" data-count="4"><span>Case Studies</span><span class="chip-count">(4)</span></button>
+          <button type="button" class="filter-chip-btn" data-category="Cloud & DevOps" data-category-name="cloud & devops" data-display-name="Cloud & DevOps" data-count="4"><span>Cloud & DevOps</span><span class="chip-count">(4)</span></button>
+          <button type="button" class="filter-chip-btn" data-category="Custom Software" data-category-name="custom software" data-display-name="Custom Software" data-count="4"><span>Custom Software</span><span class="chip-count">(4)</span></button>
+          <button type="button" class="filter-chip-btn" data-category="Client Guide" data-category-name="client guide" data-display-name="Client Guide" data-count="3"><span>Client Guide</span><span class="chip-count">(3)</span></button>
+          <button type="button" class="filter-chip-btn" data-category="Legacy Modernization" data-category-name="legacy modernization" data-display-name="Legacy Modernization" data-count="3"><span>Legacy Modernization</span><span class="chip-count">(3)</span></button>
+          <button type="button" class="filter-chip-btn" data-category="Salesforce Partner" data-category-name="salesforce partner" data-display-name="Salesforce Partner" data-count="3"><span>Salesforce Partner</span><span class="chip-count">(3)</span></button>
+          <button type="button" class="filter-chip-btn" data-category="Shopify E-Commerce" data-category-name="shopify e-commerce" data-display-name="Shopify E-Commerce" data-count="3"><span>Shopify E-Commerce</span><span class="chip-count">(3)</span></button>
+          <button type="button" class="filter-chip-btn" data-category="Web Modernization" data-category-name="web modernization" data-display-name="Web Modernization" data-count="3"><span>Web Modernization</span><span class="chip-count">(3)</span></button>
+          <button type="button" class="filter-chip-btn" data-category="AI & Automation" data-category-name="ai & automation" data-display-name="AI & Automation" data-count="2"><span>AI & Automation</span><span class="chip-count">(2)</span></button>
+          <button type="button" class="filter-chip-btn" data-category="AI Strategy" data-category-name="ai strategy" data-display-name="AI Strategy" data-count="2"><span>AI Strategy</span><span class="chip-count">(2)</span></button>
+          <button type="button" class="filter-chip-btn" data-category="Admin Dashboards" data-category-name="admin dashboards" data-display-name="Admin Dashboards" data-count="2"><span>Admin Dashboards</span><span class="chip-count">(2)</span></button>
+          <button type="button" class="filter-chip-btn" data-category="Career & Education" data-category-name="career & education" data-display-name="Career & Education" data-count="2"><span>Career & Education</span><span class="chip-count">(2)</span></button>
+          <button type="button" class="filter-chip-btn" data-category="Certification Program" data-category-name="certification program" data-display-name="Certification Program" data-count="2"><span>Certification Program</span><span class="chip-count">(2)</span></button>
+          <button type="button" class="filter-chip-btn" data-category="Cloud Cost Optimization" data-category-name="cloud cost optimization" data-display-name="Cloud Cost Optimization" data-count="2"><span>Cloud Cost Optimization</span><span class="chip-count">(2)</span></button>
+          <button type="button" class="filter-chip-btn" data-category="Enterprise AI Safety" data-category-name="enterprise ai safety" data-display-name="Enterprise AI Safety" data-count="2"><span>Enterprise AI Safety</span><span class="chip-count">(2)</span></button>
+          <button type="button" class="filter-chip-btn" data-category="Industry Insights" data-category-name="industry insights" data-display-name="Industry Insights" data-count="2"><span>Industry Insights</span><span class="chip-count">(2)</span></button>
+          <button type="button" class="filter-chip-btn" data-category="Marketing Analytics" data-category-name="marketing analytics" data-display-name="Marketing Analytics" data-count="2"><span>Marketing Analytics</span><span class="chip-count">(2)</span></button>
+          <button type="button" class="filter-chip-btn" data-category="PWA Development" data-category-name="pwa development" data-display-name="PWA Development" data-count="2"><span>PWA Development</span><span class="chip-count">(2)</span></button>
+          <button type="button" class="filter-chip-btn" data-category="Performance" data-category-name="performance" data-display-name="Performance" data-count="2"><span>Performance</span><span class="chip-count">(2)</span></button>
+          <button type="button" class="filter-chip-btn" data-category="UI/UX Design" data-category-name="ui/ux design" data-display-name="UI/UX Design" data-count="2"><span>UI/UX Design</span><span class="chip-count">(2)</span></button>
+          <button type="button" class="filter-chip-btn" data-category="Web Development" data-category-name="web development" data-display-name="Web Development" data-count="2"><span>Web Development</span><span class="chip-count">(2)</span></button>
+          <button type="button" class="filter-chip-btn" data-category="Workflow Automation" data-category-name="workflow automation" data-display-name="Workflow Automation" data-count="2"><span>Workflow Automation</span><span class="chip-count">(2)</span></button>
+          <button type="button" class="filter-chip-btn" data-category="AI & Analytics" data-category-name="ai & analytics" data-display-name="AI & Analytics" data-count="1"><span>AI & Analytics</span><span class="chip-count">(1)</span></button>
+          <button type="button" class="filter-chip-btn" data-category="AI Reliability" data-category-name="ai reliability" data-display-name="AI Reliability" data-count="1"><span>AI Reliability</span><span class="chip-count">(1)</span></button>
+          <button type="button" class="filter-chip-btn" data-category="AI Strategy & ROI" data-category-name="ai strategy & roi" data-display-name="AI Strategy & ROI" data-count="1"><span>AI Strategy & ROI</span><span class="chip-count">(1)</span></button>
+          <button type="button" class="filter-chip-btn" data-category="Accessibility & UI" data-category-name="accessibility & ui" data-display-name="Accessibility & UI" data-count="1"><span>Accessibility & UI</span><span class="chip-count">(1)</span></button>
+          <button type="button" class="filter-chip-btn" data-category="Anniversary Milestone" data-category-name="anniversary milestone" data-display-name="Anniversary Milestone" data-count="1"><span>Anniversary Milestone</span><span class="chip-count">(1)</span></button>
+          <button type="button" class="filter-chip-btn" data-category="Automation" data-category-name="automation" data-display-name="Automation" data-count="1"><span>Automation</span><span class="chip-count">(1)</span></button>
+          <button type="button" class="filter-chip-btn" data-category="B2B E-Commerce" data-category-name="b2b e-commerce" data-display-name="B2B E-Commerce" data-count="1"><span>B2B E-Commerce</span><span class="chip-count">(1)</span></button>
+          <button type="button" class="filter-chip-btn" data-category="B2B Portals" data-category-name="b2b portals" data-display-name="B2B Portals" data-count="1"><span>B2B Portals</span><span class="chip-count">(1)</span></button>
+          <button type="button" class="filter-chip-btn" data-category="Billing Automation" data-category-name="billing automation" data-display-name="Billing Automation" data-count="1"><span>Billing Automation</span><span class="chip-count">(1)</span></button>
+          <button type="button" class="filter-chip-btn" data-category="Business Growth" data-category-name="business growth" data-display-name="Business Growth" data-count="1"><span>Business Growth</span><span class="chip-count">(1)</span></button>
+          <button type="button" class="filter-chip-btn" data-category="CRM Automation" data-category-name="crm automation" data-display-name="CRM Automation" data-count="1"><span>CRM Automation</span><span class="chip-count">(1)</span></button>
+          <button type="button" class="filter-chip-btn" data-category="Call to Action" data-category-name="call to action" data-display-name="Call to Action" data-count="1"><span>Call to Action</span><span class="chip-count">(1)</span></button>
+          <button type="button" class="filter-chip-btn" data-category="Client Autonomy" data-category-name="client autonomy" data-display-name="Client Autonomy" data-count="1"><span>Client Autonomy</span><span class="chip-count">(1)</span></button>
+          <button type="button" class="filter-chip-btn" data-category="Client Experience" data-category-name="client experience" data-display-name="Client Experience" data-count="1"><span>Client Experience</span><span class="chip-count">(1)</span></button>
+          <button type="button" class="filter-chip-btn" data-category="Client FAQ & Trust" data-category-name="client faq & trust" data-display-name="Client FAQ & Trust" data-count="1"><span>Client FAQ & Trust</span><span class="chip-count">(1)</span></button>
+          <button type="button" class="filter-chip-btn" data-category="Client Onboarding" data-category-name="client onboarding" data-display-name="Client Onboarding" data-count="1"><span>Client Onboarding</span><span class="chip-count">(1)</span></button>
+          <button type="button" class="filter-chip-btn" data-category="Cloud Architecture" data-category-name="cloud architecture" data-display-name="Cloud Architecture" data-count="1"><span>Cloud Architecture</span><span class="chip-count">(1)</span></button>
+          <button type="button" class="filter-chip-btn" data-category="Cloud Engineering" data-category-name="cloud engineering" data-display-name="Cloud Engineering" data-count="1"><span>Cloud Engineering</span><span class="chip-count">(1)</span></button>
+          <button type="button" class="filter-chip-btn" data-category="Cloud Migration" data-category-name="cloud migration" data-display-name="Cloud Migration" data-count="1"><span>Cloud Migration</span><span class="chip-count">(1)</span></button>
+          <button type="button" class="filter-chip-btn" data-category="Community" data-category-name="community" data-display-name="Community" data-count="1"><span>Community</span><span class="chip-count">(1)</span></button>
+          <button type="button" class="filter-chip-btn" data-category="Company & Core Services" data-category-name="company & core services" data-display-name="Company & Core Services" data-count="1"><span>Company & Core Services</span><span class="chip-count">(1)</span></button>
+          <button type="button" class="filter-chip-btn" data-category="Company Journey" data-category-name="company journey" data-display-name="Company Journey" data-count="1"><span>Company Journey</span><span class="chip-count">(1)</span></button>
+          <button type="button" class="filter-chip-btn" data-category="Company Milestone" data-category-name="company milestone" data-display-name="Company Milestone" data-count="1"><span>Company Milestone</span><span class="chip-count">(1)</span></button>
+          <button type="button" class="filter-chip-btn" data-category="Company Recap" data-category-name="company recap" data-display-name="Company Recap" data-count="1"><span>Company Recap</span><span class="chip-count">(1)</span></button>
+          <button type="button" class="filter-chip-btn" data-category="Conversion Rate" data-category-name="conversion rate" data-display-name="Conversion Rate" data-count="1"><span>Conversion Rate</span><span class="chip-count">(1)</span></button>
+          <button type="button" class="filter-chip-btn" data-category="Customer Experience" data-category-name="customer experience" data-display-name="Customer Experience" data-count="1"><span>Customer Experience</span><span class="chip-count">(1)</span></button>
+          <button type="button" class="filter-chip-btn" data-category="Customer Retention" data-category-name="customer retention" data-display-name="Customer Retention" data-count="1"><span>Customer Retention</span><span class="chip-count">(1)</span></button>
+          <button type="button" class="filter-chip-btn" data-category="Data Architecture" data-category-name="data architecture" data-display-name="Data Architecture" data-count="1"><span>Data Architecture</span><span class="chip-count">(1)</span></button>
+          <button type="button" class="filter-chip-btn" data-category="Data Security" data-category-name="data security" data-display-name="Data Security" data-count="1"><span>Data Security</span><span class="chip-count">(1)</span></button>
+          <button type="button" class="filter-chip-btn" data-category="DevOps & SRE" data-category-name="devops & sre" data-display-name="DevOps & SRE" data-count="1"><span>DevOps & SRE</span><span class="chip-count">(1)</span></button>
+          <button type="button" class="filter-chip-btn" data-category="E-Commerce Optimization" data-category-name="e-commerce optimization" data-display-name="E-Commerce Optimization" data-count="1"><span>E-Commerce Optimization</span><span class="chip-count">(1)</span></button>
+          <button type="button" class="filter-chip-btn" data-category="E-Commerce Readiness" data-category-name="e-commerce readiness" data-display-name="E-Commerce Readiness" data-count="1"><span>E-Commerce Readiness</span><span class="chip-count">(1)</span></button>
+          <button type="button" class="filter-chip-btn" data-category="E-Commerce Security" data-category-name="e-commerce security" data-display-name="E-Commerce Security" data-count="1"><span>E-Commerce Security</span><span class="chip-count">(1)</span></button>
+          <button type="button" class="filter-chip-btn" data-category="EdTech" data-category-name="edtech" data-display-name="EdTech" data-count="1"><span>EdTech</span><span class="chip-count">(1)</span></button>
+          <button type="button" class="filter-chip-btn" data-category="Education & Community" data-category-name="education & community" data-display-name="Education & Community" data-count="1"><span>Education & Community</span><span class="chip-count">(1)</span></button>
+          <button type="button" class="filter-chip-btn" data-category="Education & Tools" data-category-name="education & tools" data-display-name="Education & Tools" data-count="1"><span>Education & Tools</span><span class="chip-count">(1)</span></button>
+          <button type="button" class="filter-chip-btn" data-category="Engineering Culture" data-category-name="engineering culture" data-display-name="Engineering Culture" data-count="1"><span>Engineering Culture</span><span class="chip-count">(1)</span></button>
+          <button type="button" class="filter-chip-btn" data-category="Engineering Excellence" data-category-name="engineering excellence" data-display-name="Engineering Excellence" data-count="1"><span>Engineering Excellence</span><span class="chip-count">(1)</span></button>
+          <button type="button" class="filter-chip-btn" data-category="Enterprise Architecture" data-category-name="enterprise architecture" data-display-name="Enterprise Architecture" data-count="1"><span>Enterprise Architecture</span><span class="chip-count">(1)</span></button>
+          <button type="button" class="filter-chip-btn" data-category="Enterprise Ecosystem" data-category-name="enterprise ecosystem" data-display-name="Enterprise Ecosystem" data-count="1"><span>Enterprise Ecosystem</span><span class="chip-count">(1)</span></button>
+          <button type="button" class="filter-chip-btn" data-category="Enterprise Integration" data-category-name="enterprise integration" data-display-name="Enterprise Integration" data-count="1"><span>Enterprise Integration</span><span class="chip-count">(1)</span></button>
+          <button type="button" class="filter-chip-btn" data-category="Enterprise Security" data-category-name="enterprise security" data-display-name="Enterprise Security" data-count="1"><span>Enterprise Security</span><span class="chip-count">(1)</span></button>
+          <button type="button" class="filter-chip-btn" data-category="Fintech" data-category-name="fintech" data-display-name="Fintech" data-count="1"><span>Fintech</span><span class="chip-count">(1)</span></button>
+          <button type="button" class="filter-chip-btn" data-category="Fintech & Payments" data-category-name="fintech & payments" data-display-name="Fintech & Payments" data-count="1"><span>Fintech & Payments</span><span class="chip-count">(1)</span></button>
+          <button type="button" class="filter-chip-btn" data-category="Founder Reflections" data-category-name="founder reflections" data-display-name="Founder Reflections" data-count="1"><span>Founder Reflections</span><span class="chip-count">(1)</span></button>
+          <button type="button" class="filter-chip-btn" data-category="Global Delivery" data-category-name="global delivery" data-display-name="Global Delivery" data-count="1"><span>Global Delivery</span><span class="chip-count">(1)</span></button>
+          <button type="button" class="filter-chip-btn" data-category="HealthTech" data-category-name="healthtech" data-display-name="HealthTech" data-count="1"><span>HealthTech</span><span class="chip-count">(1)</span></button>
+          <button type="button" class="filter-chip-btn" data-category="High Availability" data-category-name="high availability" data-display-name="High Availability" data-count="1"><span>High Availability</span><span class="chip-count">(1)</span></button>
+          <button type="button" class="filter-chip-btn" data-category="Local Business Growth" data-category-name="local business growth" data-display-name="Local Business Growth" data-count="1"><span>Local Business Growth</span><span class="chip-count">(1)</span></button>
+          <button type="button" class="filter-chip-btn" data-category="Logistics Tech" data-category-name="logistics tech" data-display-name="Logistics Tech" data-count="1"><span>Logistics Tech</span><span class="chip-count">(1)</span></button>
+          <button type="button" class="filter-chip-btn" data-category="MSME Growth" data-category-name="msme growth" data-display-name="MSME Growth" data-count="1"><span>MSME Growth</span><span class="chip-count">(1)</span></button>
+          <button type="button" class="filter-chip-btn" data-category="Microsoft & Cloud" data-category-name="microsoft & cloud" data-display-name="Microsoft & Cloud" data-count="1"><span>Microsoft & Cloud</span><span class="chip-count">(1)</span></button>
+          <button type="button" class="filter-chip-btn" data-category="Mobile App Development" data-category-name="mobile app development" data-display-name="Mobile App Development" data-count="1"><span>Mobile App Development</span><span class="chip-count">(1)</span></button>
+          <button type="button" class="filter-chip-btn" data-category="Mobile Apps" data-category-name="mobile apps" data-display-name="Mobile Apps" data-count="1"><span>Mobile Apps</span><span class="chip-count">(1)</span></button>
+          <button type="button" class="filter-chip-btn" data-category="Mobile-First UX" data-category-name="mobile-first ux" data-display-name="Mobile-First UX" data-count="1"><span>Mobile-First UX</span><span class="chip-count">(1)</span></button>
+          <button type="button" class="filter-chip-btn" data-category="OCR & Automation" data-category-name="ocr & automation" data-display-name="OCR & Automation" data-count="1"><span>OCR & Automation</span><span class="chip-count">(1)</span></button>
+          <button type="button" class="filter-chip-btn" data-category="Partner Ecosystem" data-category-name="partner ecosystem" data-display-name="Partner Ecosystem" data-count="1"><span>Partner Ecosystem</span><span class="chip-count">(1)</span></button>
+          <button type="button" class="filter-chip-btn" data-category="Performance & SEO" data-category-name="performance & seo" data-display-name="Performance & SEO" data-count="1"><span>Performance & SEO</span><span class="chip-count">(1)</span></button>
+          <button type="button" class="filter-chip-btn" data-category="Privacy & DPDP" data-category-name="privacy & dpdp" data-display-name="Privacy & DPDP" data-count="1"><span>Privacy & DPDP</span><span class="chip-count">(1)</span></button>
+          <button type="button" class="filter-chip-btn" data-category="Product Roadmap" data-category-name="product roadmap" data-display-name="Product Roadmap" data-count="1"><span>Product Roadmap</span><span class="chip-count">(1)</span></button>
+          <button type="button" class="filter-chip-btn" data-category="Project Management" data-category-name="project management" data-display-name="Project Management" data-count="1"><span>Project Management</span><span class="chip-count">(1)</span></button>
+          <button type="button" class="filter-chip-btn" data-category="Quality Assurance" data-category-name="quality assurance" data-display-name="Quality Assurance" data-count="1"><span>Quality Assurance</span><span class="chip-count">(1)</span></button>
+          <button type="button" class="filter-chip-btn" data-category="Real Estate Tech" data-category-name="real estate tech" data-display-name="Real Estate Tech" data-count="1"><span>Real Estate Tech</span><span class="chip-count">(1)</span></button>
+          <button type="button" class="filter-chip-btn" data-category="SEO & Accessibility" data-category-name="seo & accessibility" data-display-name="SEO & Accessibility" data-count="1"><span>SEO & Accessibility</span><span class="chip-count">(1)</span></button>
+          <button type="button" class="filter-chip-btn" data-category="SEO & Speed" data-category-name="seo & speed" data-display-name="SEO & Speed" data-count="1"><span>SEO & Speed</span><span class="chip-count">(1)</span></button>
+          <button type="button" class="filter-chip-btn" data-category="SaaS Engineering" data-category-name="saas engineering" data-display-name="SaaS Engineering" data-count="1"><span>SaaS Engineering</span><span class="chip-count">(1)</span></button>
+          <button type="button" class="filter-chip-btn" data-category="Security & QR" data-category-name="security & qr" data-display-name="Security & QR" data-count="1"><span>Security & QR</span><span class="chip-count">(1)</span></button>
+          <button type="button" class="filter-chip-btn" data-category="Strategic Technology" data-category-name="strategic technology" data-display-name="Strategic Technology" data-count="1"><span>Strategic Technology</span><span class="chip-count">(1)</span></button>
+          <button type="button" class="filter-chip-btn" data-category="System Integration" data-category-name="system integration" data-display-name="System Integration" data-count="1"><span>System Integration</span><span class="chip-count">(1)</span></button>
+          <button type="button" class="filter-chip-btn" data-category="Tech Budgeting" data-category-name="tech budgeting" data-display-name="Tech Budgeting" data-count="1"><span>Tech Budgeting</span><span class="chip-count">(1)</span></button>
+          <button type="button" class="filter-chip-btn" data-category="Tech Trends" data-category-name="tech trends" data-display-name="Tech Trends" data-count="1"><span>Tech Trends</span><span class="chip-count">(1)</span></button>
+          <button type="button" class="filter-chip-btn" data-category="Transparent Pricing" data-category-name="transparent pricing" data-display-name="Transparent Pricing" data-count="1"><span>Transparent Pricing</span><span class="chip-count">(1)</span></button>
+          <button type="button" class="filter-chip-btn" data-category="Trust & Compliance" data-category-name="trust & compliance" data-display-name="Trust & Compliance" data-count="1"><span>Trust & Compliance</span><span class="chip-count">(1)</span></button>
+          <button type="button" class="filter-chip-btn" data-category="Website Optimization" data-category-name="website optimization" data-display-name="Website Optimization" data-count="1"><span>Website Optimization</span><span class="chip-count">(1)</span></button>
+          <button type="button" class="filter-chip-btn" data-category="Website Security" data-category-name="website security" data-display-name="Website Security" data-count="1"><span>Website Security</span><span class="chip-count">(1)</span></button>
+        </div>
+
+        <div id="noCategoriesMessage" class="no-categories-msg" style="display: none;">
+          No filter categories match your search. Try another keyword like "AI", "Cloud", "Security", or "QR".
+        </div>
+
+        <div class="filter-drawer-footer">
+          <button type="button" class="filter-apply-btn" onclick="toggleFilterDrawer()">View Filtered Articles &rarr;</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Articles Section -->
+    <section id="blogArticlesSection" class="section" style="max-width: 1140px; margin: 0 auto; padding: 0 20px 80px 20px;">
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px; flex-wrap: wrap; gap: 12px;">
+        <h2 style="font-family: var(--font-satoshi), sans-serif; font-size: 22px; font-weight: 800; color: #0f172a; margin: 0;">
+          Articles &amp; Playbooks
+        </h2>
         <div style="font-size: 14px; color: #64748b; font-weight: 600;" id="blogCountLabel">
           Showing 180 articles
         </div>
-      </div>
-
-      <!-- Category Filter Pills -->
-      <div style="display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 32px;" id="blogCategoryPills">
-        <button type="button" class="blog-cat-pill active" data-category="all" style="padding: 7px 16px; border-radius: 9999px; border: 1.5px solid #0055fe; background: #0055fe; color: #ffffff; font-size: 13px; font-weight: 600; cursor: pointer; transition: all 0.2s;">
-          All Topics (180)
-        </button>
-        <button type="button" class="blog-cat-pill" data-category="AI & Analytics" style="padding: 7px 16px; border-radius: 9999px; border: 1.5px solid #e2e8f0; background: #ffffff; color: #475569; font-size: 13px; font-weight: 600; cursor: pointer; transition: all 0.2s;">AI & Analytics</button><button type="button" class="blog-cat-pill" data-category="AI & Automation" style="padding: 7px 16px; border-radius: 9999px; border: 1.5px solid #e2e8f0; background: #ffffff; color: #475569; font-size: 13px; font-weight: 600; cursor: pointer; transition: all 0.2s;">AI & Automation</button><button type="button" class="blog-cat-pill" data-category="AI Reliability" style="padding: 7px 16px; border-radius: 9999px; border: 1.5px solid #e2e8f0; background: #ffffff; color: #475569; font-size: 13px; font-weight: 600; cursor: pointer; transition: all 0.2s;">AI Reliability</button><button type="button" class="blog-cat-pill" data-category="AI Strategy" style="padding: 7px 16px; border-radius: 9999px; border: 1.5px solid #e2e8f0; background: #ffffff; color: #475569; font-size: 13px; font-weight: 600; cursor: pointer; transition: all 0.2s;">AI Strategy</button><button type="button" class="blog-cat-pill" data-category="AI Strategy & ROI" style="padding: 7px 16px; border-radius: 9999px; border: 1.5px solid #e2e8f0; background: #ffffff; color: #475569; font-size: 13px; font-weight: 600; cursor: pointer; transition: all 0.2s;">AI Strategy & ROI</button><button type="button" class="blog-cat-pill" data-category="Accessibility & UI" style="padding: 7px 16px; border-radius: 9999px; border: 1.5px solid #e2e8f0; background: #ffffff; color: #475569; font-size: 13px; font-weight: 600; cursor: pointer; transition: all 0.2s;">Accessibility & UI</button><button type="button" class="blog-cat-pill" data-category="Admin Dashboards" style="padding: 7px 16px; border-radius: 9999px; border: 1.5px solid #e2e8f0; background: #ffffff; color: #475569; font-size: 13px; font-weight: 600; cursor: pointer; transition: all 0.2s;">Admin Dashboards</button><button type="button" class="blog-cat-pill" data-category="Anniversary Milestone" style="padding: 7px 16px; border-radius: 9999px; border: 1.5px solid #e2e8f0; background: #ffffff; color: #475569; font-size: 13px; font-weight: 600; cursor: pointer; transition: all 0.2s;">Anniversary Milestone</button><button type="button" class="blog-cat-pill" data-category="Automation" style="padding: 7px 16px; border-radius: 9999px; border: 1.5px solid #e2e8f0; background: #ffffff; color: #475569; font-size: 13px; font-weight: 600; cursor: pointer; transition: all 0.2s;">Automation</button><button type="button" class="blog-cat-pill" data-category="B2B E-Commerce" style="padding: 7px 16px; border-radius: 9999px; border: 1.5px solid #e2e8f0; background: #ffffff; color: #475569; font-size: 13px; font-weight: 600; cursor: pointer; transition: all 0.2s;">B2B E-Commerce</button><button type="button" class="blog-cat-pill" data-category="B2B Portals" style="padding: 7px 16px; border-radius: 9999px; border: 1.5px solid #e2e8f0; background: #ffffff; color: #475569; font-size: 13px; font-weight: 600; cursor: pointer; transition: all 0.2s;">B2B Portals</button><button type="button" class="blog-cat-pill" data-category="Billing Automation" style="padding: 7px 16px; border-radius: 9999px; border: 1.5px solid #e2e8f0; background: #ffffff; color: #475569; font-size: 13px; font-weight: 600; cursor: pointer; transition: all 0.2s;">Billing Automation</button><button type="button" class="blog-cat-pill" data-category="Business Growth" style="padding: 7px 16px; border-radius: 9999px; border: 1.5px solid #e2e8f0; background: #ffffff; color: #475569; font-size: 13px; font-weight: 600; cursor: pointer; transition: all 0.2s;">Business Growth</button><button type="button" class="blog-cat-pill" data-category="CRM Automation" style="padding: 7px 16px; border-radius: 9999px; border: 1.5px solid #e2e8f0; background: #ffffff; color: #475569; font-size: 13px; font-weight: 600; cursor: pointer; transition: all 0.2s;">CRM Automation</button><button type="button" class="blog-cat-pill" data-category="Call to Action" style="padding: 7px 16px; border-radius: 9999px; border: 1.5px solid #e2e8f0; background: #ffffff; color: #475569; font-size: 13px; font-weight: 600; cursor: pointer; transition: all 0.2s;">Call to Action</button><button type="button" class="blog-cat-pill" data-category="Career & Education" style="padding: 7px 16px; border-radius: 9999px; border: 1.5px solid #e2e8f0; background: #ffffff; color: #475569; font-size: 13px; font-weight: 600; cursor: pointer; transition: all 0.2s;">Career & Education</button><button type="button" class="blog-cat-pill" data-category="Case Studies" style="padding: 7px 16px; border-radius: 9999px; border: 1.5px solid #e2e8f0; background: #ffffff; color: #475569; font-size: 13px; font-weight: 600; cursor: pointer; transition: all 0.2s;">Case Studies</button><button type="button" class="blog-cat-pill" data-category="Certification Program" style="padding: 7px 16px; border-radius: 9999px; border: 1.5px solid #e2e8f0; background: #ffffff; color: #475569; font-size: 13px; font-weight: 600; cursor: pointer; transition: all 0.2s;">Certification Program</button><button type="button" class="blog-cat-pill" data-category="Client Autonomy" style="padding: 7px 16px; border-radius: 9999px; border: 1.5px solid #e2e8f0; background: #ffffff; color: #475569; font-size: 13px; font-weight: 600; cursor: pointer; transition: all 0.2s;">Client Autonomy</button><button type="button" class="blog-cat-pill" data-category="Client Experience" style="padding: 7px 16px; border-radius: 9999px; border: 1.5px solid #e2e8f0; background: #ffffff; color: #475569; font-size: 13px; font-weight: 600; cursor: pointer; transition: all 0.2s;">Client Experience</button><button type="button" class="blog-cat-pill" data-category="Client FAQ & Trust" style="padding: 7px 16px; border-radius: 9999px; border: 1.5px solid #e2e8f0; background: #ffffff; color: #475569; font-size: 13px; font-weight: 600; cursor: pointer; transition: all 0.2s;">Client FAQ & Trust</button><button type="button" class="blog-cat-pill" data-category="Client Guide" style="padding: 7px 16px; border-radius: 9999px; border: 1.5px solid #e2e8f0; background: #ffffff; color: #475569; font-size: 13px; font-weight: 600; cursor: pointer; transition: all 0.2s;">Client Guide</button><button type="button" class="blog-cat-pill" data-category="Client Onboarding" style="padding: 7px 16px; border-radius: 9999px; border: 1.5px solid #e2e8f0; background: #ffffff; color: #475569; font-size: 13px; font-weight: 600; cursor: pointer; transition: all 0.2s;">Client Onboarding</button><button type="button" class="blog-cat-pill" data-category="Cloud & DevOps" style="padding: 7px 16px; border-radius: 9999px; border: 1.5px solid #e2e8f0; background: #ffffff; color: #475569; font-size: 13px; font-weight: 600; cursor: pointer; transition: all 0.2s;">Cloud & DevOps</button><button type="button" class="blog-cat-pill" data-category="Cloud Architecture" style="padding: 7px 16px; border-radius: 9999px; border: 1.5px solid #e2e8f0; background: #ffffff; color: #475569; font-size: 13px; font-weight: 600; cursor: pointer; transition: all 0.2s;">Cloud Architecture</button><button type="button" class="blog-cat-pill" data-category="Cloud Cost Optimization" style="padding: 7px 16px; border-radius: 9999px; border: 1.5px solid #e2e8f0; background: #ffffff; color: #475569; font-size: 13px; font-weight: 600; cursor: pointer; transition: all 0.2s;">Cloud Cost Optimization</button><button type="button" class="blog-cat-pill" data-category="Cloud Engineering" style="padding: 7px 16px; border-radius: 9999px; border: 1.5px solid #e2e8f0; background: #ffffff; color: #475569; font-size: 13px; font-weight: 600; cursor: pointer; transition: all 0.2s;">Cloud Engineering</button><button type="button" class="blog-cat-pill" data-category="Cloud Migration" style="padding: 7px 16px; border-radius: 9999px; border: 1.5px solid #e2e8f0; background: #ffffff; color: #475569; font-size: 13px; font-weight: 600; cursor: pointer; transition: all 0.2s;">Cloud Migration</button><button type="button" class="blog-cat-pill" data-category="Community" style="padding: 7px 16px; border-radius: 9999px; border: 1.5px solid #e2e8f0; background: #ffffff; color: #475569; font-size: 13px; font-weight: 600; cursor: pointer; transition: all 0.2s;">Community</button><button type="button" class="blog-cat-pill" data-category="Company & Core Services" style="padding: 7px 16px; border-radius: 9999px; border: 1.5px solid #e2e8f0; background: #ffffff; color: #475569; font-size: 13px; font-weight: 600; cursor: pointer; transition: all 0.2s;">Company & Core Services</button><button type="button" class="blog-cat-pill" data-category="Company & Culture" style="padding: 7px 16px; border-radius: 9999px; border: 1.5px solid #e2e8f0; background: #ffffff; color: #475569; font-size: 13px; font-weight: 600; cursor: pointer; transition: all 0.2s;">Company & Culture</button><button type="button" class="blog-cat-pill" data-category="Company Journey" style="padding: 7px 16px; border-radius: 9999px; border: 1.5px solid #e2e8f0; background: #ffffff; color: #475569; font-size: 13px; font-weight: 600; cursor: pointer; transition: all 0.2s;">Company Journey</button><button type="button" class="blog-cat-pill" data-category="Company Milestone" style="padding: 7px 16px; border-radius: 9999px; border: 1.5px solid #e2e8f0; background: #ffffff; color: #475569; font-size: 13px; font-weight: 600; cursor: pointer; transition: all 0.2s;">Company Milestone</button><button type="button" class="blog-cat-pill" data-category="Company Recap" style="padding: 7px 16px; border-radius: 9999px; border: 1.5px solid #e2e8f0; background: #ffffff; color: #475569; font-size: 13px; font-weight: 600; cursor: pointer; transition: all 0.2s;">Company Recap</button><button type="button" class="blog-cat-pill" data-category="Conversion Rate" style="padding: 7px 16px; border-radius: 9999px; border: 1.5px solid #e2e8f0; background: #ffffff; color: #475569; font-size: 13px; font-weight: 600; cursor: pointer; transition: all 0.2s;">Conversion Rate</button><button type="button" class="blog-cat-pill" data-category="Custom Software" style="padding: 7px 16px; border-radius: 9999px; border: 1.5px solid #e2e8f0; background: #ffffff; color: #475569; font-size: 13px; font-weight: 600; cursor: pointer; transition: all 0.2s;">Custom Software</button><button type="button" class="blog-cat-pill" data-category="Customer Experience" style="padding: 7px 16px; border-radius: 9999px; border: 1.5px solid #e2e8f0; background: #ffffff; color: #475569; font-size: 13px; font-weight: 600; cursor: pointer; transition: all 0.2s;">Customer Experience</button><button type="button" class="blog-cat-pill" data-category="Customer Retention" style="padding: 7px 16px; border-radius: 9999px; border: 1.5px solid #e2e8f0; background: #ffffff; color: #475569; font-size: 13px; font-weight: 600; cursor: pointer; transition: all 0.2s;">Customer Retention</button><button type="button" class="blog-cat-pill" data-category="Data Architecture" style="padding: 7px 16px; border-radius: 9999px; border: 1.5px solid #e2e8f0; background: #ffffff; color: #475569; font-size: 13px; font-weight: 600; cursor: pointer; transition: all 0.2s;">Data Architecture</button><button type="button" class="blog-cat-pill" data-category="Data Security" style="padding: 7px 16px; border-radius: 9999px; border: 1.5px solid #e2e8f0; background: #ffffff; color: #475569; font-size: 13px; font-weight: 600; cursor: pointer; transition: all 0.2s;">Data Security</button><button type="button" class="blog-cat-pill" data-category="DevOps & SRE" style="padding: 7px 16px; border-radius: 9999px; border: 1.5px solid #e2e8f0; background: #ffffff; color: #475569; font-size: 13px; font-weight: 600; cursor: pointer; transition: all 0.2s;">DevOps & SRE</button><button type="button" class="blog-cat-pill" data-category="Developer Tools" style="padding: 7px 16px; border-radius: 9999px; border: 1.5px solid #e2e8f0; background: #ffffff; color: #475569; font-size: 13px; font-weight: 600; cursor: pointer; transition: all 0.2s;">Developer Tools</button><button type="button" class="blog-cat-pill" data-category="E-Commerce Optimization" style="padding: 7px 16px; border-radius: 9999px; border: 1.5px solid #e2e8f0; background: #ffffff; color: #475569; font-size: 13px; font-weight: 600; cursor: pointer; transition: all 0.2s;">E-Commerce Optimization</button><button type="button" class="blog-cat-pill" data-category="E-Commerce Readiness" style="padding: 7px 16px; border-radius: 9999px; border: 1.5px solid #e2e8f0; background: #ffffff; color: #475569; font-size: 13px; font-weight: 600; cursor: pointer; transition: all 0.2s;">E-Commerce Readiness</button><button type="button" class="blog-cat-pill" data-category="E-Commerce Security" style="padding: 7px 16px; border-radius: 9999px; border: 1.5px solid #e2e8f0; background: #ffffff; color: #475569; font-size: 13px; font-weight: 600; cursor: pointer; transition: all 0.2s;">E-Commerce Security</button><button type="button" class="blog-cat-pill" data-category="EdTech" style="padding: 7px 16px; border-radius: 9999px; border: 1.5px solid #e2e8f0; background: #ffffff; color: #475569; font-size: 13px; font-weight: 600; cursor: pointer; transition: all 0.2s;">EdTech</button><button type="button" class="blog-cat-pill" data-category="Education & Community" style="padding: 7px 16px; border-radius: 9999px; border: 1.5px solid #e2e8f0; background: #ffffff; color: #475569; font-size: 13px; font-weight: 600; cursor: pointer; transition: all 0.2s;">Education & Community</button><button type="button" class="blog-cat-pill" data-category="Education & Tools" style="padding: 7px 16px; border-radius: 9999px; border: 1.5px solid #e2e8f0; background: #ffffff; color: #475569; font-size: 13px; font-weight: 600; cursor: pointer; transition: all 0.2s;">Education & Tools</button><button type="button" class="blog-cat-pill" data-category="Engineering Culture" style="padding: 7px 16px; border-radius: 9999px; border: 1.5px solid #e2e8f0; background: #ffffff; color: #475569; font-size: 13px; font-weight: 600; cursor: pointer; transition: all 0.2s;">Engineering Culture</button><button type="button" class="blog-cat-pill" data-category="Engineering Excellence" style="padding: 7px 16px; border-radius: 9999px; border: 1.5px solid #e2e8f0; background: #ffffff; color: #475569; font-size: 13px; font-weight: 600; cursor: pointer; transition: all 0.2s;">Engineering Excellence</button><button type="button" class="blog-cat-pill" data-category="Enterprise AI Safety" style="padding: 7px 16px; border-radius: 9999px; border: 1.5px solid #e2e8f0; background: #ffffff; color: #475569; font-size: 13px; font-weight: 600; cursor: pointer; transition: all 0.2s;">Enterprise AI Safety</button><button type="button" class="blog-cat-pill" data-category="Enterprise Architecture" style="padding: 7px 16px; border-radius: 9999px; border: 1.5px solid #e2e8f0; background: #ffffff; color: #475569; font-size: 13px; font-weight: 600; cursor: pointer; transition: all 0.2s;">Enterprise Architecture</button><button type="button" class="blog-cat-pill" data-category="Enterprise Ecosystem" style="padding: 7px 16px; border-radius: 9999px; border: 1.5px solid #e2e8f0; background: #ffffff; color: #475569; font-size: 13px; font-weight: 600; cursor: pointer; transition: all 0.2s;">Enterprise Ecosystem</button><button type="button" class="blog-cat-pill" data-category="Enterprise Integration" style="padding: 7px 16px; border-radius: 9999px; border: 1.5px solid #e2e8f0; background: #ffffff; color: #475569; font-size: 13px; font-weight: 600; cursor: pointer; transition: all 0.2s;">Enterprise Integration</button><button type="button" class="blog-cat-pill" data-category="Enterprise Security" style="padding: 7px 16px; border-radius: 9999px; border: 1.5px solid #e2e8f0; background: #ffffff; color: #475569; font-size: 13px; font-weight: 600; cursor: pointer; transition: all 0.2s;">Enterprise Security</button><button type="button" class="blog-cat-pill" data-category="Fintech" style="padding: 7px 16px; border-radius: 9999px; border: 1.5px solid #e2e8f0; background: #ffffff; color: #475569; font-size: 13px; font-weight: 600; cursor: pointer; transition: all 0.2s;">Fintech</button><button type="button" class="blog-cat-pill" data-category="Fintech & Payments" style="padding: 7px 16px; border-radius: 9999px; border: 1.5px solid #e2e8f0; background: #ffffff; color: #475569; font-size: 13px; font-weight: 600; cursor: pointer; transition: all 0.2s;">Fintech & Payments</button><button type="button" class="blog-cat-pill" data-category="Founder Reflections" style="padding: 7px 16px; border-radius: 9999px; border: 1.5px solid #e2e8f0; background: #ffffff; color: #475569; font-size: 13px; font-weight: 600; cursor: pointer; transition: all 0.2s;">Founder Reflections</button><button type="button" class="blog-cat-pill" data-category="Global Delivery" style="padding: 7px 16px; border-radius: 9999px; border: 1.5px solid #e2e8f0; background: #ffffff; color: #475569; font-size: 13px; font-weight: 600; cursor: pointer; transition: all 0.2s;">Global Delivery</button><button type="button" class="blog-cat-pill" data-category="HealthTech" style="padding: 7px 16px; border-radius: 9999px; border: 1.5px solid #e2e8f0; background: #ffffff; color: #475569; font-size: 13px; font-weight: 600; cursor: pointer; transition: all 0.2s;">HealthTech</button><button type="button" class="blog-cat-pill" data-category="High Availability" style="padding: 7px 16px; border-radius: 9999px; border: 1.5px solid #e2e8f0; background: #ffffff; color: #475569; font-size: 13px; font-weight: 600; cursor: pointer; transition: all 0.2s;">High Availability</button><button type="button" class="blog-cat-pill" data-category="Industry Insights" style="padding: 7px 16px; border-radius: 9999px; border: 1.5px solid #e2e8f0; background: #ffffff; color: #475569; font-size: 13px; font-weight: 600; cursor: pointer; transition: all 0.2s;">Industry Insights</button><button type="button" class="blog-cat-pill" data-category="Industry Solutions" style="padding: 7px 16px; border-radius: 9999px; border: 1.5px solid #e2e8f0; background: #ffffff; color: #475569; font-size: 13px; font-weight: 600; cursor: pointer; transition: all 0.2s;">Industry Solutions</button><button type="button" class="blog-cat-pill" data-category="Legacy Modernization" style="padding: 7px 16px; border-radius: 9999px; border: 1.5px solid #e2e8f0; background: #ffffff; color: #475569; font-size: 13px; font-weight: 600; cursor: pointer; transition: all 0.2s;">Legacy Modernization</button><button type="button" class="blog-cat-pill" data-category="Local Business Growth" style="padding: 7px 16px; border-radius: 9999px; border: 1.5px solid #e2e8f0; background: #ffffff; color: #475569; font-size: 13px; font-weight: 600; cursor: pointer; transition: all 0.2s;">Local Business Growth</button><button type="button" class="blog-cat-pill" data-category="Logistics Tech" style="padding: 7px 16px; border-radius: 9999px; border: 1.5px solid #e2e8f0; background: #ffffff; color: #475569; font-size: 13px; font-weight: 600; cursor: pointer; transition: all 0.2s;">Logistics Tech</button><button type="button" class="blog-cat-pill" data-category="MSME Growth" style="padding: 7px 16px; border-radius: 9999px; border: 1.5px solid #e2e8f0; background: #ffffff; color: #475569; font-size: 13px; font-weight: 600; cursor: pointer; transition: all 0.2s;">MSME Growth</button><button type="button" class="blog-cat-pill" data-category="Marketing Analytics" style="padding: 7px 16px; border-radius: 9999px; border: 1.5px solid #e2e8f0; background: #ffffff; color: #475569; font-size: 13px; font-weight: 600; cursor: pointer; transition: all 0.2s;">Marketing Analytics</button><button type="button" class="blog-cat-pill" data-category="Microsoft & Cloud" style="padding: 7px 16px; border-radius: 9999px; border: 1.5px solid #e2e8f0; background: #ffffff; color: #475569; font-size: 13px; font-weight: 600; cursor: pointer; transition: all 0.2s;">Microsoft & Cloud</button><button type="button" class="blog-cat-pill" data-category="Mobile App Development" style="padding: 7px 16px; border-radius: 9999px; border: 1.5px solid #e2e8f0; background: #ffffff; color: #475569; font-size: 13px; font-weight: 600; cursor: pointer; transition: all 0.2s;">Mobile App Development</button><button type="button" class="blog-cat-pill" data-category="Mobile Apps" style="padding: 7px 16px; border-radius: 9999px; border: 1.5px solid #e2e8f0; background: #ffffff; color: #475569; font-size: 13px; font-weight: 600; cursor: pointer; transition: all 0.2s;">Mobile Apps</button><button type="button" class="blog-cat-pill" data-category="Mobile-First UX" style="padding: 7px 16px; border-radius: 9999px; border: 1.5px solid #e2e8f0; background: #ffffff; color: #475569; font-size: 13px; font-weight: 600; cursor: pointer; transition: all 0.2s;">Mobile-First UX</button><button type="button" class="blog-cat-pill" data-category="OCR & Automation" style="padding: 7px 16px; border-radius: 9999px; border: 1.5px solid #e2e8f0; background: #ffffff; color: #475569; font-size: 13px; font-weight: 600; cursor: pointer; transition: all 0.2s;">OCR & Automation</button><button type="button" class="blog-cat-pill" data-category="PWA Development" style="padding: 7px 16px; border-radius: 9999px; border: 1.5px solid #e2e8f0; background: #ffffff; color: #475569; font-size: 13px; font-weight: 600; cursor: pointer; transition: all 0.2s;">PWA Development</button><button type="button" class="blog-cat-pill" data-category="Partner Ecosystem" style="padding: 7px 16px; border-radius: 9999px; border: 1.5px solid #e2e8f0; background: #ffffff; color: #475569; font-size: 13px; font-weight: 600; cursor: pointer; transition: all 0.2s;">Partner Ecosystem</button><button type="button" class="blog-cat-pill" data-category="Performance" style="padding: 7px 16px; border-radius: 9999px; border: 1.5px solid #e2e8f0; background: #ffffff; color: #475569; font-size: 13px; font-weight: 600; cursor: pointer; transition: all 0.2s;">Performance</button><button type="button" class="blog-cat-pill" data-category="Performance & SEO" style="padding: 7px 16px; border-radius: 9999px; border: 1.5px solid #e2e8f0; background: #ffffff; color: #475569; font-size: 13px; font-weight: 600; cursor: pointer; transition: all 0.2s;">Performance & SEO</button><button type="button" class="blog-cat-pill" data-category="Privacy & DPDP" style="padding: 7px 16px; border-radius: 9999px; border: 1.5px solid #e2e8f0; background: #ffffff; color: #475569; font-size: 13px; font-weight: 600; cursor: pointer; transition: all 0.2s;">Privacy & DPDP</button><button type="button" class="blog-cat-pill" data-category="Product Roadmap" style="padding: 7px 16px; border-radius: 9999px; border: 1.5px solid #e2e8f0; background: #ffffff; color: #475569; font-size: 13px; font-weight: 600; cursor: pointer; transition: all 0.2s;">Product Roadmap</button><button type="button" class="blog-cat-pill" data-category="Project Management" style="padding: 7px 16px; border-radius: 9999px; border: 1.5px solid #e2e8f0; background: #ffffff; color: #475569; font-size: 13px; font-weight: 600; cursor: pointer; transition: all 0.2s;">Project Management</button><button type="button" class="blog-cat-pill" data-category="Quality Assurance" style="padding: 7px 16px; border-radius: 9999px; border: 1.5px solid #e2e8f0; background: #ffffff; color: #475569; font-size: 13px; font-weight: 600; cursor: pointer; transition: all 0.2s;">Quality Assurance</button><button type="button" class="blog-cat-pill" data-category="Real Estate Tech" style="padding: 7px 16px; border-radius: 9999px; border: 1.5px solid #e2e8f0; background: #ffffff; color: #475569; font-size: 13px; font-weight: 600; cursor: pointer; transition: all 0.2s;">Real Estate Tech</button><button type="button" class="blog-cat-pill" data-category="SEO & Accessibility" style="padding: 7px 16px; border-radius: 9999px; border: 1.5px solid #e2e8f0; background: #ffffff; color: #475569; font-size: 13px; font-weight: 600; cursor: pointer; transition: all 0.2s;">SEO & Accessibility</button><button type="button" class="blog-cat-pill" data-category="SEO & Speed" style="padding: 7px 16px; border-radius: 9999px; border: 1.5px solid #e2e8f0; background: #ffffff; color: #475569; font-size: 13px; font-weight: 600; cursor: pointer; transition: all 0.2s;">SEO & Speed</button><button type="button" class="blog-cat-pill" data-category="SaaS Engineering" style="padding: 7px 16px; border-radius: 9999px; border: 1.5px solid #e2e8f0; background: #ffffff; color: #475569; font-size: 13px; font-weight: 600; cursor: pointer; transition: all 0.2s;">SaaS Engineering</button><button type="button" class="blog-cat-pill" data-category="Salesforce Partner" style="padding: 7px 16px; border-radius: 9999px; border: 1.5px solid #e2e8f0; background: #ffffff; color: #475569; font-size: 13px; font-weight: 600; cursor: pointer; transition: all 0.2s;">Salesforce Partner</button><button type="button" class="blog-cat-pill" data-category="Security & QR" style="padding: 7px 16px; border-radius: 9999px; border: 1.5px solid #e2e8f0; background: #ffffff; color: #475569; font-size: 13px; font-weight: 600; cursor: pointer; transition: all 0.2s;">Security & QR</button><button type="button" class="blog-cat-pill" data-category="Security & Vault" style="padding: 7px 16px; border-radius: 9999px; border: 1.5px solid #e2e8f0; background: #ffffff; color: #475569; font-size: 13px; font-weight: 600; cursor: pointer; transition: all 0.2s;">Security & Vault</button><button type="button" class="blog-cat-pill" data-category="Shopify E-Commerce" style="padding: 7px 16px; border-radius: 9999px; border: 1.5px solid #e2e8f0; background: #ffffff; color: #475569; font-size: 13px; font-weight: 600; cursor: pointer; transition: all 0.2s;">Shopify E-Commerce</button><button type="button" class="blog-cat-pill" data-category="Smart QR & Telemetry" style="padding: 7px 16px; border-radius: 9999px; border: 1.5px solid #e2e8f0; background: #ffffff; color: #475569; font-size: 13px; font-weight: 600; cursor: pointer; transition: all 0.2s;">Smart QR & Telemetry</button><button type="button" class="blog-cat-pill" data-category="Startups & MVP" style="padding: 7px 16px; border-radius: 9999px; border: 1.5px solid #e2e8f0; background: #ffffff; color: #475569; font-size: 13px; font-weight: 600; cursor: pointer; transition: all 0.2s;">Startups & MVP</button><button type="button" class="blog-cat-pill" data-category="Strategic Technology" style="padding: 7px 16px; border-radius: 9999px; border: 1.5px solid #e2e8f0; background: #ffffff; color: #475569; font-size: 13px; font-weight: 600; cursor: pointer; transition: all 0.2s;">Strategic Technology</button><button type="button" class="blog-cat-pill" data-category="System Integration" style="padding: 7px 16px; border-radius: 9999px; border: 1.5px solid #e2e8f0; background: #ffffff; color: #475569; font-size: 13px; font-weight: 600; cursor: pointer; transition: all 0.2s;">System Integration</button><button type="button" class="blog-cat-pill" data-category="Tech Budgeting" style="padding: 7px 16px; border-radius: 9999px; border: 1.5px solid #e2e8f0; background: #ffffff; color: #475569; font-size: 13px; font-weight: 600; cursor: pointer; transition: all 0.2s;">Tech Budgeting</button><button type="button" class="blog-cat-pill" data-category="Tech Trends" style="padding: 7px 16px; border-radius: 9999px; border: 1.5px solid #e2e8f0; background: #ffffff; color: #475569; font-size: 13px; font-weight: 600; cursor: pointer; transition: all 0.2s;">Tech Trends</button><button type="button" class="blog-cat-pill" data-category="Transparent Pricing" style="padding: 7px 16px; border-radius: 9999px; border: 1.5px solid #e2e8f0; background: #ffffff; color: #475569; font-size: 13px; font-weight: 600; cursor: pointer; transition: all 0.2s;">Transparent Pricing</button><button type="button" class="blog-cat-pill" data-category="Trust & Compliance" style="padding: 7px 16px; border-radius: 9999px; border: 1.5px solid #e2e8f0; background: #ffffff; color: #475569; font-size: 13px; font-weight: 600; cursor: pointer; transition: all 0.2s;">Trust & Compliance</button><button type="button" class="blog-cat-pill" data-category="UI/UX Design" style="padding: 7px 16px; border-radius: 9999px; border: 1.5px solid #e2e8f0; background: #ffffff; color: #475569; font-size: 13px; font-weight: 600; cursor: pointer; transition: all 0.2s;">UI/UX Design</button><button type="button" class="blog-cat-pill" data-category="Web Development" style="padding: 7px 16px; border-radius: 9999px; border: 1.5px solid #e2e8f0; background: #ffffff; color: #475569; font-size: 13px; font-weight: 600; cursor: pointer; transition: all 0.2s;">Web Development</button><button type="button" class="blog-cat-pill" data-category="Web Modernization" style="padding: 7px 16px; border-radius: 9999px; border: 1.5px solid #e2e8f0; background: #ffffff; color: #475569; font-size: 13px; font-weight: 600; cursor: pointer; transition: all 0.2s;">Web Modernization</button><button type="button" class="blog-cat-pill" data-category="Website Optimization" style="padding: 7px 16px; border-radius: 9999px; border: 1.5px solid #e2e8f0; background: #ffffff; color: #475569; font-size: 13px; font-weight: 600; cursor: pointer; transition: all 0.2s;">Website Optimization</button><button type="button" class="blog-cat-pill" data-category="Website Security" style="padding: 7px 16px; border-radius: 9999px; border: 1.5px solid #e2e8f0; background: #ffffff; color: #475569; font-size: 13px; font-weight: 600; cursor: pointer; transition: all 0.2s;">Website Security</button><button type="button" class="blog-cat-pill" data-category="Workflow Automation" style="padding: 7px 16px; border-radius: 9999px; border: 1.5px solid #e2e8f0; background: #ffffff; color: #475569; font-size: 13px; font-weight: 600; cursor: pointer; transition: all 0.2s;">Workflow Automation</button>
       </div>
 
       <!-- Articles Grid -->
@@ -252,54 +865,88 @@
     </section>
   </main>
 
-  <!-- Global Footer -->
+<!-- Site Footer -->
   <footer class="site-footer">
-    <div class="footer-container">
-      <div class="footer-grid">
-        <div class="footer-brand-col">
-          <a href="/" class="footer-brand-logo" aria-label="Coralgenz Global">
-            <img src="/assets/images/DVyu6tz4dqPirA4TwAJZUz5CUw.png" alt="Coralgenz Global Logo" width="34" height="34">
-            <span class="footer-brand-name">Coralgenz Global</span>
-          </a>
-          <p class="footer-tagline">
-            Simple, Fast, and Reliable Software for Every Business. Headquartered in Coimbatore &amp; Chennai, delivering worldwide.
-          </p>
-        </div>
+    <div class="container">
+      <div class="footer-wrapper">
+        <div class="footer-top">
+          <div class="footer-brand" itemscope itemtype="https://schema.org/Organization">
+            <a href="/" class="brand-logo" aria-label="Coralgenz Global Official Homepage">
+              <link itemprop="url" href="https://coralgenz.net/">
+              <img itemprop="logo" src="/assets/images/DVyu6tz4dqPirA4TwAJZUz5CUw.png"
+                alt="Coralgenz Global - Enterprise Software &amp; IT Solutions Official Logo"
+                title="Coralgenz Global Logo" width="40" height="40" loading="lazy" decoding="async">
+              <span class="brand-name" itemprop="name">Coralgenz Global</span>
+            </a>
+            <div class="footer-sub">Information Technology Company</div>
+          </div>
 
-        <div>
-          <h5 class="footer-col-title">Solutions</h5>
-          <div class="footer-col-links">
-            <a href="/our-services">Enterprise Software Services</a>
-            <a href="/coralgenz-vault">Coralgenz Vault (.secure)</a>
-            <a href="/coralgenz-compiler">Coralgenz Compiler</a>
-            <a href="/coralgenz-qr">Coralgenz Smart QR</a>
+          <div>
+            <h5 class="footer-col-title">Pages</h5>
+            <div class="footer-col-links">
+              <a href="/">Homepage</a>
+              <a href="/rate-us" style="font-weight: 700; color: #f59e0b;">Rate Us • 4.9/5</a>
+              <a href="/our-highlights" style="font-weight: 700; color: #38bdf8;">Our Highlights</a>
+              <a href="/blog" style="font-weight: 700; color: #38bdf8;">Blog &amp; Insights</a>
+              <a href="/about-us">About</a>
+              <a href="/our-products">Our Products</a>
+              <a href="/our-services">Specialisations</a>
+              <a href="/team">Team</a>
+              <a href="/contact">Contact Us</a>
+            </div>
+          </div>
+
+          <div>
+            <h5 class="footer-col-title">Partnerships</h5>
+            <div class="footer-col-links">
+              <a href="/become-a-partner" style="font-weight: 700; color: #38bdf8;">Apply to Become a Partner</a>
+              <a href="/partnered-startups">Partnered Startups</a>
+              <a href="/salesforce">Salesforce ISV Partner</a>
+              <a href="/microsoft">Microsoft Developer Partner</a>
+              <a href="/shopify">Shopify Partner</a>
+            </div>
+          </div>
+
+          <div>
+            <h5 class="footer-col-title">Legal &amp; Trust</h5>
+            <div class="footer-col-links">
+              <a href="/rate-us">Client Ratings &amp; Reviews</a>
+              <a href="/privacy-policy">Privacy &amp; Policies</a>
+              <a href="#cookie-settings" data-open-cookie-preferences>Cookie Settings</a>
+              <a href="/our-highlights/coralgenz-vault-security">Vault Security Architecture</a>
+              <a href="/our-highlights/worlds-first-secure-format">World's First .secure Format</a>
+            </div>
+          </div>
+
+          <div>
+            <h5 class="footer-col-title">Contact</h5>
+            <div class="footer-col-links">
+              <a href="mailto:coralgenz@gmail.com">coralgenz@gmail.com</a>
+              <a href="/contact">Contact Us</a>
+            </div>
+            <div class="footer-social-icons">
+              <a href="https://www.instagram.com/coralgenz_global/" target="_blank" rel="noopener noreferrer"
+                class="footer-social-icon" aria-label="Instagram">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                  <path
+                    d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+                </svg>
+              </a>
+              <a href="https://in.linkedin.com/company/coralgenz" target="_blank" rel="noopener noreferrer"
+                class="footer-social-icon" aria-label="LinkedIn">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                  <path
+                    d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z" />
+                </svg>
+              </a>
+            </div>
           </div>
         </div>
 
-        <div>
-          <h5 class="footer-col-title">Resources</h5>
-          <div class="footer-col-links">
-            <a href="/blog" style="font-weight: 700; color: #0055fe;">Blog &amp; Insights (180 Articles)</a>
-            <a href="/rate-us">Client Ratings &amp; Reviews</a>
-            <a href="/privacy-policy">Privacy &amp; Policies</a>
-            <a href="#cookie-settings" data-open-cookie-preferences>Cookie Settings</a>
-          </div>
+        <div class="footer-bottom">
+          <div>© 2026 Coralgenz Global</div>
+          <div>Site by Coralgenz &amp; Team</div>
         </div>
-
-        <div>
-          <h5 class="footer-col-title">Contact</h5>
-          <div class="footer-col-links">
-            <a href="mailto:coralgenz@gmail.com">coralgenz@gmail.com</a>
-            <a href="/contact">Get in Touch</a>
-            <a href="/karthick-krishna">Executive Desk</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="footer-bottom">
-        <p class="copyright">
-          &copy; 2026 Coralgenz Global. All Rights Reserved. Built with clean architecture and zero vendor lock-in.
-        </p>
       </div>
     </div>
   </footer>
@@ -313,12 +960,146 @@
     let currentPage = 1;
     let currentCategory = 'all';
     let currentSearch = '';
+    let categorySearchTerm = '';
 
     const grid = document.getElementById('blogGrid');
     const pagination = document.getElementById('blogPagination');
     const countLabel = document.getElementById('blogCountLabel');
-    const searchInput = document.getElementById('blogSearchInput');
-    const categoryPills = document.querySelectorAll('.blog-cat-pill');
+    const blogSearchInput = document.getElementById('blogSearchInput');
+    const clearMainSearchBtn = document.getElementById('clearMainSearchBtn');
+    
+    const filterToggleBtn = document.getElementById('filterToggleBtn');
+    const filterDrawerCard = document.getElementById('filterDrawerCard');
+    const filterCategorySearchInput = document.getElementById('filterCategorySearchInput');
+    const clearFilterCategorySearchBtn = document.getElementById('clearFilterCategorySearchBtn');
+    const filterCategoryMatchCount = document.getElementById('filterCategoryMatchCount');
+    const noCategoriesMessage = document.getElementById('noCategoriesMessage');
+    const filterCategoryChipsGrid = document.getElementById('filterCategoryChipsGrid');
+    
+    const activeFilterBadge = document.getElementById('activeFilterBadge');
+    const activeFilterBanner = document.getElementById('activeFilterBanner');
+    const activeFilterName = document.getElementById('activeFilterName');
+    const activeFilterCount = document.getElementById('activeFilterCount');
+
+    // Toggle Filter Drawer
+    window.toggleFilterDrawer = function() {
+      const isClosed = filterDrawerCard.style.display === 'none';
+      filterDrawerCard.style.display = isClosed ? 'block' : 'none';
+      filterToggleBtn.classList.toggle('open', isClosed);
+      filterToggleBtn.setAttribute('aria-expanded', isClosed ? 'true' : 'false');
+      if (isClosed && filterCategorySearchInput) {
+        setTimeout(() => filterCategorySearchInput.focus(), 100);
+      }
+    };
+
+    // Filter Categories in the Drawer via search feature
+    window.onFilterCategorySearch = function(query) {
+      categorySearchTerm = (query || '').toLowerCase().trim();
+      clearFilterCategorySearchBtn.style.display = categorySearchTerm ? 'block' : 'none';
+      
+      const chips = filterCategoryChipsGrid.querySelectorAll('.filter-chip-btn');
+      let visibleCount = 0;
+      
+      chips.forEach(chip => {
+        const cat = chip.dataset.category;
+        const name = (chip.dataset.categoryName || '').toLowerCase();
+        
+        if (cat === 'all') {
+          chip.style.display = (!categorySearchTerm || name.includes(categorySearchTerm)) ? 'inline-flex' : 'none';
+          if (chip.style.display !== 'none') visibleCount++;
+          return;
+        }
+        
+        const isMatch = !categorySearchTerm || name.includes(categorySearchTerm);
+        chip.style.display = isMatch ? 'inline-flex' : 'none';
+        if (isMatch) visibleCount++;
+      });
+
+      if (categorySearchTerm) {
+        filterCategoryMatchCount.textContent = 'Found ' + visibleCount + ' matching ' + (visibleCount === 1 ? 'category' : 'categories');
+      } else {
+        filterCategoryMatchCount.textContent = 'Showing 103 categories';
+      }
+
+      noCategoriesMessage.style.display = visibleCount === 0 ? 'block' : 'none';
+    };
+
+    window.clearCategorySearch = function() {
+      if (filterCategorySearchInput) {
+        filterCategorySearchInput.value = '';
+        window.onFilterCategorySearch('');
+        filterCategorySearchInput.focus();
+      }
+    };
+
+    // Category Selection via chip click
+    window.selectCategory = function(catSlug, catName, catCount) {
+      currentCategory = catSlug;
+      currentPage = 1;
+
+      // Update active chip classes
+      const chips = filterCategoryChipsGrid.querySelectorAll('.filter-chip-btn');
+      chips.forEach(chip => {
+        chip.classList.toggle('active', chip.dataset.category === catSlug);
+      });
+
+      // Update badge on trigger button
+      if (catSlug === 'all') {
+        activeFilterBadge.textContent = 'All Topics (180)';
+        filterToggleBtn.classList.remove('has-active-filter');
+        activeFilterBanner.style.display = 'none';
+      } else {
+        activeFilterBadge.textContent = catName + ' (' + catCount + ')';
+        filterToggleBtn.classList.add('has-active-filter');
+        activeFilterName.textContent = catName;
+        activeFilterCount.textContent = '(' + catCount + ' articles)';
+        activeFilterBanner.style.display = 'flex';
+      }
+
+      // Close drawer for fluid reading experience
+      filterDrawerCard.style.display = 'none';
+      filterToggleBtn.classList.remove('open');
+      filterToggleBtn.setAttribute('aria-expanded', 'false');
+
+      renderPosts();
+
+      // Scroll to articles section
+      const articlesSec = document.getElementById('blogArticlesSection');
+      if (articlesSec) {
+        window.scrollTo({ top: articlesSec.offsetTop - 80, behavior: 'smooth' });
+      }
+    };
+
+    window.resetCategoryFilter = function() {
+      window.selectCategory('all', 'All Topics', ALL_POSTS.length);
+    };
+
+    // Listen to chip clicks inside grid delegation
+    filterCategoryChipsGrid.addEventListener('click', (e) => {
+      const btn = e.target.closest('.filter-chip-btn');
+      if (!btn) return;
+      const slug = btn.dataset.category;
+      const name = btn.dataset.displayName || slug;
+      const count = btn.dataset.count;
+      window.selectCategory(slug, name, count);
+    });
+
+    // Main Blog Search
+    blogSearchInput.addEventListener('input', (e) => {
+      currentSearch = e.target.value.toLowerCase().trim();
+      clearMainSearchBtn.style.display = currentSearch ? 'block' : 'none';
+      currentPage = 1;
+      renderPosts();
+    });
+
+    window.clearMainSearch = function() {
+      blogSearchInput.value = '';
+      currentSearch = '';
+      clearMainSearchBtn.style.display = 'none';
+      currentPage = 1;
+      renderPosts();
+      blogSearchInput.focus();
+    };
 
     function getFilteredPosts() {
       return ALL_POSTS.filter(post => {
@@ -341,7 +1122,7 @@
       const paginated = filtered.slice(startIdx, startIdx + POSTS_PER_PAGE);
 
       if (paginated.length === 0) {
-        grid.innerHTML = '<div style="grid-column: 1 / -1; text-align: center; padding: 48px; background: #ffffff; border: 1.5px solid #e2e8f0; border-radius: 16px;"><p style="font-size: 16px; color: #64748b; margin: 0 0 12px 0;">No articles found matching your criteria.</p><button onclick="resetFilters()" style="padding: 8px 18px; border-radius: 8px; background: #0055fe; color: #fff; border: none; cursor: pointer; font-weight: 600;">Reset Filters</button></div>';
+        grid.innerHTML = '<div style="grid-column: 1 / -1; text-align: center; padding: 48px; background: #ffffff; border: 1.5px solid #e2e8f0; border-radius: 16px;"><p style="font-size: 16px; color: #64748b; margin: 0 0 12px 0;">No articles found matching your criteria.</p><button onclick="resetCategoryFilter(); clearMainSearch();" style="padding: 8px 18px; border-radius: 8px; background: #0055fe; color: #fff; border: none; cursor: pointer; font-weight: 600;">Reset Filters & Search</button></div>';
         pagination.innerHTML = '';
         return;
       }
@@ -364,13 +1145,17 @@
               </a>
             </h2>
 
-            <!-- Rating Snippet Badge (Matches User Reference Image) -->
-            <div style="display: inline-flex; align-items: center; gap: 6px; padding: 3px 10px; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 9999px; font-size: 12px; color: #0f172a; margin-bottom: 14px;">
+            <!-- Rating Snippet Badge (Matches Google Search Reference Image) -->
+            <div style="display: inline-flex; align-items: center; gap: 6px; padding: 4px 10px; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 9999px; font-size: 11.5px; color: #0f172a; margin-bottom: 14px; flex-wrap: wrap;">
               <span style="font-weight: 700;">${post.ratingVal}</span>
-              <span style="color: #f59e0b; letter-spacing: 1px;">★★★★★</span>
+              <span style="color: #f59e0b; letter-spacing: 0.5px;">★★★★★</span>
               <span style="color: #64748b;">(${post.ratingCount})</span>
               <span style="color: #cbd5e1;">·</span>
-              <span style="color: #64748b;">Free</span>
+              <span style="color: #475569;">Free</span>
+              <span style="color: #cbd5e1;">·</span>
+              <span style="color: #475569;">Android</span>
+              <span style="color: #cbd5e1;">·</span>
+              <span style="color: #0055fe; font-weight: 600;">Business/Productivity</span>
             </div>
           </div>
 
@@ -416,50 +1201,11 @@
     window.goToPage = function(page) {
       currentPage = page;
       renderPosts();
-      const pills = document.getElementById('blogCategoryPills');
-      if (pills) {
-        window.scrollTo({ top: pills.offsetTop - 90, behavior: 'smooth' });
+      const articlesSec = document.getElementById('blogArticlesSection');
+      if (articlesSec) {
+        window.scrollTo({ top: articlesSec.offsetTop - 80, behavior: 'smooth' });
       }
     };
-
-    window.resetFilters = function() {
-      currentCategory = 'all';
-      currentSearch = '';
-      if (searchInput) searchInput.value = '';
-      categoryPills.forEach(p => {
-        const isAll = p.dataset.category === 'all';
-        p.classList.toggle('active', isAll);
-        p.style.background = isAll ? '#0055fe' : '#ffffff';
-        p.style.color = isAll ? '#ffffff' : '#475569';
-        p.style.borderColor = isAll ? '#0055fe' : '#e2e8f0';
-      });
-      renderPosts();
-    };
-
-    searchInput.addEventListener('input', (e) => {
-      currentSearch = e.target.value.toLowerCase().trim();
-      currentPage = 1;
-      renderPosts();
-    });
-
-    categoryPills.forEach(pill => {
-      pill.addEventListener('click', () => {
-        categoryPills.forEach(p => {
-          p.classList.remove('active');
-          p.style.background = '#ffffff';
-          p.style.color = '#475569';
-          p.style.borderColor = '#e2e8f0';
-        });
-        pill.classList.add('active');
-        pill.style.background = '#0055fe';
-        pill.style.color = '#ffffff';
-        pill.style.borderColor = '#0055fe';
-
-        currentCategory = pill.dataset.category;
-        currentPage = 1;
-        renderPosts();
-      });
-    });
 
     // Initial render
     renderPosts();
