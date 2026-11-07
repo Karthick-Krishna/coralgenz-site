@@ -5,8 +5,9 @@
   "private": true,
   "type": "module",
   "scripts": {
+    "build:rate": "if [ -d rate-main ]; then cd rate-main && npm run build && cd .. && rm -rf public/rate && mkdir -p public/rate && cp -r rate-main/dist/* public/rate/ && cp rate-main/dist/sitemap*.xml public/ 2>/dev/null || true; fi",
     "dev": "vite",
-    "build": "vite build",
+    "build": "npm run build:rate && vite build",
     "preview": "vite preview"
   },
   "devDependencies": {

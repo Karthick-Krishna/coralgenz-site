@@ -27,7 +27,18 @@
     { "source": "/ur-services/:match*", "destination": "/our-services/:match*", "permanent": true },
     { "source": "/ur-products", "destination": "/our-products", "permanent": true },
     { "source": "/ur-highlights", "destination": "/our-highlights", "permanent": true },
-    { "source": "/ur-highlights/:match*", "destination": "/our-highlights/:match*", "permanent": true }
+    { "source": "/ur-highlights/:match*", "destination": "/our-highlights/:match*", "permanent": true },
+    { "source": "/ratings", "destination": "/rate-us", "permanent": true }
+  ],
+  "rewrites": [
+    { "source": "/rate", "destination": "/rate/index.html" },
+    { "source": "/rate/", "destination": "/rate/index.html" },
+    { "source": "/rate/review/:id", "destination": "/rate/index.html" },
+    { "source": "/rate-us/review/:id", "destination": "/rate/index.html" },
+    { "source": "/review/:id", "destination": "/rate/index.html" },
+    { "source": "/rate/category/:category", "destination": "/rate/index.html" },
+    { "source": "/rate/sitemap(.*)\\.xml", "destination": "/rate/sitemap$1.xml" },
+    { "source": "/rate/robots.txt", "destination": "/rate/robots.txt" }
   ],
   "headers": [
     {
@@ -39,7 +50,7 @@
         },
         {
           "key": "X-Frame-Options",
-          "value": "DENY"
+          "value": "SAMEORIGIN"
         },
         {
           "key": "X-XSS-Protection",

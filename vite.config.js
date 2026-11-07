@@ -14,6 +14,10 @@ export default defineConfig({
             req.url = '/about-us.html' + (search ? '?' + search : '');
             return next();
           }
+          if (pathname === '/rate' || pathname === '/rate/' || pathname.startsWith('/rate/review/') || pathname.startsWith('/rate-us/review/') || pathname.startsWith('/review/')) {
+            req.url = '/rate/index.html' + (search ? '?' + search : '');
+            return next();
+          }
           if (pathname && !pathname.includes('.') && pathname !== '/') {
             const potentialPath = resolve('.' + pathname + '.html');
             if (fs.existsSync(potentialPath)) {

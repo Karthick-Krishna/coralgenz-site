@@ -699,10 +699,10 @@
   </url>
   <url>
     <loc>https://coralgenz.net/rate-us</loc>
-    <lastmod>2026-10-25</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.85</priority>
-        <image:image>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.00</priority>
+    <image:image>
       <image:loc>https://coralgenz.net/assets/images/DVyu6tz4dqPirA4TwAJZUz5CUw.png</image:loc>
       <image:title>Rate Coralgenz Global - Official Client Reviews Portal</image:title>
       <image:caption>Submit verified feedback and explore 4.9/5 star ratings on Coralgenz Global enterprise engineering</image:caption>
@@ -716,6 +716,12 @@
       <image:geo_location>Coimbatore, Tamil Nadu, India</image:geo_location>
       <image:license>https://coralgenz.net/</image:license>
     </image:image>
+  </url>
+  <url>
+    <loc>https://coralgenz.net/rate/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.00</priority>
   </url>
   <url>
     <loc>https://coralgenz.net/privacy-policy</loc>
