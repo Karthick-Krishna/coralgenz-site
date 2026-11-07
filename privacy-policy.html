@@ -858,10 +858,16 @@
             <p style="font-size: 15px; color: #475569; line-height: 1.7; margin-bottom: 14px;">
               Our website is designed for speed, security, and respect for user autonomy:
             </p>
-            <ul style="padding-left: 20px; margin: 0; color: #475569; font-size: 15px; line-height: 1.75;">
+            <ul style="padding-left: 20px; margin: 0 0 16px 0; color: #475569; font-size: 15px; line-height: 1.75;">
               <li><strong>No Third-Party Advertising Trackers:</strong> We do not load invasive remarketing pixels or cross-site tracking scripts.</li>
-              <li><strong>Essential Session Storage:</strong> We may use minimal, functional browser storage (such as localStorage) solely to preserve user preferences (e.g., interface theme or menu states).</li>
+              <li><strong>Essential Session Storage:</strong> We use minimal, functional browser storage (such as localStorage and secure session cookies) solely to preserve security verification, CSRF prevention, and user preferences.</li>
+              <li><strong>Granular Cookie Controls:</strong> You have full control over non-essential analytics, personalization, and telemetry cookies with immediate <strong>Accept All</strong> or <strong>Reject All</strong> controls.</li>
             </ul>
+            <div>
+              <button type="button" data-open-cookie-preferences class="cookie-btn cookie-btn-save" style="font-size: 13px; padding: 9px 18px; border-radius: 10px;">
+                ⚙️ Manage Cookie Preferences
+              </button>
+            </div>
           </div>
 
           <!-- Policy Card 7: Compliance & User Rights -->

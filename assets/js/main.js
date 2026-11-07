@@ -3,6 +3,8 @@
  * Pure Vanilla JavaScript - High Performance & Ultra-Smooth 60-120fps
  */
 
+import { initCookieConsent, getCookieConsent, saveCookieConsent } from './cookie-consent.js';
+
 /**
  * Enterprise Anti-Inspect Protection (Lightweight & Non-blocking)
  */
@@ -42,6 +44,7 @@ function initCore() {
   init4DPassTilt();
   init3DHeroTilt();
   initSliderTracks();
+  initCookieConsent();
 }
 
 if (document.readyState === 'loading') {
@@ -707,3 +710,4 @@ function toggleFaqQuestions() {
   }
 }
 window.toggleFaqQuestions = toggleFaqQuestions;
+export { initCookieConsent, getCookieConsent, saveCookieConsent };
