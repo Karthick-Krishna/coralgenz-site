@@ -40,6 +40,27 @@ export default defineConfig({
           }
           next();
         });
+      },
+      configurePreviewServer(server) {
+        server.middlewares.use((req, res, next) => {
+          if (!req.url) return next();
+          const [pathname, search] = req.url.split('?');
+          if (pathname === '/about' || pathname === '/about-us') {
+            req.url = '/about-us.html' + (search ? '?' + search : '');
+            return next();
+          }
+          if (pathname === '/blog' || pathname === '/blog/') {
+            req.url = '/blog.html' + (search ? '?' + search : '');
+            return next();
+          }
+          if (pathname && !pathname.includes('.') && pathname !== '/') {
+            const potentialPath = resolve('dist' + pathname + '.html');
+            if (fs.existsSync(potentialPath)) {
+              req.url = pathname + '.html' + (search ? '?' + search : '');
+            }
+          }
+          next();
+        });
       }
     }
   ],
