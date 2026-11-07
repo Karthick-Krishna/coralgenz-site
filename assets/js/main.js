@@ -335,6 +335,7 @@ function updateThreeDotsActiveState() {
   const href = window.location.href.toLowerCase();
 
   const isInsideThreeDotsPage = 
+    path === '/blog' || href.includes('/blog') ||
     path === '/rate-us' || href.includes('/rate-us') ||
     path === '/team' || href.includes('/team') ||
     path === '/collaborated-products' || href.includes('/collaborated-products') ||

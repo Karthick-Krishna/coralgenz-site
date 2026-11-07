@@ -2,6 +2,16 @@ import { resolve } from 'path';
 import fs from 'fs';
 import { defineConfig } from 'vite';
 
+const blogInputs = {};
+if (fs.existsSync(resolve('blog'))) {
+  fs.readdirSync(resolve('blog')).forEach(file => {
+    if (file.endsWith('.html')) {
+      const key = 'blog_' + file.replace('.html', '').replace(/[^a-zA-Z0-9]/g, '_');
+      blogInputs[key] = resolve('blog', file);
+    }
+  });
+}
+
 export default defineConfig({
   plugins: [
     {
@@ -12,6 +22,10 @@ export default defineConfig({
           const [pathname, search] = req.url.split('?');
           if (pathname === '/about' || pathname === '/about-us') {
             req.url = '/about-us.html' + (search ? '?' + search : '');
+            return next();
+          }
+          if (pathname === '/blog' || pathname === '/blog/') {
+            req.url = '/blog.html' + (search ? '?' + search : '');
             return next();
           }
           if (pathname === '/rate' || pathname === '/rate/' || pathname.startsWith('/rate/review/') || pathname.startsWith('/rate-us/review/') || pathname.startsWith('/review/')) {
@@ -33,6 +47,7 @@ export default defineConfig({
     rollupOptions: {
       input: {
         main: resolve('index.html'),
+        blog: resolve('blog.html'),
         team: resolve('team.html'),
         karthickKrishna: resolve('karthick-krishna.html'),
         thanvanthH: resolve('thanvanth-h.html'),
@@ -68,7 +83,8 @@ export default defineConfig({
         partneredStartups: resolve('partnered-startups.html'),
         becomePartner: resolve('become-a-partner.html'),
         privacyPolicy: resolve('privacy-policy.html'),
-        rateUs: resolve('rate-us.html')
+        rateUs: resolve('rate-us.html'),
+        ...blogInputs
       }
     }
   }

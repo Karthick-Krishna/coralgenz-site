@@ -6,6 +6,7 @@
   "type": "module",
   "scripts": {
     "build:rate": "if [ -d rate-main ]; then cd rate-main && npm run build && cd .. && rm -rf public/rate && mkdir -p public/rate && cp -r rate-main/dist/* public/rate/ && cp rate-main/dist/sitemap*.xml public/ 2>/dev/null || true; fi",
+    "build:blog": "python3 scripts/generate_all_blog_pages.py",
     "dev": "vite",
     "build": "npm run build:rate && vite build",
     "preview": "vite preview"

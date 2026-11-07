@@ -28,7 +28,10 @@
     { "source": "/ur-products", "destination": "/our-products", "permanent": true },
     { "source": "/ur-highlights", "destination": "/our-highlights", "permanent": true },
     { "source": "/ur-highlights/:match*", "destination": "/our-highlights/:match*", "permanent": true },
-    { "source": "/ratings", "destination": "/rate-us", "permanent": true }
+    { "source": "/ratings", "destination": "/rate-us", "permanent": true },
+    { "source": "/blogs", "destination": "/blog", "permanent": true },
+    { "source": "/articles", "destination": "/blog", "permanent": true },
+    { "source": "/posts", "destination": "/blog", "permanent": true }
   ],
   "rewrites": [
     { "source": "/rate", "destination": "/rate/index.html" },
