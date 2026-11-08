@@ -205,32 +205,70 @@
         margin-bottom: 24px !important;
       }
       .blog-controls-bar {
+        display: flex !important;
         flex-direction: column !important;
         align-items: stretch !important;
-        gap: 10px !important;
+        gap: 12px !important;
       }
       .blog-search-wrap {
         width: 100% !important;
         min-width: 0 !important;
       }
       .blog-search-input {
-        height: 48px !important;
-        font-size: 14px !important;
-        padding: 0 40px 0 44px !important;
-        border-radius: 12px !important;
+        height: 52px !important;
+        font-size: 15px !important;
+        padding: 0 44px 0 48px !important;
+        border-radius: 14px !important;
       }
-      .blog-filter-btn {
+      .blog-filter-buttons-group {
+        display: flex !important;
+        flex-direction: row !important;
+        gap: 10px !important;
         width: 100% !important;
-        height: 48px !important;
-        font-size: 14px !important;
-        justify-content: space-between !important;
-        padding: 0 16px !important;
-        border-radius: 12px !important;
       }
-      .filter-drawer-card {
+      .blog-filter-btn, .blog-date-btn {
+        flex: 1 1 50% !important;
+        width: 50% !important;
+        min-width: 0 !important;
+        height: 52px !important;
+        font-size: 14px !important;
+        font-weight: 700 !important;
+        justify-content: center !important;
+        padding: 0 12px !important;
+        border-radius: 14px !important;
+        display: inline-flex !important;
+        align-items: center !important;
+        gap: 8px !important;
+      }
+      .blog-filter-btn .filter-badge, .blog-date-btn .filter-badge {
+        padding: 3px 8px !important;
+        font-size: 11.5px !important;
+        max-width: 95px !important;
+        overflow: hidden !important;
+        text-overflow: ellipsis !important;
+        white-space: nowrap !important;
+      }
+      .date-drawer-card, .filter-drawer-card {
         padding: 16px !important;
         border-radius: 16px !important;
         margin-top: 10px !important;
+      }
+      .date-section-title {
+        font-size: 11px !important;
+        margin-bottom: 8px !important;
+      }
+      .date-sort-pills, .date-presets-grid {
+        gap: 6px !important;
+      }
+      .date-sort-pill, .date-preset-btn {
+        padding: 7px 12px !important;
+        font-size: 12px !important;
+      }
+      .active-filter-banner {
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        gap: 8px !important;
+        padding: 10px 14px !important;
       }
       .filter-drawer-title {
         font-size: 16px !important;
@@ -296,6 +334,11 @@
       position: relative;
       flex: 1;
       min-width: 260px;
+    }
+    .blog-filter-buttons-group {
+      display: flex;
+      gap: 10px;
+      align-items: center;
     }
     .blog-search-icon {
       position: absolute;
@@ -765,123 +808,24 @@
     }
 
     @media (max-width: 640px) {
-      .blog-controls-section {
-        padding: 0 14px;
-        margin-bottom: 24px;
-      }
-      .blog-controls-bar {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 8px;
-      }
-      .blog-search-wrap {
-        width: 100%;
-        min-width: 100%;
-        order: 1;
-      }
-      .blog-search-input {
-        height: 48px;
-        font-size: 14px;
-        border-radius: 12px;
-        padding: 0 40px 0 44px;
-      }
-      .blog-filter-btn, .blog-date-btn {
-        flex: 1 1 calc(50% - 4px);
-        min-width: 0;
-        justify-content: center;
-        padding: 0 8px;
-        font-size: 13px;
-        height: 46px;
-        border-radius: 12px;
-        gap: 6px;
-        order: 2;
-      }
-      .blog-filter-btn .filter-chevron,
-      .blog-date-btn .filter-chevron {
-        display: none; /* Hide chevron on mobile so text & badge fit cleanly */
-      }
-      .blog-filter-btn .filter-badge,
-      .blog-date-btn .filter-badge {
-        font-size: 11px;
-        padding: 2px 7px;
-        max-width: 82px;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        white-space: nowrap;
-      }
-      .active-filter-banner {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 8px;
-        padding: 10px 14px;
-        border-radius: 12px;
-      }
-      .active-filter-info {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 6px;
-        align-items: center;
-      }
-      .filter-drawer-card, .date-drawer-card {
-        padding: 18px 14px;
-        border-radius: 16px;
-        margin-top: 12px;
-      }
-      .filter-drawer-title {
-        font-size: 16px;
-      }
-      .date-sort-pills {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 8px;
-      }
-      .date-sort-pill {
-        justify-content: center;
-        padding: 8px 6px;
-        font-size: 12px;
-        text-align: center;
-      }
-      .date-presets-grid {
-        gap: 6px;
-      }
-      .date-preset-btn {
-        padding: 6px 11px;
-        font-size: 12px;
-      }
       .date-range-form {
-        padding: 12px;
-        gap: 10px;
         flex-direction: column;
         align-items: stretch;
       }
       .date-input-group {
-        display: flex;
         justify-content: space-between;
-        align-items: center;
       }
       .date-picker-input {
-        width: 60%;
-        font-size: 12.5px;
-        height: 38px;
+        flex: 1;
+        height: 44px;
+        font-size: 14px;
       }
-      .apply-date-btn, .clear-date-range-btn, .filter-apply-btn {
-        width: 100%;
-        text-align: center;
-        justify-content: center;
-        padding: 10px;
+      .apply-date-btn, .clear-date-range-btn {
+        height: 44px;
+        font-size: 14px;
       }
     }
-
-    @media (max-width: 360px) {
-      .blog-filter-btn, .blog-date-btn {
-        padding: 0 6px;
-        font-size: 12px;
-        gap: 4px;
-      }
-      .blog-filter-btn .filter-badge,
-      .blog-date-btn .filter-badge {
-        max-width: 65px;
-        font-size: 10.5px;
+        flex: 1;
       }
     }
   </style>
@@ -1249,32 +1193,35 @@
           <button type="button" id="clearMainSearchBtn" class="clear-search-btn" onclick="clearMainSearch()" aria-label="Clear search">&times;</button>
         </div>
 
-        <!-- Date Filter & Sort Trigger Button -->
-        <button type="button" id="dateFilterToggleBtn" class="blog-date-btn" onclick="toggleDateDrawer()" aria-expanded="false" aria-controls="dateDrawerCard">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" style="flex-shrink: 0;">
-            <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
-            <line x1="16" y1="2" x2="16" y2="6"></line>
-            <line x1="8" y1="2" x2="8" y2="6"></line>
-            <line x1="3" y1="10" x2="21" y1="10"></line>
-          </svg>
-          <span style="flex-shrink: 0;">Date</span>
-          <span id="activeDateBadge" class="filter-badge">Newest First</span>
-          <svg class="filter-chevron" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="flex-shrink: 0;">
-            <polyline points="6 9 12 15 18 9"></polyline>
-          </svg>
-        </button>
+        <!-- Filter & Date Controls (Positioned one near other like desktop) -->
+        <div class="blog-filter-buttons-group">
+          <!-- Date Filter & Sort Trigger Button -->
+          <button type="button" id="dateFilterToggleBtn" class="blog-date-btn" onclick="toggleDateDrawer()" aria-expanded="false" aria-controls="dateDrawerCard">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+              <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+              <line x1="16" y1="2" x2="16" y2="6"></line>
+              <line x1="8" y1="2" x2="8" y2="6"></line>
+              <line x1="3" y1="10" x2="21" y1="10"></line>
+            </svg>
+            <span>Date</span>
+            <span id="activeDateBadge" class="filter-badge">Newest First</span>
+            <svg class="filter-chevron" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </button>
 
-        <!-- Filter Trigger Button -->
-        <button type="button" id="filterToggleBtn" class="blog-filter-btn" onclick="toggleFilterDrawer()" aria-expanded="false" aria-controls="filterDrawerCard">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink: 0;">
-            <polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"></polygon>
-          </svg>
-          <span style="flex-shrink: 0;">Topics</span>
-          <span id="activeFilterBadge" class="filter-badge">All Topics (180)</span>
-          <svg class="filter-chevron" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="flex-shrink: 0;">
-            <polyline points="6 9 12 15 18 9"></polyline>
-          </svg>
-        </button>
+          <!-- Filter Trigger Button -->
+          <button type="button" id="filterToggleBtn" class="blog-filter-btn" onclick="toggleFilterDrawer()" aria-expanded="false" aria-controls="filterDrawerCard">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"></polygon>
+            </svg>
+            <span>Topics</span>
+            <span id="activeFilterBadge" class="filter-badge">All Topics (180)</span>
+            <svg class="filter-chevron" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </button>
+        </div>
       </div>
 
       <!-- Active Filter Banner (Visible when a specific category or date is chosen) -->
