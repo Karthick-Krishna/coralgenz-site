@@ -108,13 +108,13 @@
 
   <style>
 
-    /* Responsive Grid Layout */
+    /* Responsive Grid Layout - Large Cinema Cards on Desktop */
     #blogGrid {
       display: grid;
       grid-template-columns: 1fr;
       gap: 20px;
     }
-    @media (min-width: 641px) {
+    @media (min-width: 641px) and (max-width: 1023px) {
       #blogGrid {
         grid-template-columns: repeat(2, 1fr);
         gap: 24px;
@@ -122,54 +122,60 @@
     }
     @media (min-width: 1024px) {
       #blogGrid {
-        grid-template-columns: repeat(3, 1fr);
-        gap: 28px;
+        grid-template-columns: repeat(2, 1fr) !important; /* 2 large, prominent cinema cards per row on desktop */
+        gap: 32px !important;
+      }
+      .blog-controls-section,
+      #blogArticlesSection {
+        max-width: 1240px !important;
+      }
+      .blog-card {
+        padding: 24px !important;
+        border-radius: 20px !important;
+      }
+      .blog-card-title {
+        font-size: 20.5px !important;
+        line-height: 1.38 !important;
       }
     }
 
-    /* Card Thumbnail Images - Optimized for Desktop & Mobile */
+    /* Card Thumbnail Images - 16:9 Aspect Ratio in Full View (Never Cropped) */
     .blog-card-thumb-link {
       display: block;
       width: 100%;
-      height: 190px; /* Mobile height */
-      border-radius: 12px;
-      margin-bottom: 16px;
+      aspect-ratio: 16 / 9;
+      height: auto !important;
+      border-radius: 14px;
+      margin-bottom: 18px;
       overflow: hidden;
       position: relative;
       text-decoration: none;
       border: 1.5px solid #e2e8f0;
-      background: #0f172a;
-      box-shadow: 0 4px 12px rgba(15, 23, 42, 0.04);
+      background: #090d16;
+      box-shadow: 0 4px 14px rgba(15, 23, 42, 0.05);
       transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
     }
     .blog-card-thumb-link img {
       width: 100%;
       height: 100%;
-      object-fit: cover;
+      aspect-ratio: 16 / 9;
+      object-fit: contain; /* Full view! Displays 100% of cinema poster artwork without clipping */
       display: block;
-      transition: transform 0.4s ease;
+      background: #090d16;
+      transition: transform 0.35s ease;
     }
     .blog-card-thumb-link:hover img {
-      transform: scale(1.03);
+      transform: scale(1.02);
     }
 
-    /* Tablet UI */
-    @media (min-width: 641px) and (max-width: 1023px) {
-      .blog-card-thumb-link {
-        height: 215px;
-      }
-    }
-
-    /* Desktop UI: Larger cinema poster thumbnails */
     @media (min-width: 1024px) {
       .blog-card-thumb-link {
-        height: 240px; /* Noticeably larger on desktop screens! */
-        margin-bottom: 18px;
-        border-radius: 14px;
+        border-radius: 16px;
+        margin-bottom: 20px;
       }
       .blog-card-thumb-link:hover {
         transform: translateY(-2px);
-        box-shadow: 0 12px 28px rgba(0, 85, 254, 0.16);
+        box-shadow: 0 14px 32px rgba(0, 85, 254, 0.16);
         border-color: #0055fe;
       }
     }
@@ -318,11 +324,16 @@
       }
     }
 
-    /* Filter & Controls Styling */
+    /* Section Containers */
     .blog-controls-section {
       max-width: 1140px;
       margin: 0 auto 36px auto;
       padding: 0 20px;
+    }
+    .blog-articles-section {
+      max-width: 1140px;
+      margin: 0 auto;
+      padding: 0 20px 80px 20px;
     }
     .blog-controls-bar {
       display: flex;
@@ -1459,7 +1470,7 @@
     </section>
 
     <!-- Articles Section -->
-    <section id="blogArticlesSection" class="section" style="max-width: 1140px; margin: 0 auto; padding: 0 20px 80px 20px;">
+    <section id="blogArticlesSection" class="section blog-articles-section">
       <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px; flex-wrap: wrap; gap: 12px;">
         <h2 style="font-family: var(--font-satoshi), sans-serif; font-size: 22px; font-weight: 800; color: #0f172a; margin: 0;">
           Articles &amp; Playbooks
@@ -1470,7 +1481,7 @@
       </div>
 
       <!-- Articles Grid -->
-      <div id="blogGrid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 24px;">
+      <div id="blogGrid">
         <!-- Dynamically rendered by JavaScript -->
       </div>
 
@@ -2137,23 +2148,23 @@
       grid.innerHTML = paginated.map(post => {
         const articleHref = window.location.protocol === 'file:' ? ('blog/' + post.slug + '.html') : post.url;
                 return `
-        <article class="blog-card" style="background: #ffffff; border: 1.5px solid #e2e8f0; border-radius: 16px; padding: 20px; display: flex; flex-direction: column; justify-content: space-between; transition: transform 0.2s ease, box-shadow 0.2s ease; box-shadow: 0 4px 16px rgba(15, 23, 42, 0.04);"
+        <article class="blog-card" style="background: #ffffff; border: 1.5px solid #e2e8f0; border-radius: 18px; padding: 22px; display: flex; flex-direction: column; justify-content: space-between; transition: transform 0.2s ease, box-shadow 0.2s ease; box-shadow: 0 4px 16px rgba(15, 23, 42, 0.04);"
           onmouseenter="this.style.transform='translateY(-3px)'; this.style.boxShadow='0 10px 28px rgba(0,85,254,0.12)'; this.style.borderColor='#93c5fd';"
           onmouseleave="this.style.transform='none'; this.style.boxShadow='0 4px 16px rgba(15, 23, 42, 0.04)'; this.style.borderColor='#e2e8f0';">
           <div>
-            <!-- Post Thumbnail Image Representing Coralgenz Global & Topic -->
-            <a href="${articleHref}" class="blog-card-thumb-link" style="display: block; width: 100%; border-radius: 14px; margin-bottom: 16px; overflow: hidden; position: relative; text-decoration: none; border: 1.5px solid #e2e8f0; background: #0f172a; box-shadow: 0 4px 12px rgba(15, 23, 42, 0.04);">
-              <img src="/assets/images/blog/post-${post.id}.svg" alt="${post.title}" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.35s ease;" onmouseenter="this.style.transform='scale(1.03)'" onmouseleave="this.style.transform='none'">
+            <!-- Post Thumbnail Image Representing Coralgenz Global & Topic in 16:9 Full View -->
+            <a href="${articleHref}" class="blog-card-thumb-link" style="display: block; width: 100%; aspect-ratio: 16 / 9; border-radius: 14px; margin-bottom: 18px; overflow: hidden; position: relative; text-decoration: none; border: 1.5px solid #e2e8f0; background: #090d16; box-shadow: 0 4px 14px rgba(15, 23, 42, 0.05);">
+              <img src="/assets/images/blog/post-${post.id}.svg" alt="${post.title}" loading="lazy" style="width: 100%; height: 100%; aspect-ratio: 16 / 9; object-fit: contain; display: block; background: #090d16; transition: transform 0.35s ease;" onmouseenter="this.style.transform='scale(1.02)'" onmouseleave="this.style.transform='none'">
             </a>
 
             <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; gap: 8px;">
-              <span style="font-size: 11px; font-weight: 700; color: #0055fe; background: #eff6ff; border: 1px solid #bfdbfe; border-radius: 9999px; padding: 3px 10px; text-transform: uppercase;">
+              <span style="font-size: 11.5px; font-weight: 700; color: #0055fe; background: #eff6ff; border: 1px solid #bfdbfe; border-radius: 9999px; padding: 3px 10px; text-transform: uppercase;">
                 ${post.category}
               </span>
-              <span style="font-size: 12px; color: #94a3b8;">${post.readTime}</span>
+              <span style="font-size: 12.5px; color: #94a3b8;">${post.readTime}</span>
             </div>
 
-            <h2 style="font-family: var(--font-satoshi), sans-serif; font-size: 17.5px; font-weight: 800; color: #0f172a; line-height: 1.35; margin: 0 0 12px 0;">
+            <h2 class="blog-card-title" style="font-family: var(--font-satoshi), sans-serif; font-size: 18.5px; font-weight: 800; color: #0f172a; line-height: 1.35; margin: 0 0 12px 0;">
               <a href="${post.url}" style="color: #0f172a; text-decoration: none; transition: color 0.2s;" onmouseenter="this.style.color='#0055fe'" onmouseleave="this.style.color='#0f172a'">
                 ${post.title}
               </a>
