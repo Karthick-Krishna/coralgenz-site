@@ -1,0 +1,87 @@
+<svg width="1200" height="675" viewBox="0 0 1200 675" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg-67" x1="0" y1="0" x2="1200" y2="675" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0a0f1d"/>
+      <stop offset="0.5" stop-color="#581c87"/>
+      <stop offset="1" stop-color="#3b0764"/>
+    </linearGradient>
+    <radialGradient id="glow-67" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(900 337) rotate(90) scale(360 480)">
+      <stop stop-color="#a855f7" stop-opacity="0.35"/>
+      <stop offset="1" stop-color="#a855f7" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="line-grad-67" x1="0" y1="0" x2="1200" y2="0" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#a855f7"/>
+      <stop offset="0.5" stop-color="#e9d5ff"/>
+      <stop offset="1" stop-color="#a855f7"/>
+    </linearGradient>
+    <pattern id="grid-67" width="38" height="38" patternUnits="userSpaceOnUse">
+      <path d="M 38 0 L 0 0 0 38" fill="none" stroke="#ffffff" stroke-width="0.75" opacity="0.08"/>
+    </pattern>
+  </defs>
+
+  <!-- Deep Tech Background -->
+  <rect width="1200" height="675" fill="url(#bg-67)"/>
+  <rect width="1200" height="675" fill="url(#grid-67)"/>
+  <circle cx="920" cy="337" r="380" fill="url(#glow-67)"/>
+
+  <!-- Top Header Navigation Bar -->
+  <g transform="translate(60, 48)">
+    <!-- Coralgenz Logo & Mark -->
+    <rect width="185" height="42" rx="21" fill="rgba(15, 23, 42, 0.85)" stroke="rgba(255, 255, 255, 0.2)" stroke-width="1.2"/>
+    <circle cx="22" cy="21" r="13" fill="#0055fe"/>
+    <path d="M 17 21 L 20 24 L 27 17" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="44" y="26" font-family="'Satoshi', 'Inter', -apple-system, sans-serif" font-size="14" font-weight="800" fill="#ffffff" letter-spacing="0.5">CORALGENZ</text>
+
+    <!-- Category Pill -->
+    <rect x="200" y="0" width="183" height="42" rx="21" fill="rgba(15, 23, 42, 0.75)" stroke="#a855f7" stroke-width="1.2"/>
+    <text x="291" y="26" font-family="'Inter', sans-serif" font-size="12" font-weight="800" fill="#e9d5ff" letter-spacing="0.8" text-anchor="middle">WEB MODERNIZATION</text>
+
+    <!-- Article ID & Date -->
+    <text x="1080" y="26" text-anchor="end" font-family="'JetBrains Mono', 'Inter', monospace" font-size="13" font-weight="700" fill="#94a3b8">ARTICLE #67 · MAR 9, 2026</text>
+  </g>
+
+  <!-- Left Content Block -->
+  <g transform="translate(60, 160)">
+    <rect x="0" y="0" width="48" height="4" rx="2" fill="#a855f7"/>
+
+    <!-- Wrapped Article Title -->
+    <text x="0" y="55" font-family="'Satoshi', 'Inter', -apple-system, sans-serif" font-size="38" font-weight="800" fill="#ffffff" letter-spacing="-0.02em">
+      <tspan x="0" dy="0">How a Modern Website Design Can</tspan>
+      <tspan x="0" dy="52">Double Your Customer Inquiries</tspan>
+      <tspan x="0" dy="52"></tspan>
+    </text>
+
+    <!-- Key Takeaway Pill -->
+    <g transform="translate(0, 230)">
+      <rect width="360" height="44" rx="8" fill="rgba(15, 23, 42, 0.85)" stroke="#a855f7" stroke-width="1.4"/>
+      <circle cx="22" cy="22" r="5" fill="#a855f7"/>
+      <text x="38" y="27" font-family="'Inter', sans-serif" font-size="13.5" font-weight="700" fill="#ffffff">Modern Modular PWA Architecture</text>
+    </g>
+
+    <!-- Authority Byline -->
+    <text x="0" y="325" font-family="'Inter', sans-serif" font-size="14.5" font-weight="500" fill="#cbd5e1">
+      Official Technology Playbook &amp; Architecture Roadmap by Coralgenz Global
+    </text>
+  </g>
+
+  <!-- Right Graphic Area -->
+  <g transform="translate(730, 130)">
+    
+        <!-- Desktop + Mobile Multi-Device PWA Frame -->
+        <g transform="translate(30, 20)">
+          <!-- Laptop Base -->
+          <rect x="30" y="70" width="180" height="115" rx="10" fill="#1e1b4b" stroke="#c084fc" stroke-width="2"/>
+          <rect x="42" y="82" width="156" height="85" rx="4" fill="#0f172a"/>
+          <!-- Smartphone -->
+          <rect x="180" y="110" width="90" height="160" rx="14" fill="#0f172a" stroke="#e9d5ff" stroke-width="2.5"/>
+          <circle cx="225" cy="255" r="7" fill="#a855f7"/>
+          <path d="M 70 140 L 95 115 L 120 130 L 150 100" stroke="#34d399" stroke-width="3" stroke-linecap="round" fill="none"/>
+          <rect x="60" y="250" width="180" height="34" rx="8" fill="#0f172a" stroke="#a855f7" stroke-width="1.5"/>
+          <text x="150" y="272" font-family="'Inter', sans-serif" font-size="12" font-weight="800" fill="#e9d5ff" text-anchor="middle">100/100 LIGHTHOUSE SPEED</text>
+        </g>
+        
+  </g>
+
+  <!-- Bottom Accent Line -->
+  <rect x="0" y="670" width="1200" height="5" fill="url(#line-grad-67)"/>
+</svg>

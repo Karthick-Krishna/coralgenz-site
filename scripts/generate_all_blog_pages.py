@@ -499,7 +499,7 @@ def render_post_html(p, content, prev_post, next_post):
                     "url": "https://coralgenz.net",
                     "logo": {
                         "@type": "ImageObject",
-                        "url": "https://coralgenz.net/assets/images/DVyu6tz4dqPirA4TwAJZUz5CUw.png"
+                        f"url": f"https://coralgenz.net/assets/images/blog/post-{p['id']}.svg"
                     }
                 },
                 "mainEntityOfPage": url,
@@ -588,7 +588,7 @@ def render_post_html(p, content, prev_post, next_post):
   <meta property="og:url" content="{url}">
   <meta property="og:title" content="{title} | Coralgenz Global">
   <meta property="og:description" content="{content['aiOverview'][:155]}">
-  <meta property="og:image" content="https://coralgenz.net/assets/images/DVyu6tz4dqPirA4TwAJZUz5CUw.png">
+  <meta property="og:image" content="https://coralgenz.net/assets/images/blog/post-{p['id']}.svg">
   <meta property="article:published_time" content="{iso_date}T09:00:00+05:30">
   <meta property="article:author" content="{author['name']}">
   <meta property="article:section" content="{category}">
@@ -598,7 +598,7 @@ def render_post_html(p, content, prev_post, next_post):
   <meta name="twitter:url" content="{url}">
   <meta name="twitter:title" content="{title} | Coralgenz Global">
   <meta name="twitter:description" content="{content['aiOverview'][:155]}">
-  <meta name="twitter:image" content="https://coralgenz.net/assets/images/DVyu6tz4dqPirA4TwAJZUz5CUw.png">
+  <meta name="twitter:image" content="https://coralgenz.net/assets/images/blog/post-{p['id']}.svg">
 
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="/assets/images/DVyu6tz4dqPirA4TwAJZUz5CUw.png">
@@ -674,7 +674,10 @@ __SITE_HEADER__
         </div>
       </header>
 
-      {content["inArticleHero"]}
+      <!-- Dedicated Article Hero Image (Representing Coralgenz Global & Post Content) -->
+      <div class="blog-hero-image-wrap" style="margin: 28px 0 36px 0; border-radius: 18px; overflow: hidden; border: 1.5px solid #e2e8f0; box-shadow: 0 12px 36px rgba(15, 23, 42, 0.08); background: #0f172a;">
+        <img src="/assets/images/blog/post-{p['id']}.svg" alt="{title} - Coralgenz Global" width="1200" height="675" style="width: 100%; height: auto; max-height: 480px; object-fit: cover; display: block;" loading="eager" decoding="async">
+      </div>
 
       <!-- AI Overview / Direct Answer Snippet Box -->
       <section style="background: linear-gradient(135deg, #eff6ff 0%, #f8fafc 100%); border: 1.5px solid #bfdbfe; border-radius: 16px; padding: 22px 26px; margin-bottom: 36px; box-shadow: 0 4px 16px rgba(0, 85, 254, 0.05);">
@@ -916,14 +919,14 @@ def generate_blog_hub_html(posts):
   <meta property="og:url" content="https://coralgenz.net/blog">
   <meta property="og:title" content="Blog &amp; Technology Insights | Coralgenz Global">
   <meta property="og:description" content="180 actionable technology guides on custom software, MVP development, zero-knowledge encryption, and cloud scaling.">
-  <meta property="og:image" content="https://coralgenz.net/assets/images/DVyu6tz4dqPirA4TwAJZUz5CUw.png">
+  <meta property="og:image" content="https://coralgenz.net/assets/images/blog/post-{p['id']}.svg">
 
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:url" content="https://coralgenz.net/blog">
   <meta name="twitter:title" content="Blog &amp; Technology Insights | Coralgenz Global">
   <meta name="twitter:description" content="180 actionable technology guides on custom software, MVP development, zero-knowledge encryption, and cloud scaling.">
-  <meta name="twitter:image" content="https://coralgenz.net/assets/images/DVyu6tz4dqPirA4TwAJZUz5CUw.png">
+  <meta name="twitter:image" content="https://coralgenz.net/assets/images/blog/post-{p['id']}.svg">
 
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="/assets/images/DVyu6tz4dqPirA4TwAJZUz5CUw.png">
@@ -1753,15 +1756,14 @@ __SITE_FOOTER__
 
       grid.innerHTML = paginated.map(post => {
         const articleHref = window.location.protocol === 'file:' ? ('blog/' + post.slug + '.html') : post.url;
-        const thumbHtml = getCardThumbnail(post.topicType, post.category);
-        return `
+                return `
         <article style="background: #ffffff; border: 1.5px solid #e2e8f0; border-radius: 16px; padding: 20px; display: flex; flex-direction: column; justify-content: space-between; transition: transform 0.2s ease, box-shadow 0.2s ease; box-shadow: 0 4px 16px rgba(15, 23, 42, 0.04);"
           onmouseenter="this.style.transform='translateY(-3px)'; this.style.boxShadow='0 10px 28px rgba(0,85,254,0.12)'; this.style.borderColor='#93c5fd';"
           onmouseleave="this.style.transform='none'; this.style.boxShadow='0 4px 16px rgba(15, 23, 42, 0.04)'; this.style.borderColor='#e2e8f0';">
           <div>
-            <!-- Attractive Post Thumbnail Image Representing Coralgenz Global & Topic -->
-            <a href="${articleHref}" style="display: block; width: 100%; border-radius: 12px; margin-bottom: 14px; overflow: hidden; text-decoration: none; transition: transform 0.25s ease;" onmouseenter="this.style.transform='scale(1.02)'" onmouseleave="this.style.transform='none'">
-              ${thumbHtml}
+            <!-- Post Thumbnail Image Representing Coralgenz Global & Topic -->
+            <a href="${articleHref}" class="blog-card-thumb-link" style="display: block; width: 100%; height: 180px; border-radius: 12px; margin-bottom: 16px; overflow: hidden; position: relative; text-decoration: none; border: 1.5px solid #e2e8f0; background: #0f172a; box-shadow: 0 4px 12px rgba(15, 23, 42, 0.04);">
+              <img src="/assets/images/blog/post-${post.id}.svg" alt="${post.title}" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.35s ease;" onmouseenter="this.style.transform='scale(1.03)'" onmouseleave="this.style.transform='none'">
             </a>
 
             <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; gap: 8px;">
@@ -1856,6 +1858,8 @@ __SITE_FOOTER__
                .replace("__CATEGORY_CHIPS__", category_chips_html)
 
 def main():
+    import generate_all_blog_images
+    generate_all_blog_images.main()
     print("Starting generation of 180 blog post pages and blog hub...")
     os.makedirs("blog", exist_ok=True)
     os.makedirs("dist/blog", exist_ok=True)

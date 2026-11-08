@@ -18,14 +18,14 @@
   <meta property="og:url" content="https://coralgenz.net/blog">
   <meta property="og:title" content="Blog &amp; Technology Insights | Coralgenz Global">
   <meta property="og:description" content="180 actionable technology guides on custom software, MVP development, zero-knowledge encryption, and cloud scaling.">
-  <meta property="og:image" content="https://coralgenz.net/assets/images/DVyu6tz4dqPirA4TwAJZUz5CUw.png">
+  <meta property="og:image" content="https://coralgenz.net/assets/images/blog/post-{p['id']}.svg">
 
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:url" content="https://coralgenz.net/blog">
   <meta name="twitter:title" content="Blog &amp; Technology Insights | Coralgenz Global">
   <meta name="twitter:description" content="180 actionable technology guides on custom software, MVP development, zero-knowledge encryption, and cloud scaling.">
-  <meta name="twitter:image" content="https://coralgenz.net/assets/images/DVyu6tz4dqPirA4TwAJZUz5CUw.png">
+  <meta name="twitter:image" content="https://coralgenz.net/assets/images/blog/post-{p['id']}.svg">
 
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="/assets/images/DVyu6tz4dqPirA4TwAJZUz5CUw.png">
@@ -1423,15 +1423,14 @@
 
       grid.innerHTML = paginated.map(post => {
         const articleHref = window.location.protocol === 'file:' ? ('blog/' + post.slug + '.html') : post.url;
-        const thumbHtml = getCardThumbnail(post.topicType, post.category);
-        return `
+                return `
         <article style="background: #ffffff; border: 1.5px solid #e2e8f0; border-radius: 16px; padding: 20px; display: flex; flex-direction: column; justify-content: space-between; transition: transform 0.2s ease, box-shadow 0.2s ease; box-shadow: 0 4px 16px rgba(15, 23, 42, 0.04);"
           onmouseenter="this.style.transform='translateY(-3px)'; this.style.boxShadow='0 10px 28px rgba(0,85,254,0.12)'; this.style.borderColor='#93c5fd';"
           onmouseleave="this.style.transform='none'; this.style.boxShadow='0 4px 16px rgba(15, 23, 42, 0.04)'; this.style.borderColor='#e2e8f0';">
           <div>
-            <!-- Attractive Post Thumbnail Image Representing Coralgenz Global & Topic -->
-            <a href="${articleHref}" style="display: block; width: 100%; border-radius: 12px; margin-bottom: 14px; overflow: hidden; text-decoration: none; transition: transform 0.25s ease;" onmouseenter="this.style.transform='scale(1.02)'" onmouseleave="this.style.transform='none'">
-              ${thumbHtml}
+            <!-- Post Thumbnail Image Representing Coralgenz Global & Topic -->
+            <a href="${articleHref}" class="blog-card-thumb-link" style="display: block; width: 100%; height: 180px; border-radius: 12px; margin-bottom: 16px; overflow: hidden; position: relative; text-decoration: none; border: 1.5px solid #e2e8f0; background: #0f172a; box-shadow: 0 4px 12px rgba(15, 23, 42, 0.04);">
+              <img src="/assets/images/blog/post-${post.id}.svg" alt="${post.title}" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.35s ease;" onmouseenter="this.style.transform='scale(1.03)'" onmouseleave="this.style.transform='none'">
             </a>
 
             <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; gap: 8px;">

@@ -985,3 +985,4 @@ def get_in_article_diagram_html(topic_type, title, category):
 
     # For company / culture / founders / team / recap / general advice, return empty string
     return ""
+
