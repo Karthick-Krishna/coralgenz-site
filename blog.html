@@ -340,18 +340,18 @@
     .clear-search-btn:hover {
       color: #0f172a;
     }
-    .blog-filter-btn {
+    .blog-filter-btn, .blog-date-btn {
       height: 52px;
-      padding: 0 20px;
+      padding: 0 18px;
       border-radius: 14px;
       border: 1.5px solid #0055fe;
       background: #ffffff;
       color: #0055fe;
-      font-size: 14.5px;
+      font-size: 14px;
       font-weight: 700;
       display: inline-flex;
       align-items: center;
-      gap: 10px;
+      gap: 9px;
       cursor: pointer;
       transition: all 0.2s ease;
       box-shadow: 0 2px 8px rgba(0, 85, 254, 0.08);
@@ -359,22 +359,27 @@
       white-space: nowrap;
       box-sizing: border-box;
     }
-    .blog-filter-btn:hover, .blog-filter-btn.open {
+    .blog-filter-btn:hover, .blog-filter-btn.open,
+    .blog-date-btn:hover, .blog-date-btn.open {
       background: #eff6ff;
       border-color: #0055fe;
     }
-    .blog-filter-btn.has-active-filter {
+    .blog-filter-btn.has-active-filter,
+    .blog-date-btn.has-active-filter {
       background: #0055fe;
       color: #ffffff;
     }
-    .blog-filter-btn.has-active-filter .filter-badge {
+    .blog-filter-btn.has-active-filter .filter-badge,
+    .blog-date-btn.has-active-filter .filter-badge {
       background: #ffffff;
       color: #0055fe;
     }
-    .blog-filter-btn.has-active-filter .filter-chevron {
+    .blog-filter-btn.has-active-filter .filter-chevron,
+    .blog-date-btn.has-active-filter .filter-chevron {
       color: #ffffff;
     }
-    .blog-filter-btn .filter-badge {
+    .blog-filter-btn .filter-badge,
+    .blog-date-btn .filter-badge {
       padding: 3px 10px;
       border-radius: 9999px;
       background: #eff6ff;
@@ -383,10 +388,12 @@
       font-weight: 700;
       transition: all 0.2s ease;
     }
-    .blog-filter-btn .filter-chevron {
+    .blog-filter-btn .filter-chevron,
+    .blog-date-btn .filter-chevron {
       transition: transform 0.25s ease;
     }
-    .blog-filter-btn.open .filter-chevron {
+    .blog-filter-btn.open .filter-chevron,
+    .blog-date-btn.open .filter-chevron {
       transform: rotate(180deg);
     }
     
@@ -640,6 +647,148 @@
     }
     .filter-apply-btn:hover {
       background: #0044cc;
+    }
+
+    /* Date Drawer Styling */
+    .date-drawer-card {
+      margin-top: 16px;
+      background: #ffffff;
+      border: 1.5px solid #e2e8f0;
+      border-radius: 20px;
+      padding: 24px;
+      box-shadow: 0 16px 40px rgba(15, 23, 42, 0.08);
+      animation: filterSlideDown 0.25s ease-out;
+    }
+    .date-section-title {
+      font-size: 12px;
+      font-weight: 700;
+      color: #64748b;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 10px;
+    }
+    .date-sort-pills, .date-presets-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .date-sort-pill, .date-preset-btn {
+      padding: 8px 16px;
+      border-radius: 9999px;
+      border: 1.5px solid #e2e8f0;
+      background: #ffffff;
+      color: #334155;
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: all 0.15s ease;
+      font-family: inherit;
+    }
+    .date-sort-pill:hover, .date-preset-btn:hover {
+      border-color: #93c5fd;
+      color: #0055fe;
+      background: #eff6ff;
+    }
+    .date-sort-pill.active, .date-preset-btn.active {
+      background: #0055fe;
+      color: #ffffff;
+      border-color: #0055fe;
+      box-shadow: 0 4px 12px rgba(0, 85, 254, 0.25);
+    }
+    .date-range-form {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+      background: #f8fafc;
+      padding: 16px;
+      border-radius: 14px;
+      border: 1px solid #e2e8f0;
+    }
+    .date-input-group {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .date-input-group label {
+      font-size: 13px;
+      font-weight: 600;
+      color: #475569;
+    }
+    .date-picker-input {
+      height: 40px;
+      padding: 0 12px;
+      border-radius: 10px;
+      border: 1.5px solid #cbd5e1;
+      background: #ffffff;
+      font-size: 13.5px;
+      color: #0f172a;
+      outline: none;
+      font-family: inherit;
+      transition: border-color 0.2s;
+    }
+    .date-picker-input:focus {
+      border-color: #0055fe;
+      box-shadow: 0 0 0 3px rgba(0, 85, 254, 0.1);
+    }
+    .apply-date-btn {
+      padding: 9px 18px;
+      border-radius: 10px;
+      background: #0055fe;
+      color: #ffffff;
+      border: none;
+      font-size: 13px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    .apply-date-btn:hover {
+      background: #0044cc;
+    }
+    .clear-date-range-btn {
+      padding: 8px 14px;
+      border-radius: 10px;
+      border: 1px solid #e2e8f0;
+      background: #ffffff;
+      color: #64748b;
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .clear-date-range-btn:hover {
+      background: #f1f5f9;
+      color: #0f172a;
+    }
+
+    @media (max-width: 640px) {
+      .blog-controls-bar {
+        gap: 8px;
+      }
+      .blog-search-wrap {
+        width: 100%;
+        min-width: 100%;
+      }
+      .blog-filter-btn, .blog-date-btn {
+        flex: 1;
+        justify-content: center;
+        padding: 0 10px;
+        font-size: 12.5px;
+        height: 48px;
+      }
+      .date-range-form {
+        flex-direction: column;
+        align-items: stretch;
+      }
+      .date-input-group {
+        justify-content: space-between;
+      }
+      .date-picker-input {
+        flex: 1;
+      }
     }
   </style>
 </head>
@@ -1006,12 +1155,27 @@
           <button type="button" id="clearMainSearchBtn" class="clear-search-btn" onclick="clearMainSearch()" aria-label="Clear search">&times;</button>
         </div>
 
+        <!-- Date Filter & Sort Trigger Button -->
+        <button type="button" id="dateFilterToggleBtn" class="blog-date-btn" onclick="toggleDateDrawer()" aria-expanded="false" aria-controls="dateDrawerCard">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+            <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+            <line x1="16" y1="2" x2="16" y2="6"></line>
+            <line x1="8" y1="2" x2="8" y2="6"></line>
+            <line x1="3" y1="10" x2="21" y1="10"></line>
+          </svg>
+          <span>Date</span>
+          <span id="activeDateBadge" class="filter-badge">Newest First</span>
+          <svg class="filter-chevron" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <polyline points="6 9 12 15 18 9"></polyline>
+          </svg>
+        </button>
+
         <!-- Filter Trigger Button -->
         <button type="button" id="filterToggleBtn" class="blog-filter-btn" onclick="toggleFilterDrawer()" aria-expanded="false" aria-controls="filterDrawerCard">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
             <polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"></polygon>
           </svg>
-          <span>Filters</span>
+          <span>Topics</span>
           <span id="activeFilterBadge" class="filter-badge">All Topics (180)</span>
           <svg class="filter-chevron" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
             <polyline points="6 9 12 15 18 9"></polyline>
@@ -1019,14 +1183,94 @@
         </button>
       </div>
 
-      <!-- Active Filter Banner (Visible when a specific category is chosen) -->
+      <!-- Active Filter Banner (Visible when a specific category or date is chosen) -->
       <div id="activeFilterBanner" class="active-filter-banner" style="display: none;">
         <div class="active-filter-info">
-          <span class="active-filter-label">Active Filter:</span>
-          <span id="activeFilterName" class="active-filter-pill"></span>
+          <span class="active-filter-label">Active Filters:</span>
+          <span id="activeFilterName" class="active-filter-pill" style="display: none;"></span>
+          <span id="activeDateFilterPill" class="active-filter-pill" style="display: none;"></span>
           <span id="activeFilterCount" class="active-filter-count"></span>
         </div>
-        <button type="button" class="clear-filter-btn" onclick="resetCategoryFilter()">Clear Filter &times;</button>
+        <button type="button" class="clear-filter-btn" onclick="resetAllFilters()">Reset All Filters &times;</button>
+      </div>
+
+      <!-- Date Filter & Sort Drawer Card -->
+      <div id="dateDrawerCard" class="date-drawer-card" style="display: none;">
+        <div class="filter-drawer-header">
+          <div>
+            <h3 class="filter-drawer-title">Filter &amp; Sort by Date</h3>
+            <p class="filter-drawer-subtitle">Showing articles from newest to oldest by default (Oct 2025 &ndash; Nov 2026)</p>
+          </div>
+          <div class="filter-drawer-actions">
+            <button type="button" class="filter-reset-btn" onclick="resetDateFilter()">Reset Date</button>
+            <button type="button" class="filter-close-btn" onclick="toggleDateDrawer()" aria-label="Close date filter">&times;</button>
+          </div>
+        </div>
+
+        <!-- Sort Direction Section -->
+        <div style="margin-bottom: 20px;">
+          <div class="date-section-title">Display Order</div>
+          <div class="date-sort-pills">
+            <button type="button" class="date-sort-pill active" id="sortNewestBtn" onclick="setSortOrder('newest')">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="7 13 12 18 17 13"></polyline><line x1="12" y1="6" x2="12" y2="18"></line></svg>
+              <span>Newest to Oldest (Default)</span>
+            </button>
+            <button type="button" class="date-sort-pill" id="sortOldestBtn" onclick="setSortOrder('oldest')">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="7 11 12 6 17 11"></polyline><line x1="12" y1="18" x2="12" y2="6"></line></svg>
+              <span>Oldest to Newest</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Quick Period Presets -->
+        <div style="margin-bottom: 20px;">
+          <div class="date-section-title">Filter by Year &amp; Timeline</div>
+          <div class="date-presets-grid" id="datePresetsGrid">
+            <button type="button" class="date-preset-btn active" data-date="all" onclick="setDatePreset('all')">
+              <span>All Dates</span> <span class="chip-count">(180)</span>
+            </button>
+            <button type="button" class="date-preset-btn" data-date="2026" onclick="setDatePreset('2026')">
+              <span>2026 Articles</span> <span class="chip-count">(142)</span>
+            </button>
+            <button type="button" class="date-preset-btn" data-date="2025" onclick="setDatePreset('2025')">
+              <span>2025 Articles</span> <span class="chip-count">(38)</span>
+            </button>
+            <button type="button" class="date-preset-btn" data-date="q4-2026" onclick="setDatePreset('q4-2026')">
+              <span>Q4 2026 (Recent)</span>
+            </button>
+            <button type="button" class="date-preset-btn" data-date="q3-2026" onclick="setDatePreset('q3-2026')">
+              <span>Q3 2026</span>
+            </button>
+            <button type="button" class="date-preset-btn" data-date="q2-2026" onclick="setDatePreset('q2-2026')">
+              <span>Q2 2026</span>
+            </button>
+            <button type="button" class="date-preset-btn" data-date="q1-2026" onclick="setDatePreset('q1-2026')">
+              <span>Q1 2026</span>
+            </button>
+            <button type="button" class="date-preset-btn" data-date="q4-2025" onclick="setDatePreset('q4-2025')">
+              <span>Q4 2025</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Custom Date Range Form -->
+        <div>
+          <div class="date-section-title">Pick Custom Date Range</div>
+          <div class="date-range-form">
+            <div class="date-input-group">
+              <label for="dateFilterFrom">From:</label>
+              <input type="date" id="dateFilterFrom" class="date-picker-input" min="2025-10-01" max="2026-11-07">
+            </div>
+            <div class="date-input-group">
+              <label for="dateFilterTo">To:</label>
+              <input type="date" id="dateFilterTo" class="date-picker-input" min="2025-10-01" max="2026-11-07">
+            </div>
+            <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+              <button type="button" class="apply-date-btn" onclick="applyCustomDateRange()">Apply Range</button>
+              <button type="button" class="clear-date-range-btn" onclick="resetDateFilter()">Reset</button>
+            </div>
+          </div>
+        </div>
       </div>
 
       <!-- Filter Drawer Card -->
@@ -1312,9 +1556,43 @@
     const activeFilterName = document.getElementById('activeFilterName');
     const activeFilterCount = document.getElementById('activeFilterCount');
 
-    // Toggle Filter Drawer
+    // Date Filtering & Sorting State
+    let sortOrder = 'newest'; // DEFAULT: Newest to Oldest
+    let dateFilterMode = 'all'; // 'all', '2026', '2025', 'q4-2026', 'q3-2026', 'q2-2026', 'q1-2026', 'q4-2025', 'custom'
+    let customDateFrom = null;
+    let customDateTo = null;
+
+    const dateFilterToggleBtn = document.getElementById('dateFilterToggleBtn');
+    const dateDrawerCard = document.getElementById('dateDrawerCard');
+    const activeDateBadge = document.getElementById('activeDateBadge');
+    const activeDateFilterPill = document.getElementById('activeDateFilterPill');
+    const dateFilterFromInput = document.getElementById('dateFilterFrom');
+    const dateFilterToInput = document.getElementById('dateFilterTo');
+    const sortNewestBtn = document.getElementById('sortNewestBtn');
+    const sortOldestBtn = document.getElementById('sortOldestBtn');
+    const datePresetsGrid = document.getElementById('datePresetsGrid');
+
+    // Toggle Date Drawer (mutually exclusive with Category Drawer)
+    window.toggleDateDrawer = function() {
+      const isClosed = dateDrawerCard.style.display === 'none';
+      if (isClosed) {
+        filterDrawerCard.style.display = 'none';
+        filterToggleBtn.classList.remove('open');
+        filterToggleBtn.setAttribute('aria-expanded', 'false');
+      }
+      dateDrawerCard.style.display = isClosed ? 'block' : 'none';
+      dateFilterToggleBtn.classList.toggle('open', isClosed);
+      dateFilterToggleBtn.setAttribute('aria-expanded', isClosed ? 'true' : 'false');
+    };
+
+    // Toggle Filter Drawer (mutually exclusive with Date Drawer)
     window.toggleFilterDrawer = function() {
       const isClosed = filterDrawerCard.style.display === 'none';
+      if (isClosed) {
+        dateDrawerCard.style.display = 'none';
+        dateFilterToggleBtn.classList.remove('open');
+        dateFilterToggleBtn.setAttribute('aria-expanded', 'false');
+      }
       filterDrawerCard.style.display = isClosed ? 'block' : 'none';
       filterToggleBtn.classList.toggle('open', isClosed);
       filterToggleBtn.setAttribute('aria-expanded', isClosed ? 'true' : 'false');
@@ -1322,6 +1600,179 @@
         setTimeout(() => filterCategorySearchInput.focus(), 100);
       }
     };
+
+    // Set Sort Order: 'newest' (default) or 'oldest'
+    window.setSortOrder = function(order) {
+      sortOrder = order;
+      if (sortNewestBtn) sortNewestBtn.classList.toggle('active', order === 'newest');
+      if (sortOldestBtn) sortOldestBtn.classList.toggle('active', order === 'oldest');
+      
+      updateDateBadge();
+      updateActiveFilterBanner();
+      currentPage = 1;
+      renderPosts();
+    };
+
+    // Set Quick Date Preset: 'all', '2026', '2025', 'q4-2026', etc.
+    window.setDatePreset = function(preset) {
+      dateFilterMode = preset;
+      customDateFrom = null;
+      customDateTo = null;
+      if (dateFilterFromInput) dateFilterFromInput.value = '';
+      if (dateFilterToInput) dateFilterToInput.value = '';
+
+      if (datePresetsGrid) {
+        const btns = datePresetsGrid.querySelectorAll('.date-preset-btn');
+        btns.forEach(b => b.classList.toggle('active', b.dataset.date === preset));
+      }
+
+      updateDateBadge();
+      updateActiveFilterBanner();
+      
+      dateDrawerCard.style.display = 'none';
+      dateFilterToggleBtn.classList.remove('open');
+      dateFilterToggleBtn.setAttribute('aria-expanded', 'false');
+
+      currentPage = 1;
+      renderPosts();
+
+      const articlesSec = document.getElementById('blogArticlesSection');
+      if (articlesSec) {
+        window.scrollTo({ top: articlesSec.offsetTop - 80, behavior: 'smooth' });
+      }
+    };
+
+    // Apply Custom Date Range
+    window.applyCustomDateRange = function() {
+      const fromVal = dateFilterFromInput ? dateFilterFromInput.value : '';
+      const toVal = dateFilterToInput ? dateFilterToInput.value : '';
+
+      if (!fromVal && !toVal) {
+        window.resetDateFilter();
+        return;
+      }
+
+      dateFilterMode = 'custom';
+      customDateFrom = fromVal || null;
+      customDateTo = toVal || null;
+
+      if (datePresetsGrid) {
+        const btns = datePresetsGrid.querySelectorAll('.date-preset-btn');
+        btns.forEach(b => b.classList.remove('active'));
+      }
+
+      updateDateBadge();
+      updateActiveFilterBanner();
+
+      dateDrawerCard.style.display = 'none';
+      dateFilterToggleBtn.classList.remove('open');
+      dateFilterToggleBtn.setAttribute('aria-expanded', 'false');
+
+      currentPage = 1;
+      renderPosts();
+
+      const articlesSec = document.getElementById('blogArticlesSection');
+      if (articlesSec) {
+        window.scrollTo({ top: articlesSec.offsetTop - 80, behavior: 'smooth' });
+      }
+    };
+
+    // Reset Date Filter
+    window.resetDateFilter = function() {
+      dateFilterMode = 'all';
+      customDateFrom = null;
+      customDateTo = null;
+      if (dateFilterFromInput) dateFilterFromInput.value = '';
+      if (dateFilterToInput) dateFilterToInput.value = '';
+
+      if (datePresetsGrid) {
+        const btns = datePresetsGrid.querySelectorAll('.date-preset-btn');
+        btns.forEach(b => b.classList.toggle('active', b.dataset.date === 'all'));
+      }
+
+      updateDateBadge();
+      updateActiveFilterBanner();
+      currentPage = 1;
+      renderPosts();
+    };
+
+    // Reset All Filters (both Category and Date)
+    window.resetAllFilters = function() {
+      currentCategory = 'all';
+      const chips = filterCategoryChipsGrid ? filterCategoryChipsGrid.querySelectorAll('.filter-chip-btn') : [];
+      chips.forEach(chip => chip.classList.toggle('active', chip.dataset.category === 'all'));
+      if (activeFilterBadge) activeFilterBadge.textContent = 'All Topics (180)';
+      if (filterToggleBtn) filterToggleBtn.classList.remove('has-active-filter');
+
+      window.resetDateFilter();
+    };
+
+    function updateDateBadge() {
+      if (!activeDateBadge || !dateFilterToggleBtn) return;
+      if (dateFilterMode === 'all') {
+        activeDateBadge.textContent = sortOrder === 'newest' ? 'Newest First' : 'Oldest First';
+        dateFilterToggleBtn.classList.remove('has-active-filter');
+      } else if (dateFilterMode === '2026') {
+        activeDateBadge.textContent = '2026 (142)';
+        dateFilterToggleBtn.classList.add('has-active-filter');
+      } else if (dateFilterMode === '2025') {
+        activeDateBadge.textContent = '2025 (38)';
+        dateFilterToggleBtn.classList.add('has-active-filter');
+      } else if (dateFilterMode === 'q4-2026') {
+        activeDateBadge.textContent = 'Q4 2026';
+        dateFilterToggleBtn.classList.add('has-active-filter');
+      } else if (dateFilterMode === 'q3-2026') {
+        activeDateBadge.textContent = 'Q3 2026';
+        dateFilterToggleBtn.classList.add('has-active-filter');
+      } else if (dateFilterMode === 'q2-2026') {
+        activeDateBadge.textContent = 'Q2 2026';
+        dateFilterToggleBtn.classList.add('has-active-filter');
+      } else if (dateFilterMode === 'q1-2026') {
+        activeDateBadge.textContent = 'Q1 2026';
+        dateFilterToggleBtn.classList.add('has-active-filter');
+      } else if (dateFilterMode === 'q4-2025') {
+        activeDateBadge.textContent = 'Q4 2025';
+        dateFilterToggleBtn.classList.add('has-active-filter');
+      } else if (dateFilterMode === 'custom') {
+        let label = 'Custom Range';
+        if (customDateFrom && customDateTo) label = customDateFrom + ' → ' + customDateTo;
+        else if (customDateFrom) label = 'From ' + customDateFrom;
+        else if (customDateTo) label = 'Until ' + customDateTo;
+        activeDateBadge.textContent = label;
+        dateFilterToggleBtn.classList.add('has-active-filter');
+      }
+    }
+
+    function updateActiveFilterBanner() {
+      if (!activeFilterBanner) return;
+      const hasCatFilter = currentCategory !== 'all';
+      const hasDateFilter = dateFilterMode !== 'all';
+
+      if (!hasCatFilter && !hasDateFilter) {
+        activeFilterBanner.style.display = 'none';
+        return;
+      }
+
+      activeFilterBanner.style.display = 'flex';
+      
+      if (activeFilterName) {
+        if (hasCatFilter) {
+          activeFilterName.style.display = 'inline-flex';
+          activeFilterName.innerHTML = 'Topic: ' + currentCategory + ' <span onclick="event.stopPropagation(); resetCategoryFilter();" style="cursor:pointer;margin-left:6px;font-weight:bold;line-height:1;">&times;</span>';
+        } else {
+          activeFilterName.style.display = 'none';
+        }
+      }
+
+      if (activeDateFilterPill) {
+        if (hasDateFilter) {
+          activeDateFilterPill.style.display = 'inline-flex';
+          activeDateFilterPill.innerHTML = 'Date: ' + activeDateBadge.textContent + ' <span onclick="event.stopPropagation(); resetDateFilter();" style="cursor:pointer;margin-left:6px;font-weight:bold;line-height:1;">&times;</span>';
+        } else {
+          activeDateFilterPill.style.display = 'none';
+        }
+      }
+    }
 
     // Filter Categories in the Drawer via search feature
     window.onFilterCategorySearch = function(query) {
@@ -1378,14 +1829,12 @@
       if (catSlug === 'all') {
         activeFilterBadge.textContent = 'All Topics (180)';
         filterToggleBtn.classList.remove('has-active-filter');
-        activeFilterBanner.style.display = 'none';
       } else {
         activeFilterBadge.textContent = catName + ' (' + catCount + ')';
         filterToggleBtn.classList.add('has-active-filter');
-        activeFilterName.textContent = catName;
-        activeFilterCount.textContent = '(' + catCount + ' articles)';
-        activeFilterBanner.style.display = 'flex';
       }
+
+      updateActiveFilterBanner();
 
       // Close drawer for fluid reading experience
       filterDrawerCard.style.display = 'none';
@@ -1433,13 +1882,62 @@
     };
 
     function getFilteredPosts() {
-      return ALL_POSTS.filter(post => {
+      const filtered = ALL_POSTS.filter(post => {
+        // 1. Category check
         const matchesCategory = currentCategory === 'all' || post.category === currentCategory;
+
+        // 2. Search check
         const matchesSearch = !currentSearch ||
           post.title.toLowerCase().includes(currentSearch) ||
           post.category.toLowerCase().includes(currentSearch);
-        return matchesCategory && matchesSearch;
+
+        // 3. Date check
+        let matchesDate = true;
+        const postTime = new Date(post.date).getTime();
+        const postYear = new Date(post.date).getFullYear();
+
+        if (dateFilterMode === '2026') {
+          matchesDate = (postYear === 2026);
+        } else if (dateFilterMode === '2025') {
+          matchesDate = (postYear === 2025);
+        } else if (dateFilterMode === 'q4-2026') {
+          matchesDate = postTime >= new Date('2026-10-01').getTime() && postTime <= new Date('2026-12-31T23:59:59').getTime();
+        } else if (dateFilterMode === 'q3-2026') {
+          matchesDate = postTime >= new Date('2026-07-01').getTime() && postTime <= new Date('2026-09-30T23:59:59').getTime();
+        } else if (dateFilterMode === 'q2-2026') {
+          matchesDate = postTime >= new Date('2026-04-01').getTime() && postTime <= new Date('2026-06-30T23:59:59').getTime();
+        } else if (dateFilterMode === 'q1-2026') {
+          matchesDate = postTime >= new Date('2026-01-01').getTime() && postTime <= new Date('2026-03-31T23:59:59').getTime();
+        } else if (dateFilterMode === 'q4-2025') {
+          matchesDate = postTime >= new Date('2025-10-01').getTime() && postTime <= new Date('2025-12-31T23:59:59').getTime();
+        } else if (dateFilterMode === 'custom') {
+          if (customDateFrom) {
+            const fromTime = new Date(customDateFrom + 'T00:00:00').getTime();
+            if (postTime < fromTime) matchesDate = false;
+          }
+          if (customDateTo) {
+            const toTime = new Date(customDateTo + 'T23:59:59').getTime();
+            if (postTime > toTime) matchesDate = false;
+          }
+        }
+
+        return matchesCategory && matchesSearch && matchesDate;
       });
+
+      // Sort by date: Newest to Oldest (default) or Oldest to Newest
+      filtered.sort((a, b) => {
+        const timeA = new Date(a.date).getTime();
+        const timeB = new Date(b.date).getTime();
+        if (sortOrder === 'newest') {
+          if (timeB !== timeA) return timeB - timeA;
+          return b.id - a.id;
+        } else {
+          if (timeA !== timeB) return timeA - timeB;
+          return a.id - b.id;
+        }
+      });
+
+      return filtered;
     }
 
     const THEME_DATA = {
@@ -1577,7 +2075,11 @@
 
     function renderPosts() {
       const filtered = getFilteredPosts();
-      countLabel.textContent = 'Showing ' + filtered.length + ' of ' + ALL_POSTS.length + ' articles';
+      countLabel.textContent = 'Showing ' + filtered.length + ' of ' + ALL_POSTS.length + ' articles' + (sortOrder === 'newest' ? ' (Newest First)' : ' (Oldest First)');
+
+      if (activeFilterCount) {
+        activeFilterCount.textContent = '(' + filtered.length + ' articles found)';
+      }
 
       const totalPages = Math.ceil(filtered.length / POSTS_PER_PAGE) || 1;
       if (currentPage > totalPages) currentPage = 1;
@@ -1586,7 +2088,7 @@
       const paginated = filtered.slice(startIdx, startIdx + POSTS_PER_PAGE);
 
       if (paginated.length === 0) {
-        grid.innerHTML = '<div style="grid-column: 1 / -1; text-align: center; padding: 48px; background: #ffffff; border: 1.5px solid #e2e8f0; border-radius: 16px;"><p style="font-size: 16px; color: #64748b; margin: 0 0 12px 0;">No articles found matching your criteria.</p><button onclick="resetCategoryFilter(); clearMainSearch();" style="padding: 8px 18px; border-radius: 8px; background: #0055fe; color: #fff; border: none; cursor: pointer; font-weight: 600;">Reset Filters & Search</button></div>';
+        grid.innerHTML = '<div style="grid-column: 1 / -1; text-align: center; padding: 48px; background: #ffffff; border: 1.5px solid #e2e8f0; border-radius: 16px;"><p style="font-size: 16px; color: #64748b; margin: 0 0 12px 0;">No articles found matching your criteria.</p><button onclick="resetAllFilters(); clearMainSearch();" style="padding: 8px 18px; border-radius: 8px; background: #0055fe; color: #fff; border: none; cursor: pointer; font-weight: 600;">Reset Filters & Search</button></div>';
         pagination.innerHTML = '';
         return;
       }
