@@ -27,9 +27,9 @@ Coralgenz Global is founded and steered by software architects and systems engin
 - **Specializations**: Post-Quantum Cryptography, Zero-Knowledge AEAD architectures, High-Scale Cloud Distributed Systems, Design Systems.
 - **Profile URL**: https://coralgenz.net/karthick-krishna
 
-### Thanvanth H — Co-Founder & Chief Operating Officer (COO)
+### Thanvanth H — Chief Operating Officer (COO)
 - **Role**: Chief Operating Officer, Operations Director & Frontend Engineering Lead.
-- **Biography**: Co-founder directing global client operations, agile sprint velocity, engineering delivery quality, and modern frontend application development.
+- **Biography**: Chief Operating Officer directing global client operations, agile sprint velocity, engineering delivery quality, and modern frontend application development.
 - **Specializations**: High-Performance Web Applications, Core Web Vitals Optimization, Agile Operations, Client Success Architecture.
 - **Profile URL**: https://coralgenz.net/thanvanth-h
 

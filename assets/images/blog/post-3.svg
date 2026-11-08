@@ -21,9 +21,9 @@
     <text x="0" y="85" font-family="'Inter', sans-serif" font-size="12" font-weight="800" fill="#9c24f2" letter-spacing="2.5">BORN IN COIMBATORE. ARCHITECTED FOR THE WORLD.</text>
 
     <!-- Main Title -->
-    <text x="0" y="150" font-family="'Satoshi', 'Inter', sans-serif" font-size="36" font-weight="900" fill="#ffffff" letter-spacing="-0.02em">Meet the Founders: How</text>
-    <text x="0" y="198" font-family="'Satoshi', 'Inter', sans-serif" font-size="34" font-weight="900" fill="#d5a2f9">Karthick Krishna M S and</text>
-    <text x="0" y="74" font-family="Satoshi, Inter, sans-serif" font-size="24" font-weight="800" fill="#cbd5e1" text-anchor="middle">Thanvanth...</text>
+    <text x="0" y="150" font-family="'Satoshi', 'Inter', sans-serif" font-size="36" font-weight="900" fill="#ffffff" letter-spacing="-0.02em">Meet the Leadership: How</text>
+    <text x="0" y="198" font-family="'Satoshi', 'Inter', sans-serif" font-size="34" font-weight="900" fill="#d5a2f9">Founder Karthick Krishna M S</text>
+    <text x="0" y="74" font-family="Satoshi, Inter, sans-serif" font-size="24" font-weight="800" fill="#cbd5e1" text-anchor="middle">and...</text>
 
     <!-- Rating & Date Tag -->
     <g transform="translate(0, 310)">

@@ -52,7 +52,7 @@
   <!-- Lower Right Movie Billing Block -->
   <g transform="translate(1140, 560)">
     <text x="0" y="0" font-family="'Inter', sans-serif" font-size="12" font-weight="700" fill="#f59e0b" text-anchor="end">★★★★★ 4.9 · AUDIENCE CHOICE</text>
-    <text x="0" y="24" font-family="'Inter', sans-serif" font-size="9" font-weight="700" fill="#64748b" text-anchor="end">CORALGENZ GLOBAL STUDIOS · KARTHICK KRISHNA &amp; THANVANTH H</text>
+    <text x="0" y="24" font-family="'Inter', sans-serif" font-size="9" font-weight="700" fill="#64748b" text-anchor="end">CORALGENZ GLOBAL STUDIOS · KARTHICK KRISHNA (FOUNDER) · THANVANTH H (COO)</text>
     <text x="0" y="38" font-family="'Inter', sans-serif" font-size="8.5" font-weight="600" fill="#475569" text-anchor="end">100% CODE OWNERSHIP · ZERO LOCK-IN · COIMBATORE &amp; CHENNAI</text>
   </g>
 </svg>

@@ -2,46 +2,200 @@
   "cleanUrls": true,
   "trailingSlash": false,
   "redirects": [
-    { "source": "/home", "destination": "/", "permanent": true },
-    { "source": "/services", "destination": "/our-services", "permanent": true },
-    { "source": "/products", "destination": "/our-products", "permanent": true },
-    { "source": "/highlights", "destination": "/our-highlights", "permanent": true },
-    { "source": "/vault", "destination": "/coralgenz-vault", "permanent": true },
-    { "source": "/compiler", "destination": "/coralgenz-compiler", "permanent": true },
-    { "source": "/qr", "destination": "/coralgenz-qr", "permanent": true },
-    { "source": "/know-more", "destination": "/about-us", "permanent": true },
-    { "source": "/about", "destination": "/about-us", "permanent": true },
-    { "source": "/founder", "destination": "/karthick-krishna", "permanent": true },
-    { "source": "/ceo", "destination": "/karthick-krishna", "permanent": true },
-    { "source": "/coo", "destination": "/thanvanth-h", "permanent": true },
-    { "source": "/cto", "destination": "/sharveshwaran-r", "permanent": true },
-    { "source": "/internship", "destination": "/contact", "permanent": true },
-    { "source": "/internships", "destination": "/contact", "permanent": true },
-    { "source": "/careers", "destination": "/contact", "permanent": true },
-    { "source": "/jobs", "destination": "/contact", "permanent": true },
-    { "source": "/startups", "destination": "/partnered-startups", "permanent": true },
-    { "source": "/partnered", "destination": "/partnered-startups", "permanent": true },
-    { "source": "/zevionix", "destination": "/partnered-startups", "permanent": true },
-    { "source": "/zorquelz", "destination": "/partnered-startups", "permanent": true },
-    { "source": "/ur-services", "destination": "/our-services", "permanent": true },
-    { "source": "/ur-services/:match*", "destination": "/our-services/:match*", "permanent": true },
-    { "source": "/ur-products", "destination": "/our-products", "permanent": true },
-    { "source": "/ur-highlights", "destination": "/our-highlights", "permanent": true },
-    { "source": "/ur-highlights/:match*", "destination": "/our-highlights/:match*", "permanent": true },
-    { "source": "/ratings", "destination": "/rate-us", "permanent": true },
-    { "source": "/blogs", "destination": "/blog", "permanent": true },
-    { "source": "/articles", "destination": "/blog", "permanent": true },
-    { "source": "/posts", "destination": "/blog", "permanent": true }
+    {
+      "source": "/home",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/services",
+      "destination": "/our-services",
+      "permanent": true
+    },
+    {
+      "source": "/products",
+      "destination": "/our-products",
+      "permanent": true
+    },
+    {
+      "source": "/highlights",
+      "destination": "/our-highlights",
+      "permanent": true
+    },
+    {
+      "source": "/vault",
+      "destination": "/coralgenz-vault",
+      "permanent": true
+    },
+    {
+      "source": "/compiler",
+      "destination": "/coralgenz-compiler",
+      "permanent": true
+    },
+    {
+      "source": "/qr",
+      "destination": "/coralgenz-qr",
+      "permanent": true
+    },
+    {
+      "source": "/know-more",
+      "destination": "/about-us",
+      "permanent": true
+    },
+    {
+      "source": "/about",
+      "destination": "/about-us",
+      "permanent": true
+    },
+    {
+      "source": "/founder",
+      "destination": "/karthick-krishna",
+      "permanent": true
+    },
+    {
+      "source": "/ceo",
+      "destination": "/karthick-krishna",
+      "permanent": true
+    },
+    {
+      "source": "/coo",
+      "destination": "/thanvanth-h",
+      "permanent": true
+    },
+    {
+      "source": "/cto",
+      "destination": "/sharveshwaran-r",
+      "permanent": true
+    },
+    {
+      "source": "/internship",
+      "destination": "/contact",
+      "permanent": true
+    },
+    {
+      "source": "/internships",
+      "destination": "/contact",
+      "permanent": true
+    },
+    {
+      "source": "/careers",
+      "destination": "/contact",
+      "permanent": true
+    },
+    {
+      "source": "/jobs",
+      "destination": "/contact",
+      "permanent": true
+    },
+    {
+      "source": "/startups",
+      "destination": "/partnered-startups",
+      "permanent": true
+    },
+    {
+      "source": "/partnered",
+      "destination": "/partnered-startups",
+      "permanent": true
+    },
+    {
+      "source": "/zevionix",
+      "destination": "/partnered-startups",
+      "permanent": true
+    },
+    {
+      "source": "/zorquelz",
+      "destination": "/partnered-startups",
+      "permanent": true
+    },
+    {
+      "source": "/ur-services",
+      "destination": "/our-services",
+      "permanent": true
+    },
+    {
+      "source": "/ur-services/:match*",
+      "destination": "/our-services/:match*",
+      "permanent": true
+    },
+    {
+      "source": "/ur-products",
+      "destination": "/our-products",
+      "permanent": true
+    },
+    {
+      "source": "/ur-highlights",
+      "destination": "/our-highlights",
+      "permanent": true
+    },
+    {
+      "source": "/ur-highlights/:match*",
+      "destination": "/our-highlights/:match*",
+      "permanent": true
+    },
+    {
+      "source": "/ratings",
+      "destination": "/rate-us",
+      "permanent": true
+    },
+    {
+      "source": "/blogs",
+      "destination": "/blog",
+      "permanent": true
+    },
+    {
+      "source": "/articles",
+      "destination": "/blog",
+      "permanent": true
+    },
+    {
+      "source": "/posts",
+      "destination": "/blog",
+      "permanent": true
+    },
+    {
+      "source": "/blog/meet-the-founders-how-karthick-krishna-m-s-and",
+      "destination": "/blog/meet-the-leadership-how-founder-karthick-krishna-m-s",
+      "permanent": true
+    },
+    {
+      "source": "/blog/meet-the-founders-how-karthick-krishna-m-s-and.html",
+      "destination": "/blog/meet-the-leadership-how-founder-karthick-krishna-m-s",
+      "permanent": true
+    }
   ],
   "rewrites": [
-    { "source": "/rate", "destination": "/rate/index.html" },
-    { "source": "/rate/", "destination": "/rate/index.html" },
-    { "source": "/rate/review/:id", "destination": "/rate/index.html" },
-    { "source": "/rate-us/review/:id", "destination": "/rate/index.html" },
-    { "source": "/review/:id", "destination": "/rate/index.html" },
-    { "source": "/rate/category/:category", "destination": "/rate/index.html" },
-    { "source": "/rate/sitemap(.*)\\.xml", "destination": "/rate/sitemap$1.xml" },
-    { "source": "/rate/robots.txt", "destination": "/rate/robots.txt" }
+    {
+      "source": "/rate",
+      "destination": "/rate/index.html"
+    },
+    {
+      "source": "/rate/",
+      "destination": "/rate/index.html"
+    },
+    {
+      "source": "/rate/review/:id",
+      "destination": "/rate/index.html"
+    },
+    {
+      "source": "/rate-us/review/:id",
+      "destination": "/rate/index.html"
+    },
+    {
+      "source": "/review/:id",
+      "destination": "/rate/index.html"
+    },
+    {
+      "source": "/rate/category/:category",
+      "destination": "/rate/index.html"
+    },
+    {
+      "source": "/rate/sitemap(.*)\\.xml",
+      "destination": "/rate/sitemap$1.xml"
+    },
+    {
+      "source": "/rate/robots.txt",
+      "destination": "/rate/robots.txt"
+    }
   ],
   "headers": [
     {

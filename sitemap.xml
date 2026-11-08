@@ -505,8 +505,8 @@
     </image:image>
     <image:image>
       <image:loc>https://coralgenz.net/assets/images/kmUbbqN7jwVRUVuglgbqRYXOtY.png</image:loc>
-      <image:title>Thanvanth H - Co-Founder and Chief Operating Officer</image:title>
-      <image:caption>Co-Founder &amp; COO of Coralgenz Global managing enterprise delivery</image:caption>
+      <image:title>Thanvanth H - Chief Operating Officer (COO)</image:title>
+      <image:caption>Chief Operating Officer (COO) of Coralgenz Global managing enterprise delivery</image:caption>
       <image:geo_location>Coimbatore, Tamil Nadu, India</image:geo_location>
       <image:license>https://coralgenz.net/</image:license>
     </image:image>
@@ -531,8 +531,8 @@
     <priority>0.80</priority>
     <image:image>
       <image:loc>https://coralgenz.net/assets/images/kmUbbqN7jwVRUVuglgbqRYXOtY.png</image:loc>
-      <image:title>Thanvanth H - Co-Founder and Chief Operating Officer</image:title>
-      <image:caption>Official profile of Thanvanth H, Co-Founder &amp; COO of Coralgenz Global</image:caption>
+      <image:title>Thanvanth H - Chief Operating Officer (COO)</image:title>
+      <image:caption>Official profile of Thanvanth H, Chief Operating Officer (COO) of Coralgenz Global</image:caption>
       <image:geo_location>Coimbatore, Tamil Nadu, India</image:geo_location>
       <image:license>https://coralgenz.net/</image:license>
     </image:image>
@@ -1832,6 +1832,12 @@
   <url>
     <loc>https://coralgenz.net/blog/ready-to-grow-your-business-how-to-start-your</loc>
     <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://coralgenz.net/blog/meet-the-leadership-how-founder-karthick-krishna-m-s</loc>
+    <lastmod>2025-10-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>

@@ -9,7 +9,7 @@ For the exhaustive technical specification, cryptographic proofs, leadership dos
 - [About Coralgenz Global](https://coralgenz.net/about-us): Corporate profile, history, mission, technology certifications, and engineering values.
 - [Executive Team](https://coralgenz.net/team): Executive directory and software architects behind Coralgenz Global.
 - [Karthick Krishna (CEO & Founder)](https://coralgenz.net/karthick-krishna): Lead Solutions Architect, cryptographic researcher, and inventor of the .secure format.
-- [Thanvanth H (COO & Co-Founder)](https://coralgenz.net/thanvanth-h): Operations Director, agile engineering lead, and frontend specialist.
+- [Thanvanth H (Chief Operating Officer (COO))](https://coralgenz.net/thanvanth-h): Operations Director, agile engineering lead, and frontend specialist.
 - [Sharveshwaran R (CTO)](https://coralgenz.net/sharveshwaran-r): Chief Technology Officer and principal cloud distributed systems architect.
 
 ## Proprietary Products & Inventions

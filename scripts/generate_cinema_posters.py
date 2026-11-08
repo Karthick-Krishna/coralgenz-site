@@ -287,7 +287,7 @@ def build_layout_monolith(p_id, date, title, category, palette, tagline, graphic
   <!-- Cinema Movie Credits Billing Block -->
   <g transform="translate(600, 605)">
     <text x="0" y="0" font-family="'Inter', sans-serif" font-size="11.5" font-weight="700" fill="#f59e0b" letter-spacing="2" text-anchor="middle">★★★★★ 4.9 AUDIENCE RATING · (VERIFIED REVIEWS)</text>
-    <text x="0" y="20" font-family="'Inter', sans-serif" font-size="9" font-weight="700" fill="#64748b" letter-spacing="1.5" text-anchor="middle">A CORALGENZ GLOBAL PRODUCTION · DIRECTED BY KARTHICK KRISHNA &amp; THANVANTH H · ARCHITECTURE BY SENIOR CLOUD ENGINEERS</text>
+    <text x="0" y="20" font-family="'Inter', sans-serif" font-size="9" font-weight="700" fill="#64748b" letter-spacing="1.5" text-anchor="middle">A CORALGENZ GLOBAL PRODUCTION · KARTHICK KRISHNA (FOUNDER &amp; CEO) &amp; THANVANTH H (COO) · SENIOR CLOUD ARCHITECTS</text>
     <text x="0" y="33" font-family="'Inter', sans-serif" font-size="8.5" font-weight="600" fill="#475569" letter-spacing="1.2" text-anchor="middle">COIMBATORE &amp; CHENNAI STUDIOS · 100% INTELLECTUAL PROPERTY GUARANTEE · ZERO VENDOR LOCK-IN</text>
   </g>
 
@@ -349,7 +349,7 @@ def build_layout_split_horizon(p_id, date, title, category, palette, tagline, gr
   <!-- Lower Right Movie Billing Block -->
   <g transform="translate(1140, 560)">
     <text x="0" y="0" font-family="'Inter', sans-serif" font-size="12" font-weight="700" fill="#f59e0b" text-anchor="end">★★★★★ 4.9 · AUDIENCE CHOICE</text>
-    <text x="0" y="24" font-family="'Inter', sans-serif" font-size="9" font-weight="700" fill="#64748b" text-anchor="end">CORALGENZ GLOBAL STUDIOS · KARTHICK KRISHNA &amp; THANVANTH H</text>
+    <text x="0" y="24" font-family="'Inter', sans-serif" font-size="9" font-weight="700" fill="#64748b" text-anchor="end">CORALGENZ GLOBAL STUDIOS · KARTHICK KRISHNA (FOUNDER) · THANVANTH H (COO)</text>
     <text x="0" y="38" font-family="'Inter', sans-serif" font-size="8.5" font-weight="600" fill="#475569" text-anchor="end">100% CODE OWNERSHIP · ZERO LOCK-IN · COIMBATORE &amp; CHENNAI</text>
   </g>
 </svg>"""
@@ -499,7 +499,7 @@ def build_layout_warp_tunnel(p_id, date, title, category, palette, tagline, grap
   <!-- Bottom Cinema Credits -->
   <g transform="translate(600, 605)">
     <text x="0" y="0" font-family="'Inter', sans-serif" font-size="11.5" font-weight="700" fill="#f59e0b" letter-spacing="1.5" text-anchor="middle">★★★★★ 4.9 AUDIENCE RATING · ARTICLE #{p_id}</text>
-    <text x="0" y="20" font-family="'Inter', sans-serif" font-size="9" font-weight="700" fill="#64748b" letter-spacing="1.2" text-anchor="middle">A CORALGENZ GLOBAL PRODUCTION · KARTHICK KRISHNA &amp; THANVANTH H · COIMBATORE &amp; CHENNAI</text>
+    <text x="0" y="20" font-family="'Inter', sans-serif" font-size="9" font-weight="700" fill="#64748b" letter-spacing="1.2" text-anchor="middle">A CORALGENZ GLOBAL PRODUCTION · KARTHICK KRISHNA (FOUNDER &amp; CEO) · THANVANTH H (COO) · COIMBATORE &amp; CHENNAI</text>
   </g>
 </svg>"""
 
@@ -552,7 +552,7 @@ def build_layout_letterbox(p_id, date, title, category, palette, tagline, graphi
   <line x1="0" y1="605" x2="1200" y2="605" stroke="#f59e0b" stroke-width="1.5" opacity="0.6"/>
   <g transform="translate(600, 630)">
     <text x="0" y="0" font-family="'Inter', sans-serif" font-size="11" font-weight="700" fill="#f59e0b" letter-spacing="2" text-anchor="middle">★★★★★ 4.9 AUDIENCE RATING · (VERIFIED REVIEWS)</text>
-    <text x="0" y="18" font-family="'Inter', sans-serif" font-size="8.5" font-weight="700" fill="#64748b" letter-spacing="1.2" text-anchor="middle">CORALGENZ GLOBAL STUDIOS · DIRECTED BY KARTHICK KRISHNA &amp; THANVANTH H · 100% CODE OWNERSHIP</text>
+    <text x="0" y="18" font-family="'Inter', sans-serif" font-size="8.5" font-weight="700" fill="#64748b" letter-spacing="1.2" text-anchor="middle">CORALGENZ GLOBAL STUDIOS · KARTHICK KRISHNA (FOUNDER) · THANVANTH H (COO) · 100% CODE OWNERSHIP</text>
   </g>
 </svg>"""
 

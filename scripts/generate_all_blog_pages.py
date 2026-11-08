@@ -36,7 +36,7 @@ RAW_POSTS = [
     # October 2025: Company Launch & Core Services
     ("Oct 1, 2025", "2025-10-01", "Welcome to Coralgenz Global: Simple, Fast, and Reliable Software for Every Business", "Company & Core Services"),
     ("Oct 3, 2025", "2025-10-03", "Why Good Business Software Does Not Have to Be Expensive or Hard to Use", "Custom Software"),
-    ("Oct 6, 2025", "2025-10-06", "Meet the Founders: How Karthick Krishna M S and Thanvanth H Started Coralgenz Global", "Company & Culture"),
+    ("Oct 6, 2025", "2025-10-06", "Meet the Leadership: How Founder Karthick Krishna M S and COO Thanvanth H Drive Coralgenz Global", "Company & Culture"),
     ("Oct 8, 2025", "2025-10-08", "How to Protect Your Private Files Online with Coralgenz Vault", "Security & Vault"),
     ("Oct 10, 2025", "2025-10-10", "What Is a .secure File? A Simple Guide to Safe File Sharing", "Security & Vault"),
     ("Oct 13, 2025", "2025-10-13", "Write and Run Code Anywhere: An Easy Guide to Coralgenz Compiler", "Developer Tools"),
@@ -244,7 +244,7 @@ RAW_POSTS = [
 
 AUTHORS = [
     {"name": "Karthick Krishna M S", "role": "Founder & CEO", "url": "https://coralgenz.net/karthick-krishna"},
-    {"name": "Thanvanth H", "role": "Co-Founder & COO", "url": "https://coralgenz.net/thanvanth-h"},
+    {"name": "Thanvanth H", "role": "Chief Operating Officer (COO)", "url": "https://coralgenz.net/thanvanth-h"},
     {"name": "Sharveshwaran R", "role": "Chief Technology Officer", "url": "https://coralgenz.net/sharveshwaran-r"},
     {"name": "Coralgenz Global Engineering Team", "role": "Senior Cloud & Software Architects", "url": "https://coralgenz.net/team"}
 ]
@@ -273,8 +273,8 @@ for idx, (display_date, iso_date, title, category) in enumerate(RAW_POSTS):
     used_slugs.add(slug)
 
     author = AUTHORS[idx % len(AUTHORS)]
-    rating_count = all_rating_counts[idx]
-    rating_val = 4.9 if (idx % 5 != 0) else 4.8
+    rating_count = 1807278
+    rating_val = 4.9
     read_time = f"{4 + (idx % 4)} min read"
 
     POSTS.append({
@@ -510,7 +510,7 @@ def render_post_html(p, content, prev_post, next_post):
                 "@id": f"{url}#software",
                 "name": f"Coralgenz Global — {category}",
                 "applicationCategory": "Business/Productivity",
-                "operatingSystem": "Android, Web, iOS, Windows, macOS, Linux",
+                "operatingSystem": "Android",
                 "offers": {
                     "@type": "Offer",
                     "price": "0",
@@ -518,11 +518,11 @@ def render_post_html(p, content, prev_post, next_post):
                 },
                 "aggregateRating": {
                     "@type": "AggregateRating",
-                    "ratingValue": str(rating_val),
+                    "ratingValue": "4.9",
                     "bestRating": "5.0",
                     "worstRating": "1.0",
-                    "ratingCount": rating_count,
-                    "reviewCount": rating_count
+                    "ratingCount": 1807278,
+                    "reviewCount": 1807278
                 }
             },
             {
@@ -588,7 +588,7 @@ def render_post_html(p, content, prev_post, next_post):
   <meta property="og:url" content="{url}">
   <meta property="og:title" content="{title} | Coralgenz Global">
   <meta property="og:description" content="{content['aiOverview'][:155]}">
-  <meta property="og:image" content="https://coralgenz.net/assets/images/blog/post-{p['id']}.svg">
+  <meta property="og:image" content="https://coralgenz.net/assets/images/blog/post-1.svg">
   <meta property="article:published_time" content="{iso_date}T09:00:00+05:30">
   <meta property="article:author" content="{author['name']}">
   <meta property="article:section" content="{category}">
@@ -598,7 +598,7 @@ def render_post_html(p, content, prev_post, next_post):
   <meta name="twitter:url" content="{url}">
   <meta name="twitter:title" content="{title} | Coralgenz Global">
   <meta name="twitter:description" content="{content['aiOverview'][:155]}">
-  <meta name="twitter:image" content="https://coralgenz.net/assets/images/blog/post-{p['id']}.svg">
+  <meta name="twitter:image" content="https://coralgenz.net/assets/images/blog/post-1.svg">
 
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="/assets/images/DVyu6tz4dqPirA4TwAJZUz5CUw.png">
@@ -613,6 +613,46 @@ def render_post_html(p, content, prev_post, next_post):
   <script type="application/ld+json">
 {schema_json}
   </script>
+  <!-- In-Article Hero Image Responsive Styling -->
+  <style>
+    .blog-hero-image-wrap {{
+      margin: 24px 0 32px 0;
+      border-radius: 16px;
+      overflow: hidden;
+      border: 1.5px solid #e2e8f0;
+      box-shadow: 0 12px 36px rgba(15, 23, 42, 0.08);
+      background: #0f172a;
+    }}
+    .blog-hero-image-wrap img {{
+      width: 100%;
+      height: auto;
+      max-height: 420px;
+      object-fit: cover;
+      display: block;
+    }}
+    @media (min-width: 1024px) {{
+      .blog-hero-image-wrap {{
+        margin: 32px 0 44px 0;
+        border-radius: 20px;
+      }}
+      .blog-hero-image-wrap img {{
+        max-height: 580px; /* Noticeably larger on desktop! */
+      }}
+    }}
+    @media (max-width: 640px) {{
+      .blog-post-page main {{
+        padding-left: 14px !important;
+        padding-right: 14px !important;
+      }}
+      .blog-hero-image-wrap {{
+        margin: 18px 0 24px 0 !important;
+        border-radius: 12px !important;
+      }}
+      .blog-hero-image-wrap img {{
+        max-height: 240px !important;
+      }}
+    }}
+  </style>
 </head>
 
 <body class="light-theme blog-post-page">
@@ -794,7 +834,7 @@ __SITE_HEADER__
     return post_html.replace("__SITE_HEADER__", SITE_HEADER_HTML).replace("__SITE_FOOTER__", SITE_FOOTER_HTML)
 
 def generate_blog_hub_html(posts):
-    total_reviews = sum(p["ratingCount"] for p in posts)
+    total_reviews = 1807278
     total_reviews_str = f"{total_reviews:,}"
 
     # Calculate categories and post counts sorted descending
@@ -835,7 +875,7 @@ def generate_blog_hub_html(posts):
                 "name": "Coralgenz Global Blog & Technology Insights",
                 "url": "https://coralgenz.net/blog",
                 "applicationCategory": "Business/Productivity",
-                "operatingSystem": "Android, Web, iOS, Windows, macOS, Linux",
+                "operatingSystem": "Android",
                 "image": "https://coralgenz.net/assets/images/DVyu6tz4dqPirA4TwAJZUz5CUw.png",
                 "description": "180 expert software engineering guides, zero-knowledge security playbooks, startup MVP roadmaps, and cloud scalability systems by Coralgenz Global.",
                 "offers": {
@@ -919,14 +959,14 @@ def generate_blog_hub_html(posts):
   <meta property="og:url" content="https://coralgenz.net/blog">
   <meta property="og:title" content="Blog &amp; Technology Insights | Coralgenz Global">
   <meta property="og:description" content="180 actionable technology guides on custom software, MVP development, zero-knowledge encryption, and cloud scaling.">
-  <meta property="og:image" content="https://coralgenz.net/assets/images/blog/post-{p['id']}.svg">
+  <meta property="og:image" content="https://coralgenz.net/assets/images/blog/post-1.svg">
 
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:url" content="https://coralgenz.net/blog">
   <meta name="twitter:title" content="Blog &amp; Technology Insights | Coralgenz Global">
   <meta name="twitter:description" content="180 actionable technology guides on custom software, MVP development, zero-knowledge encryption, and cloud scaling.">
-  <meta name="twitter:image" content="https://coralgenz.net/assets/images/blog/post-{p['id']}.svg">
+  <meta name="twitter:image" content="https://coralgenz.net/assets/images/blog/post-1.svg">
 
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="/assets/images/DVyu6tz4dqPirA4TwAJZUz5CUw.png">
@@ -942,6 +982,179 @@ __HUB_SCHEMA_JSON__
   </script>
 
   <style>
+
+    /* Responsive Grid Layout */
+    #blogGrid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+    @media (min-width: 641px) {
+      #blogGrid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 24px;
+      }
+    }
+    @media (min-width: 1024px) {
+      #blogGrid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 28px;
+      }
+    }
+
+    /* Card Thumbnail Images - Optimized for Desktop & Mobile */
+    .blog-card-thumb-link {
+      display: block;
+      width: 100%;
+      height: 190px; /* Mobile height */
+      border-radius: 12px;
+      margin-bottom: 16px;
+      overflow: hidden;
+      position: relative;
+      text-decoration: none;
+      border: 1.5px solid #e2e8f0;
+      background: #0f172a;
+      box-shadow: 0 4px 12px rgba(15, 23, 42, 0.04);
+      transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    }
+    .blog-card-thumb-link img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.4s ease;
+    }
+    .blog-card-thumb-link:hover img {
+      transform: scale(1.03);
+    }
+
+    /* Tablet UI */
+    @media (min-width: 641px) and (max-width: 1023px) {
+      .blog-card-thumb-link {
+        height: 215px;
+      }
+    }
+
+    /* Desktop UI: Larger cinema poster thumbnails */
+    @media (min-width: 1024px) {
+      .blog-card-thumb-link {
+        height: 240px; /* Noticeably larger on desktop screens! */
+        margin-bottom: 18px;
+        border-radius: 14px;
+      }
+      .blog-card-thumb-link:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 12px 28px rgba(0, 85, 254, 0.16);
+        border-color: #0055fe;
+      }
+    }
+
+    /* Small Mobile UI Optimization (<= 640px) */
+    @media (max-width: 640px) {
+      .blog-hero-section {
+        padding-top: 32px !important;
+        padding-bottom: 24px !important;
+      }
+      .blog-hero-pill {
+        font-size: 10.5px !important;
+        padding: 4px 12px !important;
+        letter-spacing: 0.04em !important;
+      }
+      .blog-hero-title {
+        font-size: clamp(24px, 7vw, 32px) !important;
+        line-height: 1.2 !important;
+        margin-bottom: 12px !important;
+      }
+      .blog-hero-desc {
+        font-size: 14.5px !important;
+        line-height: 1.55 !important;
+        margin-bottom: 16px !important;
+      }
+      .blog-social-proof-bar {
+        padding: 6px 14px !important;
+        font-size: 12px !important;
+        gap: 6px !important;
+      }
+      .blog-controls-section {
+        padding: 0 14px !important;
+        margin-bottom: 24px !important;
+      }
+      .blog-controls-bar {
+        flex-direction: column !important;
+        align-items: stretch !important;
+        gap: 10px !important;
+      }
+      .blog-search-wrap {
+        width: 100% !important;
+        min-width: 0 !important;
+      }
+      .blog-search-input {
+        height: 48px !important;
+        font-size: 14px !important;
+        padding: 0 40px 0 44px !important;
+        border-radius: 12px !important;
+      }
+      .blog-filter-btn {
+        width: 100% !important;
+        height: 48px !important;
+        font-size: 14px !important;
+        justify-content: space-between !important;
+        padding: 0 16px !important;
+        border-radius: 12px !important;
+      }
+      .filter-drawer-card {
+        padding: 16px !important;
+        border-radius: 16px !important;
+        margin-top: 10px !important;
+      }
+      .filter-drawer-title {
+        font-size: 16px !important;
+      }
+      .filter-chips-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 6px !important;
+        max-height: 250px !important;
+      }
+      .filter-chip-btn {
+        padding: 6px 8px !important;
+        font-size: 11px !important;
+      }
+      .filter-chip-btn .chip-count {
+        font-size: 10px !important;
+      }
+      .blog-card {
+        padding: 14px !important;
+        border-radius: 14px !important;
+      }
+      .blog-card-thumb-link {
+        height: 190px !important;
+        border-radius: 10px !important;
+        margin-bottom: 12px !important;
+      }
+      .blog-card-title {
+        font-size: 16px !important;
+        line-height: 1.35 !important;
+        margin-bottom: 10px !important;
+      }
+      .blog-rating-badge {
+        font-size: 11px !important;
+        padding: 3px 8px !important;
+        gap: 4px !important;
+        margin-bottom: 12px !important;
+      }
+      .blog-card-footer {
+        padding-top: 10px !important;
+        margin-top: 10px !important;
+      }
+      .blog-card-footer a {
+        font-size: 12px !important;
+        padding: 5px 12px !important;
+      }
+      .blog-articles-section {
+        padding: 0 14px !important;
+      }
+    }
+
     /* Filter & Controls Styling */
     .blog-controls-section {
       max-width: 1140px;
@@ -1326,19 +1539,16 @@ __SITE_HEADER__
         </p>
 
         <!-- Social Proof & Google Star Ratings Bar -->
-        <div style="display: inline-flex; align-items: center; gap: 12px; padding: 10px 22px; background: #ffffff; border: 1.5px solid #e2e8f0; border-radius: 9999px; box-shadow: 0 4px 16px rgba(15, 23, 42, 0.06); flex-wrap: wrap; justify-content: center;">
-          <div style="display: flex; align-items: center; gap: 6px;">
-            <span style="font-size: 15px; font-weight: 800; color: #0f172a;">4.9</span>
-            <span style="color: #f59e0b; font-size: 16px; letter-spacing: 1px;">★★★★★</span>
-          </div>
-          <span style="color: #cbd5e1;">|</span>
-          <span style="font-size: 13.5px; color: #475569; font-weight: 600;">
-            __TOTAL_REVIEWS_STR__ Global Client Ratings
-          </span>
-          <span style="color: #cbd5e1;">|</span>
-          <span style="font-size: 13px; color: #0055fe; font-weight: 700;">
-            180 Verified Guides
-          </span>
+        <div style="display: inline-flex; align-items: center; gap: 8px; padding: 10px 22px; background: #ffffff; border: 1.5px solid #e2e8f0; border-radius: 9999px; box-shadow: 0 4px 16px rgba(15, 23, 42, 0.06); flex-wrap: wrap; justify-content: center; font-size: 13.5px;">
+          <span style="font-size: 15px; font-weight: 800; color: #0f172a;">4.9</span>
+          <span style="color: #f59e0b; font-size: 15px; letter-spacing: 1px;">★★★★★</span>
+          <span style="color: #64748b; font-weight: 600;">(__TOTAL_REVIEWS_STR__)</span>
+          <span style="color: #cbd5e1;">·</span>
+          <span style="color: #475569; font-weight: 600;">Free</span>
+          <span style="color: #cbd5e1;">·</span>
+          <span style="color: #475569; font-weight: 600;">Android</span>
+          <span style="color: #cbd5e1;">·</span>
+          <span style="color: #0055fe; font-weight: 700;">Business/Productivity</span>
         </div>
       </div>
     </section>
