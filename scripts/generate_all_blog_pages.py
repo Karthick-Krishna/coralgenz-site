@@ -12,6 +12,10 @@ import os
 import re
 import json
 import random
+import sys
+import os
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import blog_visual_helpers as bvh
 from collections import Counter
 
 # Authoritative Header & Footer extracted from index.html for 100% home page parity
@@ -283,7 +287,8 @@ for idx, (display_date, iso_date, title, category) in enumerate(RAW_POSTS):
         "author": author,
         "ratingCount": rating_count,
         "ratingValue": rating_val,
-        "readTime": read_time
+        "readTime": read_time,
+        "topicType": bvh.get_topic_type(title, category)
     })
 
 def generate_article_text(p):
@@ -432,7 +437,14 @@ def generate_article_text(p):
         }
     ]
 
+    topic_type = bvh.get_topic_type(title, category)
+    in_article_hero = bvh.get_in_article_hero_html(topic_type, title, category, p["author"], p["displayDate"])
+    contextual_diagram = bvh.get_in_article_diagram_html(topic_type, title, category)
+
     return {
+        "topicType": topic_type,
+        "inArticleHero": in_article_hero,
+        "contextualDiagram": contextual_diagram,
         "aiOverview": ai_overview,
         "sec1_h2": sec1_h2,
         "sec1_p": sec1_p,
@@ -662,6 +674,8 @@ __SITE_HEADER__
         </div>
       </header>
 
+      {content["inArticleHero"]}
+
       <!-- AI Overview / Direct Answer Snippet Box -->
       <section style="background: linear-gradient(135deg, #eff6ff 0%, #f8fafc 100%); border: 1.5px solid #bfdbfe; border-radius: 16px; padding: 22px 26px; margin-bottom: 36px; box-shadow: 0 4px 16px rgba(0, 85, 254, 0.05);">
         <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 10px;">
@@ -692,6 +706,8 @@ __SITE_HEADER__
         <p style="margin-bottom: 22px;">
           {content['sec2_p']}
         </p>
+
+        {content["contextualDiagram"]}
 
         <h2 style="font-family: var(--font-satoshi), sans-serif; font-size: 24px; font-weight: 800; color: #0f172a; letter-spacing: -0.02em; margin-top: 36px; margin-bottom: 16px;">
           {content['sec3_h2']}
@@ -1586,6 +1602,139 @@ __SITE_FOOTER__
       });
     }
 
+    const THEME_DATA = {
+      security: {
+        grad: 'linear-gradient(135deg, #064e3b 0%, #022c22 45%, #0f172a 100%)',
+        accent: '#10b981',
+        accentLight: '#34d399',
+        tag: 'Zero-Knowledge AES-256',
+        product: 'Coralgenz Vault',
+        svg: `<circle cx="50" cy="50" r="42" stroke="#10b981" stroke-width="1.5" stroke-dasharray="4 4" opacity="0.6"/><path d="M50 20L72 30V48C72 62 50 75 50 75C50 75 28 62 28 48V30L50 20Z" fill="url(#secG)" stroke="#34d399" stroke-width="2"/><rect x="42" y="44" width="16" height="14" rx="3" fill="#ffffff"/><path d="M45 44V38C45 35.2 47.2 33 50 33C52.8 33 55 35.2 55 38V44" stroke="#ffffff" stroke-width="2.5" fill="none"/><defs><linearGradient id="secG" x1="28" y1="20" x2="72" y2="75" gradientUnits="userSpaceOnUse"><stop stop-color="#059669"/><stop offset="1" stop-color="#047857"/></linearGradient></defs>`
+      },
+      qr: {
+        grad: 'linear-gradient(135deg, #4c1d95 0%, #2e1065 45%, #0f172a 100%)',
+        accent: '#8b5cf6',
+        accentLight: '#c4b5fd',
+        tag: 'Real-Time Telemetry',
+        product: 'Coralgenz QR',
+        svg: `<circle cx="50" cy="50" r="44" stroke="#8b5cf6" stroke-width="1.5" stroke-dasharray="3 3" opacity="0.5"/><rect x="22" y="22" width="22" height="22" rx="4" stroke="#c4b5fd" stroke-width="2.5" fill="none"/><rect x="27" y="27" width="12" height="12" rx="2" fill="#8b5cf6"/><rect x="56" y="22" width="22" height="22" rx="4" stroke="#c4b5fd" stroke-width="2.5" fill="none"/><rect x="61" y="27" width="12" height="12" rx="2" fill="#8b5cf6"/><rect x="22" y="56" width="22" height="22" rx="4" stroke="#c4b5fd" stroke-width="2.5" fill="none"/><rect x="27" y="61" width="12" height="12" rx="2" fill="#8b5cf6"/><path d="M56 56H64V64H56V56Z" fill="#a78bfa"/><path d="M70 56H78V64H70V56Z" fill="#c4b5fd"/><path d="M56 70H64V78H56V70Z" fill="#c4b5fd"/><path d="M70 70H78V78H70V70Z" fill="#a78bfa"/>`
+      },
+      compiler: {
+        grad: 'linear-gradient(135deg, #083344 0%, #164e63 45%, #0f172a 100%)',
+        accent: '#06b6d4',
+        accentLight: '#67e8f9',
+        tag: 'Instant Wasm Sandbox',
+        product: 'Coralgenz Compiler',
+        svg: `<rect x="18" y="22" width="64" height="56" rx="8" fill="#0f172a" stroke="#06b6d4" stroke-width="2"/><rect x="18" y="22" width="64" height="14" rx="8" fill="#164e63"/><circle cx="26" cy="29" r="2.5" fill="#ef4444"/><circle cx="33" cy="29" r="2.5" fill="#f59e0b"/><circle cx="40" cy="29" r="2.5" fill="#10b981"/><path d="M26 48L34 54L26 60" stroke="#67e8f9" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><line x1="38" y1="60" x2="52" y2="60" stroke="#22d3ee" stroke-width="2.5" stroke-linecap="round"/><polygon points="66 42 58 54 68 54 62 66 76 50 68 50" fill="#f59e0b"/>`
+      },
+      startup: {
+        grad: 'linear-gradient(135deg, #78350f 0%, #451a03 45%, #0f172a 100%)',
+        accent: '#f59e0b',
+        accentLight: '#fcd34d',
+        tag: '4-Week Rapid Launch',
+        product: 'Coralgenz MVP',
+        svg: `<circle cx="50" cy="50" r="42" stroke="#f59e0b" stroke-width="1.5" stroke-dasharray="3 3" opacity="0.4"/><path d="M50 16C50 16 68 28 68 52C68 62 62 70 50 74C38 70 32 62 32 52C32 28 50 16 50 16Z" fill="#b45309" stroke="#fcd34d" stroke-width="2"/><circle cx="50" cy="40" r="6" fill="#0f172a" stroke="#fcd34d" stroke-width="2"/><path d="M32 52L22 62L34 66" stroke="#f59e0b" stroke-width="2" fill="#78350f"/><path d="M68 52L78 62L66 66" stroke="#f59e0b" stroke-width="2" fill="#78350f"/><path d="M44 74L50 86L56 74" fill="#ef4444"/>`
+      },
+      software: {
+        grad: 'linear-gradient(135deg, #1e3a8a 0%, #172554 45%, #0f172a 100%)',
+        accent: '#3b82f6',
+        accentLight: '#93c5fd',
+        tag: 'Clean Architecture',
+        product: 'Coralgenz Engineering',
+        svg: `<rect x="20" y="20" width="60" height="15" rx="4" fill="#2563eb" stroke="#93c5fd" stroke-width="1.5"/><rect x="25" y="42" width="50" height="15" rx="4" fill="#1d4ed8" stroke="#60a5fa" stroke-width="1.5"/><rect x="30" y="64" width="40" height="16" rx="4" fill="#1e40af" stroke="#3b82f6" stroke-width="1.5"/><line x1="50" y1="35" x2="50" y2="42" stroke="#93c5fd" stroke-width="2" stroke-dasharray="2 2"/><line x1="50" y1="57" x2="50" y2="64" stroke="#93c5fd" stroke-width="2" stroke-dasharray="2 2"/>`
+      },
+      cloud: {
+        grad: 'linear-gradient(135deg, #0369a1 0%, #0c4a6e 45%, #0f172a 100%)',
+        accent: '#0ea5e9',
+        accentLight: '#7dd3fc',
+        tag: '99.99% Availability',
+        product: 'Coralgenz Cloud',
+        svg: `<path d="M35 60H65C73.3 60 80 53.3 80 45C80 37.2 74 30.8 66.5 30.1C65 20.6 57 14 47 14C37.5 14 29.5 20 27.5 29C19.5 30.5 14 37.5 14 45.5C14 53.5 20.5 60 28.5 60H35" fill="#0284c7" stroke="#7dd3fc" stroke-width="2" opacity="0.9"/><circle cx="40" cy="74" r="5" fill="#0f172a" stroke="#38bdf8" stroke-width="1.5"/><circle cx="60" cy="74" r="5" fill="#0f172a" stroke="#38bdf8" stroke-width="1.5"/><line x1="40" y1="60" x2="40" y2="69" stroke="#38bdf8" stroke-width="1.5"/><line x1="60" y1="60" x2="60" y2="69" stroke="#38bdf8" stroke-width="1.5"/>`
+      },
+      salesforce: {
+        grad: 'linear-gradient(135deg, #0284c7 0%, #075985 45%, #082f49 100%)',
+        accent: '#38bdf8',
+        accentLight: '#bae6fd',
+        tag: 'Salesforce ISV Partner',
+        product: 'Coralgenz CRM',
+        svg: `<path d="M40 28C43.5 22 50.5 20 56 23C61 17 71 18 75 25C81 26 85 31 84 37C88 42 86 50 80 54C81 58 78 64 71 65C68 70 60 71 55 67C50 71 42 70 38 64C31 65 25 60 25 53C20 49 20 40 25 35C26 29 32 25 38 27" fill="#0284c7" stroke="#bae6fd" stroke-width="2"/><path d="M52 35L42 50H54L48 65L64 47H52L58 35H52Z" fill="#fcd34d" stroke="#f59e0b" stroke-width="1"/>`
+      },
+      shopify: {
+        grad: 'linear-gradient(135deg, #047857 0%, #064e3b 45%, #022c22 100%)',
+        accent: '#10b981',
+        accentLight: '#6ee7b7',
+        tag: 'Shopify Plus Partner',
+        product: 'Coralgenz Commerce',
+        svg: `<path d="M22 26H30L38 60H68L76 34H33" stroke="#6ee7b7" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/><circle cx="42" cy="72" r="5" fill="#10b981"/><circle cx="64" cy="72" r="5" fill="#10b981"/><polygon points="52 18 46 30 54 30 50 40 60 28 52 28" fill="#f59e0b"/>`
+      },
+      modernization: {
+        grad: 'linear-gradient(135deg, #581c87 0%, #3b0764 45%, #0f172a 100%)',
+        accent: '#a855f7',
+        accentLight: '#e9d5ff',
+        tag: 'Strangler Modernize',
+        product: 'Coralgenz Modernize',
+        svg: `<rect x="18" y="22" width="44" height="34" rx="4" fill="#3b0764" stroke="#c084fc" stroke-width="2"/><line x1="18" y1="30" x2="62" y2="30" stroke="#a855f7" stroke-width="1.5"/><rect x="48" y="38" width="34" height="44" rx="5" fill="#0f172a" stroke="#e9d5ff" stroke-width="2"/><circle cx="65" cy="76" r="2.5" fill="#a855f7"/>`
+      },
+      ai: {
+        grad: 'linear-gradient(135deg, #0f766e 0%, #115e59 45%, #0a0f1d 100%)',
+        accent: '#14b8a6',
+        accentLight: '#5eead4',
+        tag: 'Private Isolated AI',
+        product: 'Coralgenz AI',
+        svg: `<circle cx="50" cy="50" r="12" fill="#0f766e" stroke="#5eead4" stroke-width="2"/><circle cx="26" cy="30" r="6" fill="#115e59" stroke="#2dd4bf" stroke-width="1.5"/><circle cx="74" cy="30" r="6" fill="#115e59" stroke="#2dd4bf" stroke-width="1.5"/><circle cx="26" cy="70" r="6" fill="#115e59" stroke="#2dd4bf" stroke-width="1.5"/><circle cx="74" cy="70" r="6" fill="#115e59" stroke="#2dd4bf" stroke-width="1.5"/><line x1="31" y1="34" x2="42" y2="43" stroke="#5eead4" stroke-width="1.5"/><line x1="69" y1="34" x2="58" y2="43" stroke="#5eead4" stroke-width="1.5"/><line x1="31" y1="66" x2="42" y2="57" stroke="#5eead4" stroke-width="1.5"/><line x1="69" y1="66" x2="58" y2="57" stroke="#5eead4" stroke-width="1.5"/>`
+      },
+      company: {
+        grad: 'linear-gradient(135deg, #0055fe 0%, #0037a8 45%, #0a0f1d 100%)',
+        accent: '#38bdf8',
+        accentLight: '#bfdbfe',
+        tag: 'Verified Authority',
+        product: 'Coralgenz Global',
+        svg: `<circle cx="50" cy="50" r="38" stroke="#38bdf8" stroke-width="1.5" stroke-dasharray="3 3" opacity="0.6"/><ellipse cx="50" cy="50" rx="36" ry="16" stroke="#93c5fd" stroke-width="1.2" opacity="0.4"/><circle cx="50" cy="50" r="14" fill="#0055fe" stroke="#ffffff" stroke-width="2"/><path d="M45 50L48 53L56 45" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>`
+      }
+    };
+
+    function getCardThumbnail(topicType, category) {
+      const cfg = THEME_DATA[topicType] || THEME_DATA.company;
+      return `
+      <div style="width: 100%; height: 165px; border-radius: 12px; position: relative; background: ${cfg.grad}; box-shadow: inset 0 0 0 1px rgba(255,255,255,0.12); display: flex; flex-direction: column; justify-content: space-between; padding: 12px; box-sizing: border-box; overflow: hidden;">
+        <svg style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; opacity: 0.12;" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <pattern id="grid-${topicType}" width="20" height="20" patternUnits="userSpaceOnUse">
+              <path d="M 20 0 L 0 0 0 20" fill="none" stroke="#ffffff" stroke-width="0.8"/>
+            </pattern>
+          </defs>
+          <rect width="100%" height="100%" fill="url(#grid-${topicType})"/>
+        </svg>
+
+        <div style="position: relative; z-index: 2; display: flex; justify-content: space-between; align-items: center; gap: 8px;">
+          <div style="display: flex; align-items: center; gap: 6px; background: rgba(15, 23, 42, 0.78); backdrop-filter: blur(8px); padding: 3px 9px; border-radius: 9999px; border: 1px solid rgba(255,255,255,0.18);">
+            <img src="/assets/images/DVyu6tz4dqPirA4TwAJZUz5CUw.png" width="15" height="15" alt="Coralgenz Global" style="border-radius: 3px; display: block;">
+            <span style="font-size: 10.5px; font-weight: 700; color: #ffffff; letter-spacing: 0.02em;">Coralgenz</span>
+          </div>
+          <span style="font-size: 10px; font-weight: 700; color: ${cfg.accentLight}; background: rgba(0,0,0,0.45); backdrop-filter: blur(6px); border: 1px solid rgba(255,255,255,0.15); border-radius: 6px; padding: 2px 7px; text-transform: uppercase;">
+            ${category}
+          </span>
+        </div>
+
+        <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 88px; height: 88px; z-index: 1; display: flex; align-items: center; justify-content: center;">
+          <svg width="88" height="88" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+            ${cfg.svg}
+          </svg>
+        </div>
+
+        <div style="position: relative; z-index: 2; display: flex; justify-content: space-between; align-items: center;">
+          <span style="font-size: 10px; font-weight: 700; color: #ffffff; background: rgba(15, 23, 42, 0.85); backdrop-filter: blur(6px); border: 1px solid ${cfg.accent}; border-radius: 4px; padding: 2px 8px; display: inline-flex; align-items: center; gap: 4px;">
+            <span style="width: 5px; height: 5px; border-radius: 50%; background: ${cfg.accent}; display: inline-block;"></span>
+            ${cfg.tag}
+          </span>
+          <span style="font-size: 9.5px; color: rgba(255,255,255,0.7); font-weight: 600; text-shadow: 0 1px 2px rgba(0,0,0,0.8);">
+            ${cfg.product}
+          </span>
+        </div>
+      </div>
+      `;
+    }
+
     function renderPosts() {
       const filtered = getFilteredPosts();
       countLabel.textContent = 'Showing ' + filtered.length + ' of ' + ALL_POSTS.length + ' articles';
@@ -1602,11 +1751,19 @@ __SITE_FOOTER__
         return;
       }
 
-      grid.innerHTML = paginated.map(post => `
-        <article style="background: #ffffff; border: 1.5px solid #e2e8f0; border-radius: 16px; padding: 22px; display: flex; flex-direction: column; justify-content: space-between; transition: transform 0.2s ease, box-shadow 0.2s ease; box-shadow: 0 4px 16px rgba(15, 23, 42, 0.04);"
+      grid.innerHTML = paginated.map(post => {
+        const articleHref = window.location.protocol === 'file:' ? ('blog/' + post.slug + '.html') : post.url;
+        const thumbHtml = getCardThumbnail(post.topicType, post.category);
+        return `
+        <article style="background: #ffffff; border: 1.5px solid #e2e8f0; border-radius: 16px; padding: 20px; display: flex; flex-direction: column; justify-content: space-between; transition: transform 0.2s ease, box-shadow 0.2s ease; box-shadow: 0 4px 16px rgba(15, 23, 42, 0.04);"
           onmouseenter="this.style.transform='translateY(-3px)'; this.style.boxShadow='0 10px 28px rgba(0,85,254,0.12)'; this.style.borderColor='#93c5fd';"
           onmouseleave="this.style.transform='none'; this.style.boxShadow='0 4px 16px rgba(15, 23, 42, 0.04)'; this.style.borderColor='#e2e8f0';">
           <div>
+            <!-- Attractive Post Thumbnail Image Representing Coralgenz Global & Topic -->
+            <a href="${articleHref}" style="display: block; width: 100%; border-radius: 12px; margin-bottom: 14px; overflow: hidden; text-decoration: none; transition: transform 0.25s ease;" onmouseenter="this.style.transform='scale(1.02)'" onmouseleave="this.style.transform='none'">
+              ${thumbHtml}
+            </a>
+
             <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; gap: 8px;">
               <span style="font-size: 11px; font-weight: 700; color: #0055fe; background: #eff6ff; border: 1px solid #bfdbfe; border-radius: 9999px; padding: 3px 10px; text-transform: uppercase;">
                 ${post.category}
@@ -1636,12 +1793,14 @@ __SITE_FOOTER__
 
           <div style="display: flex; justify-content: space-between; align-items: center; padding-top: 14px; border-top: 1px solid #f1f5f9; margin-top: 14px;">
             <span style="font-size: 12.5px; color: #64748b; font-weight: 500;">${post.date}</span>
-            <a href="${post.url}" style="font-size: 13px; font-weight: 700; color: #0055fe; text-decoration: none; display: inline-flex; align-items: center; gap: 4px;">
-              Read Article &rarr;
+            <a href="${articleHref}" style="font-size: 13px; font-weight: 700; color: #0055fe; text-decoration: none; display: inline-flex; align-items: center; gap: 4px; padding: 5px 12px; border-radius: 8px; background: #eff6ff; border: 1px solid #bfdbfe; transition: all 0.2s;" onmouseenter="this.style.background='#0055fe'; this.style.color='#ffffff';" onmouseleave="this.style.background='#eff6ff'; this.style.color='#0055fe';">
+              <span>Read Article</span>
+              <span>&rarr;</span>
             </a>
           </div>
         </article>
-      `).join('');
+      `;
+      }).join('');
 
       renderPagination(totalPages);
     }
