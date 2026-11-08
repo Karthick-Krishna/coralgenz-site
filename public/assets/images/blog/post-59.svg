@@ -1,89 +1,53 @@
 <svg width="1200" height="675" viewBox="0 0 1200 675" fill="none" xmlns="http://www.w3.org/2000/svg">
   <defs>
-    <linearGradient id="bg-59" x1="0" y1="0" x2="1200" y2="675" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#0a0f1d"/>
-      <stop offset="0.5" stop-color="#0369a1"/>
-      <stop offset="1" stop-color="#0c4a6e"/>
-    </linearGradient>
-    <radialGradient id="glow-59" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(900 337) rotate(90) scale(360 480)">
-      <stop stop-color="#0ea5e9" stop-opacity="0.35"/>
-      <stop offset="1" stop-color="#0ea5e9" stop-opacity="0"/>
+    <radialGradient id="warp-core-59" cx="600" cy="250" r="380" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#f2e018" stop-opacity="0.45"/>
+      <stop offset="0.6" stop-color="#262303" stop-opacity="0.8"/>
+      <stop offset="1" stop-color="#020409"/>
     </radialGradient>
-    <linearGradient id="line-grad-59" x1="0" y1="0" x2="1200" y2="0" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#0ea5e9"/>
-      <stop offset="0.5" stop-color="#7dd3fc"/>
-      <stop offset="1" stop-color="#0ea5e9"/>
-    </linearGradient>
-    <pattern id="grid-59" width="38" height="38" patternUnits="userSpaceOnUse">
-      <path d="M 38 0 L 0 0 0 38" fill="none" stroke="#ffffff" stroke-width="0.75" opacity="0.08"/>
-    </pattern>
   </defs>
 
-  <!-- Deep Tech Background -->
-  <rect width="1200" height="675" fill="url(#bg-59)"/>
-  <rect width="1200" height="675" fill="url(#grid-59)"/>
-  <circle cx="920" cy="337" r="380" fill="url(#glow-59)"/>
+  <!-- Warp Tunnel Perspective -->
+  <rect width="1200" height="675" fill="#020409"/>
+  <rect width="1200" height="675" fill="url(#warp-core-59)"/>
 
-  <!-- Top Header Navigation Bar -->
-  <g transform="translate(60, 48)">
-    <!-- Coralgenz Logo & Mark -->
-    <rect width="185" height="42" rx="21" fill="rgba(15, 23, 42, 0.85)" stroke="rgba(255, 255, 255, 0.2)" stroke-width="1.2"/>
-    <circle cx="22" cy="21" r="13" fill="#0055fe"/>
-    <path d="M 17 21 L 20 24 L 27 17" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-    <text x="44" y="26" font-family="'Satoshi', 'Inter', -apple-system, sans-serif" font-size="14" font-weight="800" fill="#ffffff" letter-spacing="0.5">CORALGENZ</text>
+  <!-- Perspective Vanishing Lines -->
+  <line x1="0" y1="0" x2="600" y2="250" stroke="#f2e018" stroke-width="1" opacity="0.3"/>
+  <line x1="1200" y1="0" x2="600" y2="250" stroke="#f2e018" stroke-width="1" opacity="0.3"/>
+  <line x1="0" y1="675" x2="600" y2="250" stroke="#f2e018" stroke-width="1" opacity="0.3"/>
+  <line x1="1200" y1="675" x2="600" y2="250" stroke="#f2e018" stroke-width="1" opacity="0.3"/>
 
-    <!-- Category Pill -->
-    <rect x="200" y="0" width="183" height="42" rx="21" fill="rgba(15, 23, 42, 0.75)" stroke="#0ea5e9" stroke-width="1.2"/>
-    <text x="291" y="26" font-family="'Inter', sans-serif" font-size="12" font-weight="800" fill="#7dd3fc" letter-spacing="0.8" text-anchor="middle">CLOUD ENGINEERING</text>
-
-    <!-- Article ID & Date -->
-    <text x="1080" y="26" text-anchor="end" font-family="'JetBrains Mono', 'Inter', monospace" font-size="13" font-weight="700" fill="#94a3b8">ARTICLE #59 · FEB 18, 2026</text>
-  </g>
-
-  <!-- Left Content Block -->
-  <g transform="translate(60, 160)">
-    <rect x="0" y="0" width="48" height="4" rx="2" fill="#0ea5e9"/>
-
-    <!-- Wrapped Article Title -->
-    <text x="0" y="55" font-family="'Satoshi', 'Inter', -apple-system, sans-serif" font-size="38" font-weight="800" fill="#ffffff" letter-spacing="-0.02em">
-      <tspan x="0" dy="0">How Coralgenz Runs Code Safely in</tspan>
-      <tspan x="0" dy="52">the Cloud Without Slowing Your</tspan>
-      <tspan x="0" dy="52">Device</tspan>
-    </text>
-
-    <!-- Key Takeaway Pill -->
-    <g transform="translate(0, 230)">
-      <rect width="360" height="44" rx="8" fill="rgba(15, 23, 42, 0.85)" stroke="#0ea5e9" stroke-width="1.4"/>
-      <circle cx="22" cy="22" r="5" fill="#0ea5e9"/>
-      <text x="38" y="27" font-family="'Inter', sans-serif" font-size="13.5" font-weight="700" fill="#ffffff">Microsoft Azure High-Availability</text>
-    </g>
-
-    <!-- Authority Byline -->
-    <text x="0" y="325" font-family="'Inter', sans-serif" font-size="14.5" font-weight="500" fill="#cbd5e1">
-      Official Technology Playbook &amp; Architecture Roadmap by Coralgenz Global
-    </text>
-  </g>
-
-  <!-- Right Graphic Area -->
-  <g transform="translate(730, 130)">
+  <!-- Floating Warp Subject -->
+  <g transform="translate(600, 250)">
     
-        <!-- Multi-Region Cloud & Replicated Nodes -->
-        <g transform="translate(40, 25)">
-          <path d="M 110 170 H 210 C 235 170 255 150 255 125 C 255 102 236 83 213 81 C 208 52 183 30 152 30 C 122 30 97 51 91 80 C 66 84 47 105 47 130 C 47 152 65 170 90 170 H 110 Z" fill="#0284c7" stroke="#7dd3fc" stroke-width="3" opacity="0.9"/>
-          <!-- Microservices Node Cluster -->
-          <rect x="70" y="195" width="80" height="45" rx="8" fill="#0f172a" stroke="#0ea5e9" stroke-width="2"/>
-          <text x="110" y="222" font-family="'Inter', sans-serif" font-size="11" font-weight="700" fill="#7dd3fc" text-anchor="middle">REGION 1</text>
-          <rect x="170" y="195" width="80" height="45" rx="8" fill="#0f172a" stroke="#10b981" stroke-width="2"/>
-          <text x="210" y="222" font-family="'Inter', sans-serif" font-size="11" font-weight="700" fill="#34d399" text-anchor="middle">HOT SYNC</text>
-          <!-- Connection lines -->
-          <line x1="110" y1="170" x2="110" y2="195" stroke="#7dd3fc" stroke-width="2" stroke-dasharray="3 3"/>
-          <line x1="210" y1="170" x2="210" y2="195" stroke="#34d399" stroke-width="2" stroke-dasharray="3 3"/>
-          <rect x="80" y="260" width="160" height="30" rx="15" fill="#0f172a" stroke="#0ea5e9" stroke-width="1.5"/>
-          <text x="160" y="280" font-family="'Inter', sans-serif" font-size="11" font-weight="800" fill="#ffffff" text-anchor="middle">99.99% UPTIME SLA</text>
-        </g>
+        <!-- Holographic Code Terminal -->
+        <rect x="-110" y="-75" width="220" height="150" rx="14" fill="#090d16" stroke="#f2e018" stroke-width="2.5"/>
+        <rect x="-110" y="-75" width="220" height="28" rx="14" fill="#262303"/>
+        <circle cx="-90" cy="-61" r="4" fill="#ef4444"/>
+        <circle cx="-76" cy="-61" r="4" fill="#f59e0b"/>
+        <circle cx="-62" cy="-61" r="4" fill="#10b981"/>
+        <text x="-90" y="-20" font-family="'JetBrains Mono', monospace" font-size="11" font-weight="700" fill="#f9f2a2">&gt; cc-compiler --wasm</text>
+        <text x="-90" y="2" font-family="'JetBrains Mono', monospace" font-size="10" fill="#94a3b8">SANDBOX: ISOLATED (42ms)</text>
+        <polygon points="-8 25 -18 45 -4 45 -12 65 8 38 -4 38" fill="#f59e0b"/>
+        <circle cx="0" cy="0" r="110" stroke="#f2e018" stroke-width="1" stroke-dasharray="4 4" opacity="0.3"/>
         
   </g>
 
-  <!-- Bottom Accent Line -->
-  <rect x="0" y="670" width="1200" height="5" fill="url(#line-grad-59)"/>
+  <!-- Top Studio Title -->
+  <g transform="translate(600, 48)">
+    <text x="0" y="0" font-family="'Inter', sans-serif" font-size="11.5" font-weight="900" fill="#94a3b8" letter-spacing="3" text-anchor="middle">CORALGENZ GLOBAL BLOCKBUSTER</text>
+  </g>
+
+  <!-- Main Title Area -->
+  <g transform="translate(600, 440)">
+    <text x="0" y="0" font-family="'Inter', sans-serif" font-size="13" font-weight="800" fill="#f9f2a2" letter-spacing="2.5" text-anchor="middle">ENGINEERED FOR RESILIENCE. ARCHITECTED FOR SCALE.</text>
+    <text x="0" y="44" font-family="'Satoshi', 'Inter', sans-serif" font-size="34" font-weight="900" fill="#ffffff" letter-spacing="-0.02em" text-anchor="middle">How Coralgenz Runs Code Safely in</text>
+    <text x="0" y="84" font-family="'Satoshi', 'Inter', sans-serif" font-size="30" font-weight="900" fill="#f2e018" text-anchor="middle">the Cloud Without Slowing Your</text>
+  </g>
+
+  <!-- Bottom Cinema Credits -->
+  <g transform="translate(600, 605)">
+    <text x="0" y="0" font-family="'Inter', sans-serif" font-size="11.5" font-weight="700" fill="#f59e0b" letter-spacing="1.5" text-anchor="middle">★★★★★ 4.9 AUDIENCE RATING · ARTICLE #59</text>
+    <text x="0" y="20" font-family="'Inter', sans-serif" font-size="9" font-weight="700" fill="#64748b" letter-spacing="1.2" text-anchor="middle">A CORALGENZ GLOBAL PRODUCTION · KARTHICK KRISHNA &amp; THANVANTH H · COIMBATORE &amp; CHENNAI</text>
+  </g>
 </svg>

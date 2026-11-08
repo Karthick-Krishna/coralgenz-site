@@ -1,83 +1,71 @@
 <svg width="1200" height="675" viewBox="0 0 1200 675" fill="none" xmlns="http://www.w3.org/2000/svg">
   <defs>
     <linearGradient id="bg-103" x1="0" y1="0" x2="1200" y2="675" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#0a0f1d"/>
-      <stop offset="0.5" stop-color="#0284c7"/>
-      <stop offset="1" stop-color="#075985"/>
+      <stop stop-color="#020617"/>
+      <stop offset="0.5" stop-color="#26030c"/>
+      <stop offset="1" stop-color="#020617"/>
     </linearGradient>
-    <radialGradient id="glow-103" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(900 337) rotate(90) scale(360 480)">
-      <stop stop-color="#38bdf8" stop-opacity="0.35"/>
-      <stop offset="1" stop-color="#38bdf8" stop-opacity="0"/>
+    <radialGradient id="spot-103" cx="600" cy="270" r="420" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#f22457" stop-opacity="0.32"/>
+      <stop offset="0.7" stop-color="#f22457" stop-opacity="0.04"/>
+      <stop offset="1" stop-color="#f22457" stop-opacity="0"/>
     </radialGradient>
-    <linearGradient id="line-grad-103" x1="0" y1="0" x2="1200" y2="0" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#38bdf8"/>
-      <stop offset="0.5" stop-color="#bae6fd"/>
-      <stop offset="1" stop-color="#38bdf8"/>
+    <linearGradient id="flare-103" x1="100" y1="270" x2="1100" y2="270" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#f9a2b8" stop-opacity="0"/>
+      <stop offset="0.5" stop-color="#f9a2b8" stop-opacity="0.85"/>
+      <stop offset="1" stop-color="#f9a2b8" stop-opacity="0"/>
     </linearGradient>
-    <pattern id="grid-103" width="38" height="38" patternUnits="userSpaceOnUse">
-      <path d="M 38 0 L 0 0 0 38" fill="none" stroke="#ffffff" stroke-width="0.75" opacity="0.08"/>
-    </pattern>
   </defs>
 
-  <!-- Deep Tech Background -->
   <rect width="1200" height="675" fill="url(#bg-103)"/>
-  <rect width="1200" height="675" fill="url(#grid-103)"/>
-  <circle cx="920" cy="337" r="380" fill="url(#glow-103)"/>
+  <rect width="1200" height="675" fill="url(#spot-103)"/>
+  <line x1="80" y1="270" x2="1120" y2="270" stroke="url(#flare-103)" stroke-width="2"/>
 
-  <!-- Top Header Navigation Bar -->
-  <g transform="translate(60, 48)">
-    <!-- Coralgenz Logo & Mark -->
-    <rect width="185" height="42" rx="21" fill="rgba(15, 23, 42, 0.85)" stroke="rgba(255, 255, 255, 0.2)" stroke-width="1.2"/>
-    <circle cx="22" cy="21" r="13" fill="#0055fe"/>
-    <path d="M 17 21 L 20 24 L 27 17" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-    <text x="44" y="26" font-family="'Satoshi', 'Inter', -apple-system, sans-serif" font-size="14" font-weight="800" fill="#ffffff" letter-spacing="0.5">CORALGENZ</text>
+  <!-- Top Studio Header -->
+  <text x="600" y="48" font-family="'Inter', sans-serif" font-size="11" font-weight="800" fill="#94a3b8" letter-spacing="4" text-anchor="middle">CORALGENZ GLOBAL ORIGINAL</text>
+  <line x1="430" y1="44" x2="470" y2="44" stroke="#f22457" stroke-width="1.5"/>
+  <line x1="730" y1="44" x2="770" y2="44" stroke="#f22457" stroke-width="1.5"/>
 
-    <!-- Category Pill -->
-    <rect x="200" y="0" width="192" height="42" rx="21" fill="rgba(15, 23, 42, 0.75)" stroke="#38bdf8" stroke-width="1.2"/>
-    <text x="296" y="26" font-family="'Inter', sans-serif" font-size="12" font-weight="800" fill="#bae6fd" letter-spacing="0.8" text-anchor="middle">SALESFORCE PARTNER</text>
-
-    <!-- Article ID & Date -->
-    <text x="1080" y="26" text-anchor="end" font-family="'JetBrains Mono', 'Inter', monospace" font-size="13" font-weight="700" fill="#94a3b8">ARTICLE #103 · JUN 1, 2026</text>
+  <!-- Category & ID Pill -->
+  <g transform="translate(600, 68)">
+    <rect x="-120" y="0" width="240" height="26" rx="13" fill="rgba(15, 23, 42, 0.85)" stroke="#f22457" stroke-width="1.2"/>
+    <text x="0" y="17" font-family="'Inter', sans-serif" font-size="10.5" font-weight="800" fill="#f9a2b8" letter-spacing="1.2" text-anchor="middle">SALESFORCE PARTNER · #103</text>
   </g>
 
-  <!-- Left Content Block -->
-  <g transform="translate(60, 160)">
-    <rect x="0" y="0" width="48" height="4" rx="2" fill="#38bdf8"/>
-
-    <!-- Wrapped Article Title -->
-    <text x="0" y="55" font-family="'Satoshi', 'Inter', -apple-system, sans-serif" font-size="38" font-weight="800" fill="#ffffff" letter-spacing="-0.02em">
-      <tspan x="0" dy="0">How Coralgenz Global Helps You Get</tspan>
-      <tspan x="0" dy="52">More Out of Salesforce CRM</tspan>
-      <tspan x="0" dy="52"></tspan>
-    </text>
-
-    <!-- Key Takeaway Pill -->
-    <g transform="translate(0, 230)">
-      <rect width="360" height="44" rx="8" fill="rgba(15, 23, 42, 0.85)" stroke="#38bdf8" stroke-width="1.4"/>
-      <circle cx="22" cy="22" r="5" fill="#38bdf8"/>
-      <text x="38" y="27" font-family="'Inter', sans-serif" font-size="13.5" font-weight="700" fill="#ffffff">Salesforce ISV Enterprise CRM</text>
-    </g>
-
-    <!-- Authority Byline -->
-    <text x="0" y="325" font-family="'Inter', sans-serif" font-size="14.5" font-weight="500" fill="#cbd5e1">
-      Official Technology Playbook &amp; Architecture Roadmap by Coralgenz Global
-    </text>
-  </g>
-
-  <!-- Right Graphic Area -->
-  <g transform="translate(730, 130)">
+  <!-- Central Focal Monolith -->
+  <g transform="translate(600, 270)">
     
-        <!-- Salesforce CRM Cloud & Bi-Directional CDC -->
-        <g transform="translate(40, 25)">
-          <path d="M 120 90 C 130 70 152 65 170 75 C 185 55 215 58 228 80 C 245 83 258 98 255 116 C 268 132 262 155 242 168 C 245 180 236 198 215 200 C 205 215 180 220 165 208 C 150 220 125 215 112 198 C 92 200 75 185 75 164 C 60 152 60 125 75 110 C 78 92 98 80 118 86" fill="#0284c7" stroke="#bae6fd" stroke-width="3"/>
-          <!-- Lightning Bolt -->
-          <polygon points="165 100 135 150 168 150 150 200 200 140 168 140" fill="#fcd34d" stroke="#f59e0b" stroke-width="2"/>
-          <rect x="70" y="240" width="180" height="36" rx="8" fill="#0f172a" stroke="#38bdf8" stroke-width="1.5"/>
-          <text x="160" y="263" font-family="'Inter', sans-serif" font-size="12" font-weight="800" fill="#38bdf8" text-anchor="middle">SUB-SECOND LEAD SYNC</text>
-        </g>
+        <circle cx="0" cy="0" r="110" stroke="#f22457" stroke-width="1.5" stroke-dasharray="4 4" opacity="0.5"/>
+        <ellipse cx="0" cy="0" rx="100" ry="40" stroke="#f9a2b8" stroke-width="1.5" opacity="0.4"/>
+        <ellipse cx="0" cy="0" rx="40" ry="100" stroke="#f9a2b8" stroke-width="1.5" opacity="0.4"/>
+        <circle cx="0" cy="0" r="42" fill="#26030c" stroke="#f22457" stroke-width="3"/>
+        <path d="M -14 0 L -4 10 L 16 -10" stroke="#ffffff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+        <circle cx="-85" cy="0" r="5" fill="#22e553"/>
+        <circle cx="85" cy="0" r="5" fill="#22e553"/>
         
   </g>
 
-  <!-- Bottom Accent Line -->
-  <rect x="0" y="670" width="1200" height="5" fill="url(#line-grad-103)"/>
+  <!-- Cinema Tagline -->
+  <text x="600" y="435" font-family="'Inter', sans-serif" font-size="13" font-weight="800" fill="#f9a2b8" letter-spacing="3" text-anchor="middle">BRIDGING THE ENTERPRISE. ELIMINATING THE BOTTLENECK.</text>
+
+  <!-- Blockbuster Title -->
+  <g transform="translate(600, 480)">
+    <text x="0" y="0" font-family="'Satoshi', 'Inter', sans-serif" font-size="33" font-weight="900" fill="#ffffff" letter-spacing="0.5" text-anchor="middle">How Coralgenz Global Helps You Get</text>
+    <text x="0" y="38" font-family="'Satoshi', 'Inter', sans-serif" font-size="28" font-weight="900" fill="#f22457" letter-spacing="0.8" text-anchor="middle">More Out of Salesforce CRM</text>
+    
+  </g>
+
+  <!-- Cinema Movie Credits Billing Block -->
+  <g transform="translate(600, 605)">
+    <text x="0" y="0" font-family="'Inter', sans-serif" font-size="11.5" font-weight="700" fill="#f59e0b" letter-spacing="2" text-anchor="middle">★★★★★ 4.9 AUDIENCE RATING · (VERIFIED REVIEWS)</text>
+    <text x="0" y="20" font-family="'Inter', sans-serif" font-size="9" font-weight="700" fill="#64748b" letter-spacing="1.5" text-anchor="middle">A CORALGENZ GLOBAL PRODUCTION · DIRECTED BY KARTHICK KRISHNA &amp; THANVANTH H · ARCHITECTURE BY SENIOR CLOUD ENGINEERS</text>
+    <text x="0" y="33" font-family="'Inter', sans-serif" font-size="8.5" font-weight="600" fill="#475569" letter-spacing="1.2" text-anchor="middle">COIMBATORE &amp; CHENNAI STUDIOS · 100% INTELLECTUAL PROPERTY GUARANTEE · ZERO VENDOR LOCK-IN</text>
+  </g>
+
+  <!-- Cinema Framing Border -->
+  <rect x="20" y="20" width="1160" height="635" rx="10" stroke="rgba(255, 255, 255, 0.1)" stroke-width="1.5" fill="none"/>
+  <path d="M 30 50 V 30 H 50" stroke="#f22457" stroke-width="2" fill="none"/>
+  <path d="M 1170 50 V 30 H 1150" stroke="#f22457" stroke-width="2" fill="none"/>
+  <path d="M 30 625 V 645 H 50" stroke="#f22457" stroke-width="2" fill="none"/>
+  <path d="M 1170 625 V 645 H 1150" stroke="#f22457" stroke-width="2" fill="none"/>
 </svg>

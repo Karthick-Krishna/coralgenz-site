@@ -1,91 +1,54 @@
 <svg width="1200" height="675" viewBox="0 0 1200 675" fill="none" xmlns="http://www.w3.org/2000/svg">
   <defs>
-    <linearGradient id="bg-147" x1="0" y1="0" x2="1200" y2="675" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#0a0f1d"/>
-      <stop offset="0.5" stop-color="#0f766e"/>
-      <stop offset="1" stop-color="#115e59"/>
+    <linearGradient id="slash-bg-147" x1="0" y1="0" x2="1200" y2="675" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#020617"/>
+      <stop offset="0.6" stop-color="#170326"/>
+      <stop offset="1" stop-color="#050a18"/>
     </linearGradient>
-    <radialGradient id="glow-147" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(900 337) rotate(90) scale(360 480)">
-      <stop stop-color="#14b8a6" stop-opacity="0.35"/>
-      <stop offset="1" stop-color="#14b8a6" stop-opacity="0"/>
-    </radialGradient>
-    <linearGradient id="line-grad-147" x1="0" y1="0" x2="1200" y2="0" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#14b8a6"/>
-      <stop offset="0.5" stop-color="#5eead4"/>
-      <stop offset="1" stop-color="#14b8a6"/>
-    </linearGradient>
-    <pattern id="grid-147" width="38" height="38" patternUnits="userSpaceOnUse">
-      <path d="M 38 0 L 0 0 0 38" fill="none" stroke="#ffffff" stroke-width="0.75" opacity="0.08"/>
-    </pattern>
   </defs>
 
-  <!-- Deep Tech Background -->
-  <rect width="1200" height="675" fill="url(#bg-147)"/>
-  <rect width="1200" height="675" fill="url(#grid-147)"/>
-  <circle cx="920" cy="337" r="380" fill="url(#glow-147)"/>
+  <rect width="1200" height="675" fill="url(#slash-bg-147)"/>
 
-  <!-- Top Header Navigation Bar -->
-  <g transform="translate(60, 48)">
-    <!-- Coralgenz Logo & Mark -->
-    <rect width="185" height="42" rx="21" fill="rgba(15, 23, 42, 0.85)" stroke="rgba(255, 255, 255, 0.2)" stroke-width="1.2"/>
-    <circle cx="22" cy="21" r="13" fill="#0055fe"/>
-    <path d="M 17 21 L 20 24 L 27 17" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-    <text x="44" y="26" font-family="'Satoshi', 'Inter', -apple-system, sans-serif" font-size="14" font-weight="800" fill="#ffffff" letter-spacing="0.5">CORALGENZ</text>
+  <!-- 20-Degree Diagonal Cyber Slash -->
+  <polygon points="550 0 700 0 650 675 500 675" fill="#a130f2" opacity="0.12"/>
+  <line x1="625" y1="0" x2="575" y2="675" stroke="#d5a2f9" stroke-width="2" opacity="0.6"/>
 
-    <!-- Category Pill -->
-    <rect x="200" y="0" width="201" height="42" rx="21" fill="rgba(15, 23, 42, 0.75)" stroke="#14b8a6" stroke-width="1.2"/>
-    <text x="300" y="26" font-family="'Inter', sans-serif" font-size="12" font-weight="800" fill="#5eead4" letter-spacing="0.8" text-anchor="middle">ENGINEERING CULTURE</text>
+  <!-- Left Side: Cinematic Title Stack -->
+  <g transform="translate(70, 70)">
+    <rect x="0" y="0" width="160" height="28" rx="6" fill="#a130f2" opacity="0.2"/>
+    <text x="12" y="19" font-family="'Inter', sans-serif" font-size="11" font-weight="800" fill="#d5a2f9" letter-spacing="1">ENGINEERING CULTURE</text>
 
-    <!-- Article ID & Date -->
-    <text x="1080" y="26" text-anchor="end" font-family="'JetBrains Mono', 'Inter', monospace" font-size="13" font-weight="700" fill="#94a3b8">ARTICLE #147 · SEP 11, 2026</text>
-  </g>
+    <text x="0" y="85" font-family="'Inter', sans-serif" font-size="12" font-weight="800" fill="#a130f2" letter-spacing="2.5">PRIVATE INTELLIGENCE. ZERO DATA LEAKAGE.</text>
 
-  <!-- Left Content Block -->
-  <g transform="translate(60, 160)">
-    <rect x="0" y="0" width="48" height="4" rx="2" fill="#14b8a6"/>
+    <!-- Main Title -->
+    <text x="0" y="150" font-family="'Satoshi', 'Inter', sans-serif" font-size="36" font-weight="900" fill="#ffffff" letter-spacing="-0.02em">How We Train Our Engineers to</text>
+    <text x="0" y="198" font-family="'Satoshi', 'Inter', sans-serif" font-size="34" font-weight="900" fill="#d5a2f9">Build World-Class Software</text>
+    
 
-    <!-- Wrapped Article Title -->
-    <text x="0" y="55" font-family="'Satoshi', 'Inter', -apple-system, sans-serif" font-size="38" font-weight="800" fill="#ffffff" letter-spacing="-0.02em">
-      <tspan x="0" dy="0">How We Train Our Engineers to</tspan>
-      <tspan x="0" dy="52">Build World-Class Software</tspan>
-      <tspan x="0" dy="52"></tspan>
-    </text>
-
-    <!-- Key Takeaway Pill -->
-    <g transform="translate(0, 230)">
-      <rect width="360" height="44" rx="8" fill="rgba(15, 23, 42, 0.85)" stroke="#14b8a6" stroke-width="1.4"/>
-      <circle cx="22" cy="22" r="5" fill="#14b8a6"/>
-      <text x="38" y="27" font-family="'Inter', sans-serif" font-size="13.5" font-weight="700" fill="#ffffff">Private Isolated Enterprise AI</text>
+    <!-- Rating & Date Tag -->
+    <g transform="translate(0, 310)">
+      <text x="0" y="0" font-family="'Inter', sans-serif" font-size="13" font-weight="800" fill="#f59e0b">★★★★★ 4.9 · CRITIC VERIFIED</text>
+      <text x="0" y="26" font-family="'Inter', monospace" font-size="12" font-weight="600" fill="#64748b">ARTICLE #147 · Sep 11, 2026</text>
     </g>
 
-    <!-- Authority Byline -->
-    <text x="0" y="325" font-family="'Inter', sans-serif" font-size="14.5" font-weight="500" fill="#cbd5e1">
-      Official Technology Playbook &amp; Architecture Roadmap by Coralgenz Global
-    </text>
+    <!-- Bottom Credits -->
+    <text x="0" y="470" font-family="'Inter', sans-serif" font-size="9" font-weight="700" fill="#475569" letter-spacing="1">CORALGENZ GLOBAL PRODUCTION · COIMBATORE &amp; CHENNAI</text>
   </g>
 
-  <!-- Right Graphic Area -->
-  <g transform="translate(730, 130)">
+  <!-- Right Side: Large Kinetic Focal Subject -->
+  <g transform="translate(900, 320)">
     
         <!-- Neural Synapses & Data Guardrails -->
-        <g transform="translate(40, 25)">
-          <!-- Neural Graph Circles -->
-          <circle cx="160" cy="150" r="32" fill="#0f766e" stroke="#5eead4" stroke-width="3"/>
-          <circle cx="80" cy="90" r="18" fill="#115e59" stroke="#2dd4bf" stroke-width="2"/>
-          <circle cx="240" cy="90" r="18" fill="#115e59" stroke="#2dd4bf" stroke-width="2"/>
-          <circle cx="80" cy="210" r="18" fill="#115e59" stroke="#2dd4bf" stroke-width="2"/>
-          <circle cx="240" cy="210" r="18" fill="#115e59" stroke="#2dd4bf" stroke-width="2"/>
-          <line x1="95" y1="102" x2="135" y2="132" stroke="#5eead4" stroke-width="2"/>
-          <line x1="225" y1="102" x2="185" y2="132" stroke="#5eead4" stroke-width="2"/>
-          <line x1="95" y1="198" x2="135" y2="168" stroke="#5eead4" stroke-width="2"/>
-          <line x1="225" y1="198" x2="185" y2="168" stroke="#5eead4" stroke-width="2"/>
-          <polygon points="160 135 150 155 170 155" fill="#ffffff"/>
-          <rect x="70" y="255" width="180" height="34" rx="8" fill="#0f172a" stroke="#14b8a6" stroke-width="1.5"/>
-          <text x="160" y="277" font-family="'Inter', sans-serif" font-size="12" font-weight="800" fill="#5eead4" text-anchor="middle">ZERO-LEAK VPC SHIELD</text>
-        </g>
+        <circle cx="0" cy="0" r="26" fill="#170326" stroke="#a130f2" stroke-width="3"/>
+        <circle cx="-65" cy="-45" r="14" fill="#0f172a" stroke="#d5a2f9" stroke-width="2"/>
+        <circle cx="65" cy="-45" r="14" fill="#0f172a" stroke="#d5a2f9" stroke-width="2"/>
+        <circle cx="-65" cy="45" r="14" fill="#0f172a" stroke="#d5e522" stroke-width="2"/>
+        <circle cx="65" cy="45" r="14" fill="#0f172a" stroke="#d5e522" stroke-width="2"/>
+        <line x1="-51" y1="-35" x2="-20" y2="-12" stroke="#a130f2" stroke-width="2"/>
+        <line x1="51" y1="-35" x2="20" y2="-12" stroke="#a130f2" stroke-width="2"/>
+        <line x1="-51" y1="35" x2="-20" y2="12" stroke="#a130f2" stroke-width="2"/>
+        <line x1="51" y1="35" x2="20" y2="12" stroke="#a130f2" stroke-width="2"/>
+        <circle cx="0" cy="0" r="110" stroke="#d5a2f9" stroke-width="1" stroke-dasharray="3 3" opacity="0.4"/>
         
   </g>
-
-  <!-- Bottom Accent Line -->
-  <rect x="0" y="670" width="1200" height="5" fill="url(#line-grad-147)"/>
 </svg>

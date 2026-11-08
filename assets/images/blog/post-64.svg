@@ -1,86 +1,50 @@
 <svg width="1200" height="675" viewBox="0 0 1200 675" fill="none" xmlns="http://www.w3.org/2000/svg">
   <defs>
-    <linearGradient id="bg-64" x1="0" y1="0" x2="1200" y2="675" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#0a0f1d"/>
-      <stop offset="0.5" stop-color="#0055fe"/>
-      <stop offset="1" stop-color="#0037a8"/>
+    <linearGradient id="hud-bg-64" x1="0" y1="0" x2="1200" y2="675" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#02040a"/>
+      <stop offset="0.5" stop-color="#261003"/>
+      <stop offset="1" stop-color="#02040a"/>
     </linearGradient>
-    <radialGradient id="glow-64" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(900 337) rotate(90) scale(360 480)">
-      <stop stop-color="#38bdf8" stop-opacity="0.35"/>
-      <stop offset="1" stop-color="#38bdf8" stop-opacity="0"/>
-    </radialGradient>
-    <linearGradient id="line-grad-64" x1="0" y1="0" x2="1200" y2="0" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#38bdf8"/>
-      <stop offset="0.5" stop-color="#bfdbfe"/>
-      <stop offset="1" stop-color="#38bdf8"/>
-    </linearGradient>
-    <pattern id="grid-64" width="38" height="38" patternUnits="userSpaceOnUse">
-      <path d="M 38 0 L 0 0 0 38" fill="none" stroke="#ffffff" stroke-width="0.75" opacity="0.08"/>
-    </pattern>
   </defs>
 
-  <!-- Deep Tech Background -->
-  <rect width="1200" height="675" fill="url(#bg-64)"/>
-  <rect width="1200" height="675" fill="url(#grid-64)"/>
-  <circle cx="920" cy="337" r="380" fill="url(#glow-64)"/>
+  <rect width="1200" height="675" fill="url(#hud-bg-64)"/>
 
-  <!-- Top Header Navigation Bar -->
-  <g transform="translate(60, 48)">
-    <!-- Coralgenz Logo & Mark -->
-    <rect width="185" height="42" rx="21" fill="rgba(15, 23, 42, 0.85)" stroke="rgba(255, 255, 255, 0.2)" stroke-width="1.2"/>
-    <circle cx="22" cy="21" r="13" fill="#0055fe"/>
-    <path d="M 17 21 L 20 24 L 27 17" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-    <text x="44" y="26" font-family="'Satoshi', 'Inter', -apple-system, sans-serif" font-size="14" font-weight="800" fill="#ffffff" letter-spacing="0.5">CORALGENZ</text>
+  <!-- Sci-Fi HUD Viewfinder Elements -->
+  <rect x="40" y="40" width="1120" height="595" rx="8" stroke="#f26918" stroke-width="1.2" opacity="0.3" fill="none"/>
+  <!-- Crosshairs -->
+  <line x1="600" y1="30" x2="600" y2="50" stroke="#f9c3a2" stroke-width="2"/>
+  <line x1="600" y1="625" x2="600" y2="645" stroke="#f9c3a2" stroke-width="2"/>
+  <line x1="30" y1="337" x2="50" y2="337" stroke="#f9c3a2" stroke-width="2"/>
+  <line x1="1150" y1="337" x2="1170" y2="337" stroke="#f9c3a2" stroke-width="2"/>
 
-    <!-- Category Pill -->
-    <rect x="200" y="0" width="210" height="42" rx="21" fill="rgba(15, 23, 42, 0.75)" stroke="#38bdf8" stroke-width="1.2"/>
-    <text x="305" y="26" font-family="'Inter', sans-serif" font-size="12" font-weight="800" fill="#bfdbfe" letter-spacing="0.8" text-anchor="middle">LEGACY MODERNIZATION</text>
+  <!-- Top Telemetry Coordinates -->
+  <text x="60" y="65" font-family="'JetBrains Mono', monospace" font-size="10" font-weight="700" fill="#f9c3a2">CORALGENZ HUD // SYS_ARCH_ID: #64</text>
+  <text x="1140" y="65" font-family="'JetBrains Mono', monospace" font-size="10" font-weight="700" fill="#f9c3a2" text-anchor="end">LOC: 11.0168°N, 76.9558°E (COIMBATORE)</text>
 
-    <!-- Article ID & Date -->
-    <text x="1080" y="26" text-anchor="end" font-family="'JetBrains Mono', 'Inter', monospace" font-size="13" font-weight="700" fill="#94a3b8">ARTICLE #64 · MAR 2, 2026</text>
-  </g>
-
-  <!-- Left Content Block -->
-  <g transform="translate(60, 160)">
-    <rect x="0" y="0" width="48" height="4" rx="2" fill="#38bdf8"/>
-
-    <!-- Wrapped Article Title -->
-    <text x="0" y="55" font-family="'Satoshi', 'Inter', -apple-system, sans-serif" font-size="38" font-weight="800" fill="#ffffff" letter-spacing="-0.02em">
-      <tspan x="0" dy="0">7 Signs Your Old Business Software</tspan>
-      <tspan x="0" dy="52">Is Holding Your Company Back</tspan>
-      <tspan x="0" dy="52"></tspan>
-    </text>
-
-    <!-- Key Takeaway Pill -->
-    <g transform="translate(0, 230)">
-      <rect width="360" height="44" rx="8" fill="rgba(15, 23, 42, 0.85)" stroke="#38bdf8" stroke-width="1.4"/>
-      <circle cx="22" cy="22" r="5" fill="#38bdf8"/>
-      <text x="38" y="27" font-family="'Inter', sans-serif" font-size="13.5" font-weight="700" fill="#ffffff">Coimbatore &amp; Chennai Global Delivery</text>
-    </g>
-
-    <!-- Authority Byline -->
-    <text x="0" y="325" font-family="'Inter', sans-serif" font-size="14.5" font-weight="500" fill="#cbd5e1">
-      Official Technology Playbook &amp; Architecture Roadmap by Coralgenz Global
-    </text>
-  </g>
-
-  <!-- Right Graphic Area -->
-  <g transform="translate(730, 130)">
+  <!-- Center Holographic Graphic -->
+  <g transform="translate(600, 240)">
     
-        <!-- Verified Enterprise Authority & Global Delivery Hub -->
-        <g transform="translate(40, 25)">
-          <circle cx="160" cy="160" r="120" stroke="#38bdf8" stroke-width="1.5" stroke-dasharray="4 4" opacity="0.5"/>
-          <ellipse cx="160" cy="160" rx="110" ry="45" stroke="#93c5fd" stroke-width="1.5" opacity="0.4"/>
-          <ellipse cx="160" cy="160" rx="45" ry="110" stroke="#93c5fd" stroke-width="1.5" opacity="0.4"/>
-          <!-- Central Crest -->
-          <circle cx="160" cy="160" r="48" fill="#0055fe" stroke="#ffffff" stroke-width="3"/>
-          <path d="M 145 160 L 155 170 L 178 147" stroke="#ffffff" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/>
-          <rect x="50" y="255" width="220" height="34" rx="8" fill="#0f172a" stroke="#38bdf8" stroke-width="1.5"/>
-          <text x="160" y="277" font-family="'Inter', sans-serif" font-size="12" font-weight="800" fill="#ffffff" text-anchor="middle">COIMBATORE &amp; CHENNAI HQ</text>
-        </g>
+        <!-- 4-Tier Clean Architecture Isometric Monolith -->
+        <rect x="-80" y="-70" width="160" height="28" rx="6" fill="#261003" stroke="#f26918" stroke-width="2"/>
+        <rect x="-65" y="-30" width="130" height="28" rx="6" fill="#261003" stroke="#f9c3a2" stroke-width="2"/>
+        <rect x="-50" y="10" width="100" height="28" rx="6" fill="#261003" stroke="#22e5cd" stroke-width="2"/>
+        <rect x="-35" y="50" width="70" height="28" rx="6" fill="#261003" stroke="#f26918" stroke-width="2"/>
+        <line x1="0" y1="-42" x2="0" y2="-30" stroke="#f9c3a2" stroke-width="2" stroke-dasharray="2 2"/>
+        <line x1="0" y1="-2" x2="0" y2="10" stroke="#22e5cd" stroke-width="2" stroke-dasharray="2 2"/>
+        <line x1="0" y1="38" x2="0" y2="50" stroke="#f26918" stroke-width="2" stroke-dasharray="2 2"/>
         
   </g>
 
-  <!-- Bottom Accent Line -->
-  <rect x="0" y="670" width="1200" height="5" fill="url(#line-grad-64)"/>
+  <!-- Center Title Block -->
+  <g transform="translate(600, 430)">
+    <text x="0" y="0" font-family="'Inter', sans-serif" font-size="12.5" font-weight="800" fill="#f26918" letter-spacing="3" text-anchor="middle">ENTERPRISE SOFTWARE BUILT TO LAST A GENERATION.</text>
+    <text x="0" y="42" font-family="'Satoshi', 'Inter', sans-serif" font-size="34" font-weight="900" fill="#ffffff" text-anchor="middle">7 Signs Your Old Business Software</text>
+    <text x="0" y="82" font-family="'Satoshi', 'Inter', sans-serif" font-size="30" font-weight="900" fill="#f9c3a2" text-anchor="middle">Is Holding Your Company Back</text>
+  </g>
+
+  <!-- Bottom Telemetry & Billing Credits -->
+  <g transform="translate(600, 600)">
+    <text x="0" y="0" font-family="'Inter', sans-serif" font-size="11" font-weight="700" fill="#f59e0b" letter-spacing="1.5" text-anchor="middle">★★★★★ 4.9 SCORE · BUSINESS &amp; PRODUCTIVITY</text>
+    <text x="0" y="18" font-family="'Inter', sans-serif" font-size="8.5" font-weight="600" fill="#64748b" letter-spacing="1" text-anchor="middle">CORALGENZ GLOBAL · ZERO DATA LEAKAGE · VERIFIED TELEMETRY · 100% CODE OWNERSHIP</text>
+  </g>
 </svg>

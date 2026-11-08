@@ -1858,8 +1858,8 @@ __SITE_FOOTER__
                .replace("__CATEGORY_CHIPS__", category_chips_html)
 
 def main():
-    import generate_all_blog_images
-    generate_all_blog_images.main()
+    import generate_cinema_posters
+    generate_cinema_posters.main()
     print("Starting generation of 180 blog post pages and blog hub...")
     os.makedirs("blog", exist_ok=True)
     os.makedirs("dist/blog", exist_ok=True)

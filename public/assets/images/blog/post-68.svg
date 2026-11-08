@@ -1,87 +1,55 @@
 <svg width="1200" height="675" viewBox="0 0 1200 675" fill="none" xmlns="http://www.w3.org/2000/svg">
   <defs>
-    <linearGradient id="bg-68" x1="0" y1="0" x2="1200" y2="675" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#0a0f1d"/>
-      <stop offset="0.5" stop-color="#581c87"/>
-      <stop offset="1" stop-color="#3b0764"/>
+    <linearGradient id="bg-top-68" x1="0" y1="0" x2="1200" y2="350" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#020617"/>
+      <stop offset="1" stop-color="#031326"/>
     </linearGradient>
-    <radialGradient id="glow-68" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(900 337) rotate(90) scale(360 480)">
-      <stop stop-color="#a855f7" stop-opacity="0.35"/>
-      <stop offset="1" stop-color="#a855f7" stop-opacity="0"/>
-    </radialGradient>
-    <linearGradient id="line-grad-68" x1="0" y1="0" x2="1200" y2="0" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#a855f7"/>
-      <stop offset="0.5" stop-color="#e9d5ff"/>
-      <stop offset="1" stop-color="#a855f7"/>
+    <linearGradient id="horiz-68" x1="0" y1="350" x2="1200" y2="350" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#2482f2" stop-opacity="0"/>
+      <stop offset="0.5" stop-color="#a2caf9" stop-opacity="1"/>
+      <stop offset="1" stop-color="#2482f2" stop-opacity="0"/>
     </linearGradient>
-    <pattern id="grid-68" width="38" height="38" patternUnits="userSpaceOnUse">
-      <path d="M 38 0 L 0 0 0 38" fill="none" stroke="#ffffff" stroke-width="0.75" opacity="0.08"/>
-    </pattern>
   </defs>
 
-  <!-- Deep Tech Background -->
-  <rect width="1200" height="675" fill="url(#bg-68)"/>
-  <rect width="1200" height="675" fill="url(#grid-68)"/>
-  <circle cx="920" cy="337" r="380" fill="url(#glow-68)"/>
+  <!-- Upper Panoramic Half -->
+  <rect width="1200" height="350" fill="url(#bg-top-68)"/>
+  <!-- Lower Dark Card -->
+  <rect y="350" width="1200" height="325" fill="#040814"/>
 
-  <!-- Top Header Navigation Bar -->
-  <g transform="translate(60, 48)">
-    <!-- Coralgenz Logo & Mark -->
-    <rect width="185" height="42" rx="21" fill="rgba(15, 23, 42, 0.85)" stroke="rgba(255, 255, 255, 0.2)" stroke-width="1.2"/>
-    <circle cx="22" cy="21" r="13" fill="#0055fe"/>
-    <path d="M 17 21 L 20 24 L 27 17" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-    <text x="44" y="26" font-family="'Satoshi', 'Inter', -apple-system, sans-serif" font-size="14" font-weight="800" fill="#ffffff" letter-spacing="0.5">CORALGENZ</text>
+  <!-- Horizon Laser Divider Line -->
+  <line x1="0" y1="350" x2="1200" y2="350" stroke="url(#horiz-68)" stroke-width="3"/>
+  <circle cx="600" cy="350" r="30" fill="#2482f2" opacity="0.3"/>
 
-    <!-- Category Pill -->
-    <rect x="200" y="0" width="183" height="42" rx="21" fill="rgba(15, 23, 42, 0.75)" stroke="#a855f7" stroke-width="1.2"/>
-    <text x="291" y="26" font-family="'Inter', sans-serif" font-size="12" font-weight="800" fill="#e9d5ff" letter-spacing="0.8" text-anchor="middle">WEB MODERNIZATION</text>
-
-    <!-- Article ID & Date -->
-    <text x="1080" y="26" text-anchor="end" font-family="'JetBrains Mono', 'Inter', monospace" font-size="13" font-weight="700" fill="#94a3b8">ARTICLE #68 · MAR 11, 2026</text>
-  </g>
-
-  <!-- Left Content Block -->
-  <g transform="translate(60, 160)">
-    <rect x="0" y="0" width="48" height="4" rx="2" fill="#a855f7"/>
-
-    <!-- Wrapped Article Title -->
-    <text x="0" y="55" font-family="'Satoshi', 'Inter', -apple-system, sans-serif" font-size="38" font-weight="800" fill="#ffffff" letter-spacing="-0.02em">
-      <tspan x="0" dy="0">Updating Outdated Websites to</tspan>
-      <tspan x="0" dy="52">Fast, Modern Standards</tspan>
-      <tspan x="0" dy="52"></tspan>
-    </text>
-
-    <!-- Key Takeaway Pill -->
-    <g transform="translate(0, 230)">
-      <rect width="360" height="44" rx="8" fill="rgba(15, 23, 42, 0.85)" stroke="#a855f7" stroke-width="1.4"/>
-      <circle cx="22" cy="22" r="5" fill="#a855f7"/>
-      <text x="38" y="27" font-family="'Inter', sans-serif" font-size="13.5" font-weight="700" fill="#ffffff">Modern Modular PWA Architecture</text>
-    </g>
-
-    <!-- Authority Byline -->
-    <text x="0" y="325" font-family="'Inter', sans-serif" font-size="14.5" font-weight="500" fill="#cbd5e1">
-      Official Technology Playbook &amp; Architecture Roadmap by Coralgenz Global
-    </text>
-  </g>
-
-  <!-- Right Graphic Area -->
-  <g transform="translate(730, 130)">
+  <!-- Upper Focal Artwork -->
+  <g transform="translate(600, 180)">
     
-        <!-- Desktop + Mobile Multi-Device PWA Frame -->
-        <g transform="translate(30, 20)">
-          <!-- Laptop Base -->
-          <rect x="30" y="70" width="180" height="115" rx="10" fill="#1e1b4b" stroke="#c084fc" stroke-width="2"/>
-          <rect x="42" y="82" width="156" height="85" rx="4" fill="#0f172a"/>
-          <!-- Smartphone -->
-          <rect x="180" y="110" width="90" height="160" rx="14" fill="#0f172a" stroke="#e9d5ff" stroke-width="2.5"/>
-          <circle cx="225" cy="255" r="7" fill="#a855f7"/>
-          <path d="M 70 140 L 95 115 L 120 130 L 150 100" stroke="#34d399" stroke-width="3" stroke-linecap="round" fill="none"/>
-          <rect x="60" y="250" width="180" height="34" rx="8" fill="#0f172a" stroke="#a855f7" stroke-width="1.5"/>
-          <text x="150" y="272" font-family="'Inter', sans-serif" font-size="12" font-weight="800" fill="#e9d5ff" text-anchor="middle">100/100 LIGHTHOUSE SPEED</text>
-        </g>
+        <circle cx="0" cy="0" r="110" stroke="#2482f2" stroke-width="1.5" stroke-dasharray="4 4" opacity="0.5"/>
+        <ellipse cx="0" cy="0" rx="100" ry="40" stroke="#a2caf9" stroke-width="1.5" opacity="0.4"/>
+        <ellipse cx="0" cy="0" rx="40" ry="100" stroke="#a2caf9" stroke-width="1.5" opacity="0.4"/>
+        <circle cx="0" cy="0" r="42" fill="#031326" stroke="#2482f2" stroke-width="3"/>
+        <path d="M -14 0 L -4 10 L 16 -10" stroke="#ffffff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+        <circle cx="-85" cy="0" r="5" fill="#e52a22"/>
+        <circle cx="85" cy="0" r="5" fill="#e52a22"/>
         
   </g>
 
-  <!-- Bottom Accent Line -->
-  <rect x="0" y="670" width="1200" height="5" fill="url(#line-grad-68)"/>
+  <!-- Top Studio Bar -->
+  <g transform="translate(60, 45)">
+    <text x="0" y="0" font-family="'Inter', sans-serif" font-size="12" font-weight="900" fill="#ffffff" letter-spacing="2">CORALGENZ CINEMATIC</text>
+    <text x="1080" y="0" font-family="'Inter', monospace" font-size="12" font-weight="700" fill="#a2caf9" text-anchor="end">#68 · WEB MODERNIZATION</text>
+  </g>
+
+  <!-- Lower Title Card Content -->
+  <g transform="translate(60, 410)">
+    <text x="0" y="0" font-family="'Inter', sans-serif" font-size="13" font-weight="800" fill="#2482f2" letter-spacing="3">STRANGLE THE MONOLITH. LIBERATE YOUR OPERATIONS.</text>
+    <text x="0" y="45" font-family="'Satoshi', 'Inter', sans-serif" font-size="34" font-weight="900" fill="#ffffff" letter-spacing="-0.02em">Updating Outdated Websites to Fast,</text>
+    <text x="0" y="86" font-family="'Satoshi', 'Inter', sans-serif" font-size="30" font-weight="900" fill="#a2caf9">Modern Standards</text>
+  </g>
+
+  <!-- Lower Right Movie Billing Block -->
+  <g transform="translate(1140, 560)">
+    <text x="0" y="0" font-family="'Inter', sans-serif" font-size="12" font-weight="700" fill="#f59e0b" text-anchor="end">★★★★★ 4.9 · AUDIENCE CHOICE</text>
+    <text x="0" y="24" font-family="'Inter', sans-serif" font-size="9" font-weight="700" fill="#64748b" text-anchor="end">CORALGENZ GLOBAL STUDIOS · KARTHICK KRISHNA &amp; THANVANTH H</text>
+    <text x="0" y="38" font-family="'Inter', sans-serif" font-size="8.5" font-weight="600" fill="#475569" text-anchor="end">100% CODE OWNERSHIP · ZERO LOCK-IN · COIMBATORE &amp; CHENNAI</text>
+  </g>
 </svg>

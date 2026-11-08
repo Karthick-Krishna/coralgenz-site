@@ -1,86 +1,56 @@
 <svg width="1200" height="675" viewBox="0 0 1200 675" fill="none" xmlns="http://www.w3.org/2000/svg">
   <defs>
-    <linearGradient id="bg-2" x1="0" y1="0" x2="1200" y2="675" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#0a0f1d"/>
-      <stop offset="0.5" stop-color="#0055fe"/>
-      <stop offset="1" stop-color="#0037a8"/>
+    <linearGradient id="bg-top-2" x1="0" y1="0" x2="1200" y2="350" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#020617"/>
+      <stop offset="1" stop-color="#03260d"/>
     </linearGradient>
-    <radialGradient id="glow-2" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(900 337) rotate(90) scale(360 480)">
-      <stop stop-color="#38bdf8" stop-opacity="0.35"/>
-      <stop offset="1" stop-color="#38bdf8" stop-opacity="0"/>
-    </radialGradient>
-    <linearGradient id="line-grad-2" x1="0" y1="0" x2="1200" y2="0" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#38bdf8"/>
-      <stop offset="0.5" stop-color="#bfdbfe"/>
-      <stop offset="1" stop-color="#38bdf8"/>
+    <linearGradient id="horiz-2" x1="0" y1="350" x2="1200" y2="350" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#30f268" stop-opacity="0"/>
+      <stop offset="0.5" stop-color="#a2f9bb" stop-opacity="1"/>
+      <stop offset="1" stop-color="#30f268" stop-opacity="0"/>
     </linearGradient>
-    <pattern id="grid-2" width="38" height="38" patternUnits="userSpaceOnUse">
-      <path d="M 38 0 L 0 0 0 38" fill="none" stroke="#ffffff" stroke-width="0.75" opacity="0.08"/>
-    </pattern>
   </defs>
 
-  <!-- Deep Tech Background -->
-  <rect width="1200" height="675" fill="url(#bg-2)"/>
-  <rect width="1200" height="675" fill="url(#grid-2)"/>
-  <circle cx="920" cy="337" r="380" fill="url(#glow-2)"/>
+  <!-- Upper Panoramic Half -->
+  <rect width="1200" height="350" fill="url(#bg-top-2)"/>
+  <!-- Lower Dark Card -->
+  <rect y="350" width="1200" height="325" fill="#040814"/>
 
-  <!-- Top Header Navigation Bar -->
-  <g transform="translate(60, 48)">
-    <!-- Coralgenz Logo & Mark -->
-    <rect width="185" height="42" rx="21" fill="rgba(15, 23, 42, 0.85)" stroke="rgba(255, 255, 255, 0.2)" stroke-width="1.2"/>
-    <circle cx="22" cy="21" r="13" fill="#0055fe"/>
-    <path d="M 17 21 L 20 24 L 27 17" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-    <text x="44" y="26" font-family="'Satoshi', 'Inter', -apple-system, sans-serif" font-size="14" font-weight="800" fill="#ffffff" letter-spacing="0.5">CORALGENZ</text>
+  <!-- Horizon Laser Divider Line -->
+  <line x1="0" y1="350" x2="1200" y2="350" stroke="url(#horiz-2)" stroke-width="3"/>
+  <circle cx="600" cy="350" r="30" fill="#30f268" opacity="0.3"/>
 
-    <!-- Category Pill -->
-    <rect x="200" y="0" width="165" height="42" rx="21" fill="rgba(15, 23, 42, 0.75)" stroke="#38bdf8" stroke-width="1.2"/>
-    <text x="282" y="26" font-family="'Inter', sans-serif" font-size="12" font-weight="800" fill="#bfdbfe" letter-spacing="0.8" text-anchor="middle">CUSTOM SOFTWARE</text>
-
-    <!-- Article ID & Date -->
-    <text x="1080" y="26" text-anchor="end" font-family="'JetBrains Mono', 'Inter', monospace" font-size="13" font-weight="700" fill="#94a3b8">ARTICLE #2 · OCT 3, 2025</text>
-  </g>
-
-  <!-- Left Content Block -->
-  <g transform="translate(60, 160)">
-    <rect x="0" y="0" width="48" height="4" rx="2" fill="#38bdf8"/>
-
-    <!-- Wrapped Article Title -->
-    <text x="0" y="55" font-family="'Satoshi', 'Inter', -apple-system, sans-serif" font-size="38" font-weight="800" fill="#ffffff" letter-spacing="-0.02em">
-      <tspan x="0" dy="0">Why Good Business Software Does</tspan>
-      <tspan x="0" dy="52">Not Have to Be Expensive or Hard</tspan>
-      <tspan x="0" dy="52">to...</tspan>
-    </text>
-
-    <!-- Key Takeaway Pill -->
-    <g transform="translate(0, 230)">
-      <rect width="360" height="44" rx="8" fill="rgba(15, 23, 42, 0.85)" stroke="#38bdf8" stroke-width="1.4"/>
-      <circle cx="22" cy="22" r="5" fill="#38bdf8"/>
-      <text x="38" y="27" font-family="'Inter', sans-serif" font-size="13.5" font-weight="700" fill="#ffffff">Coimbatore &amp; Chennai Global Delivery</text>
-    </g>
-
-    <!-- Authority Byline -->
-    <text x="0" y="325" font-family="'Inter', sans-serif" font-size="14.5" font-weight="500" fill="#cbd5e1">
-      Official Technology Playbook &amp; Architecture Roadmap by Coralgenz Global
-    </text>
-  </g>
-
-  <!-- Right Graphic Area -->
-  <g transform="translate(730, 130)">
+  <!-- Upper Focal Artwork -->
+  <g transform="translate(600, 180)">
     
-        <!-- Verified Enterprise Authority & Global Delivery Hub -->
-        <g transform="translate(40, 25)">
-          <circle cx="160" cy="160" r="120" stroke="#38bdf8" stroke-width="1.5" stroke-dasharray="4 4" opacity="0.5"/>
-          <ellipse cx="160" cy="160" rx="110" ry="45" stroke="#93c5fd" stroke-width="1.5" opacity="0.4"/>
-          <ellipse cx="160" cy="160" rx="45" ry="110" stroke="#93c5fd" stroke-width="1.5" opacity="0.4"/>
-          <!-- Central Crest -->
-          <circle cx="160" cy="160" r="48" fill="#0055fe" stroke="#ffffff" stroke-width="3"/>
-          <path d="M 145 160 L 155 170 L 178 147" stroke="#ffffff" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/>
-          <rect x="50" y="255" width="220" height="34" rx="8" fill="#0f172a" stroke="#38bdf8" stroke-width="1.5"/>
-          <text x="160" y="277" font-family="'Inter', sans-serif" font-size="12" font-weight="800" fill="#ffffff" text-anchor="middle">COIMBATORE &amp; CHENNAI HQ</text>
-        </g>
+        <!-- 4-Tier Clean Architecture Isometric Monolith -->
+        <rect x="-80" y="-70" width="160" height="28" rx="6" fill="#03260d" stroke="#30f268" stroke-width="2"/>
+        <rect x="-65" y="-30" width="130" height="28" rx="6" fill="#03260d" stroke="#a2f9bb" stroke-width="2"/>
+        <rect x="-50" y="10" width="100" height="28" rx="6" fill="#03260d" stroke="#bc22e5" stroke-width="2"/>
+        <rect x="-35" y="50" width="70" height="28" rx="6" fill="#03260d" stroke="#30f268" stroke-width="2"/>
+        <line x1="0" y1="-42" x2="0" y2="-30" stroke="#a2f9bb" stroke-width="2" stroke-dasharray="2 2"/>
+        <line x1="0" y1="-2" x2="0" y2="10" stroke="#bc22e5" stroke-width="2" stroke-dasharray="2 2"/>
+        <line x1="0" y1="38" x2="0" y2="50" stroke="#30f268" stroke-width="2" stroke-dasharray="2 2"/>
         
   </g>
 
-  <!-- Bottom Accent Line -->
-  <rect x="0" y="670" width="1200" height="5" fill="url(#line-grad-2)"/>
+  <!-- Top Studio Bar -->
+  <g transform="translate(60, 45)">
+    <text x="0" y="0" font-family="'Inter', sans-serif" font-size="12" font-weight="900" fill="#ffffff" letter-spacing="2">CORALGENZ CINEMATIC</text>
+    <text x="1080" y="0" font-family="'Inter', monospace" font-size="12" font-weight="700" fill="#a2f9bb" text-anchor="end">#2 · CUSTOM SOFTWARE</text>
+  </g>
+
+  <!-- Lower Title Card Content -->
+  <g transform="translate(60, 410)">
+    <text x="0" y="0" font-family="'Inter', sans-serif" font-size="13" font-weight="800" fill="#30f268" letter-spacing="3">ENTERPRISE SOFTWARE BUILT TO LAST A GENERATION.</text>
+    <text x="0" y="45" font-family="'Satoshi', 'Inter', sans-serif" font-size="34" font-weight="900" fill="#ffffff" letter-spacing="-0.02em">Why Good Business Software Does Not</text>
+    <text x="0" y="86" font-family="'Satoshi', 'Inter', sans-serif" font-size="30" font-weight="900" fill="#a2f9bb">Have to Be Expensive or Hard to Use</text>
+  </g>
+
+  <!-- Lower Right Movie Billing Block -->
+  <g transform="translate(1140, 560)">
+    <text x="0" y="0" font-family="'Inter', sans-serif" font-size="12" font-weight="700" fill="#f59e0b" text-anchor="end">★★★★★ 4.9 · AUDIENCE CHOICE</text>
+    <text x="0" y="24" font-family="'Inter', sans-serif" font-size="9" font-weight="700" fill="#64748b" text-anchor="end">CORALGENZ GLOBAL STUDIOS · KARTHICK KRISHNA &amp; THANVANTH H</text>
+    <text x="0" y="38" font-family="'Inter', sans-serif" font-size="8.5" font-weight="600" fill="#475569" text-anchor="end">100% CODE OWNERSHIP · ZERO LOCK-IN · COIMBATORE &amp; CHENNAI</text>
+  </g>
 </svg>

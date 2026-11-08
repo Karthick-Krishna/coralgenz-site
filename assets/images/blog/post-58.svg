@@ -1,94 +1,52 @@
 <svg width="1200" height="675" viewBox="0 0 1200 675" fill="none" xmlns="http://www.w3.org/2000/svg">
   <defs>
-    <linearGradient id="bg-58" x1="0" y1="0" x2="1200" y2="675" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#0a0f1d"/>
-      <stop offset="0.5" stop-color="#083344"/>
-      <stop offset="1" stop-color="#164e63"/>
+    <linearGradient id="hud-bg-58" x1="0" y1="0" x2="1200" y2="675" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#02040a"/>
+      <stop offset="0.5" stop-color="#190326"/>
+      <stop offset="1" stop-color="#02040a"/>
     </linearGradient>
-    <radialGradient id="glow-58" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(900 337) rotate(90) scale(360 480)">
-      <stop stop-color="#06b6d4" stop-opacity="0.35"/>
-      <stop offset="1" stop-color="#06b6d4" stop-opacity="0"/>
-    </radialGradient>
-    <linearGradient id="line-grad-58" x1="0" y1="0" x2="1200" y2="0" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#06b6d4"/>
-      <stop offset="0.5" stop-color="#67e8f9"/>
-      <stop offset="1" stop-color="#06b6d4"/>
-    </linearGradient>
-    <pattern id="grid-58" width="38" height="38" patternUnits="userSpaceOnUse">
-      <path d="M 38 0 L 0 0 0 38" fill="none" stroke="#ffffff" stroke-width="0.75" opacity="0.08"/>
-    </pattern>
   </defs>
 
-  <!-- Deep Tech Background -->
-  <rect width="1200" height="675" fill="url(#bg-58)"/>
-  <rect width="1200" height="675" fill="url(#grid-58)"/>
-  <circle cx="920" cy="337" r="380" fill="url(#glow-58)"/>
+  <rect width="1200" height="675" fill="url(#hud-bg-58)"/>
 
-  <!-- Top Header Navigation Bar -->
-  <g transform="translate(60, 48)">
-    <!-- Coralgenz Logo & Mark -->
-    <rect width="185" height="42" rx="21" fill="rgba(15, 23, 42, 0.85)" stroke="rgba(255, 255, 255, 0.2)" stroke-width="1.2"/>
-    <circle cx="22" cy="21" r="13" fill="#0055fe"/>
-    <path d="M 17 21 L 20 24 L 27 17" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-    <text x="44" y="26" font-family="'Satoshi', 'Inter', -apple-system, sans-serif" font-size="14" font-weight="800" fill="#ffffff" letter-spacing="0.5">CORALGENZ</text>
+  <!-- Sci-Fi HUD Viewfinder Elements -->
+  <rect x="40" y="40" width="1120" height="595" rx="8" stroke="#a524f2" stroke-width="1.2" opacity="0.3" fill="none"/>
+  <!-- Crosshairs -->
+  <line x1="600" y1="30" x2="600" y2="50" stroke="#d9a2f9" stroke-width="2"/>
+  <line x1="600" y1="625" x2="600" y2="645" stroke="#d9a2f9" stroke-width="2"/>
+  <line x1="30" y1="337" x2="50" y2="337" stroke="#d9a2f9" stroke-width="2"/>
+  <line x1="1150" y1="337" x2="1170" y2="337" stroke="#d9a2f9" stroke-width="2"/>
 
-    <!-- Category Pill -->
-    <rect x="200" y="0" width="219" height="42" rx="21" fill="rgba(15, 23, 42, 0.75)" stroke="#06b6d4" stroke-width="1.2"/>
-    <text x="309" y="26" font-family="'Inter', sans-serif" font-size="12" font-weight="800" fill="#67e8f9" letter-spacing="0.8" text-anchor="middle">EDUCATION &amp; TOOLS</text>
+  <!-- Top Telemetry Coordinates -->
+  <text x="60" y="65" font-family="'JetBrains Mono', monospace" font-size="10" font-weight="700" fill="#d9a2f9">CORALGENZ HUD // SYS_ARCH_ID: #58</text>
+  <text x="1140" y="65" font-family="'JetBrains Mono', monospace" font-size="10" font-weight="700" fill="#d9a2f9" text-anchor="end">LOC: 11.0168°N, 76.9558°E (COIMBATORE)</text>
 
-    <!-- Article ID & Date -->
-    <text x="1080" y="26" text-anchor="end" font-family="'JetBrains Mono', 'Inter', monospace" font-size="13" font-weight="700" fill="#94a3b8">ARTICLE #58 · FEB 16, 2026</text>
-  </g>
-
-  <!-- Left Content Block -->
-  <g transform="translate(60, 160)">
-    <rect x="0" y="0" width="48" height="4" rx="2" fill="#06b6d4"/>
-
-    <!-- Wrapped Article Title -->
-    <text x="0" y="55" font-family="'Satoshi', 'Inter', -apple-system, sans-serif" font-size="38" font-weight="800" fill="#ffffff" letter-spacing="-0.02em">
-      <tspan x="0" dy="0">How Colleges and Coding Schools</tspan>
-      <tspan x="0" dy="52">Use Coralgenz Compiler for Online</tspan>
-      <tspan x="0" dy="52">Tests</tspan>
-    </text>
-
-    <!-- Key Takeaway Pill -->
-    <g transform="translate(0, 230)">
-      <rect width="360" height="44" rx="8" fill="rgba(15, 23, 42, 0.85)" stroke="#06b6d4" stroke-width="1.4"/>
-      <circle cx="22" cy="22" r="5" fill="#06b6d4"/>
-      <text x="38" y="27" font-family="'Inter', sans-serif" font-size="13.5" font-weight="700" fill="#ffffff">Sub-50ms WebAssembly Sandbox</text>
-    </g>
-
-    <!-- Authority Byline -->
-    <text x="0" y="325" font-family="'Inter', sans-serif" font-size="14.5" font-weight="500" fill="#cbd5e1">
-      Official Technology Playbook &amp; Architecture Roadmap by Coralgenz Global
-    </text>
-  </g>
-
-  <!-- Right Graphic Area -->
-  <g transform="translate(730, 130)">
+  <!-- Center Holographic Graphic -->
+  <g transform="translate(600, 240)">
     
-        <!-- Modern Code Terminal & Compiler Engine -->
-        <g transform="translate(30, 25)">
-          <rect x="30" y="50" width="300" height="240" rx="16" fill="#0b1320" stroke="#06b6d4" stroke-width="2.5"/>
-          <!-- Window Header -->
-          <rect x="30" y="50" width="300" height="38" rx="16" fill="#164e63"/>
-          <circle cx="54" cy="69" r="6" fill="#ef4444"/>
-          <circle cx="74" cy="69" r="6" fill="#f59e0b"/>
-          <circle cx="94" cy="69" r="6" fill="#10b981"/>
-          <text x="180" y="73" font-family="'Inter', monospace" font-size="12" font-weight="700" fill="#e0f2fe" text-anchor="middle">compiler.coralgenz.net</text>
-          <!-- Code Lines -->
-          <text x="54" y="120" font-family="'JetBrains Mono', monospace" font-size="13" font-weight="700" fill="#38bdf8">&gt; run main.py --wasm</text>
-          <text x="54" y="148" font-family="'JetBrains Mono', monospace" font-size="12" fill="#67e8f9">import coralgenz.crypto as cc</text>
-          <text x="54" y="172" font-family="'JetBrains Mono', monospace" font-size="12" fill="#a5f3fc">def execute_isolated():</text>
-          <text x="74" y="196" font-family="'JetBrains Mono', monospace" font-size="12" fill="#34d399">return status.OK (42ms)</text>
-          <!-- Speed Flash Pill -->
-          <rect x="54" y="225" width="250" height="36" rx="8" fill="rgba(6, 182, 212, 0.15)" stroke="#06b6d4" stroke-width="1.5"/>
-          <polygon points="74 235 68 247 78 247 72 257 84 243 76 243" fill="#f59e0b"/>
-          <text x="96" y="248" font-family="'Inter', sans-serif" font-size="12" font-weight="800" fill="#ffffff">WASM ENGINE: 42MS LATENCY</text>
-        </g>
+        <!-- Holographic Code Terminal -->
+        <rect x="-110" y="-75" width="220" height="150" rx="14" fill="#090d16" stroke="#a524f2" stroke-width="2.5"/>
+        <rect x="-110" y="-75" width="220" height="28" rx="14" fill="#190326"/>
+        <circle cx="-90" cy="-61" r="4" fill="#ef4444"/>
+        <circle cx="-76" cy="-61" r="4" fill="#f59e0b"/>
+        <circle cx="-62" cy="-61" r="4" fill="#10b981"/>
+        <text x="-90" y="-20" font-family="'JetBrains Mono', monospace" font-size="11" font-weight="700" fill="#d9a2f9">&gt; cc-compiler --wasm</text>
+        <text x="-90" y="2" font-family="'JetBrains Mono', monospace" font-size="10" fill="#94a3b8">SANDBOX: ISOLATED (42ms)</text>
+        <polygon points="-8 25 -18 45 -4 45 -12 65 8 38 -4 38" fill="#f59e0b"/>
+        <circle cx="0" cy="0" r="110" stroke="#a524f2" stroke-width="1" stroke-dasharray="4 4" opacity="0.3"/>
         
   </g>
 
-  <!-- Bottom Accent Line -->
-  <rect x="0" y="670" width="1200" height="5" fill="url(#line-grad-58)"/>
+  <!-- Center Title Block -->
+  <g transform="translate(600, 430)">
+    <text x="0" y="0" font-family="'Inter', sans-serif" font-size="12.5" font-weight="800" fill="#a524f2" letter-spacing="3" text-anchor="middle">WRITE IN ANY LANGUAGE. RUN IN 42 MILLISECONDS.</text>
+    <text x="0" y="42" font-family="'Satoshi', 'Inter', sans-serif" font-size="34" font-weight="900" fill="#ffffff" text-anchor="middle">How Colleges and Coding Schools</text>
+    <text x="0" y="82" font-family="'Satoshi', 'Inter', sans-serif" font-size="30" font-weight="900" fill="#d9a2f9" text-anchor="middle">Use Coralgenz Compiler for Online</text>
+  </g>
+
+  <!-- Bottom Telemetry & Billing Credits -->
+  <g transform="translate(600, 600)">
+    <text x="0" y="0" font-family="'Inter', sans-serif" font-size="11" font-weight="700" fill="#f59e0b" letter-spacing="1.5" text-anchor="middle">★★★★★ 4.9 SCORE · BUSINESS &amp; PRODUCTIVITY</text>
+    <text x="0" y="18" font-family="'Inter', sans-serif" font-size="8.5" font-weight="600" fill="#64748b" letter-spacing="1" text-anchor="middle">CORALGENZ GLOBAL · ZERO DATA LEAKAGE · VERIFIED TELEMETRY · 100% CODE OWNERSHIP</text>
+  </g>
 </svg>

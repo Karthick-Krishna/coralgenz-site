@@ -1,86 +1,51 @@
 <svg width="1200" height="675" viewBox="0 0 1200 675" fill="none" xmlns="http://www.w3.org/2000/svg">
   <defs>
-    <linearGradient id="bg-153" x1="0" y1="0" x2="1200" y2="675" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#0a0f1d"/>
-      <stop offset="0.5" stop-color="#0055fe"/>
-      <stop offset="1" stop-color="#0037a8"/>
+    <linearGradient id="slash-bg-153" x1="0" y1="0" x2="1200" y2="675" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#020617"/>
+      <stop offset="0.6" stop-color="#260f03"/>
+      <stop offset="1" stop-color="#050a18"/>
     </linearGradient>
-    <radialGradient id="glow-153" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(900 337) rotate(90) scale(360 480)">
-      <stop stop-color="#38bdf8" stop-opacity="0.35"/>
-      <stop offset="1" stop-color="#38bdf8" stop-opacity="0"/>
-    </radialGradient>
-    <linearGradient id="line-grad-153" x1="0" y1="0" x2="1200" y2="0" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#38bdf8"/>
-      <stop offset="0.5" stop-color="#bfdbfe"/>
-      <stop offset="1" stop-color="#38bdf8"/>
-    </linearGradient>
-    <pattern id="grid-153" width="38" height="38" patternUnits="userSpaceOnUse">
-      <path d="M 38 0 L 0 0 0 38" fill="none" stroke="#ffffff" stroke-width="0.75" opacity="0.08"/>
-    </pattern>
   </defs>
 
-  <!-- Deep Tech Background -->
-  <rect width="1200" height="675" fill="url(#bg-153)"/>
-  <rect width="1200" height="675" fill="url(#grid-153)"/>
-  <circle cx="920" cy="337" r="380" fill="url(#glow-153)"/>
+  <rect width="1200" height="675" fill="url(#slash-bg-153)"/>
 
-  <!-- Top Header Navigation Bar -->
-  <g transform="translate(60, 48)">
-    <!-- Coralgenz Logo & Mark -->
-    <rect width="185" height="42" rx="21" fill="rgba(15, 23, 42, 0.85)" stroke="rgba(255, 255, 255, 0.2)" stroke-width="1.2"/>
-    <circle cx="22" cy="21" r="13" fill="#0055fe"/>
-    <path d="M 17 21 L 20 24 L 27 17" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-    <text x="44" y="26" font-family="'Satoshi', 'Inter', -apple-system, sans-serif" font-size="14" font-weight="800" fill="#ffffff" letter-spacing="0.5">CORALGENZ</text>
+  <!-- 20-Degree Diagonal Cyber Slash -->
+  <polygon points="550 0 700 0 650 675 500 675" fill="#f26824" opacity="0.12"/>
+  <line x1="625" y1="0" x2="575" y2="675" stroke="#f9bfa2" stroke-width="2" opacity="0.6"/>
 
-    <!-- Category Pill -->
-    <rect x="200" y="0" width="201" height="42" rx="21" fill="rgba(15, 23, 42, 0.75)" stroke="#38bdf8" stroke-width="1.2"/>
-    <text x="300" y="26" font-family="'Inter', sans-serif" font-size="12" font-weight="800" fill="#bfdbfe" letter-spacing="0.8" text-anchor="middle">FOUNDER REFLECTIONS</text>
+  <!-- Left Side: Cinematic Title Stack -->
+  <g transform="translate(70, 70)">
+    <rect x="0" y="0" width="160" height="28" rx="6" fill="#f26824" opacity="0.2"/>
+    <text x="12" y="19" font-family="'Inter', sans-serif" font-size="11" font-weight="800" fill="#f9bfa2" letter-spacing="1">FOUNDER REFLECTIONS</text>
 
-    <!-- Article ID & Date -->
-    <text x="1080" y="26" text-anchor="end" font-family="'JetBrains Mono', 'Inter', monospace" font-size="13" font-weight="700" fill="#94a3b8">ARTICLE #153 · SEP 25, 2026</text>
-  </g>
+    <text x="0" y="85" font-family="'Inter', sans-serif" font-size="12" font-weight="800" fill="#f26824" letter-spacing="2.5">ENTERPRISE SOFTWARE BUILT TO LAST A GENERATION.</text>
 
-  <!-- Left Content Block -->
-  <g transform="translate(60, 160)">
-    <rect x="0" y="0" width="48" height="4" rx="2" fill="#38bdf8"/>
+    <!-- Main Title -->
+    <text x="0" y="150" font-family="'Satoshi', 'Inter', sans-serif" font-size="36" font-weight="900" fill="#ffffff" letter-spacing="-0.02em">What Our First Year Taught Us</text>
+    <text x="0" y="198" font-family="'Satoshi', 'Inter', sans-serif" font-size="34" font-weight="900" fill="#f9bfa2">About Building Software</text>
+    <text x="0" y="74" font-family="Satoshi, Inter, sans-serif" font-size="24" font-weight="800" fill="#cbd5e1" text-anchor="middle">Clients...</text>
 
-    <!-- Wrapped Article Title -->
-    <text x="0" y="55" font-family="'Satoshi', 'Inter', -apple-system, sans-serif" font-size="38" font-weight="800" fill="#ffffff" letter-spacing="-0.02em">
-      <tspan x="0" dy="0">What Our First Year Taught Us</tspan>
-      <tspan x="0" dy="52">About Building Software Clients</tspan>
-      <tspan x="0" dy="52">Love</tspan>
-    </text>
-
-    <!-- Key Takeaway Pill -->
-    <g transform="translate(0, 230)">
-      <rect width="360" height="44" rx="8" fill="rgba(15, 23, 42, 0.85)" stroke="#38bdf8" stroke-width="1.4"/>
-      <circle cx="22" cy="22" r="5" fill="#38bdf8"/>
-      <text x="38" y="27" font-family="'Inter', sans-serif" font-size="13.5" font-weight="700" fill="#ffffff">Coimbatore &amp; Chennai Global Delivery</text>
+    <!-- Rating & Date Tag -->
+    <g transform="translate(0, 310)">
+      <text x="0" y="0" font-family="'Inter', sans-serif" font-size="13" font-weight="800" fill="#f59e0b">★★★★★ 4.9 · CRITIC VERIFIED</text>
+      <text x="0" y="26" font-family="'Inter', monospace" font-size="12" font-weight="600" fill="#64748b">ARTICLE #153 · Sep 25, 2026</text>
     </g>
 
-    <!-- Authority Byline -->
-    <text x="0" y="325" font-family="'Inter', sans-serif" font-size="14.5" font-weight="500" fill="#cbd5e1">
-      Official Technology Playbook &amp; Architecture Roadmap by Coralgenz Global
-    </text>
+    <!-- Bottom Credits -->
+    <text x="0" y="470" font-family="'Inter', sans-serif" font-size="9" font-weight="700" fill="#475569" letter-spacing="1">CORALGENZ GLOBAL PRODUCTION · COIMBATORE &amp; CHENNAI</text>
   </g>
 
-  <!-- Right Graphic Area -->
-  <g transform="translate(730, 130)">
+  <!-- Right Side: Large Kinetic Focal Subject -->
+  <g transform="translate(900, 320)">
     
-        <!-- Verified Enterprise Authority & Global Delivery Hub -->
-        <g transform="translate(40, 25)">
-          <circle cx="160" cy="160" r="120" stroke="#38bdf8" stroke-width="1.5" stroke-dasharray="4 4" opacity="0.5"/>
-          <ellipse cx="160" cy="160" rx="110" ry="45" stroke="#93c5fd" stroke-width="1.5" opacity="0.4"/>
-          <ellipse cx="160" cy="160" rx="45" ry="110" stroke="#93c5fd" stroke-width="1.5" opacity="0.4"/>
-          <!-- Central Crest -->
-          <circle cx="160" cy="160" r="48" fill="#0055fe" stroke="#ffffff" stroke-width="3"/>
-          <path d="M 145 160 L 155 170 L 178 147" stroke="#ffffff" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/>
-          <rect x="50" y="255" width="220" height="34" rx="8" fill="#0f172a" stroke="#38bdf8" stroke-width="1.5"/>
-          <text x="160" y="277" font-family="'Inter', sans-serif" font-size="12" font-weight="800" fill="#ffffff" text-anchor="middle">COIMBATORE &amp; CHENNAI HQ</text>
-        </g>
+        <!-- 4-Tier Clean Architecture Isometric Monolith -->
+        <rect x="-80" y="-70" width="160" height="28" rx="6" fill="#260f03" stroke="#f26824" stroke-width="2"/>
+        <rect x="-65" y="-30" width="130" height="28" rx="6" fill="#260f03" stroke="#f9bfa2" stroke-width="2"/>
+        <rect x="-50" y="10" width="100" height="28" rx="6" fill="#260f03" stroke="#22e5c4" stroke-width="2"/>
+        <rect x="-35" y="50" width="70" height="28" rx="6" fill="#260f03" stroke="#f26824" stroke-width="2"/>
+        <line x1="0" y1="-42" x2="0" y2="-30" stroke="#f9bfa2" stroke-width="2" stroke-dasharray="2 2"/>
+        <line x1="0" y1="-2" x2="0" y2="10" stroke="#22e5c4" stroke-width="2" stroke-dasharray="2 2"/>
+        <line x1="0" y1="38" x2="0" y2="50" stroke="#f26824" stroke-width="2" stroke-dasharray="2 2"/>
         
   </g>
-
-  <!-- Bottom Accent Line -->
-  <rect x="0" y="670" width="1200" height="5" fill="url(#line-grad-153)"/>
 </svg>
