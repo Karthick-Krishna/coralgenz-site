@@ -1151,22 +1151,22 @@
 
   <main>
     <!-- Blog Hero Section -->
-    <section class="section" style="padding-top: 48px; padding-bottom: 32px; background: radial-gradient(at 50% 0%, #ebf3ff 0%, #ffffff 70%);">
+    <section class="section blog-hero-section" style="padding-top: 48px; padding-bottom: 32px; background: radial-gradient(at 50% 0%, #ebf3ff 0%, #ffffff 70%);">
       <div class="container" style="text-align: center; max-width: 900px;">
-        <div style="display: inline-flex; align-items: center; gap: 8px; padding: 6px 18px; background: #eff6ff; border: 1.5px solid #bfdbfe; border-radius: 9999px; font-size: 12px; font-weight: 700; color: #0055fe; text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 18px;">
+        <div class="blog-hero-pill" style="display: inline-flex; align-items: center; gap: 8px; padding: 6px 18px; background: #eff6ff; border: 1.5px solid #bfdbfe; border-radius: 9999px; font-size: 12px; font-weight: 700; color: #0055fe; text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 18px;">
           <span>180 KNOWLEDGE ARTICLES &amp; ENGINEERING PLAYBOOKS</span>
         </div>
 
-        <h1 style="font-family: var(--font-satoshi), sans-serif; font-size: clamp(32px, 5vw, 54px); font-weight: 800; color: #0f172a; line-height: 1.15; letter-spacing: -0.025em; margin: 0 0 16px 0;">
+        <h1 class="blog-hero-title" style="font-family: var(--font-satoshi), sans-serif; font-size: clamp(32px, 5vw, 54px); font-weight: 800; color: #0f172a; line-height: 1.15; letter-spacing: -0.025em; margin: 0 0 16px 0;">
           Simple, Actionable <span style="background: linear-gradient(135deg, #0055fe 0%, #0084ff 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Technology Insights</span>
         </h1>
 
-        <p style="font-size: clamp(16px, 2.2vw, 18px); color: #475569; line-height: 1.65; max-width: 720px; margin: 0 auto 24px auto;">
+        <p class="blog-hero-desc" style="font-size: clamp(16px, 2.2vw, 18px); color: #475569; line-height: 1.65; max-width: 720px; margin: 0 auto 24px auto;">
           Plain-English software guides, startup MVP roadmaps, cloud scalability, and zero-knowledge security architecture written for founders, leaders, and engineers.
         </p>
 
         <!-- Social Proof & Google Star Ratings Bar -->
-        <div style="display: inline-flex; align-items: center; gap: 8px; padding: 10px 22px; background: #ffffff; border: 1.5px solid #e2e8f0; border-radius: 9999px; box-shadow: 0 4px 16px rgba(15, 23, 42, 0.06); flex-wrap: wrap; justify-content: center; font-size: 13.5px;">
+        <div class="blog-social-proof-bar" style="display: inline-flex; align-items: center; gap: 8px; padding: 10px 22px; background: #ffffff; border: 1.5px solid #e2e8f0; border-radius: 9999px; box-shadow: 0 4px 16px rgba(15, 23, 42, 0.06); flex-wrap: wrap; justify-content: center; font-size: 13.5px;">
           <span style="font-size: 15px; font-weight: 800; color: #0f172a;">4.9</span>
           <span style="color: #f59e0b; font-size: 15px; letter-spacing: 1px;">★★★★★</span>
           <span style="color: #64748b; font-weight: 600;">(1,807,278)</span>
@@ -2137,12 +2137,12 @@
       grid.innerHTML = paginated.map(post => {
         const articleHref = window.location.protocol === 'file:' ? ('blog/' + post.slug + '.html') : post.url;
                 return `
-        <article style="background: #ffffff; border: 1.5px solid #e2e8f0; border-radius: 16px; padding: 20px; display: flex; flex-direction: column; justify-content: space-between; transition: transform 0.2s ease, box-shadow 0.2s ease; box-shadow: 0 4px 16px rgba(15, 23, 42, 0.04);"
+        <article class="blog-card" style="background: #ffffff; border: 1.5px solid #e2e8f0; border-radius: 16px; padding: 20px; display: flex; flex-direction: column; justify-content: space-between; transition: transform 0.2s ease, box-shadow 0.2s ease; box-shadow: 0 4px 16px rgba(15, 23, 42, 0.04);"
           onmouseenter="this.style.transform='translateY(-3px)'; this.style.boxShadow='0 10px 28px rgba(0,85,254,0.12)'; this.style.borderColor='#93c5fd';"
           onmouseleave="this.style.transform='none'; this.style.boxShadow='0 4px 16px rgba(15, 23, 42, 0.04)'; this.style.borderColor='#e2e8f0';">
           <div>
             <!-- Post Thumbnail Image Representing Coralgenz Global & Topic -->
-            <a href="${articleHref}" class="blog-card-thumb-link" style="display: block; width: 100%; height: 180px; border-radius: 12px; margin-bottom: 16px; overflow: hidden; position: relative; text-decoration: none; border: 1.5px solid #e2e8f0; background: #0f172a; box-shadow: 0 4px 12px rgba(15, 23, 42, 0.04);">
+            <a href="${articleHref}" class="blog-card-thumb-link" style="display: block; width: 100%; border-radius: 14px; margin-bottom: 16px; overflow: hidden; position: relative; text-decoration: none; border: 1.5px solid #e2e8f0; background: #0f172a; box-shadow: 0 4px 12px rgba(15, 23, 42, 0.04);">
               <img src="/assets/images/blog/post-${post.id}.svg" alt="${post.title}" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.35s ease;" onmouseenter="this.style.transform='scale(1.03)'" onmouseleave="this.style.transform='none'">
             </a>
 
