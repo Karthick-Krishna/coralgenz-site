@@ -7,7 +7,9 @@
  * - Granular 4-category management (Necessary, Functional, Analytics, Marketing)
  * - Genuine enforcement: blocks/unblocks tracking scripts, purges non-consented cookies
  * - WCAG 2.1 AA accessible UI: focus trapping, keyboard navigation, ARIA semantics
- * - Global footer & floating badge access across all pages
+ * - Attractive, low-profile banner (ultra-compact mobile height)
+ * - Interactive floating Cookie icon after accept/reject
+ * - Complete "Reset Cookies Data" capability that resets preferences and re-prompts the banner
  */
 
 const STORAGE_KEY = 'coralgenz_consent_v1';
@@ -234,6 +236,55 @@ export function saveCookieConsent(status, preferences = {}) {
 }
 
 /**
+ * Resets all stored consent data, clears cookies, and restores default state
+ */
+export function resetCookieConsent() {
+  try {
+    localStorage.removeItem(STORAGE_KEY);
+  } catch (err) {
+    console.warn('[Coralgenz Consent] localStorage remove failed:', err);
+  }
+
+  try {
+    const domains = [
+      window.location.hostname,
+      '.' + window.location.hostname,
+      window.location.hostname.replace(/^www\./, ''),
+      '.' + window.location.hostname.replace(/^www\./, '')
+    ];
+    domains.forEach((d) => {
+      document.cookie = `${COOKIE_NAME}=; path=/; domain=${d}; max-age=0; expires=Thu, 01 Jan 1970 00:00:00 GMT`;
+    });
+    document.cookie = `${COOKIE_NAME}=; path=/; max-age=0; expires=Thu, 01 Jan 1970 00:00:00 GMT`;
+  } catch (err) {
+    console.warn('[Coralgenz Consent] Cookie clear failed:', err);
+  }
+
+  // Purge tracking cookies
+  purgeCookiesForCategory('analytics');
+  purgeCookiesForCategory('marketing');
+
+  // Reset Google Consent Mode
+  updateGoogleConsentMode({
+    necessary: true,
+    functional: false,
+    analytics: false,
+    marketing: false
+  });
+
+  // Dispatch events
+  const eventDetail = { detail: null };
+  if (typeof window !== 'undefined') {
+    window.dispatchEvent(new CustomEvent('coralgenz:consent-reset', eventDetail));
+    window.dispatchEvent(new CustomEvent('coralgenz:consent-updated', eventDetail));
+    window.dispatchEvent(new CustomEvent('coralgenz:cookieConsentUpdated', eventDetail));
+  }
+  if (typeof document !== 'undefined') {
+    document.dispatchEvent(new CustomEvent('coralgenz:consent-reset', eventDetail));
+  }
+}
+
+/**
  * Runs a callback immediately if category is granted, or registers it for when consent is given
  */
 export function runWithConsent(category, callback) {
@@ -278,52 +329,82 @@ export function initCookieConsent() {
   const root = document.createElement('div');
   root.id = 'coralgenzCookieRoot';
   root.innerHTML = `
-    <!-- Floating Cookie Settings Pill / Badge -->
+    <!-- Floating Cookie Settings Icon (appears once user makes a choice) -->
     <button type="button"
       id="coralgenzCookieTrigger"
       class="coralgenz-cookie-trigger ${currentConsent ? 'is-visible' : ''}"
       aria-label="Manage Cookie &amp; Privacy Preferences"
-      title="Cookie Settings">
+      title="Cookie Settings &amp; Data Reset">
       <span class="cookie-trigger-icon" aria-hidden="true">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-          <circle cx="12" cy="12" r="10"></circle>
-          <path d="M12 2a10 10 0 0 1 10 10 4 4 0 0 1-5-5 4 4 0 0 1-5-5"></path>
-          <path d="M8.5 8.5v.01"></path>
-          <path d="M16 15.5v.01"></path>
-          <path d="M12 12v.01"></path>
-          <path d="M11 17v.01"></path>
-          <path d="M7 13v.01"></path>
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 2a10 10 0 1 0 10 10 4 4 0 0 1-5-5 4 4 0 0 1-5-5"></path>
+          <circle cx="8.5" cy="8.5" r="1.1" fill="currentColor"></circle>
+          <circle cx="15.5" cy="15.5" r="1.1" fill="currentColor"></circle>
+          <circle cx="11.5" cy="12.5" r="1.1" fill="currentColor"></circle>
+          <circle cx="10" cy="17" r="1.1" fill="currentColor"></circle>
+          <circle cx="7" cy="13.5" r="1.1" fill="currentColor"></circle>
         </svg>
       </span>
-      <span class="cookie-trigger-label">Cookie Settings</span>
+      <span class="cookie-trigger-tooltip">Cookie Settings &amp; Reset</span>
     </button>
 
-    <!-- First-Time Cookie Consent Banner -->
+    <!-- First-Time Cookie Consent Banner (compact & low height on mobile) -->
     <aside id="coralgenzCookieBanner"
       class="coralgenz-cookie-banner ${!currentConsent ? 'is-active' : ''}"
       role="region"
       aria-label="Cookie &amp; Privacy Consent"
       aria-live="polite">
       <div class="cookie-banner-inner">
-        <div class="cookie-banner-content">
-          <div class="cookie-banner-badge">
-            <span class="cookie-badge-dot"></span>
-            <span>Privacy &amp; Data Autonomy</span>
+        <div class="cookie-banner-main">
+          <div class="cookie-banner-icon-wrap" aria-hidden="true">
+            <svg class="cookie-banner-svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 2a10 10 0 1 0 10 10 4 4 0 0 1-5-5 4 4 0 0 1-5-5"></path>
+              <circle cx="8.5" cy="8.5" r="1.1" fill="currentColor"></circle>
+              <circle cx="15.5" cy="15.5" r="1.1" fill="currentColor"></circle>
+              <circle cx="11.5" cy="12.5" r="1.1" fill="currentColor"></circle>
+              <circle cx="10" cy="17" r="1.1" fill="currentColor"></circle>
+              <circle cx="7" cy="13.5" r="1.1" fill="currentColor"></circle>
+            </svg>
           </div>
-          <h2 class="cookie-banner-title">We Value Your Privacy</h2>
-          <p class="cookie-banner-text">
-            We use cookies to improve your browsing experience, analyze website traffic, and personalize content. You can choose to accept all cookies, reject optional cookies, or customize your preferences. For more details, explore our
-            <a href="/privacy-policy" class="cookie-link">Privacy Policy</a> and
-            <a href="/privacy-policy#cookies" class="cookie-link">Cookie Policy</a>.
-          </p>
+          <div class="cookie-banner-content">
+            <div class="cookie-banner-heading-row">
+              <span class="cookie-banner-title">Cookie Preferences</span>
+              <span class="cookie-banner-tag">Privacy Choice</span>
+            </div>
+            <p class="cookie-banner-text">
+              We use essential &amp; analytics cookies to ensure performance and privacy.
+              <a href="/privacy-policy" class="cookie-link">Policy</a>
+            </p>
+          </div>
         </div>
         <div class="cookie-banner-actions">
-          <button type="button" id="cookieAcceptAll" class="cookie-btn cookie-btn-accept">Accept All</button>
-          <button type="button" id="cookieRejectAll" class="cookie-btn cookie-btn-reject">Reject All</button>
-          <button type="button" id="cookieCustomize" class="cookie-btn cookie-btn-customize">Customize Preferences</button>
+          <button type="button" id="cookieAcceptAll" class="cookie-btn cookie-btn-accept">
+            <span class="btn-text-full">Accept All</span>
+            <span class="btn-text-mobile">Accept</span>
+          </button>
+          <button type="button" id="cookieRejectAll" class="cookie-btn cookie-btn-reject">
+            <span class="btn-text-full">Reject All</span>
+            <span class="btn-text-mobile">Reject</span>
+          </button>
+          <button type="button" id="cookieCustomize" class="cookie-btn cookie-btn-customize" title="Customize cookie preferences">
+            <svg class="cookie-btn-icon" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="3"></circle>
+              <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
+            </svg>
+            <span class="btn-text-full">Customize</span>
+            <span class="btn-text-mobile">Custom</span>
+          </button>
         </div>
       </div>
     </aside>
+
+    <!-- Floating Reset Notification Toast -->
+    <div id="coralgenzCookieToast" class="cookie-reset-toast" role="status" aria-live="polite">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M20 6L9 17l-5-5"></path>
+      </svg>
+      <span>Cookie preferences reset. Please choose your options.</span>
+    </div>
 
     <!-- Detailed Preferences Modal Dialog -->
     <div id="coralgenzCookieModal"
@@ -338,20 +419,19 @@ export function initCookieConsent() {
         <div class="cookie-modal-header">
           <div class="cookie-modal-title-wrap">
             <div class="cookie-modal-icon">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-                <circle cx="12" cy="12" r="10"></circle>
-                <path d="M12 2a10 10 0 0 1 10 10 4 4 0 0 1-5-5 4 4 0 0 1-5-5"></path>
-                <path d="M8.5 8.5v.01"></path>
-                <path d="M16 15.5v.01"></path>
-                <path d="M12 12v.01"></path>
-                <path d="M11 17v.01"></path>
-                <path d="M7 13v.01"></path>
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 2a10 10 0 1 0 10 10 4 4 0 0 1-5-5 4 4 0 0 1-5-5"></path>
+                <circle cx="8.5" cy="8.5" r="1.1" fill="currentColor"></circle>
+                <circle cx="15.5" cy="15.5" r="1.1" fill="currentColor"></circle>
+                <circle cx="11.5" cy="12.5" r="1.1" fill="currentColor"></circle>
+                <circle cx="10" cy="17" r="1.1" fill="currentColor"></circle>
+                <circle cx="7" cy="13.5" r="1.1" fill="currentColor"></circle>
               </svg>
             </div>
             <div>
               <h2 id="coralgenzModalTitle" class="cookie-modal-title">Customize Cookie Preferences</h2>
               <p id="coralgenzModalDesc" class="cookie-modal-subtitle">
-                Manage which categories of cookies and data processing you consent to. You can modify these settings anytime.
+                Manage data processing categories or reset all saved preferences back to initial state.
               </p>
             </div>
           </div>
@@ -364,6 +444,16 @@ export function initCookieConsent() {
         </div>
 
         <div class="cookie-modal-body">
+          <!-- Reset Informational Card -->
+          <div class="cookie-reset-notice">
+            <div class="cookie-reset-notice-content">
+              <span class="cookie-reset-notice-badge">Data Autonomy</span>
+              <p class="cookie-reset-notice-text">
+                Need to clear stored consents? Click <strong>Reset Cookies Data</strong> below to wipe all saved preferences and re-display the initial decision prompt.
+              </p>
+            </div>
+          </div>
+
           <!-- Category A: Strictly Necessary -->
           <div class="cookie-category-card">
             <div class="cookie-category-header">
@@ -443,11 +533,18 @@ export function initCookieConsent() {
 
         <div class="cookie-modal-footer">
           <div class="cookie-modal-footer-left">
+            <button type="button" id="modalResetConsent" class="cookie-btn cookie-btn-reset" title="Wipe stored consent data and display initial accept/reject prompt">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"></path>
+                <path d="M3 3v5h5"></path>
+              </svg>
+              <span>Reset Cookies Data</span>
+            </button>
             <button type="button" id="modalRejectAll" class="cookie-btn cookie-btn-reject">Reject All</button>
           </div>
           <div class="cookie-modal-footer-right">
             <button type="button" id="modalAcceptAll" class="cookie-btn cookie-btn-secondary">Accept All</button>
-            <button type="button" id="modalSavePreferences" class="cookie-btn cookie-btn-accept">Save My Preferences</button>
+            <button type="button" id="modalSavePreferences" class="cookie-btn cookie-btn-accept">Save Preferences</button>
           </div>
         </div>
       </div>
@@ -460,6 +557,7 @@ export function initCookieConsent() {
   const trigger = document.getElementById('coralgenzCookieTrigger');
   const banner = document.getElementById('coralgenzCookieBanner');
   const modal = document.getElementById('coralgenzCookieModal');
+  const toast = document.getElementById('coralgenzCookieToast');
   const modalCloseBtn = document.getElementById('cookieModalClose');
   const modalBackdrop = document.getElementById('cookieModalBackdrop');
 
@@ -467,6 +565,7 @@ export function initCookieConsent() {
   const bannerRejectBtn = document.getElementById('cookieRejectAll');
   const bannerCustomizeBtn = document.getElementById('cookieCustomize');
 
+  const modalResetBtn = document.getElementById('modalResetConsent');
   const modalRejectBtn = document.getElementById('modalRejectAll');
   const modalAcceptBtn = document.getElementById('modalAcceptAll');
   const modalSaveBtn = document.getElementById('modalSavePreferences');
@@ -476,6 +575,20 @@ export function initCookieConsent() {
   const catMarketing = document.getElementById('catMarketing');
 
   let lastActiveElement = null;
+  let toastTimeout = null;
+
+  function showToast(message) {
+    if (!toast) return;
+    if (message) {
+      const span = toast.querySelector('span');
+      if (span) span.textContent = message;
+    }
+    toast.classList.add('is-visible');
+    if (toastTimeout) clearTimeout(toastTimeout);
+    toastTimeout = setTimeout(() => {
+      toast.classList.remove('is-visible');
+    }, 2800);
+  }
 
   // Sync checkboxes with active consent
   function syncCheckboxes() {
@@ -518,15 +631,17 @@ export function initCookieConsent() {
     }, 280);
   }
 
-  // Hide the banner smoothly
+  // Hide the banner smoothly and reveal floating cookie icon
   function dismissBanner() {
     if (!banner) return;
     banner.classList.remove('is-active');
     banner.classList.add('is-closing');
     setTimeout(() => {
       banner.style.display = 'none';
-      if (trigger) trigger.classList.add('is-visible');
-    }, 380);
+      if (trigger) {
+        trigger.classList.add('is-visible');
+      }
+    }, 320);
   }
 
   // Handlers
@@ -566,11 +681,41 @@ export function initCookieConsent() {
     closePreferences();
   }
 
+  // Feature: Reset cookies data -> wipes stored records, hides trigger, and re-pops up banner
+  function onResetConsent() {
+    resetCookieConsent();
+    catFunctional.checked = false;
+    catAnalytics.checked = false;
+    catMarketing.checked = false;
+
+    closePreferences();
+
+    // Hide floating cookie trigger
+    if (trigger) {
+      trigger.classList.remove('is-visible');
+    }
+
+    // Re-display initial accept / reject / customize banner
+    if (banner) {
+      banner.style.display = 'block';
+      void banner.offsetWidth; // Force reflow
+      banner.classList.remove('is-closing');
+      banner.classList.add('is-active');
+      banner.classList.add('banner-reset-highlight');
+      setTimeout(() => {
+        banner.classList.remove('banner-reset-highlight');
+      }, 1400);
+    }
+
+    showToast('Cookie preferences reset. Please select your options.');
+  }
+
   // Event bindings
   if (bannerAcceptBtn) bannerAcceptBtn.addEventListener('click', onAcceptAll);
   if (bannerRejectBtn) bannerRejectBtn.addEventListener('click', onRejectAll);
   if (bannerCustomizeBtn) bannerCustomizeBtn.addEventListener('click', openPreferences);
 
+  if (modalResetBtn) modalResetBtn.addEventListener('click', onResetConsent);
   if (modalAcceptBtn) modalAcceptBtn.addEventListener('click', onAcceptAll);
   if (modalRejectBtn) modalRejectBtn.addEventListener('click', onRejectAll);
   if (modalSaveBtn) modalSaveBtn.addEventListener('click', onSavePreferences);
@@ -620,15 +765,16 @@ export function initCookieConsent() {
     getConsent: getCookieConsent,
     hasConsent,
     saveConsent: saveCookieConsent,
+    resetConsent: resetCookieConsent,
     openPreferences,
     closePreferences,
     acceptAll: onAcceptAll,
     rejectAll: onRejectAll,
     savePreferences: onSavePreferences,
+    resetData: onResetConsent,
     runWithConsent
   };
 
   // Backward compatibility alias
   window.CoralgenzCookies = window.CoralgenzConsent;
 }
-

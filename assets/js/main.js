@@ -3,7 +3,7 @@
  * Pure Vanilla JavaScript - High Performance & Ultra-Smooth 60-120fps
  */
 
-import { initCookieConsent, getCookieConsent, saveCookieConsent, hasConsent, runWithConsent } from './cookie-consent.js';
+import { initCookieConsent, getCookieConsent, saveCookieConsent, resetCookieConsent, hasConsent, runWithConsent } from './cookie-consent.js';
 
 /**
  * Enterprise Anti-Inspect Protection (Lightweight & Non-blocking)
@@ -477,80 +477,137 @@ function init3DHeroTilt() {
   });
 }
 
-/* Values Principle Studio - Slider & Preview Logic */
-let currentValIndex = 0;
-let isProgrammaticVal = false;
-let valProgrammaticTimer = null;
+/* ==========================================================================
+   WHAT WE STAND FOR — Codex Principles Interactive Engine
+   ========================================================================== */
+let activeCodexIndex = 0;
+let activeCodexCategory = 'all';
 
-function updateValueDots(index) {
-  const dots = document.querySelectorAll('#valuesDots .v-dot');
-  dots.forEach((dot, i) => {
-    dot.classList.toggle('active', i === index);
-  });
-  const chips = document.querySelectorAll('.values-preview-chip');
-  chips.forEach((chip, i) => {
-    const isActive = (i === index);
-    chip.classList.toggle('active', isActive);
-  });
-  const cards = document.querySelectorAll('#valuesTrack .v-slide-card');
-  cards.forEach((card, i) => {
-    card.classList.toggle('active', i === index);
-  });
-}
+function selectCodexPrinciple(index) {
+  activeCodexIndex = index;
 
-function slideValues(direction) {
-  const track = document.getElementById('valuesTrack');
-  const cards = track ? track.querySelectorAll('.v-slide-card') : [];
-  if (!track || cards.length === 0) return;
-
-  currentValIndex = (currentValIndex + direction + cards.length) % cards.length;
-  jumpValueSlide(currentValIndex);
-}
-
-function jumpValueSlide(index) {
-  const track = document.getElementById('valuesTrack');
-  const cards = track ? track.querySelectorAll('.v-slide-card') : [];
-  if (!track || !cards[index]) return;
-
-  isProgrammaticVal = true;
-  if (valProgrammaticTimer) clearTimeout(valProgrammaticTimer);
-  valProgrammaticTimer = setTimeout(() => {
-    isProgrammaticVal = false;
-  }, 450);
-
-  currentValIndex = index;
-  const card = cards[index];
-  track.scrollTo({ left: card.offsetLeft - 16, behavior: 'smooth' });
-  updateValueDots(index);
-}
-
-function filterValues(category) {
-  const tabs = document.querySelectorAll('.v-pill-tab');
-  tabs.forEach(tab => {
-    const isSelected = tab.getAttribute('onclick')?.includes(`'${category}'`);
-    tab.classList.toggle('active', isSelected);
+  // 1. Update navigation items
+  const navItems = document.querySelectorAll('.codex-nav-item');
+  let activeItemEl = null;
+  navItems.forEach((item) => {
+    const idx = parseInt(item.getAttribute('data-index'), 10);
+    const isActive = (idx === index);
+    item.classList.toggle('active', isActive);
+    item.setAttribute('aria-selected', isActive ? 'true' : 'false');
+    if (isActive) activeItemEl = item;
   });
 
-  const cards = document.querySelectorAll('.v-slide-card');
-  let firstVisible = -1;
-  cards.forEach((card, idx) => {
-    const cardCat = card.getAttribute('data-category');
-    if (category === 'all' || cardCat === category) {
-      card.style.display = 'flex';
-      if (firstVisible === -1) firstVisible = idx;
+  // Smoothly center the active item in the navigation rail on mobile/tablet
+  if (activeItemEl) {
+    const navRail = document.getElementById('codexNavRail');
+    if (navRail && (window.innerWidth <= 900 || navRail.scrollWidth > navRail.clientWidth)) {
+      activeItemEl.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+    }
+  }
+
+  // 2. Update detail stage panels
+  const panels = document.querySelectorAll('.codex-detail-panel');
+  panels.forEach((panel) => {
+    const idx = parseInt(panel.getAttribute('data-index'), 10);
+    const isActive = (idx === index);
+    panel.classList.toggle('active', isActive);
+    if (isActive) {
+      panel.style.display = 'block';
+      panel.classList.remove('panel-fade-in');
+      void panel.offsetWidth; // Force reflow
+      panel.classList.add('panel-fade-in');
     } else {
-      card.style.display = 'none';
+      panel.style.display = 'none';
+    }
+  });
+}
+
+function nextCodexPrinciple(step = 1) {
+  const navItems = Array.from(document.querySelectorAll('.codex-nav-item')).filter(
+    (item) => item.style.display !== 'none'
+  );
+  if (navItems.length === 0) return;
+
+  const currentVisibleIdx = navItems.findIndex(
+    (item) => parseInt(item.getAttribute('data-index'), 10) === activeCodexIndex
+  );
+  const nextVisibleIdx = (currentVisibleIdx + step + navItems.length) % navItems.length;
+  const targetIndex = parseInt(navItems[nextVisibleIdx].getAttribute('data-index'), 10);
+  selectCodexPrinciple(targetIndex);
+}
+
+function setCodexCategory(category) {
+  activeCodexCategory = category;
+
+  // 1. Update filter pill states
+  const pills = document.querySelectorAll('.codex-pill');
+  pills.forEach((pill) => {
+    const cat = pill.getAttribute('data-category');
+    const isSelected = (cat === category);
+    pill.classList.toggle('active', isSelected);
+    pill.setAttribute('aria-selected', isSelected ? 'true' : 'false');
+  });
+
+  // 2. Filter Nav Items in Rail
+  const navItems = document.querySelectorAll('.codex-nav-item');
+  let firstVisibleIndex = -1;
+  navItems.forEach((item) => {
+    const cat = item.getAttribute('data-category');
+    const matches = (category === 'all' || cat === category);
+    item.style.display = matches ? 'flex' : 'none';
+    if (matches && firstVisibleIndex === -1) {
+      firstVisibleIndex = parseInt(item.getAttribute('data-index'), 10);
     }
   });
 
-  if (firstVisible !== -1) {
-    jumpValueSlide(0);
+  // If currently active principle is hidden by filter, switch to first visible
+  const activeNavItem = document.querySelector(`.codex-nav-item[data-index="${activeCodexIndex}"]`);
+  if (activeNavItem && activeNavItem.style.display === 'none' && firstVisibleIndex !== -1) {
+    selectCodexPrinciple(firstVisibleIndex);
   }
 }
 
-window.slideValues = slideValues;
-window.jumpValueSlide = jumpValueSlide;
-window.filterValues = filterValues;
+// Touch swipe support on Mobile Detail Stage for seamless native feel
+(function initCodexTouchGestures() {
+  const stage = document.getElementById('codexDetailStage');
+  if (!stage) return;
+  let touchStartX = 0;
+  let touchStartY = 0;
+  stage.addEventListener('touchstart', (e) => {
+    if (e.touches.length === 1) {
+      touchStartX = e.touches[0].clientX;
+      touchStartY = e.touches[0].clientY;
+    }
+  }, { passive: true });
+
+  stage.addEventListener('touchend', (e) => {
+    if (e.changedTouches.length === 1) {
+      const deltaX = e.changedTouches[0].clientX - touchStartX;
+      const deltaY = e.changedTouches[0].clientY - touchStartY;
+      // Ensure horizontal swipe intent (more horizontal than vertical, min 45px)
+      if (Math.abs(deltaX) > 45 && Math.abs(deltaX) > Math.abs(deltaY) * 1.5) {
+        if (deltaX < 0) {
+          nextCodexPrinciple(1); // Swipe left -> Next
+        } else {
+          nextCodexPrinciple(-1); // Swipe right -> Prev
+        }
+      }
+    }
+  }, { passive: true });
+})();
+
+// Global exposes for inline handlers & programmatic navigation
+window.selectCodexPrinciple = selectCodexPrinciple;
+window.nextCodexPrinciple = nextCodexPrinciple;
+window.setCodexCategory = setCodexCategory;
+window.setCodexView = () => {};
+window.inspectFromGrid = (idx) => selectCodexPrinciple(idx);
+window.toggleCodexAccordion = (idx) => selectCodexPrinciple(idx);
+
+// Backwards compatibility aliases
+window.slideValues = (dir) => nextCodexPrinciple(dir);
+window.jumpValueSlide = (idx) => selectCodexPrinciple(idx);
+window.filterValues = (cat) => setCodexCategory(cat);
 
 /* Why Choose Us - Slider & Preview Logic */
 let currentWhyIndex = 0;

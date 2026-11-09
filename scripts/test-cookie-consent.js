@@ -111,6 +111,7 @@ async function runTests() {
   const {
     getCookieConsent,
     saveCookieConsent,
+    resetCookieConsent,
     hasConsent,
     runWithConsent,
     initCookieConsent
@@ -219,6 +220,15 @@ async function runTests() {
   runWithConsent('analytics', () => { executedImmediately = true; });
   console.assert(executedImmediately === true, 'Callback should execute immediately when consent is present');
   console.log('✓ runWithConsent executes immediately when category is granted');
+
+  // Test 9: resetCookieConsent functionality
+  console.log('\n[Test 9] resetCookieConsent functionality');
+  saveCookieConsent('accepted', { functional: true, analytics: true, marketing: true });
+  console.assert(getCookieConsent() !== null, 'Should have active consent before reset');
+  resetCookieConsent();
+  console.assert(getCookieConsent() === null, 'Consent should evaluate to null after reset');
+  console.assert(global.localStorage.getItem('coralgenz_consent_v1') === null, 'localStorage item should be purged');
+  console.log('✓ resetCookieConsent successfully purges stored consent and resets data');
 
   console.log('\n===========================================');
   console.log('ALL COOKIE CONSENT TESTS PASSED SUCCESSFULLY!');

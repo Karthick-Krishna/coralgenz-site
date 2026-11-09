@@ -1477,9 +1477,7 @@
               </span>
             </div>
             <p class="product-desc">
-              The <strong>.secure format was invented and owned by Coralgenz Global</strong>. Client-side V10 16-layer
-              post-quantum zero-knowledge file encryption suite with 512 KB memory matrix, Kyber lattice diffusion, and
-              AES-256-GCM AEAD.
+              The <strong>.secure format was created, made, invented, and owned by Coralgenz Global only</strong>. Client-side browser-native zero-knowledge file encryption suite with hardware-accelerated AES-256-GCM AEAD authenticated protection.
             </p>
             <div class="product-btn-wrap" style="display: flex; gap: 8px; flex-wrap: wrap;">
               <a href="https://vault.coralgenz.net/" target="_blank" rel="noopener noreferrer" class="btn-primary"
@@ -1842,7 +1840,7 @@
     </div>
   </section>
 
-  <!-- What We Stand For Section (Slidable UI & Mobile-Optimized Standards Hub) -->
+  <!-- What We Stand For Section — Interactive Codex & Engineering Principles Studio -->
   <section class="section values-section" id="values">
     <div class="container">
 
@@ -1863,342 +1861,837 @@
       </div>
 
       <!-- Spaced Subtitle Description -->
-      <p class="section-desc reveal-init values-intro-text"
-        style="max-width: 820px; text-align: center; margin: 24px auto 36px auto; font-size: 15px; color: #64748b; line-height: 1.6;">
-        <strong style="color: #0f172a;">Our Development Principles:</strong> How We Build Great Software for You (01 &mdash; 10)
+      <p class="section-desc reveal-init values-intro-text">
+        <strong style="color: #0f172a;">Our 10 Engineering Principles:</strong> Architectural commitments, client sovereignty, and clean development practices that guide every line of code we write for you.
       </p>
 
-      <!-- Blueprint Pavilion Stage (Distinct Obsidian Architectural Showcase) -->
-      <div class="values-blueprint-stage reveal-init">
-
-        <!-- Interactive Quick Slide Rail (Horizontal Scrollable Tabs on Mobile) -->
-        <div class="values-preview-rail">
-          <button class="values-preview-chip active" onclick="jumpValueSlide(0)" data-slide="0">
-            <span class="preview-num">01</span>
-            <span class="preview-label">Client Priority</span>
+      <!-- Codex Controls & Filter Bar -->
+      <div class="codex-controls-bar reveal-init">
+        <!-- Strategic Filter Pills -->
+        <div class="codex-filter-pills" role="tablist" aria-label="Filter Principles">
+          <button type="button" class="codex-pill active" onclick="setCodexCategory('all')" data-category="all" role="tab" aria-selected="true">
+            <span>All Principles</span>
+            <span class="codex-pill-count">10</span>
           </button>
-          <button class="values-preview-chip" onclick="jumpValueSlide(1)" data-slide="1">
-            <span class="preview-num">02</span>
-            <span class="preview-label">Simple &amp; Clean Code</span>
+          <button type="button" class="codex-pill" onclick="setCodexCategory('ownership')" data-category="ownership" role="tab" aria-selected="false">
+            <span class="pill-icon-dot dot-emerald"></span>
+            <span>Client Rights &amp; Freedom</span>
+            <span class="codex-pill-count">4</span>
           </button>
-          <button class="values-preview-chip" onclick="jumpValueSlide(2)" data-slide="2">
-            <span class="preview-num">03</span>
-            <span class="preview-label">Honest Updates</span>
+          <button type="button" class="codex-pill" onclick="setCodexCategory('craft')" data-category="craft" role="tab" aria-selected="false">
+            <span class="pill-icon-dot dot-blue"></span>
+            <span>Code &amp; Craft</span>
+            <span class="codex-pill-count">3</span>
           </button>
-          <button class="values-preview-chip" onclick="jumpValueSlide(3)" data-slide="3">
-            <span class="preview-num">04</span>
-            <span class="preview-label">Fast Weekly Sprints</span>
-          </button>
-          <button class="values-preview-chip" onclick="jumpValueSlide(4)" data-slide="4">
-            <span class="preview-num">05</span>
-            <span class="preview-label">Total Client Freedom</span>
-          </button>
-          <button class="values-preview-chip" onclick="jumpValueSlide(5)" data-slide="5">
-            <span class="preview-num">06</span>
-            <span class="preview-label">Careful Craftsmanship</span>
-          </button>
-          <button class="values-preview-chip" onclick="jumpValueSlide(6)" data-slide="6">
-            <span class="preview-num">07</span>
-            <span class="preview-label">Modern Tech Stack</span>
-          </button>
-          <button class="values-preview-chip" onclick="jumpValueSlide(7)" data-slide="7">
-            <span class="preview-num">08</span>
-            <span class="preview-label">Simplicity First</span>
-          </button>
-          <button class="values-preview-chip" onclick="jumpValueSlide(8)" data-slide="8">
-            <span class="preview-num">09</span>
-            <span class="preview-label">Built-In App Security</span>
-          </button>
-          <button class="values-preview-chip" onclick="jumpValueSlide(9)" data-slide="9">
-            <span class="preview-num">10</span>
-            <span class="preview-label">Shared Success</span>
+          <button type="button" class="codex-pill" onclick="setCodexCategory('tech')" data-category="tech" role="tab" aria-selected="false">
+            <span class="pill-icon-dot dot-indigo"></span>
+            <span>Tech &amp; Security</span>
+            <span class="codex-pill-count">3</span>
           </button>
         </div>
+      </div>
 
-        <!-- Mobile-Optimized Slider Control Bar -->
-        <div class="values-slider-control-bar">
-          <div class="values-arrow-controls">
-            <button class="v-arrow-btn" onclick="slideValues(-1)" aria-label="Previous Slide">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                <line x1="19" y1="12" x2="5" y2="12"></line>
-                <polyline points="12 19 5 12 12 5"></polyline>
-              </svg>
+      <!-- MAIN DISPLAY WRAPPER -->
+      <div class="codex-main-display reveal-init">
+
+        <!-- ══════════════════════════════════════════════════════════════════════
+             INTERACTIVE PRINCIPLES STUDIO (Split Navigator + Live Detail Stage)
+             ══════════════════════════════════════════════════════════════════════ -->
+        <div class="codex-inspector-view" id="codexInspectorView">
+
+          <!-- Left Column: Interactive 10-Item Nav Stepper Rail -->
+          <div class="codex-nav-rail" id="codexNavRail" role="tablist" aria-label="Principle Selector">
+
+            <!-- Item 01 -->
+            <button type="button" class="codex-nav-item active" data-index="0" data-category="ownership" onclick="selectCodexPrinciple(0)" role="tab" aria-selected="true">
+              <div class="codex-nav-num">01</div>
+              <div class="codex-nav-info">
+                <span class="codex-nav-title">Client-First Development</span>
+                <span class="codex-nav-tag tag-blue">Priority</span>
+              </div>
+              <div class="codex-nav-arrow" aria-hidden="true">&rarr;</div>
             </button>
-            <div class="v-slide-dots" id="valuesDots">
-              <span class="v-dot active" onclick="jumpValueSlide(0)"></span>
-              <span class="v-dot" onclick="jumpValueSlide(1)"></span>
-              <span class="v-dot" onclick="jumpValueSlide(2)"></span>
-              <span class="v-dot" onclick="jumpValueSlide(3)"></span>
-              <span class="v-dot" onclick="jumpValueSlide(4)"></span>
-              <span class="v-dot" onclick="jumpValueSlide(5)"></span>
-              <span class="v-dot" onclick="jumpValueSlide(6)"></span>
-              <span class="v-dot" onclick="jumpValueSlide(7)"></span>
-              <span class="v-dot" onclick="jumpValueSlide(8)"></span>
-              <span class="v-dot" onclick="jumpValueSlide(9)"></span>
-            </div>
-            <button class="v-arrow-btn" onclick="slideValues(1)" aria-label="Next Slide">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                <line x1="5" y1="12" x2="19" y2="12"></line>
-                <polyline points="12 5 19 12 12 19"></polyline>
-              </svg>
+
+            <!-- Item 02 -->
+            <button type="button" class="codex-nav-item" data-index="1" data-category="craft" onclick="selectCodexPrinciple(1)" role="tab" aria-selected="false">
+              <div class="codex-nav-num">02</div>
+              <div class="codex-nav-info">
+                <span class="codex-nav-title">Simple &amp; Clean Code</span>
+                <span class="codex-nav-tag tag-amber">Clean Standards</span>
+              </div>
+              <div class="codex-nav-arrow" aria-hidden="true">&rarr;</div>
             </button>
+
+            <!-- Item 03 -->
+            <button type="button" class="codex-nav-item" data-index="2" data-category="ownership" onclick="selectCodexPrinciple(2)" role="tab" aria-selected="false">
+              <div class="codex-nav-num">03</div>
+              <div class="codex-nav-info">
+                <span class="codex-nav-title">Open &amp; Honest Updates</span>
+                <span class="codex-nav-tag tag-indigo">Honesty</span>
+              </div>
+              <div class="codex-nav-arrow" aria-hidden="true">&rarr;</div>
+            </button>
+
+            <!-- Item 04 -->
+            <button type="button" class="codex-nav-item" data-index="3" data-category="tech" onclick="selectCodexPrinciple(3)" role="tab" aria-selected="false">
+              <div class="codex-nav-num">04</div>
+              <div class="codex-nav-info">
+                <span class="codex-nav-title">Continuous Weekly Sprints</span>
+                <span class="codex-nav-tag tag-emerald">Velocity</span>
+              </div>
+              <div class="codex-nav-arrow" aria-hidden="true">&rarr;</div>
+            </button>
+
+            <!-- Item 05 -->
+            <button type="button" class="codex-nav-item" data-index="4" data-category="ownership" onclick="selectCodexPrinciple(4)" role="tab" aria-selected="false">
+              <div class="codex-nav-num">05</div>
+              <div class="codex-nav-info">
+                <span class="codex-nav-title">Total Client Freedom</span>
+                <span class="codex-nav-tag tag-emerald">100% IP</span>
+              </div>
+              <div class="codex-nav-arrow" aria-hidden="true">&rarr;</div>
+            </button>
+
+            <!-- Item 06 -->
+            <button type="button" class="codex-nav-item" data-index="5" data-category="craft" onclick="selectCodexPrinciple(5)" role="tab" aria-selected="false">
+              <div class="codex-nav-num">06</div>
+              <div class="codex-nav-info">
+                <span class="codex-nav-title">Careful Craftsmanship</span>
+                <span class="codex-nav-tag tag-purple">60fps Polish</span>
+              </div>
+              <div class="codex-nav-arrow" aria-hidden="true">&rarr;</div>
+            </button>
+
+            <!-- Item 07 -->
+            <button type="button" class="codex-nav-item" data-index="6" data-category="tech" onclick="selectCodexPrinciple(6)" role="tab" aria-selected="false">
+              <div class="codex-nav-num">07</div>
+              <div class="codex-nav-info">
+                <span class="codex-nav-title">Modern Tech Stacks</span>
+                <span class="codex-nav-tag tag-cyan">Scalability</span>
+              </div>
+              <div class="codex-nav-arrow" aria-hidden="true">&rarr;</div>
+            </button>
+
+            <!-- Item 08 -->
+            <button type="button" class="codex-nav-item" data-index="7" data-category="craft" onclick="selectCodexPrinciple(7)" role="tab" aria-selected="false">
+              <div class="codex-nav-num">08</div>
+              <div class="codex-nav-info">
+                <span class="codex-nav-title">Simplicity Over Bloat</span>
+                <span class="codex-nav-tag tag-orange">Zero Bloat</span>
+              </div>
+              <div class="codex-nav-arrow" aria-hidden="true">&rarr;</div>
+            </button>
+
+            <!-- Item 09 -->
+            <button type="button" class="codex-nav-item" data-index="8" data-category="tech" onclick="selectCodexPrinciple(8)" role="tab" aria-selected="false">
+              <div class="codex-nav-num">09</div>
+              <div class="codex-nav-info">
+                <span class="codex-nav-title">Built-In App Security</span>
+                <span class="codex-nav-tag tag-rose">Security</span>
+              </div>
+              <div class="codex-nav-arrow" aria-hidden="true">&rarr;</div>
+            </button>
+
+            <!-- Item 10 -->
+            <button type="button" class="codex-nav-item" data-index="9" data-category="ownership" onclick="selectCodexPrinciple(9)" role="tab" aria-selected="false">
+              <div class="codex-nav-num">10</div>
+              <div class="codex-nav-info">
+                <span class="codex-nav-title">Building for Your Success</span>
+                <span class="codex-nav-tag tag-blue">Partnership</span>
+              </div>
+              <div class="codex-nav-arrow" aria-hidden="true">&rarr;</div>
+            </button>
+
           </div>
-          <div class="values-swipe-hint">
-            <span class="v-pulse-hint"></span>
-            <span>Swipe or tap to explore &bull; 01 &mdash; 10</span>
+
+          <!-- Right Column: Interactive Detail Stage (Dynamic Canvas) -->
+          <div class="codex-detail-stage" id="codexDetailStage">
+
+            <!-- Panel 01 -->
+            <div class="codex-detail-panel active" data-index="0" data-category="ownership">
+              <div class="codex-panel-header">
+                <div class="codex-panel-meta">
+                  <span class="codex-panel-std-code">STANDARD 01 / PRIORITY</span>
+                  <span class="codex-panel-status-badge">
+                    <span class="status-pulse-dot"></span>
+                    Live Architecture Standard
+                  </span>
+                </div>
+                <h3 class="codex-panel-title">Client-First Development</h3>
+                <p class="codex-panel-desc">
+                  We listen closely to your vision and turn your requirements into practical, high-quality software that fits your goals. Your business objectives define our technical roadmap.
+                </p>
+              </div>
+
+              <div class="codex-pillars-grid">
+                <div class="codex-pillar-card">
+                  <div class="pillar-icon-box blue">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+                  </div>
+                  <div>
+                    <h4 class="pillar-title">Active Listening</h4>
+                    <p class="pillar-desc">Discovery sessions that map user stories directly into working technical milestones.</p>
+                  </div>
+                </div>
+                <div class="codex-pillar-card">
+                  <div class="pillar-icon-box blue">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>
+                  </div>
+                  <div>
+                    <h4 class="pillar-title">Tailored Solutions</h4>
+                    <p class="pillar-desc">Custom-built software designed for your unique operations without generic bloated templates.</p>
+                  </div>
+                </div>
+                <div class="codex-pillar-card">
+                  <div class="pillar-icon-box blue">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+                  </div>
+                  <div>
+                    <h4 class="pillar-title">Founder Alignment</h4>
+                    <p class="pillar-desc">Direct communication with lead engineers and rapid weekly decision turnarounds.</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="codex-pledge-box">
+                <div class="pledge-quote-mark">&ldquo;</div>
+                <p class="pledge-text">
+                  Your product vision always comes first in our process. We adapt our engineering to fit your business goals, not the other way around.
+                </p>
+                <div class="pledge-author">
+                  <span class="pledge-shield-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg></span>
+                  <span>Coralgenz Client Sovereign Guarantee &bull; Standard 01</span>
+                </div>
+              </div>
+
+              <div class="codex-panel-footer">
+                <div class="codex-guarantee-pill blue">
+                  <span class="g-label">DELIVERABLE:</span>
+                  <span class="g-val">Sprint roadmap changes allowed with 0 penalty</span>
+                </div>
+                <div class="codex-stage-nav">
+                  <button type="button" class="codex-step-btn" onclick="nextCodexPrinciple(-1)" title="Previous Standard">&larr; Prev</button>
+                  <button type="button" class="codex-step-btn primary" onclick="nextCodexPrinciple(1)" title="Next Standard">Next &rarr;</button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Panel 02 -->
+            <div class="codex-detail-panel" data-index="1" data-category="craft" style="display: none;">
+              <div class="codex-panel-header">
+                <div class="codex-panel-meta">
+                  <span class="codex-panel-std-code">STANDARD 02 / CODE</span>
+                  <span class="codex-panel-status-badge"><span class="status-pulse-dot"></span>Clean Architecture</span>
+                </div>
+                <h3 class="codex-panel-title">Simple &amp; Clean Code</h3>
+                <p class="codex-panel-desc">
+                  We keep our code clean, well-organized, and simple so any developer can easily read, test, and build on it. No messy spaghetti code, no premature over-abstraction.
+                </p>
+              </div>
+
+              <div class="codex-pillars-grid">
+                <div class="codex-pillar-card">
+                  <div class="pillar-icon-box amber">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+                  </div>
+                  <div>
+                    <h4 class="pillar-title">Clean Structure</h4>
+                    <p class="pillar-desc">Strict adherence to SOLID principles, modular file hierarchy, and clean boundaries.</p>
+                  </div>
+                </div>
+                <div class="codex-pillar-card">
+                  <div class="pillar-icon-box amber">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg>
+                  </div>
+                  <div>
+                    <h4 class="pillar-title">Self-Documenting</h4>
+                    <p class="pillar-desc">Intuitive naming, helpful architectural comments, and complete API specifications.</p>
+                  </div>
+                </div>
+                <div class="codex-pillar-card">
+                  <div class="pillar-icon-box amber">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M9 11l3 3L22 4"></path><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path></svg>
+                  </div>
+                  <div>
+                    <h4 class="pillar-title">Testability</h4>
+                    <p class="pillar-desc">Unit and integration tests so any future updates occur without regression bugs.</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="codex-pledge-box">
+                <div class="pledge-quote-mark">&ldquo;</div>
+                <p class="pledge-text">
+                  Writing neat, readable, and standard-compliant code that prevents tech debt and enables effortless onboarding for your future developers.
+                </p>
+                <div class="pledge-author">
+                  <span class="pledge-shield-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg></span>
+                  <span>Coralgenz Engineering Standard &bull; Standard 02</span>
+                </div>
+              </div>
+
+              <div class="codex-panel-footer">
+                <div class="codex-guarantee-pill amber">
+                  <span class="g-label">DELIVERABLE:</span>
+                  <span class="g-val">Zero technical debt architecture with complete developer handbook</span>
+                </div>
+                <div class="codex-stage-nav">
+                  <button type="button" class="codex-step-btn" onclick="nextCodexPrinciple(-1)">&larr; Prev</button>
+                  <button type="button" class="codex-step-btn primary" onclick="nextCodexPrinciple(1)">Next &rarr;</button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Panel 03 -->
+            <div class="codex-detail-panel" data-index="2" data-category="ownership" style="display: none;">
+              <div class="codex-panel-header">
+                <div class="codex-panel-meta">
+                  <span class="codex-panel-std-code">STANDARD 03 / HONESTY</span>
+                  <span class="codex-panel-status-badge"><span class="status-pulse-dot"></span>Zero Jargon Guarantee</span>
+                </div>
+                <h3 class="codex-panel-title">Open &amp; Honest Communication</h3>
+                <p class="codex-panel-desc">
+                  You get real-time progress updates, working previews, and direct answers without technical jargon or excuses. No surprises, no black-box development.
+                </p>
+              </div>
+
+              <div class="codex-pillars-grid">
+                <div class="codex-pillar-card">
+                  <div class="pillar-icon-box indigo">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polygon points="23 7 16 12 23 17 23 7"></polygon><rect x="1" y="5" width="15" height="14" rx="2" ry="2"></rect></svg>
+                  </div>
+                  <div>
+                    <h4 class="pillar-title">Weekly Live Demos</h4>
+                    <p class="pillar-desc">Screen recordings and live walk-throughs of newly shipped features every week.</p>
+                  </div>
+                </div>
+                <div class="codex-pillar-card">
+                  <div class="pillar-icon-box indigo">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+                  </div>
+                  <div>
+                    <h4 class="pillar-title">Live Previews</h4>
+                    <p class="pillar-desc">Dedicated staging URLs so you and your team can test each build in real time.</p>
+                  </div>
+                </div>
+                <div class="codex-pillar-card">
+                  <div class="pillar-icon-box indigo">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 14 14"></polyline></svg>
+                  </div>
+                  <div>
+                    <h4 class="pillar-title">Direct Timelines</h4>
+                    <p class="pillar-desc">Honest, unvarnished delivery dates with proactive blocker notifications.</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="codex-pledge-box">
+                <div class="pledge-quote-mark">&ldquo;</div>
+                <p class="pledge-text">
+                  Complete transparency from kickoff to project launch. You always know what is built, what is tested, and what is coming next.
+                </p>
+                <div class="pledge-author">
+                  <span class="pledge-shield-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg></span>
+                  <span>Coralgenz Client Sovereign Guarantee &bull; Standard 03</span>
+                </div>
+              </div>
+
+              <div class="codex-panel-footer">
+                <div class="codex-guarantee-pill indigo">
+                  <span class="g-label">DELIVERABLE:</span>
+                  <span class="g-val">24-hour turnaround on all questions &amp; blocker alerts</span>
+                </div>
+                <div class="codex-stage-nav">
+                  <button type="button" class="codex-step-btn" onclick="nextCodexPrinciple(-1)">&larr; Prev</button>
+                  <button type="button" class="codex-step-btn primary" onclick="nextCodexPrinciple(1)">Next &rarr;</button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Panel 04 -->
+            <div class="codex-detail-panel" data-index="3" data-category="tech" style="display: none;">
+              <div class="codex-panel-header">
+                <div class="codex-panel-meta">
+                  <span class="codex-panel-std-code">STANDARD 04 / SPEED</span>
+                  <span class="codex-panel-status-badge"><span class="status-pulse-dot"></span>Agile Velocity</span>
+                </div>
+                <h3 class="codex-panel-title">Continuous Weekly Progress</h3>
+                <p class="codex-panel-desc">
+                  We work in focused weekly sprints, delivering new working features frequently so you can see fast progress and test your ideas in the real market early.
+                </p>
+              </div>
+
+              <div class="codex-pillars-grid">
+                <div class="codex-pillar-card">
+                  <div class="pillar-icon-box emerald">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
+                  </div>
+                  <div>
+                    <h4 class="pillar-title">7-Day Sprints</h4>
+                    <p class="pillar-desc">High-velocity iterations with clear deliverables committed and deployed each week.</p>
+                  </div>
+                </div>
+                <div class="codex-pillar-card">
+                  <div class="pillar-icon-box emerald">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l5.67-5.67"></path></svg>
+                  </div>
+                  <div>
+                    <h4 class="pillar-title">Rapid Turnarounds</h4>
+                    <p class="pillar-desc">Your revision notes are immediately factored into the upcoming sprint queue.</p>
+                  </div>
+                </div>
+                <div class="codex-pillar-card">
+                  <div class="pillar-icon-box emerald">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M18 20V10M12 20V4M6 20v-6"></path></svg>
+                  </div>
+                  <div>
+                    <h4 class="pillar-title">Tangible Milestones</h4>
+                    <p class="pillar-desc">No multi-month delays or silent periods; you touch working software every Friday.</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="codex-pledge-box">
+                <div class="pledge-quote-mark">&ldquo;</div>
+                <p class="pledge-text">
+                  Working software delivered every single sprint. We turn complex project briefs into continuous tangible software momentum.
+                </p>
+                <div class="pledge-author">
+                  <span class="pledge-shield-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg></span>
+                  <span>Coralgenz Engineering Standard &bull; Standard 04</span>
+                </div>
+              </div>
+
+              <div class="codex-panel-footer">
+                <div class="codex-guarantee-pill emerald">
+                  <span class="g-label">DELIVERABLE:</span>
+                  <span class="g-val">Functional staging release delivered every single Friday</span>
+                </div>
+                <div class="codex-stage-nav">
+                  <button type="button" class="codex-step-btn" onclick="nextCodexPrinciple(-1)">&larr; Prev</button>
+                  <button type="button" class="codex-step-btn primary" onclick="nextCodexPrinciple(1)">Next &rarr;</button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Panel 05 -->
+            <div class="codex-detail-panel" data-index="4" data-category="ownership" style="display: none;">
+              <div class="codex-panel-header">
+                <div class="codex-panel-meta">
+                  <span class="codex-panel-std-code">STANDARD 05 / FREEDOM</span>
+                  <span class="codex-panel-status-badge"><span class="status-pulse-dot"></span>100% Client Sovereignty</span>
+                </div>
+                <h3 class="codex-panel-title">Total Client Freedom &amp; 100% IP</h3>
+                <p class="codex-panel-desc">
+                  You own your repository and all assets unconditionally. You stay with us because you love our work, not because of lock-in or proprietary hostage traps.
+                </p>
+              </div>
+
+              <div class="codex-pillars-grid">
+                <div class="codex-pillar-card">
+                  <div class="pillar-icon-box emerald">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 9.9-1"></path></svg>
+                  </div>
+                  <div>
+                    <h4 class="pillar-title">No Vendor Lock-In</h4>
+                    <p class="pillar-desc">Standard open-source dependencies and plain architecture that any engineer can run.</p>
+                  </div>
+                </div>
+                <div class="codex-pillar-card">
+                  <div class="pillar-icon-box emerald">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line></svg>
+                  </div>
+                  <div>
+                    <h4 class="pillar-title">Full IP Assignment</h4>
+                    <p class="pillar-desc">Explicit contractual intellectual property ownership transferred cleanly to your company.</p>
+                  </div>
+                </div>
+                <div class="codex-pillar-card">
+                  <div class="pillar-icon-box emerald">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>
+                  </div>
+                  <div>
+                    <h4 class="pillar-title">Root Infrastructure</h4>
+                    <p class="pillar-desc">Direct deployment to your own AWS, Cloudflare, or Vercel accounts with root keys.</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="codex-pledge-box">
+                <div class="pledge-quote-mark">&ldquo;</div>
+                <p class="pledge-text">
+                  Unconditional intellectual property transfer on completion. Full GitHub admin access with zero legal traps or proprietary hostage clauses.
+                </p>
+                <div class="pledge-author">
+                  <span class="pledge-shield-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg></span>
+                  <span>Coralgenz Client Sovereign Guarantee &bull; Standard 05</span>
+                </div>
+              </div>
+
+              <div class="codex-panel-footer">
+                <div class="codex-guarantee-pill emerald">
+                  <span class="g-label">DELIVERABLE:</span>
+                  <span class="g-val">Direct GitHub ownership transfer with zero legal friction</span>
+                </div>
+                <div class="codex-stage-nav">
+                  <button type="button" class="codex-step-btn" onclick="nextCodexPrinciple(-1)">&larr; Prev</button>
+                  <button type="button" class="codex-step-btn primary" onclick="nextCodexPrinciple(1)">Next &rarr;</button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Panel 06 -->
+            <div class="codex-detail-panel" data-index="5" data-category="craft" style="display: none;">
+              <div class="codex-panel-header">
+                <div class="codex-panel-meta">
+                  <span class="codex-panel-std-code">STANDARD 06 / CRAFT</span>
+                  <span class="codex-panel-status-badge"><span class="status-pulse-dot"></span>60–120 FPS Fluidity</span>
+                </div>
+                <h3 class="codex-panel-title">Careful Craftsmanship</h3>
+                <p class="codex-panel-desc">
+                  We care deeply about the micro-details—fluid transitions, instantaneous button feedback, and pixel-perfect layouts that feel remarkable to touch and use.
+                </p>
+              </div>
+
+              <div class="codex-pillars-grid">
+                <div class="codex-pillar-card">
+                  <div class="pillar-icon-box purple">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
+                  </div>
+                  <div>
+                    <h4 class="pillar-title">Pixel-Precision</h4>
+                    <p class="pillar-desc">Design tokens mapped with 1px precision across mobile, tablet, and 4K displays.</p>
+                  </div>
+                </div>
+                <div class="codex-pillar-card">
+                  <div class="pillar-icon-box purple">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                  </div>
+                  <div>
+                    <h4 class="pillar-title">Sub-Millisecond Touch</h4>
+                    <p class="pillar-desc">Zero tap delay on iOS and Android devices with GPU-accelerated css transforms.</p>
+                  </div>
+                </div>
+                <div class="codex-pillar-card">
+                  <div class="pillar-icon-box purple">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="12" cy="12" r="10"></circle><path d="M8 14s1.5 2 4 2 4-2 4-2"></path><line x1="9" y1="9" x2="9.01" y2="9"></line><line x1="15" y1="9" x2="15.01" y2="9"></line></svg>
+                  </div>
+                  <div>
+                    <h4 class="pillar-title">Accessibility (a11y)</h4>
+                    <p class="pillar-desc">Full WCAG 2.1 AA keyboard compliance, ARIA attributes, and high contrast ratios.</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="codex-pledge-box">
+                <div class="pledge-quote-mark">&ldquo;</div>
+                <p class="pledge-text">
+                  Software built with dedication and attention to every subtle interaction. Your users feel the quality in the very first second.
+                </p>
+                <div class="pledge-author">
+                  <span class="pledge-shield-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg></span>
+                  <span>Coralgenz Engineering Standard &bull; Standard 06</span>
+                </div>
+              </div>
+
+              <div class="codex-panel-footer">
+                <div class="codex-guarantee-pill purple">
+                  <span class="g-label">DELIVERABLE:</span>
+                  <span class="g-val">60-120 FPS animation budgets &amp; WCAG AA compliance</span>
+                </div>
+                <div class="codex-stage-nav">
+                  <button type="button" class="codex-step-btn" onclick="nextCodexPrinciple(-1)">&larr; Prev</button>
+                  <button type="button" class="codex-step-btn primary" onclick="nextCodexPrinciple(1)">Next &rarr;</button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Panel 07 -->
+            <div class="codex-detail-panel" data-index="6" data-category="tech" style="display: none;">
+              <div class="codex-panel-header">
+                <div class="codex-panel-meta">
+                  <span class="codex-panel-std-code">STANDARD 07 / TECH</span>
+                  <span class="codex-panel-status-badge"><span class="status-pulse-dot"></span>Long-Term Reliability</span>
+                </div>
+                <h3 class="codex-panel-title">Modern Tech Stacks</h3>
+                <p class="codex-panel-desc">
+                  We build with modern, trusted technologies that give your app fast loading speeds and long-term support. No obscure dead languages, no experimental abandoned libraries.
+                </p>
+              </div>
+
+              <div class="codex-pillars-grid">
+                <div class="codex-pillar-card">
+                  <div class="pillar-icon-box cyan">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>
+                  </div>
+                  <div>
+                    <h4 class="pillar-title">Modern Web &amp; Mobile</h4>
+                    <p class="pillar-desc">React, Next.js, Node.js, TypeScript, Python, and native-grade PWA tooling.</p>
+                  </div>
+                </div>
+                <div class="codex-pillar-card">
+                  <div class="pillar-icon-box cyan">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"></path></svg>
+                  </div>
+                  <div>
+                    <h4 class="pillar-title">Edge Cloud Hosting</h4>
+                    <p class="pillar-desc">Global CDN distribution with sub-50ms latency across 300+ worldwide edge nodes.</p>
+                  </div>
+                </div>
+                <div class="codex-pillar-card">
+                  <div class="pillar-icon-box cyan">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                  </div>
+                  <div>
+                    <h4 class="pillar-title">Easy Hiring</h4>
+                    <p class="pillar-desc">Built with stacks that have massive developer communities for easy talent recruitment.</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="codex-pledge-box">
+                <div class="pledge-quote-mark">&ldquo;</div>
+                <p class="pledge-text">
+                  Built with proven, modern, and popular tools that eliminate maintenance headaches and keep your business ahead of competitors.
+                </p>
+                <div class="pledge-author">
+                  <span class="pledge-shield-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg></span>
+                  <span>Coralgenz Engineering Standard &bull; Standard 07</span>
+                </div>
+              </div>
+
+              <div class="codex-panel-footer">
+                <div class="codex-guarantee-pill cyan">
+                  <span class="g-label">DELIVERABLE:</span>
+                  <span class="g-val">Enterprise LTS tech stack with guaranteed long-term community support</span>
+                </div>
+                <div class="codex-stage-nav">
+                  <button type="button" class="codex-step-btn" onclick="nextCodexPrinciple(-1)">&larr; Prev</button>
+                  <button type="button" class="codex-step-btn primary" onclick="nextCodexPrinciple(1)">Next &rarr;</button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Panel 08 -->
+            <div class="codex-detail-panel" data-index="7" data-category="craft" style="display: none;">
+              <div class="codex-panel-header">
+                <div class="codex-panel-meta">
+                  <span class="codex-panel-std-code">STANDARD 08 / SIMPLICITY</span>
+                  <span class="codex-panel-status-badge"><span class="status-pulse-dot"></span>Zero Bloat Guarantee</span>
+                </div>
+                <h3 class="codex-panel-title">Simplicity Over Complexity</h3>
+                <p class="codex-panel-desc">
+                  We solve problems with the cleanest and most direct methods. No bloated code, no over-engineering, just fast, lean, and cost-efficient software.
+                </p>
+              </div>
+
+              <div class="codex-pillars-grid">
+                <div class="codex-pillar-card">
+                  <div class="pillar-icon-box orange">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"></path></svg>
+                  </div>
+                  <div>
+                    <h4 class="pillar-title">Lean Asset Footprint</h4>
+                    <p class="pillar-desc">Lightweight JS/CSS bundles that load under 1.2s on mobile networks.</p>
+                  </div>
+                </div>
+                <div class="codex-pillar-card">
+                  <div class="pillar-icon-box orange">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="12" cy="12" r="10"></circle><line x1="4.93" y1="4.93" x2="19.07" y2="19.07"></line></svg>
+                  </div>
+                  <div>
+                    <h4 class="pillar-title">Zero Dependency Bloat</h4>
+                    <p class="pillar-desc">We write clean native JavaScript instead of importing heavy, unmaintained npm packages.</p>
+                  </div>
+                </div>
+                <div class="codex-pillar-card">
+                  <div class="pillar-icon-box orange">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"></path></svg>
+                  </div>
+                  <div>
+                    <h4 class="pillar-title">Cost Efficiency</h4>
+                    <p class="pillar-desc">Direct database queries and optimized memory that slash monthly server bills.</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="codex-pledge-box">
+                <div class="pledge-quote-mark">&ldquo;</div>
+                <p class="pledge-text">
+                  Clean, direct solutions that keep your software fast, efficient, and cheap to run throughout its entire lifecycle.
+                </p>
+                <div class="pledge-author">
+                  <span class="pledge-shield-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg></span>
+                  <span>Coralgenz Engineering Standard &bull; Standard 08</span>
+                </div>
+              </div>
+
+              <div class="codex-panel-footer">
+                <div class="codex-guarantee-pill orange">
+                  <span class="g-label">DELIVERABLE:</span>
+                  <span class="g-val">Lean bundle sizes that load instantly even on 3G connections</span>
+                </div>
+                <div class="codex-stage-nav">
+                  <button type="button" class="codex-step-btn" onclick="nextCodexPrinciple(-1)">&larr; Prev</button>
+                  <button type="button" class="codex-step-btn primary" onclick="nextCodexPrinciple(1)">Next &rarr;</button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Panel 09 -->
+            <div class="codex-detail-panel" data-index="8" data-category="tech" style="display: none;">
+              <div class="codex-panel-header">
+                <div class="codex-panel-meta">
+                  <span class="codex-panel-std-code">STANDARD 09 / SECURITY</span>
+                  <span class="codex-panel-status-badge"><span class="status-pulse-dot"></span>OWASP Defense</span>
+                </div>
+                <h3 class="codex-panel-title">Built-In App Security</h3>
+                <p class="codex-panel-desc">
+                  We protect your user accounts, secure passwords, and safeguard customer data with standard encryption, parameterized SQL queries, and zero-knowledge storage.
+                </p>
+              </div>
+
+              <div class="codex-pillars-grid">
+                <div class="codex-pillar-card">
+                  <div class="pillar-icon-box rose">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+                  </div>
+                  <div>
+                    <h4 class="pillar-title">OWASP Top 10 Mitigation</h4>
+                    <p class="pillar-desc">Protection against injection attacks, XSS, CSRF, and broken access controls.</p>
+                  </div>
+                </div>
+                <div class="codex-pillar-card">
+                  <div class="pillar-icon-box rose">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+                  </div>
+                  <div>
+                    <h4 class="pillar-title">Encryption In-Transit &amp; Rest</h4>
+                    <p class="pillar-desc">TLS 1.3 enforced across all endpoints and AES-256-GCM database security.</p>
+                  </div>
+                </div>
+                <div class="codex-pillar-card">
+                  <div class="pillar-icon-box rose">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="8.5" cy="7" r="4"></circle><line x1="20" y1="8" x2="20" y2="14"></line><line x1="23" y1="11" x2="17" y2="11"></line></svg>
+                  </div>
+                  <div>
+                    <h4 class="pillar-title">Granular Auth &amp; RBAC</h4>
+                    <p class="pillar-desc">Role-based permission gates with cryptographically signed session tokens.</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="codex-pledge-box">
+                <div class="pledge-quote-mark">&ldquo;</div>
+                <p class="pledge-text">
+                  Safe coding practices built into every application. We guard your brand reputation and customer trust with zero compromise.
+                </p>
+                <div class="pledge-author">
+                  <span class="pledge-shield-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg></span>
+                  <span>Coralgenz Engineering Standard &bull; Standard 09</span>
+                </div>
+              </div>
+
+              <div class="codex-panel-footer">
+                <div class="codex-guarantee-pill rose">
+                  <span class="g-label">DELIVERABLE:</span>
+                  <span class="g-val">Automated vulnerability scans passed before deployment</span>
+                </div>
+                <div class="codex-stage-nav">
+                  <button type="button" class="codex-step-btn" onclick="nextCodexPrinciple(-1)">&larr; Prev</button>
+                  <button type="button" class="codex-step-btn primary" onclick="nextCodexPrinciple(1)">Next &rarr;</button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Panel 10 -->
+            <div class="codex-detail-panel" data-index="9" data-category="ownership" style="display: none;">
+              <div class="codex-panel-header">
+                <div class="codex-panel-meta">
+                  <span class="codex-panel-std-code">STANDARD 10 / COMMITMENT</span>
+                  <span class="codex-panel-status-badge"><span class="status-pulse-dot"></span>Mutual Growth</span>
+                </div>
+                <h3 class="codex-panel-title">Building for Your Success</h3>
+                <p class="codex-panel-desc">
+                  We treat your project like our own company. Our goal is to engineer resilient software that empowers your business to acquire users, generate revenue, and thrive for years.
+                </p>
+              </div>
+
+              <div class="codex-pillars-grid">
+                <div class="codex-pillar-card">
+                  <div class="pillar-icon-box blue">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                  </div>
+                  <div>
+                    <h4 class="pillar-title">Aligned Incentives</h4>
+                    <p class="pillar-desc">We build features that genuinely move your metrics, not useless fluff that inflates hours.</p>
+                  </div>
+                </div>
+                <div class="codex-pillar-card">
+                  <div class="pillar-icon-box blue">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline><polyline points="17 6 23 6 23 12"></polyline></svg>
+                  </div>
+                  <div>
+                    <h4 class="pillar-title">Post-Launch Care</h4>
+                    <p class="pillar-desc">Ongoing telemetry monitoring, bug fixes, and continuous scaling guidance.</p>
+                  </div>
+                </div>
+                <div class="codex-pillar-card">
+                  <div class="pillar-icon-box blue">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="12" cy="12" r="10"></circle><path d="M8 14s1.5 2 4 2 4-2 4-2"></path><line x1="9" y1="9" x2="9.01" y2="9"></line><line x1="15" y1="9" x2="15.01" y2="9"></line></svg>
+                  </div>
+                  <div>
+                    <h4 class="pillar-title">Technical Advisory</h4>
+                    <p class="pillar-desc">Acting as your seasoned technical co-founders through product and investor milestones.</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="codex-pledge-box">
+                <div class="pledge-quote-mark">&ldquo;</div>
+                <p class="pledge-text">
+                  A reliable development partner for your digital journey. We celebrate your milestones as our own and stand behind everything we build.
+                </p>
+                <div class="pledge-author">
+                  <span class="pledge-shield-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg></span>
+                  <span>Coralgenz Client Sovereign Guarantee &bull; Standard 10</span>
+                </div>
+              </div>
+
+              <div class="codex-panel-footer">
+                <div class="codex-guarantee-pill blue">
+                  <span class="g-label">DELIVERABLE:</span>
+                  <span class="g-val">30-day post-launch warranty &amp; hypercare support included</span>
+                </div>
+                <div class="codex-stage-nav">
+                  <button type="button" class="codex-step-btn" onclick="nextCodexPrinciple(-1)">&larr; Prev</button>
+                  <button type="button" class="codex-step-btn primary" onclick="nextCodexPrinciple(1)">Next &rarr;</button>
+                </div>
+              </div>
+            </div>
+
           </div>
+
         </div>
 
-        <!-- Slidable Horizontal Track (Native Smooth Snap on Mobile) -->
-        <div class="values-slider-track-wrap">
-          <div class="values-slider-track" id="valuesTrack">
+      </div>
 
-            <!-- Slide 01: Client-First Development -->
-            <div class="v-slide-card standard-card-arch active reveal-init" data-slide-index="0" data-category="priority">
-              <div class="standard-card-header">
-                <div class="standard-num-tag tag-blue">01 / PRIORITY</div>
-                <span class="standard-micro-badge">Client First</span>
-              </div>
-
-              <div class="standard-card-body">
-                <h3 class="standard-card-title">Client-First Development</h3>
-                <p class="standard-card-desc">We listen closely to your vision and turn your requirements into practical, high-quality software that fits your goals.</p>
-              </div>
-
-              <div class="standard-chips-row">
-                <span class="std-chip">Active Listening</span>
-                <span class="std-chip">Tailored Solutions</span>
-                <span class="std-chip highlight-chip">Client Priority</span>
-              </div>
-
-              <div class="v-compact-strip">
-                <span class="strip-badge blue">PRIORITY</span>
-                <span class="strip-text">Your product vision always comes first in our process</span>
-              </div>
-            </div>
-
-            <!-- Slide 02: Simple & Clean Code -->
-            <div class="v-slide-card standard-card-velocity reveal-init reveal-delay-1" data-slide-index="1"
-              data-category="code">
-              <div class="standard-card-header">
-                <div class="standard-num-tag tag-amber">02 / CODE</div>
-                <span class="standard-micro-badge">Simple &amp; Clean</span>
-              </div>
-
-              <div class="standard-card-body">
-                <h3 class="standard-card-title">Simple &amp; Clean Code</h3>
-                <p class="standard-card-desc">We keep our code clean, well-organized, and simple so any developer can easily read, test, and build on it.</p>
-              </div>
-
-              <div class="standard-chips-row">
-                <span class="std-chip">Clean Structure</span>
-                <span class="std-chip">Clear Comments</span>
-                <span class="std-chip highlight-chip">Easy to Read</span>
-              </div>
-
-              <div class="v-compact-strip">
-                <span class="strip-badge amber">STANDARDS</span>
-                <span class="strip-text">Writing neat, readable, and standard-compliant code</span>
-              </div>
-            </div>
-
-            <!-- Slide 03: Open & Honest Communication -->
-            <div class="v-slide-card standard-card-ecosystem reveal-init reveal-delay-2" data-slide-index="2"
-              data-category="transparency">
-              <div class="standard-card-header">
-                <div class="standard-num-tag tag-indigo">03 / HONESTY</div>
-                <span class="standard-micro-badge">Open Work</span>
-              </div>
-
-              <div class="standard-card-body">
-                <h3 class="standard-card-title">Open &amp; Honest Communication</h3>
-                <p class="standard-card-desc">You get real-time progress updates, working previews, and direct answers without technical jargon or excuses.</p>
-              </div>
-
-              <div class="standard-chips-row">
-                <span class="std-chip">Weekly Demos</span>
-                <span class="std-chip">Live Previews</span>
-                <span class="std-chip highlight-chip">Clear Timelines</span>
-              </div>
-
-              <div class="v-compact-strip">
-                <span class="strip-badge indigo">HONESTY</span>
-                <span class="strip-text">Complete transparency from kickoff to project launch</span>
-              </div>
-            </div>
-
-            <!-- Slide 04: Fast Weekly Sprints -->
-            <div class="v-slide-card standard-card-trust reveal-init" data-slide-index="3" data-category="velocity">
-              <div class="standard-card-header">
-                <div class="standard-num-tag tag-gold">04 / SPEED</div>
-                <span class="standard-micro-badge">Fast Sprints</span>
-              </div>
-
-              <div class="standard-card-body">
-                <h3 class="standard-card-title">Continuous Weekly Progress</h3>
-                <p class="standard-card-desc">We work in focused weekly sprints, delivering new working features frequently so you can see fast progress.</p>
-              </div>
-
-              <div class="standard-chips-row">
-                <span class="std-chip">Weekly Sprints</span>
-                <span class="std-chip">Quick Turnaround</span>
-                <span class="std-chip highlight-chip">Visible Progress</span>
-              </div>
-
-              <div class="v-compact-strip">
-                <span class="strip-badge gold">VELOCITY</span>
-                <span class="strip-text">Working software delivered every single sprint</span>
-              </div>
-            </div>
-
-            <!-- Slide 05: Total Client Freedom -->
-            <div class="v-slide-card standard-card-ownership reveal-init reveal-delay-1" data-slide-index="4"
-              data-category="freedom">
-              <div class="standard-card-header">
-                <div class="standard-num-tag tag-emerald">05 / FREEDOM</div>
-                <span class="standard-micro-badge">Full Rights</span>
-              </div>
-
-              <div class="standard-card-body">
-                <h3 class="standard-card-title">Total Client Freedom</h3>
-                <p class="standard-card-desc">You own your repository and all assets unconditionally. You stay with us because you love our work, not because of lock-in.</p>
-              </div>
-
-              <div class="standard-chips-row">
-                <span class="std-chip">No Vendor Lock</span>
-                <span class="std-chip">Full Rights</span>
-                <span class="std-chip highlight-chip">Independent</span>
-              </div>
-
-              <div class="v-compact-strip">
-                <span class="strip-badge emerald">FREEDOM</span>
-                <span class="strip-text">Unconditional intellectual property transfer on completion</span>
-              </div>
-            </div>
-
-            <!-- Slide 06: Careful Craftsmanship -->
-            <div class="v-slide-card standard-card-ai reveal-init reveal-delay-2" data-slide-index="5" data-category="craft">
-              <div class="standard-card-header">
-                <div class="standard-num-tag tag-purple">06 / CRAFT</div>
-                <span class="standard-micro-badge">Craftsmanship</span>
-              </div>
-
-              <div class="standard-card-body">
-                <h3 class="standard-card-title">Careful Craftsmanship</h3>
-                <p class="standard-card-desc">We care about the little details—smooth interactions, fast button clicks, and pixel-perfect layouts that feel great.</p>
-              </div>
-
-              <div class="standard-chips-row">
-                <span class="std-chip">Pixel Perfect</span>
-                <span class="std-chip">Fast Reactions</span>
-                <span class="std-chip highlight-chip">Polished Details</span>
-              </div>
-
-              <div class="v-compact-strip">
-                <span class="strip-badge purple">CRAFT</span>
-                <span class="strip-text">Software built with dedication and attention to every detail</span>
-              </div>
-            </div>
-
-            <!-- Slide 07: Modern Tech Stacks -->
-            <div class="v-slide-card standard-card-arch reveal-init" data-slide-index="6" data-category="tech">
-              <div class="standard-card-header">
-                <div class="standard-num-tag tag-blue">07 / TECH</div>
-                <span class="standard-micro-badge">Modern Stack</span>
-              </div>
-
-              <div class="standard-card-body">
-                <h3 class="standard-card-title">Modern Tech Stacks</h3>
-                <p class="standard-card-desc">We build with modern, trusted technologies that give your app fast loading speeds and long-term support.</p>
-              </div>
-
-              <div class="standard-chips-row">
-                <span class="std-chip">Modern Web</span>
-                <span class="std-chip">Mobile Ready</span>
-                <span class="std-chip highlight-chip">Popular Frameworks</span>
-              </div>
-
-              <div class="v-compact-strip">
-                <span class="strip-badge blue">TECHNOLOGY</span>
-                <span class="strip-text">Built with proven, modern, and popular tools</span>
-              </div>
-            </div>
-
-            <!-- Slide 08: Simplicity Over Complexity -->
-            <div class="v-slide-card standard-card-velocity reveal-init reveal-delay-1" data-slide-index="7" data-category="simplicity">
-              <div class="standard-card-header">
-                <div class="standard-num-tag tag-amber">08 / SIMPLICITY</div>
-                <span class="standard-micro-badge">No Bloat</span>
-              </div>
-
-              <div class="standard-card-body">
-                <h3 class="standard-card-title">Simplicity Over Complexity</h3>
-                <p class="standard-card-desc">We solve problems with the cleanest and most direct methods. No bloated code, no over-engineering, just fast software.</p>
-              </div>
-
-              <div class="standard-chips-row">
-                <span class="std-chip">Lightweight Apps</span>
-                <span class="std-chip">Fast Response</span>
-                <span class="std-chip highlight-chip">Zero Bloat</span>
-              </div>
-
-              <div class="v-compact-strip">
-                <span class="strip-badge amber">SIMPLICITY</span>
-                <span class="strip-text">Clean solutions that keep your software fast and efficient</span>
-              </div>
-            </div>
-
-            <!-- Slide 09: Built-In App Security -->
-            <div class="v-slide-card standard-card-ecosystem reveal-init reveal-delay-2" data-slide-index="8" data-category="security">
-              <div class="standard-card-header">
-                <div class="standard-num-tag tag-indigo">09 / SECURITY</div>
-                <span class="standard-micro-badge">Safe Apps</span>
-              </div>
-
-              <div class="standard-card-body">
-                <h3 class="standard-card-title">Built-In App Security</h3>
-                <p class="standard-card-desc">We protect your user accounts, secure passwords, and safeguard customer data with standard encryption.</p>
-              </div>
-
-              <div class="standard-chips-row">
-                <span class="std-chip">Safe Logins</span>
-                <span class="std-chip">Encrypted Data</span>
-                <span class="std-chip highlight-chip">Secure Code</span>
-              </div>
-
-              <div class="v-compact-strip">
-                <span class="strip-badge indigo">SECURITY</span>
-                <span class="strip-text">Safe coding practices built into every application</span>
-              </div>
-            </div>
-
-            <!-- Slide 10: Building for Your Success -->
-            <div class="v-slide-card standard-card-ownership reveal-init" data-slide-index="9" data-category="partnership">
-              <div class="standard-card-header">
-                <div class="standard-num-tag tag-emerald">10 / PARTNERSHIP</div>
-                <span class="standard-micro-badge">Shared Success</span>
-              </div>
-
-              <div class="standard-card-body">
-                <h3 class="standard-card-title">Building for Your Success</h3>
-                <p class="standard-card-desc">We treat your project like our own. Our goal is to build software that helps your business grow and thrive.</p>
-              </div>
-
-              <div class="standard-chips-row">
-                <span class="std-chip">Shared Vision</span>
-                <span class="std-chip">Dedicated Team</span>
-                <span class="std-chip highlight-chip">Real Value</span>
-              </div>
-
-              <div class="v-compact-strip">
-                <span class="strip-badge emerald">COMMITMENT</span>
-                <span class="strip-text">A reliable development partner for your digital journey</span>
-              </div>
-            </div>
-
-          </div>
+      <!-- Bottom Telemetry & Engineering Guarantee Strip -->
+      <div class="codex-bottom-strip reveal-init">
+        <div class="codex-strip-item">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+          <span><strong>100% Unconditional</strong> Source IP Ownership</span>
         </div>
-
+        <div class="codex-strip-divider"></div>
+        <div class="codex-strip-item">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0055fe" stroke-width="2.5"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+          <span><strong>Weekly Working</strong> Deployable Sprints</span>
+        </div>
+        <div class="codex-strip-divider"></div>
+        <div class="codex-strip-item">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+          <span><strong>Enterprise OWASP</strong> Zero-Knowledge Security</span>
+        </div>
       </div>
 
     </div>
