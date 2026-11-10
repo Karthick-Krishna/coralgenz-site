@@ -24,7 +24,7 @@ For the exhaustive technical specification, cryptographic proofs, leadership dos
 - [Salesforce ISV Partner](https://coralgenz.net/salesforce): AppExchange solutions, 2GP managed packages, Lightning Web Components (LWC), and Apex backend integrations.
 - [Shopify Partner](https://coralgenz.net/shopify): Custom headless storefronts, Storefront GraphQL APIs, checkout UI extensions, and Liquid architecture.
 - [Partnered Startups](https://coralgenz.net/partnered-startups): Startup co-engineering network featuring Zevionix Technologies (AI & Computer Vision) and Zorquelz Technologies (core product engineering, applied AI, cybersecurity).
-- [Collaborated Products](https://coralgenz.net/collaborated-products): Strategic co-engineering alliance between Coralgenz Global and Zorquelz Technologies, featuring Zailo Graph (https://zailograph.coralgenz.net/) — the privacy-first web-native image studio powered by WebAssembly.
+- [Collaborated Products](https://coralgenz.net/collaborated-products): Strategic co-engineering alliance between Coralgenz Global and Zorquelz Technologies, featuring Zailo Graph (https://zailograph.com/) — the privacy-first web-native image studio powered by WebAssembly.
 - [Become a Partner](https://coralgenz.net/become-a-partner): Official partnership and co-engineering intake portal for startups, ISVs, and agencies.
 
 ## Enterprise Software Services
